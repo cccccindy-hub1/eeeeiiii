@@ -1,0 +1,65 @@
+{
+  "cell": "contradictory:glm5_500:sympy__sympy-18199:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "661a7952390a8485ccd02236",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_692650aa4edbfaad\", \"base_commit\": \"ba80d1e493f21431b4bf729b3e0452cd47eb9566\", \"finished_at\": \"2026-10-19T05:42:55+00:00\", \"instance_id\": \"sympy__sympy-18199\", \"log_digests\": {\"symptom\": \"08938985dc97182a3bb19f336faabc917671d0d7f83dc230f6d1af5da91f19cf\"}, \"pass_to_pass_baseline\": {\"test__has_rational_power\": \"PASSED\", \"test__is_finite_with_finite_vars\": \"PASSED\", \"test__solveset_multi\": \"PASSED\", \"test_abs_invert_solvify\": \"PASSED\", \"test_atan2\": \"PASSED\", \"test_conditionset\": \"PASSED\", \"test_domain_check\": \"PASSED\", \"test_errorinverses\": \"PASSED\", \"test_expo_conditionset\": \"PASSED\", \"test_exponential_real\": \"PASSED\", \"test_exponential_symbols\": \"PASSED\", \"test_garbage_input\": \"PASSED\", \"test_improve_coverage\": \"PASSED\", \"test_invert_complex\": \"PASSED\", \"test_invert_modular\": \"PASSED\", \"test_invert_real\": \"PASSED\", \"test_is_exponential\": \"PASSED\", \"test_is_function_class_equation\": \"PASSED\", \"test_is_logarithmic\": \"PASSED\", \"test_is_modular\": \"PASSED\", \"test_issue_10069\": \"PASSED\", \"test_issue_10158\": \"PASSED\", \"test_issue_10214\": \"PASSED\", \"test_issue_10397\": \"PASSED\", \"test_issue_10477\": \"PASSED\", \"test_issue_10555\": \"PASSED\", \"test_issue_10671\": "
+    },
+    {
+      "turn": 1,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"ba80d1e493f21431b4bf729b3e0452cd47eb9566\", \"record_patch_sha256\": \"08338c441b38540653cfbd283f4354198ec6d2b0e4aaffbf789ddd1c2d180ac0\"}"
+    },
+    {
+      "turn": 2,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": true, \"fresh\": true, \"record_run_tree\": \"bb6fd47689b72ec345fed05ccd2fd707fdd9f94c\", \"expected_run_tree\": \"bb6fd47689b72ec345fed05ccd2fd707fdd9f94c\", \"artifact_started_at\": \"2026-10-19T05:39:42+00:00\", \"attestation_built_at\": \"2026-10-19T08:01:07+00:00\"}"
+    },
+    {
+      "turn": 3,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 113, \"executed\": 113, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 4,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: zero root path raised: ValueError Log does not exist\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: zero root returned: [0] 0\n\n--- stderr ---\n"
+    },
+    {
+      "turn": 5,
+      "tool": "get_run_log",
+      "args": {
+        "name": "f2p"
+      },
+      "http_status": 403,
+      "result_preview": "[http_status=403] {\"error\": \"acceptance logs are disabled under the strict evidence policy\"}"
+    },
+    {
+      "turn": 6,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    }
+  ],
+  "final_answer": "{\"decision\": \"NEED_EVIDENCE\", \"reason\": \"strict policy withholds maintainer acceptance outcomes; symptom evidence alone cannot establish success\", \"evidence_mismatch\": false, \"missing_evidence\": \"maintainer acceptance outcomes\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

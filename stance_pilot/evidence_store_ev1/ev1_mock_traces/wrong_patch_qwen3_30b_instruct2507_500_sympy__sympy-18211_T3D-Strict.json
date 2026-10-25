@@ -1,0 +1,65 @@
+{
+  "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "39d2871ba61480c2082c4318",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_05f2955c70897168\", \"base_commit\": \"b4f1aa3540fe68d078d76e78ba59d022dd6df39f\", \"finished_at\": \"2026-10-19T06:10:02+00:00\", \"instance_id\": \"sympy__sympy-18211\", \"log_digests\": {\"symptom\": \"140f5cfcf851a34a882c0ef7a54ae31950cbaa10b616f51750212aa3896ae72c\"}, \"pass_to_pass_baseline\": {\"test_Eq\": \"PASSED\", \"test_Equality_rewrite_as_Add\": \"PASSED\", \"test_Not\": \"PASSED\", \"test_as_poly\": \"PASSED\", \"test_binary_symbols\": \"PASSED\", \"test_bool\": \"PASSED\", \"test_canonical\": \"PASSED\", \"test_complex_compare_not_real\": \"PASSED\", \"test_complex_infinity_inequalities\": \"PASSED\", \"test_complex_pure_imag_not_ordered\": \"PASSED\", \"test_doit\": \"PASSED\", \"test_equals\": \"PASSED\", \"test_evaluate\": \"PASSED\", \"test_imaginary_and_inf_compare_raises_TypeError\": \"PASSED\", \"test_imaginary_compare_raises_TypeError\": \"PASSED\", \"test_improved_canonical\": \"PASSED\", \"test_ineq_avoid_wild_symbol_flip\": \"PASSED\", \"test_inequalities_cant_sympify_other\": \"PASSED\", \"test_inequalities_symbol_name_same\": \"PASSED\", \"test_inequalities_symbol_name_same_complex\": \"PASSED\", \"test_infinite_symbol_inequalities\": \"PASSED\", \"test_issue_10304\": \"PASSED\", \"test_issue_10401\": \"PASSED\", \"test_issue_10633\": \"PASSED\", \"test_issue_10927\": \"PASSED\", \"test_issue_15847\": \"PASSED\", \"test_issue_8245\": \"PASSED\", \"test_issue_8444_workingtests\": \"PASSED\", \"test_issue_8449\": \"PASSED\", \"test_issues_13081_12583_12534\": \"PASSED\", \"test_multivariate_linear_function_simplification\": \"PASSED\", \"test_nan_complex_inequalities\": \"PASSED\", \"test_nan_equality_exceptions\": \"PASSED\", \"test_nan_inequality_raise_errors\": \"PASSED\", \"test_negated_property\": \"PASSED\", \"test_new_relational\": \"PASSED\", \"test_polynomial_relation_simplification\": \"PASSED\", \"test_rel_Infinity\": \"PASSED\", \"test_rel_args\": \"PASSED\", \"test_rel_ne\": \"PASSED\", \"test_rel_subs\": \"PASSED\", \"test_relational_arithmetic\": \"PASSED\", \"test_relational_bool_output\": \"PASSED\", \"test_relational_logic_symbols\": \"PASSED\", \"test_reversed\": \"PASSED\", \"test_reversed_reversedsign_property\": \"PASSED\", \"test_reversedsign_property\": \"PASSED\", \"test_rich_cmp\": \"PASSED\", \"test_set_equality_canonical\": \"PASSED\", \"test_simplify_relational\": \"PASSED\", \"test_trigsimp\": \"PASSED\", \"test_univariate_relational_as_set\": \"PASSED\", \"test_wrappers\": \"PASSED\", \"test_x_minus_y_not_same_as_x_lt_y\": \"PASSED\"}, \"patch_sha256\": \"a67f41aeb66c319bd4b58fb62c1c11a57c21957a383c959b669513948d542ec9\", \"repo\": \"sympy/sympy\", \"run_tree\": \"37e055065fc42ddf8fdde63d0e65b05888b62766\", \"runner\": \"pytest/vendored-git  py=3.11.15  host=windows-local\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/core/tests/test_relational.py\", \"sympy/solvers/tests/test_constantsimp.py\", \"sympy/solvers/tests/test_decompogen.py\", \"sympy/solvers/tests/test_diophantine.py\", \"sympy/solvers/tests/test_inequalities.py\", \"sympy/solvers/tests/test_numeric.py\", \"sympy/solvers/tests/test_ode.py\", \"sympy/solvers/tests/test_pde.py\", \"sympy/solvers/tests/test_polysys.py\", \"sympy/solvers/tests/test_recurr.py\", \"sympy/solvers/tests/test_solvers.py\", \"sympy/solvers/tests/test_solveset.py\"], \"p2p_total_in_dataset\": 54, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-19T06:09:45+00:00\", \"summary\": {\"f2p_total\": 1, \"p2p_total\": 54, \"outcomes_withheld\": true, \"note\": \"acceptance-test outcomes and regression verdicts are withheld at the diagnostic tier; use the verification service to seek them.\"}, \"test_patch_sha256\": \"c702939e6146ab5cc161ab0c77eb38e06bc9c6ae8e286412cf50115699c40818\", \"evidence_tier\": \"diagnostic\"}, \"authentic_signature\": true, \"evidence_tier\": \"D\"}"
+    },
+    {
+      "turn": 1,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": false, \"linked\": false, \"record_base_commit\": \"b4f1aa3540fe68d078d76e78ba59d022dd6df39f\", \"record_patch_sha256\": \"a67f41aeb66c319bd4b58fb62c1c11a57c21957a383c959b669513948d542ec9\"}"
+    },
+    {
+      "turn": 2,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": \"37e055065fc42ddf8fdde63d0e65b05888b62766\", \"expected_run_tree\": \"814d03031b71c8f086522db00c253fa6f21ae6e5\", \"artifact_started_at\": \"2026-10-19T06:09:45+00:00\", \"attestation_built_at\": \"2026-10-19T08:01:44+00:00\"}"
+    },
+    {
+      "turn": 3,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 54, \"executed\": 54, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 4,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: as_set raised: NotImplementedError \nThe inequality, Eq(x*cos(x) - 3*sin(x), 0), cannot be solved using\nsolve_univariate_inequality.\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: as_set raised: TypeError unsupported operand type(s) for +: 'ConditionSet' and 'list'\n\n--- stderr ---\n"
+    },
+    {
+      "turn": 5,
+      "tool": "get_run_log",
+      "args": {
+        "name": "f2p"
+      },
+      "http_status": 403,
+      "result_preview": "[http_status=403] {\"error\": \"acceptance logs are disabled under the strict evidence policy\"}"
+    },
+    {
+      "turn": 6,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"contradicted\", \"reason\": \"the registered positive claim is contradicted by the authorised diagnostic evidence: the issue symptom still reproduces after the patch (reproduction probe fails)\"}"
+    }
+  ],
+  "final_answer": "{\"decision\": \"NEED_EVIDENCE\", \"reason\": \"evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established\", \"evidence_mismatch\": true, \"missing_evidence\": \"linked/fresh applicability\", \"evidence_gap\": \"stale\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

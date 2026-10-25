@@ -1,0 +1,65 @@
+{
+  "cell": "incomplete:qwen3_30b_instruct2507_500:sympy__sympy-17139:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "5fde6f823c0c4bdd5ceefd29",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_c2007305ca36cd1a\", \"base_commit\": \"1d3327b8e90a186df6972991963a5ae87053259d\", \"finished_at\": \"2026-10-19T09:23:47+00:00\", \"instance_id\": \"sympy__sympy-17139\", \"log_digests\": {\"symptom\": \"7b42e146c0bb26588c651d506cc3c007790c7f576c0228aed3e27cec7888c26f\"}, \"patch_sha256\": \"f6806233fe795e3bcc1aa9886a085e40b2d8aa665d176b056a38cf512d33ea24\", \"repo\": \"sympy/sympy\", \"run_tree\": \"3d022067ace1d06fe6857250dd4d1cefac853677\", \"runner\": \"pytest/vendored-git py=3.11.15 host=windows-local\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/simplify/tests/test_combsimp.py\", \"sympy/simplify/tests/test_cse.py\", \"sympy/simplify/tests/test_epathtools.py\", \"sympy/simplify/tests/test_fu.py\", \"sympy/simplify/tests/test_function.py\", \"sympy/simplify/tests/test_gammasimp.py\", \"sympy/simplify/tests/test_hyperexpand.py\", \"sympy/simplify/tests/test_powsimp.py\", \"sympy/simplify/tests/test_radsimp.py\", \"sympy/simplify/tests/test_ratsimp.py\", \"sympy/simplify/tests/test_rewrite.py\", \"sympy/simplify/tests/test_simplify.py\", \"sympy/simplify/tests/test_sqrtdenest.py\", \"sympy/simplify/tests/test_traversaltools.py\", \"sympy/simplify/tests/test_trigsimp.py\"], \"p2p_total_in_"
+    },
+    {
+      "turn": 1,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"1d3327b8e90a186df6972991963a5ae87053259d\", \"record_patch_sha256\": \"f6806233fe795e3bcc1aa9886a085e40b2d8aa665d176b056a38cf512d33ea24\"}"
+    },
+    {
+      "turn": 2,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": true, \"fresh\": true, \"record_run_tree\": \"3d022067ace1d06fe6857250dd4d1cefac853677\", \"expected_run_tree\": \"3d022067ace1d06fe6857250dd4d1cefac853677\", \"artifact_started_at\": \"2026-10-19T09:23:33+00:00\", \"attestation_built_at\": \"2026-10-19T09:23:33+00:00\"}"
+    },
+    {
+      "turn": 3,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 2, \"executed\": 1, \"missing_ids\": [\"test__TR56\"], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 67, \"executed\": 0, \"missing_count\": 67, \"missing_ids_sample\": [\"test_L\", \"test_Piecewise\", \"test_TR1\", \"test_TR10\", \"test_TR10i\", \"test_TR11\", \"test_TR12\", \"test_TR12i\", \"test_TR13\", \"test_TR14\", \"test_TR15_16_17\", \"test_TR2\", \"test_TR2i\", \"test_TR3\", \"test_TR5\", \"test_TR6\", \"test_TR7\", \"test_TR8\", \"test_TR9\", \"test_TRmorrie\"]}, \"complete\": false, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 4,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: simplify raised: TypeError Invalid comparison of complex I\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: simplify -> cos(x)**I\n\n--- stderr ---\n"
+    },
+    {
+      "turn": 5,
+      "tool": "get_run_log",
+      "args": {
+        "name": "f2p"
+      },
+      "http_status": 403,
+      "result_preview": "[http_status=403] {\"error\": \"acceptance logs are disabled under the strict evidence policy\"}"
+    },
+    {
+      "turn": 6,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    }
+  ],
+  "final_answer": "{\"decision\": \"NEED_EVIDENCE\", \"reason\": \"evidence is linked and fresh but the declared acceptance/regression set was not fully executed and no decisive failure was established\", \"evidence_mismatch\": true, \"missing_evidence\": \"full declared-set coverage\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

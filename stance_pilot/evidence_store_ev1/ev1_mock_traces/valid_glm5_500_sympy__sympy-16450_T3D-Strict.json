@@ -1,0 +1,65 @@
+{
+  "cell": "valid:glm5_500:sympy__sympy-16450:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "5a747ce412dc392ad862c8e1",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_e33eaf7a1b77c576\", \"base_commit\": \"aefdd023dc4f73c441953ed51f5f05a076f0862f\", \"finished_at\": \"2026-10-19T05:57:31+00:00\", \"instance_id\": \"sympy__sympy-16450\", \"log_digests\": {\"symptom\": \"69a7c371b163ae06c0954c5aa41b8f1ca6532f77d18249c3410736ee6c11edcf\"}, \"pass_to_pass_baseline\": {\"test_Piecewise\": \"PASSED\", \"test_as_content_primitive\": \"PASSED\", \"test_besselsimp\": \"PASSED\", \"test_clear_coefficients\": \"PASSED\", \"test_diff\": \"PASSED\", \"test_extract_minus_sign\": \"PASSED\", \"test_hypersimp\": \"PASSED\", \"test_inequality_no_auto_simplify\": \"PASSED\", \"test_issue_13474\": \"PASSED\", \"test_issue_3557\": \"PASSED\", \"test_issue_4194\": \"PASSED\", \"test_issue_5652\": \"PASSED\", \"test_issue_5950\": \"PASSED\", \"test_issue_6811\": \"PASSED\", \"test_issue_6920\": \"PASSED\", \"test_issue_7001\": \"PASSED\", \"test_issue_7263\": \"PASSED\", \"test_issue_9324_simplify\": \"PASSED\", \"test_issue_9398\": \"PASSED\", \"test_issue_9448\": \"PASSED\", \"test_issue_from_PR1599\": \"PASSED\", \"test_logcombine_1\": \"PASSED\", \"test_logcombine_complex_coeff\": \"PASSED\", \"test_nsimplify\": \"PASSED\", \"test_nthroot\": \"PASSED\", \"test_nthroot1\": \"PASSED\", \"test_polymorphism\": \"PASSED\", \"test_separatevars\": \"PASSED\", \"test_separatevars_advanced_factor\": \"PASSED\", \"test_signsimp\": \"PASSED\", \"test_simplify_complex\": \"PASSED\", \"test_simplify_fail1\": \"PASSED\", \"test_simplify_function_inverse\": \"PASSED\", \"test_simplify_issue_1308\": \"PASSED\", \"test_simplify_measure\": \"PASSED\", \"test_simplify_other\": \"PASSED\", \"test_simplify_ratio\": \"PASSED\", \"test_simplify_rational\": \"PASSED\"}, \"patch_sha256\": \"deaa2991a39b7a60ab05086c3a9a862ab583cd15e173c2f48ca57de1f0f76356\", \"repo\": \"sympy/sympy\", \"run_tree\": \"63681e97ef8aa273943abb573ba60256f3acd99c\", \"runner\": \"pytest/vendored-git  py=3.11.15  host=windows-local\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/simplify/tests/test_combsimp.py\", \"sympy/simplify/tests/test_cse.py\", \"sympy/simplify/tests/test_epathtools.py\", \"sympy/simplify/tests/test_fu.py\", \"sympy/simplify/tests/test_function.py\", \"sympy/simplify/tests/test_gammasimp.py\", \"sympy/simplify/tests/test_hyperexpand.py\", \"sympy/simplify/tests/test_powsimp.py\", \"sympy/simplify/tests/test_radsimp.py\", \"sympy/simplify/tests/test_ratsimp.py\", \"sympy/simplify/tests/test_rewrite.py\", \"sympy/simplify/tests/test_simplify.py\", \"sympy/simplify/tests/test_sqrtdenest.py\", \"sympy/simplify/tests/test_traversaltools.py\", \"sympy/simplify/tests/test_trigsimp.py\"], \"p2p_total_in_dataset\": 38, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-19T05:56:10+00:00\", \"summary\": {\"f2p_total\": 1, \"p2p_total\": 38, \"outcomes_withheld\": true, \"note\": \"acceptance-test outcomes and regression verdicts are withheld at the diagnostic tier; use the verification service to seek them.\"}, \"test_patch_sha256\": \"887213f9de86b78eb0c0c294dbe205c64918fd2c3d68293c1389fac31a0b8555\", \"evidence_tier\": \"diagnostic\"}, \"authentic_signature\": true, \"evidence_tier\": \"D\"}"
+    },
+    {
+      "turn": 1,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"aefdd023dc4f73c441953ed51f5f05a076f0862f\", \"record_patch_sha256\": \"deaa2991a39b7a60ab05086c3a9a862ab583cd15e173c2f48ca57de1f0f76356\"}"
+    },
+    {
+      "turn": 2,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": true, \"fresh\": true, \"record_run_tree\": \"63681e97ef8aa273943abb573ba60256f3acd99c\", \"expected_run_tree\": \"63681e97ef8aa273943abb573ba60256f3acd99c\", \"artifact_started_at\": \"2026-10-19T05:56:10+00:00\", \"attestation_built_at\": \"2026-10-19T08:01:05+00:00\"}"
+    },
+    {
+      "turn": 3,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 38, \"executed\": 38, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 4,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: posified symbol lost finite assumption: {\n\tcommutative: True,\n\tcomplex: True,\n\tfinite: None,\n\thermitian: True,\n\timaginary: False,\n\tnegative: False,\n\tnonnegative: True,\n\tnonpositive: False,\n\tnonzero: True,\n\tpositive: True,\n\treal: True,\n\tzero: False}\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3186: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:509: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:529: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:542: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:549: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: xp.is_finite = True\n\n--- stderr ---\n"
+    },
+    {
+      "turn": 5,
+      "tool": "get_run_log",
+      "args": {
+        "name": "f2p"
+      },
+      "http_status": 403,
+      "result_preview": "[http_status=403] {\"error\": \"acceptance logs are disabled under the strict evidence policy\"}"
+    },
+    {
+      "turn": 6,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    }
+  ],
+  "final_answer": "{\"decision\": \"NEED_EVIDENCE\", \"reason\": \"strict policy withholds maintainer acceptance outcomes; symptom evidence alone cannot establish success\", \"evidence_mismatch\": false, \"missing_evidence\": \"maintainer acceptance outcomes\", \"evidence_gap\": \"unspecified\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

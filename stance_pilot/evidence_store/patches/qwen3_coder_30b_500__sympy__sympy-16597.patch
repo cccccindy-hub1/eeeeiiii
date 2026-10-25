@@ -1,0 +1,13 @@
+diff --git a/sympy/core/assumptions.py b/sympy/core/assumptions.py
+index ce4dd30f2..d5505b3f4 100644
+--- a/sympy/core/assumptions.py
++++ b/sympy/core/assumptions.py
+@@ -198,6 +198,8 @@
+     'infinite       ->  !finite',
+     'noninteger     ==  real & !integer',
+     'nonzero        ==  real & !zero',
++    
++    'integer        ->  finite',
+ ])
+ 
+ _assume_defined = _assume_rules.defined_facts.copy()

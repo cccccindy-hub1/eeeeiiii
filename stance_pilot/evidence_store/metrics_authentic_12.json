@@ -1,0 +1,94 @@
+{
+  "conditions": {
+    "T0": {
+      "n_cells": 12,
+      "accepts": 6,
+      "uar_no_evidence": 0.5,
+      "uar_counter_evidence": null,
+      "counter_evidence_cells": 0,
+      "merge_accuracy": 0.4167,
+      "false_approve_rate": 0.5556,
+      "false_reject_rate": 0.6667,
+      "precision_accept": 0.1667,
+      "cost_per_correct_review_tokens": 1193.0,
+      "mean_tokens_all": 1422.0,
+      "mean_wall_s_correct": 1.652,
+      "tool_calls_per_cell": 0.0,
+      "verify_call_rate": 0.0
+    },
+    "T1": {
+      "n_cells": 12,
+      "accepts": 5,
+      "uar_no_evidence": 0.4167,
+      "uar_counter_evidence": null,
+      "counter_evidence_cells": 0,
+      "merge_accuracy": 0.5,
+      "false_approve_rate": 0.4444,
+      "false_reject_rate": 0.6667,
+      "precision_accept": 0.2,
+      "cost_per_correct_review_tokens": 1521.3333,
+      "mean_tokens_all": 1452.4167,
+      "mean_wall_s_correct": 1.775,
+      "tool_calls_per_cell": 0.0,
+      "verify_call_rate": 0.0
+    },
+    "T2": {
+      "n_cells": 12,
+      "accepts": 1,
+      "uar_no_evidence": null,
+      "uar_counter_evidence": 0.0,
+      "counter_evidence_cells": 9,
+      "merge_accuracy": 0.8333,
+      "false_approve_rate": 0.0,
+      "false_reject_rate": 0.6667,
+      "precision_accept": 1.0,
+      "cost_per_correct_review_tokens": 2010.5,
+      "mean_tokens_all": 1950.1667,
+      "mean_wall_s_correct": 1.418,
+      "tool_calls_per_cell": 0.0,
+      "verify_call_rate": 0.0
+    },
+    "T3": {
+      "n_cells": 12,
+      "accepts": 2,
+      "uar_no_evidence": null,
+      "uar_counter_evidence": 0.0,
+      "counter_evidence_cells": 9,
+      "merge_accuracy": 0.9167,
+      "false_approve_rate": 0.0,
+      "false_reject_rate": 0.3333,
+      "precision_accept": 1.0,
+      "cost_per_correct_review_tokens": 38844.1818,
+      "mean_tokens_all": 38125.75,
+      "mean_wall_s_correct": 8.6273,
+      "tool_calls_per_cell": 5.75,
+      "verify_call_rate": 1.0
+    }
+  },
+  "verification_mismatch_cells": {
+    "t3_mismatch_cells": 0,
+    "verify_call_rate": null,
+    "evidence_verification_success_rate": null,
+    "evsr_denominator_note": "cells where verify was actually called"
+  },
+  "deltas": {
+    "T0_to_T2": {
+      "n_pairs": 12,
+      "corrected": 5,
+      "broken": 0,
+      "net_accuracy_delta": 0.4167
+    },
+    "T2_to_T3": {
+      "n_pairs": 12,
+      "corrected": 1,
+      "broken": 0,
+      "net_accuracy_delta": 0.0833
+    },
+    "T0_to_T1": {
+      "n_pairs": 12,
+      "corrected": 1,
+      "broken": 0,
+      "net_accuracy_delta": 0.0833
+    }
+  }
+}

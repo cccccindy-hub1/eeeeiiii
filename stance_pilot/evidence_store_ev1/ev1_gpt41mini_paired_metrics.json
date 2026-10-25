@@ -1,0 +1,3602 @@
+{
+  "metric": "groundedreview_ev1_paired_cross_model",
+  "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+  "gold_version": "w2-gold-v1",
+  "bootstrap": {
+    "unit": "issue cluster (instance_id)",
+    "seed": 7,
+    "n_boot": 10000
+  },
+  "standards_separation": "oracle_gold and condition_gold are reported separately everywhere; never averaged",
+  "baseline_model": "deepseek-flash",
+  "models": {
+    "deepseek-flash": {
+      "n_cells": 110,
+      "n_issues": 10,
+      "conditions": {
+        "T2D-T": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.5,
+              "n_correct": 11,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.3333,
+                0.7143
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 9,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.8462,
+            "over_abstention_cells": 11,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 42368,
+              "tokens_out": 3650,
+              "usd_total": 0.01709,
+              "usd_per_appropriate_decision": 0.001554,
+              "wall_s_total": 34.42
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 1.0,
+              "n_correct": 22,
+              "ci95_issue_cluster_seed7_n10000": [
+                1.0,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 20,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 20,
+            "n_gold_decisive_or_accept": 2,
+            "over_abstention_rate": 0.0,
+            "over_abstention_cells": 0,
+            "n_gold_non_reject": 20,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 42368,
+              "tokens_out": 3650,
+              "usd_total": 0.01709,
+              "usd_per_appropriate_decision": 0.000777,
+              "wall_s_total": 34.42
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.9091,
+              "n_correct": 20,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T2A-T": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.3636,
+              "n_correct": 8,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.2083,
+                0.5625
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.8889,
+            "appropriate_abstention_cells": 8,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 1.0,
+            "over_abstention_cells": 13,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0625,
+            "unsupported_rejection_cells": 1,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 39245,
+              "tokens_out": 4770,
+              "usd_total": 0.017499,
+              "usd_per_appropriate_decision": 0.002187,
+              "wall_s_total": 38.34
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.0909,
+              "n_correct": 2,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.2
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 1,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 1,
+            "n_gold_decisive_or_accept": 21,
+            "over_abstention_rate": 0.9524,
+            "over_abstention_cells": 20,
+            "n_gold_non_reject": 15,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 39245,
+              "tokens_out": 4770,
+              "usd_total": 0.017499,
+              "usd_per_appropriate_decision": 0.00875,
+              "wall_s_total": 38.34
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.0455,
+              "n_correct": 1,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T3D-Strict": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.4545,
+              "n_correct": 10,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.3077,
+                0.6364
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 9,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.9231,
+            "over_abstention_cells": 12,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 125,
+              "tool_calls_200": 125,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 1.0,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 190927,
+              "tokens_out": 10589,
+              "usd_total": 0.069987,
+              "usd_per_appropriate_decision": 0.006999,
+              "wall_s_total": 79.42
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.9545,
+              "n_correct": 21,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.8421,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 20,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 20,
+            "n_gold_decisive_or_accept": 2,
+            "over_abstention_rate": 0.5,
+            "over_abstention_cells": 1,
+            "n_gold_non_reject": 20,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 125,
+              "tool_calls_200": 125,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 1.0,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 190927,
+              "tokens_out": 10589,
+              "usd_total": 0.069987,
+              "usd_per_appropriate_decision": 0.003333,
+              "wall_s_total": 79.42
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.9091,
+              "n_correct": 20,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T3D-Escalate": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.7727,
+              "n_correct": 17,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.5714,
+                0.95
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.7778,
+            "appropriate_abstention_cells": 7,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.2308,
+            "over_abstention_cells": 3,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.125,
+            "unsupported_rejection_cells": 2,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 175,
+              "tool_calls_200": 162,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 7,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 0.9257,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 22,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 647192,
+              "tokens_out": 24973,
+              "usd_total": 0.224126,
+              "usd_per_appropriate_decision": 0.013184,
+              "wall_s_total": 176.34
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.7727,
+              "n_correct": 17,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.5714,
+                0.95
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.7778,
+            "appropriate_abstention_cells": 7,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.2308,
+            "over_abstention_cells": 3,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.125,
+            "unsupported_rejection_cells": 2,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 175,
+              "tool_calls_200": 162,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 7,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 0.9257,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 22,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 647192,
+              "tokens_out": 24973,
+              "usd_total": 0.224126,
+              "usd_per_appropriate_decision": 0.013184,
+              "wall_s_total": 176.34
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T3A-T": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.8636,
+              "n_correct": 19,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.7,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.8889,
+            "appropriate_abstention_cells": 8,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.1538,
+            "over_abstention_cells": 2,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0625,
+            "unsupported_rejection_cells": 1,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 144,
+              "tool_calls_200": 143,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 0.9931,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 368185,
+              "tokens_out": 12215,
+              "usd_total": 0.125117,
+              "usd_per_appropriate_decision": 0.006585,
+              "wall_s_total": 101.41
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.8636,
+              "n_correct": 19,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.7,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.8889,
+            "appropriate_abstention_cells": 8,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.1538,
+            "over_abstention_cells": 2,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0625,
+            "unsupported_rejection_cells": 1,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 144,
+              "tool_calls_200": 143,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 0.9931,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 368185,
+              "tokens_out": 12215,
+              "usd_total": 0.125117,
+              "usd_per_appropriate_decision": 0.006585,
+              "wall_s_total": 101.41
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            }
+          }
+        }
+      },
+      "pooled": {
+        "oracle": {
+          "decision_appropriateness": {
+            "rate": 0.5909,
+            "n_correct": 65,
+            "n_parseable": 110,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.525,
+              0.675
+            ]
+          },
+          "n_gold_need_evidence": 45,
+          "appropriate_abstention_rate": 0.9111,
+          "appropriate_abstention_cells": 41,
+          "n_gold_decisive_or_accept": 65,
+          "over_abstention_rate": 0.6308,
+          "over_abstention_cells": 41,
+          "n_gold_non_reject": 80,
+          "unsupported_rejection_rate": 0.05,
+          "unsupported_rejection_cells": 4,
+          "false_commit_accept_rate": 0.0,
+          "false_commit_accept_cells": 0
+        },
+        "condition": {
+          "decision_appropriateness": {
+            "rate": 0.7364,
+            "n_correct": 81,
+            "n_parseable": 110,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.6667,
+              0.7818
+            ]
+          },
+          "n_gold_need_evidence": 59,
+          "appropriate_abstention_rate": 0.9492,
+          "appropriate_abstention_cells": 56,
+          "n_gold_decisive_or_accept": 51,
+          "over_abstention_rate": 0.5098,
+          "over_abstention_cells": 26,
+          "n_gold_non_reject": 87,
+          "unsupported_rejection_rate": 0.0345,
+          "unsupported_rejection_cells": 3,
+          "false_commit_accept_rate": 0.0,
+          "false_commit_accept_cells": 0
+        }
+      },
+      "tool_success_all_active_cells": {
+        "tool_calls_total": 444,
+        "tool_calls_200": 430,
+        "tool_calls_403_strict_denied": 0,
+        "tool_calls_400_missing_reason": 7,
+        "tool_calls_5xx": 0,
+        "tool_success_rate_200_over_all_calls": 0.9685,
+        "cells_with_any_5xx": 0,
+        "cells_with_escalation_granted": 22,
+        "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+      }
+    },
+    "gpt-4.1-mini": {
+      "n_cells": 110,
+      "n_issues": 10,
+      "conditions": {
+        "T2D-T": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.2857,
+                0.5882
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 9,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 1.0,
+            "over_abstention_cells": 13,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 40989,
+              "tokens_out": 3463,
+              "usd_total": 0.021936,
+              "usd_per_appropriate_decision": 0.002437,
+              "wall_s_total": 38.25
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.9091,
+              "n_correct": 20,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.7826,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 20,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 20,
+            "n_gold_decisive_or_accept": 2,
+            "over_abstention_rate": 1.0,
+            "over_abstention_cells": 2,
+            "n_gold_non_reject": 20,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 40989,
+              "tokens_out": 3463,
+              "usd_total": 0.021936,
+              "usd_per_appropriate_decision": 0.001097,
+              "wall_s_total": 38.25
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.9091,
+              "n_correct": 20,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T2A-T": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.5455,
+              "n_correct": 12,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.3333,
+                0.7037
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.0,
+            "appropriate_abstention_cells": 0,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.0,
+            "over_abstention_cells": 0,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.125,
+            "unsupported_rejection_cells": 2,
+            "false_commit_accept_rate": 0.7778,
+            "false_commit_accept_cells": 7,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 37949,
+              "tokens_out": 2585,
+              "usd_total": 0.019316,
+              "usd_per_appropriate_decision": 0.00161,
+              "wall_s_total": 31.51
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.9545,
+              "n_correct": 21,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.8621,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 1,
+            "appropriate_abstention_rate": 0.0,
+            "appropriate_abstention_cells": 0,
+            "n_gold_decisive_or_accept": 21,
+            "over_abstention_rate": 0.0,
+            "over_abstention_cells": 0,
+            "n_gold_non_reject": 15,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 1.0,
+            "false_commit_accept_cells": 1,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 37949,
+              "tokens_out": 2585,
+              "usd_total": 0.019316,
+              "usd_per_appropriate_decision": 0.00092,
+              "wall_s_total": 31.51
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.0455,
+              "n_correct": 1,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T3D-Strict": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.7727,
+              "n_correct": 17,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.6364,
+                0.9048
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 9,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.3077,
+            "over_abstention_cells": 4,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 90,
+              "tool_calls_200": 90,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 1.0,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 115465,
+              "tokens_out": 4043,
+              "usd_total": 0.052655,
+              "usd_per_appropriate_decision": 0.003097,
+              "wall_s_total": 66.56
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.6818,
+              "n_correct": 15,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.48,
+                0.8824
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 20,
+            "appropriate_abstention_rate": 0.65,
+            "appropriate_abstention_cells": 13,
+            "n_gold_decisive_or_accept": 2,
+            "over_abstention_rate": 0.0,
+            "over_abstention_cells": 0,
+            "n_gold_non_reject": 20,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.35,
+            "false_commit_accept_cells": 7,
+            "tool_success": {
+              "tool_calls_total": 90,
+              "tool_calls_200": 90,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 1.0,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 115465,
+              "tokens_out": 4043,
+              "usd_total": 0.052655,
+              "usd_per_appropriate_decision": 0.00351,
+              "wall_s_total": 66.56
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.9091,
+              "n_correct": 20,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T3D-Escalate": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.7727,
+              "n_correct": 17,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.5652,
+                0.95
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.8889,
+            "appropriate_abstention_cells": 8,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.2308,
+            "over_abstention_cells": 3,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0625,
+            "unsupported_rejection_cells": 1,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 91,
+              "tool_calls_200": 91,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 1.0,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 12,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 230735,
+              "tokens_out": 4556,
+              "usd_total": 0.099585,
+              "usd_per_appropriate_decision": 0.005858,
+              "wall_s_total": 88.83
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.7727,
+              "n_correct": 17,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.5652,
+                0.95
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.8889,
+            "appropriate_abstention_cells": 8,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.2308,
+            "over_abstention_cells": 3,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0625,
+            "unsupported_rejection_cells": 1,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 91,
+              "tool_calls_200": 91,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 1.0,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 12,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 230735,
+              "tokens_out": 4556,
+              "usd_total": 0.099585,
+              "usd_per_appropriate_decision": 0.005858,
+              "wall_s_total": 88.83
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T3A-T": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.8636,
+              "n_correct": 19,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.72,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.7778,
+            "appropriate_abstention_cells": 7,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.0769,
+            "over_abstention_cells": 1,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.125,
+            "unsupported_rejection_cells": 2,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 92,
+              "tool_calls_200": 92,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 1.0,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 109009,
+              "tokens_out": 3994,
+              "usd_total": 0.049993,
+              "usd_per_appropriate_decision": 0.002631,
+              "wall_s_total": 62.24
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.8636,
+              "n_correct": 19,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.72,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.7778,
+            "appropriate_abstention_cells": 7,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.0769,
+            "over_abstention_cells": 1,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.125,
+            "unsupported_rejection_cells": 2,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 92,
+              "tool_calls_200": 92,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 1.0,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 109009,
+              "tokens_out": 3994,
+              "usd_total": 0.049993,
+              "usd_per_appropriate_decision": 0.002631,
+              "wall_s_total": 62.24
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            }
+          }
+        }
+      },
+      "pooled": {
+        "oracle": {
+          "decision_appropriateness": {
+            "rate": 0.6727,
+            "n_correct": 74,
+            "n_parseable": 110,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.59,
+              0.7429
+            ]
+          },
+          "n_gold_need_evidence": 45,
+          "appropriate_abstention_rate": 0.7333,
+          "appropriate_abstention_cells": 33,
+          "n_gold_decisive_or_accept": 65,
+          "over_abstention_rate": 0.3231,
+          "over_abstention_cells": 21,
+          "n_gold_non_reject": 80,
+          "unsupported_rejection_rate": 0.0625,
+          "unsupported_rejection_cells": 5,
+          "false_commit_accept_rate": 0.1556,
+          "false_commit_accept_cells": 7
+        },
+        "condition": {
+          "decision_appropriateness": {
+            "rate": 0.8364,
+            "n_correct": 92,
+            "n_parseable": 110,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.7727,
+              0.8952
+            ]
+          },
+          "n_gold_need_evidence": 59,
+          "appropriate_abstention_rate": 0.8136,
+          "appropriate_abstention_cells": 48,
+          "n_gold_decisive_or_accept": 51,
+          "over_abstention_rate": 0.1176,
+          "over_abstention_cells": 6,
+          "n_gold_non_reject": 87,
+          "unsupported_rejection_rate": 0.0345,
+          "unsupported_rejection_cells": 3,
+          "false_commit_accept_rate": 0.1356,
+          "false_commit_accept_cells": 8
+        }
+      },
+      "tool_success_all_active_cells": {
+        "tool_calls_total": 273,
+        "tool_calls_200": 273,
+        "tool_calls_403_strict_denied": 0,
+        "tool_calls_400_missing_reason": 0,
+        "tool_calls_5xx": 0,
+        "tool_success_rate_200_over_all_calls": 1.0,
+        "cells_with_any_5xx": 0,
+        "cells_with_escalation_granted": 12,
+        "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+      }
+    }
+  },
+  "paired_comparisons": [
+    {
+      "baseline": "deepseek-flash",
+      "candidate": "gpt-4.1-mini",
+      "oracle": {
+        "standard": "oracle",
+        "shared_cells": 110,
+        "shared_issues": 10,
+        "baseline_only_cells": 0,
+        "candidate_only_cells": 0,
+        "paired_set_complete": true,
+        "baseline_rate": 0.5909,
+        "candidate_rate": 0.6727,
+        "paired_delta_candidate_minus_baseline": 0.0818,
+        "delta_ci95_issue_cluster_seed7_n10000": [
+          -0.019,
+          0.1667
+        ],
+        "delta_ci_n_clusters": 10,
+        "candidate_correct_baseline_wrong": 24,
+        "baseline_correct_candidate_wrong": 15,
+        "mcnemar_exact_two_sided_p_descriptive": 0.1996,
+        "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+        "changed_pairs": [
+          {
+            "scenario": "contradictory",
+            "id": "glm5_500:sympy__sympy-18199",
+            "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-18199",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "contradictory",
+            "id": "glm5_500:sympy__sympy-18199",
+            "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+            "condition": "T3D-Escalate",
+            "instance_id": "sympy__sympy-18199",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "ACCEPT",
+            "gold": "REJECT",
+            "delta": -1
+          },
+          {
+            "scenario": "incomplete",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+            "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-17139",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "incomplete",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+            "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+            "condition": "T3A-T",
+            "instance_id": "sympy__sympy-17139",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "NEED_EVIDENCE",
+            "gold": "NEED_EVIDENCE",
+            "delta": 1
+          },
+          {
+            "scenario": "incomplete_decisive_bad",
+            "id": "glm5_500:sympy__sympy-13798",
+            "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-13798",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "incomplete_decisive_bad",
+            "id": "glm5_500:sympy__sympy-13798",
+            "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+            "condition": "T3D-Escalate",
+            "instance_id": "sympy__sympy-13798",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "incomplete_good",
+            "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+            "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-14531",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "incomplete_good",
+            "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+            "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+            "condition": "T3D-Escalate",
+            "instance_id": "sympy__sympy-14531",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "NEED_EVIDENCE",
+            "gold": "NEED_EVIDENCE",
+            "delta": 1
+          },
+          {
+            "scenario": "stale",
+            "id": "glm5_500:sympy__sympy-18211",
+            "served_artifact_id": "fix_stale_333b7506365b3c47",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-18211",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "stale_bad",
+            "id": "glm5_500:sympy__sympy-13798",
+            "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-13798",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "stale_bad",
+            "id": "glm5_500:sympy__sympy-13798",
+            "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+            "condition": "T3A-T",
+            "instance_id": "sympy__sympy-13798",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "valid",
+            "id": "glm5_500:sympy__sympy-16450",
+            "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-16450",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "valid",
+            "id": "glm5_500:sympy__sympy-16450",
+            "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-16450",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_decisive_bad",
+            "id": "glm5_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_decisive_bad_9e334c91c8d42c59",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_decisive_bad",
+            "id": "glm5_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_decisive_bad_9e334c91c8d42c59",
+            "condition": "T3D-Escalate",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "NEED_EVIDENCE",
+            "gold": "REJECT",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_decisive_bad",
+            "id": "qwen3_coder_30b_500:sympy__sympy-13091",
+            "served_artifact_id": "fix_w2_decisive_bad_24795537946f1e5f",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-13091",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_incomplete_good",
+            "id": "glm5_500:sympy__sympy-13091",
+            "served_artifact_id": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-13091",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_incomplete_good",
+            "id": "glm5_500:sympy__sympy-13091",
+            "served_artifact_id": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+            "condition": "T3D-Escalate",
+            "instance_id": "sympy__sympy-13091",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "NEED_EVIDENCE",
+            "gold": "NEED_EVIDENCE",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_stale",
+            "id": "glm5_500:sympy__sympy-12419",
+            "served_artifact_id": "fix_w2_stale_b76482e987d4785a",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12419",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_stale",
+            "id": "glm5_500:sympy__sympy-12481",
+            "served_artifact_id": "fix_w2_stale_bc0c972e8d4230d1",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12481",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_stale_bad",
+            "id": "glm5_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_stale_bad_9e334c91c8d42c59",
+            "condition": "T3A-T",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_stale_bad",
+            "id": "glm5_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_stale_bad_9e334c91c8d42c59",
+            "condition": "T3D-Escalate",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_stale_persists",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_stale_persists_394bf6648b9c0269",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_stale_persists",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_stale_persists_394bf6648b9c0269",
+            "condition": "T2D-T",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "NEED_EVIDENCE",
+            "gold": "REJECT",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_stale_persists",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_stale_persists_394bf6648b9c0269",
+            "condition": "T3A-T",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "glm5_500:sympy__sympy-12419",
+            "served_artifact_id": "fix_w2_valid_b76482e987d4785a",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12419",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "glm5_500:sympy__sympy-12419",
+            "served_artifact_id": "fix_w2_valid_b76482e987d4785a",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-12419",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "glm5_500:sympy__sympy-12481",
+            "served_artifact_id": "fix_w2_valid_bc0c972e8d4230d1",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12481",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "glm5_500:sympy__sympy-12481",
+            "served_artifact_id": "fix_w2_valid_bc0c972e8d4230d1",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-12481",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "glm5_500:sympy__sympy-13091",
+            "served_artifact_id": "fix_w2_valid_0be6fdf9dc8c5195",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-13091",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "glm5_500:sympy__sympy-13091",
+            "served_artifact_id": "fix_w2_valid_0be6fdf9dc8c5195",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-13091",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-12481",
+            "served_artifact_id": "fix_w2_valid_b1a23b437658386e",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12481",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-12481",
+            "served_artifact_id": "fix_w2_valid_b1a23b437658386e",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-12481",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "qwen3_coder_30b_500:sympy__sympy-12419",
+            "served_artifact_id": "fix_w2_valid_bc239ce171d8df10",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12419",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "qwen3_coder_30b_500:sympy__sympy-12419",
+            "served_artifact_id": "fix_w2_valid_bc239ce171d8df10",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-12419",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "qwen3_coder_30b_500:sympy__sympy-12481",
+            "served_artifact_id": "fix_w2_valid_84b5a326d0aa7143",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12481",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "wrong_patch",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+            "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+            "condition": "T2D-T",
+            "instance_id": "sympy__sympy-18211",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "NEED_EVIDENCE",
+            "gold": "REJECT",
+            "delta": -1
+          },
+          {
+            "scenario": "wrong_patch",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+            "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-18211",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "wrong_patch_good",
+            "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+            "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-14531",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          }
+        ]
+      },
+      "condition": {
+        "standard": "condition",
+        "shared_cells": 110,
+        "shared_issues": 10,
+        "baseline_only_cells": 0,
+        "candidate_only_cells": 0,
+        "paired_set_complete": true,
+        "baseline_rate": 0.7364,
+        "candidate_rate": 0.8364,
+        "paired_delta_candidate_minus_baseline": 0.1,
+        "delta_ci95_issue_cluster_seed7_n10000": [
+          0.0261,
+          0.181
+        ],
+        "delta_ci_n_clusters": 10,
+        "candidate_correct_baseline_wrong": 26,
+        "baseline_correct_candidate_wrong": 15,
+        "mcnemar_exact_two_sided_p_descriptive": 0.1173,
+        "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+        "changed_pairs": [
+          {
+            "scenario": "contradictory",
+            "id": "glm5_500:sympy__sympy-18199",
+            "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-18199",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "contradictory",
+            "id": "glm5_500:sympy__sympy-18199",
+            "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+            "condition": "T3D-Escalate",
+            "instance_id": "sympy__sympy-18199",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "ACCEPT",
+            "gold": "REJECT",
+            "delta": -1
+          },
+          {
+            "scenario": "contradictory",
+            "id": "glm5_500:sympy__sympy-18199",
+            "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-18199",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "incomplete",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+            "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-17139",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "incomplete",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+            "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+            "condition": "T3A-T",
+            "instance_id": "sympy__sympy-17139",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "NEED_EVIDENCE",
+            "gold": "NEED_EVIDENCE",
+            "delta": 1
+          },
+          {
+            "scenario": "incomplete_decisive_bad",
+            "id": "glm5_500:sympy__sympy-13798",
+            "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-13798",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "incomplete_decisive_bad",
+            "id": "glm5_500:sympy__sympy-13798",
+            "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+            "condition": "T3D-Escalate",
+            "instance_id": "sympy__sympy-13798",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "incomplete_good",
+            "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+            "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-14531",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "incomplete_good",
+            "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+            "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+            "condition": "T3D-Escalate",
+            "instance_id": "sympy__sympy-14531",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "NEED_EVIDENCE",
+            "gold": "NEED_EVIDENCE",
+            "delta": 1
+          },
+          {
+            "scenario": "stale",
+            "id": "glm5_500:sympy__sympy-18211",
+            "served_artifact_id": "fix_stale_333b7506365b3c47",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-18211",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "stale_bad",
+            "id": "glm5_500:sympy__sympy-13798",
+            "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-13798",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "stale_bad",
+            "id": "glm5_500:sympy__sympy-13798",
+            "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+            "condition": "T3A-T",
+            "instance_id": "sympy__sympy-13798",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "valid",
+            "id": "glm5_500:sympy__sympy-16450",
+            "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-16450",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "valid",
+            "id": "glm5_500:sympy__sympy-16450",
+            "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-16450",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_decisive_bad",
+            "id": "glm5_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_decisive_bad_9e334c91c8d42c59",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_decisive_bad",
+            "id": "glm5_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_decisive_bad_9e334c91c8d42c59",
+            "condition": "T3D-Escalate",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "NEED_EVIDENCE",
+            "gold": "REJECT",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_decisive_bad",
+            "id": "qwen3_coder_30b_500:sympy__sympy-13091",
+            "served_artifact_id": "fix_w2_decisive_bad_24795537946f1e5f",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-13091",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_incomplete_good",
+            "id": "glm5_500:sympy__sympy-13091",
+            "served_artifact_id": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-13091",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_incomplete_good",
+            "id": "glm5_500:sympy__sympy-13091",
+            "served_artifact_id": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+            "condition": "T3D-Escalate",
+            "instance_id": "sympy__sympy-13091",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "NEED_EVIDENCE",
+            "gold": "NEED_EVIDENCE",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_stale",
+            "id": "glm5_500:sympy__sympy-12419",
+            "served_artifact_id": "fix_w2_stale_b76482e987d4785a",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12419",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_stale",
+            "id": "glm5_500:sympy__sympy-12481",
+            "served_artifact_id": "fix_w2_stale_bc0c972e8d4230d1",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12481",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_stale_bad",
+            "id": "glm5_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_stale_bad_9e334c91c8d42c59",
+            "condition": "T3A-T",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_stale_bad",
+            "id": "glm5_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_stale_bad_9e334c91c8d42c59",
+            "condition": "T3D-Escalate",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_stale_persists",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_stale_persists_394bf6648b9c0269",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_stale_persists",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_stale_persists_394bf6648b9c0269",
+            "condition": "T2D-T",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "NEED_EVIDENCE",
+            "gold": "REJECT",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_stale_persists",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+            "served_artifact_id": "fix_w2_stale_persists_394bf6648b9c0269",
+            "condition": "T3A-T",
+            "instance_id": "sympy__sympy-12489",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "glm5_500:sympy__sympy-12419",
+            "served_artifact_id": "fix_w2_valid_b76482e987d4785a",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12419",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "glm5_500:sympy__sympy-12419",
+            "served_artifact_id": "fix_w2_valid_b76482e987d4785a",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-12419",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "glm5_500:sympy__sympy-12481",
+            "served_artifact_id": "fix_w2_valid_bc0c972e8d4230d1",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12481",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "glm5_500:sympy__sympy-12481",
+            "served_artifact_id": "fix_w2_valid_bc0c972e8d4230d1",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-12481",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "glm5_500:sympy__sympy-13091",
+            "served_artifact_id": "fix_w2_valid_0be6fdf9dc8c5195",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-13091",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "glm5_500:sympy__sympy-13091",
+            "served_artifact_id": "fix_w2_valid_0be6fdf9dc8c5195",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-13091",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-12481",
+            "served_artifact_id": "fix_w2_valid_b1a23b437658386e",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12481",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-12481",
+            "served_artifact_id": "fix_w2_valid_b1a23b437658386e",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-12481",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "qwen3_coder_30b_500:sympy__sympy-12419",
+            "served_artifact_id": "fix_w2_valid_bc239ce171d8df10",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12419",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "qwen3_coder_30b_500:sympy__sympy-12419",
+            "served_artifact_id": "fix_w2_valid_bc239ce171d8df10",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-12419",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "NEED_EVIDENCE",
+            "delta": -1
+          },
+          {
+            "scenario": "w2_valid",
+            "id": "qwen3_coder_30b_500:sympy__sympy-12481",
+            "served_artifact_id": "fix_w2_valid_84b5a326d0aa7143",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-12481",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "wrong_patch",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+            "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-18211",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          },
+          {
+            "scenario": "wrong_patch",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+            "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+            "condition": "T2D-T",
+            "instance_id": "sympy__sympy-18211",
+            "baseline_correct": true,
+            "candidate_correct": false,
+            "baseline_parsed": "REJECT",
+            "candidate_parsed": "NEED_EVIDENCE",
+            "gold": "REJECT",
+            "delta": -1
+          },
+          {
+            "scenario": "wrong_patch",
+            "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+            "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+            "condition": "T3D-Strict",
+            "instance_id": "sympy__sympy-18211",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "REJECT",
+            "gold": "REJECT",
+            "delta": 1
+          },
+          {
+            "scenario": "wrong_patch_good",
+            "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+            "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+            "condition": "T2A-T",
+            "instance_id": "sympy__sympy-14531",
+            "baseline_correct": false,
+            "candidate_correct": true,
+            "baseline_parsed": "NEED_EVIDENCE",
+            "candidate_parsed": "ACCEPT",
+            "gold": "ACCEPT",
+            "delta": 1
+          }
+        ]
+      },
+      "per_condition": {
+        "T2D-T": {
+          "oracle": {
+            "standard": "oracle",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.5,
+            "candidate_rate": 0.4091,
+            "paired_delta_candidate_minus_baseline": -0.0909,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              -0.2105,
+              0.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 0,
+            "baseline_correct_candidate_wrong": 2,
+            "mcnemar_exact_two_sided_p_descriptive": 0.5,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": [
+              {
+                "scenario": "w2_stale_persists",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_stale_persists_394bf6648b9c0269",
+                "condition": "T2D-T",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "NEED_EVIDENCE",
+                "gold": "REJECT",
+                "delta": -1
+              },
+              {
+                "scenario": "wrong_patch",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+                "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+                "condition": "T2D-T",
+                "instance_id": "sympy__sympy-18211",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "NEED_EVIDENCE",
+                "gold": "REJECT",
+                "delta": -1
+              }
+            ]
+          },
+          "condition": {
+            "standard": "condition",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 1.0,
+            "candidate_rate": 0.9091,
+            "paired_delta_candidate_minus_baseline": -0.0909,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              -0.2105,
+              0.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 0,
+            "baseline_correct_candidate_wrong": 2,
+            "mcnemar_exact_two_sided_p_descriptive": 0.5,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": [
+              {
+                "scenario": "w2_stale_persists",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_stale_persists_394bf6648b9c0269",
+                "condition": "T2D-T",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "NEED_EVIDENCE",
+                "gold": "REJECT",
+                "delta": -1
+              },
+              {
+                "scenario": "wrong_patch",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+                "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+                "condition": "T2D-T",
+                "instance_id": "sympy__sympy-18211",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "NEED_EVIDENCE",
+                "gold": "REJECT",
+                "delta": -1
+              }
+            ]
+          }
+        },
+        "T2A-T": {
+          "oracle": {
+            "standard": "oracle",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.3636,
+            "candidate_rate": 0.5455,
+            "paired_delta_candidate_minus_baseline": 0.1818,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              -0.2222,
+              0.4783
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 12,
+            "baseline_correct_candidate_wrong": 8,
+            "mcnemar_exact_two_sided_p_descriptive": 0.5034,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": [
+              {
+                "scenario": "contradictory",
+                "id": "glm5_500:sympy__sympy-18199",
+                "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-18199",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              },
+              {
+                "scenario": "incomplete",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+                "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-17139",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "incomplete_decisive_bad",
+                "id": "glm5_500:sympy__sympy-13798",
+                "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-13798",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              },
+              {
+                "scenario": "incomplete_good",
+                "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+                "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-14531",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "stale",
+                "id": "glm5_500:sympy__sympy-18211",
+                "served_artifact_id": "fix_stale_333b7506365b3c47",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-18211",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "stale_bad",
+                "id": "glm5_500:sympy__sympy-13798",
+                "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-13798",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "valid",
+                "id": "glm5_500:sympy__sympy-16450",
+                "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-16450",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_decisive_bad",
+                "id": "glm5_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_decisive_bad_9e334c91c8d42c59",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_decisive_bad",
+                "id": "qwen3_coder_30b_500:sympy__sympy-13091",
+                "served_artifact_id": "fix_w2_decisive_bad_24795537946f1e5f",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-13091",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_incomplete_good",
+                "id": "glm5_500:sympy__sympy-13091",
+                "served_artifact_id": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-13091",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_stale",
+                "id": "glm5_500:sympy__sympy-12419",
+                "served_artifact_id": "fix_w2_stale_b76482e987d4785a",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12419",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_stale",
+                "id": "glm5_500:sympy__sympy-12481",
+                "served_artifact_id": "fix_w2_stale_bc0c972e8d4230d1",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12481",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_stale_persists",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_stale_persists_394bf6648b9c0269",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "glm5_500:sympy__sympy-12419",
+                "served_artifact_id": "fix_w2_valid_b76482e987d4785a",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12419",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "glm5_500:sympy__sympy-12481",
+                "served_artifact_id": "fix_w2_valid_bc0c972e8d4230d1",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12481",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "glm5_500:sympy__sympy-13091",
+                "served_artifact_id": "fix_w2_valid_0be6fdf9dc8c5195",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-13091",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-12481",
+                "served_artifact_id": "fix_w2_valid_b1a23b437658386e",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12481",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "qwen3_coder_30b_500:sympy__sympy-12419",
+                "served_artifact_id": "fix_w2_valid_bc239ce171d8df10",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12419",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "qwen3_coder_30b_500:sympy__sympy-12481",
+                "served_artifact_id": "fix_w2_valid_84b5a326d0aa7143",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12481",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "wrong_patch_good",
+                "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+                "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-14531",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              }
+            ]
+          },
+          "condition": {
+            "standard": "condition",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.0909,
+            "candidate_rate": 0.9545,
+            "paired_delta_candidate_minus_baseline": 0.8636,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              0.6818,
+              1.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 20,
+            "baseline_correct_candidate_wrong": 1,
+            "mcnemar_exact_two_sided_p_descriptive": 0.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": [
+              {
+                "scenario": "contradictory",
+                "id": "glm5_500:sympy__sympy-18199",
+                "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-18199",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              },
+              {
+                "scenario": "incomplete",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+                "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-17139",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "incomplete_decisive_bad",
+                "id": "glm5_500:sympy__sympy-13798",
+                "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-13798",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              },
+              {
+                "scenario": "incomplete_good",
+                "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+                "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-14531",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "stale",
+                "id": "glm5_500:sympy__sympy-18211",
+                "served_artifact_id": "fix_stale_333b7506365b3c47",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-18211",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "stale_bad",
+                "id": "glm5_500:sympy__sympy-13798",
+                "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-13798",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              },
+              {
+                "scenario": "valid",
+                "id": "glm5_500:sympy__sympy-16450",
+                "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-16450",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_decisive_bad",
+                "id": "glm5_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_decisive_bad_9e334c91c8d42c59",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_decisive_bad",
+                "id": "qwen3_coder_30b_500:sympy__sympy-13091",
+                "served_artifact_id": "fix_w2_decisive_bad_24795537946f1e5f",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-13091",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_incomplete_good",
+                "id": "glm5_500:sympy__sympy-13091",
+                "served_artifact_id": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-13091",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_stale",
+                "id": "glm5_500:sympy__sympy-12419",
+                "served_artifact_id": "fix_w2_stale_b76482e987d4785a",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12419",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_stale",
+                "id": "glm5_500:sympy__sympy-12481",
+                "served_artifact_id": "fix_w2_stale_bc0c972e8d4230d1",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12481",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_stale_persists",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_stale_persists_394bf6648b9c0269",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "glm5_500:sympy__sympy-12419",
+                "served_artifact_id": "fix_w2_valid_b76482e987d4785a",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12419",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "glm5_500:sympy__sympy-12481",
+                "served_artifact_id": "fix_w2_valid_bc0c972e8d4230d1",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12481",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "glm5_500:sympy__sympy-13091",
+                "served_artifact_id": "fix_w2_valid_0be6fdf9dc8c5195",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-13091",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-12481",
+                "served_artifact_id": "fix_w2_valid_b1a23b437658386e",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12481",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "qwen3_coder_30b_500:sympy__sympy-12419",
+                "served_artifact_id": "fix_w2_valid_bc239ce171d8df10",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12419",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "qwen3_coder_30b_500:sympy__sympy-12481",
+                "served_artifact_id": "fix_w2_valid_84b5a326d0aa7143",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-12481",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "wrong_patch",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+                "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-18211",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "wrong_patch_good",
+                "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+                "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+                "condition": "T2A-T",
+                "instance_id": "sympy__sympy-14531",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              }
+            ]
+          }
+        },
+        "T3D-Strict": {
+          "oracle": {
+            "standard": "oracle",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.4545,
+            "candidate_rate": 0.7727,
+            "paired_delta_candidate_minus_baseline": 0.3182,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              0.125,
+              0.5
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 7,
+            "baseline_correct_candidate_wrong": 0,
+            "mcnemar_exact_two_sided_p_descriptive": 0.0156,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": [
+              {
+                "scenario": "valid",
+                "id": "glm5_500:sympy__sympy-16450",
+                "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-16450",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "glm5_500:sympy__sympy-12419",
+                "served_artifact_id": "fix_w2_valid_b76482e987d4785a",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-12419",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "glm5_500:sympy__sympy-12481",
+                "served_artifact_id": "fix_w2_valid_bc0c972e8d4230d1",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-12481",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "glm5_500:sympy__sympy-13091",
+                "served_artifact_id": "fix_w2_valid_0be6fdf9dc8c5195",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-13091",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-12481",
+                "served_artifact_id": "fix_w2_valid_b1a23b437658386e",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-12481",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "qwen3_coder_30b_500:sympy__sympy-12419",
+                "served_artifact_id": "fix_w2_valid_bc239ce171d8df10",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-12419",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "ACCEPT",
+                "delta": 1
+              },
+              {
+                "scenario": "wrong_patch",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+                "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-18211",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              }
+            ]
+          },
+          "condition": {
+            "standard": "condition",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.9545,
+            "candidate_rate": 0.6818,
+            "paired_delta_candidate_minus_baseline": -0.2727,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              -0.5,
+              0.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 1,
+            "baseline_correct_candidate_wrong": 7,
+            "mcnemar_exact_two_sided_p_descriptive": 0.0703,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": [
+              {
+                "scenario": "contradictory",
+                "id": "glm5_500:sympy__sympy-18199",
+                "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-18199",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "valid",
+                "id": "glm5_500:sympy__sympy-16450",
+                "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-16450",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "glm5_500:sympy__sympy-12419",
+                "served_artifact_id": "fix_w2_valid_b76482e987d4785a",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-12419",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "glm5_500:sympy__sympy-12481",
+                "served_artifact_id": "fix_w2_valid_bc0c972e8d4230d1",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-12481",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "glm5_500:sympy__sympy-13091",
+                "served_artifact_id": "fix_w2_valid_0be6fdf9dc8c5195",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-13091",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-12481",
+                "served_artifact_id": "fix_w2_valid_b1a23b437658386e",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-12481",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_valid",
+                "id": "qwen3_coder_30b_500:sympy__sympy-12419",
+                "served_artifact_id": "fix_w2_valid_bc239ce171d8df10",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-12419",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "ACCEPT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "wrong_patch",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+                "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+                "condition": "T3D-Strict",
+                "instance_id": "sympy__sympy-18211",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              }
+            ]
+          }
+        },
+        "T3D-Escalate": {
+          "oracle": {
+            "standard": "oracle",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.7727,
+            "candidate_rate": 0.7727,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              -0.2692,
+              0.2381
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 3,
+            "baseline_correct_candidate_wrong": 3,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": [
+              {
+                "scenario": "contradictory",
+                "id": "glm5_500:sympy__sympy-18199",
+                "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+                "condition": "T3D-Escalate",
+                "instance_id": "sympy__sympy-18199",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "ACCEPT",
+                "gold": "REJECT",
+                "delta": -1
+              },
+              {
+                "scenario": "incomplete_decisive_bad",
+                "id": "glm5_500:sympy__sympy-13798",
+                "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+                "condition": "T3D-Escalate",
+                "instance_id": "sympy__sympy-13798",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              },
+              {
+                "scenario": "incomplete_good",
+                "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+                "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+                "condition": "T3D-Escalate",
+                "instance_id": "sympy__sympy-14531",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "NEED_EVIDENCE",
+                "gold": "NEED_EVIDENCE",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_decisive_bad",
+                "id": "glm5_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_decisive_bad_9e334c91c8d42c59",
+                "condition": "T3D-Escalate",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "NEED_EVIDENCE",
+                "gold": "REJECT",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_incomplete_good",
+                "id": "glm5_500:sympy__sympy-13091",
+                "served_artifact_id": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+                "condition": "T3D-Escalate",
+                "instance_id": "sympy__sympy-13091",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "NEED_EVIDENCE",
+                "gold": "NEED_EVIDENCE",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_stale_bad",
+                "id": "glm5_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_stale_bad_9e334c91c8d42c59",
+                "condition": "T3D-Escalate",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              }
+            ]
+          },
+          "condition": {
+            "standard": "condition",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.7727,
+            "candidate_rate": 0.7727,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              -0.2692,
+              0.2381
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 3,
+            "baseline_correct_candidate_wrong": 3,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": [
+              {
+                "scenario": "contradictory",
+                "id": "glm5_500:sympy__sympy-18199",
+                "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+                "condition": "T3D-Escalate",
+                "instance_id": "sympy__sympy-18199",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "ACCEPT",
+                "gold": "REJECT",
+                "delta": -1
+              },
+              {
+                "scenario": "incomplete_decisive_bad",
+                "id": "glm5_500:sympy__sympy-13798",
+                "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+                "condition": "T3D-Escalate",
+                "instance_id": "sympy__sympy-13798",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              },
+              {
+                "scenario": "incomplete_good",
+                "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+                "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+                "condition": "T3D-Escalate",
+                "instance_id": "sympy__sympy-14531",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "NEED_EVIDENCE",
+                "gold": "NEED_EVIDENCE",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_decisive_bad",
+                "id": "glm5_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_decisive_bad_9e334c91c8d42c59",
+                "condition": "T3D-Escalate",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "NEED_EVIDENCE",
+                "gold": "REJECT",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_incomplete_good",
+                "id": "glm5_500:sympy__sympy-13091",
+                "served_artifact_id": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+                "condition": "T3D-Escalate",
+                "instance_id": "sympy__sympy-13091",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "NEED_EVIDENCE",
+                "gold": "NEED_EVIDENCE",
+                "delta": 1
+              },
+              {
+                "scenario": "w2_stale_bad",
+                "id": "glm5_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_stale_bad_9e334c91c8d42c59",
+                "condition": "T3D-Escalate",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              }
+            ]
+          }
+        },
+        "T3A-T": {
+          "oracle": {
+            "standard": "oracle",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.8636,
+            "candidate_rate": 0.8636,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              -0.125,
+              0.15
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 2,
+            "baseline_correct_candidate_wrong": 2,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": [
+              {
+                "scenario": "incomplete",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+                "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+                "condition": "T3A-T",
+                "instance_id": "sympy__sympy-17139",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "NEED_EVIDENCE",
+                "gold": "NEED_EVIDENCE",
+                "delta": 1
+              },
+              {
+                "scenario": "stale_bad",
+                "id": "glm5_500:sympy__sympy-13798",
+                "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+                "condition": "T3A-T",
+                "instance_id": "sympy__sympy-13798",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_stale_bad",
+                "id": "glm5_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_stale_bad_9e334c91c8d42c59",
+                "condition": "T3A-T",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_stale_persists",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_stale_persists_394bf6648b9c0269",
+                "condition": "T3A-T",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              }
+            ]
+          },
+          "condition": {
+            "standard": "condition",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.8636,
+            "candidate_rate": 0.8636,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              -0.125,
+              0.15
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 2,
+            "baseline_correct_candidate_wrong": 2,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": [
+              {
+                "scenario": "incomplete",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+                "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+                "condition": "T3A-T",
+                "instance_id": "sympy__sympy-17139",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "REJECT",
+                "candidate_parsed": "NEED_EVIDENCE",
+                "gold": "NEED_EVIDENCE",
+                "delta": 1
+              },
+              {
+                "scenario": "stale_bad",
+                "id": "glm5_500:sympy__sympy-13798",
+                "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+                "condition": "T3A-T",
+                "instance_id": "sympy__sympy-13798",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_stale_bad",
+                "id": "glm5_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_stale_bad_9e334c91c8d42c59",
+                "condition": "T3A-T",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": true,
+                "candidate_correct": false,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "NEED_EVIDENCE",
+                "delta": -1
+              },
+              {
+                "scenario": "w2_stale_persists",
+                "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+                "served_artifact_id": "fix_w2_stale_persists_394bf6648b9c0269",
+                "condition": "T3A-T",
+                "instance_id": "sympy__sympy-12489",
+                "baseline_correct": false,
+                "candidate_correct": true,
+                "baseline_parsed": "NEED_EVIDENCE",
+                "candidate_parsed": "REJECT",
+                "gold": "REJECT",
+                "delta": 1
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

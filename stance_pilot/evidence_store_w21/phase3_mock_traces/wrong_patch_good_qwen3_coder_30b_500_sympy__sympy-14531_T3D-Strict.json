@@ -1,0 +1,65 @@
+{
+  "cell": "wrong_patch_good:qwen3_coder_30b_500:sympy__sympy-14531:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "968b05c2bf3a782d05fb816e",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_244e7c27b638a272\", \"base_commit\": \"205da797006360fc629110937e39a19c9561313e\", \"finished_at\": \"2026-10-19T05:54:02+00:00\", \"instance_id\": \"sympy__sympy-14531\", \"log_digests\": {\"symptom\": \"fa204a6425cb30d9f1f5c0500f9dfe0ef1a59fb9c501fcbc43b0d600eb4d14ba\"}, \"pass_to_pass_baseline\": {\"test_Abs\": \"PASSED\", \"test_AccumBounds\": \"PASSED\", \"test_Add\": \"PASSED\", \"test_CRootOf\": \"PASSED\", \"test_Catalan\": \"PASSED\", \"test_Complement\": \"PASSED\", \"test_ComplexInfinity\": \"PASSED\", \"test_Derivative\": \"PASSED\", \"test_Dict\": \"PASSED\", \"test_Dummy\": \"PASSED\", \"test_Equivalent\": \"PASSED\", \"test_EulerGamma\": \"PASSED\", \"test_Exp\": \"PASSED\", \"test_FiniteSet\": \"PASSED\", \"test_Float\": \"PASSED\", \"test_FracElement\": \"PASSED\", \"test_FracField\": \"PASSED\", \"test_Function\": \"PASSED\", \"test_Geometry\": \"PASSED\", \"test_GoldenRatio\": \"PASSED\", \"test_GroebnerBasis\": \"PASSED\", \"test_ImaginaryUnit\": \"PASSED\", \"test_Infinity\": \"PASSED\", \"test_Integer\": \"PASSED\", \"test_Integral\": \"PASSED\", \"test_Interval\": \"PASSED\", \"test_Lambda\": \"PASSED\", \"test_Limit\": \"PASSED\", \"test_MatMul_MatAdd\": \"PASSED\", \"test_MatrixElement_printing\": \"PASSED\", \"test_MatrixSlice\": \"PASSED\", \"test_Matrix_str\": \"PAS"
+    },
+    {
+      "turn": 1,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": false, \"linked\": false, \"record_base_commit\": \"205da797006360fc629110937e39a19c9561313e\", \"record_patch_sha256\": \"235a157f08a9b4bb6d71227feab40c620a8602dd796add4b024d8df2e912b8da\"}"
+    },
+    {
+      "turn": 2,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": \"92ed82cae02b357c02f00dd304359f8123644770\", \"expected_run_tree\": \"5f7b653e0d7901e749e805ac57b0c0726d868883\", \"artifact_started_at\": \"2026-10-19T05:53:13+00:00\", \"attestation_built_at\": \"2026-10-20T05:36:54+00:00\"}"
+    },
+    {
+      "turn": 3,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 2, \"executed\": 2, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 84, \"executed\": 84, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 4,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: got 'Eq(x, 1/2)' wanted substring 'Eq(x, S(1)/2)'\nFAIL: got 'Limit(x, x, 1/2)' wanted substring 'Limit(x, x, S(1)/2)'\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Mapping, defaultdict\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import defaultdict, Iterable\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  class OrderedSet(collections.MutableSet):\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarnin"
+    },
+    {
+      "turn": 5,
+      "tool": "get_run_log",
+      "args": {
+        "name": "f2p"
+      },
+      "http_status": 403,
+      "result_preview": "[http_status=403] {\"error\": \"acceptance logs are disabled under the strict evidence policy\"}"
+    },
+    {
+      "turn": 6,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    }
+  ],
+  "final_answer": "{\"decision\": \"NEED_EVIDENCE\", \"reason\": \"evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established\", \"evidence_mismatch\": true, \"missing_evidence\": \"linked/fresh applicability\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

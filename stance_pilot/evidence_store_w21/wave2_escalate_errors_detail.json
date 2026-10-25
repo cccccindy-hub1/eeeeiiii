@@ -1,0 +1,471 @@
+[
+ {
+  "scenario": "wrong_patch",
+  "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+  "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+  "oracle_gold": "REJECT",
+  "condition_gold": "REJECT",
+  "oracle_basis": "issue symptom still reproduces post-patch",
+  "pred": "NEED_EVIDENCE",
+  "kind": "over_abstain",
+  "reason": "```json\n{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact cannot be tied to this patch or its current tree, so none of its outcomes (including the two FAILED entries in the acceptance log) are applicable grounds for REJECT, and its success signals are equally unusable for ACCEPT. verify_artifact_linkage reports linked=false with patch_sha256_match=false (record a67f41ae… vs the patch under review",
+  "missing_evidence": "",
+  "tool_verdicts": {
+   "linkage": false,
+   "freshness": false,
+   "coverage": true,
+   "consistency": "consistent",
+   "symptom_persists": false
+  },
+  "saw_linked_false": true,
+  "saw_fresh_false": true,
+  "saw_coverage_incomplete": false,
+  "saw_contradicted": false,
+  "escalation_requested": [
+   "consistency",
+   "log",
+   "log"
+  ],
+  "escalation_granted": [
+   "consistency",
+   "log",
+   "log"
+  ],
+  "escalation_denied": [],
+  "escalation_reasons": [
+   "To determine whether the author's claim that the fix is fully correct and all relevant tests pass is contradicted by the recorded acceptance/regression outcomes, since the static record withholds those verdicts and the artifact is unlinked/stale.",
+   "To check whether the single declared acceptance (FAIL_TO_PASS) test actually passes for this patch, since the static record withholds outcomes and I must decide between ACCEPT and REJECT.",
+   "To check whether any of the 54 scoped regression (PASS_TO_PASS) checks fail, which would be decisive grounds for REJECT."
+  ],
+  "tool_calls": 7,
+  "model_calls": 4,
+  "tool_trace_tools": [
+   [
+    0,
+    "verify_artifact_linkage",
+    200
+   ],
+   [
+    0,
+    "check_evidence_freshness",
+    200
+   ],
+   [
+    0,
+    "check_test_coverage",
+    200
+   ],
+   [
+    0,
+    "get_run_log",
+    200
+   ],
+   [
+    1,
+    "check_claim_consistency",
+    200
+   ],
+   [
+    2,
+    "get_run_log",
+    200
+   ],
+   [
+    2,
+    "get_run_log",
+    200
+   ]
+  ]
+ },
+ {
+  "scenario": "incomplete_good",
+  "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+  "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+  "oracle_gold": "NEED_EVIDENCE",
+  "condition_gold": "NEED_EVIDENCE",
+  "oracle_basis": "declared check set not fully executed",
+  "pred": "REJECT",
+  "kind": "unsupported_reject",
+  "reason": "The f2p log itself is the maintainer acceptance run for this patch's tree, and it contains a decisive failure: `test_python_functions_conjugates` FAILED (the patch's `_print_Relational` change now emits `a = Symbol('a')...` assignments, breaking the expected `_     _\\na - I*b` output). This is a credible, applicable failure on the linked, fresh tree.\n\n{\"decision\":\"REJECT\",\"reason\":\"Evidence is lin",
+  "missing_evidence": "",
+  "tool_verdicts": {
+   "linkage": true,
+   "freshness": true,
+   "coverage": false,
+   "consistency": "consistent",
+   "symptom_persists": false
+  },
+  "saw_linked_false": false,
+  "saw_fresh_false": false,
+  "saw_coverage_incomplete": true,
+  "saw_contradicted": false,
+  "escalation_requested": [
+   "log",
+   "log",
+   "log"
+  ],
+  "escalation_granted": [
+   "log",
+   "log"
+  ],
+  "escalation_denied": [
+   "consistency:missing_reason",
+   "log"
+  ],
+  "escalation_reasons": [
+   "Coverage shows only 1 of 2 declared acceptance tests executed (test_Rational missing) and 0 of 84 scoped regression checks executed; need the acceptance verdicts to determine whether the patch resolves the issue without failing acceptance checks.",
+   "0 of 84 scoped regression checks were executed per coverage report; need p2p verdicts to determine whether the patch introduces a scoped regression.",
+   "Need baseline verdicts to confirm whether test_python_functions_conjugates passed before the patch, establishing that the observed failure is a regression introduced by this patch rather than a pre-existing failure."
+  ],
+  "tool_calls": 8,
+  "model_calls": 4,
+  "tool_trace_tools": [
+   [
+    0,
+    "verify_artifact_linkage",
+    200
+   ],
+   [
+    0,
+    "check_evidence_freshness",
+    200
+   ],
+   [
+    0,
+    "check_test_coverage",
+    200
+   ],
+   [
+    0,
+    "get_run_log",
+    200
+   ],
+   [
+    0,
+    "check_claim_consistency",
+    400
+   ],
+   [
+    1,
+    "get_run_log",
+    200
+   ],
+   [
+    1,
+    "get_run_log",
+    200
+   ],
+   [
+    2,
+    "get_run_log",
+    404
+   ]
+  ]
+ },
+ {
+  "scenario": "incomplete_decisive_bad",
+  "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+  "id": "glm5_500:sympy__sympy-13798",
+  "oracle_gold": "REJECT",
+  "condition_gold": "REJECT",
+  "oracle_basis": "1 executed declared check(s) failed on linked, fresh evidence",
+  "pred": "NEED_EVIDENCE",
+  "kind": "over_abstain",
+  "reason": "```json\n{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage and freshness are intact (base_commit 7121bdf1 and patch_sha256 ba86753e match; run_tree de834347 equals the expected tree), and the issue symptom is genuinely resolved: the pre-patch probe raised KeyError: '\\\\\\\\,' and the post-patch probe returns '3\\\\\\\\,x^{2}\\\\\\\\,y'. The declared acceptance test test_latex_mul_symbol also PASSED in the f2p log",
+  "missing_evidence": "",
+  "tool_verdicts": {
+   "linkage": true,
+   "freshness": true,
+   "coverage": false,
+   "consistency": "contradicted",
+   "symptom_persists": false
+  },
+  "saw_linked_false": false,
+  "saw_fresh_false": false,
+  "saw_coverage_incomplete": true,
+  "saw_contradicted": true,
+  "escalation_requested": [
+   "consistency",
+   "log",
+   "log",
+   "log",
+   "log",
+   "consistency"
+  ],
+  "escalation_granted": [
+   "consistency",
+   "log",
+   "log",
+   "log",
+   "consistency"
+  ],
+  "escalation_denied": [
+   "log"
+  ],
+  "escalation_reasons": [
+   "The author claims \"all relevant tests pass,\" but the diagnostic record shows 0 of 102 scoped regression checks executed, so I need the acceptance/regression outcomes to determine whether the claim is consistent and whether any scoped regression is introduced by this patch.",
+   "The claim-consistency check returned \"contradicted\"; I need the acceptance-test verdict to determine whether the declared FAIL_TO_PASS check actually fails for this patch, which decides ACCEPT vs REJECT.",
+   "The claim-consistency check returned \"contradicted\"; I need the scoped regression verdicts to identify whether a specific scoped regression is introduced by this patch, which decides ACCEPT vs REJECT.",
+   "The f2p log shows test_latex_basic, test_latex_Float, and test_latex_symbols_failing FAILED; I need the pre-patch baseline verdicts to determine whether these failures are pre-existing/environmental rather than introduced by this patch, which decides REJECT vs NEED_EVIDENCE.",
+   "The prior f2p read was truncated before the traceback/assertion details; I need the actual failure output for test_latex_basic, test_latex_Float, and test_latex_symbols_failing to determine whether these failures are caused by this patch (decisive REJECT) or are pre-existing/environmental.",
+   "I need to know whether the \"contradicted\" verdict rests on the declared acceptance test test_latex_mul_symbol failing (which would be decisive and applicable, since that test PASSED in the f2p log) or on the three unrelated-looking failures (test_latex_basic, test_latex_Float, test_latex_symbols_failing) whose attribution to this patch is unverified because the baseline log is unavailable."
+  ],
+  "tool_calls": 12,
+  "model_calls": 9,
+  "tool_trace_tools": [
+   [
+    0,
+    "verify_artifact_linkage",
+    200
+   ],
+   [
+    0,
+    "check_evidence_freshness",
+    200
+   ],
+   [
+    0,
+    "check_test_coverage",
+    200
+   ],
+   [
+    0,
+    "get_run_log",
+    200
+   ],
+   [
+    1,
+    "check_claim_consistency",
+    200
+   ],
+   [
+    2,
+    "get_run_log",
+    200
+   ],
+   [
+    2,
+    "get_run_log",
+    200
+   ],
+   [
+    3,
+    "get_run_log",
+    404
+   ],
+   [
+    4,
+    "get_test_artifact",
+    200
+   ],
+   [
+    5,
+    "get_run_log",
+    200
+   ],
+   [
+    6,
+    "check_claim_consistency",
+    200
+   ],
+   [
+    7,
+    "check_evidence_freshness",
+    200
+   ]
+  ]
+ },
+ {
+  "scenario": "w2_decisive_bad",
+  "served_artifact_id": "fix_w2_decisive_bad_24795537946f1e5f",
+  "id": "qwen3_coder_30b_500:sympy__sympy-13091",
+  "oracle_gold": "REJECT",
+  "condition_gold": "REJECT",
+  "oracle_basis": "1 executed declared check(s) failed on linked, fresh evidence",
+  "pred": "NEED_EVIDENCE",
+  "kind": "over_abstain",
+  "reason": "The claim-consistency verdict is \"contradicted,\" but that verdict is driven by the same incomplete/ambiguous artifact: the declared acceptance test `test_equality` was never executed, and the p2p log confirms zero scoped regression checks ran. The failures visible in the f2p log are not the declared acceptance tests and cannot be attributed to this patch without a baseline (which does not exist). ",
+  "missing_evidence": "",
+  "tool_verdicts": {
+   "linkage": true,
+   "freshness": true,
+   "coverage": false,
+   "consistency": "contradicted",
+   "symptom_persists": false
+  },
+  "saw_linked_false": false,
+  "saw_fresh_false": false,
+  "saw_coverage_incomplete": true,
+  "saw_contradicted": true,
+  "escalation_requested": [
+   "consistency",
+   "log",
+   "log",
+   "log",
+   "consistency"
+  ],
+  "escalation_granted": [
+   "consistency",
+   "log",
+   "log",
+   "consistency"
+  ],
+  "escalation_denied": [
+   "log"
+  ],
+  "escalation_reasons": [
+   "The author claims \"all relevant tests pass\", but the diagnostic artifact executed only 1 of 2 acceptance tests and 0 of 89 scoped regression checks. Adjudicating whether the acceptance test test_equality and the scoped regression set actually pass is required to decide between ACCEPT and NEED_EVIDENCE.",
+   "The claim-consistency check returned \"contradicted\" based on normalized acceptance verdicts, but coverage shows only 1 of 2 acceptance tests executed. I need the actual f2p verdicts to determine whether an applicable acceptance check fails (grounds for REJECT) or whether the contradiction stems from missing execution (grounds for NEED_EVIDENCE).",
+   "Coverage reports 0 of 89 scoped regression checks executed, yet the claim-consistency check says the positive claim is contradicted by regression verdicts. I need the p2p verdicts to determine whether a scoped regression was actually introduced (grounds for REJECT) or whether no regression verdicts exist at all (grounds for NEED_EVIDENCE).",
+   "The f2p log shows several FAILED tests (test_Subs2, test_function_comparable_infinities, test_mexpand, test_collect, test_ratsimp, test_rcollect, test_Float) but the declared acceptance set is only 2 tests and coverage says only 1 was executed. I need the baseline verdicts to determine whether these failures pre-exist on the unpatched tree (not attributable to this patch) or are introduced by it, which decides between REJECT and NEED_EVIDENCE.",
+   "Final adjudication: the author claims all relevant tests pass, but the declared acceptance test test_equality was never executed and 0 of 89 scoped regression checks ran, while the f2p log shows unrelated failures with no baseline to attribute them. I need to confirm whether the registered claim can be adjudicated as contradicted on applicable grounds or whether the contradiction is purely a coverage artifact."
+  ],
+  "tool_calls": 9,
+  "model_calls": 6,
+  "tool_trace_tools": [
+   [
+    0,
+    "verify_artifact_linkage",
+    200
+   ],
+   [
+    0,
+    "check_evidence_freshness",
+    200
+   ],
+   [
+    0,
+    "check_test_coverage",
+    200
+   ],
+   [
+    0,
+    "get_run_log",
+    200
+   ],
+   [
+    1,
+    "check_claim_consistency",
+    200
+   ],
+   [
+    2,
+    "get_run_log",
+    200
+   ],
+   [
+    2,
+    "get_run_log",
+    200
+   ],
+   [
+    3,
+    "get_run_log",
+    404
+   ],
+   [
+    4,
+    "check_claim_consistency",
+    200
+   ]
+  ]
+ },
+ {
+  "scenario": "w2_incomplete_good",
+  "served_artifact_id": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+  "id": "glm5_500:sympy__sympy-13091",
+  "oracle_gold": "NEED_EVIDENCE",
+  "condition_gold": "NEED_EVIDENCE",
+  "oracle_basis": "declared check set not fully executed",
+  "pred": "REJECT",
+  "kind": "unsupported_reject",
+  "reason": "The claim-consistency service reports \"consistent,\" but the raw f2p log I read directly shows multiple FAILED tests in scoped regression files. The raw log is the more concrete evidence: `test_Float`, `test_function_comparable_infinities`, `test_collect`, `test_ratsimp`, `test_rcollect`, and `test_Subs2` all FAILED, and these files are all in the declared `p2p_scoped_files` set. These failures are",
+  "missing_evidence": "",
+  "tool_verdicts": {
+   "linkage": true,
+   "freshness": true,
+   "coverage": false,
+   "consistency": "consistent",
+   "symptom_persists": false
+  },
+  "saw_linked_false": false,
+  "saw_fresh_false": false,
+  "saw_coverage_incomplete": true,
+  "saw_contradicted": false,
+  "escalation_requested": [
+   "log",
+   "log",
+   "log",
+   "consistency"
+  ],
+  "escalation_granted": [
+   "log",
+   "log",
+   "consistency"
+  ],
+  "escalation_denied": [
+   "consistency:missing_reason",
+   "log"
+  ],
+  "escalation_reasons": [
+   "Coverage shows only 1 of 2 declared acceptance tests executed (test_equality missing) and 0 of 89 scoped regression checks executed; I need the acceptance outcomes to determine whether the patch resolves the issue and whether any scoped regression fails, since the diagnostic tier withholds these verdicts.",
+   "0 of 89 scoped regression checks were executed per coverage report; I need the p2p verdicts to determine whether the patch introduces a scoped regression, which is decisive for merge acceptability.",
+   "The f2p log shows failures (test_Subs2, test_function_comparable_infinities, test_collect, test_ratsimp, test_rcollect, test_Float) in scoped files; I need the pre-patch baseline to determine whether these failures are introduced by this patch (regressions) or pre-existing, which is decisive for REJECT vs ACCEPT.",
+   "The author claims \"all relevant tests pass,\" but the f2p log shows multiple FAILED tests in scoped regression files (test_Float, test_function_comparable_infinities, test_collect, test_ratsimp, test_rcollect, test_Subs2); I need to adjudicate this claim against acceptance outcomes to confirm the contradiction."
+  ],
+  "tool_calls": 10,
+  "model_calls": 6,
+  "tool_trace_tools": [
+   [
+    0,
+    "verify_artifact_linkage",
+    200
+   ],
+   [
+    0,
+    "check_evidence_freshness",
+    200
+   ],
+   [
+    0,
+    "check_test_coverage",
+    200
+   ],
+   [
+    0,
+    "get_run_log",
+    200
+   ],
+   [
+    0,
+    "check_claim_consistency",
+    400
+   ],
+   [
+    1,
+    "get_run_log",
+    200
+   ],
+   [
+    1,
+    "get_run_log",
+    200
+   ],
+   [
+    2,
+    "get_run_log",
+    404
+   ],
+   [
+    3,
+    "get_test_artifact",
+    200
+   ],
+   [
+    4,
+    "check_claim_consistency",
+    200
+   ]
+  ]
+ }
+]

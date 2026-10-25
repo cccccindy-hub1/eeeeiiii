@@ -1,0 +1,110 @@
+{
+  "_meta": {
+    "purpose": "GroundedReview E1 cross-model external validation candidate profiles. Offline preparation only; NO paid call is authorised by the existence of this file.",
+    "frozen_protocol": "p3-ternary-v2, 22 fixtures x 5 conditions = 110 cells/model, one fresh session per cell",
+    "wave21_subject": "deepseek-flash (frozen baseline; results reused, never re-run in E1)",
+    "pricing_checked_date": "2026-10-22",
+    "pricing_sources": [
+      "https://platform.openai.com/docs/pricing (Standard tier)",
+      "https://ai.google.dev/gemini-api/docs/pricing",
+      "https://benchlm.ai/google/api-pricing (October 2026 cross-check)"
+    ],
+    "wave21_actual_tokens_110_cells": {"input": 1291717, "output": 56499},
+    "excluded": {
+      "gpt-5-mini": "deprecated 2026-06-11, scheduled retirement 2026-12-11; reproducibility risk for a frozen-protocol replication"
+    },
+    "adaptation_contract": {
+      "completion_param": "name of the hard output-cap parameter the vendor accepts",
+      "temperature_supported": "if false, adapter drops the frozen temperature=0",
+      "extra_body": "vendor-specific passthrough that REPLACES the frozen runner's DeepSeek-only {'thinking':{'type':'disabled'}} body (other vendors reject that unknown field)",
+      "reasoning_effort": "optional top-level reasoning control",
+      "response_format": "json_schema_strict | json_object | plain_text; adapter downgrades the frozen strict schema accordingly, and RecordingCompletions adds a runtime json_schema->json_object->plain_text fallback on 400",
+      "note": "task semantics, prompts, tools, tool permissions and JSON decision keys are unchanged; only API-wire parameters are adapted"
+    }
+  },
+
+  "openai_gpt41_mini": {
+    "provider": "openai",
+    "recommendation": "primary",
+    "model": "gpt-4.1-mini",
+    "base_url": "https://api.openai.com/v1",
+    "key_env": "OPENAI_API_KEY",
+    "price_in_per_1m": 0.40,
+    "price_out_per_1m": 1.60,
+    "context_window_tokens": 1000000,
+    "max_output_tokens": 65536,
+    "temperature_supported": true,
+    "completion_param": "max_tokens",
+    "reasoning": "none (non-reasoning chat model; no hidden reasoning tokens)",
+    "reasoning_effort": null,
+    "extra_body": {},
+    "response_format": "json_object",
+    "response_format_change_history": [
+      {
+        "date": "2026-10-23",
+        "from": "json_schema_strict",
+        "to": "json_object",
+        "reason": "Smoke (2026-10-22) showed OpenAI returns deterministic 400 for the frozen TERNARY_DECISION_SCHEMA because it declares 4 properties but lists only 3 in required (missing_evidence omitted); OpenAI strict Structured Outputs require every property in required. User-authorized API-compatibility-only fix (2026-10-23): change ONLY this adapter wire parameter; frozen prompt/gold/decision schema/tools/scoring/ternary parser (incl. INVALID/AMBIGUOUS) are unchanged. json_object guarantees valid JSON, not schema conformance, so non-conforming JSON is still caught by the existing parser and counted as INVALID/AMBIGUOUS exactly as before. Distinct protocol version from the strict-schema smoke cells, which are excluded from the 110-cell primary results."
+      }
+    ],
+    "tool_calling": "native_openai",
+    "status": "deprecated",
+    "deprecated_status_checked_date": "2026-10-21",
+    "openai_announced_retirement_date": "2027-01-14",
+    "e1_role": "non-reasoning cross-provider CONTROL for this single E1 replication only; NOT a long-term sole external baseline - newer current models join the multi-model benchmark later (user decision 2026-10-21)",
+    "pricing_tier": "standard",
+    "estimated_cost_110_cells_usd": 0.607,
+    "selection_rationale": "Different vendor from DeepSeek; closest wire-level match to the frozen runner (temperature, max_tokens, strict JSON schema, native parallel tool calls), so observed differences are least likely to come from interface configuration. Deprecation (retire 2027-01-14) does not block E1 but rules it out as a durable sole baseline."
+  },
+
+  "google_gemini3_flash": {
+    "provider": "google",
+    "recommendation": "secondary",
+    "model": "gemini-3-flash-preview",
+    "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+    "key_env": "GEMINI_API_KEY",
+    "price_in_per_1m": 0.50,
+    "price_out_per_1m": 3.00,
+    "context_window_tokens": 1000000,
+    "max_output_tokens": 65536,
+    "temperature_supported": true,
+    "completion_param": "max_tokens",
+    "reasoning": "thinking model; OpenAI-compatibility reasoning controls differ across releases and MUST be smoke-tested before any paid run",
+    "reasoning_effort": null,
+    "extra_body": {},
+    "response_format": "json_object",
+    "tool_calling": "openai_compat_layer",
+    "status": "preview",
+    "pricing_tier": "standard",
+    "estimated_cost_110_cells_usd": 0.815,
+    "selection_rationale": "Second independent vendor via the documented OpenAI-compatible endpoint. Strict-schema and multi-turn tool-call behaviour on the compatibility layer is the main interface risk; adapter pre-downgrades to json_object and a fixture-level live smoke (2 cells) is required before the full run.",
+    "known_risks": [
+      "compatibility-layer strict json_schema support has historically been incomplete",
+      "thinking tokens are billed inside output tokens; real cost may exceed the wave21-token-based estimate",
+      "preview model id can be retired across Gemini minor releases"
+    ]
+  },
+
+  "openai_gpt51_codex_mini": {
+    "provider": "openai",
+    "recommendation": "optional",
+    "model": "gpt-5.1-codex-mini",
+    "base_url": "https://api.openai.com/v1",
+    "key_env": "OPENAI_API_KEY",
+    "price_in_per_1m": 0.25,
+    "price_out_per_1m": 2.00,
+    "context_window_tokens": 400000,
+    "max_output_tokens": 128000,
+    "temperature_supported": false,
+    "completion_param": "max_completion_tokens",
+    "reasoning": "reasoning coding model; reasoning tokens are billed as output and counted in max_completion_tokens",
+    "reasoning_effort": "minimal",
+    "extra_body": {},
+    "response_format": "json_schema_strict",
+    "tool_calling": "native_openai",
+    "status": "current",
+    "pricing_tier": "standard",
+    "estimated_cost_110_cells_usd_note": "wave21-token proxy ~$0.65 before reasoning-token inflation; output multiplier is the dominant uncertainty, BudgetGuard pre-call bound still caps spend",
+    "selection_rationale": "Code-review-tuned third candidate exercising the max_completion_tokens / no-temperature / reasoning_effort adaptation path. Only if the user wants a second OpenAI-family point; gpt-4.1-mini remains the controlled primary."
+  }
+}

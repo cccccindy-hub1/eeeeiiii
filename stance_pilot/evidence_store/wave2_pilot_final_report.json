@@ -1,0 +1,2290 @@
+{
+  "title": "GroundedReview: Evaluating Evidence Sufficiency and Verification Decisions in Agentic Code Review — Wave-2 Task-11 Pilot Report",
+  "positioning_note": "This pilot evaluates evidence-sufficiency and verification DECISIONS under five evidence-access regimes. It does NOT propose a new verification algorithm; no patch correctness or SWE-bench solve rate is claimed.",
+  "official": false,
+  "run_scope": {
+    "model_served": "deepseek-flash",
+    "thinking": "disabled",
+    "prompt_version": "p3-ternary-v2",
+    "n_cells": 110,
+    "n_served_artifacts": 22,
+    "n_distinct_issue_ids": 10,
+    "conditions": [
+      "T2D-T",
+      "T3D-Strict",
+      "T3D-Escalate",
+      "T2A-T",
+      "T3A-T"
+    ],
+    "independent_session_per_cell": true,
+    "cells": "22 served gold rows x 5 conditions",
+    "budget_hard_cap_usd": 1.0
+  },
+  "item_1_dual_standard_DA": {
+    "note": "oracle_gold = ground-truth patch verdict (channels O+P); condition_gold = best decision supportable from evidence actually accessible in the regime.",
+    "pooled_oracle_da": 0.5909,
+    "pooled_condition_da": 0.7364,
+    "per_condition": {
+      "T2D-T": {
+        "oracle_da": 0.5,
+        "oracle_ci95": [
+          0.3333,
+          0.7143
+        ],
+        "condition_da": 1.0,
+        "condition_ci95": [
+          1.0,
+          1.0
+        ]
+      },
+      "T3D-Strict": {
+        "oracle_da": 0.4545,
+        "oracle_ci95": [
+          0.3077,
+          0.6364
+        ],
+        "condition_da": 0.9545,
+        "condition_ci95": [
+          0.8421,
+          1.0
+        ]
+      },
+      "T3D-Escalate": {
+        "oracle_da": 0.7727,
+        "oracle_ci95": [
+          0.5714,
+          0.95
+        ],
+        "condition_da": 0.7727,
+        "condition_ci95": [
+          0.5714,
+          0.95
+        ]
+      },
+      "T2A-T": {
+        "oracle_da": 0.3636,
+        "oracle_ci95": [
+          0.2083,
+          0.5625
+        ],
+        "condition_da": 0.0909,
+        "condition_ci95": [
+          0.0,
+          0.2
+        ]
+      },
+      "T3A-T": {
+        "oracle_da": 0.8636,
+        "oracle_ci95": [
+          0.7,
+          1.0
+        ],
+        "condition_da": 0.8636,
+        "condition_ci95": [
+          0.7,
+          1.0
+        ]
+      }
+    },
+    "comparable_vs_divergent_cells": {
+      "T2D-T": {
+        "comparable": 11,
+        "divergent": 11
+      },
+      "T3D-Strict": {
+        "comparable": 11,
+        "divergent": 11
+      },
+      "T3D-Escalate": {
+        "comparable": 22,
+        "divergent": 0
+      },
+      "T2A-T": {
+        "comparable": 11,
+        "divergent": 11
+      },
+      "T3A-T": {
+        "comparable": 22,
+        "divergent": 0
+      }
+    }
+  },
+  "item_2_confusion_matrices_and_always_need": {
+    "pooled_confusion_oracle": {
+      "ACCEPT": {
+        "ACCEPT": 14,
+        "REJECT": 0,
+        "NEED_EVIDENCE": 21
+      },
+      "REJECT": {
+        "ACCEPT": 0,
+        "REJECT": 10,
+        "NEED_EVIDENCE": 20
+      },
+      "NEED_EVIDENCE": {
+        "ACCEPT": 0,
+        "REJECT": 4,
+        "NEED_EVIDENCE": 41
+      }
+    },
+    "pooled_confusion_condition": {
+      "ACCEPT": {
+        "ACCEPT": 14,
+        "REJECT": 0,
+        "NEED_EVIDENCE": 14
+      },
+      "REJECT": {
+        "ACCEPT": 0,
+        "REJECT": 11,
+        "NEED_EVIDENCE": 12
+      },
+      "NEED_EVIDENCE": {
+        "ACCEPT": 0,
+        "REJECT": 3,
+        "NEED_EVIDENCE": 56
+      }
+    },
+    "always_need_oracle": 0.4091,
+    "always_need_condition": 0.5364,
+    "always_accept_oracle": 0.3182,
+    "always_reject_oracle": 0.2727,
+    "per_condition_matrices": {
+      "T2D-T": {
+        "oracle": {
+          "ACCEPT": {
+            "ACCEPT": 0,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 7
+          },
+          "REJECT": {
+            "ACCEPT": 0,
+            "REJECT": 2,
+            "NEED_EVIDENCE": 4
+          },
+          "NEED_EVIDENCE": {
+            "ACCEPT": 0,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 9
+          }
+        },
+        "condition": {
+          "ACCEPT": {
+            "ACCEPT": 0,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 0
+          },
+          "REJECT": {
+            "ACCEPT": 0,
+            "REJECT": 2,
+            "NEED_EVIDENCE": 0
+          },
+          "NEED_EVIDENCE": {
+            "ACCEPT": 0,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 20
+          }
+        },
+        "always_need_oracle": 0.4091,
+        "always_need_condition": 0.9091
+      },
+      "T3D-Strict": {
+        "oracle": {
+          "ACCEPT": {
+            "ACCEPT": 0,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 7
+          },
+          "REJECT": {
+            "ACCEPT": 0,
+            "REJECT": 1,
+            "NEED_EVIDENCE": 5
+          },
+          "NEED_EVIDENCE": {
+            "ACCEPT": 0,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 9
+          }
+        },
+        "condition": {
+          "ACCEPT": {
+            "ACCEPT": 0,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 0
+          },
+          "REJECT": {
+            "ACCEPT": 0,
+            "REJECT": 1,
+            "NEED_EVIDENCE": 1
+          },
+          "NEED_EVIDENCE": {
+            "ACCEPT": 0,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 20
+          }
+        },
+        "always_need_oracle": 0.4091,
+        "always_need_condition": 0.9091
+      },
+      "T3D-Escalate": {
+        "oracle": {
+          "ACCEPT": {
+            "ACCEPT": 7,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 0
+          },
+          "REJECT": {
+            "ACCEPT": 0,
+            "REJECT": 3,
+            "NEED_EVIDENCE": 3
+          },
+          "NEED_EVIDENCE": {
+            "ACCEPT": 0,
+            "REJECT": 2,
+            "NEED_EVIDENCE": 7
+          }
+        },
+        "condition": {
+          "ACCEPT": {
+            "ACCEPT": 7,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 0
+          },
+          "REJECT": {
+            "ACCEPT": 0,
+            "REJECT": 3,
+            "NEED_EVIDENCE": 3
+          },
+          "NEED_EVIDENCE": {
+            "ACCEPT": 0,
+            "REJECT": 2,
+            "NEED_EVIDENCE": 7
+          }
+        },
+        "always_need_oracle": 0.4091,
+        "always_need_condition": 0.4091
+      },
+      "T2A-T": {
+        "oracle": {
+          "ACCEPT": {
+            "ACCEPT": 0,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 7
+          },
+          "REJECT": {
+            "ACCEPT": 0,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 6
+          },
+          "NEED_EVIDENCE": {
+            "ACCEPT": 0,
+            "REJECT": 1,
+            "NEED_EVIDENCE": 8
+          }
+        },
+        "condition": {
+          "ACCEPT": {
+            "ACCEPT": 0,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 14
+          },
+          "REJECT": {
+            "ACCEPT": 0,
+            "REJECT": 1,
+            "NEED_EVIDENCE": 6
+          },
+          "NEED_EVIDENCE": {
+            "ACCEPT": 0,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 1
+          }
+        },
+        "always_need_oracle": 0.4091,
+        "always_need_condition": 0.0455
+      },
+      "T3A-T": {
+        "oracle": {
+          "ACCEPT": {
+            "ACCEPT": 7,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 0
+          },
+          "REJECT": {
+            "ACCEPT": 0,
+            "REJECT": 4,
+            "NEED_EVIDENCE": 2
+          },
+          "NEED_EVIDENCE": {
+            "ACCEPT": 0,
+            "REJECT": 1,
+            "NEED_EVIDENCE": 8
+          }
+        },
+        "condition": {
+          "ACCEPT": {
+            "ACCEPT": 7,
+            "REJECT": 0,
+            "NEED_EVIDENCE": 0
+          },
+          "REJECT": {
+            "ACCEPT": 0,
+            "REJECT": 4,
+            "NEED_EVIDENCE": 2
+          },
+          "NEED_EVIDENCE": {
+            "ACCEPT": 0,
+            "REJECT": 1,
+            "NEED_EVIDENCE": 8
+          }
+        },
+        "always_need_oracle": 0.4091,
+        "always_need_condition": 0.4091
+      }
+    }
+  },
+  "item_3_abstention_taxonomy": {
+    "pooled_oracle": {
+      "over_abstain": 41,
+      "appropriate_accept": 14,
+      "appropriate_reject": 10,
+      "appropriate_abstain": 41,
+      "premature_unsupported_commit": 4
+    },
+    "pooled_condition": {
+      "appropriate_abstain": 56,
+      "appropriate_accept": 14,
+      "over_abstain": 26,
+      "appropriate_reject": 11,
+      "premature_unsupported_commit": 3
+    },
+    "definitions": {
+      "appropriate_abstain": "pred=NEED and gold=NEED (decisive evidence genuinely inaccessible/absent)",
+      "over_abstain": "gold=ACCEPT/REJECT but pred=NEED (decisive evidence in hand, culpable withholding)",
+      "premature_unsupported_commit": "gold=NEED but pred=ACCEPT/REJECT (decided beyond accessible evidence)",
+      "false_approve": "gold=REJECT pred=ACCEPT; unsupported_reject: gold=ACCEPT pred=REJECT"
+    },
+    "by_condition": {
+      "T2D-T": {
+        "oracle": {
+          "over_abstain": 11,
+          "appropriate_abstain": 9,
+          "appropriate_reject": 2
+        },
+        "condition": {
+          "appropriate_abstain": 20,
+          "appropriate_reject": 2
+        }
+      },
+      "T3D-Strict": {
+        "oracle": {
+          "over_abstain": 12,
+          "appropriate_abstain": 9,
+          "appropriate_reject": 1
+        },
+        "condition": {
+          "appropriate_abstain": 20,
+          "over_abstain": 1,
+          "appropriate_reject": 1
+        }
+      },
+      "T3D-Escalate": {
+        "oracle": {
+          "appropriate_accept": 7,
+          "appropriate_reject": 3,
+          "appropriate_abstain": 7,
+          "over_abstain": 3,
+          "premature_unsupported_commit": 2
+        },
+        "condition": {
+          "appropriate_accept": 7,
+          "appropriate_reject": 3,
+          "appropriate_abstain": 7,
+          "over_abstain": 3,
+          "premature_unsupported_commit": 2
+        }
+      },
+      "T2A-T": {
+        "oracle": {
+          "over_abstain": 13,
+          "appropriate_abstain": 8,
+          "premature_unsupported_commit": 1
+        },
+        "condition": {
+          "over_abstain": 20,
+          "appropriate_reject": 1,
+          "appropriate_abstain": 1
+        }
+      },
+      "T3A-T": {
+        "oracle": {
+          "appropriate_accept": 7,
+          "appropriate_reject": 4,
+          "premature_unsupported_commit": 1,
+          "appropriate_abstain": 8,
+          "over_abstain": 2
+        },
+        "condition": {
+          "appropriate_accept": 7,
+          "appropriate_reject": 4,
+          "premature_unsupported_commit": 1,
+          "appropriate_abstain": 8,
+          "over_abstain": 2
+        }
+      }
+    },
+    "gap_grounding_rates_need_answers": {
+      "T2D-T": {
+        "verified_gap": 0.0,
+        "claimed_but_unverified": 1.0,
+        "decisive_in_hand_but_abstained": 0.0,
+        "unspecified": 0.0
+      },
+      "T3D-Strict": {
+        "verified_gap": 0.5714,
+        "claimed_but_unverified": 0.3333,
+        "decisive_in_hand_but_abstained": 0.0,
+        "unspecified": 0.0952
+      },
+      "T3D-Escalate": {
+        "verified_gap": 0.4,
+        "claimed_but_unverified": 0.0,
+        "decisive_in_hand_but_abstained": 0.0,
+        "unspecified": 0.6
+      },
+      "T2A-T": {
+        "verified_gap": 0.0,
+        "claimed_but_unverified": 1.0,
+        "decisive_in_hand_but_abstained": 0.0,
+        "unspecified": 0.0
+      },
+      "T3A-T": {
+        "verified_gap": 0.6,
+        "claimed_but_unverified": 0.0,
+        "decisive_in_hand_but_abstained": 0.0,
+        "unspecified": 0.4
+      }
+    }
+  },
+  "item_4_strict_escalate_matched_pairs": {
+    "n_pairs": 22,
+    "paired_by": "same served artifact id (22 pairs)",
+    "strict_oracle_da": 0.4545,
+    "escalate_oracle_da": 0.7727,
+    "transitions_strict_to_escalate": {
+      "NEED_EVIDENCE->ACCEPT": 7,
+      "NEED_EVIDENCE->NEED_EVIDENCE": 10,
+      "NEED_EVIDENCE->REJECT": 4,
+      "REJECT->REJECT": 1
+    },
+    "need_to_commit": 11,
+    "both_need": 10,
+    "pairs_with_granted_escalation": 22,
+    "interpretation": "11/22 abstentions under Strict convert to a grounded commit (7 ACCEPT, 4 REJECT) once reason-gated escalation is authorized; 10 remain NEED; oracle DA rises 0.4545->0.7727."
+  },
+  "item_5_scenario_strata": {
+    "partial_but_decisive_6fixtures": {
+      "fixtures": 6,
+      "cells": 30,
+      "oracle_da": 0.3333,
+      "condition_da": 0.6,
+      "by_condition": {
+        "T2D-T": {
+          "oracle_da": 0.3333333333333333,
+          "condition_da": 1.0,
+          "pred_dist": {
+            "NEED_EVIDENCE": 4,
+            "REJECT": 2
+          },
+          "n": 6
+        },
+        "T3D-Strict": {
+          "oracle_da": 0.16666666666666666,
+          "condition_da": 0.8333333333333334,
+          "pred_dist": {
+            "NEED_EVIDENCE": 5,
+            "REJECT": 1
+          },
+          "n": 6
+        },
+        "T3D-Escalate": {
+          "oracle_da": 0.5,
+          "condition_da": 0.5,
+          "pred_dist": {
+            "REJECT": 3,
+            "NEED_EVIDENCE": 3
+          },
+          "n": 6
+        },
+        "T2A-T": {
+          "oracle_da": 0.0,
+          "condition_da": 0.0,
+          "pred_dist": {
+            "NEED_EVIDENCE": 6
+          },
+          "n": 6
+        },
+        "T3A-T": {
+          "oracle_da": 0.6666666666666666,
+          "condition_da": 0.6666666666666666,
+          "pred_dist": {
+            "REJECT": 4,
+            "NEED_EVIDENCE": 2
+          },
+          "n": 6
+        }
+      }
+    },
+    "by_family": {
+      "contradictory_decisive": {
+        "fixtures": 1,
+        "cells": 5,
+        "oracle_da": 0.4,
+        "condition_da": 0.8,
+        "by_condition": {
+          "T2D-T": {
+            "oracle_da": 0.0,
+            "condition_da": 1.0,
+            "n": 1
+          },
+          "T3D-Strict": {
+            "oracle_da": 0.0,
+            "condition_da": 1.0,
+            "n": 1
+          },
+          "T3D-Escalate": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 1
+          },
+          "T2A-T": {
+            "oracle_da": 0.0,
+            "condition_da": 0.0,
+            "n": 1
+          },
+          "T3A-T": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 1
+          }
+        }
+      },
+      "incomplete_decisive": {
+        "fixtures": 3,
+        "cells": 15,
+        "oracle_da": 0.2667,
+        "condition_da": 0.6667,
+        "by_condition": {
+          "T2D-T": {
+            "oracle_da": 0.0,
+            "condition_da": 1.0,
+            "n": 3
+          },
+          "T3D-Strict": {
+            "oracle_da": 0.0,
+            "condition_da": 1.0,
+            "n": 3
+          },
+          "T3D-Escalate": {
+            "oracle_da": 0.3333333333333333,
+            "condition_da": 0.3333333333333333,
+            "n": 3
+          },
+          "T2A-T": {
+            "oracle_da": 0.0,
+            "condition_da": 0.0,
+            "n": 3
+          },
+          "T3A-T": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 3
+          }
+        }
+      },
+      "incomplete_nondecisive": {
+        "fixtures": 3,
+        "cells": 15,
+        "oracle_da": 0.8,
+        "condition_da": 0.6,
+        "by_condition": {
+          "T2D-T": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 3
+          },
+          "T3D-Strict": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 3
+          },
+          "T3D-Escalate": {
+            "oracle_da": 0.3333333333333333,
+            "condition_da": 0.3333333333333333,
+            "n": 3
+          },
+          "T2A-T": {
+            "oracle_da": 1.0,
+            "condition_da": 0.0,
+            "n": 3
+          },
+          "T3A-T": {
+            "oracle_da": 0.6666666666666666,
+            "condition_da": 0.6666666666666666,
+            "n": 3
+          }
+        }
+      },
+      "stale_bad": {
+        "fixtures": 2,
+        "cells": 10,
+        "oracle_da": 0.9,
+        "condition_da": 0.9,
+        "by_condition": {
+          "T2D-T": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 2
+          },
+          "T3D-Strict": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 2
+          },
+          "T3D-Escalate": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 2
+          },
+          "T2A-T": {
+            "oracle_da": 0.5,
+            "condition_da": 0.5,
+            "n": 2
+          },
+          "T3A-T": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 2
+          }
+        }
+      },
+      "stale_evidence": {
+        "fixtures": 3,
+        "cells": 15,
+        "oracle_da": 1.0,
+        "condition_da": 0.8,
+        "by_condition": {
+          "T2D-T": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 3
+          },
+          "T3D-Strict": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 3
+          },
+          "T3D-Escalate": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 3
+          },
+          "T2A-T": {
+            "oracle_da": 1.0,
+            "condition_da": 0.0,
+            "n": 3
+          },
+          "T3A-T": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 3
+          }
+        }
+      },
+      "stale_persists_decisive": {
+        "fixtures": 1,
+        "cells": 5,
+        "oracle_da": 0.6,
+        "condition_da": 0.6,
+        "by_condition": {
+          "T2D-T": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 1
+          },
+          "T3D-Strict": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 1
+          },
+          "T3D-Escalate": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 1
+          },
+          "T2A-T": {
+            "oracle_da": 0.0,
+            "condition_da": 0.0,
+            "n": 1
+          },
+          "T3A-T": {
+            "oracle_da": 0.0,
+            "condition_da": 0.0,
+            "n": 1
+          }
+        }
+      },
+      "valid": {
+        "fixtures": 7,
+        "cells": 35,
+        "oracle_da": 0.4,
+        "condition_da": 0.8286,
+        "by_condition": {
+          "T2D-T": {
+            "oracle_da": 0.0,
+            "condition_da": 1.0,
+            "n": 7
+          },
+          "T3D-Strict": {
+            "oracle_da": 0.0,
+            "condition_da": 1.0,
+            "n": 7
+          },
+          "T3D-Escalate": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 7
+          },
+          "T2A-T": {
+            "oracle_da": 0.0,
+            "condition_da": 0.14285714285714285,
+            "n": 7
+          },
+          "T3A-T": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 7
+          }
+        }
+      },
+      "wrong_patch_decisive": {
+        "fixtures": 1,
+        "cells": 5,
+        "oracle_da": 0.2,
+        "condition_da": 0.2,
+        "by_condition": {
+          "T2D-T": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 1
+          },
+          "T3D-Strict": {
+            "oracle_da": 0.0,
+            "condition_da": 0.0,
+            "n": 1
+          },
+          "T3D-Escalate": {
+            "oracle_da": 0.0,
+            "condition_da": 0.0,
+            "n": 1
+          },
+          "T2A-T": {
+            "oracle_da": 0.0,
+            "condition_da": 0.0,
+            "n": 1
+          },
+          "T3A-T": {
+            "oracle_da": 0.0,
+            "condition_da": 0.0,
+            "n": 1
+          }
+        }
+      },
+      "wrong_patch_good": {
+        "fixtures": 1,
+        "cells": 5,
+        "oracle_da": 1.0,
+        "condition_da": 0.8,
+        "by_condition": {
+          "T2D-T": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 1
+          },
+          "T3D-Strict": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 1
+          },
+          "T3D-Escalate": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 1
+          },
+          "T2A-T": {
+            "oracle_da": 1.0,
+            "condition_da": 0.0,
+            "n": 1
+          },
+          "T3A-T": {
+            "oracle_da": 1.0,
+            "condition_da": 1.0,
+            "n": 1
+          }
+        }
+      }
+    },
+    "per_scenario": {
+      "contradictory": {
+        "fixtures": 1,
+        "oracle_da": 0.4,
+        "condition_da": 0.8
+      },
+      "incomplete": {
+        "fixtures": 1,
+        "oracle_da": 0.8,
+        "condition_da": 0.6
+      },
+      "incomplete_decisive_bad": {
+        "fixtures": 1,
+        "oracle_da": 0.2,
+        "condition_da": 0.6
+      },
+      "incomplete_good": {
+        "fixtures": 1,
+        "oracle_da": 0.8,
+        "condition_da": 0.6
+      },
+      "stale": {
+        "fixtures": 1,
+        "oracle_da": 1.0,
+        "condition_da": 0.8
+      },
+      "stale_bad": {
+        "fixtures": 1,
+        "oracle_da": 1.0,
+        "condition_da": 0.8
+      },
+      "valid": {
+        "fixtures": 1,
+        "oracle_da": 0.4,
+        "condition_da": 0.8
+      },
+      "w2_decisive_bad": {
+        "fixtures": 2,
+        "oracle_da": 0.3,
+        "condition_da": 0.7
+      },
+      "w2_incomplete_good": {
+        "fixtures": 1,
+        "oracle_da": 0.8,
+        "condition_da": 0.6
+      },
+      "w2_stale": {
+        "fixtures": 2,
+        "oracle_da": 1.0,
+        "condition_da": 0.8
+      },
+      "w2_stale_bad": {
+        "fixtures": 1,
+        "oracle_da": 0.8,
+        "condition_da": 1.0
+      },
+      "w2_stale_persists": {
+        "fixtures": 1,
+        "oracle_da": 0.6,
+        "condition_da": 0.6
+      },
+      "w2_valid": {
+        "fixtures": 6,
+        "oracle_da": 0.4,
+        "condition_da": 0.8333
+      },
+      "wrong_patch": {
+        "fixtures": 1,
+        "oracle_da": 0.2,
+        "condition_da": 0.2
+      },
+      "wrong_patch_good": {
+        "fixtures": 1,
+        "oracle_da": 1.0,
+        "condition_da": 0.8
+      }
+    }
+  },
+  "item_6_issue_clusters": {
+    "n_independent_issues": 10,
+    "cluster_bootstrap": "seed=7, n_boot=10000, resampling unit = issue instance id; CI per condition in item_1",
+    "per_issue_cell_counts_and_correct": {
+      "sympy__sympy-12419": {
+        "cells": 15,
+        "oracle_correct": 9,
+        "condition_correct": 12
+      },
+      "sympy__sympy-12481": {
+        "cells": 20,
+        "oracle_correct": 11,
+        "condition_correct": 16
+      },
+      "sympy__sympy-12489": {
+        "cells": 15,
+        "oracle_correct": 9,
+        "condition_correct": 12
+      },
+      "sympy__sympy-13091": {
+        "cells": 15,
+        "oracle_correct": 7,
+        "condition_correct": 11
+      },
+      "sympy__sympy-13798": {
+        "cells": 10,
+        "oracle_correct": 6,
+        "condition_correct": 7
+      },
+      "sympy__sympy-14531": {
+        "cells": 10,
+        "oracle_correct": 9,
+        "condition_correct": 7
+      },
+      "sympy__sympy-16450": {
+        "cells": 5,
+        "oracle_correct": 2,
+        "condition_correct": 4
+      },
+      "sympy__sympy-17139": {
+        "cells": 5,
+        "oracle_correct": 4,
+        "condition_correct": 3
+      },
+      "sympy__sympy-18199": {
+        "cells": 5,
+        "oracle_correct": 2,
+        "condition_correct": 4
+      },
+      "sympy__sympy-18211": {
+        "cells": 10,
+        "oracle_correct": 6,
+        "condition_correct": 5
+      }
+    }
+  },
+  "item_7_cost_tools_escalation": {
+    "total_usd": 0.45532,
+    "hard_cap_usd": 1.0,
+    "under_cap": true,
+    "tokens_in": 1291717,
+    "tokens_out": 56499,
+    "model_calls_total": 275,
+    "tool_calls_total": 445,
+    "wall_s_total_parallel_cells": 431.72,
+    "escalation_requests": 72,
+    "escalation_granted": 66,
+    "escalation_denied": 13,
+    "usd_per_oracle_appropriate_decision": 0.007005,
+    "usd_per_condition_appropriate_decision": 0.005621,
+    "by_condition": {
+      "T2D-T": {
+        "usd": 0.017057,
+        "tokens_in": 42368,
+        "tokens_out": 3623,
+        "tool_calls": 0,
+        "model_calls": 22,
+        "wall_s": 33.9,
+        "mean_calls_per_cell": 1.0,
+        "mean_tool_calls_per_cell": 0.0
+      },
+      "T3D-Strict": {
+        "usd": 0.070087,
+        "tokens_in": 190930,
+        "tokens_out": 10672,
+        "tool_calls": 125,
+        "model_calls": 52,
+        "wall_s": 80.07,
+        "mean_calls_per_cell": 2.36,
+        "mean_tool_calls_per_cell": 5.68
+      },
+      "T3D-Escalate": {
+        "usd": 0.225519,
+        "tokens_in": 650832,
+        "tokens_out": 25224,
+        "tool_calls": 176,
+        "model_calls": 104,
+        "wall_s": 177.86,
+        "mean_calls_per_cell": 4.73,
+        "mean_tool_calls_per_cell": 8.0
+      },
+      "T2A-T": {
+        "usd": 0.017533,
+        "tokens_in": 39245,
+        "tokens_out": 4798,
+        "tool_calls": 0,
+        "model_calls": 22,
+        "wall_s": 38.6,
+        "mean_calls_per_cell": 1.0,
+        "mean_tool_calls_per_cell": 0.0
+      },
+      "T3A-T": {
+        "usd": 0.125124,
+        "tokens_in": 368342,
+        "tokens_out": 12182,
+        "tool_calls": 144,
+        "model_calls": 75,
+        "wall_s": 101.29,
+        "mean_calls_per_cell": 3.41,
+        "mean_tool_calls_per_cell": 6.55
+      }
+    }
+  },
+  "item_8_engineering_gates_and_anomaly_audit": {
+    "preflight_all_gates_pass": true,
+    "preflight_file": "evidence_store/wave2_pilot_preflight.json",
+    "run_audit": {
+      "cells_planned": 110,
+      "cells_already_done": 0,
+      "cells_attempted_this_process": 110,
+      "error_cells": 0,
+      "budget_stop_cells": 0,
+      "batch_budget_stop": false,
+      "budget_cap_usd": 1.0,
+      "cumulative_spend_usd": 0.455314,
+      "guard_calls_total": 275,
+      "completion_cap_tokens": 8192,
+      "max_model_calls_per_cell": 12
+    },
+    "version_integrity": {
+      "prompt_version": "p3-ternary-v2",
+      "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+      "fixture_manifest": {
+        "files": {
+          "evidence_store/phase2_fixtures.jsonl": "2536d4bf54deec491884f3b2708af323b6c1ccb7a6a19535a42c12bcf3b4ff8d",
+          "evidence_store/phase3_fixtures.jsonl": "3755ba12ee3867398baca2867c57c1fd7b63bebb6f285f4decf0ce553cb984b9",
+          "evidence_store/wave2_fixtures.jsonl": "ff7d182f724cac152f5a9b5202007fe9f4e2f679fa0ece3da647c980acafa4be"
+        },
+        "combined_sha256": "182a0dc7c5f266a625edca2da4eaffd06956d5f85651c66c1fc3773c480c31d5"
+      },
+      "gold_path": "evidence_store/wave2_gold.jsonl"
+    },
+    "row_integrity": {
+      "all_110_model_served_deepseek_flash": true,
+      "all_prompt_version_p3_ternary_v2": true,
+      "all_gold_sha256_match": true,
+      "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+      "fixture_manifest_identical_across_rows": true,
+      "invalid_rows": 0,
+      "ambiguous_rows": 0,
+      "error_rows": 0,
+      "pre_call_budget_stop_rows": 0,
+      "batch_budget_stop": false,
+      "max_model_calls_observed": 9,
+      "cap_per_cell": 12,
+      "max_tool_calls_observed": 12,
+      "max_tool_turns": 12,
+      "independent_tool_sessions": "67 server sessions; 66 tool-using cells (Strict+Escalate+T3A) each unique; 44 static cells (T2D/T2A) open no session"
+    },
+    "server_audit": {
+      "audit_path": "evidence_store\\audit.jsonl",
+      "sessions": 66,
+      "counts": {
+        "events": 511,
+        "denied_strict": 0,
+        "escalation_reason_missing": 7,
+        "consistency_escalation_granted": 21,
+        "acceptance_log_reveal": 45
+      },
+      "by_condition": {
+        "T3D-Strict": {
+          "events": 147,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0
+        },
+        "T3D-Escalate": {
+          "events": 198,
+          "denied_strict": 0,
+          "escalation_reason_missing": 7,
+          "escalation_granted": 66,
+          "acceptance_log_reveal": 45
+        },
+        "T3A-T": {
+          "events": 166,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0
+        }
+      },
+      "per_session": {
+        "f8b271e8cbfa5e35a0f0ef47": {
+          "cell": "valid:glm5_500:sympy__sympy-16450:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "779ae4af6f3d5e4a9db9322c": {
+          "cell": "valid:glm5_500:sympy__sympy-16450:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 9,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 4,
+          "acceptance_log_reveal": 3,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 4,
+            "consistency": 1
+          }
+        },
+        "1153375ebea89fe93393dc73": {
+          "cell": "valid:glm5_500:sympy__sympy-16450:T3A-T",
+          "condition": "T3A-T",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "9f71588180d5a63138a1ea8e": {
+          "cell": "contradictory:glm5_500:sympy__sympy-18199:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 6,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "8858acc125ce9ea9a7bf575d": {
+          "cell": "contradictory:glm5_500:sympy__sympy-18199:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 10,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 5,
+          "acceptance_log_reveal": 3,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 4,
+            "consistency": 2
+          }
+        },
+        "21508b1c599c39933f66c1c5": {
+          "cell": "contradictory:glm5_500:sympy__sympy-18199:T3A-T",
+          "condition": "T3A-T",
+          "events": 8,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 2
+          }
+        },
+        "2b79bcb178a501a978d183e7": {
+          "cell": "incomplete:qwen3_30b_instruct2507_500:sympy__sympy-17139:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "89cad04208c8fb8a8570550d": {
+          "cell": "incomplete:qwen3_30b_instruct2507_500:sympy__sympy-17139:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 10,
+          "denied_strict": 0,
+          "escalation_reason_missing": 1,
+          "escalation_granted": 3,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 4,
+            "consistency": 2
+          }
+        },
+        "68ef51c7f24484d0ddeeebee": {
+          "cell": "incomplete:qwen3_30b_instruct2507_500:sympy__sympy-17139:T3A-T",
+          "condition": "T3A-T",
+          "events": 10,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 4
+          }
+        },
+        "3a17e4cd97089268a8013bfe": {
+          "cell": "stale:glm5_500:sympy__sympy-18211:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "artifact": 1,
+            "log": 1
+          }
+        },
+        "b98e45c409a588e4a747d372": {
+          "cell": "stale:glm5_500:sympy__sympy-18211:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 9,
+          "denied_strict": 0,
+          "escalation_reason_missing": 1,
+          "escalation_granted": 1,
+          "acceptance_log_reveal": 1,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 2,
+            "coverage": 1,
+            "log": 2,
+            "consistency": 1,
+            "artifact": 1
+          }
+        },
+        "ddc733dfb69c4f7d204cc465": {
+          "cell": "stale:glm5_500:sympy__sympy-18211:T3A-T",
+          "condition": "T3A-T",
+          "events": 6,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "3b72a226be7f72e889c35338": {
+          "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "c87838784e4e719a5b7d91c4": {
+          "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 8,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 3,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 3,
+            "consistency": 1
+          }
+        },
+        "6ddc6a1e23f6400a0d190a4c": {
+          "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3A-T",
+          "condition": "T3A-T",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "d43ea0b14ef7403ea1f4c408": {
+          "cell": "stale_bad:glm5_500:sympy__sympy-13798:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 6,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "52f98cd6546e0ce7ce4c435a": {
+          "cell": "stale_bad:glm5_500:sympy__sympy-13798:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 9,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 3,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 4,
+            "consistency": 1
+          }
+        },
+        "b120e4b4c1ebb77e5db5c6fe": {
+          "cell": "stale_bad:glm5_500:sympy__sympy-13798:T3A-T",
+          "condition": "T3A-T",
+          "events": 6,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "artifact": 1
+          }
+        },
+        "99f4011e0beec638c636702c": {
+          "cell": "wrong_patch_good:qwen3_coder_30b_500:sympy__sympy-14531:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "da4d03b2ca088350c8e15b21": {
+          "cell": "wrong_patch_good:qwen3_coder_30b_500:sympy__sympy-14531:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 11,
+          "denied_strict": 0,
+          "escalation_reason_missing": 1,
+          "escalation_granted": 3,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 2,
+            "coverage": 1,
+            "log": 3,
+            "consistency": 2,
+            "artifact": 1
+          }
+        },
+        "6e168413c864a13545d91997": {
+          "cell": "wrong_patch_good:qwen3_coder_30b_500:sympy__sympy-14531:T3A-T",
+          "condition": "T3A-T",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "c0cee1207e0f547fb2d48693": {
+          "cell": "incomplete_good:qwen3_coder_30b_500:sympy__sympy-14531:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "de6622c49b255c5ce6ce5108": {
+          "cell": "incomplete_good:qwen3_coder_30b_500:sympy__sympy-14531:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 9,
+          "denied_strict": 0,
+          "escalation_reason_missing": 1,
+          "escalation_granted": 2,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 4,
+            "consistency": 1
+          }
+        },
+        "6a8aeb65b2eb4bb325854c80": {
+          "cell": "incomplete_good:qwen3_coder_30b_500:sympy__sympy-14531:T3A-T",
+          "condition": "T3A-T",
+          "events": 9,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 3
+          }
+        },
+        "67a9366ae4818d17790d1440": {
+          "cell": "incomplete_decisive_bad:glm5_500:sympy__sympy-13798:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "b0936fd77feb264d2b3fc47e": {
+          "cell": "incomplete_decisive_bad:glm5_500:sympy__sympy-13798:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 13,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 5,
+          "acceptance_log_reveal": 3,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 2,
+            "coverage": 1,
+            "log": 5,
+            "consistency": 2,
+            "artifact": 1
+          }
+        },
+        "d61237335ccfb7e2ce86594b": {
+          "cell": "incomplete_decisive_bad:glm5_500:sympy__sympy-13798:T3A-T",
+          "condition": "T3A-T",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1,
+            "artifact": 1
+          }
+        },
+        "a4cad965e558228ba5b817f7": {
+          "cell": "w2_decisive_bad:glm5_500:sympy__sympy-12489:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 6,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "accf0ba37b63bfd5611a3c4e": {
+          "cell": "w2_decisive_bad:glm5_500:sympy__sympy-12489:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 8,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 3,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 3,
+            "consistency": 1
+          }
+        },
+        "228b7b45d6f5ca171bca60f3": {
+          "cell": "w2_decisive_bad:glm5_500:sympy__sympy-12489:T3A-T",
+          "condition": "T3A-T",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1,
+            "artifact": 1
+          }
+        },
+        "b21ab3dfa812eb846da01afa": {
+          "cell": "w2_decisive_bad:qwen3_coder_30b_500:sympy__sympy-13091:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 6,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "b918d1a7f2d9d9deaf15b5df": {
+          "cell": "w2_decisive_bad:qwen3_coder_30b_500:sympy__sympy-13091:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 10,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 4,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 4,
+            "consistency": 2
+          }
+        },
+        "ba2ad0317be0cee80615d0dc": {
+          "cell": "w2_decisive_bad:qwen3_coder_30b_500:sympy__sympy-13091:T3A-T",
+          "condition": "T3A-T",
+          "events": 8,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 2,
+            "artifact": 1
+          }
+        },
+        "cdcf092c5ec26043679dc67a": {
+          "cell": "w2_incomplete_good:glm5_500:sympy__sympy-13091:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1,
+            "artifact": 1
+          }
+        },
+        "6f555e7246ea392d3f80900a": {
+          "cell": "w2_incomplete_good:glm5_500:sympy__sympy-13091:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 11,
+          "denied_strict": 0,
+          "escalation_reason_missing": 1,
+          "escalation_granted": 3,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 4,
+            "consistency": 2,
+            "artifact": 1
+          }
+        },
+        "a39fdd07d589b583eaec4d3b": {
+          "cell": "w2_incomplete_good:glm5_500:sympy__sympy-13091:T3A-T",
+          "condition": "T3A-T",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "3df46492fb652648f1d2a0a7": {
+          "cell": "w2_stale:glm5_500:sympy__sympy-12419:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1,
+            "artifact": 1
+          }
+        },
+        "f3bb6a0483c5a96f2a3d82db": {
+          "cell": "w2_stale:glm5_500:sympy__sympy-12419:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 6,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 1,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 1,
+            "consistency": 1
+          }
+        },
+        "fa478e7ea417d929b6a13129": {
+          "cell": "w2_stale:glm5_500:sympy__sympy-12419:T3A-T",
+          "condition": "T3A-T",
+          "events": 6,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "artifact": 1
+          }
+        },
+        "3b7ca41a079bdfa17ed6d5dd": {
+          "cell": "w2_stale:glm5_500:sympy__sympy-12481:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "e39359d2a5b70b605cbeea9f": {
+          "cell": "w2_stale:glm5_500:sympy__sympy-12481:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 8,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 3,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 3,
+            "consistency": 1
+          }
+        },
+        "ce12e9416a5eeebcea98b5e7": {
+          "cell": "w2_stale:glm5_500:sympy__sympy-12481:T3A-T",
+          "condition": "T3A-T",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "aada27365dffe4aff5e5d3d0": {
+          "cell": "w2_stale_bad:glm5_500:sympy__sympy-12489:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 6,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "b34161c08e3026a83bd5f676": {
+          "cell": "w2_stale_bad:glm5_500:sympy__sympy-12489:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 10,
+          "denied_strict": 0,
+          "escalation_reason_missing": 1,
+          "escalation_granted": 3,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 3,
+            "consistency": 2,
+            "artifact": 1
+          }
+        },
+        "4b9f5fbd30a1ccc332f483ae": {
+          "cell": "w2_stale_bad:glm5_500:sympy__sympy-12489:T3A-T",
+          "condition": "T3A-T",
+          "events": 6,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "artifact": 1
+          }
+        },
+        "a898741d267aacda2e16856f": {
+          "cell": "w2_stale_persists:qwen3_30b_instruct2507_500:sympy__sympy-12489:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "8dd4df331eda182207a5e820": {
+          "cell": "w2_stale_persists:qwen3_30b_instruct2507_500:sympy__sympy-12489:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 8,
+          "denied_strict": 0,
+          "escalation_reason_missing": 1,
+          "escalation_granted": 1,
+          "acceptance_log_reveal": 1,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 2,
+            "consistency": 1,
+            "artifact": 1
+          }
+        },
+        "ca43f4989e5a026043e94686": {
+          "cell": "w2_stale_persists:qwen3_30b_instruct2507_500:sympy__sympy-12489:T3A-T",
+          "condition": "T3A-T",
+          "events": 6,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "artifact": 1
+          }
+        },
+        "e6dac81546d5c9272d4bf1c0": {
+          "cell": "w2_valid:glm5_500:sympy__sympy-12419:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "artifact": 1,
+            "log": 1
+          }
+        },
+        "d214f55a2fa448484cb2aa64": {
+          "cell": "w2_valid:glm5_500:sympy__sympy-12419:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 9,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 4,
+          "acceptance_log_reveal": 3,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 4,
+            "consistency": 1
+          }
+        },
+        "ad9a360742e2368980d38d23": {
+          "cell": "w2_valid:glm5_500:sympy__sympy-12419:T3A-T",
+          "condition": "T3A-T",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "f203ae9286fec333044f5415": {
+          "cell": "w2_valid:glm5_500:sympy__sympy-12481:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "af9f1c50de406f36b616db76": {
+          "cell": "w2_valid:glm5_500:sympy__sympy-12481:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 8,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 3,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 3,
+            "consistency": 1
+          }
+        },
+        "73c32823a95e18f0fe609728": {
+          "cell": "w2_valid:glm5_500:sympy__sympy-12481:T3A-T",
+          "condition": "T3A-T",
+          "events": 9,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 3
+          }
+        },
+        "a919f12a3c23fb5a19754f50": {
+          "cell": "w2_valid:glm5_500:sympy__sympy-13091:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 6,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "2a14e18ace8c79e5b8e09e18": {
+          "cell": "w2_valid:glm5_500:sympy__sympy-13091:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 8,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 3,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 3,
+            "consistency": 1
+          }
+        },
+        "d1ff5f0f0faaa025a1ae288c": {
+          "cell": "w2_valid:glm5_500:sympy__sympy-13091:T3A-T",
+          "condition": "T3A-T",
+          "events": 10,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "artifact": 1,
+            "consistency": 1,
+            "log": 4
+          }
+        },
+        "5fc33c48f7686df1c209a385": {
+          "cell": "w2_valid:qwen3_30b_instruct2507_500:sympy__sympy-12481:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1,
+            "artifact": 1
+          }
+        },
+        "849cc4bde8866bdb5097626e": {
+          "cell": "w2_valid:qwen3_30b_instruct2507_500:sympy__sympy-12481:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 8,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 3,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 3,
+            "consistency": 1
+          }
+        },
+        "f662194c2f4a483d29b7fc0d": {
+          "cell": "w2_valid:qwen3_30b_instruct2507_500:sympy__sympy-12481:T3A-T",
+          "condition": "T3A-T",
+          "events": 9,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 3
+          }
+        },
+        "facf4fbf8aa1cff3a7ef2ebc": {
+          "cell": "w2_valid:qwen3_coder_30b_500:sympy__sympy-12419:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 6,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "510a2818ad073f0c6b3eef4b": {
+          "cell": "w2_valid:qwen3_coder_30b_500:sympy__sympy-12419:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 8,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 3,
+          "acceptance_log_reveal": 3,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 4
+          }
+        },
+        "4db9aa44bfced5ef14054431": {
+          "cell": "w2_valid:qwen3_coder_30b_500:sympy__sympy-12419:T3A-T",
+          "condition": "T3A-T",
+          "events": 10,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "artifact": 1,
+            "log": 4
+          }
+        },
+        "3de5947064a37bbf2bdd79f3": {
+          "cell": "w2_valid:qwen3_coder_30b_500:sympy__sympy-12481:T3D-Strict",
+          "condition": "T3D-Strict",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "artifact": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "log": 1
+          }
+        },
+        "16687d3dce82fda18b735468": {
+          "cell": "w2_valid:qwen3_coder_30b_500:sympy__sympy-12481:T3D-Escalate",
+          "condition": "T3D-Escalate",
+          "events": 8,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 3,
+          "acceptance_log_reveal": 2,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "log": 3,
+            "consistency": 1
+          }
+        },
+        "ba350ca726a7c8defb98d3c8": {
+          "cell": "w2_valid:qwen3_coder_30b_500:sympy__sympy-12481:T3A-T",
+          "condition": "T3A-T",
+          "events": 7,
+          "denied_strict": 0,
+          "escalation_reason_missing": 0,
+          "escalation_granted": 0,
+          "acceptance_log_reveal": 0,
+          "reads": {
+            "session_open": 1,
+            "verify": 1,
+            "freshness": 1,
+            "coverage": 1,
+            "consistency": 1,
+            "artifact": 1,
+            "log": 1
+          }
+        }
+      }
+    },
+    "escalation_denied_breakdown_note": "13 row-level denials = 7 missing-reason 400s + 6 other protocol denials; 10 cells retried with a reason and were subsequently granted (deny->grant), indicating the reason gate functioned.",
+    "anomalies": []
+  },
+  "artifacts": {
+    "results": "evidence_store/wave2_pilot_results.jsonl",
+    "run_audit": "evidence_store/wave2_pilot_run_audit.json",
+    "scores": "evidence_store/wave2_pilot_scores.json",
+    "deep_dive": "evidence_store/wave2_pilot_deep_dive.json",
+    "preflight": "evidence_store/wave2_pilot_preflight.json",
+    "combined_raw_manifest": "evidence_store/wave2_pilot_raw_rows.jsonl",
+    "frozen_assets_modified": false,
+    "other_models_run": false
+  }
+}

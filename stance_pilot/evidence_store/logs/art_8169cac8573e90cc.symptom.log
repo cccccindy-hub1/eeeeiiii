@@ -1,0 +1,35 @@
+### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+
+--- stderr ---
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+Traceback (most recent call last):
+  File "C:\Users\guoci\work\eeeeiiii\stance_pilot\evidence_store\probes\sympy__sympy-13798.py", line 7, in <module>
+    out = latex(3*x**2*y, mul_symbol=r"\,")
+  File "C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\printing\latex.py", line 2203, in latex
+    return LatexPrinter(settings).doprint(expr)
+  File "C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\printing\latex.py", line 160, in __init__
+    mul_symbol_table[self._settings['mul_symbol']]
+KeyError: '\\,'
+
+
+### POST candidate patch
+$ python probe.py  (exit 0)
+--- stdout ---
+OK: 3\,x^{2}\,y
+
+--- stderr ---
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable

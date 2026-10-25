@@ -1,0 +1,69 @@
+{
+  "protocol": "ternary",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_profile": "openai_gpt41_mini",
+  "cells_planned": 2,
+  "cells_already_done": 0,
+  "cells_attempted_this_process": 2,
+  "error_cells": 0,
+  "budget_stop_cells": 0,
+  "batch_budget_stop": false,
+  "budget_cap_usd": 0.1,
+  "cumulative_spend_usd": 0.005429,
+  "completion_cap_tokens": 8192,
+  "version": {
+    "prompt_version": "p3-ternary-v2",
+    "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+    "fixture_manifest": {
+      "files": {
+        "evidence_store_w21/phase2_fixtures.jsonl": "2536d4bf54deec491884f3b2708af323b6c1ccb7a6a19535a42c12bcf3b4ff8d",
+        "evidence_store_w21/phase3_fixtures.jsonl": "3755ba12ee3867398baca2867c57c1fd7b63bebb6f285f4decf0ce553cb984b9",
+        "evidence_store_w21/wave2_fixtures.jsonl": "ff7d182f724cac152f5a9b5202007fe9f4e2f679fa0ece3da647c980acafa4be"
+      },
+      "combined_sha256": "a4b2e2e528f0b5df699dfd65302655d94da83562d1fd7b425a5625acad87d2bb"
+    },
+    "gold_path": "evidence_store_w21/wave2_gold.jsonl",
+    "ev1_namespace": "evidence_store_ev1",
+    "ev1_adapter": "evidence/ev1_adapters.py",
+    "ev1_model_profile": "openai_gpt41_mini"
+  },
+  "server_audit": {
+    "audit_path": "C:\\Users\\guoci\\AppData\\Local\\Temp\\ev1_store_copy_rkhp0aqj\\audit.jsonl",
+    "sessions": 1,
+    "counts": {
+      "events": 5,
+      "denied_strict": 0,
+      "escalation_reason_missing": 0,
+      "consistency_escalation_granted": 0,
+      "acceptance_log_reveal": 1
+    },
+    "by_condition": {
+      "T3D-Escalate": {
+        "events": 5,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 1,
+        "acceptance_log_reveal": 1
+      }
+    },
+    "per_session": {
+      "cfc5e3aa1d3ee717d76e6fae": {
+        "cell": "incomplete_decisive_bad:glm5_500:sympy__sympy-13798:T3D-Escalate",
+        "condition": "T3D-Escalate",
+        "events": 5,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 1,
+        "acceptance_log_reveal": 1,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "log": 1
+        }
+      }
+    }
+  }
+}

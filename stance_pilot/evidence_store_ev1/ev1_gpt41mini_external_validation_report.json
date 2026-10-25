@@ -1,0 +1,300 @@
+{
+  "report": "groundedreview_ev1_external_validation_final",
+  "generated_note": "Formal E1 report for the user-authorized full 110-cell gpt-4.1-mini external validation (authorization 2026-10-23, hard new budget cap $2.00). All numbers in this report are derived from frozen artifacts only; no frozen Phase 1/2/3 or Wave-2.1 file was modified.",
+  "run_identity": {
+    "external_validation": "E1",
+    "candidate_model": "gpt-4.1-mini",
+    "served_model_id_all_110_cells": "gpt-4.1-mini-2025-04-14",
+    "baseline_model": "deepseek-flash (served: deepseek-flash, thinking default; Wave-2.1 corrected 110-cell run)",
+    "design": "22 fixtures x 5 conditions = 110 cells; identical Gold/Prompt semantics/tool permissions/scoring as Wave-2.1; independent session per active cell",
+    "conditions": ["T2D-T", "T3D-Strict", "T3D-Escalate", "T2A-T", "T3A-T"],
+    "n_unique_issues": 10,
+    "results_file": "evidence_store_ev1/ev1_gpt41mini_results.jsonl",
+    "audit_file": "evidence_store_ev1/ev1_gpt41mini_audit.json",
+    "paired_metrics_file": "evidence_store_ev1/ev1_gpt41mini_paired_metrics.json",
+    "preregister_eval_file": "evidence_store_ev1/ev1_gpt41mini_preregister_eval.json"
+  },
+
+  "1_decision_appropriateness_by_five_conditions": {
+    "standards_separation": "oracle_gold and condition_gold are reported separately everywhere; never averaged",
+    "ci_method": "issue-cluster bootstrap, seed=7, n_boot=10000 (clusters = 10 unique instance_ids)",
+    "gpt_4_1_mini": {
+      "T2D-T":          {"oracle_da": 0.4091, "oracle_n": "9/22",  "oracle_ci95": [0.2857, 0.5882], "condition_da": 0.9091, "condition_n": "20/22", "condition_ci95": [0.7826, 1.0]},
+      "T2A-T":          {"oracle_da": 0.5455, "oracle_n": "12/22", "oracle_ci95": [0.3333, 0.7037], "condition_da": 0.9545, "condition_n": "21/22", "condition_ci95": [0.8621, 1.0]},
+      "T3D-Strict":     {"oracle_da": 0.7727, "oracle_n": "17/22", "oracle_ci95": [0.6364, 0.9048], "condition_da": 0.6818, "condition_n": "15/22", "condition_ci95": [0.48, 0.8824]},
+      "T3D-Escalate":   {"oracle_da": 0.7727, "oracle_n": "17/22", "oracle_ci95": [0.5652, 0.95],   "condition_da": 0.7727, "condition_n": "17/22", "condition_ci95": [0.5652, 0.95]},
+      "T3A-T":          {"oracle_da": 0.8636, "oracle_n": "19/22", "oracle_ci95": [0.72, 1.0],       "condition_da": 0.8636, "condition_n": "19/22", "condition_ci95": [0.72, 1.0]},
+      "pooled":         {"oracle_da": 0.6727, "oracle_n": "74/110","oracle_ci95": [0.59, 0.7429],   "condition_da": 0.8364, "condition_n": "92/110","condition_ci95": [0.7727, 0.8952]}
+    },
+    "deepseek_flash_baseline": {
+      "T2D-T":          {"oracle_da": 0.5,    "oracle_n": "11/22", "condition_da": 1.0,    "condition_n": "22/22"},
+      "T2A-T":          {"oracle_da": 0.3636, "oracle_n": "8/22",  "condition_da": 0.0909, "condition_n": "2/22"},
+      "T3D-Strict":     {"oracle_da": 0.4545, "oracle_n": "10/22", "condition_da": 0.9545, "condition_n": "21/22"},
+      "T3D-Escalate":   {"oracle_da": 0.7727, "oracle_n": "17/22", "condition_da": 0.7727, "condition_n": "17/22"},
+      "T3A-T":          {"oracle_da": 0.8636, "oracle_n": "19/22", "condition_da": 0.8636, "condition_n": "19/22"},
+      "pooled":         {"oracle_da": 0.5909, "oracle_n": "65/110","oracle_ci95": [0.525, 0.675], "condition_da": 0.7364, "condition_n": "81/110", "condition_ci95": [0.6667, 0.7818]}
+    },
+    "paired_cross_model": {
+      "pooled_oracle":    {"delta_gpt_minus_ds": 0.0818, "delta_ci95_cluster_seed7_n10000": [-0.019, 0.1667], "ci_crosses_zero": true, "gpt_right_ds_wrong": 24, "ds_right_gpt_wrong": 15, "mcnemar_exact_two_sided_descriptive_p": 0.1996},
+      "pooled_condition": {"delta_gpt_minus_ds": 0.10,   "delta_ci95_cluster_seed7_n10000": [0.0261, 0.181],  "ci_crosses_zero": false, "gpt_right_ds_wrong": 26, "ds_right_gpt_wrong": 15, "mcnemar_exact_two_sided_descriptive_p": 0.1173},
+      "per_condition_oracle": {
+        "T2D-T":        {"delta": -0.0909, "ci95": [-0.2105, 0.0],    "discord_gpt_right_ds_wrong": 0,  "discord_ds_right_gpt_wrong": 2,  "mcnemar_p_descriptive": 0.5},
+        "T2A-T":        {"delta": 0.1818,  "ci95": [-0.2222, 0.4783], "discord_gpt_right_ds_wrong": 12, "discord_ds_right_gpt_wrong": 8,  "mcnemar_p_descriptive": 0.5034},
+        "T3D-Strict":   {"delta": 0.3182,  "ci95": [0.125, 0.5],       "discord_gpt_right_ds_wrong": 7,  "discord_ds_right_gpt_wrong": 0,  "mcnemar_p_descriptive": 0.0156},
+        "T3D-Escalate": {"delta": 0.0,     "ci95": [-0.2692, 0.2381], "discord_gpt_right_ds_wrong": 3,  "discord_ds_right_gpt_wrong": 3,  "mcnemar_p_descriptive": 1.0},
+        "T3A-T":        {"delta": 0.0,     "ci95": [-0.125, 0.15],     "discord_gpt_right_ds_wrong": 2,  "discord_ds_right_gpt_wrong": 2,  "mcnemar_p_descriptive": 1.0}
+      },
+      "per_condition_condition_standard": {
+        "T2D-T":        {"delta": -0.0909, "ci95": [-0.2105, 0.0],    "discord_gpt_right_ds_wrong": 0,  "discord_ds_right_gpt_wrong": 2,  "mcnemar_p_descriptive": 0.5},
+        "T2A-T":        {"delta": 0.8636,  "ci95": [0.6818, 1.0],      "discord_gpt_right_ds_wrong": 20, "discord_ds_right_gpt_wrong": 1,  "mcnemar_p_descriptive": 0.0},
+        "T3D-Strict":   {"delta": -0.2727, "ci95": [-0.5, 0.0],        "discord_gpt_right_ds_wrong": 1,  "discord_ds_right_gpt_wrong": 7,  "mcnemar_p_descriptive": 0.0703},
+        "T3D-Escalate": {"delta": 0.0,     "ci95": [-0.2692, 0.2381], "discord_gpt_right_ds_wrong": 3,  "discord_ds_right_gpt_wrong": 3,  "mcnemar_p_descriptive": 1.0},
+        "T3A-T":        {"delta": 0.0,     "ci95": [-0.125, 0.15],     "discord_gpt_right_ds_wrong": 2,  "discord_ds_right_gpt_wrong": 2,  "mcnemar_p_descriptive": 1.0}
+      },
+      "inference_discipline": "McNemar exact tests are DESCRIPTIVE ONLY: paired set is complete (110/110 shared cells, 10 clusters) but only 10 issue clusters and cells within issue are correlated; the cluster bootstrap CI is the primary uncertainty statement. No cross-model population-level significance claim is made."
+    },
+    "evidence_asymmetry_note": "For gpt-4.1-mini the oracle-vs-condition DA gap persists but is much smaller than for deepseek-flash in T2A-T: GPT T2A-T oracle .5455 vs condition .9545 (DeepSeek .3636 vs .0909). In T3D-Strict the polarity flips: GPT scores higher on oracle (.7727) than condition (.6818) because it commits REJECT on symptom-level decisive failure that the strict condition standard treats as NEED_EVIDENCE, while also committing ACCEPT 7 times against condition NEED_EVIDENCE."
+  },
+
+  "2_ternary_confusion_matrices_and_baselines": {
+    "convention": "rows = model decision (ACCEPT/REJECT/NEED_EVIDENCE), columns = gold in the same order; parseable denominator = 110/110",
+    "gpt_4_1_mini": {
+      "parseable": "110/110",
+      "INVALID": 0,
+      "AMBIGUOUS": 0,
+      "oracle_3x3": {
+        "ACCEPT":        {"gold_ACCEPT": 27, "gold_REJECT": 3,  "gold_NEED": 7},
+        "REJECT":        {"gold_ACCEPT": 0,  "gold_REJECT": 14, "gold_NEED": 5},
+        "NEED_EVIDENCE": {"gold_ACCEPT": 8,  "gold_REJECT": 13, "gold_NEED": 33},
+        "diagonal_total": 74
+      },
+      "condition_3x3": {
+        "ACCEPT":        {"gold_ACCEPT": 28, "gold_REJECT": 1,  "gold_NEED": 8},
+        "REJECT":        {"gold_ACCEPT": 0,  "gold_REJECT": 16, "gold_NEED": 3},
+        "NEED_EVIDENCE": {"gold_ACCEPT": 0,  "gold_REJECT": 6,  "gold_NEED": 48},
+        "diagonal_total": 92
+      },
+      "per_condition_3x3_row_major_predAR_goldAR": {
+        "T2D-T":        {"oracle": [[0,0,0],[0,0,0],[7,6,9]],     "condition": [[0,0,0],[0,0,0],[0,2,20]]},
+        "T2A-T":        {"oracle": [[7,1,7],[0,5,2],[0,0,0]],     "condition": [[14,0,1],[0,7,0],[0,0,0]]},
+        "T3D-Strict":   {"oracle": [[6,1,0],[0,2,0],[1,3,9]],     "condition": [[0,0,7],[0,2,0],[0,0,13]]},
+        "T3D-Escalate": {"oracle": [[7,1,0],[0,2,1],[0,3,8]],     "condition": [[7,1,0],[0,2,1],[0,3,8]]},
+        "T3A-T":        {"oracle": [[7,0,0],[0,5,2],[0,1,7]],     "condition": [[7,0,0],[0,5,2],[0,1,7]]}
+      },
+      "always_need_baseline": {
+        "pooled_oracle": {"rate": 0.4091, "n_correct": 45, "n": 110},
+        "pooled_condition": {"rate": 0.5364, "n_correct": 59, "n": 110},
+        "per_condition_condition_standard": {"T2D-T": 0.9091, "T3D-Strict": 0.9091, "T3D-Escalate": 0.4091, "T2A-T": 0.0455, "T3A-T": 0.4091},
+        "interpretation": "GPT pooled condition DA .8364 beats Always-NEED .5364; pooled oracle DA .6727 beats Always-NEED .4091. In T2D-T and T3D-Strict condition standard, Always-NEED (.9091) is slightly ABOVE GPT (.9091 tie / .6818 below) - GPT's decisive commitments there hurt under the accessible-evidence standard."
+      }
+    },
+    "deepseek_flash_baseline": {
+      "parseable": "110/110",
+      "INVALID": 0,
+      "AMBIGUOUS": 0,
+      "oracle_3x3": {
+        "ACCEPT":        {"gold_ACCEPT": 14, "gold_REJECT": 0,  "gold_NEED": 0},
+        "REJECT":        {"gold_ACCEPT": 0,  "gold_REJECT": 10, "gold_NEED": 4},
+        "NEED_EVIDENCE": {"gold_ACCEPT": 21, "gold_REJECT": 20, "gold_NEED": 41},
+        "diagonal_total": 65
+      },
+      "condition_3x3": {
+        "ACCEPT":        {"gold_ACCEPT": 14, "gold_REJECT": 0,  "gold_NEED": 0},
+        "REJECT":        {"gold_ACCEPT": 0,  "gold_REJECT": 11, "gold_NEED": 3},
+        "NEED_EVIDENCE": {"gold_ACCEPT": 14, "gold_REJECT": 12, "gold_NEED": 56},
+        "diagonal_total": 81
+      },
+      "per_condition_3x3_row_major_predAR_goldAR": {
+        "T2D-T":        {"oracle": [[0,0,0],[0,2,0],[7,4,9]],     "condition": [[0,0,0],[0,2,0],[0,0,20]]},
+        "T2A-T":        {"oracle": [[0,0,0],[0,0,1],[7,6,8]],     "condition": [[0,0,0],[0,1,0],[14,6,1]]},
+        "T3D-Strict":   {"oracle": [[0,0,0],[0,1,0],[7,5,9]],     "condition": [[0,0,0],[0,1,0],[0,1,20]]},
+        "T3D-Escalate": {"oracle": [[7,0,0],[0,3,2],[0,3,7]],     "condition": [[7,0,0],[0,3,2],[0,3,7]]},
+        "T3A-T":        {"oracle": [[7,0,0],[0,4,1],[0,2,8]],     "condition": [[7,0,0],[0,4,1],[0,2,8]]}
+      }
+    }
+  },
+
+  "3_failure_mechanisms_H1_H2_appropriate_abstention": {
+    "denominators": "appropriate abstention / over-abstention out of gold-NEED_EVIDENCE and gold-decisive cells respectively (see paired metrics); unsupported rejection out of gold-non-REJECT; false-commit-accept (predict ACCEPT where gold is not ACCEPT) out of gold-non-ACCEPT",
+    "gpt_4_1_mini_pooled": {
+      "oracle_standard": {
+        "appropriate_abstention": {"n": 33, "denominator": 45, "rate": 0.7333},
+        "over_abstention_H1": {"n": 21, "denominator": 65, "rate": 0.3231},
+        "unsupported_rejection_H2": {"n": 5, "denominator": 80, "rate": 0.0625},
+        "false_commit_accept": {"n": 7, "denominator": 45, "rate": 0.1556}
+      },
+      "condition_standard": {
+        "appropriate_abstention": {"n": 48, "denominator": 59, "rate": 0.8136},
+        "over_abstention_H1": {"n": 6, "denominator": 51, "rate": 0.1176},
+        "unsupported_rejection_H2": {"n": 3, "denominator": 87, "rate": 0.0345},
+        "false_commit_accept": {"n": 8, "denominator": 59, "rate": 0.1356}
+      }
+    },
+    "deepseek_flash_pooled": {
+      "oracle_standard": {
+        "appropriate_abstention": {"n": 41, "denominator": 45, "rate": 0.9111},
+        "over_abstention_H1": {"n": 41, "denominator": 65, "rate": 0.6308},
+        "unsupported_rejection_H2": {"n": 4, "denominator": 80, "rate": 0.05},
+        "false_commit_accept": {"n": 0, "denominator": 45, "rate": 0.0}
+      },
+      "condition_standard": {
+        "appropriate_abstention": {"n": 56, "denominator": 59, "rate": 0.9492},
+        "over_abstention_H1": {"n": 26, "denominator": 51, "rate": 0.5098},
+        "unsupported_rejection_H2": {"n": 3, "denominator": 87, "rate": 0.0345},
+        "false_commit_accept": {"n": 0, "denominator": 59, "rate": 0.0}
+      }
+    },
+    "mechanism_readout": [
+      "H1 Over-Abstention is markedly weaker for GPT (oracle 32.3% vs DeepSeek 63.1%; condition 11.8% vs 51.0%) - the Wave-2.1 dominant failure mode does not reproduce at the same magnitude; H1 remains phrased as a hypothesis-to-test and this is one cross-provider replication only.",
+      "A mechanism ABSENT in DeepSeek appears for GPT: false-commit-accept = 7 oracle / 8 condition cells (15.6% / 13.6%). It is concentrated in T2A-T (7 of the 9 oracle gold-NEED cells are answered ACCEPT; appropriate abstention in T2A-T = 0) and in T3D-Strict condition standard (7 ACCEPT against condition gold NEED_EVIDENCE).",
+      "H2 Unsupported Rejection is rare and similar for both models (oracle 6.25% GPT vs 5.0% DeepSeek; condition 3.45% both).",
+      "Net shape: DeepSeek errs predominantly by refusing despite sufficient evidence (over-cautious); GPT errs in both directions, with a new over-permissive false-commit pattern. Both are instances of the H3 Verification-Decision Gap family; the available-vs-sufficient evidence calibration differs across providers rather than one model being uniformly better."
+    ]
+  },
+
+  "4_paired_comparison_and_case_level": "see section 1 paired_cross_model (full 110-cell pairing, issue-cluster bootstrap CI seed 7 n=10000, descriptive McNemar) and section 5 (pre-registered anchored case analysis)",
+
+  "5_preregistered_case_analysis": {
+    "status": "EXPLORATORY MECHANISM ANALYSIS anchored by exact served_artifact_id, frozen before any cross-model paid call; NOT independent samples, NOT confirmatory inference; H1/H2 remain hypotheses to be tested",
+    "n_locked_artifacts": 7,
+    "n_locked_cells_scored": 35,
+    "distinct_issues_in_cases": 6,
+    "mechanical_verdict_counts": {
+      "oracle_standard": {"over_abstention_H1": 11, "appropriate": 20, "false_commit_accept": 4, "unsupported_rejection_H2": 0, "protocol_failure": 0},
+      "condition_standard": {"over_abstention_H1": 5, "appropriate": 30, "false_commit_accept": 0, "unsupported_rejection_H2": 0, "protocol_failure": 0},
+      "verification_decision_gap_H3_true": 7
+    },
+    "by_case_group": {
+      "wrong_patch": {"n_cells": 10, "oracle": {"over_abstention_H1": 3, "appropriate": 5, "false_commit_accept": 2}, "condition": {"over_abstention_H1": 3, "appropriate": 7}, "H3_true": 2},
+      "incomplete_good": {"n_cells": 10, "oracle": {"appropriate": 8, "false_commit_accept": 2}, "condition": {"appropriate": 10}, "H3_true": 0},
+      "partial_but_decisive": {"n_cells": 15, "oracle": {"over_abstention_H1": 8, "appropriate": 7}, "condition": {"over_abstention_H1": 2, "appropriate": 13}, "H3_true": 5}
+    },
+    "H3_true_cells": [
+      {"case_group": "wrong_patch", "condition": "T3D-Escalate", "model": "NEED_EVIDENCE", "oracle_expected": "REJECT", "condition_expected": "REJECT"},
+      {"case_group": "wrong_patch", "condition": "T3A-T", "model": "NEED_EVIDENCE", "oracle_expected": "REJECT", "condition_expected": "REJECT"},
+      {"case_group": "partial_but_decisive", "condition": "T3D-Strict", "model": "NEED_EVIDENCE", "oracle_expected": "REJECT", "condition_expected": "NEED_EVIDENCE"},
+      {"case_group": "partial_but_decisive", "condition": "T3D-Strict", "model": "NEED_EVIDENCE", "oracle_expected": "REJECT", "condition_expected": "NEED_EVIDENCE"},
+      {"case_group": "partial_but_decisive", "condition": "T3D-Escalate", "model": "NEED_EVIDENCE", "oracle_expected": "REJECT", "condition_expected": "REJECT"},
+      {"case_group": "partial_but_decisive", "condition": "T3D-Strict", "model": "NEED_EVIDENCE", "oracle_expected": "REJECT", "condition_expected": "NEED_EVIDENCE"},
+      {"case_group": "partial_but_decisive", "condition": "T3D-Escalate", "model": "NEED_EVIDENCE", "oracle_expected": "REJECT", "condition_expected": "REJECT"}
+    ],
+    "interpretation": [
+      "On the two wrong_patch trusted-decisive-failure fixtures, GPT still abstains in 2 active conditions (T3D-Escalate/T3A-T) despite an independently executed, acceptance-artifact-independent symptom failure: candidate H1/H3 instances, e.g. the Wave-2.1 over-abstention pattern partially reproduces on exactly the anchored IDs.",
+      "On partial-but-decisive cases GPT abstains against oracle REJECT in 8/15 cells (5 also flagged H3 where tools/adjudicated evidence were available); under the accessible condition standard only 2 remain over-abstentions (the three T3D-Strict cells are appropriate NEED under strict withholding).",
+      "No mechanically-labelled H2 unsupported rejection and no protocol failure occurred in any of the 35 locked cells.",
+      "4 oracle-standard false-commit-accepts appear inside the locked cases (2 wrong_patch T2A-T where condition gold is ACCEPT, 2 incomplete_good T2A-T): under the institutional presentation condition standard these are appropriate, illustrating why oracle and condition scores must never be merged."
+    ]
+  },
+
+  "6_tool_behaviour_and_cost": {
+    "gpt_4_1_mini_all_active_conditions_T3D_Strict_T3D_Escalate_T3A_T": {
+      "active_cells": 66,
+      "static_cells": 44,
+      "tool_calls_total": 273,
+      "http_200": 273,
+      "http_403_strict_denied": 0,
+      "http_400_missing_reason": 0,
+      "http_5xx": 0,
+      "tool_success_rate_200": 1.0,
+      "cells_with_any_5xx": 0,
+      "tool_calls_per_active_cell": {"min": 3, "max": 6, "mean": 4.14},
+      "by_condition": {
+        "T3D-Strict":   {"tool_calls": 90, "cells_with_escalation_granted": 0},
+        "T3D-Escalate": {"tool_calls": 91, "escalation_requested_events": 14, "escalation_granted_events": 14, "escalation_denied_events": 0, "cells_with_grant": 12},
+        "T3A-T":        {"tool_calls": 92, "cells_with_escalation_granted": 0}
+      },
+      "strict_denied_note": "0 strict_denied events: as with DeepSeek-flash in Wave-2.1, GPT never attempted a forbidden Acceptance-Tier endpoint under Strict, so absence of 403s is not evidence of a permission leak; server-side authorization was independently enforced."
+    },
+    "gpt_server_side_audit": {
+      "sessions": 66,
+      "events": 339,
+      "denied_strict": 0,
+      "escalation_reason_missing": 0,
+      "consistency_escalation_granted": 4,
+      "acceptance_log_reveal": 10,
+      "escalate_subset": {"escalation_granted": 14, "acceptance_log_reveal": 10, "reason_missing": 0, "denied_strict": 0},
+      "isolation": "server ran on an isolated temp copy of the store; frozen evidence_store_w21 was never mutated"
+    },
+    "deepseek_flash_comparison": {
+      "tool_calls_total": 444,
+      "http_200": 430,
+      "http_400_missing_reason": 7,
+      "http_403_strict_denied": 0,
+      "http_5xx": 0,
+      "tool_success_rate_200": 0.9685,
+      "cells_with_escalation_granted": 22,
+      "readout": "GPT used substantially fewer tool calls (273 vs 444; mean 4.14/active cell) yet every call succeeded; every GPT Escalate request carried a reason (0 missing-reason 400 vs DeepSeek 7), and escalation was granted in 12/22 Escalate cells (DeepSeek 22/22). Fewer tool calls plus 8 false-commit-accepts is consistent with shallower verification before committing."
+    },
+    "cost_gpt_by_condition_usd": {
+      "T2D-T":        {"tokens_in": 40989,  "tokens_out": 3463, "usd": 0.021936},
+      "T2A-T":        {"tokens_in": 37949,  "tokens_out": 2585, "usd": 0.019316},
+      "T3D-Strict":   {"tokens_in": 115465, "tokens_out": 4043, "usd": 0.052655},
+      "T3D-Escalate": {"tokens_in": 230735, "tokens_out": 4556, "usd": 0.099585},
+      "T3A-T":        {"tokens_in": 109009, "tokens_out": 3994, "usd": 0.049993},
+      "total_usd": 0.243484,
+      "total_wall_s": 287.39,
+      "model_calls_total": 201,
+      "pricing": {"input_per_1m_usd": 0.4, "output_per_1m_usd": 1.6}
+    },
+    "cost_deepseek_total_reference_usd": 0.453819
+  },
+
+  "7_engineering_gates_freeze_hashes_spend": {
+    "engineering_gates": [
+      {"gate": "adapter parameter self-tests", "result": "18/18 passed"},
+      {"gate": "ev1_run --adapter-check --spawn-server (zero-paid ScriptedModel)", "result": "261 assertions, 0 failures (gpt profile final turn json_object, tool turns plain_text, no DeepSeek thinking-body leakage)"},
+      {"gate": "110-cell live run completeness", "result": "110 planned / 110 completed / 0 error cells / 0 budget-stop cells / batch_budget_stop=false"},
+      {"gate": "parseability", "result": "110/110 parseable, INVALID=0, AMBIGUOUS=0"},
+      {"gate": "pre-call budget guard", "result": "armed on every paid call; never triggered; cumulative spend stayed under cap"},
+      {"gate": "frozen-store non-interference", "result": "all writes confined to evidence_store_ev1; frozen stores and phase3/ternary/metrics code untouched"}
+    ],
+    "research_outcomes_reported_as_is": "model DA, mechanism rates and case-level labels are reported as observed with no pass/fail threshold; no prompt re-tuning was performed after seeing outputs",
+    "budget": {"hard_new_cap_usd": 2.0, "actual_spend_usd": 0.243484, "headroom_usd": 1.756516, "prior_2_cell_smoke_spend_usd_separate": 0.005429, "smoke_excluded_from_main_analysis": true},
+    "freeze_hashes": {
+      "prompt_version": "p3-ternary-v2",
+      "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+      "fixture_combined_sha256": "a4b2e2e528f0b5df699dfd65302655d94da83562d1fd7b425a5625acad87d2bb",
+      "fixture_files": {
+        "evidence_store_w21/phase2_fixtures.jsonl": "2536d4bf54deec491884f3b2708af323b6c1ccb7a6a19535a42c12bcf3b4ff8d",
+        "evidence_store_w21/phase3_fixtures.jsonl": "3755ba12ee3867398baca2867c57c1fd7b63bebb6f285f4decf0ce553cb984b9",
+        "evidence_store_w21/wave2_fixtures.jsonl": "ff7d182f724cac152f5a9b5202007fe9f4e2f679fa0ece3da647c980acafa4be"
+      },
+      "ev1_adapter_sha256": "62ee4be5221d7b7c2f7555f44371a310f4994a76d5f024c34821016c7d966b77",
+      "ev1_runner_sha256": "6ba3d4a82ac016f47375eaa6c9afd9f55a175e9e160c396849599f39a6ec3f2a",
+      "ev1_profiles_sha256": "8bf34482669ae9fe9879cf28c03e187a62d71f2abe2f2ea1b92ea356385b9c06",
+      "served_model_id": "gpt-4.1-mini-2025-04-14",
+      "model_deprecation_note": "gpt-4.1-mini announced retirement 2027-01-14; E1 role is a single non-reasoning cross-provider control, not the sole long-term benchmark baseline"
+    }
+  },
+
+  "8_json_output_constraint_cross_model_confound": {
+    "difference": "DeepSeek-flash final-decision turn used response_format json_schema with strict structural enforcement (schema-conforming object guaranteed); the user-authorized GPT profile uses response_format=json_object, which guarantees only syntactically valid JSON, not conformance to the frozen 4-property ternary schema or to the ternary enum values.",
+    "scope_of_change": "API-compatibility wire parameter ONLY, explicitly authorized 2026-10-23. Frozen Prompt (p3-ternary-v2), Gold, Fixtures, tool permissions, ternary parsing (including INVALID/AMBIGUOUS) and scoring were NOT changed; parse failures were NOT auto-converted to NEED_EVIDENCE. Root cause recorded in ev1_model_profiles.json response_format_change_history: frozen schema lists 4 properties but only 3 in required (missing_evidence omitted), which OpenAI strict mode rejects.",
+    "observed_format_split_for_110_main_cells": {
+      "dedicated_decision_turn_json_object": 44,
+      "final_decision_emitted_from_plain_text_tool_turn": 66,
+      "other": 0,
+      "response_format_fallback_events_in_main_run": 0,
+      "parse_failures": 0,
+      "INVALID": 0,
+      "AMBIGUOUS": 0,
+      "note": "The 44 static conditions (T2D-T/T2A-T, no tools) ended on the dedicated json_object decision turn; all 66 active cells ended on a tools-present plain_text turn where the model emitted the final JSON while tools were still offered (finish=stop), so the dedicated decision turn was skipped and the frozen tolerant parser extracted the decision - the identical runner path used by Wave-2.1 DeepSeek."
+    },
+    "smoke_distinction": "The earlier 2-cell smoke (separate files ev1_smoke_gpt41mini_*) ran BEFORE the profile change and contains the observed strict->json_object 400 downgrade chain on the static cell; smoke cells use a different output-constraint configuration and are excluded from the 110-cell main analysis.",
+    "confound_assessment": [
+      "The constraint asymmetry is a genuine cross-model procedural difference and must accompany every strict-vs-GPT comparison: DeepSeek outputs were schema-guaranteed at the wire whereas GPT outputs were schema-validated only by the same tolerant application-level parser used for plain-text tool turns.",
+      "Empirically the confound did not produce protocol noise in this run: 0 parse failures / 0 INVALID / 0 AMBIGUOUS across both the 44 json_object decisions and the 66 plain-text tool-turn decisions, so every DA contrast is computed on the full n=110 for both models.",
+      "The difference cannot explain the substantive mechanism shift (false-commit-accept 7/8 cells and reduced over-abstention): those are decision-content differences among perfectly parseable ternary outputs, not schema-compliance differences.",
+      "Because 66/110 GPT decisions arrived via the model-dependent plain-text tool-turn path, the comparison should be described as 'same frozen runner and parser, provider-specific output enforcement', and a future replication with a provider-neutral strict-schema-compatible decision turn would remove the residual asymmetry."
+    ]
+  },
+
+  "headline_conclusions": [
+    "Engineering replication succeeded end-to-end: 110/110 cells, 0 errors, 0 protocol failures, 100% tool-call success, $0.2435 spent vs $2.00 cap.",
+    "GPT-4.1-mini pooled DA is higher on both standards (oracle .6727 vs .5909; condition .8364 vs .7364); the condition-standard paired-delta cluster CI [.026,.181] excludes zero while the oracle CI [-.019,.167] does not, and all McNemar tests are descriptive only (10 issue clusters) - no definitive cross-model superiority claim.",
+    "The dominant Wave-2.1 H1 over-abstention pattern is much weaker with GPT (63.1%->32.3% oracle; 51.0%->11.8% condition) but is replaced by a new false-commit-accept pattern absent in DeepSeek (7 oracle / 8 condition cells), concentrated in T2A-T and strict-withheld settings; H2 unsupported rejection stays rare for both (3-5 cells).",
+    "Anchored pre-registered cases (7 artifacts/35 cells): 11 oracle H1 labels, 4 false-commit labels, 7 H3 verification-decision-gap cells, 0 H2, 0 protocol failures; exploratory mechanism evidence only.",
+    "Substantive message for the research question: the failure is not a fixed conservatism level - the two providers fail on opposite sides of the available-vs-sufficient evidence boundary, which is exactly the discrimination ability GroundedReview measures."
+  ],
+  "post_report_discipline": "Stop here per user instruction: no Gemini or other model calls, no new issues, no frozen-protocol changes, no git commit."
+}

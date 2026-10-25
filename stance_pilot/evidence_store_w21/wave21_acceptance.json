@@ -1,0 +1,41 @@
+{
+ "checks": [],
+ "legacy_errors": [],
+ "wave2_by_tag": {
+  "w2-gold-dual-channel": [],
+  "w2-gold-function-arguments": [],
+  "w2-visibility-http": [],
+  "w2-decisive-audit": [],
+  "w2-ggap-truth-table": [],
+  "w2-mirror-fixtures": [],
+  "w2-prompt-versions": [],
+  "w2-noninterference": [],
+  "w2-frozen-hashes": [
+   "BASELINE ENTRY CHANGED artifacts/fix_wrong_patch_05f2955c70897168.json",
+   "BASELINE ENTRY CHANGED logs/fix_wrong_patch_05f2955c70897168.symptom.log",
+   "BASELINE ENTRY CHANGED signatures/fix_wrong_patch_05f2955c70897168.sig",
+   "baseline divergences ['artifacts/fix_wrong_patch_05f2955c70897168.json', 'audit.jsonl', 'fixtures_meta.json', 'logs/fix_wrong_patch_05f2955c70897168.symptom.log', 'signatures/fix_wrong_patch_05f2955c70897168.sig'] != expected ['audit.jsonl', 'fixtures_meta.json']",
+   "audit.jsonl: benign exception now carries wave2 namespace content"
+  ],
+  "w2-mock-runner": [],
+  "w2-offline-network": []
+ },
+ "legacy_noninterference": "3 repetitions x {artifact,verify,freshness,coverage,consistency,symptom,f2p-status}: normalised A/B diff empty; strict consistency consistent in both worlds; escalate in World B reveals the failure (positive control)",
+ "delta_gate": {
+  "changed": [
+   "artifacts/fix_wrong_patch_05f2955c70897168.json",
+   "audit.jsonl",
+   "logs/fix_wrong_patch_05f2955c70897168.symptom.log",
+   "signatures/fix_wrong_patch_05f2955c70897168.sig"
+  ],
+  "added": [],
+  "removed": [],
+  "expected_changed": [
+   "artifacts/fix_wrong_patch_05f2955c70897168.json",
+   "logs/fix_wrong_patch_05f2955c70897168.symptom.log",
+   "signatures/fix_wrong_patch_05f2955c70897168.sig"
+  ],
+  "pass": false
+ },
+ "wave2.1_acceptance_pass": false
+}

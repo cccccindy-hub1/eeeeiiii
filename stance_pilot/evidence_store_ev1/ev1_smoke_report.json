@@ -1,0 +1,370 @@
+{
+  "report": "ev1_smoke_report",
+  "generated_utc": "2026-10-22T12:33:13.869924+00:00",
+  "scope": "GroundedReview E1 - gpt-4.1-mini 2-cell REAL API smoke (user-authorized 2026-10-21, hard cap $0.10)",
+  "authorization": {
+    "cells": 2,
+    "hard_budget_cap_usd": 0.1,
+    "model_allowed": "gpt-4.1-mini",
+    "success_criterion": "protocol/API compatibility only (parseable ternary decision + intact tool loop); correctness vs gold NOT a gate",
+    "other_models_authorized": false,
+    "remaining_108_cells_run": false
+  },
+  "model_profile_used": {
+    "profile": "openai_gpt41_mini",
+    "requested_model": "gpt-4.1-mini",
+    "base_url": "https://api.openai.com/v1",
+    "provider": "openai",
+    "key_env": "OPENAI_API_KEY",
+    "status": "deprecated",
+    "deprecated_status_checked_date": "2026-10-21",
+    "openai_announced_retirement_date": "2027-01-14",
+    "e1_role": "non-reasoning cross-provider CONTROL for this single E1 replication only; NOT a long-term sole external baseline - newer current models join the multi-model benchmark later (user decision 2026-10-21)",
+    "price_in_per_1m": 0.4,
+    "price_out_per_1m": 1.6,
+    "completion_param": "max_tokens",
+    "response_format_default": "json_schema_strict",
+    "temperature_supported": true
+  },
+  "pre_smoke_readonly_check": {
+    "models_list_contains": [
+      "gpt-4.1-mini",
+      "gpt-4.1-mini-2025-04-14"
+    ],
+    "one_token_probe_served_model": "gpt-4.1-mini-2025-04-14",
+    "auth": "ok",
+    "note": "1-token chat used only to verify auth/model; negligible cost outside BudgetGuard"
+  },
+  "frozen_cell_selection": {
+    "artifact": "groundedreview_ev1_smoke_cell_freeze",
+    "authorisation": "user 2026-10-21: gpt-4.1-mini 2-cell real API smoke, hard cap $0.10, compatibility-only",
+    "model_profile": "openai_gpt41_mini",
+    "model": "gpt-4.1-mini",
+    "hard_spend_cap_usd": 0.1,
+    "selection_rule": {
+      "T2A-T": "lexicographically first T2A-T cell key (no outcome-based selection)",
+      "T3D-Escalate": "max granted escalations, then max tool calls, then cell key; guarantees the full tool loop and the reason gate are exercised on the real API"
+    },
+    "static_cell": {
+      "cell_key": "contradictory:glm5_500:sympy__sympy-18199:T2A-T",
+      "scenario": "contradictory",
+      "id": "glm5_500:sympy__sympy-18199",
+      "instance_id": "sympy__sympy-18199",
+      "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+      "condition": "T2A-T",
+      "baseline_model": "deepseek-flash",
+      "baseline_decision_parsed": "NEED_EVIDENCE",
+      "baseline_tool_calls": 0,
+      "baseline_model_calls": 1,
+      "baseline_escalation_granted": [],
+      "baseline_tokens_in": 1419,
+      "baseline_tokens_out": 183,
+      "note": "frozen deepseek-flash wave2.1 behaviour for context only; NOT a target the smoke model must match"
+    },
+    "active_cell": {
+      "cell_key": "incomplete_decisive_bad:glm5_500:sympy__sympy-13798:T3D-Escalate",
+      "scenario": "incomplete_decisive_bad",
+      "id": "glm5_500:sympy__sympy-13798",
+      "instance_id": "sympy__sympy-13798",
+      "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+      "condition": "T3D-Escalate",
+      "baseline_model": "deepseek-flash",
+      "baseline_decision_parsed": "NEED_EVIDENCE",
+      "baseline_tool_calls": 12,
+      "baseline_model_calls": 9,
+      "baseline_escalation_granted": [
+        "consistency",
+        "log",
+        "log",
+        "log",
+        "consistency"
+      ],
+      "baseline_tokens_in": 72645,
+      "baseline_tokens_out": 2630,
+      "note": "frozen deepseek-flash wave2.1 behaviour for context only; NOT a target the smoke model must match"
+    },
+    "compatibility_checkpoints": [
+      "static: strict JSON-schema final call accepted; decision parses into the frozen ternary keys (ACCEPT/REJECT/NEED_EVIDENCE + reason + evidence_mismatch)",
+      "active: multi-turn native tool calls work; the reason-gated escalation endpoint returns 400 without reason and 200 with reason; final decision JSON parses",
+      "record: model id served, every wire call kwargs, any 400 response_format downgrade chain, tokens, latency, USD",
+      "pass is protocol-level: a parseable decision with the tool loop intact = pass regardless of which decision is chosen"
+    ]
+  },
+  "cells": [
+    {
+      "cell": "contradictory:glm5_500:sympy__sympy-18199:T2A-T",
+      "condition": "T2A-T",
+      "scenario": "contradictory",
+      "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+      "evidence_tier": "A",
+      "policy": null,
+      "model_served": "gpt-4.1-mini-2025-04-14",
+      "parsed_decision": "REJECT",
+      "answer_object": "{\"decision\":\"REJECT\",\"reason\":\"The provided acceptance test artifact (art_692650aa4edbfaad) shows a failing acceptance test 'test_solve_modular' after applying this patch. This is trustworthy evidence directly linked to this patch and current commit tree, indicating a regression or failure in the acceptance test suite. Therefore, the patch cannot be accepted as is.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"contradiction\"}",
+      "model_calls": 1,
+      "tool_calls": 0,
+      "tokens_in": 1384,
+      "tokens_out": 96,
+      "cost_usd": 0.000707,
+      "wall_s": 3.12,
+      "adapter_wire_calls": [
+        {
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "has_tools": false,
+          "completion_param": "max_tokens",
+          "completion_cap": 8192,
+          "temperature_present": true,
+          "extra_body_keys": [],
+          "reasoning_effort": null,
+          "response_format": "json_schema_strict",
+          "fallback_from": null
+        },
+        {
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "has_tools": false,
+          "completion_param": "max_tokens",
+          "completion_cap": 8192,
+          "temperature_present": true,
+          "extra_body_keys": [],
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "fallback_from": "json_schema_strict"
+        }
+      ],
+      "escalation_requested": [],
+      "escalation_granted": [],
+      "escalation_denied": [],
+      "escalation_reasons": [],
+      "strict_denied_403": false,
+      "tool_verdicts": {},
+      "gap_classification": null,
+      "budget_hit": false,
+      "pre_call_budget_stop": false,
+      "tool_trace": []
+    },
+    {
+      "cell": "incomplete_decisive_bad:glm5_500:sympy__sympy-13798:T3D-Escalate",
+      "condition": "T3D-Escalate",
+      "scenario": "incomplete_decisive_bad",
+      "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+      "evidence_tier": "D",
+      "policy": "escalate",
+      "model_served": "gpt-4.1-mini-2025-04-14",
+      "parsed_decision": "NEED_EVIDENCE",
+      "answer_object": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The test artifact is linked and fresh for this patch and commit tree. The declared acceptance test for the patch-modified files was executed and passed. However, the broader scoped regression checks were not executed, leaving coverage incomplete. Additionally, the acceptance test run shows some unrelated test failures, but none directly linked to this patch or its acceptance criteria. Therefore, more complete test coverage evidence is needed to confidently accept or reject the patch.\",\"evidence_mismatch\":false,\"missing_evidence\":\"complete acceptance and scoped regression test coverage\",\"evidence_gap\":\"coverage_incomplete\"}",
+      "model_calls": 3,
+      "tool_calls": 4,
+      "tokens_in": 10953,
+      "tokens_out": 213,
+      "cost_usd": 0.004722,
+      "wall_s": 6.84,
+      "adapter_wire_calls": [
+        {
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "has_tools": true,
+          "completion_param": "max_tokens",
+          "completion_cap": 8192,
+          "temperature_present": true,
+          "extra_body_keys": [],
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "fallback_from": null
+        },
+        {
+          "model": "gpt-4.1-mini",
+          "n_messages": 6,
+          "has_tools": true,
+          "completion_param": "max_tokens",
+          "completion_cap": 8192,
+          "temperature_present": true,
+          "extra_body_keys": [],
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "fallback_from": null
+        },
+        {
+          "model": "gpt-4.1-mini",
+          "n_messages": 8,
+          "has_tools": true,
+          "completion_param": "max_tokens",
+          "completion_cap": 8192,
+          "temperature_present": true,
+          "extra_body_keys": [],
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "fallback_from": null
+        }
+      ],
+      "escalation_requested": [
+        "log"
+      ],
+      "escalation_granted": [
+        "log"
+      ],
+      "escalation_denied": [],
+      "escalation_reasons": [
+        "Check acceptance test outcomes for patch correctness and issue resolution"
+      ],
+      "strict_denied_403": false,
+      "tool_verdicts": {
+        "linkage": true,
+        "freshness": true,
+        "coverage": false
+      },
+      "gap_classification": {
+        "category": "verified_gap",
+        "gap": "coverage_incomplete",
+        "condition": "T3D-Escalate",
+        "basis": "coverage=false adjudicated and corroborated in this cell"
+      },
+      "budget_hit": false,
+      "pre_call_budget_stop": false,
+      "tool_trace": [
+        {
+          "turn": 0,
+          "tool": "verify_artifact_linkage",
+          "args": {},
+          "http_status": 200,
+          "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"7121bdf1facdd90d05b6994b4c2e5b2865a4638a\", \"record_patch_sha256\": \"ba86753ebfcb7477352ebe2367b92a8a535823360cc0e67cf55f2776b7bda952\"}"
+        },
+        {
+          "turn": 0,
+          "tool": "check_evidence_freshness",
+          "args": {},
+          "http_status": 200,
+          "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": true, \"fresh\": true, \"record_run_tree\": \"de834347b7d0caa8502d39785475b61093481bc8\", \"expected_run_tree\": \"de834347b7d0caa8502d39785475b61093481bc8\", \"artifact_started_at\": \"2026-10-20T05:37:07+00:00\", \"attestation_built_at\": \"2026-10-20T05:37:07+00:00\"}"
+        },
+        {
+          "turn": 0,
+          "tool": "check_test_coverage",
+          "args": {},
+          "http_status": 200,
+          "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 102, \"executed\": 0, \"missing_count\": 102, \"missing_ids_sample\": [\"test_Adjoint\", \"test_Hadamard\", \"test_MatrixElement_printing\", \"test_Modules\", \"test_Mul\", \"test_Pow\", \"test_PrettyPoly\", \"test_Quaternion_latex_printing\", \"test_QuotientRing\", \"test_Tr\", \"test_ZeroMatrix\", \"test_boolean_args_order\", \"test_builtin_no_args\", \"test_builtins_without_args\", \"test_categories\", \"test_custom_symbol_names\", \"test_gr"
+        },
+        {
+          "turn": 1,
+          "tool": "get_run_log",
+          "args": {
+            "name": "f2p",
+            "reason": "Check acceptance test outcomes for patch correctness and issue resolution"
+          },
+          "http_status": 200,
+          "result_preview": "# TIER ESCALATION: this acceptance-test log reveals maintainer verdict columns; your stated reason and this access are recorded.\n$ C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpy1iC1n\\Scripts\\python.exe -m pytest sympy/printing/tests/test_lambdarepr.py sympy/printing/tests/test_latex.py sympy/printing/tests/test_mathematica.py -v --tb=short -p no:cacheprovider  (exit 1, 7s)\n--- stdout ---\n============================= test session starts =============================\nplatform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpy1iC1n\\"
+        }
+      ]
+    }
+  ],
+  "budgetguard_audit": {
+    "budget_cap_usd": 0.1,
+    "cumulative_tracked_spend_usd": 0.005429,
+    "cells_planned": 2,
+    "cells_attempted_this_process": 2,
+    "error_cells": 0,
+    "budget_stop_cells": 0,
+    "batch_budget_stop": false,
+    "completion_cap_tokens": 8192,
+    "under_hard_cap": true,
+    "headroom_usd": 0.094571
+  },
+  "server_audit": {
+    "audit_path": "C:\\Users\\guoci\\AppData\\Local\\Temp\\ev1_store_copy_rkhp0aqj\\audit.jsonl",
+    "sessions": 1,
+    "counts": {
+      "events": 5,
+      "denied_strict": 0,
+      "escalation_reason_missing": 0,
+      "consistency_escalation_granted": 0,
+      "acceptance_log_reveal": 1
+    },
+    "by_condition": {
+      "T3D-Escalate": {
+        "events": 5,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 1,
+        "acceptance_log_reveal": 1
+      }
+    },
+    "per_session": {
+      "cfc5e3aa1d3ee717d76e6fae": {
+        "cell": "incomplete_decisive_bad:glm5_500:sympy__sympy-13798:T3D-Escalate",
+        "condition": "T3D-Escalate",
+        "events": 5,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 1,
+        "acceptance_log_reveal": 1,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "log": 1
+        }
+      }
+    }
+  },
+  "version_hash_audit": {
+    "prompt_version": "p3-ternary-v2",
+    "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+    "fixture_manifest": {
+      "files": {
+        "evidence_store_w21/phase2_fixtures.jsonl": "2536d4bf54deec491884f3b2708af323b6c1ccb7a6a19535a42c12bcf3b4ff8d",
+        "evidence_store_w21/phase3_fixtures.jsonl": "3755ba12ee3867398baca2867c57c1fd7b63bebb6f285f4decf0ce553cb984b9",
+        "evidence_store_w21/wave2_fixtures.jsonl": "ff7d182f724cac152f5a9b5202007fe9f4e2f679fa0ece3da647c980acafa4be"
+      },
+      "combined_sha256": "a4b2e2e528f0b5df699dfd65302655d94da83562d1fd7b425a5625acad87d2bb"
+    },
+    "gold_path": "evidence_store_w21/wave2_gold.jsonl",
+    "ev1_namespace": "evidence_store_ev1",
+    "ev1_adapter": "evidence/ev1_adapters.py",
+    "ev1_model_profile": "openai_gpt41_mini"
+  },
+  "compatibility_findings": {
+    "auth": "PASS - standard OPENAI_API_KEY accepted",
+    "chat_completions": "PASS",
+    "native_tool_calls": "PASS - 4 tool calls executed across linkage/freshness/coverage/run_log; parallel tool_calls handled by frozen runner",
+    "tool_loop": "PASS - 3 model calls, 4 tool calls, clean finish",
+    "reason_gate_escalation": "PASS - get_run_log acceptance-log request carried explicit reason; server granted (http 200); server audit escalation_reason_missing=0, denied_strict=0, acceptance_log_reveal=1",
+    "ternary_parse": {
+      "T2A-T": "PASS - parsed REJECT via adapter fallback json_object",
+      "T3D-Escalate": "PASS - parsed NEED_EVIDENCE from plain-text final tools-turn content"
+    },
+    "max_tokens_param": "PASS (max_tokens accepted)",
+    "temperature_param": "PASS (temperature=0 accepted, present on every call)",
+    "strict_json_schema": "REJECTED_BY_SERVER_THEN_FALLBACK - first final-decision call with response_format json_schema strict returned 400; adapter downgraded to json_object and the retry succeeded",
+    "strict_400_root_cause": "frozen TERNARY_DECISION_SCHEMA has 4 properties but only 3 in required (missing_evidence omitted). OpenAI strict structured outputs require every property to be listed in required; DeepSeek compatibility layer tolerated it. This is a frozen-schema property, NOT modified. No prompt/gold/tool/scoring change.",
+    "downgrade_chain_observed": [
+      "json_schema_strict(400)",
+      "json_object(200, parsed)"
+    ],
+    "plain_text_tool_turns_explained": "all 3 Escalate calls carried tools (no response_format by runner design); model returned its final JSON while tools were still offered (finish=stop), so the runner's dedicated strict decision turn was skipped and the tolerant parser extracted the decision from text. Same code path as Wave-2.1, model-dependent, not an adapter defect.",
+    "no_reasoning_params_sent": "reasoning_effort absent, extra_body empty - appropriate for non-reasoning gpt-4.1-mini"
+  },
+  "go_no_go_for_remaining_108": {
+    "verdict": "ENGINEERING-GO with one recommended profile-only adjustment before the 110-cell run",
+    "rationale": [
+      "auth/wire/tools/parser/budget isolation all verified against the real OpenAI service",
+      "both frozen cell types (static schema decision; active tool loop + reason-gated escalation) succeeded end-to-end",
+      "spend $0.00543 tracked, 18.7x under the $0.10 cap; per-cell cost tiny",
+      "frozen store untouched (server ran on an isolated temp copy)"
+    ],
+    "recommended_optional_change": "set profile response_format from json_schema_strict to json_object for openai_gpt41_mini so every strict-incompatible cell does not waste one guaranteed 400 + retry. This is an ev1 adapter/profile wire-only change (allowed), changes no prompt/gold/tools/decision-schema/scoring; if kept at strict, the existing fallback still succeeds but adds one rejected call per directly-decided cell.",
+    "open_risks": [
+      "exact server 400 body string was not persisted (adapter records mode/fallback, not error text); root cause inferred with high confidence from the strict-mode required-fields rule and could be captured by a future content-free diagnostic if desired",
+      "this key was pasted into chat; user should rotate it after smoke"
+    ]
+  },
+  "security_handling": {
+    "key_source_file": "C:\\Users\\guoci\\.openai_key",
+    "key_in_command_line": false,
+    "key_written_to_artifacts": false,
+    "persistent_env_modified": false,
+    "key_file_deleted_by_agent": false,
+    "process_env_cleared_after_run": true,
+    "note": "agent wrote the user-supplied key to the user-managed home file once; no secret value appears in any artifact or report"
+  }
+}

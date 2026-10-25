@@ -1,0 +1,110 @@
+{
+  "document": "GroundedReview Controlled Evidence Experiment (CEE) - frozen offline design",
+  "design_version": "cee-design-v1",
+  "protocol_version": "cee-fixed-v1",
+  "condition": "CEE-FIXED",
+  "status": "DESIGN FROZEN - OFFLINE ONLY; no paid API call has been made; execution blocked pending written approval",
+  "created_from": [
+    "evidence/cee_protocol.py",
+    "evidence/cee_build.py",
+    "evidence_store_cee/cee_build_manifest.json"
+  ],
+  "research_questions": {
+    "primary": "When two models receive byte-identical, already-complete evidence, do they make the same supportable decision? This isolates Evidence Interpretation from Evidence Acquisition / Verification Policy.",
+    "construct_1_evidence_interpretation": "Given the SAME fixed evidence bundle (no tools, no escalation, single turn), can the model correctly ACCEPT on sufficient positive evidence, REJECT on decisive negative evidence, and abstain (NEED_EVIDENCE) only when evidence is insufficient?",
+    "construct_2_acquisition_policy": "Not measured by CEE. In E1, whether the agent chooses to obtain sufficient evidence (tool calls, escalation) was entangled with interpretation. CEE removes acquisition by construction so that E1-vs-CEE contrast speaks to the policy contribution."
+  },
+  "arm_specification": {
+    "arms": ["CEE-FIXED"],
+    "tools": "none",
+    "escalation": "none",
+    "turns": "single request per cell; no server; no function-calling loop",
+    "evidence": "one canonical fixed Evidence Bundle rendered per fixture; both providers receive byte-identical bundle body bytes inside an item-invariant prompt head",
+    "sampling": {
+      "temperature": 0,
+      "max_tokens_completion_cap": "see cee_plan.json (fixed identical cap for both providers)"
+    },
+    "models": ["deepseek-flash (profile deepseek_flash from frozen ev1_model_profiles.json)", "gpt-4.1-mini (profile gpt_4_1_mini from frozen ev1_model_profiles.json)"],
+    "cells": "22 fixtures x 2 models = 44 independent single-turn requests; exactly one request per cell, no retries on valid HTTP 200 (parse failures are scored INVALID, not retried)"
+  },
+  "sample_set": {
+    "selection_rule": "the FULL frozen 22-fixture paired set (phase2 5 + phase3 4 + wave2 13), in frozen wave2_gold order",
+    "n_fixtures": 22,
+    "n_unique_issues": 10,
+    "no_post_hoc_selection": "no fixture, bundle, or prompt was selected, dropped, or tuned using any model output or observed E1 error; the sample is fixed ex ante to results",
+    "class_distribution": {
+      "sufficient_positive": 7,
+      "decisive_negative": 6,
+      "insufficient": 9
+    },
+    "class_definition": {
+      "sufficient_positive": "frozen oracle_gold == ACCEPT: linked, fresh, complete, executed, failure-free acceptance evidence and issue symptom gone",
+      "decisive_negative": "frozen oracle_gold == REJECT: either (linked AND fresh AND executed acceptance failure) OR issue symptom still reproduces on the target patch (diagnostic channel P), the latter decisive even when the served artifact is unlinked/stale",
+      "insufficient": "frozen oracle_gold == NEED_EVIDENCE: no decisive negative and intact positive success not established"
+    }
+  },
+  "gold_treatment": {
+    "rule": "frozen Wave-2 dual-channel oracle rule (evidence/gold_w2.py:oracle_gold), re-derived independently in cee_protocol.derive_cee_gold_row from recomputed signed-record facts + symptom polarity",
+    "channels": {
+      "acceptance_O": "executed f2p/p2p outcomes of the signed served record; applicability requires linked AND fresh; ACCEPT additionally requires complete, >0 executed checks, zero failures",
+      "diagnostic_P": "issue-derived symptom probe; symptom present before and still reproduces after the patch is an applicable decisive failure bound to the issue, independent of artifact linkage"
+    },
+    "identity_assertion": "all 22 independently derived cee_gold rows equal the frozen wave2_gold oracle_gold (build aborts otherwise); also equal to frozen condition_gold['T3A-T'] for all 22 rows (full-information arm)",
+    "primary_metric_anchor": "CEE primary scoring uses cee_gold == oracle semantics only",
+    "dual_metric_discipline": "E1 Oracle DA and Condition DA remain E1 constructs. CEE does NOT recompute a condition-projected gold (there is no restricted surface: every adjudication in the bundle is presented). CEE scores and E1 scores are NEVER pooled or averaged across protocols; they may only be contrasted mechanistically."
+  },
+  "provider_neutral_contract": {
+    "schema_name": "cee_review_decision_v1",
+    "constraint_mode": "json_schema strict on BOTH providers (no json_object downgrade for either model)",
+    "rules": [
+      "every declared property appears in 'required'",
+      "additionalProperties = false at the object root",
+      "all fields typed; decision enum exactly ACCEPT/REJECT/NEED_EVIDENCE; evidence_gap enum includes the empty string option for non-abstain decisions",
+      "the SAME canonical schema object bytes are sent to both providers"
+    ],
+    "fields": ["decision", "reason", "evidence_mismatch", "missing_evidence", "evidence_gap"],
+    "purpose_p1": "removes the E1 format confound where DeepSeek used strict schema and GPT used json_object; both CEE arms use the identical legal strict schema"
+  },
+  "decision_scoring": {
+    "parse": "frozen evidence.ternary.parse_ternary_decision classifies each response as a clean ternary decision, AMBIGUOUS (multiple candidates), or INVALID; unparseable output is a scored failure, never silently retried",
+    "labels": {
+      "appropriate_accept": "gold ACCEPT & decision ACCEPT",
+      "appropriate_reject": "gold REJECT & decision REJECT",
+      "appropriate_abstain": "gold NEED_EVIDENCE & decision NEED_EVIDENCE",
+      "false_commit_accept": "gold NEED_EVIDENCE or REJECT & decision ACCEPT (unsupported acceptance; reported separately for gold=NEED vs gold=REJECT)",
+      "over_abstain": "gold ACCEPT or REJECT & decision NEED_EVIDENCE (reported separately for the two gold classes)",
+      "unsupported_reject": "gold ACCEPT or NEED_EVIDENCE & decision REJECT (premature rejection; reported separately for the two gold classes)",
+      "invalid_or_ambiguous": "parse class INVALID or AMBIGUOUS"
+    },
+    "stratified_reporting": "Decision Appropriateness and every error label reported overall AND within each of sufficient_positive / decisive_negative / insufficient, with parseable and all-requests denominators shown separately"
+  },
+  "statistical_plan": {
+    "unit": "fixture cell; clustering unit = instance_id (independent GitHub issue), 10 clusters",
+    "per_model": "DA overall and per evidence class (parseable denominator), plus always-NEED baseline rate for reference; error-type counts",
+    "paired_comparison": "per-cell paired indicator (model appropriate or not) keyed by bundle_id; between-model Delta with issue-cluster nonparametric bootstrap CI (seed=7, n_boot=10000, resample issues with all their cells), mirroring evidence/ev1_paired._cluster_bootstrap; descriptive exact McNemar on discordant cells, explicitly flagged low-power with small discordant n",
+    "cluster_bootstrap_for_class_rates": "class-stratified rates also carry cluster bootstrap CIs where the class cells span >=2 clusters; otherwise exact cell proportion only",
+    "multiplicity": "exploratory single primary contrast (overall DA Delta); class/error-type breakdowns are descriptive, no p-value claims",
+    "power_caveat": "22 cells / 10 issue clusters and class sizes 7/6/9 are small; all CEE language is preliminary/exploratory, CIs are expected to be wide and may cross zero; CEE is a mechanism-isolation study, not a population-frequency estimate",
+    "decision_rule": "no binary significance gate; interpretation: convergence under fixed bundles vs divergence in E1 implicates acquisition/policy; persistent divergence under identical bundles implicates interpretation"
+  },
+  "relationship_to_e1": {
+    "status": "CEE is a separate, sixth protocol alongside the five frozen E1 conditions; it reuses fixtures and evidence, never E1 responses",
+    "contrast_logic": [
+      "if models converge on CEE bundles but diverged in E1: E1 gap is primarily attributable to Evidence Acquisition / Verification Policy (tool/escalation choices)",
+      "if models still diverge on identical bundles: a component is attributable to Evidence Interpretation / calibration",
+      "error-type shift (over-abstention vs unsupported acceptance) is compared at the label level, never by pooling DA numbers"
+    ],
+    "forbidden": ["pooling or averaging CEE and E1 DA", "relabeling E1 responses", "modifying any frozen E1 artifact"]
+  },
+  "execution_gate": {
+    "current_phase": "offline design + bundle build + selftest + budget plan only",
+    "required_to_unblock": "explicit written approval of cee_plan.json hard budget cap; runner requires an explicit --allow-paid-run flag (default refuses)",
+    "prohibited_now": ["paid API calls", "Gemini or any third model", "new issues or fixtures", "changes to frozen E1/wave2 protocols", "git commit"]
+  },
+  "frozen_artifacts": {
+    "bundles_dir": "evidence_store_cee/bundles/ (22 .txt, served bytes)",
+    "cee_gold": "evidence_store_cee/cee_gold.jsonl",
+    "build_manifest": "evidence_store_cee/cee_build_manifest.json",
+    "budget_plan": "evidence_store_cee/cee_plan.json"
+  }
+}

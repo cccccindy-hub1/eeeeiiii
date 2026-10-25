@@ -1,0 +1,1862 @@
+{
+  "document": "GroundedReview EAL per-layer label-leakage & construct-validity audit (offline, zero API)",
+  "protocol": "eal-v0-draft1",
+  "method": {
+    "served_bytes": "evidence_store_eal/layers/*.txt (rendered outputs audited as text; renderer state not trusted)",
+    "head_body_split": [
+      "RAW EVIDENCE PACKAGE",
+      "STRUCTURED EVIDENCE PACKAGE",
+      "FIXED EVIDENCE BUNDLE"
+    ],
+    "issue_patch_region_excluded_from_injected_scan": true,
+    "mechanical_test": "independent per-layer text parsers recover operands and apply the frozen oracle_gold"
+  },
+  "summary": {
+    "n_items": 22,
+    "layers": {
+      "raw": {
+        "n_mechanical_gold_match_from_text": 22,
+        "n_injected_evidence_clean_of_labels_and_scenario": 22,
+        "n_bodies_free_of_pre_adjudicated_verdicts": 22,
+        "construct_reading": "gold recoverable ONLY by parsing record/attestation JSON, comparing hashes/trees/declared sets and reading raw probe exits; no verdict given"
+      },
+      "structured": {
+        "n_mechanical_gold_match_from_text": 22,
+        "n_injected_evidence_clean_of_labels_and_scenario": 22,
+        "n_bodies_free_of_pre_adjudicated_verdicts": 22,
+        "construct_reading": "gold recoverable by executing the side-by-side operand comparisons in tables 1/2/4/7; no verdict given"
+      },
+      "adjudicated": {
+        "n_mechanical_gold_match_from_text": 22,
+        "n_injected_evidence_clean_of_labels_and_scenario": 22,
+        "n_bodies_free_of_pre_adjudicated_verdicts": "n/a (verdicts printed by design)",
+        "construct_reading": "gold recoverable by reading 6 printed booleans and applying the stated rule (Task-20 finding reproduced)"
+      }
+    }
+  },
+  "information_equivalence_claim": "Every adjudication withheld in raw/structured has all operands present in that same layer: TARGET vs record hashes (linked), record vs attested run tree (fresh), declared vs executed sets (complete), post/base per-test statuses (applicable failure), pre/post probe exits (persistence). Authenticity is a constant channel premise in all layers. Withholding therefore changes ABSTRACTION, not available information.",
+  "per_item": [
+    {
+      "bundle_id": "cee_8f41672ea242cd7a",
+      "scenario_internal": "contradictory",
+      "gold": "REJECT",
+      "evidence_class_internal": "decisive_negative",
+      "raw": {
+        "body_bytes": 57146,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 114,
+          "per_test_statuses_in_record_maps": 114,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 31633,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 114,
+          "per_test_status_classifications": 114,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 2882,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_017f5443ec813709",
+      "scenario_internal": "incomplete",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class_internal": "insufficient",
+      "raw": {
+        "body_bytes": 21834,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 69,
+          "per_test_statuses_in_record_maps": 1,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 20876,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 69,
+          "per_test_status_classifications": 69,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 3691,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_13b04ca1faae0894",
+      "scenario_internal": "incomplete_decisive_bad",
+      "gold": "REJECT",
+      "evidence_class_internal": "decisive_negative",
+      "raw": {
+        "body_bytes": 31328,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 103,
+          "per_test_statuses_in_record_maps": 1,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 29404,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 103,
+          "per_test_status_classifications": 103,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 4605,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_f0328f55403163cb",
+      "scenario_internal": "incomplete_good",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class_internal": "insufficient",
+      "raw": {
+        "body_bytes": 19651,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 86,
+          "per_test_statuses_in_record_maps": 1,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 24286,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 86,
+          "per_test_status_classifications": 86,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 2951,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_d054bcf1e4e8b26c",
+      "scenario_internal": "stale",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class_internal": "insufficient",
+      "raw": {
+        "body_bytes": 28165,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 55,
+          "per_test_statuses_in_record_maps": 55,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 21885,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 55,
+          "per_test_status_classifications": 55,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 4567,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_5449e183c637f604",
+      "scenario_internal": "stale_bad",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class_internal": "insufficient",
+      "raw": {
+        "body_bytes": 152198,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 103,
+          "per_test_statuses_in_record_maps": 103,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 29344,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 103,
+          "per_test_status_classifications": 103,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 4609,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_037b37020e5d9a37",
+      "scenario_internal": "valid",
+      "gold": "ACCEPT",
+      "evidence_class_internal": "sufficient_positive",
+      "raw": {
+        "body_bytes": 74585,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 39,
+          "per_test_statuses_in_record_maps": 39,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 17495,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 39,
+          "per_test_status_classifications": 39,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 4470,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_58d93f77f0c49f82",
+      "scenario_internal": "wrong_patch",
+      "gold": "REJECT",
+      "evidence_class_internal": "decisive_negative",
+      "raw": {
+        "body_bytes": 36283,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 55,
+          "per_test_statuses_in_record_maps": 55,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 20214,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 55,
+          "per_test_status_classifications": 55,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 2462,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_cfc14244c59a8ceb",
+      "scenario_internal": "wrong_patch_good",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class_internal": "insufficient",
+      "raw": {
+        "body_bytes": 240340,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 86,
+          "per_test_statuses_in_record_maps": 86,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 24887,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 86,
+          "per_test_status_classifications": 86,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 2954,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_76028c65f51defe8",
+      "scenario_internal": "w2_decisive_bad",
+      "gold": "REJECT",
+      "evidence_class_internal": "decisive_negative",
+      "raw": {
+        "body_bytes": 32844,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 9,
+          "per_test_statuses_in_record_maps": 1,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 16032,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 9,
+          "per_test_status_classifications": 9,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 10109,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_b203936c59e46a77",
+      "scenario_internal": "w2_decisive_bad",
+      "gold": "REJECT",
+      "evidence_class_internal": "decisive_negative",
+      "raw": {
+        "body_bytes": 34675,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 91,
+          "per_test_statuses_in_record_maps": 1,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 26898,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 91,
+          "per_test_status_classifications": 91,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 4615,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_03df4f19a25d0cf5",
+      "scenario_internal": "w2_incomplete_good",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class_internal": "insufficient",
+      "raw": {
+        "body_bytes": 37745,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 91,
+          "per_test_statuses_in_record_maps": 1,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 31557,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 91,
+          "per_test_status_classifications": 91,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 9202,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_58df0b222c11095a",
+      "scenario_internal": "w2_stale",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class_internal": "insufficient",
+      "raw": {
+        "body_bytes": 44857,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [
+            "the answer is"
+          ],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {
+            "the answer is": "tal sum of the elements is expected to be 'n' but the answer is 0!\nprint(sum(sum(e[i, j], (i, 0, n-1)), (j, 0, n-"
+          }
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 26,
+          "per_test_statuses_in_record_maps": 26,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 13368,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [
+            "the answer is"
+          ],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {
+            "the answer is": "tal sum of the elements is expected to be 'n' but the answer is 0!\nprint(sum(sum(e[i, j], (i, 0, n-1)), (j, 0, n-"
+          }
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 26,
+          "per_test_status_classifications": 26,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 3717,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [
+            "the answer is"
+          ],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {
+            "the answer is": "tal sum of the elements is expected to be 'n' but the answer is 0!\nprint(sum(sum(e[i, j], (i, 0, n-1)), (j, 0, n-"
+          }
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_0108367f62dfb1c6",
+      "scenario_internal": "w2_stale",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class_internal": "insufficient",
+      "raw": {
+        "body_bytes": 37503,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 8,
+          "per_test_statuses_in_record_maps": 8,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 9082,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 8,
+          "per_test_status_classifications": 8,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 3293,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_a6aba2553d04e0f9",
+      "scenario_internal": "w2_stale_bad",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class_internal": "insufficient",
+      "raw": {
+        "body_bytes": 50540,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 9,
+          "per_test_statuses_in_record_maps": 9,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 16032,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 9,
+          "per_test_status_classifications": 9,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 10109,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "NEED_EVIDENCE",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_5cfbc476af83be49",
+      "scenario_internal": "w2_stale_persists",
+      "gold": "REJECT",
+      "evidence_class_internal": "decisive_negative",
+      "raw": {
+        "body_bytes": 42520,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 9,
+          "per_test_statuses_in_record_maps": 9,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 10046,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 9,
+          "per_test_status_classifications": 9,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 4497,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "REJECT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_4001af2fc564f50f",
+      "scenario_internal": "w2_valid",
+      "gold": "ACCEPT",
+      "evidence_class_internal": "sufficient_positive",
+      "raw": {
+        "body_bytes": 62752,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [
+            "the answer is"
+          ],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {
+            "the answer is": "tal sum of the elements is expected to be 'n' but the answer is 0!\nprint(sum(sum(e[i, j], (i, 0, n-1)), (j, 0, n-"
+          }
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 26,
+          "per_test_statuses_in_record_maps": 26,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 13564,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [
+            "the answer is"
+          ],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {
+            "the answer is": "tal sum of the elements is expected to be 'n' but the answer is 0!\nprint(sum(sum(e[i, j], (i, 0, n-1)), (j, 0, n-"
+          }
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 26,
+          "per_test_status_classifications": 26,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 3720,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [
+            "the answer is"
+          ],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {
+            "the answer is": "tal sum of the elements is expected to be 'n' but the answer is 0!\nprint(sum(sum(e[i, j], (i, 0, n-1)), (j, 0, n-"
+          }
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_9e8c95b6fac59e18",
+      "scenario_internal": "w2_valid",
+      "gold": "ACCEPT",
+      "evidence_class_internal": "sufficient_positive",
+      "raw": {
+        "body_bytes": 52304,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 8,
+          "per_test_statuses_in_record_maps": 8,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 9152,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 8,
+          "per_test_status_classifications": 8,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 3296,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_1278b80ecd502546",
+      "scenario_internal": "w2_valid",
+      "gold": "ACCEPT",
+      "evidence_class_internal": "sufficient_positive",
+      "raw": {
+        "body_bytes": 196035,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 91,
+          "per_test_statuses_in_record_maps": 91,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 32173,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 91,
+          "per_test_status_classifications": 91,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 9319,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_ad6e89a460dfbe92",
+      "scenario_internal": "w2_valid",
+      "gold": "ACCEPT",
+      "evidence_class_internal": "sufficient_positive",
+      "raw": {
+        "body_bytes": 51588,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 8,
+          "per_test_statuses_in_record_maps": 8,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 8436,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 8,
+          "per_test_status_classifications": 8,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 2580,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_a8063781f0851759",
+      "scenario_internal": "w2_valid",
+      "gold": "ACCEPT",
+      "evidence_class_internal": "sufficient_positive",
+      "raw": {
+        "body_bytes": 61817,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [
+            "the answer is"
+          ],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {
+            "the answer is": "tal sum of the elements is expected to be 'n' but the answer is 0!\nprint(sum(sum(e[i, j], (i, 0, n-1)), (j, 0, n-"
+          }
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 26,
+          "per_test_statuses_in_record_maps": 26,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 12629,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [
+            "the answer is"
+          ],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {
+            "the answer is": "tal sum of the elements is expected to be 'n' but the answer is 0!\nprint(sum(sum(e[i, j], (i, 0, n-1)), (j, 0, n-"
+          }
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 26,
+          "per_test_status_classifications": 26,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 2785,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [
+            "the answer is"
+          ],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {
+            "the answer is": "tal sum of the elements is expected to be 'n' but the answer is 0!\nprint(sum(sum(e[i, j], (i, 0, n-1)), (j, 0, n-"
+          }
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    },
+    {
+      "bundle_id": "cee_a81c2a012161efe0",
+      "scenario_internal": "w2_valid",
+      "gold": "ACCEPT",
+      "evidence_class_internal": "sufficient_positive",
+      "raw": {
+        "body_bytes": 51270,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "json_blocks_to_parse": 2,
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 8,
+          "per_test_statuses_in_record_maps": 8,
+          "runner_logs_attached_to_read": 4,
+          "probe_sections_to_read": 2
+        },
+        "parser": "raw_json_and_logs"
+      },
+      "structured": {
+        "body_bytes": 8118,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [
+            "bad"
+          ],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 2,
+          "run_tree_comparisons": 1,
+          "declared_checks_membership_tests": 8,
+          "per_test_status_classifications": 8,
+          "probe_exit_codes_to_read": 2
+        },
+        "parser": "structured_tables"
+      },
+      "adjudicated": {
+        "body_bytes": 2262,
+        "leakage": {
+          "direct_tokens_in_issue_patch_region": [],
+          "direct_tokens_in_injected_evidence": [],
+          "scenario_vocab_in_issue_patch_region": [],
+          "scenario_vocab_in_injected_evidence": [],
+          "generic_words_in_injected_evidence_informational_only": [],
+          "contexts": {}
+        },
+        "verdict_hits_in_body": [
+          {
+            "pattern": "printed_booleans_by_design",
+            "text": "(CEE)"
+          }
+        ],
+        "mechanically_recomputed_gold_from_served_text": "ACCEPT",
+        "mechanical_matches_oracle": true,
+        "grounding_steps": {
+          "identity_field_comparisons": 0,
+          "run_tree_comparisons": 0,
+          "declared_checks_membership_tests": 0,
+          "printed_adjudication_booleans_to_read": 6,
+          "rule_applications": 1
+        },
+        "parser": "printed_booleans"
+      }
+    }
+  ]
+}

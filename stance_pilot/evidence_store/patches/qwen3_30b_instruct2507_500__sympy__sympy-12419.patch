@@ -1,0 +1,24 @@
+diff --git a/sympy/matrices/expressions/matadd.py b/sympy/matrices/expressions/matadd.py
+index 216ddfaec..b9060d53b 100644
+--- a/sympy/matrices/expressions/matadd.py
++++ b/sympy/matrices/expressions/matadd.py
+@@ -41,8 +41,20 @@ def shape(self):
+         return self.args[0].shape
+ 
+     def _entry(self, i, j):
++        # For identity matrices, ensure symbolic sum is properly evaluated
++        if len(self.args) == 1 and hasattr(self.args[0], 'is_Identity') and self.args[0].is_Identity:
++            # Return 1 for diagonal elements, 0 for off-diagonal
++            return S.One if i == j else S.Zero
+         return Add(*[arg._entry(i, j) for arg in self.args])
+ 
++    def _eval_sum(self, i, j):
++        # Special handling for identity matrices
++        if len(self.args) == 1 and hasattr(self.args[0], 'is_Identity') and self.args[0].is_Identity:
++            # For an n x n identity matrix, the sum of all elements is n
++            return self.args[0].rows
++        # For other cases, use the standard sum implementation
++        return Add(*[arg._eval_sum(i, j) for arg in self.args])
++
+     def _eval_transpose(self):
+         return MatAdd(*[transpose(arg) for arg in self.args]).doit()

@@ -1,0 +1,117 @@
+{
+  "protocol": "ternary",
+  "mock": false,
+  "model": "deepseek-flash",
+  "cells_planned": 5,
+  "cells_already_done": 0,
+  "cells_attempted_this_process": 5,
+  "error_cells": 0,
+  "budget_stop_cells": 0,
+  "batch_budget_stop": false,
+  "budget_cap_usd": 0.05,
+  "cumulative_spend_usd": 0.012142,
+  "guard_calls_total": 11,
+  "completion_cap_tokens": 8192,
+  "max_model_calls_per_cell": 12,
+  "version": {
+    "prompt_version": "p3-ternary-v2",
+    "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+    "fixture_manifest": {
+      "files": {
+        "evidence_store_w21/wave21_rerun_fixtures.jsonl": "23fdd014fc88da0e6801cb9f3afd99abaa6ee95d54dcd37afa9099ab7032e0d4"
+      },
+      "combined_sha256": "b8158d72c61a48c4e507a83c1bf4a2881d5b06fddef957bfad6e0d1a88241c2f"
+    },
+    "gold_path": "evidence_store_w21/wave2_gold.jsonl"
+  },
+  "server_audit": {
+    "audit_path": "evidence_store_w21\\audit.jsonl",
+    "sessions": 3,
+    "counts": {
+      "events": 21,
+      "denied_strict": 0,
+      "escalation_reason_missing": 0,
+      "consistency_escalation_granted": 1,
+      "acceptance_log_reveal": 0
+    },
+    "by_condition": {
+      "T3D-Strict": {
+        "events": 7,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0
+      },
+      "T3D-Escalate": {
+        "events": 7,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 1,
+        "acceptance_log_reveal": 0
+      },
+      "T3A-T": {
+        "events": 7,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0
+      }
+    },
+    "per_session": {
+      "9c64d8c2f6e88f378577a2eb": {
+        "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3D-Strict",
+        "condition": "T3D-Strict",
+        "events": 7,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "artifact": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "log": 1
+        }
+      },
+      "849471fb6a58f4df30c58906": {
+        "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3D-Escalate",
+        "condition": "T3D-Escalate",
+        "events": 7,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 1,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "log": 1,
+          "consistency": 1,
+          "artifact": 1
+        }
+      },
+      "55b097473f2a5cf047a1a149": {
+        "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3A-T",
+        "condition": "T3A-T",
+        "events": 7,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "artifact": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "log": 1
+        }
+      }
+    }
+  }
+}

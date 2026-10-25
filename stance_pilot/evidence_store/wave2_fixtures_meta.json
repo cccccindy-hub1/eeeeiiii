@@ -1,0 +1,103 @@
+{
+  "fix_w2_valid_b76482e987d4785a": {
+    "scenario": "w2_valid",
+    "source_artifact_id": "art_b76482e987d4785a"
+  },
+  "fix_w2_valid_bc239ce171d8df10": {
+    "scenario": "w2_valid",
+    "source_artifact_id": "art_bc239ce171d8df10"
+  },
+  "fix_w2_valid_bc0c972e8d4230d1": {
+    "scenario": "w2_valid",
+    "source_artifact_id": "art_bc0c972e8d4230d1"
+  },
+  "fix_w2_valid_b1a23b437658386e": {
+    "scenario": "w2_valid",
+    "source_artifact_id": "art_b1a23b437658386e"
+  },
+  "fix_w2_valid_84b5a326d0aa7143": {
+    "scenario": "w2_valid",
+    "source_artifact_id": "art_84b5a326d0aa7143"
+  },
+  "fix_w2_valid_0be6fdf9dc8c5195": {
+    "scenario": "w2_valid",
+    "source_artifact_id": "art_0be6fdf9dc8c5195"
+  },
+  "fix_w2_stale_b76482e987d4785a": {
+    "scenario": "w2_stale",
+    "canon_tree": "4b1923689f55ad90804b0f8b84ea029ed0ddee93",
+    "run_tree": "8dee46212f13343c383dad068f015fbdb1cba7ec",
+    "tree_delta": "inert comment appended to README.rst"
+  },
+  "fix_w2_stale_bc0c972e8d4230d1": {
+    "scenario": "w2_stale",
+    "canon_tree": "0ffe704f4281d9ce153ee165d8adb640edb00dfc",
+    "run_tree": "def06202cb485b2e93ff4864eb112920279b600c",
+    "tree_delta": "inert comment appended to README.rst"
+  },
+  "fix_w2_stale_bad_9e334c91c8d42c59": {
+    "scenario": "w2_stale_bad",
+    "canon_tree": "a39039f18df4d1af8b321432ba05e13d3350ac2f",
+    "run_tree": "a24535c7c2a04720e73133a0913cce980ae1a2cf",
+    "tree_delta": "inert comment appended to README.rst"
+  },
+  "fix_w2_stale_persists_394bf6648b9c0269": {
+    "scenario": "w2_stale_persists",
+    "canon_tree": "e2a863d6c367cee649f77f5e391442fc5534c3af",
+    "run_tree": "2228437af3c5380fa2865ba3e9ef3a9096cdef7c",
+    "tree_delta": "inert comment appended to README.rst"
+  },
+  "fix_w2_incomplete_good_0be6fdf9dc8c5195": {
+    "scenario": "w2_incomplete_good",
+    "construction_reason": "wave2: replay exact canonical batch(es) of the kept PASSING f2p; omit one PASSING declared f2p and ALL scoped p2p -> complete=false, zero failure -> NEED",
+    "replayed_batches": [
+      [
+        "sympy/core/tests/test_function.py",
+        "sympy/core/tests/test_noncommutative.py",
+        "sympy/core/tests/test_numbers.py"
+      ]
+    ],
+    "canonical_run_files_total": 12,
+    "executed_f2p": [
+      "test_comparisons_with_unknown_type"
+    ],
+    "omitted_f2p": [
+      "test_equality"
+    ],
+    "executed_p2p": []
+  },
+  "fix_w2_decisive_bad_9e334c91c8d42c59": {
+    "scenario": "w2_decisive_bad",
+    "construction_reason": "wave2: replay exact canonical batch exhibiting the real declared f2p FAILURE; omit the remaining declared f2p and ALL scoped p2p -> complete=false but an executed applicable failure is decisive",
+    "replayed_batches": [
+      [
+        "sympy/combinatorics/tests/test_permutations.py"
+      ]
+    ],
+    "canonical_run_files_total": 1,
+    "executed_f2p": [
+      "test_Permutation_subclassing"
+    ],
+    "omitted_f2p": [],
+    "executed_p2p": []
+  },
+  "fix_w2_decisive_bad_24795537946f1e5f": {
+    "scenario": "w2_decisive_bad",
+    "construction_reason": "wave2: replay exact canonical batch exhibiting the real declared f2p FAILURE; omit the remaining declared f2p and ALL scoped p2p -> complete=false but an executed applicable failure is decisive",
+    "replayed_batches": [
+      [
+        "sympy/core/tests/test_function.py",
+        "sympy/core/tests/test_noncommutative.py",
+        "sympy/core/tests/test_numbers.py"
+      ]
+    ],
+    "canonical_run_files_total": 12,
+    "executed_f2p": [
+      "test_comparisons_with_unknown_type"
+    ],
+    "omitted_f2p": [
+      "test_equality"
+    ],
+    "executed_p2p": []
+  }
+}

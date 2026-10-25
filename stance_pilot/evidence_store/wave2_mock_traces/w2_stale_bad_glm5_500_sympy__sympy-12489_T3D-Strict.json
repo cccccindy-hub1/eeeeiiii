@@ -1,0 +1,65 @@
+{
+  "cell": "w2_stale_bad:glm5_500:sympy__sympy-12489:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "4127c92bcc7a92743976aa5e",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_9e334c91c8d42c59\", \"base_commit\": \"aa9780761ad8c3c0f68beeef3a0ce5caac9e100b\", \"finished_at\": \"2026-10-20T11:58:23+00:00\", \"instance_id\": \"sympy__sympy-12489\", \"log_digests\": {\"symptom\": \"7fcd18925c68431eba9bc41df6a3297d1be81d3e28aa185d48c3142f30cc98f3\"}, \"patch_sha256\": \"51680724f1e1706b9e4074a977ef72d9ff196b694c7fdce24377db2fcf8a57a0\", \"repo\": \"sympy/sympy\", \"run_tree\": \"a24535c7c2a04720e73133a0913cce980ae1a2cf\", \"runner\": \"pytest/vendored-git py=3.9.25 host=windows-local\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/combinatorics/tests/test_fp_groups.py\", \"sympy/combinatorics/tests/test_free_groups.py\", \"sympy/combinatorics/tests/test_generators.py\", \"sympy/combinatorics/tests/test_graycode.py\", \"sympy/combinatorics/tests/test_group_constructs.py\", \"sympy/combinatorics/tests/test_named_groups.py\", \"sympy/combinatorics/tests/test_partitions.py\", \"sympy/combinatorics/tests/test_perm_groups.py\", \"sympy/combinatorics/tests/test_permutations.py\", \"sympy/combinatorics/tests/test_polyhedron.py\", \"sympy/combinatorics/tests/test_prufer.py\", \"sympy/combinatorics/tests/test_subsets.py\", \"sympy/combinatorics/tests/test_tensor_can.py\", \"sympy/combinatorics/tests/test_testutil.py\", \"sympy/combinatorics/tests/test_util.py\"], \"p2p_total_in_dataset\": 8, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-20T11:58:19+00:00\", \"summary\": {\"f2p_total\": 1, \"p2p_total\": 8, \"outcomes_withheld\": true, \"note\": \"acceptance-test outcomes and regression verdicts are withheld at the diagnostic tier; use the verification service to seek them.\"}, \"test_patch_sha256\": \"1de086fee9b750797a13f7f20586ef09bb24fd9e0d769877535816edb625e8db\", \"evidence_tier\": \"diagnostic\"}, \"authentic_signature\": true, \"evidence_tier\": \"D\"}"
+    },
+    {
+      "turn": 1,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"aa9780761ad8c3c0f68beeef3a0ce5caac9e100b\", \"record_patch_sha256\": \"51680724f1e1706b9e4074a977ef72d9ff196b694c7fdce24377db2fcf8a57a0\"}"
+    },
+    {
+      "turn": 2,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": \"a24535c7c2a04720e73133a0913cce980ae1a2cf\", \"expected_run_tree\": \"a39039f18df4d1af8b321432ba05e13d3350ac2f\", \"artifact_started_at\": \"2026-10-20T11:58:19+00:00\", \"attestation_built_at\": \"2026-10-20T10:34:30+00:00\"}"
+    },
+    {
+      "turn": 3,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 8, \"executed\": 8, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 4,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: subclass type lost in multiplication, got Permutation\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Mapping\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Callable\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: p*p keeps subclass type -> MyPermutation [0, 1, 2]\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Mapping\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Callable\n"
+    },
+    {
+      "turn": 5,
+      "tool": "get_run_log",
+      "args": {
+        "name": "f2p"
+      },
+      "http_status": 403,
+      "result_preview": "[http_status=403] {\"error\": \"acceptance logs are disabled under the strict evidence policy\"}"
+    },
+    {
+      "turn": 6,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    }
+  ],
+  "final_answer": "{\"decision\": \"NEED_EVIDENCE\", \"reason\": \"evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established\", \"evidence_mismatch\": true, \"missing_evidence\": \"linked/fresh applicability\", \"evidence_gap\": \"stale\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

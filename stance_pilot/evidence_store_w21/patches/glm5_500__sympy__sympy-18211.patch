@@ -1,0 +1,56 @@
+diff --git a/sympy/core/tests/test_relational.py b/sympy/core/tests/test_relational.py
+index 63a8705c62..36e9502bce 100644
+--- a/sympy/core/tests/test_relational.py
++++ b/sympy/core/tests/test_relational.py
+@@ -426,6 +426,13 @@ def test_univariate_relational_as_set():
+ 
+     assert (x**2 >= 4).as_set() == Interval(-oo, -2) + Interval(2, oo)
+ 
++    # Test that Eq returns ConditionSet for unsolvable equations (issue #18211)
++    from sympy.sets.conditionset import ConditionSet
++    n = Symbol('n')
++    result = Eq(n*cos(n) - 3*sin(n), 0).as_set()
++    expected = ConditionSet(n, Eq(n*cos(n) - 3*sin(n), 0), S.Reals)
++    assert result == expected
++
+ 
+ @XFAIL
+ def test_multivariate_relational_as_set():
+diff --git a/sympy/solvers/inequalities.py b/sympy/solvers/inequalities.py
+index 9127d217f1..875b125625 100644
+--- a/sympy/solvers/inequalities.py
++++ b/sympy/solvers/inequalities.py
+@@ -8,6 +8,7 @@
+ from sympy.core.relational import Relational, Eq, Ge, Lt
+ from sympy.sets import Interval
+ from sympy.sets.sets import FiniteSet, Union, EmptySet, Intersection
++from sympy.sets.conditionset import ConditionSet
+ from sympy.core.singleton import S
+ from sympy.core.function import expand_mul
+ 
+@@ -525,13 +526,24 @@ def solve_univariate_inequality(expr, gen, relational=True, domain=S.Reals, cont
+                 if solns is None:
+                     # in which case we raise ValueError
+                     raise ValueError
+-            except (ValueError, NotImplementedError):
++            except ValueError:
+                 # replace gen with generic x since it's
+                 # univariate anyway
+                 raise NotImplementedError(filldedent('''
+                     The inequality, %s, cannot be solved using
+                     solve_univariate_inequality.
+                     ''' % expr.subs(gen, Symbol('x'))))
++            except NotImplementedError:
++                # If solvify raised NotImplementedError, check if this is an
++                # equality. If so, return a ConditionSet instead of raising.
++                if expr.rel_op == '==':
++                    # Use the original symbol in the ConditionSet
++                    rv = ConditionSet(_gen, expr.subs(gen, _gen), domain)
++                    return rv if not relational else rv.as_relational(_gen)
++                raise NotImplementedError(filldedent('''
++                    The inequality, %s, cannot be solved using
++                    solve_univariate_inequality.
++                    ''' % expr.subs(gen, Symbol('x'))))
+ 
+             expanded_e = expand_mul(e)
+             def valid(x):

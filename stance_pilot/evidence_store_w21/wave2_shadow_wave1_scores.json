@@ -1,0 +1,2648 @@
+{
+  "metric": "groundedreview_wave2_dual_standard",
+  "official": false,
+  "version_notes": {
+    "gold_version": "w2-gold-v1",
+    "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+    "scoring": "dual standard: oracle_gold (channels O+P) and condition_gold (evidence accessible per regime)",
+    "bootstrap": "issue-cluster resample, seed=7, n_boot=10000",
+    "not_official": "this file never replaces metrics_phase3_ternary.json; the phase-3 file remains the frozen single-gold official score",
+    "gap_rates": "four grounding categories among parseable NEED_EVIDENCE answers; only p3-ternary-v2 rows are classifiable"
+  },
+  "n_records_scored": 45,
+  "n_fixture_artifacts": 9,
+  "n_issues": 6,
+  "models": [
+    "deepseek-flash"
+  ],
+  "prompt_versions": [
+    "p3-ternary-v1"
+  ],
+  "conditions": {
+    "deepseek-flash|T2A-T": {
+      "condition": "T2A-T",
+      "arm": "static",
+      "n_cells": 9,
+      "n_issues": 6,
+      "n_parseable": 9,
+      "n_invalid": 0,
+      "n_ambiguous": 0,
+      "invalid_or_ambiguous_rate_of_all": 0.0,
+      "standards": {
+        "oracle": {
+          "n_denominator": 9,
+          "n_correct": 5,
+          "rate": 0.5556,
+          "ci95_cluster_bootstrap_seed7": [
+            0.25,
+            0.8182
+          ],
+          "n_issues": 6,
+          "e2e": {
+            "n_denominator": 9,
+            "n_correct": 5,
+            "rate": 0.5556,
+            "ci95_cluster_bootstrap_seed7": [
+              0.25,
+              0.8182
+            ],
+            "n_issues": 6
+          },
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 0,
+            "appropriate_abstain": 5,
+            "over_abstain": 4,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "condition": {
+          "n_denominator": 9,
+          "n_correct": 0,
+          "rate": 0.0,
+          "ci95_cluster_bootstrap_seed7": [
+            0.0,
+            0.0
+          ],
+          "n_issues": 6,
+          "e2e": {
+            "n_denominator": 9,
+            "n_correct": 0,
+            "rate": 0.0,
+            "ci95_cluster_bootstrap_seed7": [
+              0.0,
+              0.0
+            ],
+            "n_issues": 6
+          },
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 0,
+            "appropriate_abstain": 0,
+            "over_abstain": 9,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "partitions": {
+        "comparable": {
+          "n_cells": 3,
+          "n_issues": 3,
+          "oracle": {
+            "n_denominator": 3,
+            "n_correct": 0,
+            "rate": 0.0,
+            "ci95_cluster_bootstrap_seed7": [
+              0.0,
+              0.0
+            ],
+            "n_issues": 3
+          },
+          "condition": {
+            "n_denominator": 3,
+            "n_correct": 0,
+            "rate": 0.0,
+            "ci95_cluster_bootstrap_seed7": [
+              0.0,
+              0.0
+            ],
+            "n_issues": 3
+          }
+        },
+        "divergent": {
+          "n_cells": 6,
+          "n_issues": 4,
+          "oracle": {
+            "n_denominator": 6,
+            "n_correct": 5,
+            "rate": 0.8333,
+            "ci95_cluster_bootstrap_seed7": [
+              0.5714,
+              1.0
+            ],
+            "n_issues": 4
+          },
+          "condition": {
+            "n_denominator": 6,
+            "n_correct": 0,
+            "rate": 0.0,
+            "ci95_cluster_bootstrap_seed7": [
+              0.0,
+              0.0
+            ],
+            "n_issues": 4
+          },
+          "divergence_kind_counts": {
+            "institutionally_granted_accept": 5,
+            "institutionally_granted_reject": 1
+          },
+          "cells": [
+            {
+              "scenario": "incomplete",
+              "condition": "T2A-T",
+              "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+              "parsed": "NEED_EVIDENCE",
+              "oracle_gold": "NEED_EVIDENCE",
+              "condition_gold": "ACCEPT",
+              "kind": "institutionally_granted_accept",
+              "oracle_appropriate": true,
+              "condition_appropriate": false
+            },
+            {
+              "scenario": "stale",
+              "condition": "T2A-T",
+              "served_artifact_id": "fix_stale_333b7506365b3c47",
+              "parsed": "NEED_EVIDENCE",
+              "oracle_gold": "NEED_EVIDENCE",
+              "condition_gold": "ACCEPT",
+              "kind": "institutionally_granted_accept",
+              "oracle_appropriate": true,
+              "condition_appropriate": false
+            },
+            {
+              "scenario": "wrong_patch",
+              "condition": "T2A-T",
+              "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+              "parsed": "NEED_EVIDENCE",
+              "oracle_gold": "REJECT",
+              "condition_gold": "ACCEPT",
+              "kind": "institutionally_granted_accept",
+              "oracle_appropriate": false,
+              "condition_appropriate": false
+            },
+            {
+              "scenario": "stale_bad",
+              "condition": "T2A-T",
+              "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+              "parsed": "NEED_EVIDENCE",
+              "oracle_gold": "NEED_EVIDENCE",
+              "condition_gold": "REJECT",
+              "kind": "institutionally_granted_reject",
+              "oracle_appropriate": true,
+              "condition_appropriate": false
+            },
+            {
+              "scenario": "wrong_patch_good",
+              "condition": "T2A-T",
+              "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+              "parsed": "NEED_EVIDENCE",
+              "oracle_gold": "NEED_EVIDENCE",
+              "condition_gold": "ACCEPT",
+              "kind": "institutionally_granted_accept",
+              "oracle_appropriate": true,
+              "condition_appropriate": false
+            },
+            {
+              "scenario": "incomplete_good",
+              "condition": "T2A-T",
+              "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+              "parsed": "NEED_EVIDENCE",
+              "oracle_gold": "NEED_EVIDENCE",
+              "condition_gold": "ACCEPT",
+              "kind": "institutionally_granted_accept",
+              "oracle_appropriate": true,
+              "condition_appropriate": false
+            }
+          ]
+        }
+      },
+      "gap_rates": {
+        "applicable": false,
+        "reason": "no parseable NEED_EVIDENCE rows produced under p3-ternary-v2 in this block",
+        "n_need_denominator": 0,
+        "rates": {
+          "verified_gap": null,
+          "claimed_but_unverified": null,
+          "decisive_in_hand_but_abstained": null,
+          "unspecified": null
+        },
+        "category_counts": {
+          "verified_gap": 0,
+          "claimed_but_unverified": 0,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 0
+        },
+        "raw_gap_distribution": {}
+      },
+      "escalation": {
+        "requests": 0,
+        "granted": 0,
+        "denied": 0,
+        "cells_with_granted_escalation": 0
+      },
+      "cost": {
+        "tokens_in": 13820,
+        "tokens_out": 1702,
+        "tool_calls": 0,
+        "wall_s_total": 16.41,
+        "usd_total": 0.006189,
+        "usd_per_oracle_appropriate_decision": 0.001238,
+        "budget_hits": 0,
+        "emergency_hits": 0
+      },
+      "model": "deepseek-flash"
+    },
+    "deepseek-flash|T2D-T": {
+      "condition": "T2D-T",
+      "arm": "static",
+      "n_cells": 9,
+      "n_issues": 6,
+      "n_parseable": 9,
+      "n_invalid": 0,
+      "n_ambiguous": 0,
+      "invalid_or_ambiguous_rate_of_all": 0.0,
+      "standards": {
+        "oracle": {
+          "n_denominator": 9,
+          "n_correct": 6,
+          "rate": 0.6667,
+          "ci95_cluster_bootstrap_seed7": [
+            0.2857,
+            0.9091
+          ],
+          "n_issues": 6,
+          "e2e": {
+            "n_denominator": 9,
+            "n_correct": 6,
+            "rate": 0.6667,
+            "ci95_cluster_bootstrap_seed7": [
+              0.2857,
+              0.9091
+            ],
+            "n_issues": 6
+          },
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 1,
+            "appropriate_abstain": 5,
+            "over_abstain": 3,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "condition": {
+          "n_denominator": 9,
+          "n_correct": 9,
+          "rate": 1.0,
+          "ci95_cluster_bootstrap_seed7": [
+            1.0,
+            1.0
+          ],
+          "n_issues": 6,
+          "e2e": {
+            "n_denominator": 9,
+            "n_correct": 9,
+            "rate": 1.0,
+            "ci95_cluster_bootstrap_seed7": [
+              1.0,
+              1.0
+            ],
+            "n_issues": 6
+          },
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 1,
+            "appropriate_abstain": 8,
+            "over_abstain": 0,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "partitions": {
+        "comparable": {
+          "n_cells": 6,
+          "n_issues": 4,
+          "oracle": {
+            "n_denominator": 6,
+            "n_correct": 6,
+            "rate": 1.0,
+            "ci95_cluster_bootstrap_seed7": [
+              1.0,
+              1.0
+            ],
+            "n_issues": 4
+          },
+          "condition": {
+            "n_denominator": 6,
+            "n_correct": 6,
+            "rate": 1.0,
+            "ci95_cluster_bootstrap_seed7": [
+              1.0,
+              1.0
+            ],
+            "n_issues": 4
+          }
+        },
+        "divergent": {
+          "n_cells": 3,
+          "n_issues": 3,
+          "oracle": {
+            "n_denominator": 3,
+            "n_correct": 0,
+            "rate": 0.0,
+            "ci95_cluster_bootstrap_seed7": [
+              0.0,
+              0.0
+            ],
+            "n_issues": 3
+          },
+          "condition": {
+            "n_denominator": 3,
+            "n_correct": 3,
+            "rate": 1.0,
+            "ci95_cluster_bootstrap_seed7": [
+              1.0,
+              1.0
+            ],
+            "n_issues": 3
+          },
+          "divergence_kind_counts": {
+            "restricted_abstention_accept_unsupportable": 1,
+            "restricted_abstention_reject_withheld": 2
+          },
+          "cells": [
+            {
+              "scenario": "valid",
+              "condition": "T2D-T",
+              "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+              "parsed": "NEED_EVIDENCE",
+              "oracle_gold": "ACCEPT",
+              "condition_gold": "NEED_EVIDENCE",
+              "kind": "restricted_abstention_accept_unsupportable",
+              "oracle_appropriate": false,
+              "condition_appropriate": true
+            },
+            {
+              "scenario": "contradictory",
+              "condition": "T2D-T",
+              "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+              "parsed": "NEED_EVIDENCE",
+              "oracle_gold": "REJECT",
+              "condition_gold": "NEED_EVIDENCE",
+              "kind": "restricted_abstention_reject_withheld",
+              "oracle_appropriate": false,
+              "condition_appropriate": true
+            },
+            {
+              "scenario": "incomplete_decisive_bad",
+              "condition": "T2D-T",
+              "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+              "parsed": "NEED_EVIDENCE",
+              "oracle_gold": "REJECT",
+              "condition_gold": "NEED_EVIDENCE",
+              "kind": "restricted_abstention_reject_withheld",
+              "oracle_appropriate": false,
+              "condition_appropriate": true
+            }
+          ]
+        }
+      },
+      "gap_rates": {
+        "applicable": false,
+        "reason": "no parseable NEED_EVIDENCE rows produced under p3-ternary-v2 in this block",
+        "n_need_denominator": 0,
+        "rates": {
+          "verified_gap": null,
+          "claimed_but_unverified": null,
+          "decisive_in_hand_but_abstained": null,
+          "unspecified": null
+        },
+        "category_counts": {
+          "verified_gap": 0,
+          "claimed_but_unverified": 0,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 0
+        },
+        "raw_gap_distribution": {}
+      },
+      "escalation": {
+        "requests": 0,
+        "granted": 0,
+        "denied": 0,
+        "cells_with_granted_escalation": 0
+      },
+      "cost": {
+        "tokens_in": 15108,
+        "tokens_out": 1364,
+        "tool_calls": 0,
+        "wall_s_total": 14.29,
+        "usd_total": 0.00617,
+        "usd_per_oracle_appropriate_decision": 0.001028,
+        "budget_hits": 0,
+        "emergency_hits": 0
+      },
+      "model": "deepseek-flash"
+    },
+    "deepseek-flash|T3A-T": {
+      "condition": "T3A-T",
+      "arm": "active",
+      "n_cells": 9,
+      "n_issues": 6,
+      "n_parseable": 9,
+      "n_invalid": 0,
+      "n_ambiguous": 0,
+      "invalid_or_ambiguous_rate_of_all": 0.0,
+      "standards": {
+        "oracle": {
+          "n_denominator": 9,
+          "n_correct": 8,
+          "rate": 0.8889,
+          "ci95_cluster_bootstrap_seed7": [
+            0.7,
+            1.0
+          ],
+          "n_issues": 6,
+          "e2e": {
+            "n_denominator": 9,
+            "n_correct": 8,
+            "rate": 0.8889,
+            "ci95_cluster_bootstrap_seed7": [
+              0.7,
+              1.0
+            ],
+            "n_issues": 6
+          },
+          "error_class_counts": {
+            "appropriate_accept": 1,
+            "appropriate_reject": 2,
+            "appropriate_abstain": 5,
+            "over_abstain": 1,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "condition": {
+          "n_denominator": 9,
+          "n_correct": 8,
+          "rate": 0.8889,
+          "ci95_cluster_bootstrap_seed7": [
+            0.7,
+            1.0
+          ],
+          "n_issues": 6,
+          "e2e": {
+            "n_denominator": 9,
+            "n_correct": 8,
+            "rate": 0.8889,
+            "ci95_cluster_bootstrap_seed7": [
+              0.7,
+              1.0
+            ],
+            "n_issues": 6
+          },
+          "error_class_counts": {
+            "appropriate_accept": 1,
+            "appropriate_reject": 2,
+            "appropriate_abstain": 5,
+            "over_abstain": 1,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "partitions": {
+        "comparable": {
+          "n_cells": 9,
+          "n_issues": 6,
+          "oracle": {
+            "n_denominator": 9,
+            "n_correct": 8,
+            "rate": 0.8889,
+            "ci95_cluster_bootstrap_seed7": [
+              0.7,
+              1.0
+            ],
+            "n_issues": 6
+          },
+          "condition": {
+            "n_denominator": 9,
+            "n_correct": 8,
+            "rate": 0.8889,
+            "ci95_cluster_bootstrap_seed7": [
+              0.7,
+              1.0
+            ],
+            "n_issues": 6
+          }
+        },
+        "divergent": {
+          "n_cells": 0
+        }
+      },
+      "gap_rates": {
+        "applicable": false,
+        "reason": "no parseable NEED_EVIDENCE rows produced under p3-ternary-v2 in this block",
+        "n_need_denominator": 0,
+        "rates": {
+          "verified_gap": null,
+          "claimed_but_unverified": null,
+          "decisive_in_hand_but_abstained": null,
+          "unspecified": null
+        },
+        "category_counts": {
+          "verified_gap": 0,
+          "claimed_but_unverified": 0,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 0
+        },
+        "raw_gap_distribution": {}
+      },
+      "escalation": {
+        "requests": 0,
+        "granted": 0,
+        "denied": 0,
+        "cells_with_granted_escalation": 0
+      },
+      "cost": {
+        "tokens_in": 181265,
+        "tokens_out": 5295,
+        "tool_calls": 61,
+        "wall_s_total": 48.56,
+        "usd_total": 0.060732,
+        "usd_per_oracle_appropriate_decision": 0.007592,
+        "budget_hits": 0,
+        "emergency_hits": 0
+      },
+      "model": "deepseek-flash"
+    },
+    "deepseek-flash|T3D-Escalate": {
+      "condition": "T3D-Escalate",
+      "arm": "active",
+      "n_cells": 9,
+      "n_issues": 6,
+      "n_parseable": 9,
+      "n_invalid": 0,
+      "n_ambiguous": 0,
+      "invalid_or_ambiguous_rate_of_all": 0.0,
+      "standards": {
+        "oracle": {
+          "n_denominator": 9,
+          "n_correct": 5,
+          "rate": 0.5556,
+          "ci95_cluster_bootstrap_seed7": [
+            0.375,
+            0.75
+          ],
+          "n_issues": 6,
+          "e2e": {
+            "n_denominator": 9,
+            "n_correct": 5,
+            "rate": 0.5556,
+            "ci95_cluster_bootstrap_seed7": [
+              0.375,
+              0.75
+            ],
+            "n_issues": 6
+          },
+          "error_class_counts": {
+            "appropriate_accept": 1,
+            "appropriate_reject": 1,
+            "appropriate_abstain": 3,
+            "over_abstain": 2,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 2,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "condition": {
+          "n_denominator": 9,
+          "n_correct": 5,
+          "rate": 0.5556,
+          "ci95_cluster_bootstrap_seed7": [
+            0.375,
+            0.75
+          ],
+          "n_issues": 6,
+          "e2e": {
+            "n_denominator": 9,
+            "n_correct": 5,
+            "rate": 0.5556,
+            "ci95_cluster_bootstrap_seed7": [
+              0.375,
+              0.75
+            ],
+            "n_issues": 6
+          },
+          "error_class_counts": {
+            "appropriate_accept": 1,
+            "appropriate_reject": 1,
+            "appropriate_abstain": 3,
+            "over_abstain": 2,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 2,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "partitions": {
+        "comparable": {
+          "n_cells": 9,
+          "n_issues": 6,
+          "oracle": {
+            "n_denominator": 9,
+            "n_correct": 5,
+            "rate": 0.5556,
+            "ci95_cluster_bootstrap_seed7": [
+              0.375,
+              0.75
+            ],
+            "n_issues": 6
+          },
+          "condition": {
+            "n_denominator": 9,
+            "n_correct": 5,
+            "rate": 0.5556,
+            "ci95_cluster_bootstrap_seed7": [
+              0.375,
+              0.75
+            ],
+            "n_issues": 6
+          }
+        },
+        "divergent": {
+          "n_cells": 0
+        }
+      },
+      "gap_rates": {
+        "applicable": false,
+        "reason": "no parseable NEED_EVIDENCE rows produced under p3-ternary-v2 in this block",
+        "n_need_denominator": 0,
+        "rates": {
+          "verified_gap": null,
+          "claimed_but_unverified": null,
+          "decisive_in_hand_but_abstained": null,
+          "unspecified": null
+        },
+        "category_counts": {
+          "verified_gap": 0,
+          "claimed_but_unverified": 0,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 0
+        },
+        "raw_gap_distribution": {}
+      },
+      "escalation": {
+        "requests": 34,
+        "granted": 30,
+        "denied": 7,
+        "cells_with_granted_escalation": 9
+      },
+      "cost": {
+        "tokens_in": 306922,
+        "tokens_out": 10813,
+        "tool_calls": 78,
+        "wall_s_total": 83.98,
+        "usd_total": 0.105052,
+        "usd_per_oracle_appropriate_decision": 0.02101,
+        "budget_hits": 0,
+        "emergency_hits": 0
+      },
+      "model": "deepseek-flash"
+    },
+    "deepseek-flash|T3D-Strict": {
+      "condition": "T3D-Strict",
+      "arm": "active",
+      "n_cells": 9,
+      "n_issues": 6,
+      "n_parseable": 9,
+      "n_invalid": 0,
+      "n_ambiguous": 0,
+      "invalid_or_ambiguous_rate_of_all": 0.0,
+      "standards": {
+        "oracle": {
+          "n_denominator": 9,
+          "n_correct": 5,
+          "rate": 0.5556,
+          "ci95_cluster_bootstrap_seed7": [
+            0.25,
+            0.8182
+          ],
+          "n_issues": 6,
+          "e2e": {
+            "n_denominator": 9,
+            "n_correct": 5,
+            "rate": 0.5556,
+            "ci95_cluster_bootstrap_seed7": [
+              0.25,
+              0.8182
+            ],
+            "n_issues": 6
+          },
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 0,
+            "appropriate_abstain": 5,
+            "over_abstain": 4,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "condition": {
+          "n_denominator": 9,
+          "n_correct": 8,
+          "rate": 0.8889,
+          "ci95_cluster_bootstrap_seed7": [
+            0.7,
+            1.0
+          ],
+          "n_issues": 6,
+          "e2e": {
+            "n_denominator": 9,
+            "n_correct": 8,
+            "rate": 0.8889,
+            "ci95_cluster_bootstrap_seed7": [
+              0.7,
+              1.0
+            ],
+            "n_issues": 6
+          },
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 0,
+            "appropriate_abstain": 8,
+            "over_abstain": 1,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "partitions": {
+        "comparable": {
+          "n_cells": 6,
+          "n_issues": 4,
+          "oracle": {
+            "n_denominator": 6,
+            "n_correct": 5,
+            "rate": 0.8333,
+            "ci95_cluster_bootstrap_seed7": [
+              0.5714,
+              1.0
+            ],
+            "n_issues": 4
+          },
+          "condition": {
+            "n_denominator": 6,
+            "n_correct": 5,
+            "rate": 0.8333,
+            "ci95_cluster_bootstrap_seed7": [
+              0.5714,
+              1.0
+            ],
+            "n_issues": 4
+          }
+        },
+        "divergent": {
+          "n_cells": 3,
+          "n_issues": 3,
+          "oracle": {
+            "n_denominator": 3,
+            "n_correct": 0,
+            "rate": 0.0,
+            "ci95_cluster_bootstrap_seed7": [
+              0.0,
+              0.0
+            ],
+            "n_issues": 3
+          },
+          "condition": {
+            "n_denominator": 3,
+            "n_correct": 3,
+            "rate": 1.0,
+            "ci95_cluster_bootstrap_seed7": [
+              1.0,
+              1.0
+            ],
+            "n_issues": 3
+          },
+          "divergence_kind_counts": {
+            "restricted_abstention_accept_unsupportable": 1,
+            "restricted_abstention_reject_withheld": 2
+          },
+          "cells": [
+            {
+              "scenario": "valid",
+              "condition": "T3D-Strict",
+              "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+              "parsed": "NEED_EVIDENCE",
+              "oracle_gold": "ACCEPT",
+              "condition_gold": "NEED_EVIDENCE",
+              "kind": "restricted_abstention_accept_unsupportable",
+              "oracle_appropriate": false,
+              "condition_appropriate": true
+            },
+            {
+              "scenario": "contradictory",
+              "condition": "T3D-Strict",
+              "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+              "parsed": "NEED_EVIDENCE",
+              "oracle_gold": "REJECT",
+              "condition_gold": "NEED_EVIDENCE",
+              "kind": "restricted_abstention_reject_withheld",
+              "oracle_appropriate": false,
+              "condition_appropriate": true
+            },
+            {
+              "scenario": "incomplete_decisive_bad",
+              "condition": "T3D-Strict",
+              "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+              "parsed": "NEED_EVIDENCE",
+              "oracle_gold": "REJECT",
+              "condition_gold": "NEED_EVIDENCE",
+              "kind": "restricted_abstention_reject_withheld",
+              "oracle_appropriate": false,
+              "condition_appropriate": true
+            }
+          ]
+        }
+      },
+      "gap_rates": {
+        "applicable": false,
+        "reason": "no parseable NEED_EVIDENCE rows produced under p3-ternary-v2 in this block",
+        "n_need_denominator": 0,
+        "rates": {
+          "verified_gap": null,
+          "claimed_but_unverified": null,
+          "decisive_in_hand_but_abstained": null,
+          "unspecified": null
+        },
+        "category_counts": {
+          "verified_gap": 0,
+          "claimed_but_unverified": 0,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 0
+        },
+        "raw_gap_distribution": {}
+      },
+      "escalation": {
+        "requests": 0,
+        "granted": 0,
+        "denied": 0,
+        "cells_with_granted_escalation": 0
+      },
+      "cost": {
+        "tokens_in": 65445,
+        "tokens_out": 4366,
+        "tool_calls": 50,
+        "wall_s_total": 33.33,
+        "usd_total": 0.024872,
+        "usd_per_oracle_appropriate_decision": 0.004974,
+        "budget_hits": 0,
+        "emergency_hits": 0
+      },
+      "model": "deepseek-flash"
+    }
+  },
+  "overall": {
+    "slice": "all_cells",
+    "n_cells": 45,
+    "n_issues": 6,
+    "n_invalid": 0,
+    "n_ambiguous": 0,
+    "standards": {
+      "oracle": {
+        "decision_appropriateness": {
+          "n_denominator": 45,
+          "n_correct": 29,
+          "rate": 0.6444,
+          "ci95_cluster_bootstrap_seed7": [
+            0.5,
+            0.7818
+          ],
+          "n_issues": 6
+        },
+        "end_to_end_review_success": {
+          "n_denominator": 45,
+          "n_correct": 29,
+          "rate": 0.6444,
+          "ci95_cluster_bootstrap_seed7": [
+            0.5,
+            0.7818
+          ],
+          "n_issues": 6
+        }
+      },
+      "condition": {
+        "decision_appropriateness": {
+          "n_denominator": 45,
+          "n_correct": 30,
+          "rate": 0.6667,
+          "ci95_cluster_bootstrap_seed7": [
+            0.5778,
+            0.75
+          ],
+          "n_issues": 6
+        },
+        "end_to_end_review_success": {
+          "n_denominator": 45,
+          "n_correct": 30,
+          "rate": 0.6667,
+          "ci95_cluster_bootstrap_seed7": [
+            0.5778,
+            0.75
+          ],
+          "n_issues": 6
+        }
+      }
+    },
+    "arms": {
+      "static": {
+        "n_cells": 18,
+        "oracle": {
+          "n_denominator": 18,
+          "n_correct": 11,
+          "rate": 0.6111,
+          "ci95_cluster_bootstrap_seed7": [
+            0.2857,
+            0.8636
+          ],
+          "n_issues": 6
+        },
+        "condition": {
+          "n_denominator": 18,
+          "n_correct": 9,
+          "rate": 0.5,
+          "ci95_cluster_bootstrap_seed7": [
+            0.5,
+            0.5
+          ],
+          "n_issues": 6
+        }
+      },
+      "active": {
+        "n_cells": 27,
+        "oracle": {
+          "n_denominator": 27,
+          "n_correct": 18,
+          "rate": 0.6667,
+          "ci95_cluster_bootstrap_seed7": [
+            0.5667,
+            0.7667
+          ],
+          "n_issues": 6
+        },
+        "condition": {
+          "n_denominator": 27,
+          "n_correct": 21,
+          "rate": 0.7778,
+          "ci95_cluster_bootstrap_seed7": [
+            0.6296,
+            0.9167
+          ],
+          "n_issues": 6
+        }
+      }
+    },
+    "gap_rates": {
+      "applicable": false,
+      "reason": "no parseable NEED_EVIDENCE rows produced under p3-ternary-v2 in this block",
+      "n_need_denominator": 0,
+      "rates": {
+        "verified_gap": null,
+        "claimed_but_unverified": null,
+        "decisive_in_hand_but_abstained": null,
+        "unspecified": null
+      },
+      "category_counts": {
+        "verified_gap": 0,
+        "claimed_but_unverified": 0,
+        "decisive_in_hand_but_abstained": 0,
+        "unspecified": 0
+      },
+      "raw_gap_distribution": {}
+    }
+  },
+  "overall_comparable": {
+    "slice": "comparable_cells",
+    "n_cells": 33,
+    "n_issues": 6,
+    "n_invalid": 0,
+    "n_ambiguous": 0,
+    "standards": {
+      "oracle": {
+        "decision_appropriateness": {
+          "n_denominator": 33,
+          "n_correct": 24,
+          "rate": 0.7273,
+          "ci95_cluster_bootstrap_seed7": [
+            0.6512,
+            0.8158
+          ],
+          "n_issues": 6
+        },
+        "end_to_end_review_success": {
+          "n_denominator": 33,
+          "n_correct": 24,
+          "rate": 0.7273,
+          "ci95_cluster_bootstrap_seed7": [
+            0.6512,
+            0.8158
+          ],
+          "n_issues": 6
+        }
+      },
+      "condition": {
+        "decision_appropriateness": {
+          "n_denominator": 33,
+          "n_correct": 24,
+          "rate": 0.7273,
+          "ci95_cluster_bootstrap_seed7": [
+            0.6512,
+            0.8158
+          ],
+          "n_issues": 6
+        },
+        "end_to_end_review_success": {
+          "n_denominator": 33,
+          "n_correct": 24,
+          "rate": 0.7273,
+          "ci95_cluster_bootstrap_seed7": [
+            0.6512,
+            0.8158
+          ],
+          "n_issues": 6
+        }
+      }
+    },
+    "arms": {
+      "static": {
+        "n_cells": 9,
+        "oracle": {
+          "n_denominator": 9,
+          "n_correct": 6,
+          "rate": 0.6667,
+          "ci95_cluster_bootstrap_seed7": [
+            0.2857,
+            0.9091
+          ],
+          "n_issues": 6
+        },
+        "condition": {
+          "n_denominator": 9,
+          "n_correct": 6,
+          "rate": 0.6667,
+          "ci95_cluster_bootstrap_seed7": [
+            0.2857,
+            0.9091
+          ],
+          "n_issues": 6
+        }
+      },
+      "active": {
+        "n_cells": 24,
+        "oracle": {
+          "n_denominator": 24,
+          "n_correct": 18,
+          "rate": 0.75,
+          "ci95_cluster_bootstrap_seed7": [
+            0.6071,
+            0.8947
+          ],
+          "n_issues": 6
+        },
+        "condition": {
+          "n_denominator": 24,
+          "n_correct": 18,
+          "rate": 0.75,
+          "ci95_cluster_bootstrap_seed7": [
+            0.6071,
+            0.8947
+          ],
+          "n_issues": 6
+        }
+      }
+    },
+    "gap_rates": {
+      "applicable": false,
+      "reason": "no parseable NEED_EVIDENCE rows produced under p3-ternary-v2 in this block",
+      "n_need_denominator": 0,
+      "rates": {
+        "verified_gap": null,
+        "claimed_but_unverified": null,
+        "decisive_in_hand_but_abstained": null,
+        "unspecified": null
+      },
+      "category_counts": {
+        "verified_gap": 0,
+        "claimed_but_unverified": 0,
+        "decisive_in_hand_but_abstained": 0,
+        "unspecified": 0
+      },
+      "raw_gap_distribution": {}
+    }
+  },
+  "overall_divergent": {
+    "slice": "divergent_cells",
+    "n_cells": 12,
+    "n_issues": 6,
+    "n_invalid": 0,
+    "n_ambiguous": 0,
+    "standards": {
+      "oracle": {
+        "decision_appropriateness": {
+          "n_denominator": 12,
+          "n_correct": 5,
+          "rate": 0.4167,
+          "ci95_cluster_bootstrap_seed7": [
+            0.1538,
+            0.75
+          ],
+          "n_issues": 6
+        },
+        "end_to_end_review_success": {
+          "n_denominator": 12,
+          "n_correct": 5,
+          "rate": 0.4167,
+          "ci95_cluster_bootstrap_seed7": [
+            0.1538,
+            0.75
+          ],
+          "n_issues": 6
+        }
+      },
+      "condition": {
+        "decision_appropriateness": {
+          "n_denominator": 12,
+          "n_correct": 6,
+          "rate": 0.5,
+          "ci95_cluster_bootstrap_seed7": [
+            0.1667,
+            0.8333
+          ],
+          "n_issues": 6
+        },
+        "end_to_end_review_success": {
+          "n_denominator": 12,
+          "n_correct": 6,
+          "rate": 0.5,
+          "ci95_cluster_bootstrap_seed7": [
+            0.1667,
+            0.8333
+          ],
+          "n_issues": 6
+        }
+      }
+    },
+    "arms": {
+      "static": {
+        "n_cells": 9,
+        "oracle": {
+          "n_denominator": 9,
+          "n_correct": 5,
+          "rate": 0.5556,
+          "ci95_cluster_bootstrap_seed7": [
+            0.25,
+            0.8182
+          ],
+          "n_issues": 6
+        },
+        "condition": {
+          "n_denominator": 9,
+          "n_correct": 3,
+          "rate": 0.3333,
+          "ci95_cluster_bootstrap_seed7": [
+            0.0909,
+            0.7143
+          ],
+          "n_issues": 6
+        }
+      },
+      "active": {
+        "n_cells": 3,
+        "oracle": {
+          "n_denominator": 3,
+          "n_correct": 0,
+          "rate": 0.0,
+          "ci95_cluster_bootstrap_seed7": [
+            0.0,
+            0.0
+          ],
+          "n_issues": 3
+        },
+        "condition": {
+          "n_denominator": 3,
+          "n_correct": 3,
+          "rate": 1.0,
+          "ci95_cluster_bootstrap_seed7": [
+            1.0,
+            1.0
+          ],
+          "n_issues": 3
+        }
+      }
+    },
+    "gap_rates": {
+      "applicable": false,
+      "reason": "no parseable NEED_EVIDENCE rows produced under p3-ternary-v2 in this block",
+      "n_need_denominator": 0,
+      "rates": {
+        "verified_gap": null,
+        "claimed_but_unverified": null,
+        "decisive_in_hand_but_abstained": null,
+        "unspecified": null
+      },
+      "category_counts": {
+        "verified_gap": 0,
+        "claimed_but_unverified": 0,
+        "decisive_in_hand_but_abstained": 0,
+        "unspecified": 0
+      },
+      "raw_gap_distribution": {}
+    }
+  },
+  "cells": [
+    {
+      "scenario": "contradictory",
+      "id": "glm5_500:sympy__sympy-18199",
+      "instance_id": "sympy__sympy-18199",
+      "wave": "wave1",
+      "condition": "T2D-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": false,
+      "divergence_kind": "restricted_abstention_reject_withheld",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000658,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "contradictory",
+      "id": "glm5_500:sympy__sympy-18199",
+      "instance_id": "sympy__sympy-18199",
+      "wave": "wave1",
+      "condition": "T2A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "REJECT",
+      "condition_error_class": "over_abstain",
+      "condition_appropriate": false,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000664,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "contradictory",
+      "id": "glm5_500:sympy__sympy-18199",
+      "instance_id": "sympy__sympy-18199",
+      "wave": "wave1",
+      "condition": "T3D-Strict",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": false,
+      "divergence_kind": "restricted_abstention_reject_withheld",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.002806,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "contradictory",
+      "id": "glm5_500:sympy__sympy-18199",
+      "instance_id": "sympy__sympy-18199",
+      "wave": "wave1",
+      "condition": "T3D-Escalate",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+      "parsed": "REJECT",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "appropriate_reject",
+      "oracle_appropriate": true,
+      "condition_gold": "REJECT",
+      "condition_error_class": "appropriate_reject",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.012485,
+      "escalation_granted": 5
+    },
+    {
+      "scenario": "contradictory",
+      "id": "glm5_500:sympy__sympy-18199",
+      "instance_id": "sympy__sympy-18199",
+      "wave": "wave1",
+      "condition": "T3A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+      "parsed": "REJECT",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "appropriate_reject",
+      "oracle_appropriate": true,
+      "condition_gold": "REJECT",
+      "condition_error_class": "appropriate_reject",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.01123,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "incomplete",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+      "instance_id": "sympy__sympy-17139",
+      "wave": "wave1",
+      "condition": "T2D-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000738,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "incomplete",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+      "instance_id": "sympy__sympy-17139",
+      "wave": "wave1",
+      "condition": "T2A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "ACCEPT",
+      "condition_error_class": "over_abstain",
+      "condition_appropriate": false,
+      "comparable": false,
+      "divergence_kind": "institutionally_granted_accept",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000677,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "incomplete",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+      "instance_id": "sympy__sympy-17139",
+      "wave": "wave1",
+      "condition": "T3D-Strict",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.00233,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "incomplete",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+      "instance_id": "sympy__sympy-17139",
+      "wave": "wave1",
+      "condition": "T3D-Escalate",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+      "parsed": "REJECT",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "unsupported_reject",
+      "oracle_appropriate": false,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "unsupported_reject",
+      "condition_appropriate": false,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.01408,
+      "escalation_granted": 4
+    },
+    {
+      "scenario": "incomplete",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+      "instance_id": "sympy__sympy-17139",
+      "wave": "wave1",
+      "condition": "T3A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.004839,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "incomplete_decisive_bad",
+      "id": "glm5_500:sympy__sympy-13798",
+      "instance_id": "sympy__sympy-13798",
+      "wave": "wave1",
+      "condition": "T2D-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": false,
+      "divergence_kind": "restricted_abstention_reject_withheld",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000743,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "incomplete_decisive_bad",
+      "id": "glm5_500:sympy__sympy-13798",
+      "instance_id": "sympy__sympy-13798",
+      "wave": "wave1",
+      "condition": "T2A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "REJECT",
+      "condition_error_class": "over_abstain",
+      "condition_appropriate": false,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000754,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "incomplete_decisive_bad",
+      "id": "glm5_500:sympy__sympy-13798",
+      "instance_id": "sympy__sympy-13798",
+      "wave": "wave1",
+      "condition": "T3D-Strict",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": false,
+      "divergence_kind": "restricted_abstention_reject_withheld",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.00274,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "incomplete_decisive_bad",
+      "id": "glm5_500:sympy__sympy-13798",
+      "instance_id": "sympy__sympy-13798",
+      "wave": "wave1",
+      "condition": "T3D-Escalate",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "REJECT",
+      "condition_error_class": "over_abstain",
+      "condition_appropriate": false,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.015564,
+      "escalation_granted": 4
+    },
+    {
+      "scenario": "incomplete_decisive_bad",
+      "id": "glm5_500:sympy__sympy-13798",
+      "instance_id": "sympy__sympy-13798",
+      "wave": "wave1",
+      "condition": "T3A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+      "parsed": "REJECT",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "appropriate_reject",
+      "oracle_appropriate": true,
+      "condition_gold": "REJECT",
+      "condition_error_class": "appropriate_reject",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.009097,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "incomplete_good",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "instance_id": "sympy__sympy-14531",
+      "wave": "wave1",
+      "condition": "T2D-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.00065,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "incomplete_good",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "instance_id": "sympy__sympy-14531",
+      "wave": "wave1",
+      "condition": "T2A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "ACCEPT",
+      "condition_error_class": "over_abstain",
+      "condition_appropriate": false,
+      "comparable": false,
+      "divergence_kind": "institutionally_granted_accept",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000663,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "incomplete_good",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "instance_id": "sympy__sympy-14531",
+      "wave": "wave1",
+      "condition": "T3D-Strict",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.003749,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "incomplete_good",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "instance_id": "sympy__sympy-14531",
+      "wave": "wave1",
+      "condition": "T3D-Escalate",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+      "parsed": "REJECT",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "unsupported_reject",
+      "oracle_appropriate": false,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "unsupported_reject",
+      "condition_appropriate": false,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.012001,
+      "escalation_granted": 3
+    },
+    {
+      "scenario": "incomplete_good",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "instance_id": "sympy__sympy-14531",
+      "wave": "wave1",
+      "condition": "T3A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.003871,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "stale",
+      "id": "glm5_500:sympy__sympy-18211",
+      "instance_id": "sympy__sympy-18211",
+      "wave": "wave1",
+      "condition": "T2D-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_stale_333b7506365b3c47",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000697,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "stale",
+      "id": "glm5_500:sympy__sympy-18211",
+      "instance_id": "sympy__sympy-18211",
+      "wave": "wave1",
+      "condition": "T2A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_stale_333b7506365b3c47",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "ACCEPT",
+      "condition_error_class": "over_abstain",
+      "condition_appropriate": false,
+      "comparable": false,
+      "divergence_kind": "institutionally_granted_accept",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000707,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "stale",
+      "id": "glm5_500:sympy__sympy-18211",
+      "instance_id": "sympy__sympy-18211",
+      "wave": "wave1",
+      "condition": "T3D-Strict",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_stale_333b7506365b3c47",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.002596,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "stale",
+      "id": "glm5_500:sympy__sympy-18211",
+      "instance_id": "sympy__sympy-18211",
+      "wave": "wave1",
+      "condition": "T3D-Escalate",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_stale_333b7506365b3c47",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.009543,
+      "escalation_granted": 3
+    },
+    {
+      "scenario": "stale",
+      "id": "glm5_500:sympy__sympy-18211",
+      "instance_id": "sympy__sympy-18211",
+      "wave": "wave1",
+      "condition": "T3A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_stale_333b7506365b3c47",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.005321,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "stale_bad",
+      "id": "glm5_500:sympy__sympy-13798",
+      "instance_id": "sympy__sympy-13798",
+      "wave": "wave1",
+      "condition": "T2D-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000789,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "stale_bad",
+      "id": "glm5_500:sympy__sympy-13798",
+      "instance_id": "sympy__sympy-13798",
+      "wave": "wave1",
+      "condition": "T2A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "REJECT",
+      "condition_error_class": "over_abstain",
+      "condition_appropriate": false,
+      "comparable": false,
+      "divergence_kind": "institutionally_granted_reject",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000754,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "stale_bad",
+      "id": "glm5_500:sympy__sympy-13798",
+      "instance_id": "sympy__sympy-13798",
+      "wave": "wave1",
+      "condition": "T3D-Strict",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.002739,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "stale_bad",
+      "id": "glm5_500:sympy__sympy-13798",
+      "instance_id": "sympy__sympy-13798",
+      "wave": "wave1",
+      "condition": "T3D-Escalate",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.015674,
+      "escalation_granted": 3
+    },
+    {
+      "scenario": "stale_bad",
+      "id": "glm5_500:sympy__sympy-13798",
+      "instance_id": "sympy__sympy-13798",
+      "wave": "wave1",
+      "condition": "T3A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.009272,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "valid",
+      "id": "glm5_500:sympy__sympy-16450",
+      "instance_id": "sympy__sympy-16450",
+      "wave": "wave1",
+      "condition": "T2D-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "ACCEPT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": false,
+      "divergence_kind": "restricted_abstention_accept_unsupportable",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000716,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "valid",
+      "id": "glm5_500:sympy__sympy-16450",
+      "instance_id": "sympy__sympy-16450",
+      "wave": "wave1",
+      "condition": "T2A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "ACCEPT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "ACCEPT",
+      "condition_error_class": "over_abstain",
+      "condition_appropriate": false,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000711,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "valid",
+      "id": "glm5_500:sympy__sympy-16450",
+      "instance_id": "sympy__sympy-16450",
+      "wave": "wave1",
+      "condition": "T3D-Strict",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "ACCEPT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": false,
+      "divergence_kind": "restricted_abstention_accept_unsupportable",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.002425,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "valid",
+      "id": "glm5_500:sympy__sympy-16450",
+      "instance_id": "sympy__sympy-16450",
+      "wave": "wave1",
+      "condition": "T3D-Escalate",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+      "parsed": "ACCEPT",
+      "parseable": true,
+      "oracle_gold": "ACCEPT",
+      "oracle_error_class": "appropriate_accept",
+      "oracle_appropriate": true,
+      "condition_gold": "ACCEPT",
+      "condition_error_class": "appropriate_accept",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.013526,
+      "escalation_granted": 4
+    },
+    {
+      "scenario": "valid",
+      "id": "glm5_500:sympy__sympy-16450",
+      "instance_id": "sympy__sympy-16450",
+      "wave": "wave1",
+      "condition": "T3A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+      "parsed": "ACCEPT",
+      "parseable": true,
+      "oracle_gold": "ACCEPT",
+      "oracle_error_class": "appropriate_accept",
+      "oracle_appropriate": true,
+      "condition_gold": "ACCEPT",
+      "condition_error_class": "appropriate_accept",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.009381,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "wrong_patch",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+      "instance_id": "sympy__sympy-18211",
+      "wave": "wave1",
+      "condition": "T2D-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+      "parsed": "REJECT",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "appropriate_reject",
+      "oracle_appropriate": true,
+      "condition_gold": "REJECT",
+      "condition_error_class": "appropriate_reject",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000484,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "wrong_patch",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+      "instance_id": "sympy__sympy-18211",
+      "wave": "wave1",
+      "condition": "T2A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "ACCEPT",
+      "condition_error_class": "over_abstain",
+      "condition_appropriate": false,
+      "comparable": false,
+      "divergence_kind": "institutionally_granted_accept",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000602,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "wrong_patch",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+      "instance_id": "sympy__sympy-18211",
+      "wave": "wave1",
+      "condition": "T3D-Strict",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "REJECT",
+      "condition_error_class": "over_abstain",
+      "condition_appropriate": false,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.002465,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "wrong_patch",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+      "instance_id": "sympy__sympy-18211",
+      "wave": "wave1",
+      "condition": "T3D-Escalate",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "REJECT",
+      "condition_error_class": "over_abstain",
+      "condition_appropriate": false,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.005592,
+      "escalation_granted": 3
+    },
+    {
+      "scenario": "wrong_patch",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+      "instance_id": "sympy__sympy-18211",
+      "wave": "wave1",
+      "condition": "T3A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "REJECT",
+      "oracle_error_class": "over_abstain",
+      "oracle_appropriate": false,
+      "condition_gold": "REJECT",
+      "condition_error_class": "over_abstain",
+      "condition_appropriate": false,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.003186,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "wrong_patch_good",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "instance_id": "sympy__sympy-14531",
+      "wave": "wave1",
+      "condition": "T2D-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000695,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "wrong_patch_good",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "instance_id": "sympy__sympy-14531",
+      "wave": "wave1",
+      "condition": "T2A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "ACCEPT",
+      "condition_error_class": "over_abstain",
+      "condition_appropriate": false,
+      "comparable": false,
+      "divergence_kind": "institutionally_granted_accept",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.000657,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "wrong_patch_good",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "instance_id": "sympy__sympy-14531",
+      "wave": "wave1",
+      "condition": "T3D-Strict",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.003022,
+      "escalation_granted": 0
+    },
+    {
+      "scenario": "wrong_patch_good",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "instance_id": "sympy__sympy-14531",
+      "wave": "wave1",
+      "condition": "T3D-Escalate",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.006587,
+      "escalation_granted": 1
+    },
+    {
+      "scenario": "wrong_patch_good",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "instance_id": "sympy__sympy-14531",
+      "wave": "wave1",
+      "condition": "T3A-T",
+      "model": "deepseek-flash",
+      "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+      "parsed": "NEED_EVIDENCE",
+      "parseable": true,
+      "oracle_gold": "NEED_EVIDENCE",
+      "oracle_error_class": "appropriate_abstain",
+      "oracle_appropriate": true,
+      "condition_gold": "NEED_EVIDENCE",
+      "condition_error_class": "appropriate_abstain",
+      "condition_appropriate": true,
+      "comparable": true,
+      "divergence_kind": "aligned",
+      "prompt_version": "p3-ternary-v1",
+      "gap_category": null,
+      "evidence_gap": null,
+      "cost_usd": 0.004535,
+      "escalation_granted": 0
+    }
+  ],
+  "flip_ledger_vs_phase3_v1_gold": {
+    "v1_gold_path": "evidence_store/phase3_gold.jsonl",
+    "n_changed_cells": 16,
+    "changed_cell_counts": {
+      "contradictory|T2D-T": 1,
+      "contradictory|T3D-Strict": 1,
+      "incomplete|T2A-T": 1,
+      "incomplete_decisive_bad|T2D-T": 1,
+      "incomplete_decisive_bad|T3D-Strict": 1,
+      "incomplete_good|T2A-T": 1,
+      "stale|T2A-T": 1,
+      "stale_bad|T2A-T": 1,
+      "valid|T2D-T": 1,
+      "valid|T3D-Strict": 1,
+      "wrong_patch|T2A-T": 1,
+      "wrong_patch|T2D-T": 1,
+      "wrong_patch|T3A-T": 1,
+      "wrong_patch|T3D-Escalate": 1,
+      "wrong_patch|T3D-Strict": 1,
+      "wrong_patch_good|T2A-T": 1
+    },
+    "interpretation": {
+      "oracle_vs_v1": "oracle gold applies the dual-channel rule: a persisting issue symptom alone forces REJECT (v1 scored wrong_patch NEED), independent of artifact linkage",
+      "condition_vs_v1": "condition gold scores the answer the regime actually supports: withheld decisive channels turn v1 over-abstention into appropriate abstention; an institutionally presented all-green block (T2A) can turn v1 appropriate abstention into over-abstention"
+    },
+    "cells": [
+      {
+        "scenario": "contradictory",
+        "condition": "T2D-T",
+        "id": "glm5_500:sympy__sympy-18199",
+        "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "REJECT",
+        "v1_error_class": "over_abstain",
+        "oracle_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_gold": "NEED_EVIDENCE",
+        "condition_error_class": "appropriate_abstain",
+        "comparable": false,
+        "divergence_kind": "restricted_abstention_reject_withheld"
+      },
+      {
+        "scenario": "contradictory",
+        "condition": "T3D-Strict",
+        "id": "glm5_500:sympy__sympy-18199",
+        "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "REJECT",
+        "v1_error_class": "over_abstain",
+        "oracle_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_gold": "NEED_EVIDENCE",
+        "condition_error_class": "appropriate_abstain",
+        "comparable": false,
+        "divergence_kind": "restricted_abstention_reject_withheld"
+      },
+      {
+        "scenario": "incomplete",
+        "condition": "T2A-T",
+        "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+        "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "NEED_EVIDENCE",
+        "v1_error_class": "appropriate_abstain",
+        "oracle_gold": "NEED_EVIDENCE",
+        "oracle_error_class": "appropriate_abstain",
+        "condition_gold": "ACCEPT",
+        "condition_error_class": "over_abstain",
+        "comparable": false,
+        "divergence_kind": "institutionally_granted_accept"
+      },
+      {
+        "scenario": "incomplete_decisive_bad",
+        "condition": "T2D-T",
+        "id": "glm5_500:sympy__sympy-13798",
+        "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "REJECT",
+        "v1_error_class": "over_abstain",
+        "oracle_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_gold": "NEED_EVIDENCE",
+        "condition_error_class": "appropriate_abstain",
+        "comparable": false,
+        "divergence_kind": "restricted_abstention_reject_withheld"
+      },
+      {
+        "scenario": "incomplete_decisive_bad",
+        "condition": "T3D-Strict",
+        "id": "glm5_500:sympy__sympy-13798",
+        "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "REJECT",
+        "v1_error_class": "over_abstain",
+        "oracle_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_gold": "NEED_EVIDENCE",
+        "condition_error_class": "appropriate_abstain",
+        "comparable": false,
+        "divergence_kind": "restricted_abstention_reject_withheld"
+      },
+      {
+        "scenario": "incomplete_good",
+        "condition": "T2A-T",
+        "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+        "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "NEED_EVIDENCE",
+        "v1_error_class": "appropriate_abstain",
+        "oracle_gold": "NEED_EVIDENCE",
+        "oracle_error_class": "appropriate_abstain",
+        "condition_gold": "ACCEPT",
+        "condition_error_class": "over_abstain",
+        "comparable": false,
+        "divergence_kind": "institutionally_granted_accept"
+      },
+      {
+        "scenario": "stale",
+        "condition": "T2A-T",
+        "id": "glm5_500:sympy__sympy-18211",
+        "served_artifact_id": "fix_stale_333b7506365b3c47",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "NEED_EVIDENCE",
+        "v1_error_class": "appropriate_abstain",
+        "oracle_gold": "NEED_EVIDENCE",
+        "oracle_error_class": "appropriate_abstain",
+        "condition_gold": "ACCEPT",
+        "condition_error_class": "over_abstain",
+        "comparable": false,
+        "divergence_kind": "institutionally_granted_accept"
+      },
+      {
+        "scenario": "stale_bad",
+        "condition": "T2A-T",
+        "id": "glm5_500:sympy__sympy-13798",
+        "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "NEED_EVIDENCE",
+        "v1_error_class": "appropriate_abstain",
+        "oracle_gold": "NEED_EVIDENCE",
+        "oracle_error_class": "appropriate_abstain",
+        "condition_gold": "REJECT",
+        "condition_error_class": "over_abstain",
+        "comparable": false,
+        "divergence_kind": "institutionally_granted_reject"
+      },
+      {
+        "scenario": "valid",
+        "condition": "T2D-T",
+        "id": "glm5_500:sympy__sympy-16450",
+        "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "ACCEPT",
+        "v1_error_class": "over_abstain",
+        "oracle_gold": "ACCEPT",
+        "oracle_error_class": "over_abstain",
+        "condition_gold": "NEED_EVIDENCE",
+        "condition_error_class": "appropriate_abstain",
+        "comparable": false,
+        "divergence_kind": "restricted_abstention_accept_unsupportable"
+      },
+      {
+        "scenario": "valid",
+        "condition": "T3D-Strict",
+        "id": "glm5_500:sympy__sympy-16450",
+        "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "ACCEPT",
+        "v1_error_class": "over_abstain",
+        "oracle_gold": "ACCEPT",
+        "oracle_error_class": "over_abstain",
+        "condition_gold": "NEED_EVIDENCE",
+        "condition_error_class": "appropriate_abstain",
+        "comparable": false,
+        "divergence_kind": "restricted_abstention_accept_unsupportable"
+      },
+      {
+        "scenario": "wrong_patch",
+        "condition": "T2D-T",
+        "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+        "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+        "parsed": "REJECT",
+        "v1_gold": "NEED_EVIDENCE",
+        "v1_error_class": "unsupported_reject",
+        "oracle_gold": "REJECT",
+        "oracle_error_class": "appropriate_reject",
+        "condition_gold": "REJECT",
+        "condition_error_class": "appropriate_reject",
+        "comparable": true,
+        "divergence_kind": "aligned"
+      },
+      {
+        "scenario": "wrong_patch",
+        "condition": "T2A-T",
+        "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+        "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "NEED_EVIDENCE",
+        "v1_error_class": "appropriate_abstain",
+        "oracle_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_gold": "ACCEPT",
+        "condition_error_class": "over_abstain",
+        "comparable": false,
+        "divergence_kind": "institutionally_granted_accept"
+      },
+      {
+        "scenario": "wrong_patch",
+        "condition": "T3D-Strict",
+        "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+        "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "NEED_EVIDENCE",
+        "v1_error_class": "appropriate_abstain",
+        "oracle_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_gold": "REJECT",
+        "condition_error_class": "over_abstain",
+        "comparable": true,
+        "divergence_kind": "aligned"
+      },
+      {
+        "scenario": "wrong_patch",
+        "condition": "T3D-Escalate",
+        "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+        "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "NEED_EVIDENCE",
+        "v1_error_class": "appropriate_abstain",
+        "oracle_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_gold": "REJECT",
+        "condition_error_class": "over_abstain",
+        "comparable": true,
+        "divergence_kind": "aligned"
+      },
+      {
+        "scenario": "wrong_patch",
+        "condition": "T3A-T",
+        "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+        "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "NEED_EVIDENCE",
+        "v1_error_class": "appropriate_abstain",
+        "oracle_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_gold": "REJECT",
+        "condition_error_class": "over_abstain",
+        "comparable": true,
+        "divergence_kind": "aligned"
+      },
+      {
+        "scenario": "wrong_patch_good",
+        "condition": "T2A-T",
+        "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+        "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+        "parsed": "NEED_EVIDENCE",
+        "v1_gold": "NEED_EVIDENCE",
+        "v1_error_class": "appropriate_abstain",
+        "oracle_gold": "NEED_EVIDENCE",
+        "oracle_error_class": "appropriate_abstain",
+        "condition_gold": "ACCEPT",
+        "condition_error_class": "over_abstain",
+        "comparable": false,
+        "divergence_kind": "institutionally_granted_accept"
+      }
+    ]
+  },
+  "interpretation": {
+    "oracle_standard": "would the decision be appropriate with all trustworthy evidence (O and P channels)?",
+    "condition_standard": "was the decision appropriate given ONLY evidence the condition regime makes accessible?",
+    "no_cross_condition_averaging": "oracle-vs-condition deltas are descriptive; paired comparisons remain restricted to shared fixture sets"
+  }
+}

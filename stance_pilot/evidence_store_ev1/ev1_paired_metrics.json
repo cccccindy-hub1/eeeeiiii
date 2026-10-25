@@ -1,0 +1,1510 @@
+{
+  "metric": "groundedreview_ev1_paired_cross_model",
+  "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+  "gold_version": "w2-gold-v1",
+  "bootstrap": {
+    "unit": "issue cluster (instance_id)",
+    "seed": 7,
+    "n_boot": 10000
+  },
+  "standards_separation": "oracle_gold and condition_gold are reported separately everywhere; never averaged",
+  "baseline_model": "deepseek-flash",
+  "models": {
+    "deepseek-flash": {
+      "n_cells": 110,
+      "n_issues": 10,
+      "conditions": {
+        "T2D-T": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.5,
+              "n_correct": 11,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.3333,
+                0.7143
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 9,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.8462,
+            "over_abstention_cells": 11,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 42368,
+              "tokens_out": 3650,
+              "usd_total": 0.01709,
+              "usd_per_appropriate_decision": 0.001554,
+              "wall_s_total": 34.42
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 1.0,
+              "n_correct": 22,
+              "ci95_issue_cluster_seed7_n10000": [
+                1.0,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 20,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 20,
+            "n_gold_decisive_or_accept": 2,
+            "over_abstention_rate": 0.0,
+            "over_abstention_cells": 0,
+            "n_gold_non_reject": 20,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 42368,
+              "tokens_out": 3650,
+              "usd_total": 0.01709,
+              "usd_per_appropriate_decision": 0.000777,
+              "wall_s_total": 34.42
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.9091,
+              "n_correct": 20,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T2A-T": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.3636,
+              "n_correct": 8,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.2083,
+                0.5625
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.8889,
+            "appropriate_abstention_cells": 8,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 1.0,
+            "over_abstention_cells": 13,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0625,
+            "unsupported_rejection_cells": 1,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 39245,
+              "tokens_out": 4770,
+              "usd_total": 0.017499,
+              "usd_per_appropriate_decision": 0.002187,
+              "wall_s_total": 38.34
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.0909,
+              "n_correct": 2,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.2
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 1,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 1,
+            "n_gold_decisive_or_accept": 21,
+            "over_abstention_rate": 0.9524,
+            "over_abstention_cells": 20,
+            "n_gold_non_reject": 15,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 39245,
+              "tokens_out": 4770,
+              "usd_total": 0.017499,
+              "usd_per_appropriate_decision": 0.00875,
+              "wall_s_total": 38.34
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.0455,
+              "n_correct": 1,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T3D-Strict": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.4545,
+              "n_correct": 10,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.3077,
+                0.6364
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 9,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.9231,
+            "over_abstention_cells": 12,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 125,
+              "tool_calls_200": 125,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 1.0,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 190927,
+              "tokens_out": 10589,
+              "usd_total": 0.069987,
+              "usd_per_appropriate_decision": 0.006999,
+              "wall_s_total": 79.42
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.9545,
+              "n_correct": 21,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.8421,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 20,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 20,
+            "n_gold_decisive_or_accept": 2,
+            "over_abstention_rate": 0.5,
+            "over_abstention_cells": 1,
+            "n_gold_non_reject": 20,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 125,
+              "tool_calls_200": 125,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 1.0,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 190927,
+              "tokens_out": 10589,
+              "usd_total": 0.069987,
+              "usd_per_appropriate_decision": 0.003333,
+              "wall_s_total": 79.42
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.9091,
+              "n_correct": 20,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T3D-Escalate": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.7727,
+              "n_correct": 17,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.5714,
+                0.95
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.7778,
+            "appropriate_abstention_cells": 7,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.2308,
+            "over_abstention_cells": 3,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.125,
+            "unsupported_rejection_cells": 2,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 175,
+              "tool_calls_200": 162,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 7,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 0.9257,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 22,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 647192,
+              "tokens_out": 24973,
+              "usd_total": 0.224126,
+              "usd_per_appropriate_decision": 0.013184,
+              "wall_s_total": 176.34
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.7727,
+              "n_correct": 17,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.5714,
+                0.95
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.7778,
+            "appropriate_abstention_cells": 7,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.2308,
+            "over_abstention_cells": 3,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.125,
+            "unsupported_rejection_cells": 2,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 175,
+              "tool_calls_200": 162,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 7,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 0.9257,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 22,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 647192,
+              "tokens_out": 24973,
+              "usd_total": 0.224126,
+              "usd_per_appropriate_decision": 0.013184,
+              "wall_s_total": 176.34
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T3A-T": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.8636,
+              "n_correct": 19,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.7,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.8889,
+            "appropriate_abstention_cells": 8,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.1538,
+            "over_abstention_cells": 2,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0625,
+            "unsupported_rejection_cells": 1,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 144,
+              "tool_calls_200": 143,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 0.9931,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 368185,
+              "tokens_out": 12215,
+              "usd_total": 0.125117,
+              "usd_per_appropriate_decision": 0.006585,
+              "wall_s_total": 101.41
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.8636,
+              "n_correct": 19,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.7,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.8889,
+            "appropriate_abstention_cells": 8,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.1538,
+            "over_abstention_cells": 2,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0625,
+            "unsupported_rejection_cells": 1,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 144,
+              "tool_calls_200": 143,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 0.9931,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 368185,
+              "tokens_out": 12215,
+              "usd_total": 0.125117,
+              "usd_per_appropriate_decision": 0.006585,
+              "wall_s_total": 101.41
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            }
+          }
+        }
+      },
+      "pooled": {
+        "oracle": {
+          "decision_appropriateness": {
+            "rate": 0.5909,
+            "n_correct": 65,
+            "n_parseable": 110,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.525,
+              0.675
+            ]
+          },
+          "n_gold_need_evidence": 45,
+          "appropriate_abstention_rate": 0.9111,
+          "appropriate_abstention_cells": 41,
+          "n_gold_decisive_or_accept": 65,
+          "over_abstention_rate": 0.6308,
+          "over_abstention_cells": 41,
+          "n_gold_non_reject": 80,
+          "unsupported_rejection_rate": 0.05,
+          "unsupported_rejection_cells": 4,
+          "false_commit_accept_rate": 0.0,
+          "false_commit_accept_cells": 0
+        },
+        "condition": {
+          "decision_appropriateness": {
+            "rate": 0.7364,
+            "n_correct": 81,
+            "n_parseable": 110,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.6667,
+              0.7818
+            ]
+          },
+          "n_gold_need_evidence": 59,
+          "appropriate_abstention_rate": 0.9492,
+          "appropriate_abstention_cells": 56,
+          "n_gold_decisive_or_accept": 51,
+          "over_abstention_rate": 0.5098,
+          "over_abstention_cells": 26,
+          "n_gold_non_reject": 87,
+          "unsupported_rejection_rate": 0.0345,
+          "unsupported_rejection_cells": 3,
+          "false_commit_accept_rate": 0.0,
+          "false_commit_accept_cells": 0
+        }
+      },
+      "tool_success_all_active_cells": {
+        "tool_calls_total": 444,
+        "tool_calls_200": 430,
+        "tool_calls_403_strict_denied": 0,
+        "tool_calls_400_missing_reason": 7,
+        "tool_calls_5xx": 0,
+        "tool_success_rate_200_over_all_calls": 0.9685,
+        "cells_with_any_5xx": 0,
+        "cells_with_escalation_granted": 22,
+        "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+      }
+    },
+    "selfcheck-copy": {
+      "n_cells": 110,
+      "n_issues": 10,
+      "conditions": {
+        "T2D-T": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.5,
+              "n_correct": 11,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.3333,
+                0.7143
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 9,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.8462,
+            "over_abstention_cells": 11,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 42368,
+              "tokens_out": 3650,
+              "usd_total": 0.01709,
+              "usd_per_appropriate_decision": 0.001554,
+              "wall_s_total": 34.42
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 1.0,
+              "n_correct": 22,
+              "ci95_issue_cluster_seed7_n10000": [
+                1.0,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 20,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 20,
+            "n_gold_decisive_or_accept": 2,
+            "over_abstention_rate": 0.0,
+            "over_abstention_cells": 0,
+            "n_gold_non_reject": 20,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 42368,
+              "tokens_out": 3650,
+              "usd_total": 0.01709,
+              "usd_per_appropriate_decision": 0.000777,
+              "wall_s_total": 34.42
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.9091,
+              "n_correct": 20,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T2A-T": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.3636,
+              "n_correct": 8,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.2083,
+                0.5625
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.8889,
+            "appropriate_abstention_cells": 8,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 1.0,
+            "over_abstention_cells": 13,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0625,
+            "unsupported_rejection_cells": 1,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 39245,
+              "tokens_out": 4770,
+              "usd_total": 0.017499,
+              "usd_per_appropriate_decision": 0.002187,
+              "wall_s_total": 38.34
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.0909,
+              "n_correct": 2,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.2
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 1,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 1,
+            "n_gold_decisive_or_accept": 21,
+            "over_abstention_rate": 0.9524,
+            "over_abstention_cells": 20,
+            "n_gold_non_reject": 15,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 0,
+              "tool_calls_200": 0,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": null,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 39245,
+              "tokens_out": 4770,
+              "usd_total": 0.017499,
+              "usd_per_appropriate_decision": 0.00875,
+              "wall_s_total": 38.34
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.0455,
+              "n_correct": 1,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T3D-Strict": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.4545,
+              "n_correct": 10,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.3077,
+                0.6364
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 9,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.9231,
+            "over_abstention_cells": 12,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 125,
+              "tool_calls_200": 125,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 1.0,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 190927,
+              "tokens_out": 10589,
+              "usd_total": 0.069987,
+              "usd_per_appropriate_decision": 0.006999,
+              "wall_s_total": 79.42
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.9545,
+              "n_correct": 21,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.8421,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 20,
+            "appropriate_abstention_rate": 1.0,
+            "appropriate_abstention_cells": 20,
+            "n_gold_decisive_or_accept": 2,
+            "over_abstention_rate": 0.5,
+            "over_abstention_cells": 1,
+            "n_gold_non_reject": 20,
+            "unsupported_rejection_rate": 0.0,
+            "unsupported_rejection_cells": 0,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 125,
+              "tool_calls_200": 125,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 1.0,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 190927,
+              "tokens_out": 10589,
+              "usd_total": 0.069987,
+              "usd_per_appropriate_decision": 0.003333,
+              "wall_s_total": 79.42
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.9091,
+              "n_correct": 20,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T3D-Escalate": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.7727,
+              "n_correct": 17,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.5714,
+                0.95
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.7778,
+            "appropriate_abstention_cells": 7,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.2308,
+            "over_abstention_cells": 3,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.125,
+            "unsupported_rejection_cells": 2,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 175,
+              "tool_calls_200": 162,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 7,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 0.9257,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 22,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 647192,
+              "tokens_out": 24973,
+              "usd_total": 0.224126,
+              "usd_per_appropriate_decision": 0.013184,
+              "wall_s_total": 176.34
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.7727,
+              "n_correct": 17,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.5714,
+                0.95
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.7778,
+            "appropriate_abstention_cells": 7,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.2308,
+            "over_abstention_cells": 3,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.125,
+            "unsupported_rejection_cells": 2,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 175,
+              "tool_calls_200": 162,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 7,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 0.9257,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 22,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 647192,
+              "tokens_out": 24973,
+              "usd_total": 0.224126,
+              "usd_per_appropriate_decision": 0.013184,
+              "wall_s_total": 176.34
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            }
+          }
+        },
+        "T3A-T": {
+          "oracle": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.8636,
+              "n_correct": 19,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.7,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.8889,
+            "appropriate_abstention_cells": 8,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.1538,
+            "over_abstention_cells": 2,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0625,
+            "unsupported_rejection_cells": 1,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 144,
+              "tool_calls_200": 143,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 0.9931,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 368185,
+              "tokens_out": 12215,
+              "usd_total": 0.125117,
+              "usd_per_appropriate_decision": 0.006585,
+              "wall_s_total": 101.41
+            }
+          },
+          "condition": {
+            "n_cells": 22,
+            "n_parseable": 22,
+            "n_issues": 10,
+            "decision_appropriateness": {
+              "rate": 0.8636,
+              "n_correct": 19,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.7,
+                1.0
+              ],
+              "denominator": "parseable cells (INVALID/AMBIGUOUS excluded)"
+            },
+            "protocol_failure": {
+              "n_invalid": 0,
+              "n_ambiguous": 0,
+              "invalid_or_ambiguous_rate_of_all_cells": 0.0
+            },
+            "n_gold_need_evidence": 9,
+            "appropriate_abstention_rate": 0.8889,
+            "appropriate_abstention_cells": 8,
+            "n_gold_decisive_or_accept": 13,
+            "over_abstention_rate": 0.1538,
+            "over_abstention_cells": 2,
+            "n_gold_non_reject": 16,
+            "unsupported_rejection_rate": 0.0625,
+            "unsupported_rejection_cells": 1,
+            "false_commit_accept_rate": 0.0,
+            "false_commit_accept_cells": 0,
+            "tool_success": {
+              "tool_calls_total": 144,
+              "tool_calls_200": 143,
+              "tool_calls_403_strict_denied": 0,
+              "tool_calls_400_missing_reason": 0,
+              "tool_calls_5xx": 0,
+              "tool_success_rate_200_over_all_calls": 0.9931,
+              "cells_with_any_5xx": 0,
+              "cells_with_escalation_granted": 0,
+              "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+            },
+            "cost": {
+              "tokens_in": 368185,
+              "tokens_out": 12215,
+              "usd_total": 0.125117,
+              "usd_per_appropriate_decision": 0.006585,
+              "wall_s_total": 101.41
+            }
+          },
+          "always_need_baseline": {
+            "oracle": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            },
+            "condition": {
+              "rate": 0.4091,
+              "n_correct": 9,
+              "n_parseable": 22
+            }
+          }
+        }
+      },
+      "pooled": {
+        "oracle": {
+          "decision_appropriateness": {
+            "rate": 0.5909,
+            "n_correct": 65,
+            "n_parseable": 110,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.525,
+              0.675
+            ]
+          },
+          "n_gold_need_evidence": 45,
+          "appropriate_abstention_rate": 0.9111,
+          "appropriate_abstention_cells": 41,
+          "n_gold_decisive_or_accept": 65,
+          "over_abstention_rate": 0.6308,
+          "over_abstention_cells": 41,
+          "n_gold_non_reject": 80,
+          "unsupported_rejection_rate": 0.05,
+          "unsupported_rejection_cells": 4,
+          "false_commit_accept_rate": 0.0,
+          "false_commit_accept_cells": 0
+        },
+        "condition": {
+          "decision_appropriateness": {
+            "rate": 0.7364,
+            "n_correct": 81,
+            "n_parseable": 110,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.6667,
+              0.7818
+            ]
+          },
+          "n_gold_need_evidence": 59,
+          "appropriate_abstention_rate": 0.9492,
+          "appropriate_abstention_cells": 56,
+          "n_gold_decisive_or_accept": 51,
+          "over_abstention_rate": 0.5098,
+          "over_abstention_cells": 26,
+          "n_gold_non_reject": 87,
+          "unsupported_rejection_rate": 0.0345,
+          "unsupported_rejection_cells": 3,
+          "false_commit_accept_rate": 0.0,
+          "false_commit_accept_cells": 0
+        }
+      },
+      "tool_success_all_active_cells": {
+        "tool_calls_total": 444,
+        "tool_calls_200": 430,
+        "tool_calls_403_strict_denied": 0,
+        "tool_calls_400_missing_reason": 7,
+        "tool_calls_5xx": 0,
+        "tool_success_rate_200_over_all_calls": 0.9685,
+        "cells_with_any_5xx": 0,
+        "cells_with_escalation_granted": 22,
+        "note": "403 strict_denied and 400 missing_reason are CORRECT permission behaviour, not failures; 5xx/transport errors are operational failures."
+      }
+    }
+  },
+  "paired_comparisons": [
+    {
+      "baseline": "deepseek-flash",
+      "candidate": "selfcheck-copy",
+      "oracle": {
+        "standard": "oracle",
+        "shared_cells": 110,
+        "shared_issues": 10,
+        "baseline_only_cells": 0,
+        "candidate_only_cells": 0,
+        "paired_set_complete": true,
+        "baseline_rate": 0.5909,
+        "candidate_rate": 0.5909,
+        "paired_delta_candidate_minus_baseline": 0.0,
+        "delta_ci95_issue_cluster_seed7_n10000": [
+          0.0,
+          0.0
+        ],
+        "delta_ci_n_clusters": 10,
+        "candidate_correct_baseline_wrong": 0,
+        "baseline_correct_candidate_wrong": 0,
+        "mcnemar_exact_two_sided_p_descriptive": 1.0,
+        "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+        "changed_pairs": []
+      },
+      "condition": {
+        "standard": "condition",
+        "shared_cells": 110,
+        "shared_issues": 10,
+        "baseline_only_cells": 0,
+        "candidate_only_cells": 0,
+        "paired_set_complete": true,
+        "baseline_rate": 0.7364,
+        "candidate_rate": 0.7364,
+        "paired_delta_candidate_minus_baseline": 0.0,
+        "delta_ci95_issue_cluster_seed7_n10000": [
+          0.0,
+          0.0
+        ],
+        "delta_ci_n_clusters": 10,
+        "candidate_correct_baseline_wrong": 0,
+        "baseline_correct_candidate_wrong": 0,
+        "mcnemar_exact_two_sided_p_descriptive": 1.0,
+        "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+        "changed_pairs": []
+      },
+      "per_condition": {
+        "T2D-T": {
+          "oracle": {
+            "standard": "oracle",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.5,
+            "candidate_rate": 0.5,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              0.0,
+              0.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 0,
+            "baseline_correct_candidate_wrong": 0,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": []
+          },
+          "condition": {
+            "standard": "condition",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 1.0,
+            "candidate_rate": 1.0,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              0.0,
+              0.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 0,
+            "baseline_correct_candidate_wrong": 0,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": []
+          }
+        },
+        "T2A-T": {
+          "oracle": {
+            "standard": "oracle",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.3636,
+            "candidate_rate": 0.3636,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              0.0,
+              0.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 0,
+            "baseline_correct_candidate_wrong": 0,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": []
+          },
+          "condition": {
+            "standard": "condition",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.0909,
+            "candidate_rate": 0.0909,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              0.0,
+              0.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 0,
+            "baseline_correct_candidate_wrong": 0,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": []
+          }
+        },
+        "T3D-Strict": {
+          "oracle": {
+            "standard": "oracle",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.4545,
+            "candidate_rate": 0.4545,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              0.0,
+              0.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 0,
+            "baseline_correct_candidate_wrong": 0,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": []
+          },
+          "condition": {
+            "standard": "condition",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.9545,
+            "candidate_rate": 0.9545,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              0.0,
+              0.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 0,
+            "baseline_correct_candidate_wrong": 0,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": []
+          }
+        },
+        "T3D-Escalate": {
+          "oracle": {
+            "standard": "oracle",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.7727,
+            "candidate_rate": 0.7727,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              0.0,
+              0.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 0,
+            "baseline_correct_candidate_wrong": 0,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": []
+          },
+          "condition": {
+            "standard": "condition",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.7727,
+            "candidate_rate": 0.7727,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              0.0,
+              0.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 0,
+            "baseline_correct_candidate_wrong": 0,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": []
+          }
+        },
+        "T3A-T": {
+          "oracle": {
+            "standard": "oracle",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.8636,
+            "candidate_rate": 0.8636,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              0.0,
+              0.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 0,
+            "baseline_correct_candidate_wrong": 0,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": []
+          },
+          "condition": {
+            "standard": "condition",
+            "shared_cells": 22,
+            "shared_issues": 10,
+            "baseline_only_cells": 0,
+            "candidate_only_cells": 0,
+            "paired_set_complete": true,
+            "baseline_rate": 0.8636,
+            "candidate_rate": 0.8636,
+            "paired_delta_candidate_minus_baseline": 0.0,
+            "delta_ci95_issue_cluster_seed7_n10000": [
+              0.0,
+              0.0
+            ],
+            "delta_ci_n_clusters": 10,
+            "candidate_correct_baseline_wrong": 0,
+            "baseline_correct_candidate_wrong": 0,
+            "mcnemar_exact_two_sided_p_descriptive": 1.0,
+            "mcnemar_note": "exact test is descriptive only; discordant n is small and clustering makes cells non-independent",
+            "changed_pairs": []
+          }
+        }
+      }
+    }
+  ]
+}

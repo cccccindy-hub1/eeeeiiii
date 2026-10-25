@@ -1,0 +1,3314 @@
+{
+  "rule": "instance_id ascending; first 4 passing every static gate",
+  "pool_file": "wave2_candidate_pool.jsonl",
+  "pool_rows": 206,
+  "pool_instances": 75,
+  "old_instances_excluded": [
+    "sympy__sympy-13798",
+    "sympy__sympy-14531",
+    "sympy__sympy-16450",
+    "sympy__sympy-16597",
+    "sympy__sympy-17139",
+    "sympy__sympy-18199",
+    "sympy__sympy-18211",
+    "sympy__sympy-20428"
+  ],
+  "gates": [
+    "not in frozen wave1 set",
+    ">=2 distinct generator rows",
+    "base_commit fetchable in vendored git",
+    "maintainer test_patch applies cleanly",
+    "declared FAIL_TO_PASS and PASS_TO_PASS non-empty",
+    "every FAIL_TO_PASS name defined in a test_patch file",
+    ">=2 generators with a model_patch that applies cleanly at base"
+  ],
+  "candidates": [
+    {
+      "instance_id": "sympy__sympy-11618",
+      "n_rows": 1,
+      "generators": [
+        "GLM-5-FP8"
+      ],
+      "excluded_old": false,
+      "gates": {},
+      "selected": false,
+      "exclude_reason": "only 1 generator(s)"
+    },
+    {
+      "instance_id": "sympy__sympy-12096",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 43,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/utilities/tests/test_lambdify.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-12096",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmppqctdk3a.patch:16\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmppqctdk3a.patch:16\n"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-12096",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp4e97uo_p.patch:14\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp4e97uo_p.patch:14\n"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-12096",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp86ngt6gc.patch:15\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp86ngt6gc.patch:15\n"
+        }
+      ],
+      "gate_failed": [
+        "only 0 generator(s) with clean model_patch"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-12419",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 25,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/matrices/expressions/tests/test_matexpr.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": true,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-12419",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-12419",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp_wicv0uv.patch:25\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp_wicv0uv.patch:25\n"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-12419",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-12481",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 7,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/combinatorics/tests/test_permutations.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": true,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-12481",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-12481",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-12481",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-12489",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 8,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/combinatorics/tests/test_permutations.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": true,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-12489",
+          "generator_model": "GLM-5-FP8",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-12489",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-13031",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 9,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/matrices/tests/test_sparse.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-13031",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-13031",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmptwwjyr5e.patch:19\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmptwwjyr5e.patch:19\n"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-13031",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpcl_c5z_y.patch:55\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpcl_c5z_y.patch:55\n"
+        }
+      ],
+      "gate_failed": [
+        "only 1 generator(s) with clean model_patch"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-13091",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 2,
+        "p2p_declared_n": 89,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/core/tests/test_basic.py",
+          "sympy/core/tests/test_numbers.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": true,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-13091",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-13091",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-13091",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-13372",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 44,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/core/tests/test_evalf.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-13372",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-13372",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-13372",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-13480",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 43,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/functions/elementary/tests/test_hyperbolic.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-13480",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-13480",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-13480",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-13551",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 17,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/concrete/tests/test_products.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-13551",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-13551",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-13551",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-13615",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 70,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/sets/tests/test_sets.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-13615",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-13615",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-13615",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpvoc08a7m.patch:39\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpvoc08a7m.patch:39\n"
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-13647",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 76,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/matrices/tests/test_commonmatrix.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-13647",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-13647",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-13647",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-13757",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 166,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/core/tests/test_match.py",
+          "sympy/polys/tests/test_polytools.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-13757",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-13757",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpuclctr0t.patch:13\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpuclctr0t.patch:13\n"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-13757",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-13798",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": true,
+      "gates": {},
+      "selected": false,
+      "exclude_reason": "wave1 instance (frozen set)"
+    },
+    {
+      "instance_id": "sympy__sympy-13852",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 4,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/functions/special/tests/test_zeta_functions.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-13852",
+          "generator_model": "GLM-5-FP8",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-13852",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-13877",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 110,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/matrices/tests/test_matrices.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-13877",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp2c_kes5e.patch:42\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp2c_kes5e.patch:42\n"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-13877",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-13877",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-13878",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 19,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/stats/tests/test_continuous_rv.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-13878",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-13878",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-13974",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 4,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/physics/quantum/tests/test_tensorproduct.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-13974",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-13974",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-13974",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-14248",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 2,
+        "p2p_declared_n": 433,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/printing/pretty/tests/test_pretty.py",
+          "sympy/printing/tests/test_ccode.py",
+          "sympy/printing/tests/test_fcode.py",
+          "sympy/printing/tests/test_jscode.py",
+          "sympy/printing/tests/test_julia.py",
+          "sympy/printing/tests/test_latex.py",
+          "sympy/printing/tests/test_octave.py",
+          "sympy/printing/tests/test_rcode.py",
+          "sympy/printing/tests/test_str.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-14248",
+          "generator_model": "GLM-5-FP8",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-14248",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp5g0ztnue.patch:19\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp5g0ztnue.patch:19\n"
+        }
+      ],
+      "gate_failed": [
+        "only 1 generator(s) with clean model_patch"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-14531",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": true,
+      "gates": {},
+      "selected": false,
+      "exclude_reason": "wave1 instance (frozen set)"
+    },
+    {
+      "instance_id": "sympy__sympy-14711",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 2,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/physics/vector/tests/test_vector.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-14711",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmprir42zhg.patch:29\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmprir42zhg.patch:29\n"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-14711",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-14711",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpl7xond1i.patch:13\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpl7xond1i.patch:13\n"
+        }
+      ],
+      "gate_failed": [
+        "only 1 generator(s) with clean model_patch"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-14976",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 13,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/printing/tests/test_pycode.py",
+          "sympy/solvers/tests/test_numeric.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-14976",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-14976",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-14976",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-15017",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 14,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/tensor/array/tests/test_immutable_ndim_array.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-15017",
+          "generator_model": "GLM-5-FP8",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-15017",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-15345",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 8,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/printing/tests/test_mathematica.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-15345",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-15345",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-15345",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-15349",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 3,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/algebras/tests/test_quaternion.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-15349",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpyam1fwc3.patch:31\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpyam1fwc3.patch:31\n"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-15349",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": [
+        "only 1 generator(s) with clean model_patch"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-15599",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 80,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/core/tests/test_arit.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-15599",
+          "generator_model": "GLM-5-FP8",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-15599",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-15599",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-15809",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 2,
+        "p2p_declared_n": 10,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/functions/elementary/tests/test_miscellaneous.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-15809",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-15809",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpfwfnk7y9.patch:14\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpfwfnk7y9.patch:14\n"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-15809",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp1o9gakh9.patch:13\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp1o9gakh9.patch:13\n"
+        }
+      ],
+      "gate_failed": [
+        "only 1 generator(s) with clean model_patch"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-15875",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 80,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/core/tests/test_arit.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-15875",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpbc2jqqzj.patch:15\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpbc2jqqzj.patch:15\n"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-15875",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": [
+        "only 1 generator(s) with clean model_patch"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-15976",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 37,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/printing/tests/test_mathml.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-15976",
+          "generator_model": "GLM-5-FP8",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-15976",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpl8fg4786.patch:16\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpl8fg4786.patch:16\n"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-15976",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp9tl0_45p.patch:17\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp9tl0_45p.patch:17\n"
+        }
+      ],
+      "gate_failed": [
+        "only 1 generator(s) with clean model_patch"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-16450",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": true,
+      "gates": {},
+      "selected": false,
+      "exclude_reason": "wave1 instance (frozen set)"
+    },
+    {
+      "instance_id": "sympy__sympy-16597",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": true,
+      "gates": {},
+      "selected": false,
+      "exclude_reason": "wave1 instance (frozen set)"
+    },
+    {
+      "instance_id": "sympy__sympy-16766",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 7,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/printing/tests/test_pycode.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-16766",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-16766",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpuo447vt6.patch:38\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpuo447vt6.patch:38\n"
+        }
+      ],
+      "gate_failed": [
+        "only 1 generator(s) with clean model_patch"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-16792",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 54,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/utilities/tests/test_codegen.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-16792",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-16792",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-16792",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpb0rx1bb6.patch:34\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpb0rx1bb6.patch:34\n"
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-16886",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 42,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/crypto/tests/test_crypto.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-16886",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-16886",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-16886",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-17139",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507"
+      ],
+      "excluded_old": true,
+      "gates": {},
+      "selected": false,
+      "exclude_reason": "wave1 instance (frozen set)"
+    },
+    {
+      "instance_id": "sympy__sympy-17318",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 10,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/simplify/tests/test_sqrtdenest.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-17318",
+          "generator_model": "GLM-5-FP8",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17318",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-17318",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-17630",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 2,
+        "p2p_declared_n": 19,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/matrices/expressions/tests/test_blockmatrix.py",
+          "sympy/matrices/expressions/tests/test_matadd.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-17630",
+          "generator_model": "GLM-5-FP8",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17630",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpamesk36g.patch:31\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpamesk36g.patch:31\n"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-17630",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpyumcutxk.patch:44\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpyumcutxk.patch:44\n"
+        }
+      ],
+      "gate_failed": [
+        "only 1 generator(s) with clean model_patch"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-17655",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 2,
+        "p2p_declared_n": 9,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/geometry/tests/test_point.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-17655",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17655",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-17655",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-18189",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 41,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/solvers/tests/test_diophantine.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-18189",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18189",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp9ve3lucv.patch:24\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp9ve3lucv.patch:24\n"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-18189",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-18199",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": true,
+      "gates": {},
+      "selected": false,
+      "exclude_reason": "wave1 instance (frozen set)"
+    },
+    {
+      "instance_id": "sympy__sympy-18211",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": true,
+      "gates": {},
+      "selected": false,
+      "exclude_reason": "wave1 instance (frozen set)"
+    },
+    {
+      "instance_id": "sympy__sympy-18698",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 147,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/polys/tests/test_polytools.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-18698",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18698",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmplv4z4h1i.patch:22\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmplv4z4h1i.patch:22\n"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-18698",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-18763",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 141,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/printing/tests/test_latex.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-18763",
+          "generator_model": "GLM-5-FP8",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18763",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-18763",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-19040",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 148,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/polys/tests/test_polytools.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-19040",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-19040",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-19040",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpqhtywg1g.patch:34\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpqhtywg1g.patch:34\n"
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-19346",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 40,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/printing/tests/test_repr.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-19346",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-19346",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-19346",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpy7a2idd7.patch:32\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpy7a2idd7.patch:32\n"
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-19495",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 8,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/sets/tests/test_conditionset.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-19495",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-19495",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-19495",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-19637",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 40,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/core/tests/test_sympify.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-19637",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-19637",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-19637",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-19783",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 2,
+        "p2p_declared_n": 9,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/physics/quantum/tests/test_dagger.py",
+          "sympy/physics/quantum/tests/test_operator.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-19783",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpp20_z4j6.patch:58\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpp20_z4j6.patch:58\n"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-19783",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-19783",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-19954",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 56,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/combinatorics/tests/test_perm_groups.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-19954",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-19954",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-19954",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpa19k2vst.patch:27\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpa19k2vst.patch:27\n"
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-20154",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 2,
+        "p2p_declared_n": 40,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/utilities/tests/test_iterables.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-20154",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-20154",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-20428",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": true,
+      "gates": {},
+      "selected": false,
+      "exclude_reason": "wave1 instance (frozen set)"
+    },
+    {
+      "instance_id": "sympy__sympy-20438",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 2,
+        "p2p_declared_n": 93,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/sets/tests/test_sets.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-20438",
+          "generator_model": "GLM-5-FP8",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-20438",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-20590",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 21,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/core/tests/test_basic.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-20590",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-20590",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-20801",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 96,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/core/tests/test_numbers.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-20801",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-20801",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-20801",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-20916",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 1,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/printing/tests/test_conventions.py",
+          "sympy/testing/quality_unicode.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-20916",
+          "generator_model": "GLM-5-FP8",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-20916",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-20916",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-21379",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 91,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/core/tests/test_arit.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-21379",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-21379",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpx39ihmea.patch:23\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpx39ihmea.patch:23\n"
+        }
+      ],
+      "gate_failed": [
+        "only 1 generator(s) with clean model_patch"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-21596",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 46,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/sets/tests/test_fancysets.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-21596",
+          "generator_model": "GLM-5-FP8",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-21596",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-21612",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 98,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/printing/tests/test_str.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-21612",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-21612",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-21612",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-21847",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 9,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/polys/tests/test_monomials.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-21847",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-21847",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-21847",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-21930",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 6,
+        "p2p_declared_n": 45,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/physics/tests/test_secondquant.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-21930",
+          "generator_model": "GLM-5-FP8",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-21930",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-21930",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-22080",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 3,
+        "p2p_declared_n": 91,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/codegen/tests/test_rewriting.py",
+          "sympy/printing/tests/test_pycode.py",
+          "sympy/utilities/tests/test_lambdify.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-22080",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-22080",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-22080",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-22456",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 29,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/codegen/tests/test_ast.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-22456",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-22456",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-22456",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp4mqcvxeq.patch:19\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp4mqcvxeq.patch:19\n"
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-22714",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 11,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/geometry/tests/test_point.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-22714",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-22714",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp0fjyjgj7.patch:20\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp0fjyjgj7.patch:20\n"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-22714",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp8oya2q5g.patch:32\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp8oya2q5g.patch:32\n"
+        }
+      ],
+      "gate_failed": [
+        "only 1 generator(s) with clean model_patch"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-22914",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 17,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/printing/tests/test_pycode.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-22914",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-22914",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-22914",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-23262",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 61,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/utilities/tests/test_lambdify.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-23262",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-23262",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-23262",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-23413",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 2,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/matrices/tests/test_normalforms.py",
+          "sympy/polys/matrices/tests/test_normalforms.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-23413",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-23413",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-23534",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 11,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/core/tests/test_symbol.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-23534",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-23534",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-23534",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpcslugmng.patch:13\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpcslugmng.patch:13\n"
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-23824",
+      "n_rows": 2,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 2,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/physics/hep/tests/test_gamma_matrices.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-23824",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-23824",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-23950",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 4,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/sets/tests/test_contains.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-23950",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-23950",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-23950",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-24066",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 30,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/physics/units/tests/test_quantities.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-24066",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-24066",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-24066",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-24213",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 31,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/physics/units/tests/test_quantities.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-24213",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-24213",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-24213",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-24443",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 1,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/combinatorics/tests/test_homomorphisms.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-24443",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-24443",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-24443",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-24539",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 62,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/polys/tests/test_rings.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-24539",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpkh63wy0l.patch:16\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmpkh63wy0l.patch:16\n"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-24539",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-24539",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": false,
+          "model_patch_stderr": "attempt1: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp66sqmr7w.patch:13\n | attempt2: error: corrupt patch at C:/Users/guoci/AppData/Local/Temp/tmp66sqmr7w.patch:13\n"
+        }
+      ],
+      "gate_failed": [
+        "only 1 generator(s) with clean model_patch"
+      ]
+    },
+    {
+      "instance_id": "sympy__sympy-24562",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 105,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/core/tests/test_numbers.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-24562",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-24562",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-24562",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    },
+    {
+      "instance_id": "sympy__sympy-24661",
+      "n_rows": 3,
+      "generators": [
+        "GLM-5-FP8",
+        "Qwen/Qwen3-30B-A3B-Instruct-2507",
+        "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+      ],
+      "excluded_old": false,
+      "gates": {
+        "base_present": true,
+        "test_patch_clean": true,
+        "f2p_declared_n": 1,
+        "p2p_declared_n": 27,
+        "declared_nonempty": true,
+        "test_patch_files": [
+          "sympy/parsing/tests/test_sympy_parser.py"
+        ],
+        "all_test_files_exist_after_apply": true,
+        "f2p_unmapped": [],
+        "test_patch_real_apply_ok": true,
+        "f2p_all_mapped": true
+      },
+      "selected": false,
+      "row_checks": [
+        {
+          "id": "glm5_500:sympy__sympy-24661",
+          "generator_model": "GLM-5-FP8",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-24661",
+          "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+          "resolved": false,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-24661",
+          "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "resolved": true,
+          "model_patch_clean": true,
+          "model_patch_stderr": null
+        }
+      ],
+      "gate_failed": []
+    }
+  ],
+  "selected_instance_ids": [
+    "sympy__sympy-12419",
+    "sympy__sympy-12481",
+    "sympy__sympy-12489",
+    "sympy__sympy-13091"
+  ],
+  "selected_n": 4,
+  "raw_out_rows": 12,
+  "raw_out_sha256": "3bf3c424baa122e2d07b3b5feaa288f880b53fdcb2d995c59a3499f11c4741fd",
+  "blocked": false
+}

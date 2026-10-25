@@ -1,0 +1,36 @@
+### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+FAIL: posified symbol lost finite assumption: {
+	commutative: True,
+	complex: True,
+	finite: None,
+	hermitian: True,
+	imaginary: False,
+	negative: False,
+	nonnegative: True,
+	nonpositive: False,
+	nonzero: True,
+	positive: True,
+	real: True,
+	zero: False}
+
+--- stderr ---
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3186: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:509: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:529: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:542: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:549: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+
+
+### POST candidate patch
+$ python probe.py  (exit 0)
+--- stdout ---
+OK: xp.is_finite = True
+
+--- stderr ---

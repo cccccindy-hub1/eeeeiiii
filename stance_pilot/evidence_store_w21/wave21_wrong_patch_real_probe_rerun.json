@@ -1,0 +1,14 @@
+{
+  "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+  "instance_id": "sympy__sympy-18211",
+  "base_commit": "b4f1aa3540fe68d078d76e78ba59d022dd6df39f",
+  "model_patch_sha256": "6c46558ecd38832617d527b0da97b2efd8714f106242fa9ad83dafb263d58a2f",
+  "candidate_patch_applied": true,
+  "pre_patch_probe_passed": false,
+  "post_patch_probe_passed": false,
+  "symptom_present_before_patch": true,
+  "symptom_persists_after_patch": true,
+  "pre_log": "$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: as_set raised: NotImplementedError \nThe inequality, Eq(x*cos(x) - 3*sin(x), 0), cannot be solved using\nsolve_univariate_inequality.\n\n--- stderr ---\n",
+  "post_log": "$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: as_set raised: TypeError unsupported operand type(s) for +: 'ConditionSet' and 'list'\n\n--- stderr ---\n",
+  "python": "3.11.15"
+}

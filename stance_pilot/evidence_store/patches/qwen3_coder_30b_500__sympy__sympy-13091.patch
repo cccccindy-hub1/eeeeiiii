@@ -1,0 +1,44 @@
+diff --git a/sympy/core/basic.py b/sympy/core/basic.py
+index db4e97184..6ab9ce527 100644
+--- a/sympy/core/basic.py
++++ b/sympy/core/basic.py
+@@ -313,7 +313,7 @@ def __eq__(self, other):
+             try:
+                 other = _sympify(other)
+             except SympifyError:
+-                return False    # sympy != other
++                return NotImplemented    # sympy != other
+ 
+             if type(self) != type(other):
+                 return False
+diff --git a/sympy/core/tests/test_basic.py b/sympy/core/tests/test_basic.py
+index 9d4a8fa3d..43a9103f6 100644
+--- a/sympy/core/tests/test_basic.py
++++ b/sympy/core/tests/test_basic.py
+@@ -219,3 +219,26 @@ def test_literal_evalf_is_number_is_zero_is_comparable():
+     assert n.is_comparable is False
+     assert n.n(2).is_comparable is False
+     assert n.n(2).n(2).is_comparable
++
++
++def test_comparison_not_implemented():
++    """Test that Basic.__eq__ returns NotImplemented for unknown types."""
++    from sympy.core.sympify import SympifyError
++    
++    # Create a basic sympy object
++    sympy_obj = Basic()
++    
++    # Create a custom object that can't be sympified
++    class NonSympifiable:
++        def __eq__(self, other):
++            # This should not be called when Basic.__eq__ returns NotImplemented
++            return False
++    
++    custom_obj = NonSympifiable()
++    
++    # When comparing sympy object with non-sympifiable object,
++    # Basic.__eq__ should return NotImplemented
++    result = sympy_obj.__eq__(custom_obj)
++    
++    # Should be NotImplemented, not False
++    assert result is NotImplemented

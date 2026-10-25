@@ -1,0 +1,187 @@
+{
+  "title": "Wave-2 follow-up audit (zero-LLM): T2A anomaly, T3D-Escalate errors, and a 1/22 symptom-log integrity defect",
+  "date": "2026-10-21",
+  "headline_findings": [
+    "T2A 9.1% condition DA is genuine over-conservatism, not a rendering bug: the block is short (454-739 chars) with f2p/p2p counts and failing ids in the first ~12 lines; nothing decisive is buried in logs (T2A has no tools, tool_calls=0).",
+    "20/22 served records are factually linked to the review patch; 2 (wrong_patch, wrong_patch_good) are deliberately re-identified records (linkage is unverifiable-by-design and truly mismatched). On the 20 linked records the model still abstained 19 times, citing linkage (19) / freshness (18) / coverage (~9).",
+    "Among those 19 linked-record abstentions: 3 explicitly ASSERT a sha/linkage mismatch that does not exist; 16 only say linkage \"cannot be verified\". The trigger is the literal block header \"linkage not yet verified\" with no tool to adjudicate it.",
+    "A single fixture defect found (1/22): fix_wrong_patch_05f2955c70897168 has session symptom metadata post_patch_passed=false (symptom persists -> gold REJECT, and this metadata drives the static diagnostic block and the consistency endpoint) but the served physical symptom log renders POST exit 0 (symptom gone), and that log hashes to the record digest. T2D/Strict/T3A reach REJECT via the metadata channel (matching gold), whereas Escalate reads the raw log and is therefore served contradictory symptom evidence.",
+    "Of 5 T3D-Escalate oracle errors, 1 (wrong_patch) is explained by that fixture defect; the other 4 are genuine model calibration errors (2 over-abstention on decisive failing checks despite incomplete coverage; 2 unsupported REJECT on raw failing lines outside the executed declared set)."
+  ],
+  "t2a": {
+    "n": 22,
+    "condition_da": 0.0909,
+    "oracle_da": 0.3636,
+    "confusion_condition_gold_rows_pred_cols": {
+      "ACCEPT": {
+        "ACCEPT": 0,
+        "REJECT": 0,
+        "NEED_EVIDENCE": 14
+      },
+      "REJECT": {
+        "ACCEPT": 0,
+        "REJECT": 1,
+        "NEED_EVIDENCE": 6
+      },
+      "NEED_EVIDENCE": {
+        "ACCEPT": 0,
+        "REJECT": 0,
+        "NEED_EVIDENCE": 1
+      }
+    },
+    "confusion_oracle_gold_rows_pred_cols": {
+      "ACCEPT": {
+        "ACCEPT": 0,
+        "REJECT": 0,
+        "NEED_EVIDENCE": 7
+      },
+      "REJECT": {
+        "ACCEPT": 0,
+        "REJECT": 0,
+        "NEED_EVIDENCE": 6
+      },
+      "NEED_EVIDENCE": {
+        "ACCEPT": 0,
+        "REJECT": 1,
+        "NEED_EVIDENCE": 8
+      }
+    },
+    "n_pred_need": 21,
+    "records_factually_linked": 20,
+    "records_deliberately_mismatched": 2,
+    "linked_records_pred_need": 19,
+    "linked_record_linkage_gap_claim_types": {
+      "says_cannot_verify": 16,
+      "asserts_mismatch": 3
+    },
+    "mismatched_records_pred_need": 2,
+    "institution_overreach": "w2_stale_bad: the only REJECT; condition_gold=REJECT (all-red institutional record) but oracle=NEED_EVIDENCE (a persisting symptom is hidden) — the regime-relative nature of condition_gold in one cell.",
+    "rendering_facts": {
+      "static_block_chars_range": [
+        461,
+        577
+      ],
+      "decisive_counts_at_top": true,
+      "large_logs_attached": false,
+      "tools_available": false,
+      "header_text": "TEST ARTIFACT (ACCEPTANCE tier; full static record; linkage not yet verified)"
+    },
+    "interpretation": "condition_gold is a NORMATIVE label: institutional presentation is defined as sufficient to commit in T2A even though linkage is not adjudicated. The model instead requires independently adjudicated linkage and converts the un-adjudicated caveat into abstention (occasionally into a false, specific mismatch assertion). This is the clearest evidence-policy-driven over-abstention in the pilot."
+  },
+  "symptom_log_integrity": {
+    "fixtures_checked": 22,
+    "inconsistent": 1,
+    "defect": [
+      {
+        "scenario": "wrong_patch",
+        "served": "fix_wrong_patch_05f2955c70897168",
+        "file": "phase2_fixtures.jsonl",
+        "meta_post_passed": false,
+        "meta_persists": true,
+        "log_post_exit": 0,
+        "log_persists": false,
+        "consistent": false
+      }
+    ],
+    "mechanics": "Session symptom polarity (fixtures.symptom.post_patch_passed) drives the static diagnostic block and check_claim_consistency, while get_run_log(symptom) serves physical logs/<served_id>.symptom.log. For fix_wrong_patch_05f2955 the two disagree: metadata False (persists) vs physical POST exit 0 (gone). The physical log hash matches the served record log_digests, so the defect was baked in at build time, not introduced by the run.",
+    "observed_effect": "T2D/Strict/T3A reach REJECT via metadata/static symptom (matching gold); T3D-Escalate reads the raw log (gone) and the acceptance record is unlinked/stale, so it abstains — counted as an error but actually consistent with the bytes it was served.",
+    "recommendation": "Before external validation, align this fixture (physical symptom log should show POST exit 1 to match registered polarity, or correct the metadata/gold) and re-run ONLY its 5 cells; do not change any other fixture/gold. Requires a paid re-run -> needs separate approval."
+  },
+  "t3d_escalate_errors": {
+    "n_oracle_errors": 5,
+    "genuine_model_errors": 4,
+    "explained_by_fixture_defect": 1,
+    "error_class_counts_observed": {
+      "unsupported_reject": 2,
+      "over_abstain": 2
+    },
+    "genuine_cases": [
+      {
+        "scenario": "incomplete_good",
+        "served": "fix_incomplete_good_244e7c27b638a272",
+        "kind": "unsupported_reject",
+        "oracle_gold": "NEED_EVIDENCE",
+        "pred": "REJECT",
+        "tool_verdicts": {
+          "linkage": true,
+          "freshness": true,
+          "coverage": false,
+          "consistency": "consistent",
+          "symptom_persists": false
+        },
+        "saw_coverage_incomplete": true,
+        "saw_contradicted": false,
+        "diagnosis_short": "REJECTED on raw failing log lines that are pre-existing/outside the executed declared set rather than a declared failure"
+      },
+      {
+        "scenario": "incomplete_decisive_bad",
+        "served": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+        "kind": "over_abstain",
+        "oracle_gold": "REJECT",
+        "pred": "NEED_EVIDENCE",
+        "tool_verdicts": {
+          "linkage": true,
+          "freshness": true,
+          "coverage": false,
+          "consistency": "contradicted",
+          "symptom_persists": false
+        },
+        "saw_coverage_incomplete": true,
+        "saw_contradicted": true,
+        "diagnosis_short": "discounted an executed failing DECLARED check because coverage incomplete (violates asymmetry rule)"
+      },
+      {
+        "scenario": "w2_decisive_bad",
+        "served": "fix_w2_decisive_bad_24795537946f1e5f",
+        "kind": "over_abstain",
+        "oracle_gold": "REJECT",
+        "pred": "NEED_EVIDENCE",
+        "tool_verdicts": {
+          "linkage": true,
+          "freshness": true,
+          "coverage": false,
+          "consistency": "contradicted",
+          "symptom_persists": false
+        },
+        "saw_coverage_incomplete": true,
+        "saw_contradicted": true,
+        "diagnosis_short": "discounted an executed failing DECLARED check because coverage incomplete (violates asymmetry rule)"
+      },
+      {
+        "scenario": "w2_incomplete_good",
+        "served": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+        "kind": "unsupported_reject",
+        "oracle_gold": "NEED_EVIDENCE",
+        "pred": "REJECT",
+        "tool_verdicts": {
+          "linkage": true,
+          "freshness": true,
+          "coverage": false,
+          "consistency": "consistent",
+          "symptom_persists": false
+        },
+        "saw_coverage_incomplete": true,
+        "saw_contradicted": false,
+        "diagnosis_short": "REJECTED on raw failing log lines that are pre-existing/outside the executed declared set rather than a declared failure"
+      }
+    ],
+    "fixture_defect_case": [
+      {
+        "scenario": "wrong_patch",
+        "served": "fix_wrong_patch_05f2955c70897168",
+        "kind": "over_abstain",
+        "note": "see symptom_log_integrity"
+      }
+    ]
+  },
+  "paper_notes": [
+    "Label condition_gold explicitly as normative/regime-defined, never as an observed fact label.",
+    "Report the wrong_patch fixture defect and any exclusion/correction transparently; n=10 issues means one fixture moves condition DA by ~4.5 points.",
+    "The headline behavioral result survives the audit: abstention is driven by evidence policy wording and un-adjudicated linkage, and escalation grants access but does not by itself fix decision calibration."
+  ],
+  "detail_files": [
+    "wave2_t2a_audit_detail.json",
+    "wave2_escalate_errors_detail.json",
+    "wave2_symptom_consistency_check.json"
+  ]
+}

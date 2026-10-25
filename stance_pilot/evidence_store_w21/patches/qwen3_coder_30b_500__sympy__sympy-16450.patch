@@ -1,0 +1,27 @@
+diff --git a/sympy/simplify/simplify.py b/sympy/simplify/simplify.py
+index c6b511f20..5b538aeb8 100644
+--- a/sympy/simplify/simplify.py
++++ b/sympy/simplify/simplify.py
+@@ -251,8 +251,21 @@ def posify(eq):
+             eq[i] = e.subs(reps)
+         return f(eq), {r: s for s, r in reps.items()}
+ 
+-    reps = {s: Dummy(s.name, positive=True)
+-                 for s in eq.free_symbols if s.is_positive is None}
++    # Create replacements for symbols that need to be made positive
++    reps = {}
++    for s in eq.free_symbols:
++        if s.is_positive is None:
++            # Preserve assumptions that are compatible with positive=True
++            assumptions = s.assumptions0.copy()
++            # Remove conflicting assumptions
++            if 'negative' in assumptions:
++                assumptions.pop('negative')
++            if 'zero' in assumptions:
++                assumptions.pop('zero')
++            # Set positive assumption
++            assumptions['positive'] = True
++            reps[s] = Dummy(s.name, **assumptions)
++    
+     eq = eq.subs(reps)
+     return eq, {r: s for s, r in reps.items()}

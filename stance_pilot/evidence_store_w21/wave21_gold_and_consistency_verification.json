@@ -1,0 +1,196 @@
+{
+ "gold": {
+  "wave2": {
+   "n_rows": 22,
+   "derive_sha": "a52fbc58e54a2791f68714ac98042ace2c08f73e4919dbc8f1e8ee8c7b49b6f4",
+   "build_sha": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+   "frozen_file_sha": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+  },
+  "wave2.1": {
+   "n_rows": 22,
+   "derive_sha": "a52fbc58e54a2791f68714ac98042ace2c08f73e4919dbc8f1e8ee8c7b49b6f4",
+   "build_sha": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+   "frozen_file_sha": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+  }
+ },
+ "wrong_patch": {
+  "facts": {
+   "linked": false,
+   "fresh": false,
+   "complete": true,
+   "executed_failure_count": 0,
+   "executed_check_count": 55,
+   "symptom_polarity": "persists"
+  },
+  "oracle_gold": "REJECT",
+  "condition_gold": {
+   "T2D-T": "REJECT",
+   "T3D-Strict": "REJECT",
+   "T3D-Escalate": "REJECT",
+   "T2A-T": "ACCEPT",
+   "T3A-T": "REJECT"
+  },
+  "attestation_present": true,
+  "attestation_authentic": true
+ },
+ "consistency": {
+  "n": 22,
+  "n_inconsistent": 0,
+  "rows": [
+   {
+    "scenario": "valid",
+    "served": "fix_valid_e33eaf7a1b77c576",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "contradictory",
+    "served": "fix_contradictory_692650aa4edbfaad",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "incomplete",
+    "served": "fix_incomplete_c2007305ca36cd1a",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "stale",
+    "served": "fix_stale_333b7506365b3c47",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "wrong_patch",
+    "served": "fix_wrong_patch_05f2955c70897168",
+    "meta_post_passed": false,
+    "log_post_exit": 1,
+    "consistent": true
+   },
+   {
+    "scenario": "stale_bad",
+    "served": "fix_stale_bad_97ac402dfa11643a",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "wrong_patch_good",
+    "served": "fix_wrong_patch_good_244e7c27b638a272",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "incomplete_good",
+    "served": "fix_incomplete_good_244e7c27b638a272",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "incomplete_decisive_bad",
+    "served": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "w2_decisive_bad",
+    "served": "fix_w2_decisive_bad_9e334c91c8d42c59",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "w2_decisive_bad",
+    "served": "fix_w2_decisive_bad_24795537946f1e5f",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "w2_incomplete_good",
+    "served": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "w2_stale",
+    "served": "fix_w2_stale_b76482e987d4785a",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "w2_stale",
+    "served": "fix_w2_stale_bc0c972e8d4230d1",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "w2_stale_bad",
+    "served": "fix_w2_stale_bad_9e334c91c8d42c59",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "w2_stale_persists",
+    "served": "fix_w2_stale_persists_394bf6648b9c0269",
+    "meta_post_passed": false,
+    "log_post_exit": 1,
+    "consistent": true
+   },
+   {
+    "scenario": "w2_valid",
+    "served": "fix_w2_valid_b76482e987d4785a",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "w2_valid",
+    "served": "fix_w2_valid_bc0c972e8d4230d1",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "w2_valid",
+    "served": "fix_w2_valid_0be6fdf9dc8c5195",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "w2_valid",
+    "served": "fix_w2_valid_b1a23b437658386e",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "w2_valid",
+    "served": "fix_w2_valid_bc239ce171d8df10",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   },
+   {
+    "scenario": "w2_valid",
+    "served": "fix_w2_valid_84b5a326d0aa7143",
+    "meta_post_passed": true,
+    "log_post_exit": 0,
+    "consistent": true
+   }
+  ]
+ }
+}

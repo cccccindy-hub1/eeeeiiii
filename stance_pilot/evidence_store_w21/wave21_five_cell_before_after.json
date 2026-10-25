@@ -1,0 +1,600 @@
+{
+  "metric": "groundedreview_wave2.1_five_cell_before_after",
+  "fixture": {
+    "scenario": "wrong_patch",
+    "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+    "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+    "note": "only the symptom log/digest/signature for this fixture were repaired in evidence_store_w21; gold labels and served_artifact_id unchanged"
+  },
+  "conditions": {
+    "T2D-T": {
+      "wave2_original": {
+        "condition": "T2D-T",
+        "parsed": "REJECT",
+        "evidence_gap": "unspecified",
+        "model_calls": 1,
+        "tool_calls": 0,
+        "tokens_in": 1258,
+        "tokens_out": 100,
+        "cost_usd": 0.000497,
+        "wall_s": 1.2,
+        "called": {
+          "called_artifact": false,
+          "called_linkage": false,
+          "called_freshness": false,
+          "called_coverage": false,
+          "called_consistency": false
+        },
+        "saw_flags": {
+          "saw_linked_false": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_contradicted": false
+        },
+        "tool_verdicts": {},
+        "strict_denied_403": false,
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "escalation_reasons": [],
+        "evidence_session": null,
+        "gap_classification": null,
+        "budget_hit": false,
+        "pre_call_budget_stop": false,
+        "model_served": "deepseek-flash",
+        "prompt_version": "p3-ternary-v2",
+        "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+      },
+      "wave2.1_corrected": {
+        "condition": "T2D-T",
+        "parsed": "REJECT",
+        "evidence_gap": "unspecified",
+        "model_calls": 1,
+        "tool_calls": 0,
+        "tokens_in": 1258,
+        "tokens_out": 127,
+        "cost_usd": 0.00053,
+        "wall_s": 1.72,
+        "called": {
+          "called_artifact": false,
+          "called_linkage": false,
+          "called_freshness": false,
+          "called_coverage": false,
+          "called_consistency": false
+        },
+        "saw_flags": {
+          "saw_linked_false": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_contradicted": false
+        },
+        "tool_verdicts": {},
+        "strict_denied_403": false,
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "escalation_reasons": [],
+        "evidence_session": null,
+        "gap_classification": null,
+        "budget_hit": false,
+        "pre_call_budget_stop": false,
+        "model_served": "deepseek-flash",
+        "prompt_version": "p3-ternary-v2",
+        "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+      },
+      "verdict_changed": false,
+      "scoring_wave2_original": {
+        "oracle_gold": "REJECT",
+        "condition_gold": "REJECT",
+        "oracle_error_class": "appropriate_reject",
+        "condition_error_class": "appropriate_reject",
+        "oracle_appropriate": true,
+        "condition_appropriate": true,
+        "comparable": true,
+        "divergence_kind": "aligned",
+        "gap_category": null
+      },
+      "scoring_wave2.1_corrected": {
+        "oracle_gold": "REJECT",
+        "condition_gold": "REJECT",
+        "oracle_error_class": "appropriate_reject",
+        "condition_error_class": "appropriate_reject",
+        "oracle_appropriate": true,
+        "condition_appropriate": true,
+        "comparable": true,
+        "divergence_kind": "aligned",
+        "gap_category": null
+      }
+    },
+    "T3D-Strict": {
+      "wave2_original": {
+        "condition": "T3D-Strict",
+        "parsed": "NEED_EVIDENCE",
+        "evidence_gap": "linkage_mismatch",
+        "model_calls": 2,
+        "tool_calls": 6,
+        "tokens_in": 6304,
+        "tokens_out": 529,
+        "cost_usd": 0.002526,
+        "wall_s": 3.67,
+        "called": {
+          "called_artifact": true,
+          "called_linkage": true,
+          "called_freshness": true,
+          "called_coverage": true,
+          "called_consistency": true
+        },
+        "saw_flags": {
+          "saw_linked_false": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_contradicted": true
+        },
+        "tool_verdicts": {
+          "linkage": false,
+          "freshness": false,
+          "coverage": true,
+          "consistency": "contradicted",
+          "symptom_persists": false
+        },
+        "strict_denied_403": false,
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "escalation_reasons": [],
+        "evidence_session": "3b72a226be7f72e889c35338",
+        "gap_classification": {
+          "category": "verified_gap",
+          "gap": "linkage_mismatch",
+          "condition": "T3D-Strict",
+          "basis": "linkage=false adjudicated and corroborated in this cell"
+        },
+        "budget_hit": false,
+        "pre_call_budget_stop": false,
+        "model_served": "deepseek-flash",
+        "prompt_version": "p3-ternary-v2",
+        "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+      },
+      "wave2.1_corrected": {
+        "condition": "T3D-Strict",
+        "parsed": "NEED_EVIDENCE",
+        "evidence_gap": "linkage_mismatch",
+        "model_calls": 2,
+        "tool_calls": 6,
+        "tokens_in": 6301,
+        "tokens_out": 446,
+        "cost_usd": 0.002426,
+        "wall_s": 3.02,
+        "called": {
+          "called_artifact": true,
+          "called_linkage": true,
+          "called_freshness": true,
+          "called_coverage": true,
+          "called_consistency": true
+        },
+        "saw_flags": {
+          "saw_linked_false": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_contradicted": true
+        },
+        "tool_verdicts": {
+          "linkage": false,
+          "freshness": false,
+          "coverage": true,
+          "consistency": "contradicted",
+          "symptom_persists": true
+        },
+        "strict_denied_403": false,
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "escalation_reasons": [],
+        "evidence_session": "9c64d8c2f6e88f378577a2eb",
+        "gap_classification": {
+          "category": "verified_gap",
+          "gap": "linkage_mismatch",
+          "condition": "T3D-Strict",
+          "basis": "linkage=false adjudicated and corroborated in this cell"
+        },
+        "budget_hit": false,
+        "pre_call_budget_stop": false,
+        "model_served": "deepseek-flash",
+        "prompt_version": "p3-ternary-v2",
+        "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+      },
+      "verdict_changed": false,
+      "scoring_wave2_original": {
+        "oracle_gold": "REJECT",
+        "condition_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_error_class": "over_abstain",
+        "oracle_appropriate": false,
+        "condition_appropriate": false,
+        "comparable": true,
+        "divergence_kind": "aligned",
+        "gap_category": "verified_gap"
+      },
+      "scoring_wave2.1_corrected": {
+        "oracle_gold": "REJECT",
+        "condition_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_error_class": "over_abstain",
+        "oracle_appropriate": false,
+        "condition_appropriate": false,
+        "comparable": true,
+        "divergence_kind": "aligned",
+        "gap_category": "verified_gap"
+      }
+    },
+    "T3D-Escalate": {
+      "wave2_original": {
+        "condition": "T3D-Escalate",
+        "parsed": "NEED_EVIDENCE",
+        "evidence_gap": "linkage_mismatch",
+        "model_calls": 4,
+        "tool_calls": 7,
+        "tokens_in": 16099,
+        "tokens_out": 868,
+        "cost_usd": 0.005871,
+        "wall_s": 6.32,
+        "called": {
+          "called_artifact": false,
+          "called_linkage": true,
+          "called_freshness": true,
+          "called_coverage": true,
+          "called_consistency": true
+        },
+        "saw_flags": {
+          "saw_linked_false": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_contradicted": false
+        },
+        "tool_verdicts": {
+          "linkage": false,
+          "freshness": false,
+          "coverage": true,
+          "consistency": "consistent",
+          "symptom_persists": false
+        },
+        "strict_denied_403": false,
+        "escalation_requested": [
+          "consistency",
+          "log",
+          "log"
+        ],
+        "escalation_granted": [
+          "consistency",
+          "log",
+          "log"
+        ],
+        "escalation_denied": [],
+        "escalation_reasons": [
+          "To determine whether the author's claim that the fix is fully correct and all relevant tests pass is contradicted by the recorded acceptance/regression outcomes, since the static record withholds those verdicts and the artifact is unlinked/stale.",
+          "To check whether the single declared acceptance (FAIL_TO_PASS) test actually passes for this patch, since the static record withholds outcomes and I must decide between ACCEPT and REJECT.",
+          "To check whether any of the 54 scoped regression (PASS_TO_PASS) checks fail, which would be decisive grounds for REJECT."
+        ],
+        "evidence_session": "c87838784e4e719a5b7d91c4",
+        "gap_classification": {
+          "category": "verified_gap",
+          "gap": "linkage_mismatch",
+          "condition": "T3D-Escalate",
+          "basis": "linkage=false adjudicated and corroborated in this cell"
+        },
+        "budget_hit": false,
+        "pre_call_budget_stop": false,
+        "model_served": "deepseek-flash",
+        "prompt_version": "p3-ternary-v2",
+        "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+      },
+      "wave2.1_corrected": {
+        "condition": "T3D-Escalate",
+        "parsed": "NEED_EVIDENCE",
+        "evidence_gap": "linkage_mismatch",
+        "model_calls": 4,
+        "tool_calls": 6,
+        "tokens_in": 12459,
+        "tokens_out": 617,
+        "cost_usd": 0.004478,
+        "wall_s": 4.8,
+        "called": {
+          "called_artifact": true,
+          "called_linkage": true,
+          "called_freshness": true,
+          "called_coverage": true,
+          "called_consistency": true
+        },
+        "saw_flags": {
+          "saw_linked_false": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_contradicted": false
+        },
+        "tool_verdicts": {
+          "linkage": false,
+          "freshness": false,
+          "coverage": true,
+          "consistency": "consistent",
+          "symptom_persists": true
+        },
+        "strict_denied_403": false,
+        "escalation_requested": [
+          "consistency"
+        ],
+        "escalation_granted": [
+          "consistency"
+        ],
+        "escalation_denied": [],
+        "escalation_reasons": [
+          "To determine whether the author's claim that the fix is fully correct and all relevant tests pass is contradicted by the recorded symptom probe, which shows the issue symptom still reproduces after the patch (now a TypeError instead of NotImplementedError)."
+        ],
+        "evidence_session": "849471fb6a58f4df30c58906",
+        "gap_classification": {
+          "category": "verified_gap",
+          "gap": "linkage_mismatch",
+          "condition": "T3D-Escalate",
+          "basis": "linkage=false adjudicated and corroborated in this cell"
+        },
+        "budget_hit": false,
+        "pre_call_budget_stop": false,
+        "model_served": "deepseek-flash",
+        "prompt_version": "p3-ternary-v2",
+        "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+      },
+      "verdict_changed": false,
+      "scoring_wave2_original": {
+        "oracle_gold": "REJECT",
+        "condition_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_error_class": "over_abstain",
+        "oracle_appropriate": false,
+        "condition_appropriate": false,
+        "comparable": true,
+        "divergence_kind": "aligned",
+        "gap_category": "verified_gap"
+      },
+      "scoring_wave2.1_corrected": {
+        "oracle_gold": "REJECT",
+        "condition_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_error_class": "over_abstain",
+        "oracle_appropriate": false,
+        "condition_appropriate": false,
+        "comparable": true,
+        "divergence_kind": "aligned",
+        "gap_category": "verified_gap"
+      }
+    },
+    "T2A-T": {
+      "wave2_original": {
+        "condition": "T2A-T",
+        "parsed": "NEED_EVIDENCE",
+        "evidence_gap": "linkage_mismatch",
+        "model_calls": 1,
+        "tool_calls": 0,
+        "tokens_in": 1110,
+        "tokens_out": 273,
+        "cost_usd": 0.000661,
+        "wall_s": 1.96,
+        "called": {
+          "called_artifact": false,
+          "called_linkage": false,
+          "called_freshness": false,
+          "called_coverage": false,
+          "called_consistency": false
+        },
+        "saw_flags": {
+          "saw_linked_false": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_contradicted": false
+        },
+        "tool_verdicts": {},
+        "strict_denied_403": false,
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "escalation_reasons": [],
+        "evidence_session": null,
+        "gap_classification": {
+          "category": "claimed_but_unverified",
+          "gap": "linkage_mismatch",
+          "condition": "T2A-T",
+          "basis": "linkage_mismatch claim is not grounded: linkage is not adjudicated in this condition"
+        },
+        "budget_hit": false,
+        "pre_call_budget_stop": false,
+        "model_served": "deepseek-flash",
+        "prompt_version": "p3-ternary-v2",
+        "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+      },
+      "wave2.1_corrected": {
+        "condition": "T2A-T",
+        "parsed": "NEED_EVIDENCE",
+        "evidence_gap": "linkage_mismatch",
+        "model_calls": 1,
+        "tool_calls": 0,
+        "tokens_in": 1110,
+        "tokens_out": 245,
+        "cost_usd": 0.000627,
+        "wall_s": 1.7,
+        "called": {
+          "called_artifact": false,
+          "called_linkage": false,
+          "called_freshness": false,
+          "called_coverage": false,
+          "called_consistency": false
+        },
+        "saw_flags": {
+          "saw_linked_false": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_contradicted": false
+        },
+        "tool_verdicts": {},
+        "strict_denied_403": false,
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "escalation_reasons": [],
+        "evidence_session": null,
+        "gap_classification": {
+          "category": "claimed_but_unverified",
+          "gap": "linkage_mismatch",
+          "condition": "T2A-T",
+          "basis": "linkage_mismatch claim is not grounded: linkage is not adjudicated in this condition"
+        },
+        "budget_hit": false,
+        "pre_call_budget_stop": false,
+        "model_served": "deepseek-flash",
+        "prompt_version": "p3-ternary-v2",
+        "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+      },
+      "verdict_changed": false,
+      "scoring_wave2_original": {
+        "oracle_gold": "REJECT",
+        "condition_gold": "ACCEPT",
+        "oracle_error_class": "over_abstain",
+        "condition_error_class": "over_abstain",
+        "oracle_appropriate": false,
+        "condition_appropriate": false,
+        "comparable": false,
+        "divergence_kind": "institutionally_granted_accept",
+        "gap_category": "claimed_but_unverified"
+      },
+      "scoring_wave2.1_corrected": {
+        "oracle_gold": "REJECT",
+        "condition_gold": "ACCEPT",
+        "oracle_error_class": "over_abstain",
+        "condition_error_class": "over_abstain",
+        "oracle_appropriate": false,
+        "condition_appropriate": false,
+        "comparable": false,
+        "divergence_kind": "institutionally_granted_accept",
+        "gap_category": "claimed_but_unverified"
+      }
+    },
+    "T3A-T": {
+      "wave2_original": {
+        "condition": "T3A-T",
+        "parsed": "NEED_EVIDENCE",
+        "evidence_gap": "linkage_mismatch",
+        "model_calls": 3,
+        "tool_calls": 6,
+        "tokens_in": 11674,
+        "tokens_out": 489,
+        "cost_usd": 0.004089,
+        "wall_s": 4.09,
+        "called": {
+          "called_artifact": true,
+          "called_linkage": true,
+          "called_freshness": true,
+          "called_coverage": true,
+          "called_consistency": true
+        },
+        "saw_flags": {
+          "saw_linked_false": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_contradicted": false
+        },
+        "tool_verdicts": {
+          "linkage": false,
+          "freshness": false,
+          "coverage": true,
+          "consistency": "consistent",
+          "symptom_persists": false
+        },
+        "strict_denied_403": false,
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "escalation_reasons": [],
+        "evidence_session": "6ddc6a1e23f6400a0d190a4c",
+        "gap_classification": {
+          "category": "verified_gap",
+          "gap": "linkage_mismatch",
+          "condition": "T3A-T",
+          "basis": "linkage=false adjudicated and corroborated in this cell"
+        },
+        "budget_hit": false,
+        "pre_call_budget_stop": false,
+        "model_served": "deepseek-flash",
+        "prompt_version": "p3-ternary-v2",
+        "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+      },
+      "wave2.1_corrected": {
+        "condition": "T3A-T",
+        "parsed": "NEED_EVIDENCE",
+        "evidence_gap": "linkage_mismatch",
+        "model_calls": 3,
+        "tool_calls": 6,
+        "tokens_in": 11517,
+        "tokens_out": 522,
+        "cost_usd": 0.004082,
+        "wall_s": 4.21,
+        "called": {
+          "called_artifact": true,
+          "called_linkage": true,
+          "called_freshness": true,
+          "called_coverage": true,
+          "called_consistency": true
+        },
+        "saw_flags": {
+          "saw_linked_false": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_contradicted": false
+        },
+        "tool_verdicts": {
+          "linkage": false,
+          "freshness": false,
+          "coverage": true,
+          "consistency": "consistent",
+          "symptom_persists": true
+        },
+        "strict_denied_403": false,
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "escalation_reasons": [],
+        "evidence_session": "55b097473f2a5cf047a1a149",
+        "gap_classification": {
+          "category": "verified_gap",
+          "gap": "linkage_mismatch",
+          "condition": "T3A-T",
+          "basis": "linkage=false adjudicated and corroborated in this cell"
+        },
+        "budget_hit": false,
+        "pre_call_budget_stop": false,
+        "model_served": "deepseek-flash",
+        "prompt_version": "p3-ternary-v2",
+        "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+      },
+      "verdict_changed": false,
+      "scoring_wave2_original": {
+        "oracle_gold": "REJECT",
+        "condition_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_error_class": "over_abstain",
+        "oracle_appropriate": false,
+        "condition_appropriate": false,
+        "comparable": true,
+        "divergence_kind": "aligned",
+        "gap_category": "verified_gap"
+      },
+      "scoring_wave2.1_corrected": {
+        "oracle_gold": "REJECT",
+        "condition_gold": "REJECT",
+        "oracle_error_class": "over_abstain",
+        "condition_error_class": "over_abstain",
+        "oracle_appropriate": false,
+        "condition_appropriate": false,
+        "comparable": true,
+        "divergence_kind": "aligned",
+        "gap_category": "verified_gap"
+      }
+    }
+  }
+}

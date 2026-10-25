@@ -1,0 +1,1286 @@
+{
+  "artifact": "wave2_pilot_preflight.json",
+  "task": "GroundedReview Wave-2 Task 11 pre-paid preflight",
+  "official": false,
+  "llm_calls_made": 0,
+  "paid_spend_usd": 0.0,
+  "check1_gold_distribution_and_baselines": {
+    "n_served_gold_rows": 22,
+    "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+    "gold_sha256_matches_frozen_constant": true,
+    "oracle_gold_distribution_per_fixture": {
+      "ACCEPT": 7,
+      "REJECT": 6,
+      "NEED_EVIDENCE": 9
+    },
+    "condition_gold_per_condition_per_fixture": {
+      "T2D-T": {
+        "ACCEPT": 0,
+        "REJECT": 2,
+        "NEED_EVIDENCE": 20
+      },
+      "T3D-Strict": {
+        "ACCEPT": 0,
+        "REJECT": 2,
+        "NEED_EVIDENCE": 20
+      },
+      "T3D-Escalate": {
+        "ACCEPT": 7,
+        "REJECT": 6,
+        "NEED_EVIDENCE": 9
+      },
+      "T2A-T": {
+        "ACCEPT": 14,
+        "REJECT": 7,
+        "NEED_EVIDENCE": 1
+      },
+      "T3A-T": {
+        "ACCEPT": 7,
+        "REJECT": 6,
+        "NEED_EVIDENCE": 9
+      }
+    },
+    "cells_per_condition": 22,
+    "total_cells": 110,
+    "aggregate_condition_gold_cells_110": {
+      "ACCEPT": 28,
+      "REJECT": 23,
+      "NEED_EVIDENCE": 59
+    },
+    "need_share_of_110": 0.5364,
+    "constant_baselines_110_cells": {
+      "always_ACCEPT": {
+        "condition_standard_correct": 28,
+        "condition_standard_rate": 0.2545,
+        "oracle_standard_correct": 35,
+        "oracle_standard_rate": 0.3182
+      },
+      "always_REJECT": {
+        "condition_standard_correct": 23,
+        "condition_standard_rate": 0.2091,
+        "oracle_standard_correct": 30,
+        "oracle_standard_rate": 0.2727
+      },
+      "always_NEED_EVIDENCE": {
+        "condition_standard_correct": 59,
+        "condition_standard_rate": 0.5364,
+        "oracle_standard_correct": 45,
+        "oracle_standard_rate": 0.4091
+      }
+    },
+    "always_need_per_condition": {
+      "T2D-T": {
+        "condition_standard_rate": 0.9091,
+        "oracle_standard_rate": 0.4091
+      },
+      "T3D-Strict": {
+        "condition_standard_rate": 0.9091,
+        "oracle_standard_rate": 0.4091
+      },
+      "T3D-Escalate": {
+        "condition_standard_rate": 0.4091,
+        "oracle_standard_rate": 0.4091
+      },
+      "T2A-T": {
+        "condition_standard_rate": 0.0455,
+        "oracle_standard_rate": 0.4091
+      },
+      "T3A-T": {
+        "condition_standard_rate": 0.4091,
+        "oracle_standard_rate": 0.4091
+      }
+    },
+    "interpretation": "Always-NEED is the mandatory degenerate baseline: a reviewer that abstains on every cell scores the NEED share of the gold. It is reported under BOTH standards and must be beaten by every real arm."
+  },
+  "check2_escalate_attainability": {
+    "question": "Is T3D-Escalate condition_gold actually attainable with the authorized tools, without rerunning any test?",
+    "design_rule": "Escalate never equals oracle by default. The equality is the OUTPUT of condition_gold applied to the projected surface: L/F/C adjudicated by endpoints, P symptom log ungated, O reason-gated REVEAL of a pre-existing signed log. Stale => freshness=False (even revealed green logs cannot support ACCEPT); incomplete => coverage=False; wrong_patch REJECT is decided by the ungated persisted symptom. No fixture requires test re-execution.",
+    "per_fixture_audit": [
+      {
+        "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+        "scenario": "contradictory",
+        "family": "contradictory_or_decisive_bad",
+        "wave": "wave1",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": true,
+          "executed_failure_count": 1,
+          "executed_check_count": 114,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "REJECT",
+        "escalate_condition_gold_recomputed": "REJECT",
+        "identity_holds": true,
+        "frozen_basis": "obtainable acceptance evidence shows an executed failure on linked, fresh evidence",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": true,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F(adjudication endpoints)",
+          "O(acceptance logs, reason-gated reveal)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_w2_decisive_bad_24795537946f1e5f",
+        "scenario": "w2_decisive_bad",
+        "family": "contradictory_or_decisive_bad",
+        "wave": "wave2",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": false,
+          "executed_failure_count": 1,
+          "executed_check_count": 1,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": false,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "REJECT",
+        "escalate_condition_gold_recomputed": "REJECT",
+        "identity_holds": true,
+        "frozen_basis": "obtainable acceptance evidence shows an executed failure on linked, fresh evidence | coverage completeness is not established in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": false,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F(adjudication endpoints)",
+          "O(acceptance logs, reason-gated reveal)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_w2_decisive_bad_9e334c91c8d42c59",
+        "scenario": "w2_decisive_bad",
+        "family": "contradictory_or_decisive_bad",
+        "wave": "wave2",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": false,
+          "executed_failure_count": 1,
+          "executed_check_count": 1,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": false,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "REJECT",
+        "escalate_condition_gold_recomputed": "REJECT",
+        "identity_holds": true,
+        "frozen_basis": "obtainable acceptance evidence shows an executed failure on linked, fresh evidence | coverage completeness is not established in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": false,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F(adjudication endpoints)",
+          "O(acceptance logs, reason-gated reveal)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+        "scenario": "incomplete",
+        "family": "incomplete",
+        "wave": "wave1",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": false,
+          "executed_failure_count": 0,
+          "executed_check_count": 1,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": false,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "NEED_EVIDENCE",
+        "escalate_condition_gold_recomputed": "NEED_EVIDENCE",
+        "identity_holds": true,
+        "frozen_basis": "coverage completeness is not established in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": false,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "P(symptom log, ungated)",
+          "O(available but cannot establish the withheld verdict)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+        "scenario": "incomplete_decisive_bad",
+        "family": "incomplete",
+        "wave": "wave1",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": false,
+          "executed_failure_count": 1,
+          "executed_check_count": 1,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": false,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "REJECT",
+        "escalate_condition_gold_recomputed": "REJECT",
+        "identity_holds": true,
+        "frozen_basis": "obtainable acceptance evidence shows an executed failure on linked, fresh evidence | coverage completeness is not established in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": false,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F(adjudication endpoints)",
+          "O(acceptance logs, reason-gated reveal)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+        "scenario": "incomplete_good",
+        "family": "incomplete",
+        "wave": "wave1",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": false,
+          "executed_failure_count": 0,
+          "executed_check_count": 1,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": false,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "NEED_EVIDENCE",
+        "escalate_condition_gold_recomputed": "NEED_EVIDENCE",
+        "identity_holds": true,
+        "frozen_basis": "coverage completeness is not established in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": false,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "P(symptom log, ungated)",
+          "O(available but cannot establish the withheld verdict)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+        "scenario": "w2_incomplete_good",
+        "family": "incomplete",
+        "wave": "wave2",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": false,
+          "executed_failure_count": 0,
+          "executed_check_count": 1,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": false,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "NEED_EVIDENCE",
+        "escalate_condition_gold_recomputed": "NEED_EVIDENCE",
+        "identity_holds": true,
+        "frozen_basis": "coverage completeness is not established in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": false,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "P(symptom log, ungated)",
+          "O(available but cannot establish the withheld verdict)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_stale_333b7506365b3c47",
+        "scenario": "stale",
+        "family": "stale",
+        "wave": "wave1",
+        "facts": {
+          "linked": true,
+          "fresh": false,
+          "complete": true,
+          "executed_failure_count": 0,
+          "executed_check_count": 55,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": false,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "NEED_EVIDENCE",
+        "escalate_condition_gold_recomputed": "NEED_EVIDENCE",
+        "identity_holds": true,
+        "frozen_basis": "freshness is not adjudicated/available in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": false,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "P(symptom log, ungated)",
+          "O(available but cannot establish the withheld verdict)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+        "scenario": "stale_bad",
+        "family": "stale",
+        "wave": "wave1",
+        "facts": {
+          "linked": true,
+          "fresh": false,
+          "complete": true,
+          "executed_failure_count": 2,
+          "executed_check_count": 103,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": false,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "NEED_EVIDENCE",
+        "escalate_condition_gold_recomputed": "NEED_EVIDENCE",
+        "identity_holds": true,
+        "frozen_basis": "freshness is not adjudicated/available in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": false,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "P(symptom log, ungated)",
+          "O(available but cannot establish the withheld verdict)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_w2_stale_b76482e987d4785a",
+        "scenario": "w2_stale",
+        "family": "stale",
+        "wave": "wave2",
+        "facts": {
+          "linked": true,
+          "fresh": false,
+          "complete": true,
+          "executed_failure_count": 0,
+          "executed_check_count": 26,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": false,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "NEED_EVIDENCE",
+        "escalate_condition_gold_recomputed": "NEED_EVIDENCE",
+        "identity_holds": true,
+        "frozen_basis": "freshness is not adjudicated/available in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": false,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "P(symptom log, ungated)",
+          "O(available but cannot establish the withheld verdict)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_w2_stale_bc0c972e8d4230d1",
+        "scenario": "w2_stale",
+        "family": "stale",
+        "wave": "wave2",
+        "facts": {
+          "linked": true,
+          "fresh": false,
+          "complete": true,
+          "executed_failure_count": 0,
+          "executed_check_count": 8,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": false,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "NEED_EVIDENCE",
+        "escalate_condition_gold_recomputed": "NEED_EVIDENCE",
+        "identity_holds": true,
+        "frozen_basis": "freshness is not adjudicated/available in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": false,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "P(symptom log, ungated)",
+          "O(available but cannot establish the withheld verdict)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_w2_stale_bad_9e334c91c8d42c59",
+        "scenario": "w2_stale_bad",
+        "family": "stale",
+        "wave": "wave2",
+        "facts": {
+          "linked": true,
+          "fresh": false,
+          "complete": true,
+          "executed_failure_count": 4,
+          "executed_check_count": 9,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": false,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "NEED_EVIDENCE",
+        "escalate_condition_gold_recomputed": "NEED_EVIDENCE",
+        "identity_holds": true,
+        "frozen_basis": "freshness is not adjudicated/available in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": false,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "P(symptom log, ungated)",
+          "O(available but cannot establish the withheld verdict)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_w2_stale_persists_394bf6648b9c0269",
+        "scenario": "w2_stale_persists",
+        "family": "stale",
+        "wave": "wave2",
+        "facts": {
+          "linked": true,
+          "fresh": false,
+          "complete": true,
+          "executed_failure_count": 0,
+          "executed_check_count": 9,
+          "symptom_polarity": "persists"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": false,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "REJECT",
+        "escalate_condition_gold_recomputed": "REJECT",
+        "identity_holds": true,
+        "frozen_basis": "issue symptom still reproduces post-patch (diagnostic channel is available in this condition) -> decisive failure | freshness is not adjudicated/available in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": false,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "P(symptom log, ungated at Escalate)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+        "scenario": "valid",
+        "family": "valid",
+        "wave": "wave1",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": true,
+          "executed_failure_count": 0,
+          "executed_check_count": 39,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "ACCEPT",
+        "escalate_condition_gold_recomputed": "ACCEPT",
+        "identity_holds": true,
+        "frozen_basis": "",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": true,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "O(acceptance logs, reason-gated reveal)",
+          "P(no persisted symptom)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_w2_valid_0be6fdf9dc8c5195",
+        "scenario": "w2_valid",
+        "family": "valid",
+        "wave": "wave2",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": true,
+          "executed_failure_count": 0,
+          "executed_check_count": 91,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "ACCEPT",
+        "escalate_condition_gold_recomputed": "ACCEPT",
+        "identity_holds": true,
+        "frozen_basis": "",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": true,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "O(acceptance logs, reason-gated reveal)",
+          "P(no persisted symptom)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_w2_valid_84b5a326d0aa7143",
+        "scenario": "w2_valid",
+        "family": "valid",
+        "wave": "wave2",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": true,
+          "executed_failure_count": 0,
+          "executed_check_count": 8,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "ACCEPT",
+        "escalate_condition_gold_recomputed": "ACCEPT",
+        "identity_holds": true,
+        "frozen_basis": "",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": true,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "O(acceptance logs, reason-gated reveal)",
+          "P(no persisted symptom)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_w2_valid_b1a23b437658386e",
+        "scenario": "w2_valid",
+        "family": "valid",
+        "wave": "wave2",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": true,
+          "executed_failure_count": 0,
+          "executed_check_count": 8,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "ACCEPT",
+        "escalate_condition_gold_recomputed": "ACCEPT",
+        "identity_holds": true,
+        "frozen_basis": "",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": true,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "O(acceptance logs, reason-gated reveal)",
+          "P(no persisted symptom)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_w2_valid_b76482e987d4785a",
+        "scenario": "w2_valid",
+        "family": "valid",
+        "wave": "wave2",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": true,
+          "executed_failure_count": 0,
+          "executed_check_count": 26,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "ACCEPT",
+        "escalate_condition_gold_recomputed": "ACCEPT",
+        "identity_holds": true,
+        "frozen_basis": "",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": true,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "O(acceptance logs, reason-gated reveal)",
+          "P(no persisted symptom)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_w2_valid_bc0c972e8d4230d1",
+        "scenario": "w2_valid",
+        "family": "valid",
+        "wave": "wave2",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": true,
+          "executed_failure_count": 0,
+          "executed_check_count": 8,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "ACCEPT",
+        "escalate_condition_gold_recomputed": "ACCEPT",
+        "identity_holds": true,
+        "frozen_basis": "",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": true,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "O(acceptance logs, reason-gated reveal)",
+          "P(no persisted symptom)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_w2_valid_bc239ce171d8df10",
+        "scenario": "w2_valid",
+        "family": "valid",
+        "wave": "wave2",
+        "facts": {
+          "linked": true,
+          "fresh": true,
+          "complete": true,
+          "executed_failure_count": 0,
+          "executed_check_count": 26,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": true,
+          "freshness_value": true,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "ACCEPT",
+        "escalate_condition_gold_recomputed": "ACCEPT",
+        "identity_holds": true,
+        "frozen_basis": "",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": true,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "O(acceptance logs, reason-gated reveal)",
+          "P(no persisted symptom)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+        "scenario": "wrong_patch",
+        "family": "wrong_patch",
+        "wave": "wave1",
+        "facts": {
+          "linked": false,
+          "fresh": false,
+          "complete": true,
+          "executed_failure_count": 0,
+          "executed_check_count": 55,
+          "symptom_polarity": "persists"
+        },
+        "escalate_surface": {
+          "linkage_value": false,
+          "freshness_value": false,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "REJECT",
+        "escalate_condition_gold_recomputed": "REJECT",
+        "identity_holds": true,
+        "frozen_basis": "issue symptom still reproduces post-patch (diagnostic channel is available in this condition) -> decisive failure | linkage is not adjudicated/available in this condition | freshness is not adjudicated/available in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": true,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "P(symptom log, ungated at Escalate)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      },
+      {
+        "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+        "scenario": "wrong_patch_good",
+        "family": "wrong_patch",
+        "wave": "wave1",
+        "facts": {
+          "linked": false,
+          "fresh": false,
+          "complete": true,
+          "executed_failure_count": 0,
+          "executed_check_count": 86,
+          "symptom_polarity": "gone"
+        },
+        "escalate_surface": {
+          "linkage_value": false,
+          "freshness_value": false,
+          "coverage_value": true,
+          "acceptance_outcomes_status": "obtainable_with_reason",
+          "symptom_observable": true
+        },
+        "oracle_gold": "NEED_EVIDENCE",
+        "escalate_condition_gold_recomputed": "NEED_EVIDENCE",
+        "identity_holds": true,
+        "frozen_basis": "linkage is not adjudicated/available in this condition | freshness is not adjudicated/available in this condition",
+        "logs_present_on_disk": {
+          "f2p": true,
+          "p2p": true,
+          "p2p_baseline": true,
+          "symptom": true
+        },
+        "evidence_required_for_oracle_verdict": [
+          "L/F/C(adjudication endpoints)",
+          "P(symptom log, ungated)",
+          "O(available but cannot establish the withheld verdict)"
+        ],
+        "rerun_required": false,
+        "attainable_without_rerun": true
+      }
+    ],
+    "family_rule_assertions": [
+      {
+        "assertion": "every stale fixture: freshness adjudicates fresh=False",
+        "pass": true,
+        "detail": "6/6"
+      },
+      {
+        "assertion": "every stale fixture: Escalate gold != ACCEPT (revealing the all-green log cannot override stale freshness)",
+        "pass": true,
+        "detail": [
+          [
+            "stale",
+            "NEED_EVIDENCE"
+          ],
+          [
+            "stale_bad",
+            "NEED_EVIDENCE"
+          ],
+          [
+            "w2_stale",
+            "NEED_EVIDENCE"
+          ],
+          [
+            "w2_stale",
+            "NEED_EVIDENCE"
+          ],
+          [
+            "w2_stale_bad",
+            "NEED_EVIDENCE"
+          ],
+          [
+            "w2_stale_persists",
+            "REJECT"
+          ]
+        ]
+      },
+      {
+        "assertion": "every wrong_patch REJECT fixture: persisted symptom is visible via the UNGATED symptom channel (no acceptance reveal needed)",
+        "pass": true,
+        "detail": [
+          [
+            "wrong_patch",
+            "REJECT",
+            "persists"
+          ],
+          [
+            "wrong_patch_good",
+            "NEED_EVIDENCE",
+            "gone"
+          ]
+        ]
+      },
+      {
+        "assertion": "every incomplete fixture: coverage endpoint adjudicates complete=False -> Escalate gold != ACCEPT",
+        "pass": true,
+        "detail": [
+          [
+            "incomplete",
+            "NEED_EVIDENCE"
+          ],
+          [
+            "incomplete_decisive_bad",
+            "REJECT"
+          ],
+          [
+            "incomplete_good",
+            "NEED_EVIDENCE"
+          ],
+          [
+            "w2_incomplete_good",
+            "NEED_EVIDENCE"
+          ]
+        ]
+      },
+      {
+        "assertion": "all 22 fixtures: Escalate condition_gold == oracle_gold via the static rule (not defaulted)",
+        "pass": true,
+        "detail": "22/22"
+      },
+      {
+        "assertion": "all 22 fixtures: f2p/p2p/symptom signed logs physically present (escalation reveals pre-baked records; nothing is executed)",
+        "pass": true,
+        "detail": "22/22 f2p"
+      },
+      {
+        "assertion": "server.py contains NO test-execution primitive (subprocess/Popen/os.system/exec)",
+        "pass": true,
+        "detail": "log endpoint reads a pre-baked file from logs/ only"
+      },
+      {
+        "assertion": "escalation path serves an on-disk signed log file",
+        "pass": true,
+        "detail": "server._log: lp.read_text() + banner"
+      }
+    ],
+    "http_escalation_sessions": {
+      "store": "throwaway COPY of evidence_store (real audit.jsonl untouched)",
+      "llm_calls": 0,
+      "representatives": [
+        {
+          "family": "contradictory_or_decisive_bad",
+          "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+          "symptom_log_ungated_200": 200,
+          "f2p_without_reason": 400,
+          "f2p_with_reason_status": 200,
+          "f2p_with_reason_banner_header": "1",
+          "revealed_body_byte_equals_on_disk_signed_log": true,
+          "consistency_without_reason": 400,
+          "consistency_with_reason_status": 200,
+          "consistency_escalated_flag": true,
+          "adjudication_endpoints": {
+            "verify": {
+              "http_status": 200,
+              "linked": true,
+              "matches_facts": true
+            },
+            "freshness": {
+              "http_status": 200,
+              "fresh": true,
+              "matches_facts": true
+            },
+            "coverage": {
+              "http_status": 200,
+              "complete": true,
+              "matches_facts": true
+            }
+          },
+          "pass": true
+        },
+        {
+          "family": "incomplete",
+          "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+          "symptom_log_ungated_200": 200,
+          "f2p_without_reason": 400,
+          "f2p_with_reason_status": 200,
+          "f2p_with_reason_banner_header": "1",
+          "revealed_body_byte_equals_on_disk_signed_log": true,
+          "consistency_without_reason": 400,
+          "consistency_with_reason_status": 200,
+          "consistency_escalated_flag": true,
+          "adjudication_endpoints": {
+            "verify": {
+              "http_status": 200,
+              "linked": true,
+              "matches_facts": true
+            },
+            "freshness": {
+              "http_status": 200,
+              "fresh": true,
+              "matches_facts": true
+            },
+            "coverage": {
+              "http_status": 200,
+              "complete": false,
+              "matches_facts": true
+            }
+          },
+          "pass": true
+        },
+        {
+          "family": "stale",
+          "served_artifact_id": "fix_stale_333b7506365b3c47",
+          "symptom_log_ungated_200": 200,
+          "f2p_without_reason": 400,
+          "f2p_with_reason_status": 200,
+          "f2p_with_reason_banner_header": "1",
+          "revealed_body_byte_equals_on_disk_signed_log": true,
+          "consistency_without_reason": 400,
+          "consistency_with_reason_status": 200,
+          "consistency_escalated_flag": true,
+          "adjudication_endpoints": {
+            "verify": {
+              "http_status": 200,
+              "linked": true,
+              "matches_facts": true
+            },
+            "freshness": {
+              "http_status": 200,
+              "fresh": false,
+              "matches_facts": true
+            },
+            "coverage": {
+              "http_status": 200,
+              "complete": true,
+              "matches_facts": true
+            }
+          },
+          "pass": true
+        },
+        {
+          "family": "valid",
+          "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+          "symptom_log_ungated_200": 200,
+          "f2p_without_reason": 400,
+          "f2p_with_reason_status": 200,
+          "f2p_with_reason_banner_header": "1",
+          "revealed_body_byte_equals_on_disk_signed_log": true,
+          "consistency_without_reason": 400,
+          "consistency_with_reason_status": 200,
+          "consistency_escalated_flag": true,
+          "adjudication_endpoints": {
+            "verify": {
+              "http_status": 200,
+              "linked": true,
+              "matches_facts": true
+            },
+            "freshness": {
+              "http_status": 200,
+              "fresh": true,
+              "matches_facts": true
+            },
+            "coverage": {
+              "http_status": 200,
+              "complete": true,
+              "matches_facts": true
+            }
+          },
+          "pass": true
+        },
+        {
+          "family": "wrong_patch",
+          "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+          "symptom_log_ungated_200": 200,
+          "f2p_without_reason": 400,
+          "f2p_with_reason_status": 200,
+          "f2p_with_reason_banner_header": "1",
+          "revealed_body_byte_equals_on_disk_signed_log": true,
+          "consistency_without_reason": 400,
+          "consistency_with_reason_status": 200,
+          "consistency_escalated_flag": true,
+          "adjudication_endpoints": {
+            "verify": {
+              "http_status": 200,
+              "linked": false,
+              "matches_facts": true
+            },
+            "freshness": {
+              "http_status": 200,
+              "fresh": false,
+              "matches_facts": true
+            },
+            "coverage": {
+              "http_status": 200,
+              "complete": true,
+              "matches_facts": true
+            }
+          },
+          "pass": true
+        }
+      ],
+      "all_representatives_pass": true
+    },
+    "verdict_pass": true
+  },
+  "check3_budget_guard_and_runner": {
+    "source_checks": {
+      "pre_call_guard_before_every_dispatch": true,
+      "guard_runs_before_create_call": true,
+      "guard_retry_path_re_checks": true,
+      "guard_raises_before_call_breach": true,
+      "per_cell_model_call_cap_12": true,
+      "batch_fail_stop_when_spent_reaches_cap": true,
+      "thinking_disabled_extra_body": true,
+      "hard_completion_cap_anchors_bound": true,
+      "model_restricted_to_cli_argument": true,
+      "resume_safe_seeds_prior_spend": true,
+      "budget_stop_row_is_operational_error_not_research_data": true
+    },
+    "all_source_checks_pass": true,
+    "budget_math": {
+      "hard_cap_usd": 1.0,
+      "prices_per_1m": {
+        "in": 0.3,
+        "out": 1.2
+      },
+      "completion_cap_tokens": 8192,
+      "worst_single_call_bound_at_40k_prompt_usd": 0.02183,
+      "output_component_of_bound_usd": 0.00983,
+      "smoke_observed_prompt_tokens_per_cell": 12945.777777777777,
+      "smoke_observed_actual_usd_per_cell": 0.00451144,
+      "linear_estimate_110_cells_usd": 0.496259,
+      "guard_refuses_cap_breaching_call": true,
+      "guard_refuses_13th_cell_call": true,
+      "invariant": "call is never dispatched unless spent + conservative upper-bound(prompt_now, completion_cap) <= cap; actual per-call cost <= bound => cumulative spend can never exceed $1.00; overshoot is impossible by construction"
+    },
+    "deepseek_api_key_present_in_env": true,
+    "file_isolation": {
+      "pilot_results_file": "evidence_store\\wave2_pilot_results.jsonl",
+      "pilot_results_file_is_fresh": true,
+      "pilot_audit_summary_file": "evidence_store\\wave2_pilot_run_audit.json",
+      "pilot_audit_file_is_fresh": true,
+      "frozen_phase3_output_never_targeted": "wave2_pilot_results.jsonl != phase3_ternary_results.jsonl"
+    },
+    "cell_build_dry_run": {
+      "fixture_inputs": [
+        "phase2_fixtures.jsonl",
+        "phase3_fixtures.jsonl",
+        "wave2_fixtures.jsonl"
+      ],
+      "raw_inputs": [
+        "raw_rows.jsonl",
+        "wave2_raw_rows.jsonl"
+      ],
+      "cells_built": 110,
+      "distinct_cell_keys": 110,
+      "served_artifacts_covered": 22,
+      "covers_all_22_gold_artifacts": true,
+      "per_condition_counts": {
+        "T2D-T": 22,
+        "T3D-Strict": 22,
+        "T3D-Escalate": 22,
+        "T2A-T": 22,
+        "T3A-T": 22
+      },
+      "pass": true
+    },
+    "planned_cli_argv": [
+      "uv",
+      "run",
+      "--python",
+      "3.13",
+      "-m",
+      "evidence.phase3_run",
+      "--spawn-server",
+      "--model-profile",
+      "deepseek",
+      "--model",
+      "deepseek-flash",
+      "--prompt-version",
+      "p3-ternary-v2",
+      "--fixtures",
+      "evidence_store\\phase2_fixtures.jsonl,evidence_store\\phase3_fixtures.jsonl,evidence_store\\wave2_fixtures.jsonl",
+      "--raw",
+      "evidence_store\\raw_rows.jsonl,evidence_store\\wave2_raw_rows.jsonl",
+      "--gold",
+      "evidence_store\\wave2_gold.jsonl",
+      "--output",
+      "evidence_store\\wave2_pilot_results.jsonl",
+      "--audit-out",
+      "evidence_store\\wave2_pilot_run_audit.json",
+      "--max-budget-usd",
+      "1.0",
+      "--max-model-calls-per-cell",
+      "12",
+      "--max-tool-turns",
+      "12",
+      "--completion-cap",
+      "8192"
+    ],
+    "thinking_mode": "disabled via extra_body (identical to the frozen 45-cell Smoke call path)",
+    "verdict_pass": true
+  },
+  "ALL_PREFLIGHT_GATES_PASS": true,
+  "gate_summary": {
+    "check1_gold_distribution_baselines": true,
+    "check2_escalate_attainability": true,
+    "check3_budget_guard_runner": true
+  }
+}

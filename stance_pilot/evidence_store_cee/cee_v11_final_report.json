@@ -1,0 +1,132 @@
+{
+  "document": "GroundedReview CEE v1.1 final report - Unified JSON Mode",
+  "protocol": "cee-fixed-v1.1",
+  "predecessor": "cee-fixed-v1",
+  "status": "44 authorised cells executed and scored; stopped per authorisation (no Gemini, no new issues, no extra paid experiment, no git commit)",
+  "headline": {
+    "deepseek_DA": 0.9091,
+    "gpt_DA": 0.8182,
+    "always_NEED_baseline": 0.4091,
+    "paired_delta_DS_minus_GPT": 0.0909,
+    "delta_ci95": [
+      0.0,
+      0.2174
+    ],
+    "mcnemar_p_descriptive": 0.625,
+    "all_errors_are_over_abstention": 6,
+    "zero_unsupported_acceptance": 0,
+    "zero_unsupported_rejection": 0,
+    "zero_invalid_ambiguous_apierror": 0
+  },
+  "schema_compatibility_audit": {
+    "mode_requested_both_arms": "response_format=json_object",
+    "deepseek_accepted": true,
+    "openai_accepted": true,
+    "json_schema_requested_any_cell": false,
+    "plain_text_fallback_used_any_cell": false,
+    "server_side_schema_enforced": false,
+    "local_five_property_validation": "cee_protocol_v11.validate_decision_object; every response validated; no field completion/coercion/repair",
+    "predecessor_block": "cee-fixed-v1 could not run: DeepSeek rejected json_schema for all current models (HTTP 400); see compatibility stop report",
+    "compatibility_stop_report": "cee_compatibility_stop_report.json",
+    "compatibility_stop_report_sha256": "dda2cc1b88a3e4b852868d68269a44cf60aceac30413942f21250591beb0d965"
+  },
+  "zero_tools_audit": {
+    "tools_sent_total": 0,
+    "turns_per_cell": 1,
+    "escalation": "none"
+  },
+  "model_identity_audit": {
+    "deepseek": {
+      "requested": "deepseek-flash",
+      "served_id_string": [
+        "deepseek-flash"
+      ],
+      "e1_served_id_string": "deepseek-flash",
+      "id_string_equal_to_e1": true,
+      "version_drift_disclosure": "The 2026 DeepSeek endpoint returns the id string \"deepseek-flash\" but official docs (accessed 2026-10-23/24) state the current backend is DeepSeek-V4.1-Flash-1017 (legacy deepseek-v4-flash aliases retired 2026-07-24). Identical id string does NOT prove identical weights to the E1 DeepSeek arm; CEE is therefore not a same-version reproduction of the E1 DeepSeek model and E1-vs-CEE DeepSeek differences may mix model-version change with protocol change."
+    },
+    "gpt": {
+      "requested": "gpt-4.1-mini",
+      "served_id_string": [
+        "gpt-4.1-mini-2025-04-14"
+      ],
+      "e1_served_id_string": "gpt-4.1-mini-2025-04-14",
+      "id_string_equal_to_e1": true,
+      "version_drift_disclosure": "served id gpt-4.1-mini-2025-04-14 matches the E1 served id."
+    }
+  },
+  "budget_audit": {
+    "recorded_scored_spend_usd": 0.044253,
+    "recorded_by_model": {
+      "deepseek-flash": 0.019628,
+      "gpt-4.1-mini": 0.024625
+    },
+    "hard_cap_usd": 1.0,
+    "within_cap": true,
+    "guard": "pre-call BudgetGuard, peak prices, per-model $0.50",
+    "unscored_faulted_calls": {
+      "count": 2,
+      "provider": "deepseek",
+      "nature": "two live attempts on the FIRST bundle failed in the LOCAL client (SDK ChatCompletion.content attribute bug) AFTER an HTTP 200 was returned and BEFORE any row was written; they were never scored or counted as a cell decision and are not in the 44. Fixed before the successful run; resume logic gave every bundle exactly one scored response.",
+      "realistic_cost_usd_approx": 0.0015,
+      "conservative_upper_bound_usd": 0.0111,
+      "total_including_faulted_upper_bound_usd": 0.0554,
+      "still_within_hard_cap": true
+    },
+    "raw_paid_completions_issued": 46,
+    "scored_cells": 44
+  },
+  "hash_audit": {
+    "prompt_fingerprint_v11": "d6b992bb4c44436715a80a8910b02da546ab20dca310d46e840cd61b669165be",
+    "prompt_fingerprint_v1_text_unchanged": "ef48c57f76dba1019208ac993e6564a74e94727f67200b1b6f046ead60492836",
+    "cee_gold_sha256": "1ff8f8e02e012553c5b5ac716402c010a6ba89f6959a6e610748293ebabd67ae",
+    "build_manifest_sha256": "715b214262262f0e35aa4805e1c1b7d559f4994b2191b005bca42095fd30bdbb",
+    "cee_plan_sha256": "13b0958fe98d2a119f96df999f4fb44b939c4854382242f3afc8b32f38d6d70c",
+    "bundles_byte_identical_to_v1": true,
+    "code_sha256": {
+      "cee_freeze_v11.py": "933ab1d3c47163a65022055a90d4920c74f68c5bf7a9a81d87873851eaf85110",
+      "cee_protocol.py (v1, untouched)": "21540aa8162a11ba330d26f1796b64bf4749bf1d966b42613e08a8d6aeeb0c95",
+      "cee_protocol_v11.py": "86514ccf89626fcf5fbe56479f44ccbd98affd8ac43f177fe8c2d66a904fa32b",
+      "cee_run_v11.py": "9572914af4090d010373ff9b004bb671789599a592b3aed5331a2752e3d40d86",
+      "cee_selftest_v11.py": "c53b399ae0678d141a046565cf15b2522beddeb7c4532453ce3beae10e6d5dc0"
+    },
+    "result_files": {
+      "deepseek": "b77ad1a572686fb82dc0ba7205469bb1faac8d932481bdd1e85913bc7248c8fd",
+      "gpt": "ec760ffb9c6310e077b741cf0cbd66ac630ba01efff09ae16f7c122297c03992"
+    }
+  },
+  "mechanism_interpretation_data_only": {
+    "what_CEE_shows": [
+      "On byte-identical complete bundles both models accepted all 7 sufficient-positive cases and abstained on all 9 insufficient cases; neither produced an unsupported ACCEPT or unsupported REJECT (0 each).",
+      "The only CEE errors were over-abstention on decisive-negative (REJECT-gold) bundles: DeepSeek 2/6, GPT 4/6.",
+      "Cross-model CEE difference is small (DA 0.909 vs 0.818, paired delta +0.091, cluster CI [0,0.217] crossing 0, exact McNemar p=0.625, 4 discordant pairs); at this sample size interpretation quality on fixed evidence is broadly similar and the edge runs in the same direction."
+    ],
+    "CEE_vs_E1_side_by_side": {
+      "deepseek": {
+        "e1_oracle_DA": 0.5909,
+        "e1_over_abstention_rate": 0.6308,
+        "e1_T3AT_oracle_DA": 0.8636,
+        "cee_DA": 0.9091,
+        "cee_over_abstention_cells": 2
+      },
+      "gpt": {
+        "e1_oracle_DA": 0.6727,
+        "e1_false_commit_accept_cells": 7,
+        "e1_T3AT_oracle_DA": 0.8636,
+        "cee_DA": 0.8182,
+        "cee_false_commit_accept_cells": 0
+      }
+    },
+    "bounds_on_claims": [
+      "Mechanism discussion only; CEE and E1 DA were NOT pooled or averaged and no causal effect size is computed.",
+      "The GPT E1->CEE disappearance of unsupported acceptance (7 -> 0) is consistent with complete, pre-adjudicated evidence removing under-acquisition, but T3A-T (full active evidence) already had GPT DA 0.8636; multiple mechanisms (acquisition, single-turn framing, model-version for DeepSeek) differ across protocols, so the shift cannot be attributed causally to a single factor.",
+      "DeepSeek E1 over-abstention (63.1% pooled oracle) is much lower in CEE (2 cells), consistent with acquisition/policy contributing, but the DeepSeek model-version drift means a version contribution cannot be excluded.",
+      "n=22 / 10 issue clusters, class sizes 7/6/9; all CIs are wide and findings are exploratory."
+    ]
+  },
+  "metrics_file": "cee_v11_metrics.json",
+  "result_files": [
+    "cee_v11_deepseek_flash_results.jsonl",
+    "cee_v11_gpt41mini_results.jsonl"
+  ]
+}

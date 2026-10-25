@@ -1,0 +1,1059 @@
+{
+  "metric": "groundedreview_wave2.1_correction_diff",
+  "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+  "bootstrap": "issue-cluster seed=7 n_boot=10000",
+  "determinism_check_against_frozen_pilot_scores": {
+    "frozen_overall_oracle_rate": 0.5909,
+    "recomputed_old_oracle_rate": 0.5909,
+    "frozen_overall_condition_rate": 0.7364,
+    "recomputed_old_condition_rate": 0.7364,
+    "frozen_n": 110,
+    "recomputed_n": 110,
+    "oracle_match": true,
+    "condition_match": true
+  },
+  "overall": {
+    "oracle": {
+      "wave2_original": {
+        "n_correct": 65,
+        "n_denominator": 110,
+        "rate": 0.5909,
+        "ci95": [
+          0.525,
+          0.675
+        ],
+        "n_issues": 10
+      },
+      "wave2.1_corrected": {
+        "n_correct": 65,
+        "n_denominator": 110,
+        "rate": 0.5909,
+        "ci95": [
+          0.525,
+          0.675
+        ],
+        "n_issues": 10
+      }
+    },
+    "condition": {
+      "wave2_original": {
+        "n_correct": 81,
+        "n_denominator": 110,
+        "rate": 0.7364,
+        "ci95": [
+          0.6667,
+          0.7818
+        ],
+        "n_issues": 10
+      },
+      "wave2.1_corrected": {
+        "n_correct": 81,
+        "n_denominator": 110,
+        "rate": 0.7364,
+        "ci95": [
+          0.6667,
+          0.7818
+        ],
+        "n_issues": 10
+      }
+    }
+  },
+  "partitions": {
+    "overall_comparable": {
+      "oracle": {
+        "wave2_original": {
+          "n_cells": 77,
+          "n_correct": 57,
+          "n_denominator": 77,
+          "rate": 0.7403,
+          "ci95": [
+            0.6914,
+            0.7838
+          ]
+        },
+        "wave2.1_corrected": {
+          "n_cells": 77,
+          "n_correct": 57,
+          "n_denominator": 77,
+          "rate": 0.7403,
+          "ci95": [
+            0.6914,
+            0.7838
+          ]
+        }
+      },
+      "condition": {
+        "wave2_original": {
+          "n_cells": 77,
+          "n_correct": 57,
+          "n_denominator": 77,
+          "rate": 0.7403,
+          "ci95": [
+            0.6914,
+            0.7838
+          ]
+        },
+        "wave2.1_corrected": {
+          "n_cells": 77,
+          "n_correct": 57,
+          "n_denominator": 77,
+          "rate": 0.7403,
+          "ci95": [
+            0.6914,
+            0.7838
+          ]
+        }
+      }
+    },
+    "overall_divergent": {
+      "oracle": {
+        "wave2_original": {
+          "n_cells": 33,
+          "n_correct": 8,
+          "n_denominator": 33,
+          "rate": 0.2424,
+          "ci95": [
+            0.1351,
+            0.4231
+          ]
+        },
+        "wave2.1_corrected": {
+          "n_cells": 33,
+          "n_correct": 8,
+          "n_denominator": 33,
+          "rate": 0.2424,
+          "ci95": [
+            0.1351,
+            0.4231
+          ]
+        }
+      },
+      "condition": {
+        "wave2_original": {
+          "n_cells": 33,
+          "n_correct": 24,
+          "n_denominator": 33,
+          "rate": 0.7273,
+          "ci95": [
+            0.5,
+            0.8571
+          ]
+        },
+        "wave2.1_corrected": {
+          "n_cells": 33,
+          "n_correct": 24,
+          "n_denominator": 33,
+          "rate": 0.7273,
+          "ci95": [
+            0.5,
+            0.8571
+          ]
+        }
+      }
+    }
+  },
+  "arms": {
+    "static": {
+      "oracle": {
+        "wave2_original": {
+          "n_cells": 44,
+          "n_correct": 19,
+          "n_denominator": 44,
+          "rate": 0.4318,
+          "ci95": [
+            0.2917,
+            0.625
+          ]
+        },
+        "wave2.1_corrected": {
+          "n_cells": 44,
+          "n_correct": 19,
+          "n_denominator": 44,
+          "rate": 0.4318,
+          "ci95": [
+            0.2917,
+            0.625
+          ]
+        }
+      },
+      "condition": {
+        "wave2_original": {
+          "n_cells": 44,
+          "n_correct": 24,
+          "n_denominator": 44,
+          "rate": 0.5455,
+          "ci95": [
+            0.5,
+            0.6
+          ]
+        },
+        "wave2.1_corrected": {
+          "n_cells": 44,
+          "n_correct": 24,
+          "n_denominator": 44,
+          "rate": 0.5455,
+          "ci95": [
+            0.5,
+            0.6
+          ]
+        }
+      }
+    },
+    "active": {
+      "oracle": {
+        "wave2_original": {
+          "n_cells": 66,
+          "n_correct": 46,
+          "n_denominator": 66,
+          "rate": 0.697,
+          "ci95": [
+            0.6212,
+            0.7564
+          ]
+        },
+        "wave2.1_corrected": {
+          "n_cells": 66,
+          "n_correct": 46,
+          "n_denominator": 66,
+          "rate": 0.697,
+          "ci95": [
+            0.6212,
+            0.7564
+          ]
+        }
+      },
+      "condition": {
+        "wave2_original": {
+          "n_cells": 66,
+          "n_correct": 57,
+          "n_denominator": 66,
+          "rate": 0.8636,
+          "ci95": [
+            0.75,
+            0.9467
+          ]
+        },
+        "wave2.1_corrected": {
+          "n_cells": 66,
+          "n_correct": 57,
+          "n_denominator": 66,
+          "rate": 0.8636,
+          "ci95": [
+            0.75,
+            0.9467
+          ]
+        }
+      }
+    }
+  },
+  "gap_category_counts_overall": {
+    "wave2_original": {
+      "verified_gap": 22,
+      "claimed_but_unverified": 48,
+      "decisive_in_hand_but_abstained": 0,
+      "unspecified": 12
+    },
+    "wave2.1_corrected": {
+      "verified_gap": 22,
+      "claimed_but_unverified": 48,
+      "decisive_in_hand_but_abstained": 0,
+      "unspecified": 12
+    }
+  },
+  "confusion_matrices": {
+    "wave2_original": {
+      "oracle": {
+        "ACCEPT": {
+          "ACCEPT": 14,
+          "REJECT": 0,
+          "NEED_EVIDENCE": 21
+        },
+        "REJECT": {
+          "ACCEPT": 0,
+          "REJECT": 10,
+          "NEED_EVIDENCE": 20
+        },
+        "NEED_EVIDENCE": {
+          "ACCEPT": 0,
+          "REJECT": 4,
+          "NEED_EVIDENCE": 41
+        }
+      },
+      "condition": {
+        "ACCEPT": {
+          "ACCEPT": 14,
+          "REJECT": 0,
+          "NEED_EVIDENCE": 14
+        },
+        "REJECT": {
+          "ACCEPT": 0,
+          "REJECT": 11,
+          "NEED_EVIDENCE": 12
+        },
+        "NEED_EVIDENCE": {
+          "ACCEPT": 0,
+          "REJECT": 3,
+          "NEED_EVIDENCE": 56
+        }
+      }
+    },
+    "wave2.1_corrected": {
+      "oracle": {
+        "ACCEPT": {
+          "ACCEPT": 14,
+          "REJECT": 0,
+          "NEED_EVIDENCE": 21
+        },
+        "REJECT": {
+          "ACCEPT": 0,
+          "REJECT": 10,
+          "NEED_EVIDENCE": 20
+        },
+        "NEED_EVIDENCE": {
+          "ACCEPT": 0,
+          "REJECT": 4,
+          "NEED_EVIDENCE": 41
+        }
+      },
+      "condition": {
+        "ACCEPT": {
+          "ACCEPT": 14,
+          "REJECT": 0,
+          "NEED_EVIDENCE": 14
+        },
+        "REJECT": {
+          "ACCEPT": 0,
+          "REJECT": 11,
+          "NEED_EVIDENCE": 12
+        },
+        "NEED_EVIDENCE": {
+          "ACCEPT": 0,
+          "REJECT": 3,
+          "NEED_EVIDENCE": 56
+        }
+      }
+    }
+  },
+  "per_condition": {
+    "T2D-T": {
+      "arm": "static",
+      "n_cells": 22,
+      "oracle": {
+        "wave2_original": {
+          "n_correct": 11,
+          "n_denominator": 22,
+          "rate": 0.5,
+          "ci95": [
+            0.3333,
+            0.7143
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 2,
+            "appropriate_abstain": 9,
+            "over_abstain": 11,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "wave2.1_corrected": {
+          "n_correct": 11,
+          "n_denominator": 22,
+          "rate": 0.5,
+          "ci95": [
+            0.3333,
+            0.7143
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 2,
+            "appropriate_abstain": 9,
+            "over_abstain": 11,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "condition": {
+        "wave2_original": {
+          "n_correct": 22,
+          "n_denominator": 22,
+          "rate": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 2,
+            "appropriate_abstain": 20,
+            "over_abstain": 0,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "wave2.1_corrected": {
+          "n_correct": 22,
+          "n_denominator": 22,
+          "rate": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 2,
+            "appropriate_abstain": 20,
+            "over_abstain": 0,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "gap_category_counts": {
+        "wave2_original": {
+          "verified_gap": 0,
+          "claimed_but_unverified": 20,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 0
+        },
+        "wave2.1_corrected": {
+          "verified_gap": 0,
+          "claimed_but_unverified": 20,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 0
+        }
+      },
+      "cost": {
+        "wave2_original": {
+          "tokens_in": 42368,
+          "tokens_out": 3623,
+          "tool_calls": 0,
+          "wall_s_total": 33.9,
+          "usd_total": 0.017057,
+          "usd_per_oracle_appropriate_decision": 0.001551,
+          "budget_hits": 0,
+          "emergency_hits": 0
+        },
+        "wave2.1_corrected": {
+          "tokens_in": 42368,
+          "tokens_out": 3650,
+          "tool_calls": 0,
+          "wall_s_total": 34.42,
+          "usd_total": 0.01709,
+          "usd_per_oracle_appropriate_decision": 0.001554,
+          "budget_hits": 0,
+          "emergency_hits": 0
+        }
+      },
+      "escalation": {
+        "wave2_original": {
+          "requests": 0,
+          "granted": 0,
+          "denied": 0,
+          "cells_with_granted_escalation": 0
+        },
+        "wave2.1_corrected": {
+          "requests": 0,
+          "granted": 0,
+          "denied": 0,
+          "cells_with_granted_escalation": 0
+        }
+      }
+    },
+    "T2A-T": {
+      "arm": "static",
+      "n_cells": 22,
+      "oracle": {
+        "wave2_original": {
+          "n_correct": 8,
+          "n_denominator": 22,
+          "rate": 0.3636,
+          "ci95": [
+            0.2083,
+            0.5625
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 0,
+            "appropriate_abstain": 8,
+            "over_abstain": 13,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 1,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "wave2.1_corrected": {
+          "n_correct": 8,
+          "n_denominator": 22,
+          "rate": 0.3636,
+          "ci95": [
+            0.2083,
+            0.5625
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 0,
+            "appropriate_abstain": 8,
+            "over_abstain": 13,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 1,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "condition": {
+        "wave2_original": {
+          "n_correct": 2,
+          "n_denominator": 22,
+          "rate": 0.0909,
+          "ci95": [
+            0.0,
+            0.2
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 1,
+            "appropriate_abstain": 1,
+            "over_abstain": 20,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "wave2.1_corrected": {
+          "n_correct": 2,
+          "n_denominator": 22,
+          "rate": 0.0909,
+          "ci95": [
+            0.0,
+            0.2
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 1,
+            "appropriate_abstain": 1,
+            "over_abstain": 20,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "gap_category_counts": {
+        "wave2_original": {
+          "verified_gap": 0,
+          "claimed_but_unverified": 21,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 0
+        },
+        "wave2.1_corrected": {
+          "verified_gap": 0,
+          "claimed_but_unverified": 21,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 0
+        }
+      },
+      "cost": {
+        "wave2_original": {
+          "tokens_in": 39245,
+          "tokens_out": 4798,
+          "tool_calls": 0,
+          "wall_s_total": 38.6,
+          "usd_total": 0.017533,
+          "usd_per_oracle_appropriate_decision": 0.002192,
+          "budget_hits": 0,
+          "emergency_hits": 0
+        },
+        "wave2.1_corrected": {
+          "tokens_in": 39245,
+          "tokens_out": 4770,
+          "tool_calls": 0,
+          "wall_s_total": 38.34,
+          "usd_total": 0.017499,
+          "usd_per_oracle_appropriate_decision": 0.002187,
+          "budget_hits": 0,
+          "emergency_hits": 0
+        }
+      },
+      "escalation": {
+        "wave2_original": {
+          "requests": 0,
+          "granted": 0,
+          "denied": 0,
+          "cells_with_granted_escalation": 0
+        },
+        "wave2.1_corrected": {
+          "requests": 0,
+          "granted": 0,
+          "denied": 0,
+          "cells_with_granted_escalation": 0
+        }
+      }
+    },
+    "T3D-Strict": {
+      "arm": "active",
+      "n_cells": 22,
+      "oracle": {
+        "wave2_original": {
+          "n_correct": 10,
+          "n_denominator": 22,
+          "rate": 0.4545,
+          "ci95": [
+            0.3077,
+            0.6364
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 1,
+            "appropriate_abstain": 9,
+            "over_abstain": 12,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "wave2.1_corrected": {
+          "n_correct": 10,
+          "n_denominator": 22,
+          "rate": 0.4545,
+          "ci95": [
+            0.3077,
+            0.6364
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 1,
+            "appropriate_abstain": 9,
+            "over_abstain": 12,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "condition": {
+        "wave2_original": {
+          "n_correct": 21,
+          "n_denominator": 22,
+          "rate": 0.9545,
+          "ci95": [
+            0.8421,
+            1.0
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 1,
+            "appropriate_abstain": 20,
+            "over_abstain": 1,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "wave2.1_corrected": {
+          "n_correct": 21,
+          "n_denominator": 22,
+          "rate": 0.9545,
+          "ci95": [
+            0.8421,
+            1.0
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 0,
+            "appropriate_reject": 1,
+            "appropriate_abstain": 20,
+            "over_abstain": 1,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 0,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "gap_category_counts": {
+        "wave2_original": {
+          "verified_gap": 12,
+          "claimed_but_unverified": 7,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 2
+        },
+        "wave2.1_corrected": {
+          "verified_gap": 12,
+          "claimed_but_unverified": 7,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 2
+        }
+      },
+      "cost": {
+        "wave2_original": {
+          "tokens_in": 190930,
+          "tokens_out": 10672,
+          "tool_calls": 125,
+          "wall_s_total": 80.07,
+          "usd_total": 0.070087,
+          "usd_per_oracle_appropriate_decision": 0.007009,
+          "budget_hits": 0,
+          "emergency_hits": 0
+        },
+        "wave2.1_corrected": {
+          "tokens_in": 190927,
+          "tokens_out": 10589,
+          "tool_calls": 125,
+          "wall_s_total": 79.42,
+          "usd_total": 0.069987,
+          "usd_per_oracle_appropriate_decision": 0.006999,
+          "budget_hits": 0,
+          "emergency_hits": 0
+        }
+      },
+      "escalation": {
+        "wave2_original": {
+          "requests": 0,
+          "granted": 0,
+          "denied": 0,
+          "cells_with_granted_escalation": 0
+        },
+        "wave2.1_corrected": {
+          "requests": 0,
+          "granted": 0,
+          "denied": 0,
+          "cells_with_granted_escalation": 0
+        }
+      }
+    },
+    "T3D-Escalate": {
+      "arm": "active",
+      "n_cells": 22,
+      "oracle": {
+        "wave2_original": {
+          "n_correct": 17,
+          "n_denominator": 22,
+          "rate": 0.7727,
+          "ci95": [
+            0.5714,
+            0.95
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 7,
+            "appropriate_reject": 3,
+            "appropriate_abstain": 7,
+            "over_abstain": 3,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 2,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "wave2.1_corrected": {
+          "n_correct": 17,
+          "n_denominator": 22,
+          "rate": 0.7727,
+          "ci95": [
+            0.5714,
+            0.95
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 7,
+            "appropriate_reject": 3,
+            "appropriate_abstain": 7,
+            "over_abstain": 3,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 2,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "condition": {
+        "wave2_original": {
+          "n_correct": 17,
+          "n_denominator": 22,
+          "rate": 0.7727,
+          "ci95": [
+            0.5714,
+            0.95
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 7,
+            "appropriate_reject": 3,
+            "appropriate_abstain": 7,
+            "over_abstain": 3,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 2,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "wave2.1_corrected": {
+          "n_correct": 17,
+          "n_denominator": 22,
+          "rate": 0.7727,
+          "ci95": [
+            0.5714,
+            0.95
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 7,
+            "appropriate_reject": 3,
+            "appropriate_abstain": 7,
+            "over_abstain": 3,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 2,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "gap_category_counts": {
+        "wave2_original": {
+          "verified_gap": 4,
+          "claimed_but_unverified": 0,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 6
+        },
+        "wave2.1_corrected": {
+          "verified_gap": 4,
+          "claimed_but_unverified": 0,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 6
+        }
+      },
+      "cost": {
+        "wave2_original": {
+          "tokens_in": 650832,
+          "tokens_out": 25224,
+          "tool_calls": 176,
+          "wall_s_total": 177.86,
+          "usd_total": 0.225519,
+          "usd_per_oracle_appropriate_decision": 0.013266,
+          "budget_hits": 0,
+          "emergency_hits": 0
+        },
+        "wave2.1_corrected": {
+          "tokens_in": 647192,
+          "tokens_out": 24973,
+          "tool_calls": 175,
+          "wall_s_total": 176.34,
+          "usd_total": 0.224126,
+          "usd_per_oracle_appropriate_decision": 0.013184,
+          "budget_hits": 0,
+          "emergency_hits": 0
+        }
+      },
+      "escalation": {
+        "wave2_original": {
+          "requests": 72,
+          "granted": 66,
+          "denied": 13,
+          "cells_with_granted_escalation": 22
+        },
+        "wave2.1_corrected": {
+          "requests": 70,
+          "granted": 64,
+          "denied": 13,
+          "cells_with_granted_escalation": 22
+        }
+      }
+    },
+    "T3A-T": {
+      "arm": "active",
+      "n_cells": 22,
+      "oracle": {
+        "wave2_original": {
+          "n_correct": 19,
+          "n_denominator": 22,
+          "rate": 0.8636,
+          "ci95": [
+            0.7,
+            1.0
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 7,
+            "appropriate_reject": 4,
+            "appropriate_abstain": 8,
+            "over_abstain": 2,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 1,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "wave2.1_corrected": {
+          "n_correct": 19,
+          "n_denominator": 22,
+          "rate": 0.8636,
+          "ci95": [
+            0.7,
+            1.0
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 7,
+            "appropriate_reject": 4,
+            "appropriate_abstain": 8,
+            "over_abstain": 2,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 1,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "condition": {
+        "wave2_original": {
+          "n_correct": 19,
+          "n_denominator": 22,
+          "rate": 0.8636,
+          "ci95": [
+            0.7,
+            1.0
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 7,
+            "appropriate_reject": 4,
+            "appropriate_abstain": 8,
+            "over_abstain": 2,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 1,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        },
+        "wave2.1_corrected": {
+          "n_correct": 19,
+          "n_denominator": 22,
+          "rate": 0.8636,
+          "ci95": [
+            0.7,
+            1.0
+          ],
+          "error_class_counts": {
+            "appropriate_accept": 7,
+            "appropriate_reject": 4,
+            "appropriate_abstain": 8,
+            "over_abstain": 2,
+            "false_approve": 0,
+            "false_reject": 0,
+            "false_commit_accept": 0,
+            "unsupported_reject": 1,
+            "invalid_protocol": 0,
+            "ambiguous_protocol": 0
+          }
+        }
+      },
+      "gap_category_counts": {
+        "wave2_original": {
+          "verified_gap": 6,
+          "claimed_but_unverified": 0,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 4
+        },
+        "wave2.1_corrected": {
+          "verified_gap": 6,
+          "claimed_but_unverified": 0,
+          "decisive_in_hand_but_abstained": 0,
+          "unspecified": 4
+        }
+      },
+      "cost": {
+        "wave2_original": {
+          "tokens_in": 368342,
+          "tokens_out": 12182,
+          "tool_calls": 144,
+          "wall_s_total": 101.29,
+          "usd_total": 0.125124,
+          "usd_per_oracle_appropriate_decision": 0.006585,
+          "budget_hits": 0,
+          "emergency_hits": 0
+        },
+        "wave2.1_corrected": {
+          "tokens_in": 368185,
+          "tokens_out": 12215,
+          "tool_calls": 144,
+          "wall_s_total": 101.41,
+          "usd_total": 0.125117,
+          "usd_per_oracle_appropriate_decision": 0.006585,
+          "budget_hits": 0,
+          "emergency_hits": 0
+        }
+      },
+      "escalation": {
+        "wave2_original": {
+          "requests": 0,
+          "granted": 0,
+          "denied": 0,
+          "cells_with_granted_escalation": 0
+        },
+        "wave2.1_corrected": {
+          "requests": 0,
+          "granted": 0,
+          "denied": 0,
+          "cells_with_granted_escalation": 0
+        }
+      }
+    }
+  },
+  "cost": {
+    "wave2_original": {
+      "usd_total_all110": 0.45532,
+      "usd_total_5_rerun_cells": 0.013644
+    },
+    "wave2.1_corrected": {
+      "usd_total_all110": 0.453819,
+      "usd_total_5_rerun_cells": 0.012143
+    }
+  }
+}

@@ -1,0 +1,14 @@
+### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+FAIL: zero constant not recognized as Poly(0)
+
+--- stderr ---
+
+
+### POST candidate patch
+$ python probe.py  (exit 1)
+--- stdout ---
+FAIL: zero constant not recognized as Poly(0)
+
+--- stderr ---

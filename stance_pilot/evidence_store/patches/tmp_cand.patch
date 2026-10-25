@@ -1,0 +1,59 @@
+diff --git a/sympy/polys/densearith.py b/sympy/polys/densearith.py
+index bce08bb356..7f7a88b10a 100644
+--- a/sympy/polys/densearith.py
++++ b/sympy/polys/densearith.py
+@@ -269,7 +269,7 @@ def dup_mul_ground(f, c, K):
+     if not c or not f:
+         return []
+     else:
+-        return [ cf * c for cf in f ]
++        return dup_strip([ cf * c for cf in f ])
+ 
+ 
+ def dmp_mul_ground(f, c, u, K):
+@@ -291,7 +291,7 @@ def dmp_mul_ground(f, c, u, K):
+ 
+     v = u - 1
+ 
+-    return [ dmp_mul_ground(cf, c, v, K) for cf in f ]
++    return dmp_strip([ dmp_mul_ground(cf, c, v, K) for cf in f ], u)
+ 
+ 
+ def dup_quo_ground(f, c, K):
+diff --git a/sympy/polys/tests/test_densearith.py b/sympy/polys/tests/test_densearith.py
+index 55b2f47ba6..fe1e639051 100644
+--- a/sympy/polys/tests/test_densearith.py
++++ b/sympy/polys/tests/test_densearith.py
+@@ -180,6 +180,12 @@ def test_dup_mul_ground():
+     assert dup_mul_ground(f, ZZ(0), ZZ) == dup_normal([], ZZ)
+     assert dup_mul_ground(f, ZZ(2), ZZ) == dup_normal([2, 4, 6], ZZ)
+ 
++    # Test for issue #20428: dup_mul_ground should strip zero coefficients
++    # especially with EX domain where EX(0) is falsy but list contains element
++    from sympy.polys.domains import EX
++    assert dup_mul_ground([EX(0)], EX(1), EX) == []
++    assert dup_mul_ground([EX(0), EX(0)], EX(1), EX) == []
++
+ 
+ def test_dmp_mul_ground():
+     assert dmp_mul_ground(f_0, ZZ(2), 2, ZZ) == [
+diff --git a/sympy/polys/tests/test_polytools.py b/sympy/polys/tests/test_polytools.py
+index c774fc41e2..cb55ae6257 100644
+--- a/sympy/polys/tests/test_polytools.py
++++ b/sympy/polys/tests/test_polytools.py
+@@ -1444,6 +1444,15 @@ def test_Poly_clear_denoms():
+     assert coeff == 3 and poly == Poly(
+         x + 3*sqrt(2), x, domain='EX') and poly.get_domain() == EX
+ 
++    # Test for issue #20428: clear_denoms should properly strip zero polynomial
++    f = Poly(S("-117968192370600*18**(1/3)/(217603955769048*(24201 + 253*sqrt(9165))**(1/3) + 2273005839412*sqrt(9165)*(24201 + 253*sqrt(9165))**(1/3)) - 15720318185*2**(2/3)*3**(1/3)*(24201 + 253*sqrt(9165))**(2/3)/(217603955769048*(24201 + 253*sqrt(9165))**(1/3) + 2273005839412*sqrt(9165)*(24201 + 253*sqrt(9165))**(1/3)) + 15720318185*12**(1/3)*(24201 + 253*sqrt(9165))**(2/3)/(217603955769048*(24201 + 253*sqrt(9165))**(1/3) + 2273005839412*sqrt(9165)*(24201 + 253*sqrt(9165))**(1/3)) + 117968192370600*2**(1/3)*3**(2/3)/(217603955769048*(24201 + 253*sqrt(9165))**(1/3) + 2273005839412*sqrt(9165)*(24201 + 253*sqrt(9165))**(1/3))"), x)
++    coeff, poly = f.clear_denoms()
++    assert poly.is_zero, "clear_denoms result should be zero"
++    assert poly.rep.rep == [], "clear_denoms result should have empty DMP representation"
++    # Test that methods work correctly on the result
++    assert poly.terms_gcd() == ((0,), Poly(0, x, domain='EX'))
++    assert poly.primitive() == (0, Poly(0, x, domain='EX'))
++
+ 
+ def test_Poly_rat_clear_denoms():
+     f = Poly(x**2/y + 1, x)

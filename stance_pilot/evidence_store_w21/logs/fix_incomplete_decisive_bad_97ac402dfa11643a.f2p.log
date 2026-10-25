@@ -1,0 +1,261 @@
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpy1iC1n\Scripts\python.exe -m pytest sympy/printing/tests/test_lambdarepr.py sympy/printing/tests/test_latex.py sympy/printing/tests/test_mathematica.py -v --tb=short -p no:cacheprovider  (exit 1, 7s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpy1iC1n\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+collecting ... collected 134 items
+
+sympy/printing/tests/test_lambdarepr.py::test_basic PASSED               [  0%]
+sympy/printing/tests/test_lambdarepr.py::test_matrix PASSED              [  1%]
+sympy/printing/tests/test_lambdarepr.py::test_piecewise PASSED           [  2%]
+sympy/printing/tests/test_lambdarepr.py::test_sum__1 PASSED              [  2%]
+sympy/printing/tests/test_lambdarepr.py::test_sum__2 PASSED              [  3%]
+sympy/printing/tests/test_lambdarepr.py::test_multiple_sums PASSED       [  4%]
+sympy/printing/tests/test_lambdarepr.py::test_settings PASSED            [  5%]
+sympy/printing/tests/test_lambdarepr.py::test_printmethod PASSED         [  5%]
+sympy/printing/tests/test_latex.py::test_printmethod PASSED              [  6%]
+sympy/printing/tests/test_latex.py::test_latex_basic FAILED              [  7%]
+sympy/printing/tests/test_latex.py::test_latex_builtins PASSED           [  8%]
+sympy/printing/tests/test_latex.py::test_latex_SingularityFunction PASSED [  8%]
+sympy/printing/tests/test_latex.py::test_latex_cycle PASSED              [  9%]
+sympy/printing/tests/test_latex.py::test_latex_permutation PASSED        [ 10%]
+sympy/printing/tests/test_latex.py::test_latex_Float FAILED              [ 11%]
+sympy/printing/tests/test_latex.py::test_latex_vector_expressions PASSED [ 11%]
+sympy/printing/tests/test_latex.py::test_latex_symbols PASSED            [ 12%]
+sympy/printing/tests/test_latex.py::test_latex_symbols_failing FAILED    [ 13%]
+sympy/printing/tests/test_latex.py::test_latex_functions PASSED          [ 14%]
+sympy/printing/tests/test_latex.py::test_hyper_printing PASSED           [ 14%]
+sympy/printing/tests/test_latex.py::test_latex_bessel PASSED             [ 15%]
+sympy/printing/tests/test_latex.py::test_latex_fresnel PASSED            [ 16%]
+sympy/printing/tests/test_latex.py::test_latex_brackets PASSED           [ 17%]
+sympy/printing/tests/test_latex.py::test_latex_indexed PASSED            [ 17%]
+sympy/printing/tests/test_latex.py::test_latex_derivatives PASSED        [ 18%]
+sympy/printing/tests/test_latex.py::test_latex_subs PASSED               [ 19%]
+sympy/printing/tests/test_latex.py::test_latex_integrals PASSED          [ 20%]
+sympy/printing/tests/test_latex.py::test_latex_sets PASSED               [ 20%]
+sympy/printing/tests/test_latex.py::test_latex_Range PASSED              [ 21%]
+sympy/printing/tests/test_latex.py::test_latex_sequences PASSED          [ 22%]
+sympy/printing/tests/test_latex.py::test_latex_FourierSeries PASSED      [ 23%]
+sympy/printing/tests/test_latex.py::test_latex_FormalPowerSeries PASSED  [ 23%]
+sympy/printing/tests/test_latex.py::test_latex_intervals PASSED          [ 24%]
+sympy/printing/tests/test_latex.py::test_latex_AccumuBounds PASSED       [ 25%]
+sympy/printing/tests/test_latex.py::test_latex_emptyset PASSED           [ 26%]
+sympy/printing/tests/test_latex.py::test_latex_commutator PASSED         [ 26%]
+sympy/printing/tests/test_latex.py::test_latex_union PASSED              [ 27%]
+sympy/printing/tests/test_latex.py::test_latex_symmetric_difference PASSED [ 28%]
+sympy/printing/tests/test_latex.py::test_latex_Complement PASSED         [ 29%]
+sympy/printing/tests/test_latex.py::test_latex_Complexes PASSED          [ 29%]
+sympy/printing/tests/test_latex.py::test_latex_productset PASSED         [ 30%]
+sympy/printing/tests/test_latex.py::test_latex_Naturals PASSED           [ 31%]
+sympy/printing/tests/test_latex.py::test_latex_Naturals0 PASSED          [ 32%]
+sympy/printing/tests/test_latex.py::test_latex_Integers PASSED           [ 32%]
+sympy/printing/tests/test_latex.py::test_latex_ImageSet PASSED           [ 33%]
+sympy/printing/tests/test_latex.py::test_latex_ConditionSet PASSED       [ 34%]
+sympy/printing/tests/test_latex.py::test_latex_ComplexRegion PASSED      [ 35%]
+sympy/printing/tests/test_latex.py::test_latex_Contains PASSED           [ 35%]
+sympy/printing/tests/test_latex.py::test_latex_sum PASSED                [ 36%]
+sympy/printing/tests/test_latex.py::test_latex_product PASSED            [ 37%]
+sympy/printing/tests/test_latex.py::test_latex_limits PASSED             [ 38%]
+sympy/printing/tests/test_latex.py::test_issue_3568 PASSED               [ 38%]
+sympy/printing/tests/test_latex.py::test_latex PASSED                    [ 39%]
+sympy/printing/tests/test_latex.py::test_latex_dict PASSED               [ 40%]
+sympy/printing/tests/test_latex.py::test_latex_list PASSED               [ 41%]
+sympy/printing/tests/test_latex.py::test_latex_rational PASSED           [ 41%]
+sympy/printing/tests/test_latex.py::test_latex_inverse PASSED            [ 42%]
+sympy/printing/tests/test_latex.py::test_latex_DiracDelta PASSED         [ 43%]
+sympy/printing/tests/test_latex.py::test_latex_Heaviside PASSED          [ 44%]
+sympy/printing/tests/test_latex.py::test_latex_KroneckerDelta PASSED     [ 44%]
+sympy/printing/tests/test_latex.py::test_latex_LeviCivita PASSED         [ 45%]
+sympy/printing/tests/test_latex.py::test_mode PASSED                     [ 46%]
+sympy/printing/tests/test_latex.py::test_latex_Piecewise PASSED          [ 47%]
+sympy/printing/tests/test_latex.py::test_latex_Matrix PASSED             [ 47%]
+sympy/printing/tests/test_latex.py::test_latex_matrix_with_functions PASSED [ 48%]
+sympy/printing/tests/test_latex.py::test_latex_NDimArray PASSED          [ 49%]
+sympy/printing/tests/test_latex.py::test_latex_mul_symbol PASSED         [ 50%]
+sympy/printing/tests/test_latex.py::test_latex_issue_4381 PASSED         [ 50%]
+sympy/printing/tests/test_latex.py::test_latex_issue_4576 PASSED         [ 51%]
+sympy/printing/tests/test_latex.py::test_latex_pow_fraction PASSED       [ 52%]
+sympy/printing/tests/test_latex.py::test_noncommutative PASSED           [ 52%]
+sympy/printing/tests/test_latex.py::test_latex_order PASSED              [ 53%]
+sympy/printing/tests/test_latex.py::test_latex_Lambda PASSED             [ 54%]
+sympy/printing/tests/test_latex.py::test_latex_PolyElement PASSED        [ 55%]
+sympy/printing/tests/test_latex.py::test_latex_FracElement PASSED        [ 55%]
+sympy/printing/tests/test_latex.py::test_latex_Poly PASSED               [ 56%]
+sympy/printing/tests/test_latex.py::test_latex_ComplexRootOf PASSED      [ 57%]
+sympy/printing/tests/test_latex.py::test_latex_RootSum PASSED            [ 58%]
+sympy/printing/tests/test_latex.py::test_settings PASSED                 [ 58%]
+sympy/printing/tests/test_latex.py::test_latex_numbers PASSED            [ 59%]
+sympy/printing/tests/test_latex.py::test_latex_euler PASSED              [ 60%]
+sympy/printing/tests/test_latex.py::test_lamda PASSED                    [ 61%]
+sympy/printing/tests/test_latex.py::test_custom_symbol_names PASSED      [ 61%]
+sympy/printing/tests/test_latex.py::test_matAdd PASSED                   [ 62%]
+sympy/printing/tests/test_latex.py::test_matMul PASSED                   [ 63%]
+sympy/printing/tests/test_latex.py::test_latex_MatrixSlice PASSED        [ 64%]
+sympy/printing/tests/test_latex.py::test_latex_RandomDomain PASSED       [ 64%]
+sympy/printing/tests/test_latex.py::test_PrettyPoly PASSED               [ 65%]
+sympy/printing/tests/test_latex.py::test_integral_transforms PASSED      [ 66%]
+sympy/printing/tests/test_latex.py::test_PolynomialRingBase PASSED       [ 67%]
+sympy/printing/tests/test_latex.py::test_categories PASSED               [ 67%]
+sympy/printing/tests/test_latex.py::test_Modules PASSED                  [ 68%]
+sympy/printing/tests/test_latex.py::test_QuotientRing PASSED             [ 69%]
+sympy/printing/tests/test_latex.py::test_Tr PASSED                       [ 70%]
+sympy/printing/tests/test_latex.py::test_Adjoint PASSED                  [ 70%]
+sympy/printing/tests/test_latex.py::test_Hadamard PASSED                 [ 71%]
+sympy/printing/tests/test_latex.py::test_ZeroMatrix PASSED               [ 72%]
+sympy/printing/tests/test_latex.py::test_boolean_args_order PASSED       [ 73%]
+sympy/printing/tests/test_latex.py::test_imaginary PASSED                [ 73%]
+sympy/printing/tests/test_latex.py::test_builtins_without_args PASSED    [ 74%]
+sympy/printing/tests/test_latex.py::test_latex_greek_functions PASSED    [ 75%]
+sympy/printing/tests/test_latex.py::test_translate PASSED                [ 76%]
+sympy/printing/tests/test_latex.py::test_other_symbols PASSED            [ 76%]
+sympy/printing/tests/test_latex.py::test_modifiers PASSED                [ 77%]
+sympy/printing/tests/test_latex.py::test_greek_symbols PASSED            [ 78%]
+sympy/printing/tests/test_latex.py::test_builtin_without_args_mismatched_names FAILED [ 79%]
+sympy/printing/tests/test_latex.py::test_builtin_no_args PASSED          [ 79%]
+sympy/printing/tests/test_latex.py::test_issue_6853 PASSED               [ 80%]
+sympy/printing/tests/test_latex.py::test_Mul PASSED                      [ 81%]
+sympy/printing/tests/test_latex.py::test_Pow PASSED                      [ 82%]
+sympy/printing/tests/test_latex.py::test_issue_7180 PASSED               [ 82%]
+sympy/printing/tests/test_latex.py::test_issue_8409 PASSED               [ 83%]
+sympy/printing/tests/test_latex.py::test_issue_8470 FAILED               [ 84%]
+sympy/printing/tests/test_latex.py::test_issue_7117 PASSED               [ 85%]
+sympy/printing/tests/test_latex.py::test_issue_2934 PASSED               [ 85%]
+sympy/printing/tests/test_latex.py::test_issue_10489 PASSED              [ 86%]
+sympy/printing/tests/test_latex.py::test_issue_12886 PASSED              [ 87%]
+sympy/printing/tests/test_latex.py::test_issue_13559 FAILED              [ 88%]
+sympy/printing/tests/test_latex.py::test_issue_13651 PASSED              [ 88%]
+sympy/printing/tests/test_latex.py::test_latex_UnevaluatedExpr PASSED    [ 89%]
+sympy/printing/tests/test_latex.py::test_MatrixElement_printing PASSED   [ 90%]
+sympy/printing/tests/test_latex.py::test_Quaternion_latex_printing PASSED [ 91%]
+sympy/printing/tests/test_latex.py::test_TensorProduct_printing PASSED   [ 91%]
+sympy/printing/tests/test_latex.py::test_WedgeProduct_printing PASSED    [ 92%]
+sympy/printing/tests/test_mathematica.py::test_Integer PASSED            [ 93%]
+sympy/printing/tests/test_mathematica.py::test_Rational PASSED           [ 94%]
+sympy/printing/tests/test_mathematica.py::test_Function PASSED           [ 94%]
+sympy/printing/tests/test_mathematica.py::test_Pow PASSED                [ 95%]
+sympy/printing/tests/test_mathematica.py::test_Mul PASSED                [ 96%]
+sympy/printing/tests/test_mathematica.py::test_constants PASSED          [ 97%]
+sympy/printing/tests/test_mathematica.py::test_containers PASSED         [ 97%]
+sympy/printing/tests/test_mathematica.py::test_Integral PASSED           [ 98%]
+sympy/printing/tests/test_mathematica.py::test_Derivative PASSED         [ 99%]
+sympy/printing/tests/test_mathematica.py::test_Sum PASSED                [100%]
+
+================================== FAILURES ===================================
+______________________________ test_latex_basic _______________________________
+sympy\printing\tests\test_latex.py:67: in test_latex_basic
+    assert latex(1.5*3**x, mul_symbol='\\,') == r"1.5 \cdot 3^{x}"
+E   AssertionError: assert '1.5\\,3^{x}' == '1.5 \\cdot 3^{x}'
+E     
+E     - 1.5 \cdot 3^{x}
+E     + 1.5\,3^{x}
+______________________________ test_latex_Float _______________________________
+sympy\printing\tests\test_latex.py:175: in test_latex_Float
+    assert latex(1.0*oo) == r"\infty"
+E   AssertionError: assert 'inf' == '\\infty'
+E     
+E     - \infty
+E     + inf
+_________________________ test_latex_symbols_failing __________________________
+sympy\printing\tests\test_latex.py:236: in test_latex_symbols_failing
+    assert latex(
+E   AssertionError: assert '\\mathrm{False}' == '\\rho \\math...\mathrm{mass}'
+E     
+E     - \rho \mathrm{volume} = \mathrm{mass}
+E     + \mathrm{False}
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:121: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_latex_symbols_failing
+_________________ test_builtin_without_args_mismatched_names __________________
+sympy\printing\tests\test_latex.py:1564: in test_builtin_without_args_mismatched_names
+    assert latex(CosineTransform) == r'\mathcal{COS}'
+E   AssertionError: assert '\\operatorna...ineTransform}' == '\\mathcal{COS}'
+E     
+E     - \mathcal{COS}
+E     + \operatorname{CosineTransform}
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:121: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_builtin_without_args_mismatched_names
+_______________________________ test_issue_8470 _______________________________
+sympy\printing\tests\test_latex.py:1613: in test_issue_8470
+    e = parse_expr("-B*A", evaluate=False)
+sympy\parsing\sympy_parser.py:892: in parse_expr
+    code = compile(evaluateFalse(code), '<string>', 'eval')
+E   ValueError: Name node can't be used with 'False' constant
+______________________________ test_issue_13559 _______________________________
+sympy\printing\tests\test_latex.py:1646: in test_issue_13559
+    expr = parse_expr('5/1', evaluate=False)
+sympy\parsing\sympy_parser.py:892: in parse_expr
+    code = compile(evaluateFalse(code), '<string>', 'eval')
+E   ValueError: Name node can't be used with 'False' constant
+============================== warnings summary ===============================
+sympy\core\basic.py:3
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping, defaultdict
+
+sympy\core\containers.py:271
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    class OrderedSet(collections.MutableSet):
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+sympy\solvers\diophantine.py:3188
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if feasible is 1:  # it's prime and k == 2
+
+sympy\plotting\plot.py:28
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Callable
+
+sympy\vector\coordsysrect.py:171
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\vector\coordsysrect.py:171: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if transformation.name is 'spherical':
+
+sympy\vector\coordsysrect.py:173
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\vector\coordsysrect.py:173: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    elif transformation.name is 'cylindrical':
+
+sympy/printing/tests/test_latex.py::test_latex_indexed
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\tensor\indexed.py:155: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    if isinstance(base, (NDimArray, collections.Iterable, Tuple, MatrixBase)) and all([i.is_number for i in args]):
+
+sympy/printing/tests/test_latex.py: 19 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+sympy/printing/tests/test_latex.py::test_PolynomialRingBase
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\polys\agca\modules.py:351: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    elif elem is 0:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+                               DO *NOT* COMMIT!                               
+=========================== short test summary info ===========================
+FAILED sympy/printing/tests/test_latex.py::test_latex_basic - AssertionError: assert '1.5\\,3^{x}' == '1.5 \\cdot 3^{x}'
+  
+  - 1.5 \cdot 3^{x}
+  + 1.5\,3^{x}
+FAILED sympy/printing/tests/test_latex.py::test_latex_Float - AssertionError: assert 'inf' == '\\infty'
+  
+  - \infty
+  + inf
+FAILED sympy/printing/tests/test_latex.py::test_latex_symbols_failing - sympy.utilities.pytest.XFail: test_latex_symbols_failing
+FAILED sympy/printing/tests/test_latex.py::test_builtin_without_args_mismatched_names - sympy.utilities.pytest.XFail: test_builtin_without_args_mismatched_names
+FAILED sympy/printing/tests/test_latex.py::test_issue_8470 - ValueError: Name node can't be used with 'False' constant
+FAILED sympy/printing/tests/test_latex.py::test_issue_13559 - ValueError: Name node can't be used with 'False' constant
+================= 6 failed, 128 passed, 30 warnings in 3.57s ==================
+
+--- stderr ---

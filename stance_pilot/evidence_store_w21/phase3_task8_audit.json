@@ -1,0 +1,324 @@
+{
+ "historical_hash_audit": {
+  "n_baseline_files": 213,
+  "n_content_files_unchanged": 211,
+  "modified_or_rewritten_runtime_products": {
+   "audit.jsonl": {
+    "nature": "append-only server audit log (not an experiment result); every line is valid JSON",
+    "n_lines": 1244,
+    "event_counts": {
+     "session_open -> ok": 248,
+     "verify -> linked": 111,
+     "verify -> mismatch": 64,
+     "artifact -> served": 140,
+     "log -> served": 209,
+     "verify -> missing": 1,
+     "freshness -> fresh": 57,
+     "coverage -> complete": 75,
+     "consistency -> contradicted": 27,
+     "log -> acceptance_log_reveal": 95,
+     "coverage -> incomplete": 23,
+     "freshness -> stale_or_mismatched": 43,
+     "consistency -> consistent": 44,
+     "consistency -> no_registered_claim": 69,
+     "log -> missing": 4,
+     "log -> denied_strict": 15,
+     "log -> escalation_reason_missing": 8,
+     "consistency -> escalation_reason_missing": 4,
+     "consistency -> consistency_escalation:contradicted": 7
+    },
+    "phase3_gate_result_counts_appended": {
+     "denied_strict": 15,
+     "escalation_reason_missing": 12,
+     "consistency_escalation": 7
+    }
+   },
+   "fixtures_meta.json": {
+    "nature": "experimenter-only provenance map, rewritten as a map on every put_fixture; never served by the API",
+    "keys_total": 9,
+    "art_namespace_keys (phase1 originals)": 0,
+    "fix_namespace_keys": [
+     "fix_contradictory_692650aa4edbfaad",
+     "fix_incomplete_c2007305ca36cd1a",
+     "fix_incomplete_decisive_bad_97ac402dfa11643a",
+     "fix_incomplete_good_244e7c27b638a272",
+     "fix_stale_333b7506365b3c47",
+     "fix_stale_bad_97ac402dfa11643a",
+     "fix_valid_e33eaf7a1b77c576",
+     "fix_wrong_patch_05f2955c70897168",
+     "fix_wrong_patch_good_244e7c27b638a272"
+    ],
+    "phase3_new_keys_only": true
+   }
+  },
+  "experiment_result_files_modified": [],
+  "missing": [],
+  "verdict": "PASS: zero Phase1/2 experiment artefacts/results modified; only append-only/rewritten runtime products changed"
+ },
+ "added_files": {
+  "whitelisted_phase3_artifacts": [
+   "artifacts/fix_incomplete_decisive_bad_97ac402dfa11643a.json",
+   "artifacts/fix_incomplete_good_244e7c27b638a272.json",
+   "artifacts/fix_stale_bad_97ac402dfa11643a.json",
+   "artifacts/fix_wrong_patch_good_244e7c27b638a272.json",
+   "attestations/art_244e7c27b638a272.json",
+   "attestations/art_97ac402dfa11643a.json",
+   "logs/fix_incomplete_decisive_bad_97ac402dfa11643a.f2p.log",
+   "logs/fix_incomplete_decisive_bad_97ac402dfa11643a.p2p.log",
+   "logs/fix_incomplete_decisive_bad_97ac402dfa11643a.symptom.log",
+   "logs/fix_incomplete_good_244e7c27b638a272.f2p.log",
+   "logs/fix_incomplete_good_244e7c27b638a272.p2p.log",
+   "logs/fix_incomplete_good_244e7c27b638a272.symptom.log",
+   "logs/fix_stale_bad_97ac402dfa11643a.f2p.log",
+   "logs/fix_stale_bad_97ac402dfa11643a.p2p.log",
+   "logs/fix_stale_bad_97ac402dfa11643a.symptom.log",
+   "logs/fix_wrong_patch_good_244e7c27b638a272.f2p.log",
+   "logs/fix_wrong_patch_good_244e7c27b638a272.p2p.log",
+   "logs/fix_wrong_patch_good_244e7c27b638a272.p2p_baseline.log",
+   "logs/fix_wrong_patch_good_244e7c27b638a272.symptom.log",
+   "metrics_phase3_ternary_mock.json",
+   "phase3_fixtures.jsonl",
+   "phase3_gold.jsonl",
+   "phase3_mock_results.jsonl",
+   "phase3_selection_audit.json",
+   "probes_phase3/sympy__sympy-13798.py",
+   "probes_phase3/sympy__sympy-14531.py",
+   "probes_phase3_diag/sympy__sympy-13798.py",
+   "probes_phase3_diag/sympy__sympy-14531.py",
+   "signatures/art_244e7c27b638a272.att.sig",
+   "signatures/art_97ac402dfa11643a.att.sig",
+   "signatures/fix_incomplete_decisive_bad_97ac402dfa11643a.sig",
+   "signatures/fix_incomplete_good_244e7c27b638a272.sig",
+   "signatures/fix_stale_bad_97ac402dfa11643a.sig",
+   "signatures/fix_wrong_patch_good_244e7c27b638a272.sig"
+  ],
+  "append_only_runtime": [],
+  "n_mock_traces": 45,
+  "unclassified": [],
+  "verdict": "PASS all additions accounted for"
+ },
+ "gold": {
+  "rows": 9,
+  "frozen_sha256": "dbebcfc311a2402528ceb745c33fc03613e0f433dfda82a779886591f40e45d7",
+  "redrive_sha256": "dbebcfc311a2402528ceb745c33fc03613e0f433dfda82a779886591f40e45d7",
+  "byte_identical_on_windows_write_text": true,
+  "line_content_identical": true,
+  "expected_frozen_sha256": "dbebcfc311a2402528ceb745c33fc03613e0f433dfda82a779886591f40e45d7"
+ },
+ "zero_cost": {
+  "n_cells": 45,
+  "all_mock_flag_true": true,
+  "total_spend_usd": 0.0,
+  "total_tool_calls": 189,
+  "failed_cells": 0,
+  "n_trace_files": 45,
+  "network_calls_made_by_mock": false,
+  "note": "ScriptedModel serves decisions in-process; the mock path never constructs an HTTP client. A DEEPSEEK_API_KEY is set in the shell environment but is never read in --mock mode, independently evidenced by cost_usd==0.0 on every row."
+ },
+ "fixture_matrix": [
+  {
+   "scenario": "contradictory",
+   "id": "glm5_500:sympy__sympy-18199",
+   "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+   "patch_correct_audit_only": false,
+   "linked": true,
+   "fresh": true,
+   "complete": true,
+   "decisive_failure": true,
+   "sufficient_success": false,
+   "evidence_integrity": true,
+   "executed_failure_count": 1,
+   "executed_check_count": 114,
+   "gold_decision": "REJECT"
+  },
+  {
+   "scenario": "incomplete",
+   "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+   "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+   "patch_correct_audit_only": false,
+   "linked": true,
+   "fresh": true,
+   "complete": false,
+   "decisive_failure": false,
+   "sufficient_success": false,
+   "evidence_integrity": false,
+   "executed_failure_count": 0,
+   "executed_check_count": 1,
+   "gold_decision": "NEED_EVIDENCE"
+  },
+  {
+   "scenario": "incomplete_decisive_bad",
+   "id": "glm5_500:sympy__sympy-13798",
+   "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+   "patch_correct_audit_only": false,
+   "linked": true,
+   "fresh": true,
+   "complete": false,
+   "decisive_failure": true,
+   "sufficient_success": false,
+   "evidence_integrity": false,
+   "executed_failure_count": 1,
+   "executed_check_count": 1,
+   "gold_decision": "REJECT"
+  },
+  {
+   "scenario": "incomplete_good",
+   "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+   "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+   "patch_correct_audit_only": true,
+   "linked": true,
+   "fresh": true,
+   "complete": false,
+   "decisive_failure": false,
+   "sufficient_success": false,
+   "evidence_integrity": false,
+   "executed_failure_count": 0,
+   "executed_check_count": 1,
+   "gold_decision": "NEED_EVIDENCE"
+  },
+  {
+   "scenario": "stale",
+   "id": "glm5_500:sympy__sympy-18211",
+   "served_artifact_id": "fix_stale_333b7506365b3c47",
+   "patch_correct_audit_only": true,
+   "linked": true,
+   "fresh": false,
+   "complete": true,
+   "decisive_failure": false,
+   "sufficient_success": false,
+   "evidence_integrity": false,
+   "executed_failure_count": 0,
+   "executed_check_count": 55,
+   "gold_decision": "NEED_EVIDENCE"
+  },
+  {
+   "scenario": "stale_bad",
+   "id": "glm5_500:sympy__sympy-13798",
+   "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+   "patch_correct_audit_only": false,
+   "linked": true,
+   "fresh": false,
+   "complete": true,
+   "decisive_failure": false,
+   "sufficient_success": false,
+   "evidence_integrity": false,
+   "executed_failure_count": 2,
+   "executed_check_count": 103,
+   "gold_decision": "NEED_EVIDENCE"
+  },
+  {
+   "scenario": "valid",
+   "id": "glm5_500:sympy__sympy-16450",
+   "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+   "patch_correct_audit_only": true,
+   "linked": true,
+   "fresh": true,
+   "complete": true,
+   "decisive_failure": false,
+   "sufficient_success": true,
+   "evidence_integrity": true,
+   "executed_failure_count": 0,
+   "executed_check_count": 39,
+   "gold_decision": "ACCEPT"
+  },
+  {
+   "scenario": "wrong_patch",
+   "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+   "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+   "patch_correct_audit_only": false,
+   "linked": false,
+   "fresh": false,
+   "complete": true,
+   "decisive_failure": false,
+   "sufficient_success": false,
+   "evidence_integrity": false,
+   "executed_failure_count": 0,
+   "executed_check_count": 55,
+   "gold_decision": "NEED_EVIDENCE"
+  },
+  {
+   "scenario": "wrong_patch_good",
+   "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+   "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+   "patch_correct_audit_only": true,
+   "linked": false,
+   "fresh": false,
+   "complete": true,
+   "decisive_failure": false,
+   "sufficient_success": false,
+   "evidence_integrity": false,
+   "executed_failure_count": 0,
+   "executed_check_count": 86,
+   "gold_decision": "NEED_EVIDENCE"
+  }
+ ],
+ "phase2_reference_spend": {
+  "cells": 58,
+  "total_usd": 0.1412,
+  "by_model": {
+   "deepseek-flash": {
+    "cells": 58,
+    "spend": 0.1412
+   }
+  }
+ },
+ "smoke_plan": {
+  "n_fixtures": 9,
+  "conditions": [
+   {
+    "condition": "T2D-T",
+    "tier": "D diagnostic only, static claim",
+    "cells": 9
+   },
+   {
+    "condition": "T3D-Strict",
+    "tier": "D + tools, strict policy",
+    "cells": 9
+   },
+   {
+    "condition": "T3D-Escalate",
+    "tier": "D + tools, escalate policy",
+    "cells": 9
+   },
+   {
+    "condition": "T2A-T",
+    "tier": "A full evidence, static claim",
+    "cells": 9
+   },
+   {
+    "condition": "T3A-T",
+    "tier": "A + tools",
+    "cells": 9
+   }
+  ],
+  "cells_full": 45,
+  "hard_cap_usd": 0.3,
+  "fail_flag": "--max-budget-usd 0.30",
+  "estimate_basis": {
+   "phase2_observed": {
+    "cells": 58,
+    "spend_usd": 0.1412,
+    "usd_per_cell": 0.00243,
+    "model": "deepseek-flash"
+   },
+   "projected_45_cells_usd": 0.1096,
+   "note": "T3 conditions add tool turns vs Phase 2; ceiling remains $0.30 with fail-fast, i.e. >=2x headroom over the per-cell extrapolation"
+  },
+  "gating_split": {
+   "engineering_gates": [
+    "tool permission isolation (strict 403 / escalate 400-200)",
+    "frozen gold hash match",
+    "no hidden-data leakage (noninterference)",
+    "INVALID scored out of parseable denominator",
+    "independent result storage (new files only)",
+    "spend within budget"
+   ],
+   "research_outcomes_reported_not_gated": [
+    "error rate on stale / wrong_patch (wrong REJECT)",
+    "over-abstention on contradictory",
+    "tool-call overuse",
+    "ternary decision appropriateness"
+   ]
+  }
+ }
+}

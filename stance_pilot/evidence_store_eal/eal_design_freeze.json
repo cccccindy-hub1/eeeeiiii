@@ -1,0 +1,272 @@
+{
+  "document": "GroundedReview v2 EAL design freeze (machine-readable)",
+  "eal_protocol_version": "eal-v0-draft1",
+  "created_offline": true,
+  "paid_api_calls": 0,
+  "frozen_artifacts_unchanged": [
+    "evidence_store_w21",
+    "evidence_store_ev1",
+    "evidence_store_cee"
+  ],
+  "layers": [
+    "raw",
+    "structured",
+    "adjudicated"
+  ],
+  "integrity_premise_constant_across_layers": true,
+  "layer_variable_grounding_channels": [
+    "linked",
+    "fresh",
+    "complete",
+    "applicable_failure",
+    "symptom_persists"
+  ],
+  "structured_forbids_verdict_fields": [
+    "linked",
+    "fresh",
+    "complete",
+    "symptom_persists"
+  ],
+  "n_items": 22,
+  "n_unique_instances": 10,
+  "class_distribution": {
+    "ACCEPT": 7,
+    "REJECT": 6,
+    "NEED_EVIDENCE": 9
+  },
+  "layer_prompt_fingerprints": {
+    "adjudicated": "30b31e43f51fd5d1e30e74b67dac67ebd3424e926b5ce7f9deec83b1a310c9dd",
+    "raw": "c09a5edfda0764b63d4e942351a07ed971c990835844aa65acd54be687942b0a",
+    "structured": "07c2aefe0f58936f0b6eba5f14854eaa71de46b4fa4fbd28bddd152996747a01"
+  },
+  "adjudicated_identical_to_frozen_cee_bundle": true,
+  "payload_sha256_by_layer": {
+    "adjudicated": [
+      "00c368fea1fca97296b08f6c12475bd317cddc12be83c420ebfd80d25969cd9e",
+      "051cda761a4cf3d8c01ef64eccc95ee9fa5c6d32f5efbcea3d747fc53bb84f64",
+      "0e40e03331df7e30610d6c4a5e48e5ae316d1884bbacec5dfe2809b13776e49e",
+      "1006b471bbfcf5cdc58014ae6f3dcf9dd277737f270a115838cc182205a29d4d",
+      "1523a28fa7959bab9d8fe3973ff9c526fd0e7d22e2fe397aa98343eb5a212f41",
+      "1813c51b1c16f44038018325ae9b346052e4a0a264c5b4e1ae6808e08d1d1552",
+      "2fa3683e0f462e13dd1cdc2455c9871f5913e29ff91c1238db9e47706125827f",
+      "4c29634557d8abe52acce2f61cc2a44116aa4106fc0dc7d47ae55e6e46f41179",
+      "558f3a45e6adefb17e2941da7cd0cee599549a5964041142ed608b3b17f40a58",
+      "648380a797a1e33653d532f8d6ddd960875805ce9e3a284b09e846bedddb491e",
+      "65b2e4b7b7eeb9acfe60d36cd5a4d39bb2092bc53fccf93187600dff5bb1ecb0",
+      "6e5ab809dc4848af4d08dbfae537be4567e1ef4a7a134ca8de4957a72e84acb2",
+      "8d3dbd9a51b3580c8498578701d4252349b91ae9559e2f9b14eab1e1aef4cc4a",
+      "9e5d1c654a61473b317d84d0215659f5fa5170ee8d779ee0a27c7f77660eb1fb",
+      "a95a1cb888537c93f861cf95cd19023b455bc0c932324845ff69c89fddf075dd",
+      "aa075d72b26ab664f0082ada600893b7344aa0766ac37f71de4c4f6e3231e44c",
+      "c74540c7b0534e6727c8b7203666f0fc7a8ade47fbc598c46f6fe21bada2e4e4",
+      "c90b76f3a188fcf89df3417b33e02d49fb599bff3223ab226bbe3aa8a34f5a33",
+      "dadf45f88aa69f19089143dc821597594e5b57097c06ebc865ec1ab54db06d59",
+      "de9bd6da59650a0268de5bc9bdf4f4c2de2afd3162560ee35534dca45fcbd0f5",
+      "fc972cdcacde194d8be0e1c7e9d87e83093c2cfc33b66a06b6284fb22837febc",
+      "fee8c0d4c3b97e180fc25bc6578b889a653280d1b3a44d5688d097f6201407d0"
+    ],
+    "raw": [
+      "04862d0c9a8f244596ebe71fcf985b3b1c9e6731f9ca08e88c544dc6bec4d9af",
+      "062a20e6db1b73316d4c5b9decbf19e68b85c1dcf39fb68d8a836b85a236f18b",
+      "080a84f1f4fffe4fa0e3cb875354757f598d365b2c0e10acd424dae1c32c8835",
+      "11a85ef56bd36e06760cd53854795441ac2e4c345d8975e48ed5e1c67b5a1daf",
+      "12dff9843b08d0a99232b283a2e6ade9f3071255fd920e1a2075c3f8b8dae722",
+      "27d50a9ee84a3378e9f3eeac5a5b4feed06e52b509e94bca55cc043d90b02989",
+      "375c0a946a7bce313d51369605a3c18bca0b0866179e65cc74742998997adf55",
+      "3d242b4c7c3c32515dd961d911dffebb491fccf763d0089bea49ae2c8214ee34",
+      "4afe78dc545c52aff3e121ff88f147dc45c98413e15225de314fc3ca12a01db4",
+      "509e7d1cc9b842d4c68832ab9560b31de48d6921393aab221e5f1dc99b3345b7",
+      "515a70243d0f3c0a2bce014bb8a7b540b5398895f1573edd2184cd274a7639fd",
+      "51e18b0f1199f7184e66ef01424bf0870f0b92ec28f0c92bfd0605fd7adf3e2b",
+      "8682de4d39694087672116c616ac183037dfe20c7d44e4e2320b4aa120c6492b",
+      "964b61e6f18ad772110827d723528c86591fdb01f57ccc34e6f5fabb6b59763c",
+      "975e73ff262cc49a3e604109a69ae47325a1bf387ecd74bb6c2fe200905e00b3",
+      "981dd78dd43289582b81f5f466eab5d5c7c0c4f4a5cbbc0f3c5513b83b6a447e",
+      "b1f0d87b17b694ad6d46ab1a9a57c3d0ad7f2daca17636534d47c33da690da30",
+      "b4abb8bb733be9f908f8d2f9530a624f9a6d3654b84c4aede19bd33d5a6d5099",
+      "b5d4814ad6c6bc49792e4eb19ae29658e43bf00c55112e4f22aa8762ba149ee9",
+      "d06545b9469ca5e065b7f1bb9142245ca3ead3f5a6c8ba0b2e57a529c51a0fac",
+      "d8a3bf8135f0daa8acbebf590f86b15f3758e100e7b7167823f5a240713c4d1f",
+      "da967148aab1b1c47f2539ff1f00014f4b819b3b771a229227b176d776aed437"
+    ],
+    "structured": [
+      "0a1fa69d7bd0df1f88fbc5bd2e668c0170a077220a4f41cc7358095c3699dc50",
+      "23e931bf0abbf690d6fb9fe500f82d4610cc62aeca207b98a00678427a967e04",
+      "26eb126518984c8c6fd9b4083222b0c681c76441d2b09ea4d2f6647479fd2267",
+      "365a8c6471ad7183423d9b4a8cf7611220a737669ffdd5e6bb2f83feccea750c",
+      "42d1cea43134fea61a7baa91d5895ccedc6a123c70d3499bdce2c02c2f0b38c0",
+      "5dea8e5df329eef167c17d3d4a0bb09b54bdc25800b585e308d236601f2ba488",
+      "67bf346fb7183b25d7255edf53ffb63afbffdb71d812de9cfbd5203a5a1d436e",
+      "7073a706ca6d602dc6d50517c1f2c7105cd63aba6f33b7a8b9d42040a03dee62",
+      "7615f761689b6c48683111373daac9c8f6d3a62da5d8b13c0df05d9d21702994",
+      "84a0789e5746b95f6a45fccab627501e85b1f01956c008312655f87250c52e8c",
+      "8aecbe86d84e2d22ba64cc128f8081976dfceaa63069e0a80ff318dfe8df8aba",
+      "9a78a89ade98c132aa7bef64a2d36342c13b1839ca3ef30ae3e1471cd90b95b4",
+      "9dc82f03a3e7b91f9407dd6db43e0e148900283b1cc71d83d38dd18810601664",
+      "b55c3fb0c68d3d4a167fa1506b8cf3f0c9864aa3ac694ca2bdc042fbc334d869",
+      "bb8c5db05d7d1a128447fcf1fe5ed0de14c6a440da2c2000e9b05742cbe1164e",
+      "cf0dc7ab3c05d068d4799aa14b4ae6feeaf6110b6af1fcf6d5ddfe9b31205ef9",
+      "cf72626c7e9f656100ed919a4a49e0749feefbea5241e2aae183e05f706f2ce0",
+      "d3f4424ae5f24ac97ad3a39f369be4fb18ad0f9f576ec5f713892cff185eb21e",
+      "e06fa44c44ffc585d545d42b6b4538e4e23fde0b50b4a2b0e5163676c3a06141",
+      "e51345bd97c8ad25579605daec2af3c39b886d4a06acfba75d8fdbdbdab9e8ee",
+      "f57d57dbd5008ef80219f6f9157fd6942c9d3940fbd0575096e0382669da2bed",
+      "f8ffab07993acb2b0308fd324130f6a1e02e9df1d828f82e455818be10d298ef"
+    ]
+  },
+  "construct_audit": {
+    "summary": {
+      "n_items": 22,
+      "layers": {
+        "raw": {
+          "n_mechanical_gold_match_from_text": 22,
+          "n_injected_evidence_clean_of_labels_and_scenario": 22,
+          "n_bodies_free_of_pre_adjudicated_verdicts": 22,
+          "construct_reading": "gold recoverable ONLY by parsing record/attestation JSON, comparing hashes/trees/declared sets and reading raw probe exits; no verdict given"
+        },
+        "structured": {
+          "n_mechanical_gold_match_from_text": 22,
+          "n_injected_evidence_clean_of_labels_and_scenario": 22,
+          "n_bodies_free_of_pre_adjudicated_verdicts": 22,
+          "construct_reading": "gold recoverable by executing the side-by-side operand comparisons in tables 1/2/4/7; no verdict given"
+        },
+        "adjudicated": {
+          "n_mechanical_gold_match_from_text": 22,
+          "n_injected_evidence_clean_of_labels_and_scenario": 22,
+          "n_bodies_free_of_pre_adjudicated_verdicts": "n/a (verdicts printed by design)",
+          "construct_reading": "gold recoverable by reading 6 printed booleans and applying the stated rule (Task-20 finding reproduced)"
+        }
+      }
+    }
+  },
+  "selftest_n_checks": 592,
+  "selftest_all_pass": true,
+  "frozen_archive_granularity_limits": {
+    "note": "p2p / baseline per-test maps missing for some frozen fixtures (aggregated summary only); both layers render the sections and disclose the gap. Gold remained determined on all listed items.",
+    "n_items": 12,
+    "items": [
+      {
+        "bundle_id": "cee_017f5443ec813709",
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_13b04ca1faae0894",
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_f0328f55403163cb",
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_d054bcf1e4e8b26c",
+        "p2p_map": true,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_5449e183c637f604",
+        "p2p_map": true,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_76028c65f51defe8",
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_b203936c59e46a77",
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_03df4f19a25d0cf5",
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_58df0b222c11095a",
+        "p2p_map": true,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_0108367f62dfb1c6",
+        "p2p_map": true,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_a6aba2553d04e0f9",
+        "p2p_map": true,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_5cfbc476af83be49",
+        "p2p_map": true,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      }
+    ]
+  },
+  "statistics_preregistration": {
+    "unit_of_independence": "issue",
+    "cluster_bootstrap": {
+      "seed": 7,
+      "n_boot": 10000
+    },
+    "paired_layer_contrasts": [
+      "raw-adjudicated",
+      "structured-adjudicated",
+      "raw-structured"
+    ],
+    "mechanism_metrics": [
+      "decision_appropriateness",
+      "over_abstention",
+      "false_commit_accept",
+      "unsupported_reject",
+      "grounding_to_policy_gap_DAadj_DAraw",
+      "channel_specific_grounding_accuracy",
+      "invalid_ambiguous_api_error"
+    ],
+    "mcnemar": "exact two-sided, descriptive only",
+    "no_pooling_across_protocols": true,
+    "underdetermined_items_excluded_per_layer_and_reported": true
+  },
+  "sample_plan": {
+    "prototype": "22 fixtures / 10 existing issues (pipeline validation only, not power n)",
+    "pilot": "+20 independent issues x2 fixtures",
+    "full": "+40 independent issues x2 fixtures",
+    "mirror_fixtures": "within-issue repeated measures only, never independent n",
+    "new_data_retention_requirement": [
+      "all 4 logs",
+      "f2p/p2p/baseline per-test maps",
+      "probe source",
+      "attestation"
+    ]
+  },
+  "gates": [
+    "G0 offline design (done, awaiting approval)",
+    "G1 runner dry-run, zero paid",
+    "G2 paid P1 existing 22, cap $3",
+    "G3 +20 issues P2, cap $8",
+    "G4 power review then P3, cap $16"
+  ],
+  "retention": {
+    "raw_response_persisted_before_parse": true,
+    "save_reason_missing_evidence_gap_verbatim": true,
+    "tool_trajectories_logged": true,
+    "api_key_never_in_artifacts": true,
+    "client_errors_persisted": true
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "artifact": "groundedreview_ev1_smoke_cell_freeze",
+  "authorisation": "user 2026-10-21: gpt-4.1-mini 2-cell real API smoke, hard cap $0.10, compatibility-only",
+  "model_profile": "openai_gpt41_mini",
+  "model": "gpt-4.1-mini",
+  "hard_spend_cap_usd": 0.1,
+  "selection_rule": {
+    "T2A-T": "lexicographically first T2A-T cell key (no outcome-based selection)",
+    "T3D-Escalate": "max granted escalations, then max tool calls, then cell key; guarantees the full tool loop and the reason gate are exercised on the real API"
+  },
+  "static_cell": {
+    "cell_key": "contradictory:glm5_500:sympy__sympy-18199:T2A-T",
+    "scenario": "contradictory",
+    "id": "glm5_500:sympy__sympy-18199",
+    "instance_id": "sympy__sympy-18199",
+    "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+    "condition": "T2A-T",
+    "baseline_model": "deepseek-flash",
+    "baseline_decision_parsed": "NEED_EVIDENCE",
+    "baseline_tool_calls": 0,
+    "baseline_model_calls": 1,
+    "baseline_escalation_granted": [],
+    "baseline_tokens_in": 1419,
+    "baseline_tokens_out": 183,
+    "note": "frozen deepseek-flash wave2.1 behaviour for context only; NOT a target the smoke model must match"
+  },
+  "active_cell": {
+    "cell_key": "incomplete_decisive_bad:glm5_500:sympy__sympy-13798:T3D-Escalate",
+    "scenario": "incomplete_decisive_bad",
+    "id": "glm5_500:sympy__sympy-13798",
+    "instance_id": "sympy__sympy-13798",
+    "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+    "condition": "T3D-Escalate",
+    "baseline_model": "deepseek-flash",
+    "baseline_decision_parsed": "NEED_EVIDENCE",
+    "baseline_tool_calls": 12,
+    "baseline_model_calls": 9,
+    "baseline_escalation_granted": [
+      "consistency",
+      "log",
+      "log",
+      "log",
+      "consistency"
+    ],
+    "baseline_tokens_in": 72645,
+    "baseline_tokens_out": 2630,
+    "note": "frozen deepseek-flash wave2.1 behaviour for context only; NOT a target the smoke model must match"
+  },
+  "compatibility_checkpoints": [
+    "static: strict JSON-schema final call accepted; decision parses into the frozen ternary keys (ACCEPT/REJECT/NEED_EVIDENCE + reason + evidence_mismatch)",
+    "active: multi-turn native tool calls work; the reason-gated escalation endpoint returns 400 without reason and 200 with reason; final decision JSON parses",
+    "record: model id served, every wire call kwargs, any 400 response_format downgrade chain, tokens, latency, USD",
+    "pass is protocol-level: a parseable decision with the tool loop intact = pass regardless of which decision is chosen"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "repair_id": "groundedreview-wave2.1-wrong-patch-symptom-repair-2026-10-21",
+  "created_at": "2026-10-21T01:53:10+00:00",
+  "repair_kind": "offline symptom-channel correction (no LLM, no model call)",
+  "parent_freeze_id": "groundedreview-wave2-pilot-frozen-2026-10-21",
+  "parent_store": "evidence_store (frozen; never written by this repair)",
+  "repaired_store": "evidence_store_w21",
+  "target_served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+  "target_instance": "sympy__sympy-18211",
+  "target_served_id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+  "target_base_commit": "b4f1aa3540fe68d078d76e78ba59d022dd6df39f",
+  "target_candidate_patch_sha256": "6c46558ecd38832617d527b0da97b2efd8714f106242fa9ad83dafb263d58a2f",
+  "root_cause": "phase2_build.build_wrong_patch copies the SOURCE glm resolved artifact's logs (symptom POST exit 0) under the served qwen fix_ id, while the fixture-row symptom metadata comes from the real served probe (post=False=persists); the active server serves the physical log, exposing contradictory facts.",
+  "real_probe": {
+    "runner_python": "3.11.15",
+    "pre_patch_probe_passed": false,
+    "post_patch_probe_passed": false,
+    "symptom_present_before_patch": true,
+    "symptom_persists_after_patch": true,
+    "candidate_patch_applied": true,
+    "pre_log": "$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: as_set raised: NotImplementedError \nThe inequality, Eq(x*cos(x) - 3*sin(x), 0), cannot be solved using\nsolve_univariate_inequality.\n\n--- stderr ---\n",
+    "post_log": "$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: as_set raised: TypeError unsupported operand type(s) for +: 'ConditionSet' and 'list'\n\n--- stderr ---\n"
+  },
+  "metadata_was_correct": true,
+  "gold_changed_expected": false,
+  "acceptance_channels_preserved": {
+    "f2p_digest": "31ff2afeae274d79b08e4659bbbd18207e9eb9f787cc3e29d1259471b87299a5",
+    "p2p_digest": "31ff2afeae274d79b08e4659bbbd18207e9eb9f787cc3e29d1259471b87299a5",
+    "p2p_baseline_digest": "18b808f94be3b269d63ed12d21ed1500a923b4a44f9ffeae6471a5bbab6a4172",
+    "note": "f2p/p2p stay the genuine SOURCE glm all-green run; that provenance mismatch is exactly what linkage=false detects and must not be altered."
+  },
+  "hashes": {
+    "symptom_log_before_sha256": "c654e137950c944245a3f756c43dc3470607f899a9df23e4c09d1b726ee7a19c",
+    "symptom_log_after_sha256": "140f5cfcf851a34a882c0ef7a54ae31950cbaa10b616f51750212aa3896ae72c",
+    "artifact_record_before_sha256": "61f5835da5a08a35c173fb6cabe5759d71528fcdf7f938695df3945eadba78ee",
+    "artifact_record_after_sha256": "3a77c016f19f72f93db831de6cfbe993e1b64a4d1288b13f03a4174a985882aa",
+    "signature_before_sha256": "7fb67667ec559071b1b628d43db3a5306459f2db14cdb7cd1859be0e611d03a8",
+    "signature_after_sha256": "ab3a3811b8879cacbd5dc8db37b6fa4a82b50fcee8d2979266627e4338c21b7b",
+    "f2p_log_sha256": "31ff2afeae274d79b08e4659bbbd18207e9eb9f787cc3e29d1259471b87299a5",
+    "p2p_log_sha256": "31ff2afeae274d79b08e4659bbbd18207e9eb9f787cc3e29d1259471b87299a5",
+    "p2p_baseline_log_sha256": "18b808f94be3b269d63ed12d21ed1500a923b4a44f9ffeae6471a5bbab6a4172"
+  },
+  "inventory_delta": {
+    "changed": [
+      "artifacts/fix_wrong_patch_05f2955c70897168.json",
+      "logs/fix_wrong_patch_05f2955c70897168.symptom.log",
+      "signatures/fix_wrong_patch_05f2955c70897168.sig"
+    ],
+    "added": [],
+    "removed": [],
+    "total_files": 574
+  },
+  "record_post_repair_signature_authentic": true,
+  "repo_restored_head": "7121bdf1facdd90d05b6994b4c2e5b2865a4638a"
+}

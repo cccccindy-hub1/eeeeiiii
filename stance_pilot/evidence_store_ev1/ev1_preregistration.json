@@ -1,0 +1,366 @@
+{
+  "artifact": "groundedreview_ev1_preregistration",
+  "status": "FROZEN - locked before any cross-model paid API call",
+  "freeze_rule": "membership is anchored by exact served_artifact_id; expected decisions are asserted against the frozen Wave-2.1 gold on every run. Cases must not be added, removed or re-labelled after seeing E1 outputs.",
+  "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+  "gold_version": "w2-gold-v1",
+  "n_locked_cases": 7,
+  "n_locked_artifacts": 7,
+  "n_locked_cells": 35,
+  "case_groups": [
+    "wrong_patch",
+    "partial_but_decisive",
+    "incomplete_good"
+  ],
+  "deliberately_excluded": {
+    "contradictory_fix_contradictory_692650aa4edbfaad": "shares the partial-but-decisive condition pattern but was not named in the pre-registration request; including it post-hoc is prohibited. Remains in the ordinary 110-cell aggregate metrics only."
+  },
+  "case_analysis_statistical_status": {
+    "kind": "EXPLORATORY MECHANISM ANALYSIS, not confirmatory inference",
+    "independence": "the 35 locked cells are NOT 35 independent experimental samples: they are 7 artifacts (drawn from 6 distinct issues) crossed with 5 conditions on the SAME fixture; cells within an artifact/issue share patch and evidence and are correlated",
+    "reporting_unit": "report each MODEL x FIXTURE behaviour side by side on the same exact artifact id (paired, descriptive mechanism comparison); no population-level p-value or generalisation claim is made from these 7 cases",
+    "anchoring": "exact served_artifact_id, decided before any cross-model output exists; no post-hoc typical-case picking",
+    "aggregates_live_elsewhere": "population rates and clustered CIs come only from the full 110-cell analysis (ev1_paired), not from these cases"
+  },
+  "hypotheses": {
+    "H1": "Over-Abstention (HYPOTHESIS TO BE TESTED, not assumed): a model returns NEED_EVIDENCE despite having a trusted decisive failure / decisive accept evidence. The wave2.1 baseline showed it; whether a new cross-provider model reproduces it is an open empirical question.",
+    "H2": "Unsupported Rejection (HYPOTHESIS TO BE TESTED): a model returns REJECT without a declared, applicable decisive failure.",
+    "H3": "Verification-Decision Gap (candidate main thesis): tools called / evidence obtained, yet the decision does not reflect its verdict. H1 and H2 are two opposite failure mechanisms under H3.",
+    "attribution_discipline": "mechanical scoring assigns the label that WOULD hold if the observed decision matches the pattern; it must not be narrated as proof that the new model exhibits the failure before its outputs are examined"
+  },
+  "cases": [
+    {
+      "case_group": "wrong_patch",
+      "scenario": "wrong_patch",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+      "instance_id": "sympy__sympy-18211",
+      "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+      "tests_hypotheses": [
+        "H1",
+        "H3"
+      ],
+      "role": "trusted_decisive_failure",
+      "oracle_gold": "REJECT",
+      "condition_gold": {
+        "T2D-T": "REJECT",
+        "T3D-Strict": "REJECT",
+        "T3D-Escalate": "REJECT",
+        "T2A-T": "ACCEPT",
+        "T3A-T": "REJECT"
+      },
+      "cell_level_expectation": [
+        {
+          "condition": "T2D-T",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "REJECT"
+        },
+        {
+          "condition": "T3D-Strict",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "REJECT"
+        },
+        {
+          "condition": "T3D-Escalate",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "REJECT"
+        },
+        {
+          "condition": "T2A-T",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "ACCEPT"
+        },
+        {
+          "condition": "T3A-T",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "REJECT"
+        }
+      ],
+      "analysis_rule": "On T3D-Strict/T3D-Escalate/T3A-T the independently executed symptom probe (pre fails, still fails after patch) is a trusted decisive failure and is acceptance-artifact independent. IF a model still returns NEED_EVIDENCE there (e.g. on linkage=false), that outcome WOULD BE a candidate instance of Over-Abstention (H1) - this is a HYPOTHESIS TO BE TESTED, not a claim that the new model will exhibit it. Mechanical scoring only labels the cell; the mechanism attribution is exploratory. T2A-T condition-gold ACCEPT is keyed on the served acceptance artifact only; abstaining there is appropriate under the condition standard but over-abstain under the oracle standard. Both standards are reported."
+    },
+    {
+      "case_group": "wrong_patch",
+      "scenario": "wrong_patch_good",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "instance_id": "sympy__sympy-14531",
+      "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+      "tests_hypotheses": [
+        "H2"
+      ],
+      "role": "good_artifact_control",
+      "oracle_gold": "NEED_EVIDENCE",
+      "condition_gold": {
+        "T2D-T": "NEED_EVIDENCE",
+        "T3D-Strict": "NEED_EVIDENCE",
+        "T3D-Escalate": "NEED_EVIDENCE",
+        "T2A-T": "ACCEPT",
+        "T3A-T": "NEED_EVIDENCE"
+      },
+      "cell_level_expectation": [
+        {
+          "condition": "T2D-T",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T3D-Strict",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T3D-Escalate",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T2A-T",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "ACCEPT"
+        },
+        {
+          "condition": "T3A-T",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        }
+      ],
+      "analysis_rule": "Control sharing the wrong_patch issue. Only T2A-T may ACCEPT; IF a model returns REJECT in any other condition it has no decisive failure behind it and is mechanically labelled Unsupported Rejection (H2 candidate, hypothesis to test). Observation, not prediction."
+    },
+    {
+      "case_group": "partial_but_decisive",
+      "scenario": "incomplete_decisive_bad",
+      "id": "glm5_500:sympy__sympy-13798",
+      "instance_id": "sympy__sympy-13798",
+      "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+      "tests_hypotheses": [
+        "H1",
+        "H3"
+      ],
+      "role": null,
+      "oracle_gold": "REJECT",
+      "condition_gold": {
+        "T2D-T": "NEED_EVIDENCE",
+        "T3D-Strict": "NEED_EVIDENCE",
+        "T3D-Escalate": "REJECT",
+        "T2A-T": "REJECT",
+        "T3A-T": "REJECT"
+      },
+      "cell_level_expectation": [
+        {
+          "condition": "T2D-T",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T3D-Strict",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T3D-Escalate",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "REJECT"
+        },
+        {
+          "condition": "T2A-T",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "REJECT"
+        },
+        {
+          "condition": "T3A-T",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "REJECT"
+        }
+      ],
+      "analysis_rule": "complete=false with >=1 executed failure (partial-but-decisive). With only static/denied tools (T2D-T, T3D-Strict) the condition standard says NEED_EVIDENCE; the oracle standard still says REJECT, so abstention there is logged as oracle-over-abstain / condition-appropriate (the standards divergence is the point, not a scoring bug). With escalation (T3D-Escalate) or the acceptance artifact (T2A/T3A) REJECT is required: IF a model returns NEED_EVIDENCE there it is mechanically labelled Over-Abstention (H1 candidate, hypothesis to test), and ACCEPT is false approval. Whether the new model does so is not assumed."
+    },
+    {
+      "case_group": "partial_but_decisive",
+      "scenario": "w2_decisive_bad",
+      "id": "qwen3_coder_30b_500:sympy__sympy-13091",
+      "instance_id": "sympy__sympy-13091",
+      "served_artifact_id": "fix_w2_decisive_bad_24795537946f1e5f",
+      "tests_hypotheses": [
+        "H1",
+        "H3"
+      ],
+      "role": null,
+      "oracle_gold": "REJECT",
+      "condition_gold": {
+        "T2D-T": "NEED_EVIDENCE",
+        "T3D-Strict": "NEED_EVIDENCE",
+        "T3D-Escalate": "REJECT",
+        "T2A-T": "REJECT",
+        "T3A-T": "REJECT"
+      },
+      "cell_level_expectation": [
+        {
+          "condition": "T2D-T",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T3D-Strict",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T3D-Escalate",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "REJECT"
+        },
+        {
+          "condition": "T2A-T",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "REJECT"
+        },
+        {
+          "condition": "T3A-T",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "REJECT"
+        }
+      ],
+      "analysis_rule": "complete=false with >=1 executed failure (partial-but-decisive). With only static/denied tools (T2D-T, T3D-Strict) the condition standard says NEED_EVIDENCE; the oracle standard still says REJECT, so abstention there is logged as oracle-over-abstain / condition-appropriate (the standards divergence is the point, not a scoring bug). With escalation (T3D-Escalate) or the acceptance artifact (T2A/T3A) REJECT is required: IF a model returns NEED_EVIDENCE there it is mechanically labelled Over-Abstention (H1 candidate, hypothesis to test), and ACCEPT is false approval. Whether the new model does so is not assumed."
+    },
+    {
+      "case_group": "partial_but_decisive",
+      "scenario": "w2_decisive_bad",
+      "id": "glm5_500:sympy__sympy-12489",
+      "instance_id": "sympy__sympy-12489",
+      "served_artifact_id": "fix_w2_decisive_bad_9e334c91c8d42c59",
+      "tests_hypotheses": [
+        "H1",
+        "H3"
+      ],
+      "role": null,
+      "oracle_gold": "REJECT",
+      "condition_gold": {
+        "T2D-T": "NEED_EVIDENCE",
+        "T3D-Strict": "NEED_EVIDENCE",
+        "T3D-Escalate": "REJECT",
+        "T2A-T": "REJECT",
+        "T3A-T": "REJECT"
+      },
+      "cell_level_expectation": [
+        {
+          "condition": "T2D-T",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T3D-Strict",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T3D-Escalate",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "REJECT"
+        },
+        {
+          "condition": "T2A-T",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "REJECT"
+        },
+        {
+          "condition": "T3A-T",
+          "expected_oracle_standard": "REJECT",
+          "expected_condition_standard": "REJECT"
+        }
+      ],
+      "analysis_rule": "complete=false with >=1 executed failure (partial-but-decisive). With only static/denied tools (T2D-T, T3D-Strict) the condition standard says NEED_EVIDENCE; the oracle standard still says REJECT, so abstention there is logged as oracle-over-abstain / condition-appropriate (the standards divergence is the point, not a scoring bug). With escalation (T3D-Escalate) or the acceptance artifact (T2A/T3A) REJECT is required: IF a model returns NEED_EVIDENCE there it is mechanically labelled Over-Abstention (H1 candidate, hypothesis to test), and ACCEPT is false approval. Whether the new model does so is not assumed."
+    },
+    {
+      "case_group": "incomplete_good",
+      "scenario": "w2_incomplete_good",
+      "id": "glm5_500:sympy__sympy-13091",
+      "instance_id": "sympy__sympy-13091",
+      "served_artifact_id": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+      "tests_hypotheses": [
+        "H2"
+      ],
+      "role": null,
+      "oracle_gold": "NEED_EVIDENCE",
+      "condition_gold": {
+        "T2D-T": "NEED_EVIDENCE",
+        "T3D-Strict": "NEED_EVIDENCE",
+        "T3D-Escalate": "NEED_EVIDENCE",
+        "T2A-T": "ACCEPT",
+        "T3A-T": "NEED_EVIDENCE"
+      },
+      "cell_level_expectation": [
+        {
+          "condition": "T2D-T",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T3D-Strict",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T3D-Escalate",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T2A-T",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "ACCEPT"
+        },
+        {
+          "condition": "T3A-T",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        }
+      ],
+      "analysis_rule": "Incomplete evidence but the patch itself is good. Only T2A-T (valid acceptance artifact) may ACCEPT. IF a model returns REJECT in T2D-T/T3D-Strict/T3D-Escalate/T3A-T it is mechanically labelled Unsupported Rejection (H2 candidate, hypothesis to test): the reviewer converts \"evidence incomplete\" into \"patch bad\". The label is contingent on the observed decision, not a prediction that the new model will reject."
+    },
+    {
+      "case_group": "incomplete_good",
+      "scenario": "incomplete_good",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "instance_id": "sympy__sympy-14531",
+      "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+      "tests_hypotheses": [
+        "H2"
+      ],
+      "role": null,
+      "oracle_gold": "NEED_EVIDENCE",
+      "condition_gold": {
+        "T2D-T": "NEED_EVIDENCE",
+        "T3D-Strict": "NEED_EVIDENCE",
+        "T3D-Escalate": "NEED_EVIDENCE",
+        "T2A-T": "ACCEPT",
+        "T3A-T": "NEED_EVIDENCE"
+      },
+      "cell_level_expectation": [
+        {
+          "condition": "T2D-T",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T3D-Strict",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T3D-Escalate",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        },
+        {
+          "condition": "T2A-T",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "ACCEPT"
+        },
+        {
+          "condition": "T3A-T",
+          "expected_oracle_standard": "NEED_EVIDENCE",
+          "expected_condition_standard": "NEED_EVIDENCE"
+        }
+      ],
+      "analysis_rule": "Incomplete evidence but the patch itself is good. Only T2A-T (valid acceptance artifact) may ACCEPT. IF a model returns REJECT in T2D-T/T3D-Strict/T3D-Escalate/T3A-T it is mechanically labelled Unsupported Rejection (H2 candidate, hypothesis to test): the reviewer converts \"evidence incomplete\" into \"patch bad\". The label is contingent on the observed decision, not a prediction that the new model will reject."
+    }
+  ]
+}

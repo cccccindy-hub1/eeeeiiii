@@ -1,0 +1,80 @@
+{
+  "report": "CEE live-run COMPATIBILITY STOP (authorisation clauses 5 and 10)",
+  "date": "2026-10-23",
+  "status": "STOPPED before any CEE paid cell; zero of the 44 authorised CEE calls executed; awaiting decision",
+  "hard_cap_usd": 1.00,
+  "summary": "The provider-neutral STRICT json_schema required by the CEE design and by authorisation clause 5 is accepted by OpenAI gpt-4.1-mini but REJECTED (HTTP 400, 'This response_format type is unavailable now') by every current DeepSeek model tested. The refusal is at the response_format TYPE level (a 1-property minimal schema is rejected too), not caused by the CEE schema content. Per clause 5 a downgrade to json_object/plain_text is forbidden without approval, so the run was halted rather than silently changed.",
+  "evidence": [
+    {
+      "probe": "CEE runner first live attempt, deepseek-flash, full CEE strict schema",
+      "result": "400 invalid_request_error: This response_format type is unavailable now (request_id 77a1f0d1-473a-4f88-b9b6-d9920145caf9); runner hard-stopped by design"
+    },
+    {
+      "probe": "deepseek-flash minimal 1-property strict schema",
+      "result": "400 same message (dec3f9d2-2b6d-4064-9745-d12a6c2f5f7e); rules out CEE schema content as cause"
+    },
+    {
+      "probe": "deepseek-chat and deepseek-reasoner (legacy aliases) minimal strict",
+      "result": "both 400 'unavailable now' (6afa5584..., d8123de0...)"
+    },
+    {
+      "probe": "deepseek-v4-flash / deepseek-v4-pro (current lineup) minimal strict",
+      "result": "both 400 'unavailable now' (54ea01cd..., c2016d2d...); json_object succeeds on both"
+    },
+    {
+      "probe": "deepseek-flash no response_format (plain)",
+      "result": "OK served=deepseek-flash (10 in / 5 out)"
+    },
+    {
+      "probe": "deepseek-flash json_object without the word json in prompt",
+      "result": "400 'Prompt must contain the word json ... json_object' (865fe1b2...); CEE prompt DOES contain 'JSON', so json_object would be usable on the prompt side"
+    },
+    {
+      "probe": "openai gpt-4.1-mini with the REAL CEE strict schema cee_review_decision_v1",
+      "result": "OK served=gpt-4.1-mini-2025-04-14 (124 in / 16 out); strict schema accepted"
+    }
+  ],
+  "diagnostic_call_cost_note": "All probes used max_tokens=16 and trivial prompts; 400-rejected requests bill zero completion; successful probes were 2 (flash plain) + 1 (gpt strict 16 tok) + 2 (v4 json_object 16 tok) tokens, a few tenths of a US cent total and NOT counted among the 44 authorised CEE cells. No CEE bundle was ever sent to a model.",
+  "deepseek_lineup_change": {
+    "finding": "Official DeepSeek docs (api-docs.deepseek.com/quick_start/pricing, accessed 2026-10-23): current models are deepseek-v4-flash and deepseek-v4-pro; legacy aliases deepseek-chat/deepseek-reasoner were deprecated 2026-07-24. The E1 Wave-2.1 DeepSeek arm served model id 'deepseek-flash' (110 rows). The live endpoint now maps requests to the current backend (a json_object probe to deepseek-v4-flash returned served='deepseek-flash').",
+    "feature_matrix": "DeepSeek current docs list 'Json Output' as supported but no structured-output json_schema mode; empirical result: only json_object and plain are accepted."
+  },
+  "why_this_is_not_a_schema_bug_we_can_fix": "cee_review_decision_v1 is strict-legal (all 5 properties required, additionalProperties false, strict=true); it is exactly the shape OpenAI accepts. DeepSeek rejects the response_format TYPE itself for every schema, so no edit to our schema can make strict mode work on DeepSeek today.",
+  "options_for_decision": [
+    {
+      "id": "A",
+      "name": "Keep identical STRICT schema on both (original clause 5 / P1 control)",
+      "feasibility": "NOT EXECUTABLE against DeepSeek today (endpoint lacks the capability). Would require waiting for DeepSeek to ship json_schema, or routing DeepSeek through a gateway that emulates strict mode (new dependency, changes the serving stack - not pre-approved).",
+      "scientific_cost": "none if it were available; currently blocks CEE indefinitely"
+    },
+    {
+      "id": "B",
+      "name": "Both providers on json_object (the ONLY common denominator DeepSeek accepts)",
+      "description": "Send {type:json_object} to BOTH models, keep the identical cee_review_decision_v1 JSON CONTRACT, system/user prompt, bundles and the explicit 5-key instruction sentence; the parser already scores INVALID/AMBIGUOUS for any non-conforming output. This preserves 'identical task, identical JSON contract, identical request shape type' while sacrificing server-side schema enforcement on both sides.",
+      "tradeoff": "Re-introduces the exact E1 format difference in reverse: in E1 DS=strict/GPT=json_object; under B both are json_object, so the format mode is at least IDENTICAL across the two CEE arms (a cleaner control than E1), but neither arm gets wire-level schema enforcement. Any malformed JSON is counted, never auto-corrected.",
+      "change_required": "authorise json_object for CEE (a CEE-specific wire-mode amendment); freeze a new CEE protocol/prompt fingerprint version; re-run offline selftest; then execute 44 calls."
+    },
+    {
+      "id": "C",
+      "name": "Asymmetric but documented (GPT strict, DeepSeek json_object)",
+      "description": "Run GPT with strict and DeepSeek with json_object, recording the difference as a known API constraint (mirrors what each vendor can do).",
+      "tradeoff": "VIOLATES clause 4/5 identical-constraint requirement and preserves the format confound the study was designed to remove; NOT recommended; listed for completeness."
+    },
+    {
+      "id": "D",
+      "name": "Run GPT arm only now (22 calls), defer DeepSeek arm",
+      "description": "Execute the 22 gpt-4.1-mini CEE calls that are fully unblocked; hold DeepSeek until json_schema ships or option B is approved.",
+      "tradeoff": "Partial result; cannot compute the paired cross-model contrast which is the entire point of CEE; reported as a one-arm descriptive run only."
+    },
+    {
+      "id": "E",
+      "name": "Hold CEE; no paid run",
+      "description": "Leave the frozen offline design as-is and revisit when DeepSeek supports json_schema; pursue other approved work in the meantime.",
+      "tradeoff": "no new spend; mechanism-isolation question stays open"
+    }
+  ],
+  "recommendation": "B, if the scientific priority is executing the mechanism-isolation experiment now: json_object on BOTH arms keeps the request-shape TYPE identical across providers (the controllable part) and keeps the JSON contract/prompt/bundles byte-identical; wire-level schema strictness is unavailable on DeepSeek regardless, so forcing strict cannot add control there. The design freeze, fingerprint and selftest would be version-bumped under a new CEE revision; existing cee-fixed-v1 artifacts stay untouched. Options A/D/E remain valid if strict wire enforcement is considered indispensable.",
+  "frozen_artifacts_untouched": true,
+  "paid_cee_cells_executed": 0,
+  "git_commit_made": false
+}

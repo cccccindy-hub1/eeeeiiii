@@ -1,0 +1,116 @@
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpy1iC1n\Scripts\python.exe -m pytest sympy/printing/tests/test_pycode.py sympy/printing/tests/test_python.py sympy/printing/tests/test_rcode.py -v --tb=short -p no:cacheprovider  (exit 1, 4s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpy1iC1n\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+collecting ... collected 51 items
+
+sympy/printing/tests/test_pycode.py::test_PythonCodePrinter PASSED       [  1%]
+sympy/printing/tests/test_pycode.py::test_MpmathPrinter PASSED           [  3%]
+sympy/printing/tests/test_pycode.py::test_NumPyPrinter PASSED            [  5%]
+sympy/printing/tests/test_pycode.py::test_SciPyPrinter PASSED            [  7%]
+sympy/printing/tests/test_pycode.py::test_pycode_reserved_words PASSED   [  9%]
+sympy/printing/tests/test_pycode.py::test_printmethod PASSED             [ 11%]
+sympy/printing/tests/test_pycode.py::test_issue_14283 PASSED             [ 13%]
+sympy/printing/tests/test_python.py::test_python_basic PASSED            [ 15%]
+sympy/printing/tests/test_python.py::test_python_keyword_symbol_name_escaping PASSED [ 17%]
+sympy/printing/tests/test_python.py::test_python_keyword_function_name_escaping PASSED [ 19%]
+sympy/printing/tests/test_python.py::test_python_relational PASSED       [ 21%]
+sympy/printing/tests/test_python.py::test_python_functions PASSED        [ 23%]
+sympy/printing/tests/test_python.py::test_python_functions_conjugates FAILED [ 25%]
+sympy/printing/tests/test_python.py::test_python_derivatives PASSED      [ 27%]
+sympy/printing/tests/test_python.py::test_python_integrals PASSED        [ 29%]
+sympy/printing/tests/test_python.py::test_python_matrix PASSED           [ 31%]
+sympy/printing/tests/test_python.py::test_python_limits PASSED           [ 33%]
+sympy/printing/tests/test_python.py::test_settings PASSED                [ 35%]
+sympy/printing/tests/test_rcode.py::test_printmethod PASSED              [ 37%]
+sympy/printing/tests/test_rcode.py::test_rcode_sqrt PASSED               [ 39%]
+sympy/printing/tests/test_rcode.py::test_rcode_Pow PASSED                [ 41%]
+sympy/printing/tests/test_rcode.py::test_rcode_Max PASSED                [ 43%]
+sympy/printing/tests/test_rcode.py::test_rcode_constants_mathh PASSED    [ 45%]
+sympy/printing/tests/test_rcode.py::test_rcode_constants_other PASSED    [ 47%]
+sympy/printing/tests/test_rcode.py::test_rcode_Rational PASSED           [ 49%]
+sympy/printing/tests/test_rcode.py::test_rcode_Integer PASSED            [ 50%]
+sympy/printing/tests/test_rcode.py::test_rcode_functions PASSED          [ 52%]
+sympy/printing/tests/test_rcode.py::test_rcode_inline_function PASSED    [ 54%]
+sympy/printing/tests/test_rcode.py::test_rcode_exceptions PASSED         [ 56%]
+sympy/printing/tests/test_rcode.py::test_rcode_user_functions PASSED     [ 58%]
+sympy/printing/tests/test_rcode.py::test_rcode_boolean PASSED            [ 60%]
+sympy/printing/tests/test_rcode.py::test_rcode_Relational PASSED         [ 62%]
+sympy/printing/tests/test_rcode.py::test_rcode_Piecewise PASSED          [ 64%]
+sympy/printing/tests/test_rcode.py::test_rcode_sinc PASSED               [ 66%]
+sympy/printing/tests/test_rcode.py::test_rcode_Piecewise_deep PASSED     [ 68%]
+sympy/printing/tests/test_rcode.py::test_rcode_ITE PASSED                [ 70%]
+sympy/printing/tests/test_rcode.py::test_rcode_settings PASSED           [ 72%]
+sympy/printing/tests/test_rcode.py::test_rcode_Indexed PASSED            [ 74%]
+sympy/printing/tests/test_rcode.py::test_rcode_Indexed_without_looking_for_contraction PASSED [ 76%]
+sympy/printing/tests/test_rcode.py::test_rcode_loops_matrix_vector PASSED [ 78%]
+sympy/printing/tests/test_rcode.py::test_dummy_loops PASSED              [ 80%]
+sympy/printing/tests/test_rcode.py::test_rcode_loops_add PASSED          [ 82%]
+sympy/printing/tests/test_rcode.py::test_rcode_loops_multiple_contractions PASSED [ 84%]
+sympy/printing/tests/test_rcode.py::test_rcode_loops_addfactor PASSED    [ 86%]
+sympy/printing/tests/test_rcode.py::test_rcode_loops_multiple_terms PASSED [ 88%]
+sympy/printing/tests/test_rcode.py::test_dereference_printing PASSED     [ 90%]
+sympy/printing/tests/test_rcode.py::test_Matrix_printing PASSED          [ 92%]
+sympy/printing/tests/test_rcode.py::test_rcode_sgn PASSED                [ 94%]
+sympy/printing/tests/test_rcode.py::test_rcode_Assignment PASSED         [ 96%]
+sympy/printing/tests/test_rcode.py::test_rcode_For PASSED                [ 98%]
+sympy/printing/tests/test_rcode.py::test_MatrixElement_printing PASSED   [100%]
+
+================================== FAILURES ===================================
+______________________ test_python_functions_conjugates _______________________
+sympy\printing\tests\test_python.py:131: in test_python_functions_conjugates
+    assert python( conjugate(a + b*I) ) == '_     _\na - I*b'
+E   assert "a = Symbol('...*conjugate(b)" == '_     _\na - I*b'
+E     
+E     - _     _
+E     - a - I*b
+E     + a = Symbol('a')
+E     + b = Symbol('b')
+E     + e = conjugate(a) - I*conjugate(b)
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:121: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_python_functions_conjugates
+============================== warnings summary ===============================
+sympy\core\basic.py:3
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping, defaultdict
+
+sympy\core\expr.py:12
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import defaultdict, Iterable
+
+sympy\core\containers.py:271
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    class OrderedSet(collections.MutableSet):
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+sympy\solvers\diophantine.py:3188
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if feasible is 1:  # it's prime and k == 2
+
+sympy\plotting\plot.py:28
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Callable
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+                               DO *NOT* COMMIT!                               
+=========================== short test summary info ===========================
+FAILED sympy/printing/tests/test_python.py::test_python_functions_conjugates - sympy.utilities.pytest.XFail: test_python_functions_conjugates
+================== 1 failed, 50 passed, 8 warnings in 1.01s ===================
+
+--- stderr ---

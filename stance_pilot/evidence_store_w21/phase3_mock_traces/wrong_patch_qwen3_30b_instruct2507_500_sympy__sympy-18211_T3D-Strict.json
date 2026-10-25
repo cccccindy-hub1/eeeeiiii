@@ -1,0 +1,65 @@
+{
+  "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "ed7e5576c446cd1edd90814a",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_05f2955c70897168\", \"base_commit\": \"b4f1aa3540fe68d078d76e78ba59d022dd6df39f\", \"finished_at\": \"2026-10-19T06:10:02+00:00\", \"instance_id\": \"sympy__sympy-18211\", \"log_digests\": {\"symptom\": \"c654e137950c944245a3f756c43dc3470607f899a9df23e4c09d1b726ee7a19c\"}, \"pass_to_pass_baseline\": {\"test_Eq\": \"PASSED\", \"test_Equality_rewrite_as_Add\": \"PASSED\", \"test_Not\": \"PASSED\", \"test_as_poly\": \"PASSED\", \"test_binary_symbols\": \"PASSED\", \"test_bool\": \"PASSED\", \"test_canonical\": \"PASSED\", \"test_complex_compare_not_real\": \"PASSED\", \"test_complex_infinity_inequalities\": \"PASSED\", \"test_complex_pure_imag_not_ordered\": \"PASSED\", \"test_doit\": \"PASSED\", \"test_equals\": \"PASSED\", \"test_evaluate\": \"PASSED\", \"test_imaginary_and_inf_compare_raises_TypeError\": \"PASSED\", \"test_imaginary_compare_raises_TypeError\": \"PASSED\", \"test_improved_canonical\": \"PASSED\", \"test_ineq_avoid_wild_symbol_flip\": \"PASSED\", \"test_inequalities_cant_sympify_other\": \"PASSED\", \"test_inequalities_symbol_name_same\": \"PASSED\", \"test_inequalities_symbol_name_same_complex\": \"PASSED\", \"test_infinite_symbol_inequalities\": \"PASSED\", \"test_issue_10304\": \"PASSED\", \"test_issue_10401\": \"PASSED\", \"test_issue_10633\""
+    },
+    {
+      "turn": 1,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": false, \"linked\": false, \"record_base_commit\": \"b4f1aa3540fe68d078d76e78ba59d022dd6df39f\", \"record_patch_sha256\": \"a67f41aeb66c319bd4b58fb62c1c11a57c21957a383c959b669513948d542ec9\"}"
+    },
+    {
+      "turn": 2,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": \"37e055065fc42ddf8fdde63d0e65b05888b62766\", \"expected_run_tree\": \"814d03031b71c8f086522db00c253fa6f21ae6e5\", \"artifact_started_at\": \"2026-10-19T06:09:45+00:00\", \"attestation_built_at\": \"2026-10-19T08:01:44+00:00\"}"
+    },
+    {
+      "turn": 3,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 54, \"executed\": 54, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 4,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: as_set raised: NotImplementedError \nThe inequality, Eq(x*cos(x) - 3*sin(x), 0), cannot be solved using\nsolve_univariate_inequality.\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: ConditionSet(n, Eq(n*cos(n) - 3*sin(n), 0), Reals)\n\n--- stderr ---\n"
+    },
+    {
+      "turn": 5,
+      "tool": "get_run_log",
+      "args": {
+        "name": "f2p"
+      },
+      "http_status": 403,
+      "result_preview": "[http_status=403] {\"error\": \"acceptance logs are disabled under the strict evidence policy\"}"
+    },
+    {
+      "turn": 6,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"contradicted\", \"reason\": \"the registered positive claim is contradicted by the authorised diagnostic evidence: the issue symptom still reproduces after the patch (reproduction probe fails)\"}"
+    }
+  ],
+  "final_answer": "{\"decision\": \"NEED_EVIDENCE\", \"reason\": \"evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established\", \"evidence_mismatch\": true, \"missing_evidence\": \"linked/fresh applicability\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

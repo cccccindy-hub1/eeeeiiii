@@ -1,0 +1,116 @@
+You are an independent code reviewer. Review the candidate patch as a resolution of the issue and return exactly one of three decisions, based ONLY on evidence you can trust and that actually applies to THIS patch and its current commit tree:
+  "ACCEPT" — the evidence is intact (linked to this patch/commit, fresh for the current tree, and the declared acceptance/regression set was fully executed) AND demonstrates success: the reported issue is resolved and no executed acceptance check fails and no scoped regression is introduced.
+  "REJECT" — you have trustworthy evidence that APPLIES to this patch and current tree and that contains a decisive failure: an applicable acceptance check fails or a scoped regression is introduced. A single credible, applicable failing check is enough to REJECT even if not every declared check was run. But a failure seen in a stale run, in an artifact linked to a different patch, or in an inapplicable log is NOT grounds to reject THIS patch.
+  "NEED_EVIDENCE" — you cannot reach either conclusion: the available evidence does not link to this patch/commit, is not fresh for the current tree, or does not cover the declared set, and no decisive applicable failure has been established. You are explicitly allowed and expected to abstain in this case; set evidence_mismatch=true and use missing_evidence to name the specific gap.
+Asymmetry rule: the bar to REJECT is a credible applicable failure; the bar to ACCEPT is complete, fresh, linked, failure-free success. Invalid evidence is a property of the EVIDENCE, not a verdict that the patch code is wrong — do not REJECT merely because evidence is stale/mismatched/incomplete. Conversely, do not hide behind NEED_EVIDENCE when intact sufficient evidence already lets you decide; abstaining on a decisive applicable failure or on complete success is an error.
+Author statements are unverified claims. Ground truth about mergeability is never given to you.
+
+FIXED-EVIDENCE CONDITION (CEE-FIXED): The evidence below is a COMPLETE, fixed bundle assembled for this review. It contains the signed test run record with the maintainer acceptance/regression outcomes, the issue-reproduction probe outcome, and integrity verdicts that have ALREADY been adjudicated over the signed record and the repository attestation: whether the record is linked to THIS patch/commit, whether it is fresh for the current commit tree, and whether the declared acceptance/regression set was fully executed. In this condition there are NO tools, NO further endpoints and NO escalation: you cannot fetch additional logs, re-run any check, or request more evidence. Make your decision solely from this bundle.
+Apply the same asymmetric standard: REJECT on a single credible, applicable (linked and fresh) failing check, even if coverage is incomplete; ACCEPT only when the bundle establishes linked, fresh, complete, failure-free success; otherwise NEED_EVIDENCE. Do not abstain when the bundle already lets you decide, and do not accept on a bundle that does not establish complete success. A missing/tool-only check that is already answered inside this bundle is NOT a reason to abstain.
+Evidence-gap taxonomy when you answer "NEED_EVIDENCE": stale = the run is not fresh for the current commit tree; linkage_mismatch = the record does not link to THIS patch/commit; coverage_incomplete = the declared set was not fully executed; contradiction = bundle evidence conflicts (e.g. the issue symptom still reproduces or an applicable check fails — note such a contradiction on linked, fresh evidence is decisive grounds to REJECT, not to abstain); unspecified = you cannot name a concrete, bundle-supported gap. Report a gap only when it is directly supported by the fixed bundle; never invent one.
+Respond with a single JSON object containing exactly these keys: {"decision":"ACCEPT|REJECT|NEED_EVIDENCE","reason":"...","evidence_mismatch":false,"missing_evidence":"","evidence_gap":"stale|linkage_mismatch|coverage_incomplete|contradiction|unspecified|"}. Always include every key. Set missing_evidence and evidence_gap to "" unless the decision is NEED_EVIDENCE; for NEED_EVIDENCE choose exactly one non-empty evidence_gap that is directly supported by the bundle.
+
+Your review target is MERGE ACCEPTABILITY of the patch (issue resolved AND no applicable acceptance failure / scoped regression).
+
+FIXED EVIDENCE BUNDLE (protocol cee-fixed-v1).
+
+ISSUE:
+Sum of the elements of an identity matrix is zero
+I think this is a bug.
+
+I created a matrix by M.T * M under an assumption that M is orthogonal.  SymPy successfully recognized that the result is an identity matrix.  I tested its identity-ness by element-wise, queries, and sum of the diagonal elements and received expected results.
+
+However, when I attempt to evaluate the total sum of the elements the result was 0 while 'n' is expected.
+
+```
+from sympy import *
+from sympy import Q as Query
+
+n = Symbol('n', integer=True, positive=True)
+i, j = symbols('i j', integer=True)
+M = MatrixSymbol('M', n, n)
+
+e = None
+with assuming(Query.orthogonal(M)):
+    e = refine((M.T * M).doit())
+
+# Correct: M.T * M is an identity matrix.
+print(e, e[0, 0], e[0, 1], e[1, 0], e[1, 1])
+
+# Correct: The output is True True
+print(ask(Query.diagonal(e)), ask(Query.integer_elements(e)))
+
+# Correct: The sum of the diagonal elements is n
+print(Sum(e[i, i], (i, 0, n-1)).doit())
+
+# So far so good
+# Total sum of the elements is expected to be 'n' but the answer is 0!
+print(Sum(Sum(e[i, j], (i, 0, n-1)), (j, 0, n-1)).doit())
+```
+
+
+PATCH:
+diff --git a/sympy/matrices/expressions/matexpr.py b/sympy/matrices/expressions/matexpr.py
+index b4d759836..1cb0cf4df 100644
+--- a/sympy/matrices/expressions/matexpr.py
++++ b/sympy/matrices/expressions/matexpr.py
+@@ -476,10 +476,8 @@ def conjugate(self):
+         return self
+ 
+     def _entry(self, i, j):
+-        if i == j:
+-            return S.One
+-        else:
+-            return S.Zero
++        from sympy.functions.special.tensor_functions import KroneckerDelta
++        return KroneckerDelta(i, j)
+ 
+     def _eval_determinant(self):
+         return S.One
+diff --git a/sympy/matrices/expressions/tests/test_indexing.py b/sympy/matrices/expressions/tests/test_indexing.py
+index d69ef682d..fbaca6a8b 100644
+--- a/sympy/matrices/expressions/tests/test_indexing.py
++++ b/sympy/matrices/expressions/tests/test_indexing.py
+@@ -1,5 +1,5 @@
+ from sympy import (symbols, MatrixSymbol, MatPow, BlockMatrix,
+-        Identity, ZeroMatrix, ImmutableMatrix, eye, Sum)
++        Identity, ZeroMatrix, ImmutableMatrix, eye, Sum, KroneckerDelta)
+ from sympy.utilities.pytest import raises
+ 
+ k, l, m, n = symbols('k l m n', integer=True)
+@@ -54,6 +54,11 @@ def test_Identity_index():
+     assert I[1, 0] == I[0, 1] == I[2, 1] == 0
+     raises(IndexError, lambda: I[3, 3])
+ 
++    # Test symbolic indexing returns KroneckerDelta
++    I_n = Identity(n)
++    assert I_n[i, j] == KroneckerDelta(i, j)
++    assert I_n[i, i] == 1
++
+ 
+ def test_block_index():
+     I = Identity(3)
+
+
+AUTHOR STATEMENT:
+Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass.
+
+TEST ARTIFACT (ACCEPTANCE tier; full static record; linkage not yet verified):
+  artifact_id: art_b76482e987d4785a
+  runner: pytest/vendored-git  py=3.9.25  host=windows-local
+  base_commit: 479939f8c65c8c2908bbedc959549a257a7c0b0b
+  patch_sha256: aee9174aea71c018d885f7ad3bf3c18d5c7525d8ea740782ab7d44a82a443eb9
+  started_at: 2026-10-20T10:33:02+00:00
+  finished_at: 2026-10-20T10:33:13+00:00
+  FAIL_TO_PASS passed: 1/1
+  scoped PASS_TO_PASS passed: 25/25
+
+ISSUE-REPRODUCTION PROBE (derived from the issue text, not the maintainer test suite; a passing probe means the symptom is GONE):
+  issue symptom present before patch: yes
+  issue symptom reproduces after patch: no
+
+INTEGRITY VERDICTS (already adjudicated over the signed record and the repository attestation):
+  record signature authentic: yes
+  linked to THIS patch and base commit: yes
+  fresh for the current commit tree: yes
+  declared acceptance/regression set fully executed: yes

@@ -1,0 +1,112 @@
+{
+  "artifact": "groundedreview_ev1_symptom_probe_audit",
+  "case": {
+    "instance_id": "sympy__sympy-18211",
+    "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+    "reviewed_record_id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+    "candidate_patch_sha256": "6c46558ecd38832617d527b0da97b2efd8714f106242fa9ad83dafb263d58a2f",
+    "base_commit": "b4f1aa3540fe68d078d76e78ba59d022dd6df39f"
+  },
+  "rule_under_audit": "Trusted decisive failure => REJECT, even when other evidence (the mismatched acceptance artifact) is invalid.",
+  "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+  "probe_source_sha256": "01e25bf654b776853d58ce1f2eeafbf72a1f4856f615f4d27fd0043a77836113",
+  "checks": [
+    {
+      "check": "probe_registered_for_issue",
+      "pass": true,
+      "detail": "probe source is a static, reviewable script keyed by issue id in evidence/probes.py; sha256=01e25bf654b77685"
+    },
+    {
+      "check": "probe_derived_from_issue_text",
+      "pass": true,
+      "detail": "probe encodes the issue-reported API failure (Eq(...).as_set()) and exits non-zero on the reported exception; it is NOT the maintainer FAIL_TO_PASS test_patch"
+    },
+    {
+      "check": "rerun_targets_review_issue",
+      "pass": true,
+      "detail": "rerun record id=qwen3_30b_instruct2507_500:sympy__sympy-18211 instance=sympy__sympy-18211"
+    },
+    {
+      "check": "candidate_patch_applied",
+      "pass": true,
+      "detail": "post probe executed on the candidate-patched tree, not on base"
+    },
+    {
+      "check": "pre_fails_symptom_present",
+      "pass": true,
+      "detail": "baseline exit 1, NotImplementedError: as_set raised on the reported inequality -> symptom genuinely present before patching"
+    },
+    {
+      "check": "post_fails_symptom_persists",
+      "pass": true,
+      "detail": "post exit 1, TypeError (ConditionSet + list): the patch changes the failure mode but does NOT make the reported symptom pass -> directed pair present->present, not present->gone"
+    },
+    {
+      "check": "pre_post_are_same_probe",
+      "pass": true,
+      "detail": "identical probe script run before and after (builder uses one probe_path twice, builder.py:206/230)"
+    },
+    {
+      "check": "runtime_recorded",
+      "pass": true,
+      "detail": "python=3.11.15 documented for reproducibility"
+    },
+    {
+      "check": "patch_sha_recorded",
+      "pass": true,
+      "detail": "candidate patch sha256 recorded, binding the post-probe result to exactly the reviewed patch"
+    },
+    {
+      "check": "oracle_gold_is_reject",
+      "pass": true,
+      "detail": "oracle_basis='issue symptom still reproduces post-patch', decisive_failure=True, decisive_channels=['P']"
+    },
+    {
+      "check": "gold_facts_symptom_persists",
+      "pass": true,
+      "detail": "facts={'complete': True, 'executed_check_count': 55, 'executed_failure_count': 0, 'fresh': False, 'linked': False, 'symptom_polarity': 'persists'}"
+    },
+    {
+      "check": "four_reject_one_accept_split",
+      "pass": true,
+      "detail": "trusted diagnostic channel present in T2D/T3D*/T3A -> REJECT; only T2A renders the mismatched all-green acceptance block -> condition ACCEPT even though the oracle (ground truth) is REJECT"
+    },
+    {
+      "check": "acceptance_artifact_unlinked",
+      "pass": true,
+      "detail": "the served acceptance record fails linkage (different patch); linkage=false is a REAL defect of that channel"
+    },
+    {
+      "check": "channels_orthogonal_by_construction",
+      "pass": true,
+      "detail": "symptom = direct execution of an issue-derived script against the candidate tree (builder); acceptance = a stored record keyed by a served artifact id that can mismatch. strict consistency (server.py:412-439) never reads the hidden acceptance outcomes, so the contradicted verdict is produced with acceptance linkage=false still in force"
+    }
+  ],
+  "checks_passed": "14/14",
+  "code_references": {
+    "probe_execution": "evidence/builder.py:85-97 (run_probe: subprocess, PYTHONPATH=repo, cwd=repo, timeout=300s)",
+    "pre_probe_on_base": "evidence/builder.py:198-206 (probe written and run on clean base_commit checkout)",
+    "candidate_apply": "evidence/builder.py:222-228 (candidate model_patch applied before the post probe)",
+    "post_probe_on_patched_tree": "evidence/builder.py:230 (post probe runs AFTER candidate apply)",
+    "maintainer_test_patch_later": "evidence/builder.py:233-245 (official test_patch applied only AFTER the post symptom probe; symptom verdict never depends on it)",
+    "merge_acceptable_definition": "evidence/builder.py:274 (merge_acceptable = no F2P failure and no P2P regression on the maintainer test suite)",
+    "linkage_check": "evidence/store.py:173-186 (check_linkage: signature + base_commit + patch_sha256 equality)",
+    "attestation": "evidence/store.py:134-162 (signed run-tree/declared-set attestation, captured from git write-tree)",
+    "symptom_polarity_server": "evidence/server.py:71-91 (_symptom_fixed: pre False & post False => symptom still reproduces)",
+    "strict_symptom_only": "evidence/server.py:412-439 (strict tier-D consistency consults ONLY the registered symptom probe; hidden acceptance outcomes are never read)",
+    "session_binds_symptom": "evidence/server.py:335-353 (session binds instance/patch sha and the symptom object; served artifact may be a mismatched id)",
+    "probe_source_registry": "evidence/probes.py:136-137 (probe_source: issue-id keyed hand-written diagnostic scripts)"
+  },
+  "sufficiency_conclusion": {
+    "verdict": "sufficient_within_benchmark_operationalisation",
+    "argument": "1) Origin: the probe is a fixed, reviewable script derived from the issue report (probes.py), not from the candidate or its claimed test results. 2) Execution linkage: run via subprocess on a clean base checkout and again only after the exact reviewed candidate patch (sha recorded) is applied; pre fails with the reported NotImplementedError, post still fails. The same patch sha binds both executions to the review target. 3) Decisiveness for the benchmark decision: the directed pair symptom-present-before / symptom-still-present-after is a direct counterexample to the author positive claim and the server strict policy labels it `contradicted` from this channel alone. Under the frozen three-state rule this is a trusted decisive failure => REJECT independently of the unlinked acceptance artifact."
+  },
+  "scope_limits_must_be_reported_in_paper": [
+    "The probe is a LOCAL, issue-text-derived reproduction script, NOT the maintainer FAIL_TO_PASS/PASS_TO_PASS suite. builder.py applies the official test_patch only afterwards (line 233+), so the symptom verdict is not an acceptance verdict.",
+    "merge_acceptable (builder.py:274) is defined by maintainer F2P and regressed-P2P tests; symptom_persists=true does NOT by itself prove the maintainer suite fails. A patch can silence an ad-hoc probe yet fail tests, or vice versa.",
+    "The post run changes exception type (NotImplementedError -> TypeError): this strengthens \"symptom not fixed\" but the probe is a single assertion surface; local/environment anomalies are possible (mitigated: baseline also run in the same environment, python 3.11.15 recorded, so a pure environment failure would need to produce DIFFERENT errors pre/post).",
+    "One instance (sympy-18211) is decisive in this fixture set; the general claim \"trusted failure => REJECT\" is validated across only a small issue cluster and must not be presented as a general merge-acceptability theorem.",
+    "Independence is structural (separate channel, strict policy never reads acceptance outcomes), but both channels share the same review session and candidate tree; they are independent as EVIDENCE SOURCES, not as physical executions."
+  ],
+  "implication_for_h1_h3": "Because this REJECT-grade failure is available to the reviewer in T3D-Strict/T3D-Escalate/T3A-T, NEED_EVIDENCE there on linkage=false grounds is pre-registered Over-Abstention (H1) and a Verification-Decision Gap (H3): the reviewer let an invalid ORTHOGONAL channel cancel a valid decisive one."
+}

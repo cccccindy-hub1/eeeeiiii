@@ -1,0 +1,212 @@
+{
+  "store": "evidence_store_w21",
+  "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+  "instance": "sympy__sympy-18211",
+  "target_patch_sha256": "6c46558ecd38832617d527b0da97b2efd8714f106242fa9ad83dafb263d58a2f",
+  "base_commit": "b4f1aa3540fe68d078d76e78ba59d022dd6df39f",
+  "assertions_passed": true,
+  "failed": [],
+  "per_condition": {
+    "T2D-T": {
+      "tier": "D",
+      "policy": null,
+      "active": false
+    },
+    "T3D-Strict": {
+      "tier": "D",
+      "policy": "strict",
+      "active": true,
+      "verify": {
+        "authentic_signature": true,
+        "base_commit_match": true,
+        "patch_sha256_match": false,
+        "linked": false,
+        "record_base_commit": "b4f1aa3540fe68d078d76e78ba59d022dd6df39f",
+        "record_patch_sha256": "a67f41aeb66c319bd4b58fb62c1c11a57c21957a383c959b669513948d542ec9"
+      },
+      "fresh": {
+        "authentic_signature": true,
+        "attestation_authentic": true,
+        "base_commit_match": true,
+        "run_tree_match": false,
+        "fresh": false,
+        "record_run_tree": "37e055065fc42ddf8fdde63d0e65b05888b62766",
+        "expected_run_tree": "814d03031b71c8f086522db00c253fa6f21ae6e5",
+        "artifact_started_at": "2026-10-19T06:09:45+00:00",
+        "attestation_built_at": "2026-10-19T08:01:44+00:00"
+      },
+      "coverage": {
+        "authentic_signature": true,
+        "attestation_authentic": true,
+        "fail_to_pass": {
+          "declared": 1,
+          "executed": 1,
+          "missing_ids": [],
+          "undeclared_executed": []
+        },
+        "pass_to_pass_scoped": {
+          "declared": 54,
+          "executed": 54,
+          "missing_count": 0,
+          "missing_ids_sample": []
+        },
+        "complete": true,
+        "note": "coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes"
+      },
+      "symptom_http": 200,
+      "symptom_is_w21_file": true,
+      "strict_f2p_status": 403,
+      "strict_p2p_status": 403,
+      "strict_consistency": {
+        "verdict": "contradicted",
+        "reason": "the registered positive claim is contradicted by the authorised diagnostic evidence: the issue symptom still reproduces after the patch (reproduction probe fails)"
+      }
+    },
+    "T3D-Escalate": {
+      "tier": "D",
+      "policy": "escalate",
+      "active": true,
+      "verify": {
+        "authentic_signature": true,
+        "base_commit_match": true,
+        "patch_sha256_match": false,
+        "linked": false,
+        "record_base_commit": "b4f1aa3540fe68d078d76e78ba59d022dd6df39f",
+        "record_patch_sha256": "a67f41aeb66c319bd4b58fb62c1c11a57c21957a383c959b669513948d542ec9"
+      },
+      "fresh": {
+        "authentic_signature": true,
+        "attestation_authentic": true,
+        "base_commit_match": true,
+        "run_tree_match": false,
+        "fresh": false,
+        "record_run_tree": "37e055065fc42ddf8fdde63d0e65b05888b62766",
+        "expected_run_tree": "814d03031b71c8f086522db00c253fa6f21ae6e5",
+        "artifact_started_at": "2026-10-19T06:09:45+00:00",
+        "attestation_built_at": "2026-10-19T08:01:44+00:00"
+      },
+      "coverage": {
+        "authentic_signature": true,
+        "attestation_authentic": true,
+        "fail_to_pass": {
+          "declared": 1,
+          "executed": 1,
+          "missing_ids": [],
+          "undeclared_executed": []
+        },
+        "pass_to_pass_scoped": {
+          "declared": 54,
+          "executed": 54,
+          "missing_count": 0,
+          "missing_ids_sample": []
+        },
+        "complete": true,
+        "note": "coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes"
+      },
+      "symptom_http": 200,
+      "symptom_is_w21_file": true,
+      "esc_f2p_no_reason": 400,
+      "esc_f2p_with_reason": 200,
+      "esc_banner": true,
+      "esc_header": "1",
+      "esc_con_no_reason": 400,
+      "esc_con_with_reason": 200,
+      "esc_consistency": {
+        "verdict": "consistent",
+        "reason": "the claim is consistent with the normalised verdicts of this artifact",
+        "escalated": true
+      }
+    },
+    "T2A-T": {
+      "tier": "A",
+      "policy": null,
+      "active": false
+    },
+    "T3A-T": {
+      "tier": "A",
+      "policy": null,
+      "active": true,
+      "verify": {
+        "authentic_signature": true,
+        "base_commit_match": true,
+        "patch_sha256_match": false,
+        "linked": false,
+        "record_base_commit": "b4f1aa3540fe68d078d76e78ba59d022dd6df39f",
+        "record_patch_sha256": "a67f41aeb66c319bd4b58fb62c1c11a57c21957a383c959b669513948d542ec9"
+      },
+      "fresh": {
+        "authentic_signature": true,
+        "attestation_authentic": true,
+        "base_commit_match": true,
+        "run_tree_match": false,
+        "fresh": false,
+        "record_run_tree": "37e055065fc42ddf8fdde63d0e65b05888b62766",
+        "expected_run_tree": "814d03031b71c8f086522db00c253fa6f21ae6e5",
+        "artifact_started_at": "2026-10-19T06:09:45+00:00",
+        "attestation_built_at": "2026-10-19T08:01:44+00:00"
+      },
+      "coverage": {
+        "authentic_signature": true,
+        "attestation_authentic": true,
+        "fail_to_pass": {
+          "declared": 1,
+          "executed": 1,
+          "missing_ids": [],
+          "undeclared_executed": []
+        },
+        "pass_to_pass_scoped": {
+          "declared": 54,
+          "executed": 54,
+          "missing_count": 0,
+          "missing_ids_sample": []
+        },
+        "complete": true,
+        "note": "coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes"
+      },
+      "symptom_http": 200,
+      "symptom_is_w21_file": true
+    }
+  },
+  "t2a_independent_audit": {
+    "oracle_gold": "REJECT",
+    "oracle_inputs": {
+      "linked": false,
+      "fresh": false,
+      "complete": true,
+      "acceptance_failure": false,
+      "acceptance_success": true,
+      "symptom_persists": true
+    },
+    "T2A_condition_gold": "ACCEPT",
+    "T2A_inputs": {
+      "channel": "acceptance_presented",
+      "presented_failure_count": 0,
+      "presented_all_green": true
+    },
+    "T2A_basis": "acceptance block presents a complete all-green run as the record of THIS patch -> ACCEPT is supportable from the rendered content (institutional presentation)",
+    "served_record_summary": {
+      "f2p_total": 1,
+      "f2p_passed": 1,
+      "f2p_failed_ids": [],
+      "p2p_total": 54,
+      "p2p_passed": 54,
+      "p2p_regressed_ids": []
+    },
+    "presented_failure_count": 0,
+    "presented_check_count": 55,
+    "tierA_block_renders_symptom": false,
+    "tierA_block_renders_acceptance": true,
+    "T2A_symptom_observable": false,
+    "T2A_linkage_value": null,
+    "T2A_O_status": "presented",
+    "all_condition_golds": {
+      "T2D-T": "REJECT",
+      "T3D-Strict": "REJECT",
+      "T3D-Escalate": "REJECT",
+      "T2A-T": "ACCEPT",
+      "T3A-T": "REJECT"
+    },
+    "claim": "Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass."
+  },
+  "recomputed_gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+}

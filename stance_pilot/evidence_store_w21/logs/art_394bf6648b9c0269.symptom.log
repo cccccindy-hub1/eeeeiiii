@@ -1,0 +1,41 @@
+### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+FAIL: subclass type lost in multiplication, got Permutation
+
+--- stderr ---
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+
+
+### POST candidate patch
+$ python probe.py  (exit 1)
+--- stdout ---
+
+--- stderr ---
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+Traceback (most recent call last):
+  File "C:\Users\guoci\work\eeeeiiii\stance_pilot\evidence_store\probes_wave2\sympy__sympy-12489.py", line 6, in <module>
+    from sympy.combinatorics import Permutation
+  File "C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\combinatorics\__init__.py", line 7, in <module>
+    from sympy.combinatorics.polyhedron import (Polyhedron, tetrahedron, cube,
+  File "C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\combinatorics\polyhedron.py", line 824, in <module>
+    dodecahedron_faces, icosahedron_faces) = _pgroup_calcs()
+  File "C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\combinatorics\polyhedron.py", line 712, in _pgroup_calcs
+    tetrahedron = Polyhedron(
+  File "C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\combinatorics\polyhedron.py", line 392, in __new__
+    obj._pgroup = PermutationGroup((
+  File "C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\combinatorics\perm_groups.py", line 140, in __new__
+    args = list(uniq([_af_new(list(a)) for a in args]))
+  File "C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\combinatorics\perm_groups.py", line 140, in <listcomp>
+    args = list(uniq([_af_new(list(a)) for a in args]))
+TypeError: _af_new() missing 1 required positional argument: 'perm'

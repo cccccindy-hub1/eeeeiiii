@@ -1,0 +1,82 @@
+{
+  "fix_valid_e33eaf7a1b77c576": {
+    "scenario": "valid",
+    "source_artifact_id": "art_e33eaf7a1b77c576"
+  },
+  "fix_contradictory_692650aa4edbfaad": {
+    "scenario": "contradictory",
+    "source_artifact_id": "art_692650aa4edbfaad"
+  },
+  "fix_incomplete_c2007305ca36cd1a": {
+    "scenario": "incomplete",
+    "executed_f2p": [
+      "test_issue_17137"
+    ],
+    "omitted_f2p": [
+      "test__TR56"
+    ],
+    "executed_p2p": []
+  },
+  "fix_stale_333b7506365b3c47": {
+    "scenario": "stale",
+    "canon_tree": "37e055065fc42ddf8fdde63d0e65b05888b62766",
+    "run_tree": "3aa369c0c4ff9c461530a71cd6ff432b981faa0e",
+    "tree_delta": "inert comment appended to README.rst"
+  },
+  "fix_wrong_patch_05f2955c70897168": {
+    "scenario": "wrong_patch",
+    "served_id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+    "source_artifact_id": "art_333b7506365b3c47",
+    "source_id": "glm5_500:sympy__sympy-18211",
+    "source_patch_sha256": "a67f41aeb66c319bd4b58fb62c1c11a57c21957a383c959b669513948d542ec9"
+  },
+  "fix_stale_bad_97ac402dfa11643a": {
+    "scenario": "stale_bad",
+    "canon_tree": "de834347b7d0caa8502d39785475b61093481bc8",
+    "run_tree": "6caa5a62de18dbd712a1d0e9d78992de9daec0a0",
+    "tree_delta": "inert comment appended to README.rst"
+  },
+  "fix_wrong_patch_good_244e7c27b638a272": {
+    "scenario": "wrong_patch_good",
+    "served_id": "qwen3_coder_30b_500:sympy__sympy-14531",
+    "source_artifact_id": "art_3db23e23965f68b1",
+    "source_id": "glm5_500:sympy__sympy-14531",
+    "source_patch_sha256": "235a157f08a9b4bb6d71227feab40c620a8602dd796add4b024d8df2e912b8da"
+  },
+  "fix_incomplete_good_244e7c27b638a272": {
+    "scenario": "incomplete_good",
+    "construction_reason": "replay exact canonical batch of the kept PASSING f2p; omit one PASSING declared f2p and ALL scoped p2p -> complete=false, zero executed failure -> NEED_EVIDENCE",
+    "replayed_batches": [
+      [
+        "sympy/printing/tests/test_pycode.py",
+        "sympy/printing/tests/test_python.py",
+        "sympy/printing/tests/test_rcode.py"
+      ]
+    ],
+    "canonical_run_files_total": 19,
+    "executed_f2p": [
+      "test_python_relational"
+    ],
+    "omitted_f2p": [
+      "test_Rational"
+    ],
+    "executed_p2p": []
+  },
+  "fix_incomplete_decisive_bad_97ac402dfa11643a": {
+    "scenario": "incomplete_decisive_bad",
+    "construction_reason": "replay exact canonical 3-file batch that exhibits the real declared f2p FAILURE; omit every other declared f2p and ALL scoped p2p -> complete=false but an executed applicable failure is decisive -> REJECT",
+    "replayed_batches": [
+      [
+        "sympy/printing/tests/test_lambdarepr.py",
+        "sympy/printing/tests/test_latex.py",
+        "sympy/printing/tests/test_mathematica.py"
+      ]
+    ],
+    "canonical_run_files_total": 18,
+    "executed_f2p": [
+      "test_latex_basic"
+    ],
+    "omitted_f2p": [],
+    "executed_p2p": []
+  }
+}

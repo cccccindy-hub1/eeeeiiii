@@ -1,0 +1,764 @@
+{
+  "artifact": "wave2_offline_acceptance.json",
+  "acceptance_criterion": "AC-W2-11",
+  "spec_ref": "spec.md FR-12; tasks.md Task 10",
+  "official": false,
+  "notes": "Offline-only Wave-2 expansion acceptance summary. Every number is recomputed from the artifact store; phase1/2/3 files are frozen and never re-scored officially.",
+  "item1_issues": {
+    "fixture_scope": {
+      "wave1_fixture_issues_n": 6,
+      "wave1_fixture_issues": [
+        "sympy__sympy-13798",
+        "sympy__sympy-14531",
+        "sympy__sympy-16450",
+        "sympy__sympy-17139",
+        "sympy__sympy-18199",
+        "sympy__sympy-18211"
+      ],
+      "new_wave2_issues_n": 4,
+      "new_wave2_issues": [
+        "sympy__sympy-12419",
+        "sympy__sympy-12481",
+        "sympy__sympy-12489",
+        "sympy__sympy-13091"
+      ],
+      "union_fixture_issues_n": 10,
+      "union_fixture_issues": [
+        "sympy__sympy-12419",
+        "sympy__sympy-12481",
+        "sympy__sympy-12489",
+        "sympy__sympy-13091",
+        "sympy__sympy-13798",
+        "sympy__sympy-14531",
+        "sympy__sympy-16450",
+        "sympy__sympy-17139",
+        "sympy__sympy-18199",
+        "sympy__sympy-18211"
+      ]
+    },
+    "spec_scope_caveat": "spec/tasks text states \"old/new issues 8->12\". Artifact-grounded scope: truth.jsonl covers 8 distinct issues (#13798, #14531, #16450, #16597, #17139, #18199, #18211, #20428); the selection audit lists the 8 wave1 historical issues excluded from Wave-2 (#13798, #14531, #16450, #16597, #17139, #18199, #18211, #20428); the *fixture* corpus actually served across pilot phases covers 6 wave1 issues plus 4 new Wave-2 issues = 10 distinct issues. The 6->10 fixture figure is the operational scope of all condition_gold cells; the 8->12 figure describes the full historical issue universe (8 prior, +4 newly selected).",
+    "historical_universe": {
+      "truth_jsonl_issues_n": 8,
+      "truth_jsonl_issues": [
+        "sympy__sympy-13798",
+        "sympy__sympy-14531",
+        "sympy__sympy-16450",
+        "sympy__sympy-16597",
+        "sympy__sympy-17139",
+        "sympy__sympy-18199",
+        "sympy__sympy-18211",
+        "sympy__sympy-20428"
+      ],
+      "selection_old_excluded_n": 8,
+      "selection_old_excluded": [
+        "sympy__sympy-13798",
+        "sympy__sympy-14531",
+        "sympy__sympy-16450",
+        "sympy__sympy-16597",
+        "sympy__sympy-17139",
+        "sympy__sympy-18199",
+        "sympy__sympy-18211",
+        "sympy__sympy-20428"
+      ],
+      "spec_old_count": 8,
+      "spec_new_count": 12
+    },
+    "selection_rule": "instance_id ascending; first 4 passing every static gate",
+    "selection_gates_n": 7,
+    "selection_gates": [
+      "not in frozen wave1 set",
+      ">=2 distinct generator rows",
+      "base_commit fetchable in vendored git",
+      "maintainer test_patch applies cleanly",
+      "declared FAIL_TO_PASS and PASS_TO_PASS non-empty",
+      "every FAIL_TO_PASS name defined in a test_patch file",
+      ">=2 generators with a model_patch that applies cleanly at base"
+    ],
+    "candidate_pool_rows": 206,
+    "candidate_pool_instances": 75
+  },
+  "item2_patches_probes_fixtures": {
+    "patches": {
+      "model_patch_files_n": 33,
+      "model_patch_issues_n": 12,
+      "model_patch_issues": [
+        "#12419",
+        "#12481",
+        "#12489",
+        "#13091",
+        "#13798",
+        "#14531",
+        "#16450",
+        "#16597",
+        "#17139",
+        "#18199",
+        "#18211",
+        "#20428"
+      ],
+      "maintainer_test_patch_files_n": 12,
+      "test_patch_issues": [
+        "#12419",
+        "#12481",
+        "#12489",
+        "#13091",
+        "#13798",
+        "#14531",
+        "#16450",
+        "#16597",
+        "#17139",
+        "#18199",
+        "#18211",
+        "#20428"
+      ]
+    },
+    "probes": {
+      "probes_wave1_dir_n": 8,
+      "probes_phase2_dir_n": 4,
+      "probes_wave2_dir_n": 4,
+      "probes_wave2_files": [
+        "sympy__sympy-12419.py",
+        "sympy__sympy-12481.py",
+        "sympy__sympy-12489.py",
+        "sympy__sympy-13091.py"
+      ]
+    },
+    "fixtures": {
+      "phase2_fixture_rows_n": 5,
+      "phase3_fixture_rows_n": 4,
+      "wave1_served_gold_rows_n": 9,
+      "wave2_fixture_rows_n": 13,
+      "wave2_served_gold_rows_n": 13,
+      "total_served_gold_rows_n": 22,
+      "served_artifact_ids_n": 22,
+      "distinct_patch_sha256_in_served_gold_n": 16
+    },
+    "wave2_build": {
+      "eligible_candidate_rows_n": 11,
+      "built_wave2_fixtures_n": 13,
+      "built_scenario_counts": {
+        "w2_decisive_bad": 2,
+        "w2_incomplete_good": 1,
+        "w2_stale": 2,
+        "w2_stale_bad": 1,
+        "w2_stale_persists": 1,
+        "w2_valid": 6
+      },
+      "gold_wave2_scenario_counts": {
+        "w2_decisive_bad": 2,
+        "w2_incomplete_good": 1,
+        "w2_stale": 2,
+        "w2_stale_bad": 1,
+        "w2_stale_persists": 1,
+        "w2_valid": 6
+      },
+      "gold_wave1_scenario_counts": {
+        "contradictory": 1,
+        "incomplete": 1,
+        "incomplete_decisive_bad": 1,
+        "incomplete_good": 1,
+        "stale": 1,
+        "stale_bad": 1,
+        "valid": 1,
+        "wrong_patch": 1,
+        "wrong_patch_good": 1
+      },
+      "blocked": []
+    },
+    "wave2_raw_candidate_rows_n": 12
+  },
+  "item3_condition_gold": {
+    "oracle_gold_distribution": {
+      "ACCEPT": 7,
+      "NEED_EVIDENCE": 9,
+      "REJECT": 6
+    },
+    "per_condition": {
+      "T2D-T": {
+        "condition_gold_distribution": {
+          "NEED_EVIDENCE": 20,
+          "REJECT": 2
+        },
+        "agree_with_oracle_n": 11,
+        "diverge_n": 11,
+        "total_n": 22,
+        "oracle_to_condition_transitions": {
+          "ACCEPT->NEED_EVIDENCE": 7,
+          "REJECT->NEED_EVIDENCE": 4
+        }
+      },
+      "T3D-Strict": {
+        "condition_gold_distribution": {
+          "NEED_EVIDENCE": 20,
+          "REJECT": 2
+        },
+        "agree_with_oracle_n": 11,
+        "diverge_n": 11,
+        "total_n": 22,
+        "oracle_to_condition_transitions": {
+          "ACCEPT->NEED_EVIDENCE": 7,
+          "REJECT->NEED_EVIDENCE": 4
+        }
+      },
+      "T3D-Escalate": {
+        "condition_gold_distribution": {
+          "ACCEPT": 7,
+          "NEED_EVIDENCE": 9,
+          "REJECT": 6
+        },
+        "agree_with_oracle_n": 22,
+        "diverge_n": 0,
+        "total_n": 22,
+        "oracle_to_condition_transitions": {}
+      },
+      "T2A-T": {
+        "condition_gold_distribution": {
+          "ACCEPT": 14,
+          "NEED_EVIDENCE": 1,
+          "REJECT": 7
+        },
+        "agree_with_oracle_n": 11,
+        "diverge_n": 11,
+        "total_n": 22,
+        "oracle_to_condition_transitions": {
+          "ACCEPT->NEED_EVIDENCE": 1,
+          "NEED_EVIDENCE->ACCEPT": 7,
+          "NEED_EVIDENCE->REJECT": 2,
+          "REJECT->ACCEPT": 1
+        }
+      },
+      "T3A-T": {
+        "condition_gold_distribution": {
+          "ACCEPT": 7,
+          "NEED_EVIDENCE": 9,
+          "REJECT": 6
+        },
+        "agree_with_oracle_n": 22,
+        "diverge_n": 0,
+        "total_n": 22,
+        "oracle_to_condition_transitions": {}
+      }
+    },
+    "divergences_n": 33,
+    "divergences": [
+      {
+        "condition": "T2D-T",
+        "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+        "scenario": "contradictory",
+        "wave": "wave1",
+        "oracle_gold": "REJECT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "linkage is not adjudicated/available in this condition | freshness is not adjudicated/available in this condition | coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T2D-T",
+        "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+        "scenario": "incomplete_decisive_bad",
+        "wave": "wave1",
+        "oracle_gold": "REJECT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "linkage is not adjudicated/available in this condition | freshness is not adjudicated/available in this condition | coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T2D-T",
+        "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+        "scenario": "valid",
+        "wave": "wave1",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "linkage is not adjudicated/available in this condition | freshness is not adjudicated/available in this condition | coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T2D-T",
+        "served_artifact_id": "fix_w2_decisive_bad_9e334c91c8d42c59",
+        "scenario": "w2_decisive_bad",
+        "wave": "wave2",
+        "oracle_gold": "REJECT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "linkage is not adjudicated/available in this condition | freshness is not adjudicated/available in this condition | coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T2D-T",
+        "served_artifact_id": "fix_w2_decisive_bad_24795537946f1e5f",
+        "scenario": "w2_decisive_bad",
+        "wave": "wave2",
+        "oracle_gold": "REJECT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "linkage is not adjudicated/available in this condition | freshness is not adjudicated/available in this condition | coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T2D-T",
+        "served_artifact_id": "fix_w2_valid_b76482e987d4785a",
+        "scenario": "w2_valid",
+        "wave": "wave2",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "linkage is not adjudicated/available in this condition | freshness is not adjudicated/available in this condition | coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T2D-T",
+        "served_artifact_id": "fix_w2_valid_bc0c972e8d4230d1",
+        "scenario": "w2_valid",
+        "wave": "wave2",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "linkage is not adjudicated/available in this condition | freshness is not adjudicated/available in this condition | coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T2D-T",
+        "served_artifact_id": "fix_w2_valid_0be6fdf9dc8c5195",
+        "scenario": "w2_valid",
+        "wave": "wave2",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "linkage is not adjudicated/available in this condition | freshness is not adjudicated/available in this condition | coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T2D-T",
+        "served_artifact_id": "fix_w2_valid_b1a23b437658386e",
+        "scenario": "w2_valid",
+        "wave": "wave2",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "linkage is not adjudicated/available in this condition | freshness is not adjudicated/available in this condition | coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T2D-T",
+        "served_artifact_id": "fix_w2_valid_bc239ce171d8df10",
+        "scenario": "w2_valid",
+        "wave": "wave2",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "linkage is not adjudicated/available in this condition | freshness is not adjudicated/available in this condition | coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T2D-T",
+        "served_artifact_id": "fix_w2_valid_84b5a326d0aa7143",
+        "scenario": "w2_valid",
+        "wave": "wave2",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "linkage is not adjudicated/available in this condition | freshness is not adjudicated/available in this condition | coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T3D-Strict",
+        "served_artifact_id": "fix_contradictory_692650aa4edbfaad",
+        "scenario": "contradictory",
+        "wave": "wave1",
+        "oracle_gold": "REJECT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T3D-Strict",
+        "served_artifact_id": "fix_incomplete_decisive_bad_97ac402dfa11643a",
+        "scenario": "incomplete_decisive_bad",
+        "wave": "wave1",
+        "oracle_gold": "REJECT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T3D-Strict",
+        "served_artifact_id": "fix_valid_e33eaf7a1b77c576",
+        "scenario": "valid",
+        "wave": "wave1",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T3D-Strict",
+        "served_artifact_id": "fix_w2_decisive_bad_9e334c91c8d42c59",
+        "scenario": "w2_decisive_bad",
+        "wave": "wave2",
+        "oracle_gold": "REJECT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T3D-Strict",
+        "served_artifact_id": "fix_w2_decisive_bad_24795537946f1e5f",
+        "scenario": "w2_decisive_bad",
+        "wave": "wave2",
+        "oracle_gold": "REJECT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "coverage completeness is not established in this condition | acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T3D-Strict",
+        "served_artifact_id": "fix_w2_valid_b76482e987d4785a",
+        "scenario": "w2_valid",
+        "wave": "wave2",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T3D-Strict",
+        "served_artifact_id": "fix_w2_valid_bc0c972e8d4230d1",
+        "scenario": "w2_valid",
+        "wave": "wave2",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T3D-Strict",
+        "served_artifact_id": "fix_w2_valid_0be6fdf9dc8c5195",
+        "scenario": "w2_valid",
+        "wave": "wave2",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T3D-Strict",
+        "served_artifact_id": "fix_w2_valid_b1a23b437658386e",
+        "scenario": "w2_valid",
+        "wave": "wave2",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T3D-Strict",
+        "served_artifact_id": "fix_w2_valid_bc239ce171d8df10",
+        "scenario": "w2_valid",
+        "wave": "wave2",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T3D-Strict",
+        "served_artifact_id": "fix_w2_valid_84b5a326d0aa7143",
+        "scenario": "w2_valid",
+        "wave": "wave2",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "acceptance outcomes are withheld/hard-blocked"
+      },
+      {
+        "condition": "T2A-T",
+        "served_artifact_id": "fix_incomplete_c2007305ca36cd1a",
+        "scenario": "incomplete",
+        "wave": "wave1",
+        "oracle_gold": "NEED_EVIDENCE",
+        "condition_gold": "ACCEPT",
+        "basis": "acceptance block presents a complete all-green run as the record of THIS patch -> ACCEPT is supportable from the rendered content (institutional presentation)"
+      },
+      {
+        "condition": "T2A-T",
+        "served_artifact_id": "fix_incomplete_good_244e7c27b638a272",
+        "scenario": "incomplete_good",
+        "wave": "wave1",
+        "oracle_gold": "NEED_EVIDENCE",
+        "condition_gold": "ACCEPT",
+        "basis": "acceptance block presents a complete all-green run as the record of THIS patch -> ACCEPT is supportable from the rendered content (institutional presentation)"
+      },
+      {
+        "condition": "T2A-T",
+        "served_artifact_id": "fix_stale_333b7506365b3c47",
+        "scenario": "stale",
+        "wave": "wave1",
+        "oracle_gold": "NEED_EVIDENCE",
+        "condition_gold": "ACCEPT",
+        "basis": "acceptance block presents a complete all-green run as the record of THIS patch -> ACCEPT is supportable from the rendered content (institutional presentation)"
+      },
+      {
+        "condition": "T2A-T",
+        "served_artifact_id": "fix_stale_bad_97ac402dfa11643a",
+        "scenario": "stale_bad",
+        "wave": "wave1",
+        "oracle_gold": "NEED_EVIDENCE",
+        "condition_gold": "REJECT",
+        "basis": "acceptance block presents executed failing/regressed check ids -> REJECT is supportable from the rendered record (institutional presentation; linkage/freshness are never adjudicated in this condition)"
+      },
+      {
+        "condition": "T2A-T",
+        "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+        "scenario": "wrong_patch",
+        "wave": "wave1",
+        "oracle_gold": "REJECT",
+        "condition_gold": "ACCEPT",
+        "basis": "acceptance block presents a complete all-green run as the record of THIS patch -> ACCEPT is supportable from the rendered content (institutional presentation)"
+      },
+      {
+        "condition": "T2A-T",
+        "served_artifact_id": "fix_wrong_patch_good_244e7c27b638a272",
+        "scenario": "wrong_patch_good",
+        "wave": "wave1",
+        "oracle_gold": "NEED_EVIDENCE",
+        "condition_gold": "ACCEPT",
+        "basis": "acceptance block presents a complete all-green run as the record of THIS patch -> ACCEPT is supportable from the rendered content (institutional presentation)"
+      },
+      {
+        "condition": "T2A-T",
+        "served_artifact_id": "fix_w2_incomplete_good_0be6fdf9dc8c5195",
+        "scenario": "w2_incomplete_good",
+        "wave": "wave2",
+        "oracle_gold": "NEED_EVIDENCE",
+        "condition_gold": "ACCEPT",
+        "basis": "acceptance block presents a complete all-green run as the record of THIS patch -> ACCEPT is supportable from the rendered content (institutional presentation)"
+      },
+      {
+        "condition": "T2A-T",
+        "served_artifact_id": "fix_w2_stale_b76482e987d4785a",
+        "scenario": "w2_stale",
+        "wave": "wave2",
+        "oracle_gold": "NEED_EVIDENCE",
+        "condition_gold": "ACCEPT",
+        "basis": "acceptance block presents a complete all-green run as the record of THIS patch -> ACCEPT is supportable from the rendered content (institutional presentation)"
+      },
+      {
+        "condition": "T2A-T",
+        "served_artifact_id": "fix_w2_stale_bc0c972e8d4230d1",
+        "scenario": "w2_stale",
+        "wave": "wave2",
+        "oracle_gold": "NEED_EVIDENCE",
+        "condition_gold": "ACCEPT",
+        "basis": "acceptance block presents a complete all-green run as the record of THIS patch -> ACCEPT is supportable from the rendered content (institutional presentation)"
+      },
+      {
+        "condition": "T2A-T",
+        "served_artifact_id": "fix_w2_stale_bad_9e334c91c8d42c59",
+        "scenario": "w2_stale_bad",
+        "wave": "wave2",
+        "oracle_gold": "NEED_EVIDENCE",
+        "condition_gold": "REJECT",
+        "basis": "acceptance block presents executed failing/regressed check ids -> REJECT is supportable from the rendered record (institutional presentation; linkage/freshness are never adjudicated in this condition)"
+      },
+      {
+        "condition": "T2A-T",
+        "served_artifact_id": "fix_w2_valid_0be6fdf9dc8c5195",
+        "scenario": "w2_valid",
+        "wave": "wave2",
+        "oracle_gold": "ACCEPT",
+        "condition_gold": "NEED_EVIDENCE",
+        "basis": "the rendered record reports no failure but does not present a complete executed set; symptom is not rendered; no tool can adjudicate linkage/freshness/coverage"
+      }
+    ]
+  },
+  "item3b_decisive_visibility": {
+    "source": "wave2_decisive_visibility.json",
+    "oracle_reject_fixtures_n": 6,
+    "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+  },
+  "item4_pilot_cells": {
+    "n_served_fixtures": 22,
+    "conditions": [
+      "T2D-T",
+      "T3D-Strict",
+      "T3D-Escalate",
+      "T2A-T",
+      "T3A-T"
+    ],
+    "cells_per_condition": 22,
+    "total_cells": 110,
+    "condition_gold_cell_distribution": {
+      "T2D-T": {
+        "NEED_EVIDENCE": 20,
+        "REJECT": 2
+      },
+      "T3D-Strict": {
+        "NEED_EVIDENCE": 20,
+        "REJECT": 2
+      },
+      "T3D-Escalate": {
+        "ACCEPT": 7,
+        "NEED_EVIDENCE": 9,
+        "REJECT": 6
+      },
+      "T2A-T": {
+        "ACCEPT": 14,
+        "NEED_EVIDENCE": 1,
+        "REJECT": 7
+      },
+      "T3A-T": {
+        "ACCEPT": 7,
+        "NEED_EVIDENCE": 9,
+        "REJECT": 6
+      }
+    },
+    "aggregate_condition_gold_cells": {
+      "ACCEPT": 28,
+      "NEED_EVIDENCE": 59,
+      "REJECT": 23
+    }
+  },
+  "item5_budget": {
+    "smoke_baseline": {
+      "source": "phase3_run_audit_summary.json + phase3_ternary_results.jsonl",
+      "cells": 45,
+      "model": "deepseek-flash",
+      "total_cost_usd": 0.203015,
+      "audit_cumulative_spend_usd": 0.203016,
+      "per_cell_cost_usd": 0.00451144,
+      "total_prompt_tokens": 582560,
+      "total_completion_tokens": 23540,
+      "per_cell_prompt_tokens": 12945.78,
+      "per_cell_completion_tokens": 523.11,
+      "total_tool_calls": 189,
+      "per_cell_tool_calls": 4.2,
+      "total_latency_s": 196.57,
+      "observed_max_tool_turns_values": [
+        8
+      ]
+    },
+    "pilot_estimate": {
+      "planned_cells": 110,
+      "linear_cost_estimate_usd": 0.496259,
+      "hard_budget_cap_usd": 1.0,
+      "under_cap": true,
+      "estimation_method": "linear: Smoke actual USD/cell x 110; Wave-2 cells include more active-forensics conditions and v2 schema, so actuals may differ; cap enforced pre-call, not post-hoc.",
+      "budget_guard": "pre-call conservative upper-bound guard before every dispatch; fail-stop batch abort on next-call bound breach",
+      "max_tool_turns": 12,
+      "max_model_calls_per_cell": 12,
+      "completion_cap_tokens": 8192
+    }
+  },
+  "item6_v1_v2_differences": {
+    "schema": {
+      "v1_decision_enum": [
+        "ACCEPT",
+        "REJECT",
+        "NEED_EVIDENCE"
+      ],
+      "v2_evidence_gap_enum": [
+        "stale",
+        "linkage_mismatch",
+        "coverage_incomplete",
+        "contradiction",
+        "unspecified"
+      ],
+      "v2_extra_fields": [
+        "evidence_gap (NEED_EVIDENCE only)",
+        "missing_evidence",
+        "gap_classification (derived: verified_gap / claimed_but_unverified / decisive_in_hand_but_abstained / unspecified)",
+        "presented_facts version reference",
+        "tool_verdicts snapshot"
+      ]
+    },
+    "prompts": {
+      "v1": "p3-ternary-v1",
+      "v2": "p3-ternary-v2",
+      "v1_frozen": "Smoke 45-cell run used p3-ternary-v1; prompt text/fingerprint untouched in Wave-2",
+      "v2_change": "adds five-enum evidence_gap requirement + explicit rule that an in-hand decisive contradiction/failure forbids NEED_EVIDENCE"
+    },
+    "gold_semantics": {
+      "v1": "single phase3_gold (objective correct merge decision)",
+      "v2": "dual channel: oracle_gold (all credible evidence, O+P) and condition_gold (only evidence accessible under the regime), each row carries visibility_matrix + decisive_failure + decisive_evidence_channels",
+      "gold_version": "w2-gold-v1",
+      "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+      "asymmetric_rule": "decisive_failure -> REJECT; evidence_integrity & sufficient_success -> ACCEPT; otherwise NEED_EVIDENCE"
+    },
+    "metrics": {
+      "v1": "metrics_phase3_ternary*.json remain frozen official single-gold scores",
+      "v2": "metrics_w2 dual-standard: oracle DA and condition DA reported separately; issue-cluster bootstrap seed=7 n_boot=10000",
+      "comparison_rule": "no direct cross-tier overall accuracy comparison; paired differences only on identical Patch x Fixture subsets",
+      "shadow_table": "wave2_shadow_wave1_scores.json (official=false, 45 live v1 cells rescored under dual standard)"
+    }
+  },
+  "item7_integrity": {
+    "frozen_hashes": {
+      "phase3_mock_results.jsonl": {
+        "expected": "a1b1f8630bd9503f7201dcb6ee1f2786b6f694f28e858e92052f85647530850a",
+        "actual": "a1b1f8630bd9503f7201dcb6ee1f2786b6f694f28e858e92052f85647530850a",
+        "match": true
+      },
+      "phase3_ternary_results.jsonl": {
+        "expected": "bcaeb4cb84b8680caf623897cef83720d5dea956c7f15eae0fc531eeb0d120d2",
+        "actual": "bcaeb4cb84b8680caf623897cef83720d5dea956c7f15eae0fc531eeb0d120d2",
+        "match": true
+      },
+      "metrics_phase3_ternary.json": {
+        "expected": "bae306b353951d87a6c5a1a91027cc29e9120749868b2497d41cc57dbec2d1e1",
+        "actual": "bae306b353951d87a6c5a1a91027cc29e9120749868b2497d41cc57dbec2d1e1",
+        "match": true
+      },
+      "metrics_phase3_ternary_mock.json": {
+        "expected": "27d8c39ac50df94012793d0b8e9b975adba53b44e699f891e1efd96ee957866f",
+        "actual": "27d8c39ac50df94012793d0b8e9b975adba53b44e699f891e1efd96ee957866f",
+        "match": true
+      },
+      "phase3_gold.jsonl": {
+        "expected": "dbebcfc311a2402528ceb745c33fc03613e0f433dfda82a779886591f40e45d7",
+        "actual": "dbebcfc311a2402528ceb745c33fc03613e0f433dfda82a779886591f40e45d7",
+        "match": true
+      },
+      "phase2_results.jsonl": {
+        "expected": "f54653cb0e17c1fffae288e12b2a99d93244b13ea4e987504a8c663d68d99de0",
+        "actual": "f54653cb0e17c1fffae288e12b2a99d93244b13ea4e987504a8c663d68d99de0",
+        "match": true
+      },
+      "metrics_phase2.json": {
+        "expected": "f58f083231d083b164482c90cfb08546783b1c65bd947b3161e128972efe8e04",
+        "actual": "f58f083231d083b164482c90cfb08546783b1c65bd947b3161e128972efe8e04",
+        "match": true
+      },
+      "phase2_fixtures.jsonl": {
+        "expected": "2536d4bf54deec491884f3b2708af323b6c1ccb7a6a19535a42c12bcf3b4ff8d",
+        "actual": "2536d4bf54deec491884f3b2708af323b6c1ccb7a6a19535a42c12bcf3b4ff8d",
+        "match": true
+      },
+      "phase3_fixtures.jsonl": {
+        "expected": "3755ba12ee3867398baca2867c57c1fd7b63bebb6f285f4decf0ce553cb984b9",
+        "actual": "3755ba12ee3867398baca2867c57c1fd7b63bebb6f285f4decf0ce553cb984b9",
+        "match": true
+      },
+      "truth.jsonl": {
+        "expected": "6ed8c4a0426b0ca70a7dd3c3e429f05307c91d3d53f7e9819b2b25e3df833718",
+        "actual": "6ed8c4a0426b0ca70a7dd3c3e429f05307c91d3d53f7e9819b2b25e3df833718",
+        "match": true
+      }
+    },
+    "all_frozen_match": true,
+    "freeze_audit": {
+      "file": "wave2_freeze_audit.json",
+      "frozen_file_count": 10,
+      "frozen_files_all_byte_identical": true,
+      "baseline_entries_total": 213,
+      "baseline_entries_byte_identical": 211,
+      "baseline_entries_diverged": [
+        "audit.jsonl",
+        "fixtures_meta.json"
+      ],
+      "divergence_set_matches_known_benign": true,
+      "snapshot_entries_pre": 350,
+      "snapshot_entries_post": 425,
+      "snapshot_entries_unchanged": 349,
+      "snapshot_entries_changed": [
+        "wave2_build_audit.json"
+      ],
+      "snapshot_new_entries_total": 75,
+      "snapshot_new_entries_by_directory": {
+        "artifacts": 13,
+        "logs": 45,
+        "signatures": 13,
+        "(root)": 4
+      },
+      "snapshot_entries_removed": [],
+      "new_namespaced_entries_all_fix_w2": true,
+      "verdict": "PASS: zero frozen Phase-1/2/3 file mutated; baseline divergences limited to the two documented benign entries; snapshot window only adds wave2_/fix_w2_ namespaced files and mutates the build audit; nothing removed."
+    },
+    "selfcheck": {
+      "command": "uv run --python 3.13 -m evidence.selfcheck --store evidence_store",
+      "legacy_checks": 11,
+      "wave2_checks": 11,
+      "exit_code": 0,
+      "wave2_gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01"
+    }
+  },
+  "cross_checks": {
+    "gold_rows_22": true,
+    "gold_sha_matches_constant": true,
+    "cells_110": true,
+    "aggregate_110": true,
+    "frozen_hashes_all_match": true,
+    "w2_fixtures_13": true,
+    "new_issues_4": true,
+    "union_issues_10": true,
+    "budget_under_cap": true
+  },
+  "all_cross_checks_pass": true
+}

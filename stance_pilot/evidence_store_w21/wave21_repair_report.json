@@ -1,0 +1,186 @@
+{
+  "report": "GroundedReview Wave-2.1 wrong_patch offline repair report",
+  "generated_at": "2026-10-21T01:53:10+00:00",
+  "repair_id": "groundedreview-wave2.1-wrong-patch-symptom-repair-2026-10-21",
+  "status": "OFFLINE REPAIR COMPLETE — STOPPED, AWAITING WRITTEN APPROVAL BEFORE ANY PAID RERUN",
+  "model_calls_made": 0,
+  "llm_cost_usd": 0.0,
+  "scope": "offline evidence correction only; Wave-2 frozen data/results left byte-identical",
+  "stores": {
+    "parent_frozen": "evidence_store (freeze_id groundedreview-wave2-pilot-frozen-2026-10-21); NOT written",
+    "repaired": "evidence_store_w21 (freeze_id groundedreview-wave2.1-repaired-2026-10-21)"
+  },
+  "root_cause": "phase2_build.build_wrong_patch copies the SOURCE glm resolved artifact's logs (symptom POST exit 0) under the served qwen fix_ id, while the fixture-row symptom metadata comes from the real served probe (post=False=persists); the active server serves the physical log, exposing contradictory facts.",
+  "target": {
+    "served_artifact_id": "fix_wrong_patch_05f2955c70897168",
+    "instance": "sympy__sympy-18211",
+    "served_id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+    "base_commit": "b4f1aa3540fe68d078d76e78ba59d022dd6df39f",
+    "served_candidate_patch_sha256": "6c46558ecd38832617d527b0da97b2efd8714f106242fa9ad83dafb263d58a2f",
+    "source_of_copied_acceptance_logs": "glm5_500:sympy__sympy-18211 (resolved=True, label B) -> art_333b7506365b3c47"
+  },
+  "real_reexecution": {
+    "runner": "vendored git sympy_src @ base_commit; uv python 3.11.15 + mpmath; PYTHONPATH=repo; exact evidence.builder.run_probe harness",
+    "candidate_patch_applied_cleanly": true,
+    "pre_patch_probe_passed": false,
+    "post_patch_probe_passed": false,
+    "symptom_present_before_patch": true,
+    "symptom_persists_after_patch": true,
+    "pre_log": "$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: as_set raised: NotImplementedError \nThe inequality, Eq(x*cos(x) - 3*sin(x), 0), cannot be solved using\nsolve_univariate_inequality.\n\n--- stderr ---\n",
+    "post_log": "$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: as_set raised: TypeError unsupported operand type(s) for +: 'ConditionSet' and 'list'\n\n--- stderr ---\n",
+    "interpretation": "pre exit 1 NotImplementedError; post exit 1 TypeError (the qwen patch changes the failing path but still fails) -> the issue symptom genuinely PERSISTS. Metadata post_patch_passed=false was CORRECT; the physical log (POST exit 0, copied from the resolved glm source) was WRONG.",
+    "repo_restored_head": "7121bdf1facdd90d05b6994b4c2e5b2865a4638a (git clean)"
+  },
+  "before_after": {
+    "physical_symptom_log_before": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: as_set raised: NotImplementedError \nThe inequality, Eq(x*cos(x) - 3*sin(x), 0), cannot be solved using\nsolve_univariate_inequality.\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: ConditionSet(n, Eq(n*cos(n) - 3*sin(n), 0), Reals)\n\n--- stderr ---\n",
+    "physical_symptom_log_after": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: as_set raised: NotImplementedError \nThe inequality, Eq(x*cos(x) - 3*sin(x), 0), cannot be solved using\nsolve_univariate_inequality.\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: as_set raised: TypeError unsupported operand type(s) for +: 'ConditionSet' and 'list'\n\n--- stderr ---\n",
+    "post_block_before_exit": 0,
+    "post_block_after_exit": 1,
+    "baseline_block_unchanged": true
+  },
+  "hashes": {
+    "symptom_log_before_sha256": "c654e137950c944245a3f756c43dc3470607f899a9df23e4c09d1b726ee7a19c",
+    "symptom_log_after_sha256": "140f5cfcf851a34a882c0ef7a54ae31950cbaa10b616f51750212aa3896ae72c",
+    "artifact_record_before_sha256": "61f5835da5a08a35c173fb6cabe5759d71528fcdf7f938695df3945eadba78ee",
+    "artifact_record_after_sha256": "3a77c016f19f72f93db831de6cfbe993e1b64a4d1288b13f03a4174a985882aa",
+    "signature_before_sha256": "7fb67667ec559071b1b628d43db3a5306459f2db14cdb7cd1859be0e611d03a8",
+    "signature_after_sha256": "ab3a3811b8879cacbd5dc8db37b6fa4a82b50fcee8d2979266627e4338c21b7b",
+    "acceptance_logs_preserved": {
+      "f2p_sha256": "31ff2afeae274d79b08e4659bbbd18207e9eb9f787cc3e29d1259471b87299a5",
+      "p2p_sha256": "31ff2afeae274d79b08e4659bbbd18207e9eb9f787cc3e29d1259471b87299a5",
+      "p2p_baseline_sha256": "18b808f94be3b269d63ed12d21ed1500a923b4a44f9ffeae6471a5bbab6a4172",
+      "rationale": "f2p/p2p stay the genuine SOURCE glm all-green run; that provenance mismatch is exactly what linkage=false detects and must not be altered."
+    },
+    "fixture_row_changed": false,
+    "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+    "gold_sha256_changed": false,
+    "fixture_input_files_unchanged": {
+      "phase2_fixtures.jsonl": true,
+      "phase3_fixtures.jsonl": true,
+      "wave2_fixtures.jsonl": true,
+      "wave2_gold.jsonl": true,
+      "wave2_pilot_raw_rows.jsonl": true,
+      "fixtures_meta.json": true,
+      "wave2_fixtures_meta.json": true,
+      "truth.jsonl": true,
+      "wave2_truth.jsonl": true,
+      "server_secret": true
+    }
+  },
+  "gold_review": {
+    "oracle_gold": "REJECT",
+    "basis": "issue symptom still reproduces post-patch (decisive channel P)",
+    "condition_gold": {
+      "T2D-T": "REJECT",
+      "T3D-Strict": "REJECT",
+      "T3D-Escalate": "REJECT",
+      "T2A-T": "ACCEPT",
+      "T3A-T": "REJECT"
+    },
+    "facts": {
+      "linked": false,
+      "fresh": false,
+      "complete": true,
+      "executed_failure_count": 0,
+      "executed_check_count": 55,
+      "symptom_polarity": "persists"
+    },
+    "served_attestation": "present + HMAC-authentic (canonical run tree for served qwen instance+patch)",
+    "gold_changed": "NO — gold derives from fixture symptom metadata + signed record + attestation, none of which changed; byte-identical re-derivation confirmed.",
+    "what_actually_changes_for_models": "Only the bytes a model can read in ACTIVE conditions via GET log?name=symptom: POST now truthfully exit 1 (persists) instead of exit 0 (gone). Static D/Strict already used the persists metadata; T2A never renders symptom. The expected movement is therefore concentrated in T3D-Escalate (previously NEED on the false gone log) and, if the model reads the symptom log, T3A-T."
+  },
+  "affected_cells": {
+    "count": 5,
+    "why_all_five": "same fixture serves all five conditions; rerun the full paired block, not only Escalate",
+    "cells": [
+      {
+        "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T2A-T",
+        "condition": "T2A-T",
+        "wave2_decision": "NEED_EVIDENCE",
+        "wave2_condition_gold_appropriate": false,
+        "prior_cost_usd": 0.000661,
+        "prior_tokens_in": 1110,
+        "prior_tokens_out": 273,
+        "wall_s": 1.96
+      },
+      {
+        "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T2D-T",
+        "condition": "T2D-T",
+        "wave2_decision": "REJECT",
+        "wave2_condition_gold_appropriate": true,
+        "prior_cost_usd": 0.000497,
+        "prior_tokens_in": 1258,
+        "prior_tokens_out": 100,
+        "wall_s": 1.2
+      },
+      {
+        "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3A-T",
+        "condition": "T3A-T",
+        "wave2_decision": "NEED_EVIDENCE",
+        "wave2_condition_gold_appropriate": false,
+        "prior_cost_usd": 0.004089,
+        "prior_tokens_in": 11674,
+        "prior_tokens_out": 489,
+        "wall_s": 4.09
+      },
+      {
+        "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3D-Escalate",
+        "condition": "T3D-Escalate",
+        "wave2_decision": "NEED_EVIDENCE",
+        "wave2_condition_gold_appropriate": false,
+        "prior_cost_usd": 0.005871,
+        "prior_tokens_in": 16099,
+        "prior_tokens_out": 868,
+        "wall_s": 6.32
+      },
+      {
+        "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3D-Strict",
+        "condition": "T3D-Strict",
+        "wave2_decision": "NEED_EVIDENCE",
+        "wave2_condition_gold_appropriate": false,
+        "prior_cost_usd": 0.002526,
+        "prior_tokens_in": 6304,
+        "prior_tokens_out": 529,
+        "wall_s": 3.67
+      }
+    ],
+    "prior_wave2_cost_usd_total": 0.013644
+  },
+  "other_21_fixtures_unaffected": {
+    "count": 21,
+    "served_files_checked": 114,
+    "all_byte_identical": true,
+    "consistency_22_of_22": true,
+    "note": "All artifact/signature/log files for the other 21 served ids, all three fixture manifests, wave2_gold.jsonl, raw rows, meta, truth and server_secret are byte-identical between the two stores. They are explicitly NOT re-executed."
+  },
+  "validation": {
+    "gold_rederivation": "byte-identical sha256 28cc59d… on evidence_store_w21",
+    "symptom_consistency": "22/22 fixtures metadata-vs-physical-log consistent (0 mismatch) vs 1 mismatch before",
+    "selfcheck": "All legacy Phase-1/2/3 checks and 10/11 wave2 checks pass on w21; w2-frozen-hashes reports ONLY the 3 intentionally repaired wrong_patch paths (the historical build-window gate by design pins the pre-repair bytes).",
+    "noninterference": "w2-noninterference 0 errors; wave1/wave2 namespace isolation intact; parent frozen store untouched.",
+    "store_delta": "exactly 3 changed files (artifact record, symptom log, signature); 0 removed; 5 added w21 report files"
+  },
+  "rerun_cost_estimate": {
+    "model": "deepseek-flash (same as Wave-2), prompt p3-ternary-v2, completion_cap=8192, thinking off",
+    "pricing_per_1m": {
+      "input_usd": 0.3,
+      "output_usd": 1.2
+    },
+    "observed_wave2_5cell_cost_usd": 0.013644,
+    "estimate_1.3x_variance_usd": 0.017737,
+    "single_most_expensive_cell_usd": 0.005871,
+    "budget_ceiling_proposed_usd": 0.05,
+    "note": "5 cells cost ~$0.014 in the frozen run; allow 1.3x run-to-run variance -> ~$0.018. Propose a hard $0.05 ceiling. Requires explicit written approval; not started."
+  },
+  "metrics_recompute_plan": {
+    "combine": "21 unaffected fixtures = their frozen Wave-2 cells (105 cells) + 5 newly rerun wrong_patch cells = 110 cells",
+    "scorer": "evidence.metrics_w2.compute(records, gold, n_boot=10000, v1_gold_path=phase3_gold.jsonl); gold file is byte-identical (sha 28cc59d…), so gold-side comparability is automatic",
+    "bootstrap": "issue-cluster resample, seed=7, n=10000 (evidence.metrics2.cluster_bootstrap); report pre/post deltas and whether headline conclusions move",
+    "labeling": "publish as the repaired data version wave2.1, NOT an independent experiment; retain Wave-2 results as the historical run with the documented fixture defect",
+    "expected_effect": "Escalate wrong_patch cell can become a supported REJECT (removes 1 of the 5 prior Escalate oracle errors); T2A cell unchanged (symptom hidden); static D/Strict/T3A should remain REJECT"
+  },
+  "next_decision_requires_approval": [
+    "Pay to rerun the 5 wrong_patch cells on evidence_store_w21 (~$0.018, ceiling $0.05).",
+    "Then separately decide cross-model external validation (>=1 different provider); protocol frozen, no new conditions/metrics."
+  ]
+}

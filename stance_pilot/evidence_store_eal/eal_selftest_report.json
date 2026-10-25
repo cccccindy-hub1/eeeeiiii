@@ -1,0 +1,3046 @@
+{
+  "document": "EAL offline self-test report",
+  "protocol": "eal-v0-draft1",
+  "n_checks": 592,
+  "all_pass": true,
+  "frozen_archive_granularity_limits": {
+    "note": "p2p / baseline per-test maps missing for some frozen fixtures (aggregated summary only); both layers render the sections and disclose the gap. Gold remained determined on all listed items.",
+    "n_items": 12,
+    "items": [
+      {
+        "bundle_id": "cee_017f5443ec813709",
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_13b04ca1faae0894",
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_f0328f55403163cb",
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_d054bcf1e4e8b26c",
+        "p2p_map": true,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_5449e183c637f604",
+        "p2p_map": true,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_76028c65f51defe8",
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_b203936c59e46a77",
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_03df4f19a25d0cf5",
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_58df0b222c11095a",
+        "p2p_map": true,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_0108367f62dfb1c6",
+        "p2p_map": true,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_a6aba2553d04e0f9",
+        "p2p_map": true,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      },
+      {
+        "bundle_id": "cee_5cfbc476af83be49",
+        "p2p_map": true,
+        "p2p_baseline_map": false,
+        "gold_still_determined": true
+      }
+    ]
+  },
+  "checks": [
+    {
+      "check": "S1 layer bytes deterministic across two builds",
+      "pass": true,
+      "detail": "66 payloads"
+    },
+    {
+      "check": "S1 manifest deterministic",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S1 item rows deterministic",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_8f41672ea242cd7a adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_8f41672ea242cd7a adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_8f41672ea242cd7a raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_8f41672ea242cd7a structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_8f41672ea242cd7a adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_8f41672ea242cd7a raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_8f41672ea242cd7a raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_8f41672ea242cd7a structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_8f41672ea242cd7a structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_8f41672ea242cd7a attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_8f41672ea242cd7a identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_8f41672ea242cd7a fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_8f41672ea242cd7a raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_8f41672ea242cd7a structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_8f41672ea242cd7a structured exposes applicable failure cell",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_8f41672ea242cd7a structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_8f41672ea242cd7a run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_8f41672ea242cd7a raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_8f41672ea242cd7a raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_8f41672ea242cd7a structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_8f41672ea242cd7a layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_8f41672ea242cd7a determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_8f41672ea242cd7a all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': True, 'acceptance_failure': True, 'acceptance_success': False, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_8f41672ea242cd7a symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_8f41672ea242cd7a raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_8f41672ea242cd7a structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_017f5443ec813709 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_017f5443ec813709 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_017f5443ec813709 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_017f5443ec813709 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_017f5443ec813709 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_017f5443ec813709 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_017f5443ec813709 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_017f5443ec813709 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_017f5443ec813709 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_017f5443ec813709 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_017f5443ec813709 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_017f5443ec813709 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_017f5443ec813709 raw discloses missing archived log honestly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_017f5443ec813709 structured still renders join table + summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_017f5443ec813709 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_017f5443ec813709 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_017f5443ec813709 structured exposes absent declared checks",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_017f5443ec813709 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_017f5443ec813709 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_017f5443ec813709 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_017f5443ec813709 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_017f5443ec813709 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_017f5443ec813709 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_017f5443ec813709 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_017f5443ec813709 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': False, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_017f5443ec813709 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_017f5443ec813709 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_017f5443ec813709 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_13b04ca1faae0894 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_13b04ca1faae0894 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_13b04ca1faae0894 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_13b04ca1faae0894 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_13b04ca1faae0894 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_13b04ca1faae0894 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_13b04ca1faae0894 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_13b04ca1faae0894 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_13b04ca1faae0894 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_13b04ca1faae0894 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_13b04ca1faae0894 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_13b04ca1faae0894 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_13b04ca1faae0894 raw discloses missing archived log honestly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_13b04ca1faae0894 structured still renders join table + summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_13b04ca1faae0894 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_13b04ca1faae0894 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_13b04ca1faae0894 structured exposes applicable failure cell",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_13b04ca1faae0894 structured exposes absent declared checks",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_13b04ca1faae0894 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_13b04ca1faae0894 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_13b04ca1faae0894 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_13b04ca1faae0894 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_13b04ca1faae0894 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_13b04ca1faae0894 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_13b04ca1faae0894 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_13b04ca1faae0894 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': False, 'acceptance_failure': True, 'acceptance_success': False, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_13b04ca1faae0894 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_13b04ca1faae0894 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_13b04ca1faae0894 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_f0328f55403163cb adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_f0328f55403163cb adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_f0328f55403163cb raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_f0328f55403163cb structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_f0328f55403163cb adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_f0328f55403163cb raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_f0328f55403163cb raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_f0328f55403163cb structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_f0328f55403163cb structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_f0328f55403163cb attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_f0328f55403163cb identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_f0328f55403163cb fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_f0328f55403163cb raw discloses missing archived log honestly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_f0328f55403163cb structured still renders join table + summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_f0328f55403163cb raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_f0328f55403163cb structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_f0328f55403163cb structured exposes absent declared checks",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_f0328f55403163cb structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_f0328f55403163cb run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_f0328f55403163cb raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_f0328f55403163cb raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_f0328f55403163cb structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_f0328f55403163cb layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_f0328f55403163cb determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_f0328f55403163cb all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': False, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_f0328f55403163cb symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_f0328f55403163cb raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_f0328f55403163cb structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_d054bcf1e4e8b26c adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_d054bcf1e4e8b26c adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_d054bcf1e4e8b26c raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_d054bcf1e4e8b26c structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_d054bcf1e4e8b26c adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_d054bcf1e4e8b26c raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_d054bcf1e4e8b26c raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_d054bcf1e4e8b26c structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_d054bcf1e4e8b26c structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_d054bcf1e4e8b26c attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_d054bcf1e4e8b26c identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_d054bcf1e4e8b26c fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_d054bcf1e4e8b26c raw discloses missing archived log honestly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_d054bcf1e4e8b26c structured still renders join table + summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_d054bcf1e4e8b26c raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_d054bcf1e4e8b26c structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_d054bcf1e4e8b26c structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_d054bcf1e4e8b26c run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_d054bcf1e4e8b26c raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_d054bcf1e4e8b26c raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_d054bcf1e4e8b26c structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_d054bcf1e4e8b26c layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_d054bcf1e4e8b26c determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_d054bcf1e4e8b26c all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': False, 'complete': True, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_d054bcf1e4e8b26c symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_d054bcf1e4e8b26c raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_d054bcf1e4e8b26c structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_5449e183c637f604 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_5449e183c637f604 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5449e183c637f604 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5449e183c637f604 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5449e183c637f604 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5449e183c637f604 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5449e183c637f604 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5449e183c637f604 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5449e183c637f604 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5449e183c637f604 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5449e183c637f604 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5449e183c637f604 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5449e183c637f604 raw discloses missing archived log honestly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5449e183c637f604 structured still renders join table + summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5449e183c637f604 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5449e183c637f604 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5449e183c637f604 structured exposes applicable failure cell",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5449e183c637f604 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5449e183c637f604 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5449e183c637f604 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_5449e183c637f604 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_5449e183c637f604 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_5449e183c637f604 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_5449e183c637f604 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_5449e183c637f604 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': False, 'complete': True, 'acceptance_failure': True, 'acceptance_success': False, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_5449e183c637f604 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_5449e183c637f604 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_5449e183c637f604 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_037b37020e5d9a37 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_037b37020e5d9a37 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_037b37020e5d9a37 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_037b37020e5d9a37 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_037b37020e5d9a37 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_037b37020e5d9a37 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_037b37020e5d9a37 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_037b37020e5d9a37 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_037b37020e5d9a37 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_037b37020e5d9a37 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_037b37020e5d9a37 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_037b37020e5d9a37 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_037b37020e5d9a37 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_037b37020e5d9a37 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_037b37020e5d9a37 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_037b37020e5d9a37 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_037b37020e5d9a37 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_037b37020e5d9a37 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_037b37020e5d9a37 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_037b37020e5d9a37 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_037b37020e5d9a37 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_037b37020e5d9a37 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': True, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_037b37020e5d9a37 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_037b37020e5d9a37 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_037b37020e5d9a37 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_58d93f77f0c49f82 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_58d93f77f0c49f82 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58d93f77f0c49f82 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58d93f77f0c49f82 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58d93f77f0c49f82 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58d93f77f0c49f82 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58d93f77f0c49f82 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58d93f77f0c49f82 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58d93f77f0c49f82 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58d93f77f0c49f82 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58d93f77f0c49f82 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58d93f77f0c49f82 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58d93f77f0c49f82 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58d93f77f0c49f82 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58d93f77f0c49f82 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58d93f77f0c49f82 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58d93f77f0c49f82 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_58d93f77f0c49f82 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_58d93f77f0c49f82 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_58d93f77f0c49f82 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_58d93f77f0c49f82 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_58d93f77f0c49f82 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': False, 'fresh': False, 'complete': True, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': True}"
+    },
+    {
+      "check": "S6 cee_58d93f77f0c49f82 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_58d93f77f0c49f82 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_58d93f77f0c49f82 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_cfc14244c59a8ceb adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_cfc14244c59a8ceb adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_cfc14244c59a8ceb raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_cfc14244c59a8ceb structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_cfc14244c59a8ceb adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_cfc14244c59a8ceb raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_cfc14244c59a8ceb raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_cfc14244c59a8ceb structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_cfc14244c59a8ceb structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_cfc14244c59a8ceb attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_cfc14244c59a8ceb identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_cfc14244c59a8ceb fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_cfc14244c59a8ceb raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_cfc14244c59a8ceb structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_cfc14244c59a8ceb structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_cfc14244c59a8ceb run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_cfc14244c59a8ceb raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_cfc14244c59a8ceb raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_cfc14244c59a8ceb structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_cfc14244c59a8ceb layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_cfc14244c59a8ceb determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_cfc14244c59a8ceb all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': False, 'fresh': False, 'complete': True, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_cfc14244c59a8ceb symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_cfc14244c59a8ceb raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_cfc14244c59a8ceb structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_76028c65f51defe8 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_76028c65f51defe8 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_76028c65f51defe8 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_76028c65f51defe8 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_76028c65f51defe8 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_76028c65f51defe8 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_76028c65f51defe8 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_76028c65f51defe8 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_76028c65f51defe8 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_76028c65f51defe8 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_76028c65f51defe8 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_76028c65f51defe8 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_76028c65f51defe8 raw discloses missing archived log honestly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_76028c65f51defe8 structured still renders join table + summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_76028c65f51defe8 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_76028c65f51defe8 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_76028c65f51defe8 structured exposes applicable failure cell",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_76028c65f51defe8 structured exposes absent declared checks",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_76028c65f51defe8 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_76028c65f51defe8 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_76028c65f51defe8 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_76028c65f51defe8 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_76028c65f51defe8 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_76028c65f51defe8 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_76028c65f51defe8 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_76028c65f51defe8 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': False, 'acceptance_failure': True, 'acceptance_success': False, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_76028c65f51defe8 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_76028c65f51defe8 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_76028c65f51defe8 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_b203936c59e46a77 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_b203936c59e46a77 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_b203936c59e46a77 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_b203936c59e46a77 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_b203936c59e46a77 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_b203936c59e46a77 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_b203936c59e46a77 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_b203936c59e46a77 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_b203936c59e46a77 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_b203936c59e46a77 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_b203936c59e46a77 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_b203936c59e46a77 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_b203936c59e46a77 raw discloses missing archived log honestly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_b203936c59e46a77 structured still renders join table + summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_b203936c59e46a77 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_b203936c59e46a77 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_b203936c59e46a77 structured exposes applicable failure cell",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_b203936c59e46a77 structured exposes absent declared checks",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_b203936c59e46a77 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_b203936c59e46a77 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_b203936c59e46a77 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_b203936c59e46a77 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_b203936c59e46a77 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_b203936c59e46a77 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_b203936c59e46a77 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_b203936c59e46a77 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': False, 'acceptance_failure': True, 'acceptance_success': False, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_b203936c59e46a77 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_b203936c59e46a77 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_b203936c59e46a77 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_03df4f19a25d0cf5 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_03df4f19a25d0cf5 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_03df4f19a25d0cf5 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_03df4f19a25d0cf5 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_03df4f19a25d0cf5 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_03df4f19a25d0cf5 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_03df4f19a25d0cf5 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_03df4f19a25d0cf5 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_03df4f19a25d0cf5 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_03df4f19a25d0cf5 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_03df4f19a25d0cf5 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_03df4f19a25d0cf5 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_03df4f19a25d0cf5 raw discloses missing archived log honestly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_03df4f19a25d0cf5 structured still renders join table + summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_03df4f19a25d0cf5 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_03df4f19a25d0cf5 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_03df4f19a25d0cf5 structured exposes absent declared checks",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_03df4f19a25d0cf5 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_03df4f19a25d0cf5 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_03df4f19a25d0cf5 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_03df4f19a25d0cf5 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_03df4f19a25d0cf5 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_03df4f19a25d0cf5 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_03df4f19a25d0cf5 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_03df4f19a25d0cf5 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': False, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_03df4f19a25d0cf5 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_03df4f19a25d0cf5 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_03df4f19a25d0cf5 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_58df0b222c11095a adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_58df0b222c11095a adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58df0b222c11095a raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58df0b222c11095a structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58df0b222c11095a adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58df0b222c11095a raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58df0b222c11095a raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58df0b222c11095a structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_58df0b222c11095a structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58df0b222c11095a attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58df0b222c11095a identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58df0b222c11095a fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58df0b222c11095a raw discloses missing archived log honestly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58df0b222c11095a structured still renders join table + summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58df0b222c11095a raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58df0b222c11095a structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58df0b222c11095a structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58df0b222c11095a run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_58df0b222c11095a raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_58df0b222c11095a raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_58df0b222c11095a structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_58df0b222c11095a layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_58df0b222c11095a determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_58df0b222c11095a all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': False, 'complete': True, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_58df0b222c11095a symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_58df0b222c11095a raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_58df0b222c11095a structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_0108367f62dfb1c6 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_0108367f62dfb1c6 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_0108367f62dfb1c6 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_0108367f62dfb1c6 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_0108367f62dfb1c6 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_0108367f62dfb1c6 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_0108367f62dfb1c6 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_0108367f62dfb1c6 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_0108367f62dfb1c6 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_0108367f62dfb1c6 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_0108367f62dfb1c6 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_0108367f62dfb1c6 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_0108367f62dfb1c6 raw discloses missing archived log honestly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_0108367f62dfb1c6 structured still renders join table + summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_0108367f62dfb1c6 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_0108367f62dfb1c6 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_0108367f62dfb1c6 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_0108367f62dfb1c6 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_0108367f62dfb1c6 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_0108367f62dfb1c6 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_0108367f62dfb1c6 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_0108367f62dfb1c6 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_0108367f62dfb1c6 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_0108367f62dfb1c6 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': False, 'complete': True, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_0108367f62dfb1c6 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_0108367f62dfb1c6 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_0108367f62dfb1c6 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_a6aba2553d04e0f9 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_a6aba2553d04e0f9 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a6aba2553d04e0f9 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a6aba2553d04e0f9 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a6aba2553d04e0f9 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a6aba2553d04e0f9 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a6aba2553d04e0f9 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a6aba2553d04e0f9 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a6aba2553d04e0f9 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a6aba2553d04e0f9 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a6aba2553d04e0f9 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a6aba2553d04e0f9 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a6aba2553d04e0f9 raw discloses missing archived log honestly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a6aba2553d04e0f9 structured still renders join table + summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a6aba2553d04e0f9 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a6aba2553d04e0f9 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a6aba2553d04e0f9 structured exposes applicable failure cell",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a6aba2553d04e0f9 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a6aba2553d04e0f9 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a6aba2553d04e0f9 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_a6aba2553d04e0f9 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_a6aba2553d04e0f9 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_a6aba2553d04e0f9 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_a6aba2553d04e0f9 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_a6aba2553d04e0f9 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': False, 'complete': True, 'acceptance_failure': True, 'acceptance_success': False, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_a6aba2553d04e0f9 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_a6aba2553d04e0f9 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_a6aba2553d04e0f9 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_5cfbc476af83be49 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_5cfbc476af83be49 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5cfbc476af83be49 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5cfbc476af83be49 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5cfbc476af83be49 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5cfbc476af83be49 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5cfbc476af83be49 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5cfbc476af83be49 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_5cfbc476af83be49 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5cfbc476af83be49 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5cfbc476af83be49 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5cfbc476af83be49 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5cfbc476af83be49 raw discloses missing archived log honestly",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5cfbc476af83be49 structured still renders join table + summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5cfbc476af83be49 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5cfbc476af83be49 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5cfbc476af83be49 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5cfbc476af83be49 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_5cfbc476af83be49 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_5cfbc476af83be49 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_5cfbc476af83be49 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_5cfbc476af83be49 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_5cfbc476af83be49 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_5cfbc476af83be49 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': False, 'complete': True, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': True}"
+    },
+    {
+      "check": "S6 cee_5cfbc476af83be49 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_5cfbc476af83be49 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_5cfbc476af83be49 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_4001af2fc564f50f adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_4001af2fc564f50f adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_4001af2fc564f50f raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_4001af2fc564f50f structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_4001af2fc564f50f adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_4001af2fc564f50f raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_4001af2fc564f50f raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_4001af2fc564f50f structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_4001af2fc564f50f structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_4001af2fc564f50f attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_4001af2fc564f50f identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_4001af2fc564f50f fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_4001af2fc564f50f raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_4001af2fc564f50f structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_4001af2fc564f50f structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_4001af2fc564f50f run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_4001af2fc564f50f raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_4001af2fc564f50f raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_4001af2fc564f50f structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_4001af2fc564f50f layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_4001af2fc564f50f determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_4001af2fc564f50f all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': True, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_4001af2fc564f50f symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_4001af2fc564f50f raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_4001af2fc564f50f structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_9e8c95b6fac59e18 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_9e8c95b6fac59e18 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_9e8c95b6fac59e18 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_9e8c95b6fac59e18 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_9e8c95b6fac59e18 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_9e8c95b6fac59e18 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_9e8c95b6fac59e18 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_9e8c95b6fac59e18 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_9e8c95b6fac59e18 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_9e8c95b6fac59e18 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_9e8c95b6fac59e18 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_9e8c95b6fac59e18 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_9e8c95b6fac59e18 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_9e8c95b6fac59e18 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_9e8c95b6fac59e18 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_9e8c95b6fac59e18 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_9e8c95b6fac59e18 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_9e8c95b6fac59e18 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_9e8c95b6fac59e18 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_9e8c95b6fac59e18 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_9e8c95b6fac59e18 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_9e8c95b6fac59e18 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': True, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_9e8c95b6fac59e18 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_9e8c95b6fac59e18 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_9e8c95b6fac59e18 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_1278b80ecd502546 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_1278b80ecd502546 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_1278b80ecd502546 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_1278b80ecd502546 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_1278b80ecd502546 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_1278b80ecd502546 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_1278b80ecd502546 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_1278b80ecd502546 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_1278b80ecd502546 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_1278b80ecd502546 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_1278b80ecd502546 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_1278b80ecd502546 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_1278b80ecd502546 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_1278b80ecd502546 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_1278b80ecd502546 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_1278b80ecd502546 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_1278b80ecd502546 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_1278b80ecd502546 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_1278b80ecd502546 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_1278b80ecd502546 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_1278b80ecd502546 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_1278b80ecd502546 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': True, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_1278b80ecd502546 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_1278b80ecd502546 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_1278b80ecd502546 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_ad6e89a460dfbe92 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_ad6e89a460dfbe92 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_ad6e89a460dfbe92 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_ad6e89a460dfbe92 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_ad6e89a460dfbe92 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_ad6e89a460dfbe92 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_ad6e89a460dfbe92 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_ad6e89a460dfbe92 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_ad6e89a460dfbe92 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_ad6e89a460dfbe92 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_ad6e89a460dfbe92 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_ad6e89a460dfbe92 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_ad6e89a460dfbe92 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_ad6e89a460dfbe92 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_ad6e89a460dfbe92 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_ad6e89a460dfbe92 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_ad6e89a460dfbe92 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_ad6e89a460dfbe92 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_ad6e89a460dfbe92 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_ad6e89a460dfbe92 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_ad6e89a460dfbe92 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_ad6e89a460dfbe92 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': True, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_ad6e89a460dfbe92 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_ad6e89a460dfbe92 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_ad6e89a460dfbe92 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_a8063781f0851759 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_a8063781f0851759 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a8063781f0851759 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a8063781f0851759 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a8063781f0851759 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a8063781f0851759 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a8063781f0851759 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a8063781f0851759 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a8063781f0851759 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a8063781f0851759 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a8063781f0851759 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a8063781f0851759 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a8063781f0851759 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a8063781f0851759 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a8063781f0851759 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a8063781f0851759 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a8063781f0851759 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_a8063781f0851759 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_a8063781f0851759 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_a8063781f0851759 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_a8063781f0851759 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_a8063781f0851759 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': True, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_a8063781f0851759 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_a8063781f0851759 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_a8063781f0851759 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S3 cee_a81c2a012161efe0 adjudicated bytes == frozen CEE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S3 cee_a81c2a012161efe0 adjudicated head bytes == CEE_HEAD",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a81c2a012161efe0 raw payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a81c2a012161efe0 structured payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a81c2a012161efe0 adjudicated payload belongs to same bundle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a81c2a012161efe0 raw carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a81c2a012161efe0 raw carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a81c2a012161efe0 structured carries target base_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S2 cee_a81c2a012161efe0 structured carries target patch_sha256",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a81c2a012161efe0 attestation channel retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a81c2a012161efe0 identity fields retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a81c2a012161efe0 fail_to_pass per-test map retained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a81c2a012161efe0 raw renders all four log sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a81c2a012161efe0 structured per-check join columns present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a81c2a012161efe0 structured exposes probe exits both phases",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a81c2a012161efe0 run-tree operands visible in structured",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S4 cee_a81c2a012161efe0 raw log sha256 digests printed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S5 cee_a81c2a012161efe0 raw has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S5 cee_a81c2a012161efe0 structured has no adjudicated verdict",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_a81c2a012161efe0 layer gold determined from visible materials",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S6 cee_a81c2a012161efe0 determined layer gold == frozen oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S6 cee_a81c2a012161efe0 all six verdict operands recovered",
+      "pass": true,
+      "detail": "{'linked': True, 'fresh': True, 'complete': True, 'acceptance_failure': False, 'acceptance_success': True, 'symptom_persists': False}"
+    },
+    {
+      "check": "S6 cee_a81c2a012161efe0 symptom polarity derived from logs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "S7 cee_a81c2a012161efe0 raw host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "S7 cee_a81c2a012161efe0 structured host redaction",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "class distribution unchanged ACCEPT/REJECT/NEED = 7/6/9",
+      "pass": true,
+      "detail": "{'REJECT': 6, 'NEED_EVIDENCE': 9, 'ACCEPT': 7}"
+    },
+    {
+      "check": "22 items and 10 unique instances",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "protocol version reported",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

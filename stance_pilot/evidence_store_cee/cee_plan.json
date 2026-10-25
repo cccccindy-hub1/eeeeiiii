@@ -1,0 +1,114 @@
+{
+  "budget_guard": {
+    "mechanism": "pre-call upper bound (conservative input hard bound + max_tokens completion cap), checked before every request; the run aborts BEFORE a call if it would cross the cap, so realised spend can never overshoot",
+    "per_model_cap_usd": 0.5,
+    "runner_gate": "future live runner must refuse by default and require an explicit --allow-paid-run flag plus an approved plan hash; no live runner is created in this offline phase",
+    "total_hard_cap_usd": 1.0
+  },
+  "largest_bundle_bytes_on_disk": 14488,
+  "models": {
+    "deepseek-flash": {
+      "cost_usd_22_calls": {
+        "empirical_envelope": 0.0535,
+        "hard_envelope_pre_call_guard": 0.14,
+        "point_estimate": 0.0191
+      },
+      "e1_t2a_observed": {
+        "in_max": 3307,
+        "in_mean": 1783.9,
+        "n": 22,
+        "out_max": 284,
+        "out_mean": 216.8
+      },
+      "hard_cap_per_model_usd": 0.5,
+      "input_tokens_per_call": {
+        "empirical_bound_max": 4007,
+        "hard_bound_chars_over_3": 4830,
+        "point_estimate_mean": 2033.9
+      },
+      "n_calls": 22,
+      "output_tokens_per_call": {
+        "api_hard_cap_max_tokens": 4096,
+        "empirical_planning": 1024,
+        "point_estimate_mean": 216.8
+      },
+      "per_call_pre_call_guard_upper_bound_usd": 0.006364,
+      "pricing_source": "frozen phase3_run DEFAULT_PROFILES",
+      "pricing_usd_per_1m": {
+        "in": 0.3,
+        "out": 1.2
+      }
+    },
+    "gpt-4.1-mini": {
+      "cost_usd_22_calls": {
+        "empirical_envelope": 0.0706,
+        "hard_envelope_pre_call_guard": 0.1867,
+        "point_estimate": 0.0215
+      },
+      "e1_t2a_observed": {
+        "in_max": 3223,
+        "in_mean": 1725.0,
+        "n": 22,
+        "out_max": 158,
+        "out_mean": 117.5
+      },
+      "hard_cap_per_model_usd": 0.5,
+      "input_tokens_per_call": {
+        "empirical_bound_max": 3923,
+        "hard_bound_chars_over_3": 4830,
+        "point_estimate_mean": 1975.0
+      },
+      "n_calls": 22,
+      "output_tokens_per_call": {
+        "api_hard_cap_max_tokens": 4096,
+        "empirical_planning": 1024,
+        "point_estimate_mean": 117.5
+      },
+      "per_call_pre_call_guard_upper_bound_usd": 0.008486,
+      "pricing_source": "frozen ev1_model_profiles.json openai_gpt41_mini",
+      "pricing_usd_per_1m": {
+        "in": 0.4,
+        "out": 1.6
+      }
+    }
+  },
+  "plan_version": "cee-plan-v1",
+  "protocol_version": "cee-fixed-v1",
+  "reporting_tables": [
+    "table_1_overall_da_by_model_with_cluster_ci",
+    "table_2_da_stratified_by_evidence_class_7_6_9",
+    "table_3_error_confusion_false_commit_accept_over_abstain_unsupported_reject_invalid",
+    "table_4_paired_delta_and_mcnemar",
+    "table_5_ceE_vs_e1_mechanism_contrast_no_pooled_scores"
+  ],
+  "request_contract": {
+    "max_tokens": 4096,
+    "response_format": "identical cee_review_decision_v1 strict json_schema for both providers",
+    "temperature": 0,
+    "tools": "none"
+  },
+  "sample": {
+    "fixtures": 22,
+    "models": 2,
+    "retries": "none on HTTP 200; INVALID/AMBIGUOUS is scored, not retried; only a transport/5xx error may be retried once and is logged",
+    "selection": "full frozen 22-fixture set, fixed before any CEE result; no post-hoc filtering",
+    "total_calls": 44,
+    "turns_per_cell": 1,
+    "unique_issues": 10
+  },
+  "statistics_plan": {
+    "clustering_unit": "instance_id (10 independent issues)",
+    "interpretation": "convergence on fixed bundles vs E1 divergence => acquisition/policy; persistent divergence => interpretation; CEE and E1 scores are never pooled",
+    "language": "preliminary/exploratory; wide CIs expected at 22 cells / 10 clusters / class sizes 7-6-9",
+    "paired_contrast": "per-bundle paired appropriateness; between-model Delta issue-cluster bootstrap CI (seed=7, n_boot=10000) mirroring ev1_paired._cluster_bootstrap; descriptive exact McNemar flagged low-power",
+    "per_model": "DA overall and per evidence class (parseable denominator), always-NEED baseline, error-type counts; all-requests denominator also shown"
+  },
+  "status": "OFFLINE PLAN - no paid call made; execution requires explicit written approval of this budget",
+  "totals_44_calls": {
+    "empirical_envelope_usd": 0.124,
+    "hard_cap_total_usd": 1.0,
+    "hard_envelope_usd": 0.3267,
+    "headroom_under_hard_cap_usd": 0.6733,
+    "point_estimate_usd": 0.0407
+  }
+}

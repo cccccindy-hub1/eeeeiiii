@@ -1,0 +1,20 @@
+diff --git a/sympy/simplify/fu.py b/sympy/simplify/fu.py
+index ad1130ef9..d93830e96 100644
+--- a/sympy/simplify/fu.py
++++ b/sympy/simplify/fu.py
+@@ -501,9 +501,13 @@ def _f(rv):
+         if not (rv.is_Pow and rv.base.func == f):
+             return rv
+ 
+-        if (rv.exp < 0) == True:
++        # Check if exponent is complex - if so, skip transformation
++        if rv.exp.is_complex:
+             return rv
+-        if (rv.exp > max) == True:
++        # Check if exponent is negative or greater than max
++        if rv.exp < 0:
++            return rv
++        if rv.exp > max:
+             return rv
+         if rv.exp == 2:
+             return h(g(rv.base.args[0])**2)

@@ -1,0 +1,598 @@
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp5G8Bde\Scripts\python.exe -m pytest sympy/simplify/tests/test_cse.py sympy/simplify/tests/test_fu.py sympy/simplify/tests/test_powsimp.py -v --tb=short -p no:cacheprovider  (exit 1, 7s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.15, pytest-9.1.1, pluggy-1.7.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp5G8Bde\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 84 items
+
+sympy/simplify/tests/test_cse.py::test_numbered_symbols PASSED           [  1%]
+sympy/simplify/tests/test_cse.py::test_preprocess_for_cse PASSED         [  2%]
+sympy/simplify/tests/test_cse.py::test_postprocess_for_cse PASSED        [  3%]
+sympy/simplify/tests/test_cse.py::test_cse_single PASSED                 [  4%]
+sympy/simplify/tests/test_cse.py::test_cse_single2 PASSED                [  5%]
+sympy/simplify/tests/test_cse.py::test_cse_not_possible PASSED           [  7%]
+sympy/simplify/tests/test_cse.py::test_nested_substitution PASSED        [  8%]
+sympy/simplify/tests/test_cse.py::test_subtraction_opt PASSED            [  9%]
+sympy/simplify/tests/test_cse.py::test_multiple_expressions PASSED       [ 10%]
+sympy/simplify/tests/test_cse.py::test_non_commutative_cse FAILED        [ 11%]
+sympy/simplify/tests/test_cse.py::test_bypass_non_commutatives PASSED    [ 13%]
+sympy/simplify/tests/test_cse.py::test_non_commutative_order FAILED      [ 14%]
+sympy/simplify/tests/test_cse.py::test_issue_10228 FAILED                [ 15%]
+sympy/simplify/tests/test_cse.py::test_powers FAILED                     [ 16%]
+sympy/simplify/tests/test_cse.py::test_issue_4498 PASSED                 [ 17%]
+sympy/simplify/tests/test_cse.py::test_issue_4020 PASSED                 [ 19%]
+sympy/simplify/tests/test_cse.py::test_issue_4203 PASSED                 [ 20%]
+sympy/simplify/tests/test_cse.py::test_issue_6263 PASSED                 [ 21%]
+sympy/simplify/tests/test_cse.py::test_dont_cse_tuples PASSED            [ 22%]
+sympy/simplify/tests/test_cse.py::test_pow_invpow PASSED                 [ 23%]
+sympy/simplify/tests/test_cse.py::test_postprocess PASSED                [ 25%]
+sympy/simplify/tests/test_cse.py::test_issue_4499 PASSED                 [ 26%]
+sympy/simplify/tests/test_cse.py::test_issue_6169 PASSED                 [ 27%]
+sympy/simplify/tests/test_cse.py::test_cse_Indexed PASSED                [ 28%]
+sympy/simplify/tests/test_cse.py::test_cse_MatrixSymbol PASSED           [ 29%]
+sympy/simplify/tests/test_cse.py::test_cse_MatrixExpr PASSED             [ 30%]
+sympy/simplify/tests/test_cse.py::test_Piecewise PASSED                  [ 32%]
+sympy/simplify/tests/test_cse.py::test_ignore_order_terms PASSED         [ 33%]
+sympy/simplify/tests/test_cse.py::test_name_conflict PASSED              [ 34%]
+sympy/simplify/tests/test_cse.py::test_name_conflict_cust_symbols PASSED [ 35%]
+sympy/simplify/tests/test_cse.py::test_symbols_exhausted_error PASSED    [ 36%]
+sympy/simplify/tests/test_cse.py::test_issue_7840 PASSED                 [ 38%]
+sympy/simplify/tests/test_cse.py::test_issue_8891 PASSED                 [ 39%]
+sympy/simplify/tests/test_cse.py::test_issue_11230 PASSED                [ 40%]
+sympy/simplify/tests/test_cse.py::test_issue_11577 FAILED                [ 41%]
+sympy/simplify/tests/test_cse.py::test_hollow_rejection PASSED           [ 42%]
+sympy/simplify/tests/test_cse.py::test_cse_ignore PASSED                 [ 44%]
+sympy/simplify/tests/test_cse.py::test_cse_ignore_issue_15002 PASSED     [ 45%]
+sympy/simplify/tests/test_cse.py::test_cse__performance PASSED           [ 46%]
+sympy/simplify/tests/test_cse.py::test_issue_12070 PASSED                [ 47%]
+sympy/simplify/tests/test_cse.py::test_issue_13000 PASSED                [ 48%]
+sympy/simplify/tests/test_cse.py::test_unevaluated_mul PASSED            [ 50%]
+sympy/simplify/tests/test_fu.py::test_TR1 PASSED                         [ 51%]
+sympy/simplify/tests/test_fu.py::test_TR2 PASSED                         [ 52%]
+sympy/simplify/tests/test_fu.py::test_TR2i PASSED                        [ 53%]
+sympy/simplify/tests/test_fu.py::test_TR3 PASSED                         [ 54%]
+sympy/simplify/tests/test_fu.py::test__TR56 FAILED                       [ 55%]
+sympy/simplify/tests/test_fu.py::test_TR5 FAILED                         [ 57%]
+sympy/simplify/tests/test_fu.py::test_TR6 FAILED                         [ 58%]
+sympy/simplify/tests/test_fu.py::test_TR7 PASSED                         [ 59%]
+sympy/simplify/tests/test_fu.py::test_TR8 PASSED                         [ 60%]
+sympy/simplify/tests/test_fu.py::test_TR9 PASSED                         [ 61%]
+sympy/simplify/tests/test_fu.py::test_TR10 PASSED                        [ 63%]
+sympy/simplify/tests/test_fu.py::test_TR10i PASSED                       [ 64%]
+sympy/simplify/tests/test_fu.py::test_TR11 PASSED                        [ 65%]
+sympy/simplify/tests/test_fu.py::test_TR12 PASSED                        [ 66%]
+sympy/simplify/tests/test_fu.py::test_TR13 PASSED                        [ 67%]
+sympy/simplify/tests/test_fu.py::test_L PASSED                           [ 69%]
+sympy/simplify/tests/test_fu.py::test_fu FAILED                          [ 70%]
+sympy/simplify/tests/test_fu.py::test_objective PASSED                   [ 71%]
+sympy/simplify/tests/test_fu.py::test_process_common_addends PASSED      [ 72%]
+sympy/simplify/tests/test_fu.py::test_trig_split PASSED                  [ 73%]
+sympy/simplify/tests/test_fu.py::test_TRmorrie PASSED                    [ 75%]
+sympy/simplify/tests/test_fu.py::test_TRpower PASSED                     [ 76%]
+sympy/simplify/tests/test_fu.py::test_hyper_as_trig PASSED               [ 77%]
+sympy/simplify/tests/test_fu.py::test_TR12i PASSED                       [ 78%]
+sympy/simplify/tests/test_fu.py::test_TR14 PASSED                        [ 79%]
+sympy/simplify/tests/test_fu.py::test_TR15_16_17 FAILED                  [ 80%]
+sympy/simplify/tests/test_fu.py::test_as_f_sign_1 PASSED                 [ 82%]
+sympy/simplify/tests/test_powsimp.py::test_powsimp PASSED                [ 83%]
+sympy/simplify/tests/test_powsimp.py::test_powsimp_negated_base PASSED   [ 84%]
+sympy/simplify/tests/test_powsimp.py::test_powsimp_nc PASSED             [ 85%]
+sympy/simplify/tests/test_powsimp.py::test_issue_6440 PASSED             [ 86%]
+sympy/simplify/tests/test_powsimp.py::test_powdenest PASSED              [ 88%]
+sympy/simplify/tests/test_powsimp.py::test_powdenest_polar PASSED        [ 89%]
+sympy/simplify/tests/test_powsimp.py::test_issue_5805 PASSED             [ 90%]
+sympy/simplify/tests/test_powsimp.py::test_issue_9324_powsimp_on_matrix_symbol PASSED [ 91%]
+sympy/simplify/tests/test_powsimp.py::test_issue_6367 PASSED             [ 92%]
+sympy/simplify/tests/test_powsimp.py::test_powsimp_polar PASSED          [ 94%]
+sympy/simplify/tests/test_powsimp.py::test_issue_5728 PASSED             [ 95%]
+sympy/simplify/tests/test_powsimp.py::test_issue_from_PR1599 PASSED      [ 96%]
+sympy/simplify/tests/test_powsimp.py::test_issue_10195 PASSED            [ 97%]
+sympy/simplify/tests/test_powsimp.py::test_issue_15709 PASSED            [ 98%]
+sympy/simplify/tests/test_powsimp.py::test_issue_11981 PASSED            [100%]
+
+================================== FAILURES ===================================
+__________________________ test_non_commutative_cse ___________________________
+sympy\simplify\tests\test_cse.py:170: in test_non_commutative_cse
+    assert cse(l) == ([(x0, A*B)], [x0*C, x0])
+E   assert ([], [A*B*C, A*B]) == ([(x0, A*B)], [x0*C, x0])
+E     
+E     At index 0 diff: [] != [(x0, A*B)]
+E     
+E     Full diff:
+E       (
+E     +     [],
+E           [
+E     +         A*B*C,
+E     -         (
+E     -             x0,
+E     -             A*B,
+E     ? ----
+E     +         A*B,
+E     -         ),
+E     -     ],
+E     -     [
+E     -         x0*C,
+E     -         x0,
+E           ],
+E       )
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:129: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_non_commutative_cse
+_________________________ test_non_commutative_order __________________________
+sympy\simplify\tests\test_cse.py:189: in test_non_commutative_order
+    assert cse(l) == ([(x0, B+C)], [x0, A*x0])
+E   assert ([(x0, B + C)], [x0, x0*A]) == ([(x0, B + C)], [x0, A*x0])
+E     
+E     At index 0 diff: [(x0, B + C)] != [(x0, B + C)]
+E     
+E     Full diff:
+E       (
+E           [
+E               (
+E                   x0,
+E                   B + C,
+E               ),
+E           ],
+E           [
+E               x0,
+E     -         A*x0,
+E     ?         --
+E     +         x0*A,
+E     ?           ++
+E           ],
+E       )
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:129: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_non_commutative_order
+______________________________ test_issue_10228 _______________________________
+sympy\simplify\tests\test_cse.py:194: in test_issue_10228
+    assert cse([x*y**2 + x*y]) == ([(x0, x*y)], [x0*y + x0])
+E   assert ([], [x*y**2 + x*y]) == ([(x0, x*y)], [x0*y + x0])
+E     
+E     At index 0 diff: [] != [(x0, x*y)]
+E     
+E     Full diff:
+E       (
+E     +     [],
+E           [
+E     -         (
+E     -             x0,
+E     -             x*y,
+E     -         ),
+E     -     ],
+E     -     [
+E     -         x0*y + x0,
+E     ?          -      ^
+E     +         x*y**2 + x*y,
+E     ?            +++    ^^
+E           ],
+E       )
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:129: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_issue_10228
+_________________________________ test_powers _________________________________
+sympy\simplify\tests\test_cse.py:208: in test_powers
+    assert cse(x*y**2 + x*y) == ([(x0, x*y)], [x0*y + x0])
+E   assert ([], [x*y**2 + x*y]) == ([(x0, x*y)], [x0*y + x0])
+E     
+E     At index 0 diff: [] != [(x0, x*y)]
+E     
+E     Full diff:
+E       (
+E     +     [],
+E           [
+E     -         (
+E     -             x0,
+E     -             x*y,
+E     -         ),
+E     -     ],
+E     -     [
+E     -         x0*y + x0,
+E     ?          -      ^
+E     +         x*y**2 + x*y,
+E     ?            +++    ^^
+E           ],
+E       )
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:129: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_powers
+______________________________ test_issue_11577 _______________________________
+sympy\simplify\tests\test_cse.py:480: in test_issue_11577
+    assert cse(eq) == (
+E   assert ([(x0, x**5)]... + x0*y + x0]) == ([(x0, x**4),...x1*y + x0*x1])
+E     
+E     At index 0 diff: [(x0, x**5)] != [(x0, x**4), (x1, x*y)]
+E     
+E     Full diff:
+E       (
+E           [
+E               (
+E                   x0,
+E     -             x**4,
+E     ?                ^
+E     +             x**5,
+E     ?                ^
+E     -         ),
+E     -         (
+E     -             x1,
+E     -             x*y,
+E               ),
+E           ],
+E           [
+E     -         x**5 + x0*x1*y + x0*x1,
+E     +         x0*y**2 + x0*y + x0,
+E           ],
+E       )
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:129: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_issue_11577
+_________________________________ test__TR56 __________________________________
+sympy\simplify\tests\test_fu.py:75: in test__TR56
+    assert T(sin(x)**6, sin, cos, h, 6, False) == (-cos(x)**2 + 1)**3
+E   assert sin(x)**6 == ((-(cos(x) ** 2) + 1) ** 3)
+E    +  where sin(x)**6 = T((sin(x) ** 6), sin, cos, <function test__TR56.<locals>.<lambda> at 0x000001FBE0167E20>, 6, False)
+E    +    where sin(x) = sin(x)
+E    +  and   cos(x) = cos(x)
+__________________________________ test_TR5 ___________________________________
+sympy\simplify\tests\test_fu.py:85: in test_TR5
+    assert TR5(sin(x)**2) == -cos(x)**2 + 1
+E   assert sin(x)**2 == (-(cos(x) ** 2) + 1)
+E    +  where sin(x)**2 = TR5((sin(x) ** 2))
+E    +    where sin(x) = sin(x)
+E    +  and   cos(x) = cos(x)
+__________________________________ test_TR6 ___________________________________
+sympy\simplify\tests\test_fu.py:91: in test_TR6
+    assert TR6(cos(x)**2) == -sin(x)**2 + 1
+E   assert cos(x)**2 == (-(sin(x) ** 2) + 1)
+E    +  where cos(x)**2 = TR6((cos(x) ** 2))
+E    +    where cos(x) = cos(x)
+E    +  and   sin(x) = sin(x)
+___________________________________ test_fu ___________________________________
+sympy\simplify\tests\test_fu.py:255: in test_fu
+    assert fu(eq) == cos(x)**4 - 2*cos(y)**2 + 2
+E   assert (1 - cos(2*x))**2/4 + cos(2*x) - cos(2*y) + 1 == (((cos(x) ** 4) - (2 * (cos(y) ** 2))) + 2)
+E    +  where (1 - cos(2*x))**2/4 + cos(2*x) - cos(2*y) + 1 = fu(sin(x)**4 + sin(y)**2 + 2*cos(x)**2 - cos(y)**2)
+E    +  and   cos(x) = cos(x)
+E    +  and   cos(y) = cos(y)
+_______________________________ test_TR15_16_17 _______________________________
+sympy\simplify\tests\test_fu.py:432: in test_TR15_16_17
+    assert TR15(1 - 1/sin(x)**2) == -cot(x)**2
+E   assert 1 - 1/sin(x)**2 == -(cot(x) ** 2)
+E    +  where 1 - 1/sin(x)**2 = TR15((1 - (1 / (sin(x) ** 2))))
+E    +    where sin(x) = sin(x)
+E    +  and   cot(x) = cot(x)
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\_pytest\config\__init__.py:1464
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\_pytest\config\__init__.py:1464: PytestConfigWarning: Unknown config option: doctestplus
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+sympy/simplify/tests/test_fu.py: 361 warnings
+sympy/simplify/tests/test_powsimp.py: 1278 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+                               DO *NOT* COMMIT!                               
+=========================== short test summary info ===========================
+FAILED sympy/simplify/tests/test_cse.py::test_non_commutative_cse - sympy.utilities.pytest.XFail: test_non_commutative_cse
+FAILED sympy/simplify/tests/test_cse.py::test_non_commutative_order - sympy.utilities.pytest.XFail: test_non_commutative_order
+FAILED sympy/simplify/tests/test_cse.py::test_issue_10228 - sympy.utilities.pytest.XFail: test_issue_10228
+FAILED sympy/simplify/tests/test_cse.py::test_powers - sympy.utilities.pytest.XFail: test_powers
+FAILED sympy/simplify/tests/test_cse.py::test_issue_11577 - sympy.utilities.pytest.XFail: test_issue_11577
+FAILED sympy/simplify/tests/test_fu.py::test__TR56 - assert sin(x)**6 == ((-(cos(x) ** 2) + 1) ** 3)
+ +  where sin(x)**6 = T((sin(x) ** 6), sin, cos, <function test__TR56.<locals>.<lambda> at 0x000001FBE0167E20>, 6, False)
+ +    where sin(x) = sin(x)
+ +  and   cos(x) = cos(x)
+FAILED sympy/simplify/tests/test_fu.py::test_TR5 - assert sin(x)**2 == (-(cos(x) ** 2) + 1)
+ +  where sin(x)**2 = TR5((sin(x) ** 2))
+ +    where sin(x) = sin(x)
+ +  and   cos(x) = cos(x)
+FAILED sympy/simplify/tests/test_fu.py::test_TR6 - assert cos(x)**2 == (-(sin(x) ** 2) + 1)
+ +  where cos(x)**2 = TR6((cos(x) ** 2))
+ +    where cos(x) = cos(x)
+ +  and   sin(x) = sin(x)
+FAILED sympy/simplify/tests/test_fu.py::test_fu - assert (1 - cos(2*x))**2/4 + cos(2*x) - cos(2*y) + 1 == (((cos(x) ** 4) - (2 * (cos(y) ** 2))) + 2)
+ +  where (1 - cos(2*x))**2/4 + cos(2*x) - cos(2*y) + 1 = fu(sin(x)**4 + sin(y)**2 + 2*cos(x)**2 - cos(y)**2)
+ +  and   cos(x) = cos(x)
+ +  and   cos(y) = cos(y)
+FAILED sympy/simplify/tests/test_fu.py::test_TR15_16_17 - assert 1 - 1/sin(x)**2 == -(cot(x) ** 2)
+ +  where 1 - 1/sin(x)**2 = TR15((1 - (1 / (sin(x) ** 2))))
+ +    where sin(x) = sin(x)
+ +  and   cot(x) = cot(x)
+================ 10 failed, 74 passed, 1644 warnings in 4.00s =================
+
+--- stderr ---
+
+
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp5G8Bde\Scripts\python.exe -m pytest sympy/simplify/tests/test_simplify.py sympy/simplify/tests/test_trigsimp.py -v --tb=short -p no:cacheprovider  (exit 1, 19s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.11.15, pytest-9.1.1, pluggy-1.7.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp5G8Bde\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 73 items
+
+sympy/simplify/tests/test_simplify.py::test_issue_7263 PASSED            [  1%]
+sympy/simplify/tests/test_simplify.py::test_factorial_simplify FAILED    [  2%]
+sympy/simplify/tests/test_simplify.py::test_simplify_expr FAILED         [  4%]
+sympy/simplify/tests/test_simplify.py::test_issue_3557 PASSED            [  5%]
+sympy/simplify/tests/test_simplify.py::test_simplify_other PASSED        [  6%]
+sympy/simplify/tests/test_simplify.py::test_simplify_complex PASSED      [  8%]
+sympy/simplify/tests/test_simplify.py::test_simplify_ratio PASSED        [  9%]
+sympy/simplify/tests/test_simplify.py::test_simplify_measure PASSED      [ 10%]
+sympy/simplify/tests/test_simplify.py::test_simplify_rational PASSED     [ 12%]
+sympy/simplify/tests/test_simplify.py::test_simplify_issue_1308 PASSED   [ 13%]
+sympy/simplify/tests/test_simplify.py::test_issue_5652 PASSED            [ 15%]
+sympy/simplify/tests/test_simplify.py::test_simplify_fail1 PASSED        [ 16%]
+sympy/simplify/tests/test_simplify.py::test_nthroot PASSED               [ 17%]
+sympy/simplify/tests/test_simplify.py::test_nthroot1 PASSED              [ 19%]
+sympy/simplify/tests/test_simplify.py::test_separatevars PASSED          [ 20%]
+sympy/simplify/tests/test_simplify.py::test_separatevars_advanced_factor PASSED [ 21%]
+sympy/simplify/tests/test_simplify.py::test_hypersimp PASSED             [ 23%]
+sympy/simplify/tests/test_simplify.py::test_nsimplify PASSED             [ 24%]
+sympy/simplify/tests/test_simplify.py::test_issue_9448 PASSED            [ 26%]
+sympy/simplify/tests/test_simplify.py::test_extract_minus_sign PASSED    [ 27%]
+sympy/simplify/tests/test_simplify.py::test_diff PASSED                  [ 28%]
+sympy/simplify/tests/test_simplify.py::test_logcombine_1 PASSED          [ 30%]
+sympy/simplify/tests/test_simplify.py::test_logcombine_complex_coeff PASSED [ 31%]
+sympy/simplify/tests/test_simplify.py::test_issue_5950 PASSED            [ 32%]
+sympy/simplify/tests/test_simplify.py::test_posify PASSED                [ 34%]
+sympy/simplify/tests/test_simplify.py::test_issue_4194 PASSED            [ 35%]
+sympy/simplify/tests/test_simplify.py::test_simplify_float_vs_integer FAILED [ 36%]
+sympy/simplify/tests/test_simplify.py::test_as_content_primitive PASSED  [ 38%]
+sympy/simplify/tests/test_simplify.py::test_signsimp PASSED              [ 39%]
+sympy/simplify/tests/test_simplify.py::test_besselsimp PASSED            [ 41%]
+sympy/simplify/tests/test_simplify.py::test_Piecewise PASSED             [ 42%]
+sympy/simplify/tests/test_simplify.py::test_polymorphism PASSED          [ 43%]
+sympy/simplify/tests/test_simplify.py::test_issue_from_PR1599 PASSED     [ 45%]
+sympy/simplify/tests/test_simplify.py::test_issue_6811 PASSED            [ 46%]
+sympy/simplify/tests/test_simplify.py::test_issue_6920 PASSED            [ 47%]
+sympy/simplify/tests/test_simplify.py::test_issue_7001 PASSED            [ 49%]
+sympy/simplify/tests/test_simplify.py::test_inequality_no_auto_simplify PASSED [ 50%]
+sympy/simplify/tests/test_simplify.py::test_issue_9398 PASSED            [ 52%]
+sympy/simplify/tests/test_simplify.py::test_issue_9324_simplify PASSED   [ 53%]
+sympy/simplify/tests/test_simplify.py::test_issue_13474 PASSED           [ 54%]
+sympy/simplify/tests/test_simplify.py::test_simplify_function_inverse PASSED [ 56%]
+sympy/simplify/tests/test_simplify.py::test_clear_coefficients PASSED    [ 57%]
+sympy/simplify/tests/test_simplify.py::test_nc_simplify PASSED           [ 58%]
+sympy/simplify/tests/test_simplify.py::test_issue_15965 PASSED           [ 60%]
+sympy/simplify/tests/test_simplify.py::test_issue_17137 PASSED           [ 61%]
+sympy/simplify/tests/test_simplify.py::test_issue_7971 PASSED            [ 63%]
+sympy/simplify/tests/test_trigsimp.py::test_trigsimp1 FAILED             [ 64%]
+sympy/simplify/tests/test_trigsimp.py::test_trigsimp1a PASSED            [ 65%]
+sympy/simplify/tests/test_trigsimp.py::test_trigsimp2 PASSED             [ 67%]
+sympy/simplify/tests/test_trigsimp.py::test_issue_4373 PASSED            [ 68%]
+sympy/simplify/tests/test_trigsimp.py::test_trigsimp3 PASSED             [ 69%]
+sympy/simplify/tests/test_trigsimp.py::test_issue_4661 FAILED            [ 71%]
+sympy/simplify/tests/test_trigsimp.py::test_issue_4494 PASSED            [ 72%]
+sympy/simplify/tests/test_trigsimp.py::test_issue_5948 PASSED            [ 73%]
+sympy/simplify/tests/test_trigsimp.py::test_issue_4775 PASSED            [ 75%]
+sympy/simplify/tests/test_trigsimp.py::test_issue_4280 FAILED            [ 76%]
+sympy/simplify/tests/test_trigsimp.py::test_issue_3210 PASSED            [ 78%]
+sympy/simplify/tests/test_trigsimp.py::test_trigsimp_issues FAILED       [ 79%]
+sympy/simplify/tests/test_trigsimp.py::test_trigsimp_issue_2515 PASSED   [ 80%]
+sympy/simplify/tests/test_trigsimp.py::test_trigsimp_issue_3826 PASSED   [ 82%]
+sympy/simplify/tests/test_trigsimp.py::test_trigsimp_issue_4032 PASSED   [ 83%]
+sympy/simplify/tests/test_trigsimp.py::test_trigsimp_issue_7761 PASSED   [ 84%]
+sympy/simplify/tests/test_trigsimp.py::test_trigsimp_noncommutative FAILED [ 86%]
+sympy/simplify/tests/test_trigsimp.py::test_hyperbolic_simp FAILED       [ 87%]
+sympy/simplify/tests/test_trigsimp.py::test_trigsimp_groebner PASSED     [ 89%]
+sympy/simplify/tests/test_trigsimp.py::test_issue_2827_trigsimp_methods PASSED [ 90%]
+sympy/simplify/tests/test_trigsimp.py::test_issue_15129_trigsimp_methods PASSED [ 91%]
+sympy/simplify/tests/test_trigsimp.py::test_exptrigsimp PASSED           [ 93%]
+sympy/simplify/tests/test_trigsimp.py::test_exptrigsimp_noncommutative PASSED [ 94%]
+sympy/simplify/tests/test_trigsimp.py::test_powsimp_on_numbers PASSED    [ 95%]
+sympy/simplify/tests/test_trigsimp.py::test_issue_6811_fail FAILED       [ 97%]
+sympy/simplify/tests/test_trigsimp.py::test_Piecewise PASSED             [ 98%]
+sympy/simplify/tests/test_trigsimp.py::test_trigsimp_old PASSED          [100%]
+
+================================== FAILURES ===================================
+___________________________ test_factorial_simplify ___________________________
+sympy\simplify\tests\test_simplify.py:29: in test_factorial_simplify
+    from sympy.specfun.factorials import factorial
+E   ModuleNotFoundError: No module named 'sympy.specfun'
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:129: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_factorial_simplify
+_____________________________ test_simplify_expr ______________________________
+sympy\simplify\tests\test_simplify.py:114: in test_simplify_expr
+    assert simplify(expr) == 2*x/(a**2*(x**2 - y**2))
+E   assert x*(x**4*y**2*sin(z)**2 + x**4*y**2*cos(z)**2 - x**4*y**2 + x**4*sin(z)**2 + x**4*cos(z)**2 + x**4 + 3*x**2*y**4*sin(z)**2 + 3*x**2*y**4*cos(z)**2 - 3*x**2*y**4 - 8*x**2*y**2*sin(z)**2 - 8*x**2*y**2*cos(z)**2 + 4*x**2*y**2 + x**2*sin(z)**2 + x**2*cos(z)**2 - x**2 - y**4*sin(z)**2 - y**4*cos(z)**2 + 3*y**4 + 3*y**2*sin(z)**2 + 3*y**2*cos(z)**2 - 3*y**2)/(a**2*(x**6 - 3*x**4*y**2 + 3*x**2*y**4 - y**6)) == ((2 * x) / ((a ** 2) * ((x ** 2) - (y ** 2))))
+E    +  where x*(x**4*y**2*sin(z)**2 + x**4*y**2*cos(z)**2 - x**4*y**2 + x**4*sin(z)**2 + x**4*cos(z)**2 + x**4 + 3*x**2*y**4*sin(z)**2 + 3*x**2*y**4*cos(z)**2 - 3*x**2*y**4 - 8*x**2*y**2*sin(z)**2 - 8*x**2*y**2*cos(z)**2 + 4*x**2*y**2 + x**2*sin(z)**2 + x**2*cos(z)**2 - x**2 - y**4*sin(z)**2 - y**4*cos(z)**2 + 3*y**4 + 3*y**2*sin(z)**2 + 3*y**2*cos(z)**2 - 3*y**2)/(a**2*(x**6 - 3*x**4*y**2 + 3*x**2*y**4 - y**6)) = simplify(-x*(y**2 - 1)*(2*y**2*(x**2 - 1)/(a*(x**2 - y**2)**2) + (x**2 - 1)/(a*(x**2 - y**2)))/(a*(x**2 - y**2)) + x*(-2*x**2*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(a*(x**2 - y**2)**2) - x**2*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(a*(x**2 - 1)*(x**2 - y**2)) + (x**2*sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(x**2 - 1) + sqrt((1 - x**2)*(y**2 - 1))*(x*(-x*y**2 + x)/sqrt(-x**2*y**2 + x**2 + y**2 - 1) + sqrt(-x**2*y**2 + x**2 + y**2 - 1))*sin(z))/(a*sqrt((1 - x**2)*(y**2 - 1))*(x**2 - y**2)))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(a*(x**2 - y**2)) + x*(-2*x**2*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(a*(x**2 - y**2)**2) - x**2*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(a*(x**2 - 1)*(x**2 - y**2)) + (x**2*sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(x**2 - 1) + x*sqrt((1 - x**2)*(y**2 - 1))*(-x*y**2 + x)*cos(z)/sqrt(-x**2*y**2 + x**2 + y**2 - 1) + sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z))/(a*sqrt((1 - x**2)*(y**2 - 1))*(x**2 - y**2)))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(a*(x**2 - y**2)) - y*sqrt((1 - x**2)*(y**2 - 1))*(-x*y*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(a*(x**2 - y**2)*(y**2 - 1)) + 2*x*y*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(a*(x**2 - y**2)**2) + (x*y*sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(y**2 - 1) + x*sqrt((1 - x**2)*(y**2 - 1))*(-x**2*y + y)*sin(z)/sqrt(-x**2*y**2 + x**2 + y**2 - 1))/(a*sqrt((1 - x**2)*(y**2 - 1))*(x**2 - y**2)))*sin(z)/(a*(x**2 - y**2)) + y*(x**2 - 1)*(-2*x*y*(x**2 - 1)/(a*(x**2 - y**2)**2) + 2*x*y/(a*(x**2 - y**2)))/(a*(x**2 - y**2)) + y*(x**2 - 1)*(y**2 - 1)*(-x*y*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(a*(x**2 - y**2)*(y**2 - 1)) + 2*x*y*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(a*(x**2 - y**2)**2) + (x*y*sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(y**2 - 1) + x*sqrt((1 - x**2)*(y**2 - 1))*(-x**2*y + y)*cos(z)/sqrt(-x**2*y**2 + x**2 + y**2 - 1))/(a*sqrt((1 - x**2)*(y**2 - 1))*(x**2 - y**2)))*cos(z)/(a*sqrt((1 - x**2)*(y**2 - 1))*(x**2 - y**2)) - x*sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)**2/(a**2*(x**2 - 1)*(x**2 - y**2)*(y**2 - 1)) - x*sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)**2/(a**2*(x**2 - 1)*(x**2 - y**2)*(y**2 - 1)))
+_______________________ test_simplify_float_vs_integer ________________________
+sympy\simplify\tests\test_simplify.py:538: in test_simplify_float_vs_integer
+    assert simplify(x**2.0 - x**2) == 0
+E   assert -x**2 + x**2.0 == 0
+E    +  where -x**2 + x**2.0 = simplify(((x ** 2.0) - (x ** 2)))
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:129: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_simplify_float_vs_integer
+_______________________________ test_trigsimp1 ________________________________
+sympy\simplify\tests\test_trigsimp.py:20: in test_trigsimp1
+    assert trigsimp(1 + tan(x)**2) == 1/cos(x)**2
+E   assert tan(x)**2 + 1 == (1 / (cos(x) ** 2))
+E    +  where tan(x)**2 + 1 = trigsimp((1 + (tan(x) ** 2)))
+E    +    where tan(x) = tan(x)
+E    +  and   cos(x) = cos(x)
+_______________________________ test_issue_4661 _______________________________
+sympy\simplify\tests\test_trigsimp.py:102: in test_issue_4661
+    assert trigsimp(eq) == -4
+E   assert -4*sin(x)**4 + 4*cos(x)**4 - 8*cos(x)**2 == -4
+E    +  where -4*sin(x)**4 + 4*cos(x)**4 - 8*cos(x)**2 = trigsimp(-4*sin(x)**4 + 4*cos(x)**4 - 8*cos(x)**2)
+_______________________________ test_issue_4280 _______________________________
+sympy\simplify\tests\test_trigsimp.py:133: in test_issue_4280
+    assert trigsimp(a**2*cos(y)**2*sin(x)**2 + a**2*sin(y)**2*sin(x)**2) == a**2*sin(x)**2
+E   assert a**2*(1 - cos(2*x))/2 == ((a ** 2) * (sin(x) ** 2))
+E    +  where a**2*(1 - cos(2*x))/2 = trigsimp(((((a ** 2) * (cos(y) ** 2)) * (sin(x) ** 2)) + (((a ** 2) * (sin(y) ** 2)) * (sin(x) ** 2))))
+E    +    where cos(y) = cos(y)
+E    +    and   sin(x) = sin(x)
+E    +    and   sin(y) = sin(y)
+E    +    and   sin(x) = sin(x)
+E    +  and   sin(x) = sin(x)
+____________________________ test_trigsimp_issues _____________________________
+sympy\simplify\tests\test_trigsimp.py:170: in test_trigsimp_issues
+    assert trigsimp(e) == e
+           ^^^^^^^^^^^
+sympy\simplify\trigsimp.py:508: in trigsimp
+    return trigsimpfunc(expr)
+           ^^^^^^^^^^^^^^^^^^
+sympy\simplify\trigsimp.py:501: in <lambda>
+    'matching': (lambda x: futrig(x)),
+                           ^^^^^^^^^
+sympy\simplify\trigsimp.py:1101: in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sympy\simplify\simplify.py:1078: in bottom_up
+    args = tuple([bottom_up(a, F, atoms, nonbasic) for a in args])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sympy\simplify\simplify.py:1078: in <listcomp>
+    args = tuple([bottom_up(a, F, atoms, nonbasic) for a in args])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sympy\simplify\simplify.py:1081: in bottom_up
+    rv = F(rv)
+         ^^^^^
+sympy\simplify\trigsimp.py:1101: in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+                               ^^^^^^^^^^^^^^^^^^^^
+sympy\simplify\trigsimp.py:1169: in _futrig
+    e = greedy(tree, objective=Lops)(e)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sympy\strategies\core.py:115: in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sympy\strategies\core.py:115: in <listcomp>
+    return min([rule(expr) for rule in rules], key=objective)
+                ^^^^^^^^^^
+sympy\strategies\core.py:44: in chain_rl
+    expr = rule(expr)
+           ^^^^^^^^^^
+sympy\simplify\fu.py:570: in TR6
+    return _TR56(rv, cos, sin, lambda x: 1 - x, max=max, pow=pow)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sympy\simplify\fu.py:528: in _TR56
+    return bottom_up(rv, _f)
+           ^^^^^^^^^^^^^^^^^
+sympy\simplify\simplify.py:1081: in bottom_up
+    rv = F(rv)
+         ^^^^^
+sympy\simplify\fu.py:508: in _f
+    if rv.exp < 0:
+       ^^^^^^^^^^
+sympy\core\relational.py:310: in __nonzero__
+    raise TypeError("cannot determine truth value of Relational")
+E   TypeError: cannot determine truth value of Relational
+________________________ test_trigsimp_noncommutative _________________________
+sympy\simplify\tests\test_trigsimp.py:229: in test_trigsimp_noncommutative
+    assert trigsimp(A + A*tan(x)**2) == A/cos(x)**2
+E   assert tan(x)**2*A + A == (A / (cos(x) ** 2))
+E    +  where tan(x)**2*A + A = trigsimp((A + (A * (tan(x) ** 2))))
+E    +    where tan(x) = tan(x)
+E    +  and   cos(x) = cos(x)
+____________________________ test_hyperbolic_simp _____________________________
+sympy\simplify\tests\test_trigsimp.py:263: in test_hyperbolic_simp
+    assert trigsimp(1 - tanh(x)**2) == 1/cosh(x)**2
+E   assert 1 - tanh(x)**2 == (1 / (cosh(x) ** 2))
+E    +  where 1 - tanh(x)**2 = trigsimp((1 - (tanh(x) ** 2)))
+E    +    where tanh(x) = tanh(x)
+E    +  and   cosh(x) = cosh(x)
+____________________________ test_issue_6811_fail _____________________________
+sympy\simplify\tests\test_trigsimp.py:432: in test_issue_6811_fail
+    assert trigsimp(eq) == -2*(2*cos(x)*tan(x)*y + 3*z)*xp/cos(x)
+E   assert xp*(-76*y*sin(x) + 20*y*sin(3*x) + 60*z*cos(2*x) - 84*z)/(9*cos(x) - 5*cos(3*x)) == (((-2 * ((((2 * cos(x)) * tan(x)) * y) + (3 * z))) * xp) / cos(x))
+E    +  where xp*(-76*y*sin(x) + 20*y*sin(3*x) + 60*z*cos(2*x) - 84*z)/(9*cos(x) - 5*cos(3*x)) = trigsimp(xp*(-76*y*sin(x) + 20*y*sin(3*x) + 60*z*cos(2*x) - 84*z)/(9*cos(x) - 5*cos(3*x)))
+E    +  and   cos(x) = cos(x)
+E    +  and   tan(x) = tan(x)
+E    +  and   cos(x) = cos(x)
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:129: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_issue_6811_fail
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\_pytest\config\__init__.py:1464
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\_pytest\config\__init__.py:1464: PytestConfigWarning: Unknown config option: doctestplus
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+sympy/simplify/tests/test_simplify.py: 5461 warnings
+sympy/simplify/tests/test_trigsimp.py: 264 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\ZfU1Qd545pFxXZpkWG6ek\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+                               DO *NOT* COMMIT!                               
+=========================== short test summary info ===========================
+FAILED sympy/simplify/tests/test_simplify.py::test_factorial_simplify - sympy.utilities.pytest.XFail: test_factorial_simplify
+FAILED sympy/simplify/tests/test_simplify.py::test_simplify_expr - assert x*(x**4*y**2*sin(z)**2 + x**4*y**2*cos(z)**2 - x**4*y**2 + x**4*sin(z)**2 + x**4*cos(z)**2 + x**4 + 3*x**2*y**4*sin(z)**2 + 3*x**2*y**4*cos(z)**2 - 3*x**2*y**4 - 8*x**2*y**2*sin(z)**2 - 8*x**2*y**2*cos(z)**2 + 4*x**2*y**2 + x**2*sin(z)**2 + x**2*cos(z)**2 - x**2 - y**4*sin(z)**2 - y**4*cos(z)**2 + 3*y**4 + 3*y**2*sin(z)**2 + 3*y**2*cos(z)**2 - 3*y**2)/(a**2*(x**6 - 3*x**4*y**2 + 3*x**2*y**4 - y**6)) == ((2 * x) / ((a ** 2) * ((x ** 2) - (y ** 2))))
+ +  where x*(x**4*y**2*sin(z)**2 + x**4*y**2*cos(z)**2 - x**4*y**2 + x**4*sin(z)**2 + x**4*cos(z)**2 + x**4 + 3*x**2*y**4*sin(z)**2 + 3*x**2*y**4*cos(z)**2 - 3*x**2*y**4 - 8*x**2*y**2*sin(z)**2 - 8*x**2*y**2*cos(z)**2 + 4*x**2*y**2 + x**2*sin(z)**2 + x**2*cos(z)**2 - x**2 - y**4*sin(z)**2 - y**4*cos(z)**2 + 3*y**4 + 3*y**2*sin(z)**2 + 3*y**2*cos(z)**2 - 3*y**2)/(a**2*(x**6 - 3*x**4*y**2 + 3*x**2*y**4 - y**6)) = simplify(-x*(y**2 - 1)*(2*y**2*(x**2 - 1)/(a*(x**2 - y**2)**2) + (x**2 - 1)/(a*(x**2 - y**2)))/(a*(x**2 - y**2)) + x*(-2*x**2*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(a*(x**2 - y**2)**2) - x**2*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(a*(x**2 - 1)*(x**2 - y**2)) + (x**2*sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(x**2 - 1) + sqrt((1 - x**2)*(y**2 - 1))*(x*(-x*y**2 + x)/sqrt(-x**2*y**2 + x**2 + y**2 - 1) + sqrt(-x**2*y**2 + x**2 + y**2 - 1))*sin(z))/(a*sqrt((1 - x**2)*(y**2 - 1))*(x**2 - y**2)))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(a*(x**2 - y**2)) + x*(-2*x**2*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(a*(x**2 - y**2)**2) - x**2*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(a*(x**2 - 1)*(x**2 - y**2)) + (x**2*sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(x**2 - 1) + x*sqrt((1 - x**2)*(y**2 - 1))*(-x*y**2 + x)*cos(z)/sqrt(-x**2*y**2 + x**2 + y**2 - 1) + sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z))/(a*sqrt((1 - x**2)*(y**2 - 1))*(x**2 - y**2)))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(a*(x**2 - y**2)) - y*sqrt((1 - x**2)*(y**2 - 1))*(-x*y*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(a*(x**2 - y**2)*(y**2 - 1)) + 2*x*y*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(a*(x**2 - y**2)**2) + (x*y*sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)/(y**2 - 1) + x*sqrt((1 - x**2)*(y**2 - 1))*(-x**2*y + y)*sin(z)/sqrt(-x**2*y**2 + x**2 + y**2 - 1))/(a*sqrt((1 - x**2)*(y**2 - 1))*(x**2 - y**2)))*sin(z)/(a*(x**2 - y**2)) + y*(x**2 - 1)*(-2*x*y*(x**2 - 1)/(a*(x**2 - y**2)**2) + 2*x*y/(a*(x**2 - y**2)))/(a*(x**2 - y**2)) + y*(x**2 - 1)*(y**2 - 1)*(-x*y*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(a*(x**2 - y**2)*(y**2 - 1)) + 2*x*y*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(a*(x**2 - y**2)**2) + (x*y*sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)/(y**2 - 1) + x*sqrt((1 - x**2)*(y**2 - 1))*(-x**2*y + y)*cos(z)/sqrt(-x**2*y**2 + x**2 + y**2 - 1))/(a*sqrt((1 - x**2)*(y**2 - 1))*(x**2 - y**2)))*cos(z)/(a*sqrt((1 - x**2)*(y**2 - 1))*(x**2 - y**2)) - x*sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*sin(z)**2/(a**2*(x**2 - 1)*(x**2 - y**2)*(y**2 - 1)) - x*sqrt((1 - x**2)*(y**2 - 1))*sqrt(-x**2*y**2 + x**2 + y**2 - 1)*cos(z)**2/(a**2*(x**2 - 1)*(x**2 - y**2)*(y**2 - 1)))
+FAILED sympy/simplify/tests/test_simplify.py::test_simplify_float_vs_integer - sympy.utilities.pytest.XFail: test_simplify_float_vs_integer
+FAILED sympy/simplify/tests/test_trigsimp.py::test_trigsimp1 - assert tan(x)**2 + 1 == (1 / (cos(x) ** 2))
+ +  where tan(x)**2 + 1 = trigsimp((1 + (tan(x) ** 2)))
+ +    where tan(x) = tan(x)
+ +  and   cos(x) = cos(x)
+FAILED sympy/simplify/tests/test_trigsimp.py::test_issue_4661 - assert -4*sin(x)**4 + 4*cos(x)**4 - 8*cos(x)**2 == -4
+ +  where -4*sin(x)**4 + 4*cos(x)**4 - 8*cos(x)**2 = trigsimp(-4*sin(x)**4 + 4*cos(x)**4 - 8*cos(x)**2)
+FAILED sympy/simplify/tests/test_trigsimp.py::test_issue_4280 - assert a**2*(1 - cos(2*x))/2 == ((a ** 2) * (sin(x) ** 2))
+ +  where a**2*(1 - cos(2*x))/2 = trigsimp(((((a ** 2) * (cos(y) ** 2)) * (sin(x) ** 2)) + (((a ** 2) * (sin(y) ** 2)) * (sin(x) ** 2))))
+ +    where cos(y) = cos(y)
+ +    and   sin(x) = sin(x)
+ +    and   sin(y) = sin(y)
+ +    and   sin(x) = sin(x)
+ +  and   sin(x) = sin(x)
+FAILED sympy/simplify/tests/test_trigsimp.py::test_trigsimp_issues - TypeError: cannot determine truth value of Relational
+FAILED sympy/simplify/tests/test_trigsimp.py::test_trigsimp_noncommutative - assert tan(x)**2*A + A == (A / (cos(x) ** 2))
+ +  where tan(x)**2*A + A = trigsimp((A + (A * (tan(x) ** 2))))
+ +    where tan(x) = tan(x)
+ +  and   cos(x) = cos(x)
+FAILED sympy/simplify/tests/test_trigsimp.py::test_hyperbolic_simp - assert 1 - tanh(x)**2 == (1 / (cosh(x) ** 2))
+ +  where 1 - tanh(x)**2 = trigsimp((1 - (tanh(x) ** 2)))
+ +    where tanh(x) = tanh(x)
+ +  and   cosh(x) = cosh(x)
+FAILED sympy/simplify/tests/test_trigsimp.py::test_issue_6811_fail - sympy.utilities.pytest.XFail: test_issue_6811_fail
+================ 10 failed, 63 passed, 5730 warnings in 16.85s ================
+
+--- stderr ---

@@ -1,0 +1,16 @@
+### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+FAIL: as_set raised: NotImplementedError 
+The inequality, Eq(x*cos(x) - 3*sin(x), 0), cannot be solved using
+solve_univariate_inequality.
+
+--- stderr ---
+
+
+### POST candidate patch
+$ python probe.py  (exit 0)
+--- stdout ---
+OK: ConditionSet(n, Eq(n*cos(n) - 3*sin(n), 0), Reals)
+
+--- stderr ---

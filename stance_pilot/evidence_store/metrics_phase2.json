@@ -1,0 +1,1371 @@
+{
+  "n_records": 58,
+  "n_patches": 19,
+  "n_issues": 8,
+  "models": [
+    "deepseek-flash"
+  ],
+  "merge_accuracy": {
+    "deepseek-flash|T0": {
+      "n_patches": 19,
+      "n_issues": 8,
+      "merge_accuracy": 0.5789,
+      "ci95_cluster_bootstrap": [
+        0.4583,
+        0.7059
+      ],
+      "false_approve": 6,
+      "false_reject": 2
+    },
+    "deepseek-flash|T1": {
+      "n_patches": 19,
+      "n_issues": 8,
+      "merge_accuracy": 0.6316,
+      "ci95_cluster_bootstrap": [
+        0.4444,
+        0.8421
+      ],
+      "false_approve": 5,
+      "false_reject": 2
+    },
+    "deepseek-flash|T2A": {
+      "n_patches": 5,
+      "n_issues": 4,
+      "merge_accuracy": 0.6,
+      "ci95_cluster_bootstrap": [
+        0.25,
+        1.0
+      ],
+      "false_approve": 0,
+      "false_reject": 2
+    },
+    "deepseek-flash|T2D": {
+      "n_patches": 5,
+      "n_issues": 4,
+      "merge_accuracy": 0.6,
+      "ci95_cluster_bootstrap": [
+        0.25,
+        1.0
+      ],
+      "false_approve": 0,
+      "false_reject": 2
+    },
+    "deepseek-flash|T3A": {
+      "n_patches": 5,
+      "n_issues": 4,
+      "merge_accuracy": 0.8,
+      "ci95_cluster_bootstrap": [
+        0.5714,
+        1.0
+      ],
+      "false_approve": 0,
+      "false_reject": 1
+    },
+    "deepseek-flash|T3D": {
+      "n_patches": 5,
+      "n_issues": 4,
+      "merge_accuracy": 0.8,
+      "ci95_cluster_bootstrap": [
+        0.5714,
+        1.0
+      ],
+      "false_approve": 0,
+      "false_reject": 1
+    }
+  },
+  "scenario_matrix": {
+    "deepseek-flash|T2A|contradictory": {
+      "n": 1,
+      "merge_correct": 1,
+      "surface_queried": 0,
+      "detected_via_intended_surface": 0,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 0,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T2A|incomplete": {
+      "n": 1,
+      "merge_correct": 1,
+      "surface_queried": 0,
+      "detected_via_intended_surface": 0,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 1,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T2A|stale": {
+      "n": 1,
+      "merge_correct": 0,
+      "surface_queried": 0,
+      "detected_via_intended_surface": 0,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 1,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T2A|valid": {
+      "n": 1,
+      "merge_correct": 0,
+      "false_reject": 1,
+      "false_evidence_alarm": 0,
+      "correctly_trusted": 0
+    },
+    "deepseek-flash|T2A|wrong_patch": {
+      "n": 1,
+      "merge_correct": 1,
+      "surface_queried": 0,
+      "detected_via_intended_surface": 0,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 1,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T2D|contradictory": {
+      "n": 1,
+      "merge_correct": 1,
+      "surface_queried": 0,
+      "detected_via_intended_surface": 0,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 1,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T2D|incomplete": {
+      "n": 1,
+      "merge_correct": 1,
+      "surface_queried": 0,
+      "detected_via_intended_surface": 0,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 0,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T2D|stale": {
+      "n": 1,
+      "merge_correct": 0,
+      "surface_queried": 0,
+      "detected_via_intended_surface": 0,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 0,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T2D|valid": {
+      "n": 1,
+      "merge_correct": 0,
+      "false_reject": 1,
+      "false_evidence_alarm": 0,
+      "correctly_trusted": 0
+    },
+    "deepseek-flash|T2D|wrong_patch": {
+      "n": 1,
+      "merge_correct": 1,
+      "surface_queried": 0,
+      "detected_via_intended_surface": 0,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 1,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T3A|contradictory": {
+      "n": 1,
+      "merge_correct": 1,
+      "surface_queried": 1,
+      "detected_via_intended_surface": 1,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 0,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T3A|incomplete": {
+      "n": 1,
+      "merge_correct": 1,
+      "surface_queried": 1,
+      "detected_via_intended_surface": 1,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 0,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T3A|stale": {
+      "n": 1,
+      "merge_correct": 0,
+      "surface_queried": 1,
+      "detected_via_intended_surface": 1,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 0,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T3A|valid": {
+      "n": 1,
+      "merge_correct": 1,
+      "false_reject": 0,
+      "false_evidence_alarm": 0,
+      "correctly_trusted": 1
+    },
+    "deepseek-flash|T3A|wrong_patch": {
+      "n": 1,
+      "merge_correct": 1,
+      "surface_queried": 1,
+      "detected_via_intended_surface": 1,
+      "detected_and_rejected": 1,
+      "mismatch_flag": 1,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T3D|contradictory": {
+      "n": 1,
+      "merge_correct": 1,
+      "surface_queried": 1,
+      "detected_via_intended_surface": 1,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 0,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T3D|incomplete": {
+      "n": 1,
+      "merge_correct": 1,
+      "surface_queried": 1,
+      "detected_via_intended_surface": 1,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 0,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T3D|stale": {
+      "n": 1,
+      "merge_correct": 0,
+      "surface_queried": 1,
+      "detected_via_intended_surface": 1,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 0,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    },
+    "deepseek-flash|T3D|valid": {
+      "n": 1,
+      "merge_correct": 1,
+      "false_reject": 0,
+      "false_evidence_alarm": 0,
+      "correctly_trusted": 1
+    },
+    "deepseek-flash|T3D|wrong_patch": {
+      "n": 1,
+      "merge_correct": 1,
+      "surface_queried": 1,
+      "detected_via_intended_surface": 1,
+      "detected_and_rejected": 0,
+      "mismatch_flag": 0,
+      "rejected": 1,
+      "caught_via_acceptance_log_escalation": 0
+    }
+  },
+  "paired_deltas_shared_targets_only": [
+    {
+      "comparison": "T0 -> T1",
+      "shared_targets": 19,
+      "fixture_only": true,
+      "acc_T0": 0.5789,
+      "acc_T1": 0.6316,
+      "paired_accuracy_delta": 0.0526,
+      "corrected_wrong_to_right": 2,
+      "broken_right_to_wrong": 1,
+      "decision_flips_ACCEPT_to_REJECT": 2,
+      "decision_flips_REJECT_to_ACCEPT": 1,
+      "mcnemar_exact_p": 1.0,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-13798",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": false,
+          "T1_correct": false,
+          "T0_decision": "ACCEPT",
+          "T1_decision": "ACCEPT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-14531",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": true,
+          "T1_correct": true,
+          "T0_decision": "ACCEPT",
+          "T1_decision": "ACCEPT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": false,
+          "T1_correct": false,
+          "T0_decision": "REJECT",
+          "T1_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-16597",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": true,
+          "T1_correct": false,
+          "T0_decision": "REJECT",
+          "T1_decision": "ACCEPT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": true,
+          "T1_correct": true,
+          "T0_decision": "ACCEPT",
+          "T1_decision": "ACCEPT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": false,
+          "T1_correct": false,
+          "T0_decision": "ACCEPT",
+          "T1_decision": "ACCEPT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": false,
+          "T1_correct": false,
+          "T0_decision": "REJECT",
+          "T1_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-20428",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": false,
+          "T1_correct": true,
+          "T0_decision": "ACCEPT",
+          "T1_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-14531",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": false,
+          "T1_correct": true,
+          "T0_decision": "ACCEPT",
+          "T1_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": true,
+          "T1_correct": true,
+          "T0_decision": "REJECT",
+          "T1_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-16597",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": false,
+          "T1_correct": false,
+          "T0_decision": "ACCEPT",
+          "T1_decision": "ACCEPT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": true,
+          "T1_correct": true,
+          "T0_decision": "REJECT",
+          "T1_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": true,
+          "T1_correct": true,
+          "T0_decision": "REJECT",
+          "T1_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": true,
+          "T1_correct": true,
+          "T0_decision": "REJECT",
+          "T1_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-13798",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": true,
+          "T1_correct": true,
+          "T0_decision": "REJECT",
+          "T1_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": true,
+          "T1_correct": true,
+          "T0_decision": "ACCEPT",
+          "T1_decision": "ACCEPT"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-16597",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": true,
+          "T1_correct": true,
+          "T0_decision": "REJECT",
+          "T1_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": false,
+          "T1_correct": false,
+          "T0_decision": "ACCEPT",
+          "T1_decision": "ACCEPT"
+        },
+        {
+          "id": "qwen3_coder_30b_500:sympy__sympy-20428",
+          "model": "deepseek-flash",
+          "scenario": null,
+          "T0_correct": true,
+          "T1_correct": true,
+          "T0_decision": "REJECT",
+          "T1_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T0 -> T2D",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T0": 0.4,
+      "acc_T2D": 0.6,
+      "paired_accuracy_delta": 0.2,
+      "corrected_wrong_to_right": 1,
+      "broken_right_to_wrong": 0,
+      "decision_flips_ACCEPT_to_REJECT": 1,
+      "decision_flips_REJECT_to_ACCEPT": 0,
+      "mcnemar_exact_p": 1.0,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T0_correct": false,
+          "T2D_correct": false,
+          "T0_decision": "REJECT",
+          "T2D_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T0_correct": false,
+          "T2D_correct": true,
+          "T0_decision": "ACCEPT",
+          "T2D_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T0_correct": false,
+          "T2D_correct": false,
+          "T0_decision": "REJECT",
+          "T2D_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T0_correct": true,
+          "T2D_correct": true,
+          "T0_decision": "REJECT",
+          "T2D_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T0_correct": true,
+          "T2D_correct": true,
+          "T0_decision": "REJECT",
+          "T2D_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T0 -> T3D",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T0": 0.4,
+      "acc_T3D": 0.8,
+      "paired_accuracy_delta": 0.4,
+      "corrected_wrong_to_right": 2,
+      "broken_right_to_wrong": 0,
+      "decision_flips_ACCEPT_to_REJECT": 1,
+      "decision_flips_REJECT_to_ACCEPT": 1,
+      "mcnemar_exact_p": 0.5,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T0_correct": false,
+          "T3D_correct": true,
+          "T0_decision": "REJECT",
+          "T3D_decision": "ACCEPT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T0_correct": false,
+          "T3D_correct": true,
+          "T0_decision": "ACCEPT",
+          "T3D_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T0_correct": false,
+          "T3D_correct": false,
+          "T0_decision": "REJECT",
+          "T3D_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T0_correct": true,
+          "T3D_correct": true,
+          "T0_decision": "REJECT",
+          "T3D_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T0_correct": true,
+          "T3D_correct": true,
+          "T0_decision": "REJECT",
+          "T3D_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T0 -> T2A",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T0": 0.4,
+      "acc_T2A": 0.6,
+      "paired_accuracy_delta": 0.2,
+      "corrected_wrong_to_right": 1,
+      "broken_right_to_wrong": 0,
+      "decision_flips_ACCEPT_to_REJECT": 1,
+      "decision_flips_REJECT_to_ACCEPT": 0,
+      "mcnemar_exact_p": 1.0,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T0_correct": false,
+          "T2A_correct": false,
+          "T0_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T0_correct": false,
+          "T2A_correct": true,
+          "T0_decision": "ACCEPT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T0_correct": false,
+          "T2A_correct": false,
+          "T0_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T0_correct": true,
+          "T2A_correct": true,
+          "T0_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T0_correct": true,
+          "T2A_correct": true,
+          "T0_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T0 -> T3A",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T0": 0.4,
+      "acc_T3A": 0.8,
+      "paired_accuracy_delta": 0.4,
+      "corrected_wrong_to_right": 2,
+      "broken_right_to_wrong": 0,
+      "decision_flips_ACCEPT_to_REJECT": 1,
+      "decision_flips_REJECT_to_ACCEPT": 1,
+      "mcnemar_exact_p": 0.5,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T0_correct": false,
+          "T3A_correct": true,
+          "T0_decision": "REJECT",
+          "T3A_decision": "ACCEPT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T0_correct": false,
+          "T3A_correct": true,
+          "T0_decision": "ACCEPT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T0_correct": false,
+          "T3A_correct": false,
+          "T0_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T0_correct": true,
+          "T3A_correct": true,
+          "T0_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T0_correct": true,
+          "T3A_correct": true,
+          "T0_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T1 -> T2D",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T1": 0.4,
+      "acc_T2D": 0.6,
+      "paired_accuracy_delta": 0.2,
+      "corrected_wrong_to_right": 1,
+      "broken_right_to_wrong": 0,
+      "decision_flips_ACCEPT_to_REJECT": 1,
+      "decision_flips_REJECT_to_ACCEPT": 0,
+      "mcnemar_exact_p": 1.0,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T1_correct": false,
+          "T2D_correct": false,
+          "T1_decision": "REJECT",
+          "T2D_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T1_correct": false,
+          "T2D_correct": true,
+          "T1_decision": "ACCEPT",
+          "T2D_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T1_correct": false,
+          "T2D_correct": false,
+          "T1_decision": "REJECT",
+          "T2D_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T1_correct": true,
+          "T2D_correct": true,
+          "T1_decision": "REJECT",
+          "T2D_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T1_correct": true,
+          "T2D_correct": true,
+          "T1_decision": "REJECT",
+          "T2D_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T1 -> T3D",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T1": 0.4,
+      "acc_T3D": 0.8,
+      "paired_accuracy_delta": 0.4,
+      "corrected_wrong_to_right": 2,
+      "broken_right_to_wrong": 0,
+      "decision_flips_ACCEPT_to_REJECT": 1,
+      "decision_flips_REJECT_to_ACCEPT": 1,
+      "mcnemar_exact_p": 0.5,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T1_correct": false,
+          "T3D_correct": true,
+          "T1_decision": "REJECT",
+          "T3D_decision": "ACCEPT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T1_correct": false,
+          "T3D_correct": true,
+          "T1_decision": "ACCEPT",
+          "T3D_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T1_correct": false,
+          "T3D_correct": false,
+          "T1_decision": "REJECT",
+          "T3D_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T1_correct": true,
+          "T3D_correct": true,
+          "T1_decision": "REJECT",
+          "T3D_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T1_correct": true,
+          "T3D_correct": true,
+          "T1_decision": "REJECT",
+          "T3D_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T1 -> T2A",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T1": 0.4,
+      "acc_T2A": 0.6,
+      "paired_accuracy_delta": 0.2,
+      "corrected_wrong_to_right": 1,
+      "broken_right_to_wrong": 0,
+      "decision_flips_ACCEPT_to_REJECT": 1,
+      "decision_flips_REJECT_to_ACCEPT": 0,
+      "mcnemar_exact_p": 1.0,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T1_correct": false,
+          "T2A_correct": false,
+          "T1_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T1_correct": false,
+          "T2A_correct": true,
+          "T1_decision": "ACCEPT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T1_correct": false,
+          "T2A_correct": false,
+          "T1_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T1_correct": true,
+          "T2A_correct": true,
+          "T1_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T1_correct": true,
+          "T2A_correct": true,
+          "T1_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T1 -> T3A",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T1": 0.4,
+      "acc_T3A": 0.8,
+      "paired_accuracy_delta": 0.4,
+      "corrected_wrong_to_right": 2,
+      "broken_right_to_wrong": 0,
+      "decision_flips_ACCEPT_to_REJECT": 1,
+      "decision_flips_REJECT_to_ACCEPT": 1,
+      "mcnemar_exact_p": 0.5,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T1_correct": false,
+          "T3A_correct": true,
+          "T1_decision": "REJECT",
+          "T3A_decision": "ACCEPT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T1_correct": false,
+          "T3A_correct": true,
+          "T1_decision": "ACCEPT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T1_correct": false,
+          "T3A_correct": false,
+          "T1_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T1_correct": true,
+          "T3A_correct": true,
+          "T1_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T1_correct": true,
+          "T3A_correct": true,
+          "T1_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T2D -> T3D",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T2D": 0.6,
+      "acc_T3D": 0.8,
+      "paired_accuracy_delta": 0.2,
+      "corrected_wrong_to_right": 1,
+      "broken_right_to_wrong": 0,
+      "decision_flips_ACCEPT_to_REJECT": 0,
+      "decision_flips_REJECT_to_ACCEPT": 1,
+      "mcnemar_exact_p": 1.0,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T2D_correct": false,
+          "T3D_correct": true,
+          "T2D_decision": "REJECT",
+          "T3D_decision": "ACCEPT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T2D_correct": true,
+          "T3D_correct": true,
+          "T2D_decision": "REJECT",
+          "T3D_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T2D_correct": false,
+          "T3D_correct": false,
+          "T2D_decision": "REJECT",
+          "T3D_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T2D_correct": true,
+          "T3D_correct": true,
+          "T2D_decision": "REJECT",
+          "T3D_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T2D_correct": true,
+          "T3D_correct": true,
+          "T2D_decision": "REJECT",
+          "T3D_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T2D -> T2A",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T2D": 0.6,
+      "acc_T2A": 0.6,
+      "paired_accuracy_delta": 0.0,
+      "corrected_wrong_to_right": 0,
+      "broken_right_to_wrong": 0,
+      "decision_flips_ACCEPT_to_REJECT": 0,
+      "decision_flips_REJECT_to_ACCEPT": 0,
+      "mcnemar_exact_p": 1.0,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T2D_correct": false,
+          "T2A_correct": false,
+          "T2D_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T2D_correct": true,
+          "T2A_correct": true,
+          "T2D_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T2D_correct": false,
+          "T2A_correct": false,
+          "T2D_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T2D_correct": true,
+          "T2A_correct": true,
+          "T2D_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T2D_correct": true,
+          "T2A_correct": true,
+          "T2D_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T2D -> T3A",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T2D": 0.6,
+      "acc_T3A": 0.8,
+      "paired_accuracy_delta": 0.2,
+      "corrected_wrong_to_right": 1,
+      "broken_right_to_wrong": 0,
+      "decision_flips_ACCEPT_to_REJECT": 0,
+      "decision_flips_REJECT_to_ACCEPT": 1,
+      "mcnemar_exact_p": 1.0,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T2D_correct": false,
+          "T3A_correct": true,
+          "T2D_decision": "REJECT",
+          "T3A_decision": "ACCEPT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T2D_correct": true,
+          "T3A_correct": true,
+          "T2D_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T2D_correct": false,
+          "T3A_correct": false,
+          "T2D_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T2D_correct": true,
+          "T3A_correct": true,
+          "T2D_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T2D_correct": true,
+          "T3A_correct": true,
+          "T2D_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T3D -> T2A",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T3D": 0.8,
+      "acc_T2A": 0.6,
+      "paired_accuracy_delta": -0.2,
+      "corrected_wrong_to_right": 0,
+      "broken_right_to_wrong": 1,
+      "decision_flips_ACCEPT_to_REJECT": 1,
+      "decision_flips_REJECT_to_ACCEPT": 0,
+      "mcnemar_exact_p": 1.0,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T3D_correct": true,
+          "T2A_correct": false,
+          "T3D_decision": "ACCEPT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T3D_correct": true,
+          "T2A_correct": true,
+          "T3D_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T3D_correct": false,
+          "T2A_correct": false,
+          "T3D_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T3D_correct": true,
+          "T2A_correct": true,
+          "T3D_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T3D_correct": true,
+          "T2A_correct": true,
+          "T3D_decision": "REJECT",
+          "T2A_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T3D -> T3A",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T3D": 0.8,
+      "acc_T3A": 0.8,
+      "paired_accuracy_delta": 0.0,
+      "corrected_wrong_to_right": 0,
+      "broken_right_to_wrong": 0,
+      "decision_flips_ACCEPT_to_REJECT": 0,
+      "decision_flips_REJECT_to_ACCEPT": 0,
+      "mcnemar_exact_p": 1.0,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T3D_correct": true,
+          "T3A_correct": true,
+          "T3D_decision": "ACCEPT",
+          "T3A_decision": "ACCEPT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T3D_correct": true,
+          "T3A_correct": true,
+          "T3D_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T3D_correct": false,
+          "T3A_correct": false,
+          "T3D_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T3D_correct": true,
+          "T3A_correct": true,
+          "T3D_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T3D_correct": true,
+          "T3A_correct": true,
+          "T3D_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        }
+      ]
+    },
+    {
+      "comparison": "T2A -> T3A",
+      "shared_targets": 5,
+      "fixture_only": true,
+      "acc_T2A": 0.6,
+      "acc_T3A": 0.8,
+      "paired_accuracy_delta": 0.2,
+      "corrected_wrong_to_right": 1,
+      "broken_right_to_wrong": 0,
+      "decision_flips_ACCEPT_to_REJECT": 0,
+      "decision_flips_REJECT_to_ACCEPT": 1,
+      "mcnemar_exact_p": 1.0,
+      "note": "paired on shared targets only; n is small and the exact test is descriptive",
+      "pairs": [
+        {
+          "id": "glm5_500:sympy__sympy-16450",
+          "model": "deepseek-flash",
+          "scenario": "valid",
+          "T2A_correct": false,
+          "T3A_correct": true,
+          "T2A_decision": "REJECT",
+          "T3A_decision": "ACCEPT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18199",
+          "model": "deepseek-flash",
+          "scenario": "contradictory",
+          "T2A_correct": true,
+          "T3A_correct": true,
+          "T2A_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "glm5_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "stale",
+          "T2A_correct": false,
+          "T3A_correct": false,
+          "T2A_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+          "model": "deepseek-flash",
+          "scenario": "incomplete",
+          "T2A_correct": true,
+          "T3A_correct": true,
+          "T2A_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        },
+        {
+          "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+          "model": "deepseek-flash",
+          "scenario": "wrong_patch",
+          "T2A_correct": true,
+          "T3A_correct": true,
+          "T2A_decision": "REJECT",
+          "T3A_decision": "REJECT"
+        }
+      ]
+    }
+  ],
+  "cost": {
+    "deepseek-flash|T0": {
+      "n_cells": 19,
+      "tokens_in": 21704,
+      "tokens_out": 11138,
+      "tool_calls": 0,
+      "wall_s_total": 55.3,
+      "usd_total": 0.0199,
+      "usd_per_correct_decision": 0.0018,
+      "acceptance_log_escalations": 0
+    },
+    "deepseek-flash|T1": {
+      "n_cells": 19,
+      "tokens_in": 21914,
+      "tokens_out": 8385,
+      "tool_calls": 0,
+      "wall_s_total": 47.3,
+      "usd_total": 0.0166,
+      "usd_per_correct_decision": 0.0014,
+      "acceptance_log_escalations": 0
+    },
+    "deepseek-flash|T2A": {
+      "n_cells": 5,
+      "tokens_in": 5537,
+      "tokens_out": 899,
+      "tool_calls": 0,
+      "wall_s_total": 7.7,
+      "usd_total": 0.0027,
+      "usd_per_correct_decision": 0.0009,
+      "acceptance_log_escalations": 0
+    },
+    "deepseek-flash|T2D": {
+      "n_cells": 5,
+      "tokens_in": 6263,
+      "tokens_out": 976,
+      "tool_calls": 0,
+      "wall_s_total": 8.7,
+      "usd_total": 0.003,
+      "usd_per_correct_decision": 0.001,
+      "acceptance_log_escalations": 0
+    },
+    "deepseek-flash|T3A": {
+      "n_cells": 5,
+      "tokens_in": 101963,
+      "tokens_out": 3330,
+      "tool_calls": 38,
+      "wall_s_total": 26.7,
+      "usd_total": 0.0346,
+      "usd_per_correct_decision": 0.0086,
+      "acceptance_log_escalations": 0
+    },
+    "deepseek-flash|T3D": {
+      "n_cells": 5,
+      "tokens_in": 189550,
+      "tokens_out": 6180,
+      "tool_calls": 45,
+      "wall_s_total": 47.1,
+      "usd_total": 0.0643,
+      "usd_per_correct_decision": 0.0161,
+      "acceptance_log_escalations": 5
+    }
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "artifact": "groundedreview_ev1_external_validation_plan",
+  "status": "OFFLINE PLAN ONLY - no paid cross-model API call is authorised until written approval",
+  "stage": "E1 (cross-model replication on the frozen design); E2 (new issues/tasks) is explicitly out of scope here",
+  "approval_gate": {
+    "approved_now": [
+      "protocol freeze, adapter implementation, offline mock testing, metrics/paired-analysis code, preregistration, symptom audit, this plan"
+    ],
+    "not_approved_now": [
+      "any paid cross-model API call",
+      "adding or changing fixtures, gold, prompts, tool permissions, conditions or scoring code",
+      "starting E2 issue expansion"
+    ],
+    "resume_after_approval": "evidence.ev1_run --profile openai_gpt41_mini (live path), resume-capable; then evidence.ev1_paired with name=path for baseline and candidate"
+  },
+  "frozen_design": {
+    "freeze_id": "groundedreview-ev1-protocol-frozen-2026-10-22",
+    "fixtures": 22,
+    "conditions": 5,
+    "issues": 10,
+    "cells_per_model": 110,
+    "conditions_list": [
+      "T2D-T",
+      "T3D-Strict",
+      "T3D-Escalate",
+      "T2A-T",
+      "T3A-T"
+    ],
+    "prompt_id_fingerprinted": "p3-ternary-v2",
+    "gold_file": "evidence_store_w21/wave2_gold.jsonl",
+    "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+    "raw_rows_primary": "evidence_store_w21/wave2_pilot_raw_rows.jsonl",
+    "baseline_results_reused_read_only": "evidence_store_w21/wave21_corrected_all110_results.jsonl",
+    "permission_matrix_errors": 0,
+    "permission_matrix_passed": true,
+    "immutability": "frozen code modules are not modified; all new logic is ev1_*-prefixed and writes only under evidence_store_ev1"
+  },
+  "baseline_observed": {
+    "model": "deepseek-flash",
+    "oracle_decision_appropriateness": {
+      "rate": 0.5909,
+      "ci95_cluster": [
+        0.525,
+        0.675
+      ]
+    },
+    "condition_decision_appropriateness": {
+      "rate": 0.7364,
+      "ci95_cluster": [
+        0.6667,
+        0.7818
+      ]
+    },
+    "tokens_110_cells": {
+      "input": 1287917,
+      "output": 56197
+    },
+    "cost_usd_recorded_110_cells": 0.4538,
+    "max_single_cell_tokens": {
+      "input": 72645,
+      "output": 2630
+    },
+    "note": "two standards measure different constructs and are never averaged"
+  },
+  "candidate_models": {
+    "openai_gpt41_mini": {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "recommendation": "primary",
+      "status": "current",
+      "base_url": "https://api.openai.com/v1",
+      "key_env": "OPENAI_API_KEY",
+      "pricing_usd_per_1m": {
+        "input": 0.4,
+        "output": 1.6
+      },
+      "context_window_tokens": 1000000,
+      "max_output_tokens": 65536,
+      "temperature_supported": true,
+      "completion_param": "max_tokens",
+      "reasoning_effort": null,
+      "response_format_mode": "json_schema_strict",
+      "tool_calling": "native_openai",
+      "estimated_cost_110_usd_point": 0.6051,
+      "selection_rationale": "Different vendor from DeepSeek; closest wire-level match to the frozen runner (temperature, max_tokens, strict JSON schema, native parallel tool calls), so observed differences are least likely to come from interface configuration."
+    },
+    "google_gemini3_flash": {
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
+      "recommendation": "secondary",
+      "status": "preview",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "key_env": "GEMINI_API_KEY",
+      "pricing_usd_per_1m": {
+        "input": 0.5,
+        "output": 3.0
+      },
+      "context_window_tokens": 1000000,
+      "max_output_tokens": 65536,
+      "temperature_supported": true,
+      "completion_param": "max_tokens",
+      "reasoning_effort": null,
+      "response_format_mode": "json_object",
+      "tool_calling": "openai_compat_layer",
+      "estimated_cost_110_usd_point": 0.8125,
+      "selection_rationale": "Second independent vendor via the documented OpenAI-compatible endpoint. Strict-schema and multi-turn tool-call behaviour on the compatibility layer is the main interface risk; adapter pre-downgrades to json_object and a fixture-level live smoke (2 cells) is required before the full run.",
+      "estimated_cost_110_usd_reasoning_envelope": [
+        0.8125,
+        1.3183
+      ],
+      "reasoning_cost_note": "reasoning tokens billed as output; envelope output x1.0-4.0 on the wave21 token mix; BudgetGuard pre-call cap bounds the high side",
+      "known_risks": [
+        "compatibility-layer strict json_schema support has historically been incomplete",
+        "thinking tokens are billed inside output tokens; real cost may exceed the wave21-token-based estimate",
+        "preview model id can be retired across Gemini minor releases"
+      ]
+    },
+    "openai_gpt51_codex_mini": {
+      "provider": "openai",
+      "model": "gpt-5.1-codex-mini",
+      "recommendation": "optional",
+      "status": "current",
+      "base_url": "https://api.openai.com/v1",
+      "key_env": "OPENAI_API_KEY",
+      "pricing_usd_per_1m": {
+        "input": 0.25,
+        "output": 2.0
+      },
+      "context_window_tokens": 400000,
+      "max_output_tokens": 128000,
+      "temperature_supported": false,
+      "completion_param": "max_completion_tokens",
+      "reasoning_effort": "minimal",
+      "response_format_mode": "json_schema_strict",
+      "tool_calling": "native_openai",
+      "estimated_cost_110_usd_point": 0.4344,
+      "selection_rationale": "Code-review-tuned third candidate exercising the max_completion_tokens / no-temperature / reasoning_effort adaptation path. Only if the user wants a second OpenAI-family point; gpt-4.1-mini remains the controlled primary.",
+      "estimated_cost_110_usd_reasoning_envelope": [
+        0.4344,
+        0.7716
+      ],
+      "reasoning_cost_note": "reasoning tokens billed as output; envelope output x1.0-4.0 on the wave21 token mix; BudgetGuard pre-call cap bounds the high side"
+    }
+  },
+  "pricing_survey": {
+    "checked_date": "2026-10-22",
+    "sources": [
+      "https://platform.openai.com/docs/pricing (Standard tier)",
+      "https://ai.google.dev/gemini-api/docs/pricing",
+      "https://benchlm.ai/google/api-pricing (October 2026 cross-check)"
+    ],
+    "excluded": {
+      "gpt-5-mini": "deprecated 2026-06-11, scheduled retirement 2026-12-11; reproducibility risk for a frozen-protocol replication"
+    },
+    "recommend_run_order": [
+      "openai_gpt41_mini",
+      "google_gemini3_flash",
+      "openai_gpt51_codex_mini"
+    ]
+  },
+  "interface_compatibility_matrix": {
+    "wire_features_needed": [
+      "chat.completions multi-turn native tool calls",
+      "strict structured decision JSON on the final tool-free turn",
+      "temperature=0 (or documented deterministic setting)",
+      "hard output cap (max_tokens / max_completion_tokens)",
+      "context >= largest single cell (~73k input incl. tool history); 128k+ recommended, 1M offered by primary",
+      "per-request vendor body passthrough; no DeepSeek thinking field sent to other vendors"
+    ],
+    "primary_alignment": "gpt-4.1-mini supports all five natively; it is the controlled replication (minimum interface delta)",
+    "gemini_mitigations": "adapter pre-downgrades strict->json_object; 2-cell live fixture smoke (one static, one active condition) is MANDATORY and separately approved before all 110",
+    "codex_mitigations": "adapter swaps to max_completion_tokens, drops temperature, sets reasoning_effort=minimal"
+  },
+  "cost_envelope_and_budget_guard": {
+    "primary_point_estimate_usd": 0.6051,
+    "recommended_hard_spend_cap_usd_per_model_110_cells": 2.0,
+    "recommended_smoke_cells_before_full_run": 2,
+    "smoke_estimated_usd_primary": 0.011,
+    "budgetguard": "ev1 live path performs a BudgetGuard pre-call check; a 4xx/5xx or cap breach is recorded, not retried blindly; runs are resumable",
+    "total_program_ceiling_request_for_approval_usd": {
+      "primary_only": 2.0,
+      "primary_plus_secondary": 5.0,
+      "all_three_with_reasoning_envelope": 9.0
+    }
+  },
+  "metrics_preregistered_per_condition": [
+    "Oracle Decision Appropriateness (+ issue-cluster bootstrap 95% CI, seed=7, n=10000)",
+    "Condition Decision Appropriateness (same bootstrap)",
+    "Appropriate Abstention",
+    "Over-Abstention (H1)",
+    "Unsupported Rejection (H2)",
+    "false-commit-accept",
+    "tool success: 200/total, 403 strict_denied, 400 missing_reason, escalation granted, any-5xx cells",
+    "tokens, USD total, USD per appropriate decision, wall time",
+    "INVALID/AMBIGUOUS protocol-failure rate",
+    "Always-NEED sanity baseline on every block"
+  ],
+  "paired_analysis": {
+    "unit": "cell = (scenario, id, served_artifact_id, condition); both models run the identical 110 cells",
+    "cluster": "issue (instance_id), 10 clusters",
+    "delta_ci": "issue-cluster bootstrap of per-cell correctness difference, seed=7, n=10000",
+    "mcnemar": "exact two-sided, descriptive only (discordant n is small and cells are clustered)",
+    "forbidden_comparison": "never compare marginal accuracies across different patch/fixture sets; E1 keeps the set identical by design",
+    "code": "evidence/ev1_paired.py (self-check reproduces wave2.1 59.1% / 73.6% with delta 0 vs itself)"
+  },
+  "case_level_preregistration": {
+    "file": "evidence_store_ev1/ev1_preregistration.json",
+    "groups": {
+      "wrong_patch": 2,
+      "partial_but_decisive": 3,
+      "incomplete_good": 2
+    },
+    "locked_cells": 35,
+    "rule": "membership anchored by exact artifact id; expectations asserted against frozen gold; no post-hoc case picking"
+  },
+  "symptom_probe_audit": {
+    "file": "evidence_store_ev1/ev1_symptom_probe_audit.json",
+    "checks_passed": "14/14",
+    "conclusion": "trusted decisive failure => REJECT within the benchmark operationalisation; acceptance-artifact channel is structurally independent under strict policy",
+    "reported_limitations": [
+      "issue-derived local probe, not the maintainer test suite",
+      "symptom persistence is not a full merge-acceptability verdict",
+      "single decisive instance; small issue cluster"
+    ]
+  },
+  "offline_test_evidence": {
+    "adapter_kwargs_selfcheck": "evidence/ev1_adapters.py __main__: 18/18 assertions PASS, zero network",
+    "mock_full_run": "evidence.ev1_run --mock --spawn-server: cells=110 failed=0, evidence_store_ev1/ev1_mock_results.jsonl",
+    "adapter_wire_check": "evidence.ev1_run --adapter-check --spawn-server: 3 profiles x 5 conditions, 261 assertions, 0 failures, zero network (run_ternary_cell exercised with mock=False wrapped by RecordingCompletions)",
+    "metrics_selfcheck": "ev1_paired on wave21 vs wave21 reproduces frozen rates exactly; paired delta 0.0 CI [0,0] McNemar p=1.0"
+  },
+  "risks": [
+    {
+      "risk": "preview/vendor model id churn",
+      "mitigation": "gpt-4.1-mini (current, non-preview) is primary; gemini preview is secondary and id/version is recorded at run time; gpt-5-mini already excluded for deprecation"
+    },
+    {
+      "risk": "Gemini OpenAI-compat strict schema / multi-turn tool history defects",
+      "mitigation": "json_object pre-downgrade + mandatory 2-cell smoke before the paid run"
+    },
+    {
+      "risk": "reasoning-token cost blowout (gpt-5.1-codex-mini)",
+      "mitigation": "reasoning_effort=minimal, output-multiplier envelope, hard BudgetGuard cap"
+    },
+    {
+      "risk": "interface differences masquerading as model differences",
+      "mitigation": "primary chosen for maximal wire parity; adapter is the ONLY vendor-difference point; prompts, tools, JSON keys, permissions unchanged"
+    },
+    {
+      "risk": "post-hoc adjustment temptation",
+      "mitigation": "gold/prompt/fixture freeze, preregistration with id anchors, locked analysis code before any candidate output exists"
+    },
+    {
+      "risk": "small cluster count (10 issues) limits power",
+      "mitigation": "E1 is a stability/replication check, effect CIs reported honestly; generalisation deferred to approved E2"
+    }
+  ]
+}

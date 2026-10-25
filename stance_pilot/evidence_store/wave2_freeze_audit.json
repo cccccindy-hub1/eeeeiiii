@@ -1,0 +1,97 @@
+{
+  "version": "w2-freeze-audit-v1",
+  "generated_at_utc": "2026-10-20T15:39:40Z",
+  "gold_sha256": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+  "frozen_phase123_files": {
+    "phase3_mock_results.jsonl": {
+      "sha256": "a1b1f8630bd9503f7201dcb6ee1f2786b6f694f28e858e92052f85647530850a",
+      "bytes": 230020
+    },
+    "phase3_ternary_results.jsonl": {
+      "sha256": "bcaeb4cb84b8680caf623897cef83720d5dea956c7f15eae0fc531eeb0d120d2",
+      "bytes": 300292
+    },
+    "metrics_phase3_ternary.json": {
+      "sha256": "bae306b353951d87a6c5a1a91027cc29e9120749868b2497d41cc57dbec2d1e1",
+      "bytes": 61580
+    },
+    "metrics_phase3_ternary_mock.json": {
+      "sha256": "27d8c39ac50df94012793d0b8e9b975adba53b44e699f891e1efd96ee957866f",
+      "bytes": 60994
+    },
+    "phase3_gold.jsonl": {
+      "sha256": "dbebcfc311a2402528ceb745c33fc03613e0f433dfda82a779886591f40e45d7",
+      "bytes": 4208
+    },
+    "phase2_results.jsonl": {
+      "sha256": "f54653cb0e17c1fffae288e12b2a99d93244b13ea4e987504a8c663d68d99de0",
+      "bytes": 210552
+    },
+    "metrics_phase2.json": {
+      "sha256": "f58f083231d083b164482c90cfb08546783b1c65bd947b3161e128972efe8e04",
+      "bytes": 41813
+    },
+    "phase2_fixtures.jsonl": {
+      "sha256": "2536d4bf54deec491884f3b2708af323b6c1ccb7a6a19535a42c12bcf3b4ff8d",
+      "bytes": 3589
+    },
+    "phase3_fixtures.jsonl": {
+      "sha256": "3755ba12ee3867398baca2867c57c1fd7b63bebb6f285f4decf0ce553cb984b9",
+      "bytes": 3625
+    },
+    "truth.jsonl": {
+      "sha256": "6ed8c4a0426b0ca70a7dd3c3e429f05307c91d3d53f7e9819b2b25e3df833718",
+      "bytes": 13220
+    }
+  },
+  "frozen_file_count": 10,
+  "frozen_files_all_byte_identical": true,
+  "baseline_manifest": {
+    "path": "phase3_baseline_hashes.json",
+    "encoding_note": "UTF-8 BOM; read with utf-8-sig",
+    "entries_total": 213,
+    "entries_byte_identical": 211,
+    "entries_missing": [],
+    "entries_diverged": [
+      "audit.jsonl",
+      "fixtures_meta.json"
+    ],
+    "benign_divergences": {
+      "audit.jsonl": "append-only server audit log; legacy HTTP self-checks append rows by design; zero fix_w2_/wave2 rows; pre==post during wave2 window",
+      "fixtures_meta.json": "already differed from the old manifest before the wave2 window; unchanged inside it; contains only the 9 wave1 entries"
+    },
+    "divergence_set_matches_known_benign": true
+  },
+  "snapshot_window": {
+    "pre": "wave2_snapshot_pre.json",
+    "post": "wave2_snapshot_post.json",
+    "entries_pre": 350,
+    "entries_post": 425,
+    "entries_unchanged": 349,
+    "entries_changed": [
+      "wave2_build_audit.json"
+    ],
+    "entries_removed": [],
+    "new_entries_total": 75,
+    "new_entries_by_directory": {
+      "artifacts": 13,
+      "logs": 45,
+      "signatures": 13,
+      "(root)": 4
+    },
+    "new_root_entries": [
+      "wave2_build.log",
+      "wave2_fixtures.jsonl",
+      "wave2_fixtures_meta.json",
+      "wave2_snapshot_pre.json"
+    ],
+    "new_namespaced_entries_all_fix_w2": true
+  },
+  "wave2_namespace": {
+    "new_artifacts": 13,
+    "new_signatures": 13,
+    "new_logs": 45,
+    "root_files_prefix": "wave2_"
+  },
+  "verdict": "PASS: zero frozen Phase-1/2/3 file mutated; baseline divergences limited to the two documented benign entries; snapshot window only adds wave2_/fix_w2_ namespaced files and mutates the build audit; nothing removed."
+}

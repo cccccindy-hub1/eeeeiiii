@@ -1,0 +1,214 @@
+{
+  "freeze_id": "groundedreview-ev1-protocol-frozen-2026-10-22",
+  "title": "E1 cross-model external validation: frozen Wave-2.1 protocol inputs (no paid API call authorised by this freeze)",
+  "frozen_at": "2026-10-22",
+  "inherits": {
+    "wave2_freeze_manifest": "evidence_store_w21\\wave2_freeze_manifest.json",
+    "wave2_freeze_id": "groundedreview-wave2-pilot-frozen-2026-10-21",
+    "wave2_manifest_sha256_bytes": "86e86fd0484eaca21d3ea5238a083add6128b3a16aa6ad847ae5f83eb6855442",
+    "correction_record": "wave21_wrong_patch_real_probe_rerun.json",
+    "correction_record_sha256_bytes": "c5a1288bb9a2a7f6993cb9fd2c1483d47b062b3347fd60c342326c8b539c145b"
+  },
+  "experiment": {
+    "prompt_version": "p3-ternary-v2",
+    "conditions": [
+      "T2D-T",
+      "T3D-Strict",
+      "T3D-Escalate",
+      "T2A-T",
+      "T3A-T"
+    ],
+    "n_fixtures": 22,
+    "n_independent_issues": 10,
+    "independent_issues": [
+      "sympy__sympy-12419",
+      "sympy__sympy-12481",
+      "sympy__sympy-12489",
+      "sympy__sympy-13091",
+      "sympy__sympy-13798",
+      "sympy__sympy-14531",
+      "sympy__sympy-16450",
+      "sympy__sympy-17139",
+      "sympy__sympy-18199",
+      "sympy__sympy-18211"
+    ],
+    "cells_per_model": 110,
+    "session_isolation": "one fresh server session per cell",
+    "frozen_subject_model_wave21": "deepseek-flash",
+    "completion_cap_wave21": 8192,
+    "reasoning_wave21": "thinking_disabled",
+    "gold_version": "w2-gold-v1",
+    "mutation_policy": [
+      "Gold, fixtures, prompt semantics, tool permissions and scoring code are FROZEN; no adjustment from new-model output.",
+      "Only model-profile API adaptation (ev1_adapters.py) is added.",
+      "No new issues in E1 (issue expansion is E2 only)."
+    ]
+  },
+  "prompt_fingerprints_v2": {
+    "T2D-T": "896df8a1b916abd77db4de92aa1b0abd68dfbeb834db2df74f2b25416fb831ec",
+    "T3D-Strict": "1706a29c271b2c28d004abd16fe0afaa49f30a20815add72a3ac372dcde9bf1e",
+    "T3D-Escalate": "d29315a4a42a20fb434c088953709b5dc784c8704042d18c9a92ba0933fafb56",
+    "T2A-T": "aeaff39f8178b223b86f568423454145ea1fe9e7a3f73f687620a78a8b692aaa",
+    "T3A-T": "036abea572445c82c7f8c36c8c76e247f48bf9d4a3d24491814e9f5ef39ddb39"
+  },
+  "prompt_fingerprints_match_wave2_manifest": {
+    "T2D-T": true,
+    "T3D-Strict": true,
+    "T3D-Escalate": true,
+    "T2A-T": true,
+    "T3A-T": true
+  },
+  "files": {
+    "fixture_lists": [
+      {
+        "path": "evidence_store_w21\\phase2_fixtures.jsonl",
+        "exists": true,
+        "bytes": 3589,
+        "sha256_bytes": "2536d4bf54deec491884f3b2708af323b6c1ccb7a6a19535a42c12bcf3b4ff8d",
+        "n_rows": 5
+      },
+      {
+        "path": "evidence_store_w21\\phase3_fixtures.jsonl",
+        "exists": true,
+        "bytes": 3625,
+        "sha256_bytes": "3755ba12ee3867398baca2867c57c1fd7b63bebb6f285f4decf0ce553cb984b9",
+        "n_rows": 4
+      },
+      {
+        "path": "evidence_store_w21\\wave2_fixtures.jsonl",
+        "exists": true,
+        "bytes": 11113,
+        "sha256_bytes": "ff7d182f724cac152f5a9b5202007fe9f4e2f679fa0ece3da647c980acafa4be",
+        "n_rows": 13
+      }
+    ],
+    "gold": {
+      "path": "evidence_store_w21\\wave2_gold.jsonl",
+      "exists": true,
+      "bytes": 126605,
+      "sha256_bytes": "fe0091fa6a728c14b9e25e03fb142d80e89bc537816966a21c00206cb9405fa0",
+      "sha256_newline_normalized": "28cc59dcc2fba1f7aaee6323de611a994238abcebc83b208a5ff2dbce4438d01",
+      "n_rows": 22
+    },
+    "raw_rows": [
+      {
+        "path": "evidence_store_w21\\wave2_pilot_raw_rows.jsonl",
+        "exists": true,
+        "bytes": 105073,
+        "sha256_bytes": "f0b7d8f9f43a580a0686401c424789faca4cb26ba8d5287f47bec1a67cabecf4",
+        "n_rows": 16
+      },
+      {
+        "path": "evidence_store_w21\\raw_rows.jsonl",
+        "exists": true,
+        "bytes": 153724,
+        "sha256_bytes": "003ee7a8495fcd9e25cfda1655a08f5a56eac76a68ccb13028be0c78d9006092",
+        "n_rows": 21
+      }
+    ],
+    "corrected_wave21_results": {
+      "path": "evidence_store_w21\\wave21_corrected_all110_results.jsonl",
+      "exists": true,
+      "bytes": 1282219,
+      "sha256_bytes": "aeedf200005bec46c85f4e0cda73ee2ae6bb219ff0ff3959fdd2d1389bf27e26",
+      "n_rows": 110,
+      "n_mock": 0,
+      "n_error": 0
+    },
+    "protocol_code": [
+      {
+        "path": "evidence\\prompts.py",
+        "exists": true,
+        "bytes": 26006,
+        "sha256_bytes": "3713998e375aea8cdba29ba8d1cfd522f7f0b69d47ed604fe9eb1eb50bb444b8",
+        "matches_wave2_manifest": true
+      },
+      {
+        "path": "evidence\\views.py",
+        "exists": true,
+        "bytes": 12166,
+        "sha256_bytes": "76874d825e5361707e0bf88fa5cd79fb6f465907b5b94b3c2196e61dd886b8d6",
+        "matches_wave2_manifest": true
+      },
+      {
+        "path": "evidence\\server.py",
+        "exists": true,
+        "bytes": 26568,
+        "sha256_bytes": "32e6ea821e0937b68449489b4f071d16ae4f5f5c8bada0a06bb342177a53933a",
+        "matches_wave2_manifest": true
+      },
+      {
+        "path": "evidence\\phase3_run.py",
+        "exists": true,
+        "bytes": 60558,
+        "sha256_bytes": "500715ed2493c314830fe6e632788a70c518f6e3acd33ac4e296df22d0af7df5",
+        "matches_wave2_manifest": true
+      },
+      {
+        "path": "evidence\\gold_w2.py",
+        "exists": true,
+        "bytes": 21972,
+        "sha256_bytes": "ed1e21bda320da461bef0fb60c7306b18850fbd36dc9977db5ffabceef41e3fc",
+        "matches_wave2_manifest": true
+      },
+      {
+        "path": "evidence\\metrics_w2.py",
+        "exists": true,
+        "bytes": 27664,
+        "sha256_bytes": "09434bc9ca24c8964137cc32f7b929b9c03f1de2d603f9672a710bfb3ea88d4c",
+        "matches_wave2_manifest": true
+      },
+      {
+        "path": "evidence\\store.py",
+        "exists": true,
+        "bytes": 9369,
+        "sha256_bytes": "98171fc93eac8926403e530d7a1ea1e3ae66116805ee66e53aa6b65c97837f4c",
+        "matches_wave2_manifest": true
+      },
+      {
+        "path": "evidence\\metrics2.py",
+        "exists": true,
+        "bytes": 12896,
+        "sha256_bytes": "ec96e945728a1981ec673bdf10e37bf7b66d3e41704494f031cd04d4591456a9",
+        "matches_wave2_manifest": null
+      },
+      {
+        "path": "evidence\\gap_w2.py",
+        "exists": true,
+        "bytes": 10875,
+        "sha256_bytes": "af9ead6bc3897d952ff01342867852fc2a126bd5e51ee5d19fa5bc3ad0160b8f",
+        "matches_wave2_manifest": null
+      },
+      {
+        "path": "evidence\\visibility.py",
+        "exists": true,
+        "bytes": 26029,
+        "sha256_bytes": "123041cc91122ba8d41443327eee264a495cd4e03b432d9e11b0d164b184eaf8",
+        "matches_wave2_manifest": null
+      },
+      {
+        "path": "evidence\\probes.py",
+        "exists": true,
+        "bytes": 4789,
+        "sha256_bytes": "d9f6eb6dc1f67e064aa3cf78fc5e55643edc3e70ffa69cc496c58396f79a2048",
+        "matches_wave2_manifest": null
+      },
+      {
+        "path": "evidence\\builder.py",
+        "exists": true,
+        "bytes": 17281,
+        "sha256_bytes": "5a5fd175a9b492482ce49c167a5985fd430a640aada4a3ed8f9166216ec47f2c",
+        "matches_wave2_manifest": null
+      }
+    ]
+  },
+  "tool_permission_matrix": {
+    "check": "evidence.visibility.cross_check_http(22 fixtures x 5)",
+    "cells_checked": 110,
+    "n_report_lines": 110,
+    "n_errors": 0,
+    "errors": [],
+    "passed": true
+  },
+  "notes": "Byte sha over exact disk bytes; gold additionally hashed newline-normalised to match metrics_w2.load_w2_gold. Generated offline; no LLM API used."
+}

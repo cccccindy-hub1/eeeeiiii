@@ -1,0 +1,22 @@
+diff --git a/sympy/combinatorics/permutations.py b/sympy/combinatorics/permutations.py
+index 136ed5a47..d1fa8e97f 100644
+--- a/sympy/combinatorics/permutations.py
++++ b/sympy/combinatorics/permutations.py
+@@ -894,14 +894,10 @@ def __new__(cls, *args, **kwargs):
+         # for convenience in case one wants to enter permutations where
+         # counting starts from 1.
+ 
++        # Remove check for repeated elements when processing cycles
++        # Non-disjoint cycles should be allowed and applied in left-to-right order
++        # This is already the behavior of the Cycle class
+         temp = flatten(args)
+-        if has_dups(temp):
+-            if is_cycle:
+-                raise ValueError('there were repeated elements; to resolve '
+-                'cycles use Cycle%s.' % ''.join([str(tuple(c)) for c in args]))
+-            else:
+-                raise ValueError('there were repeated elements.')
+-        temp = set(temp)
+ 
+         if not is_cycle and \
+                 any(i not in temp for i in range(len(temp))):

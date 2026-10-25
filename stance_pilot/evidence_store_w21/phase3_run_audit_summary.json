@@ -1,0 +1,540 @@
+{
+  "protocol": "ternary",
+  "mock": false,
+  "model": "deepseek-flash",
+  "cells_planned": 45,
+  "cells_already_done": 0,
+  "cells_attempted_this_process": 45,
+  "error_cells": 0,
+  "budget_stop_cells": 0,
+  "batch_budget_stop": false,
+  "budget_cap_usd": 0.3,
+  "cumulative_spend_usd": 0.203016,
+  "guard_calls_total": 121,
+  "completion_cap_tokens": 8192,
+  "max_model_calls_per_cell": 12,
+  "version": {
+    "prompt_version": "p3-ternary-v1",
+    "gold_sha256": "dbebcfc311a2402528ceb745c33fc03613e0f433dfda82a779886591f40e45d7",
+    "fixture_manifest": {
+      "files": {
+        "evidence_store/phase2_fixtures.jsonl": "2536d4bf54deec491884f3b2708af323b6c1ccb7a6a19535a42c12bcf3b4ff8d",
+        "evidence_store/phase3_fixtures.jsonl": "3755ba12ee3867398baca2867c57c1fd7b63bebb6f285f4decf0ce553cb984b9"
+      },
+      "combined_sha256": "af41bdd9fd2c13edf1d66ff3f8ec01a7b505d6229ce6662b8c7f29aece600e37"
+    },
+    "gold_path": "evidence_store/phase3_gold.jsonl"
+  },
+  "server_audit": {
+    "audit_path": "evidence_store/audit.jsonl",
+    "sessions": 27,
+    "counts": {
+      "events": 216,
+      "denied_strict": 0,
+      "escalation_reason_missing": 3,
+      "consistency_escalation_granted": 11,
+      "acceptance_log_reveal": 19
+    },
+    "by_condition": {
+      "T3D-Strict": {
+        "events": 59,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0
+      },
+      "T3D-Escalate": {
+        "events": 87,
+        "denied_strict": 0,
+        "escalation_reason_missing": 3,
+        "escalation_granted": 30,
+        "acceptance_log_reveal": 19
+      },
+      "T3A-T": {
+        "events": 70,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0
+      }
+    },
+    "per_session": {
+      "1b0c152fca8dc581528db09b": {
+        "cell": "valid:glm5_500:sympy__sympy-16450:T3D-Strict",
+        "condition": "T3D-Strict",
+        "events": 6,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "log": 1
+        }
+      },
+      "371916471a74e01dbc87beb6": {
+        "cell": "valid:glm5_500:sympy__sympy-16450:T3D-Escalate",
+        "condition": "T3D-Escalate",
+        "events": 9,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 4,
+        "acceptance_log_reveal": 3,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "log": 4,
+          "consistency": 1
+        }
+      },
+      "736d0fb8cc896c984770ac0b": {
+        "cell": "valid:glm5_500:sympy__sympy-16450:T3A-T",
+        "condition": "T3A-T",
+        "events": 10,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "artifact": 1,
+          "log": 4
+        }
+      },
+      "4781da629928ae6991683a36": {
+        "cell": "contradictory:glm5_500:sympy__sympy-18199:T3D-Strict",
+        "condition": "T3D-Strict",
+        "events": 7,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "artifact": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "log": 1
+        }
+      },
+      "6af08f75dec528382eaeefc8": {
+        "cell": "contradictory:glm5_500:sympy__sympy-18199:T3D-Escalate",
+        "condition": "T3D-Escalate",
+        "events": 10,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 5,
+        "acceptance_log_reveal": 3,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "log": 4,
+          "consistency": 2
+        }
+      },
+      "c711b72465b4414efdf9477c": {
+        "cell": "contradictory:glm5_500:sympy__sympy-18199:T3A-T",
+        "condition": "T3A-T",
+        "events": 9,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "artifact": 1,
+          "log": 3
+        }
+      },
+      "fc3e55e281f3eb616994a201": {
+        "cell": "incomplete:qwen3_30b_instruct2507_500:sympy__sympy-17139:T3D-Strict",
+        "condition": "T3D-Strict",
+        "events": 6,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "log": 1
+        }
+      },
+      "4c3a41c3ca66254a63f7adb6": {
+        "cell": "incomplete:qwen3_30b_instruct2507_500:sympy__sympy-17139:T3D-Escalate",
+        "condition": "T3D-Escalate",
+        "events": 11,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 4,
+        "acceptance_log_reveal": 2,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "log": 4,
+          "consistency": 2,
+          "artifact": 1
+        }
+      },
+      "a04fa38fb79b1ff20571ce6b": {
+        "cell": "incomplete:qwen3_30b_instruct2507_500:sympy__sympy-17139:T3A-T",
+        "condition": "T3A-T",
+        "events": 8,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "artifact": 1,
+          "log": 2
+        }
+      },
+      "9d2402bab078d9601e35bc52": {
+        "cell": "stale:glm5_500:sympy__sympy-18211:T3D-Strict",
+        "condition": "T3D-Strict",
+        "events": 7,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "artifact": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "log": 1
+        }
+      },
+      "17d2c8e9d91e487e23b33d61": {
+        "cell": "stale:glm5_500:sympy__sympy-18211:T3D-Escalate",
+        "condition": "T3D-Escalate",
+        "events": 9,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 3,
+        "acceptance_log_reveal": 2,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "log": 3,
+          "consistency": 1,
+          "artifact": 1
+        }
+      },
+      "4a4ca8af7a76afc716d284cd": {
+        "cell": "stale:glm5_500:sympy__sympy-18211:T3A-T",
+        "condition": "T3A-T",
+        "events": 7,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "artifact": 1,
+          "log": 1
+        }
+      },
+      "f3c303605afe0edfaa9dcf03": {
+        "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3D-Strict",
+        "condition": "T3D-Strict",
+        "events": 7,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "artifact": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "log": 1
+        }
+      },
+      "7c3584719ab38d9ec9fd57df": {
+        "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3D-Escalate",
+        "condition": "T3D-Escalate",
+        "events": 8,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 3,
+        "acceptance_log_reveal": 2,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "log": 3,
+          "consistency": 1
+        }
+      },
+      "d3e31a9d32cedcce961533db": {
+        "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3A-T",
+        "condition": "T3A-T",
+        "events": 6,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "artifact": 1
+        }
+      },
+      "4ca45402157c4c546d17a9d1": {
+        "cell": "stale_bad:glm5_500:sympy__sympy-13798:T3D-Strict",
+        "condition": "T3D-Strict",
+        "events": 6,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "log": 1
+        }
+      },
+      "62157c2aa66cf55b67147e24": {
+        "cell": "stale_bad:glm5_500:sympy__sympy-13798:T3D-Escalate",
+        "condition": "T3D-Escalate",
+        "events": 11,
+        "denied_strict": 0,
+        "escalation_reason_missing": 1,
+        "escalation_granted": 3,
+        "acceptance_log_reveal": 2,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "log": 4,
+          "consistency": 2,
+          "artifact": 1
+        }
+      },
+      "16b1821a81368e320e401434": {
+        "cell": "stale_bad:glm5_500:sympy__sympy-13798:T3A-T",
+        "condition": "T3A-T",
+        "events": 8,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "artifact": 1,
+          "log": 2
+        }
+      },
+      "d606e3429bd4fc4715b3ce8f": {
+        "cell": "wrong_patch_good:qwen3_coder_30b_500:sympy__sympy-14531:T3D-Strict",
+        "condition": "T3D-Strict",
+        "events": 7,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "artifact": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "log": 1
+        }
+      },
+      "8df52c8a1d6ad7a16ca73dea": {
+        "cell": "wrong_patch_good:qwen3_coder_30b_500:sympy__sympy-14531:T3D-Escalate",
+        "condition": "T3D-Escalate",
+        "events": 8,
+        "denied_strict": 0,
+        "escalation_reason_missing": 1,
+        "escalation_granted": 1,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "log": 1,
+          "consistency": 2,
+          "artifact": 1
+        }
+      },
+      "3f1401ff2bd1401a64771391": {
+        "cell": "wrong_patch_good:qwen3_coder_30b_500:sympy__sympy-14531:T3A-T",
+        "condition": "T3A-T",
+        "events": 6,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "artifact": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1
+        }
+      },
+      "72cac3b967ac69f4aef989b3": {
+        "cell": "incomplete_good:qwen3_coder_30b_500:sympy__sympy-14531:T3D-Strict",
+        "condition": "T3D-Strict",
+        "events": 7,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "log": 1,
+          "artifact": 1
+        }
+      },
+      "4a0f6c61212633a4a707c4e1": {
+        "cell": "incomplete_good:qwen3_coder_30b_500:sympy__sympy-14531:T3D-Escalate",
+        "condition": "T3D-Escalate",
+        "events": 10,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 3,
+        "acceptance_log_reveal": 2,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "log": 4,
+          "consistency": 1,
+          "artifact": 1
+        }
+      },
+      "fdc607a96a69354270d3b3fa": {
+        "cell": "incomplete_good:qwen3_coder_30b_500:sympy__sympy-14531:T3A-T",
+        "condition": "T3A-T",
+        "events": 7,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "artifact": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "log": 1
+        }
+      },
+      "35b12f991091bc81cf9e1ef4": {
+        "cell": "incomplete_decisive_bad:glm5_500:sympy__sympy-13798:T3D-Strict",
+        "condition": "T3D-Strict",
+        "events": 6,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "log": 1
+        }
+      },
+      "9c55c41bd13c3a083c45d7b6": {
+        "cell": "incomplete_decisive_bad:glm5_500:sympy__sympy-13798:T3D-Escalate",
+        "condition": "T3D-Escalate",
+        "events": 11,
+        "denied_strict": 0,
+        "escalation_reason_missing": 1,
+        "escalation_granted": 4,
+        "acceptance_log_reveal": 3,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "log": 5,
+          "consistency": 2
+        }
+      },
+      "c1aac6aab42f024e9623cc02": {
+        "cell": "incomplete_decisive_bad:glm5_500:sympy__sympy-13798:T3A-T",
+        "condition": "T3A-T",
+        "events": 9,
+        "denied_strict": 0,
+        "escalation_reason_missing": 0,
+        "escalation_granted": 0,
+        "acceptance_log_reveal": 0,
+        "reads": {
+          "session_open": 1,
+          "verify": 1,
+          "freshness": 1,
+          "coverage": 1,
+          "consistency": 1,
+          "log": 3,
+          "artifact": 1
+        }
+      }
+    }
+  }
+}

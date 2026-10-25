@@ -1,0 +1,56 @@
+{
+  "cell": "wrong_patch:qwen3_30b_instruct2507_500:sympy__sympy-18211:T3A-T",
+  "condition": "T3A-T",
+  "policy": null,
+  "session_id": "d83bd357c2c6d8493b34a234",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_05f2955c70897168\", \"base_commit\": \"b4f1aa3540fe68d078d76e78ba59d022dd6df39f\", \"fail_to_pass\": {\"test_issue_18188\": \"PASSED\"}, \"finished_at\": \"2026-10-19T06:10:02+00:00\", \"instance_id\": \"sympy__sympy-18211\", \"log_digests\": {\"f2p\": \"31ff2afeae274d79b08e4659bbbd18207e9eb9f787cc3e29d1259471b87299a5\", \"p2p\": \"31ff2afeae274d79b08e4659bbbd18207e9eb9f787cc3e29d1259471b87299a5\", \"p2p_baseline\": \"18b808f94be3b269d63ed12d21ed1500a923b4a44f9ffeae6471a5bbab6a4172\", \"symptom\": \"c654e137950c944245a3f756c43dc3470607f899a9df23e4c09d1b726ee7a19c\"}, \"pass_to_pass_baseline\": {\"test_Eq\": \"PASSED\", \"test_Equality_rewrite_as_Add\": \"PASSED\", \"test_Not\": \"PASSED\", \"test_as_poly\": \"PASSED\", \"test_binary_symbols\": \"PASSED\", \"test_bool\": \"PASSED\", \"test_canonical\": \"PASSED\", \"test_complex_compare_not_real\": \"PASSED\", \"test_complex_infinity_inequalities\": \"PASSED\", \"test_complex_pure_imag_not_ordered\": \"PASSED\", \"test_doit\": \"PASSED\", \"test_equals\": \"PASSED\", \"test_evaluate\": \"PASSED\", \"test_imaginary_and_inf_compare_raises_TypeError\": \"PASSED\", \"test_imaginary_compare_raises_TypeError\": \"PASSED\", \"test_improved_canonical\": \"PASSED\", \"test_ineq_avoid_wild_symbol_flip\": \"PASSED"
+    },
+    {
+      "turn": 1,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": false, \"linked\": false, \"record_base_commit\": \"b4f1aa3540fe68d078d76e78ba59d022dd6df39f\", \"record_patch_sha256\": \"a67f41aeb66c319bd4b58fb62c1c11a57c21957a383c959b669513948d542ec9\"}"
+    },
+    {
+      "turn": 2,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": \"37e055065fc42ddf8fdde63d0e65b05888b62766\", \"expected_run_tree\": \"814d03031b71c8f086522db00c253fa6f21ae6e5\", \"artifact_started_at\": \"2026-10-19T06:09:45+00:00\", \"attestation_built_at\": \"2026-10-19T08:01:44+00:00\"}"
+    },
+    {
+      "turn": 3,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 54, \"executed\": 54, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 4,
+      "tool": "get_run_log",
+      "args": {
+        "name": "f2p"
+      },
+      "http_status": 200,
+      "result_preview": "$ C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmp5G8Bde\\Scripts\\python.exe -m pytest sympy/core/tests/test_relational.py -v --tb=short -p no:cacheprovider  (exit 1, 7s)\n--- stdout ---\n============================= test session starts =============================\nplatform win32 -- Python 3.11.15, pytest-9.1.1, pluggy-1.7.0 -- C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmp5G8Bde\\Scripts\\python.exe\narchitecture: 64-bit\ncache:        yes\nground types: python \n\nrootdir: C:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\nconfigfile: pytest.ini\ncollecting ... collected 58 items\n\nsympy/core/tests/test_relational.py::test_rel_ne PASSED                  [  1%]\nsympy/core/tests/test_relational.py::test_rel_subs PASSED                [  3%]\nsympy/core/tests/test_relational.py::test_wrappers PASSED                [  5%]\nsympy/core/tests/test_relational.py::test_Eq PASSED                      [  6%]\nsympy/core/tests/test_relational.py::test_as_poly PASSED                 [  8%]\nsympy/core/tests/test_relational.py::test_rel_Infinity PASSED            [ 10%]\nsympy/core/tests/test_relational.py::test_infinite_symbol_inequalities PASSED [ 12%]\nsympy/core/tests/test_relational.py::"
+    },
+    {
+      "turn": 5,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"executed acceptance/regression checks show no failure\", \"failed_acceptance_checks\": 0, \"regression_checks\": 0, \"executed_checks\": 55}"
+    }
+  ],
+  "final_answer": "{\"decision\": \"NEED_EVIDENCE\", \"reason\": \"evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established\", \"evidence_mismatch\": true, \"missing_evidence\": \"linked/fresh applicability\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

@@ -1,0 +1,108 @@
+You are an independent code reviewer. Review the candidate patch as a resolution of the issue and return exactly one of three decisions, based ONLY on evidence you can trust and that actually applies to THIS patch and its current commit tree:
+  "ACCEPT" — the evidence is intact (linked to this patch/commit, fresh for the current tree, and the declared acceptance/regression set was fully executed) AND demonstrates success: the reported issue is resolved and no executed acceptance check fails and no scoped regression is introduced.
+  "REJECT" — you have trustworthy evidence that APPLIES to this patch and current tree and that contains a decisive failure: an applicable acceptance check fails or a scoped regression is introduced. A single credible, applicable failing check is enough to REJECT even if not every declared check was run. But a failure seen in a stale run, in an artifact linked to a different patch, or in an inapplicable log is NOT grounds to reject THIS patch.
+  "NEED_EVIDENCE" — you cannot reach either conclusion: the available evidence does not link to this patch/commit, is not fresh for the current tree, or does not cover the declared set, and no decisive applicable failure has been established. You are explicitly allowed and expected to abstain in this case; set evidence_mismatch=true and use missing_evidence to name the specific gap.
+Asymmetry rule: the bar to REJECT is a credible applicable failure; the bar to ACCEPT is complete, fresh, linked, failure-free success. Invalid evidence is a property of the EVIDENCE, not a verdict that the patch code is wrong — do not REJECT merely because evidence is stale/mismatched/incomplete. Conversely, do not hide behind NEED_EVIDENCE when intact sufficient evidence already lets you decide; abstaining on a decisive applicable failure or on complete success is an error.
+Author statements are unverified claims. Ground truth about mergeability is never given to you.
+
+FIXED-EVIDENCE CONDITION (CEE-FIXED): The evidence below is a COMPLETE, fixed bundle assembled for this review. It contains the signed test run record with the maintainer acceptance/regression outcomes, the issue-reproduction probe outcome, and integrity verdicts that have ALREADY been adjudicated over the signed record and the repository attestation: whether the record is linked to THIS patch/commit, whether it is fresh for the current commit tree, and whether the declared acceptance/regression set was fully executed. In this condition there are NO tools, NO further endpoints and NO escalation: you cannot fetch additional logs, re-run any check, or request more evidence. Make your decision solely from this bundle.
+Apply the same asymmetric standard: REJECT on a single credible, applicable (linked and fresh) failing check, even if coverage is incomplete; ACCEPT only when the bundle establishes linked, fresh, complete, failure-free success; otherwise NEED_EVIDENCE. Do not abstain when the bundle already lets you decide, and do not accept on a bundle that does not establish complete success. A missing/tool-only check that is already answered inside this bundle is NOT a reason to abstain.
+Evidence-gap taxonomy when you answer "NEED_EVIDENCE": stale = the run is not fresh for the current commit tree; linkage_mismatch = the record does not link to THIS patch/commit; coverage_incomplete = the declared set was not fully executed; contradiction = bundle evidence conflicts (e.g. the issue symptom still reproduces or an applicable check fails — note such a contradiction on linked, fresh evidence is decisive grounds to REJECT, not to abstain); unspecified = you cannot name a concrete, bundle-supported gap. Report a gap only when it is directly supported by the fixed bundle; never invent one.
+Respond with a single JSON object containing exactly these keys: {"decision":"ACCEPT|REJECT|NEED_EVIDENCE","reason":"...","evidence_mismatch":false,"missing_evidence":"","evidence_gap":"stale|linkage_mismatch|coverage_incomplete|contradiction|unspecified|"}. Always include every key. Set missing_evidence and evidence_gap to "" unless the decision is NEED_EVIDENCE; for NEED_EVIDENCE choose exactly one non-empty evidence_gap that is directly supported by the bundle.
+
+Your review target is MERGE ACCEPTABILITY of the patch (issue resolved AND no applicable acceptance failure / scoped regression).
+
+FIXED EVIDENCE BUNDLE (protocol cee-fixed-v1).
+
+ISSUE:
+combinatorics.Permutation can't be subclassed properly
+I stumbled across a subclassing issue with `combinatorics.Permutation`:
+The object creation is done in `Permutation.__new__`, but internally the function `_af_new` is used (which itself is a reference to the static method `Permutation._af_new`). This method eventually creates the object calling `Basic.__new__(Perm, perm)` (`Perm` is a reference to `Permutation`).
+In the end, this makes subclassing `Permutation` impossible (besides overriding `Permutation._af_new` as always instances of `Permutation` are returned.
+
+An elegant solution would be to stick to Python's instance creation mechanisms, i.e. use classmethods where appropriate (`__new__` is one) and use the mandatory reference to the class (the first argument of a classmethod) the method is called on for instance creation.
+
+I'm completely new to sympy development and encountered this issue whilst trying to subclass `Permutation`. Therefore I'm not aware of any side effects changing the instance creation probably has. (I monkeypatched it locally and ran the tests, all succeeded.)
+
+Maybe there is a coherent explanation why the implementation is as it is and should not be changed?
+
+
+PATCH:
+diff --git a/sympy/combinatorics/permutations.py b/sympy/combinatorics/permutations.py
+index 4ac1c2ef3..93a931894 100644
+--- a/sympy/combinatorics/permutations.py
++++ b/sympy/combinatorics/permutations.py
+@@ -857,9 +857,9 @@ def __new__(cls, *args, **kwargs):
+         #g) (Permutation) = adjust size or return copy
+         ok = True
+         if not args:  # a
+-            return _af_new(list(range(size or 0)))
++            return _af_new(Permutation, list(range(size or 0)))
+         elif len(args) > 1:  # c
+-            return _af_new(Cycle(*args).list(size))
++            return _af_new(Permutation, Cycle(*args).list(size))
+         if len(args) == 1:
+             a = args[0]
+             if isinstance(a, Perm):  # g
+@@ -867,9 +867,9 @@ def __new__(cls, *args, **kwargs):
+                     return a
+                 return Perm(a.array_form, size=size)
+             if isinstance(a, Cycle):  # f
+-                return _af_new(a.list(size))
++                return _af_new(Permutation, a.list(size))
+             if not is_sequence(a):  # b
+-                return _af_new(list(range(a + 1)))
++                return _af_new(Permutation, list(range(a + 1)))
+             if has_variety(is_sequence(ai) for ai in a):
+                 ok = False
+         else:
+@@ -925,7 +925,7 @@ def __new__(cls, *args, **kwargs):
+         return obj
+ 
+     @staticmethod
+-    def _af_new(perm):
++    def _af_new(cls, perm):
+         """A method to produce a Permutation object from a list;
+         the list is bound to the _array_form attribute, so it must
+         not be modified; this method is meant for internal use only;
+@@ -939,12 +939,12 @@ def _af_new(perm):
+         >>> from sympy.combinatorics.permutations import Perm
+         >>> Perm.print_cyclic = False
+         >>> a = [2,1,3,0]
+-        >>> p = Perm._af_new(a)
++        >>> p = Perm._af_new(Perm, a)
+         >>> p
+         Permutation([2, 1, 3, 0])
+ 
+         """
+-        p = Basic.__new__(Perm, perm)
++        p = Basic.__new__(cls, perm)
+         p._array_form = perm
+         p._size = len(perm)
+         return p
+
+
+AUTHOR STATEMENT:
+Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass.
+
+TEST ARTIFACT (ACCEPTANCE tier; full static record; linkage not yet verified):
+  artifact_id: art_394bf6648b9c0269
+  runner: pytest/vendored-git py=3.9.25 host=windows-local
+  base_commit: aa9780761ad8c3c0f68beeef3a0ce5caac9e100b
+  patch_sha256: 72cd45d03db8650b930ff256727034b18f2783909fb51f61016acc6e242b94bc
+  started_at: 2026-10-20T11:58:34+00:00
+  finished_at: 2026-10-20T11:58:37+00:00
+  FAIL_TO_PASS passed: 0/1
+  scoped PASS_TO_PASS passed: 0/8
+  failing acceptance test ids:
+    - test_Permutation_subclassing
+
+ISSUE-REPRODUCTION PROBE (derived from the issue text, not the maintainer test suite; a passing probe means the symptom is GONE):
+  issue symptom present before patch: yes
+  issue symptom reproduces after patch: yes
+
+INTEGRITY VERDICTS (already adjudicated over the signed record and the repository attestation):
+  record signature authentic: yes
+  linked to THIS patch and base commit: yes
+  fresh for the current commit tree: no
+  declared acceptance/regression set fully executed: yes
