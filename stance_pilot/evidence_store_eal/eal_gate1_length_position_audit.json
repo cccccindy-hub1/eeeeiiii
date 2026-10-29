@@ -1,0 +1,3157 @@
+{
+  "document": "EAL Gate-1 served-byte length/position/truncation/leak audit",
+  "protocol": "eal-v0-draft1",
+  "estimators": {
+    "whitespace_punct_tokens": "model-independent lower bound",
+    "tokens_chars_div_4_conservative": "upper-ish bound for English",
+    "tokens_anchored_div_3_62": "anchored to measured CEE 2246tok/8119B = 3.615 B/tok"
+  },
+  "context_budgets_tokens": {
+    "deepseek-flash": 128000,
+    "gpt-4.1-mini": 1000000
+  },
+  "completion_cap_tokens": 4096,
+  "per_layer_summary": {
+    "raw": {
+      "n": 22,
+      "bytes_min_median_max": [
+        24692,
+        55581,
+        245381
+      ],
+      "tokens_min_median_max": [
+        6817,
+        15349,
+        67780
+      ],
+      "cells_over_64k_anchor_tokens": [
+        "cee_cfc14244c59a8ceb__raw"
+      ],
+      "cells_over_120k_anchor_tokens": [],
+      "fits_context_budget": {
+        "deepseek-flash": true,
+        "gpt-4.1-mini": true
+      },
+      "max_context_headroom_tokens": {
+        "deepseek-flash": 60220,
+        "gpt-4.1-mini": 932220
+      }
+    },
+    "structured": {
+      "n": 22,
+      "bytes_min_median_max": [
+        12674,
+        24770,
+        36729
+      ],
+      "tokens_min_median_max": [
+        3493,
+        6832,
+        10138
+      ],
+      "cells_over_64k_anchor_tokens": [],
+      "cells_over_120k_anchor_tokens": [],
+      "fits_context_budget": {
+        "deepseek-flash": true,
+        "gpt-4.1-mini": true
+      },
+      "max_context_headroom_tokens": {
+        "deepseek-flash": 117862,
+        "gpt-4.1-mini": 989862
+      }
+    },
+    "adjudicated": {
+      "n": 22,
+      "bytes_min_median_max": [
+        6633,
+        8091,
+        14480
+      ],
+      "tokens_min_median_max": [
+        1830,
+        2232,
+        3997
+      ],
+      "cells_over_64k_anchor_tokens": [],
+      "cells_over_120k_anchor_tokens": [],
+      "fits_context_budget": {
+        "deepseek-flash": true,
+        "gpt-4.1-mini": true
+      },
+      "max_context_headroom_tokens": {
+        "deepseek-flash": 124003,
+        "gpt-4.1-mini": 996003
+      }
+    }
+  },
+  "raw_structured_served_byte_leaks": [],
+  "n_leaks": 0,
+  "cells": [
+    {
+      "payload_id": "cee_8f41672ea242cd7a__raw",
+      "bundle_id": "cee_8f41672ea242cd7a",
+      "layer": "raw",
+      "bytes": 62187,
+      "whitespace_punct_tokens": 13964,
+      "tokens_chars_div_4_conservative": 15542,
+      "tokens_anchored_div_3_62": 17174,
+      "chars": 62171,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 7107,
+          "fraction_of_payload": 0.1143
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 7182,
+          "fraction_of_payload": 0.1155
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 11255,
+          "fraction_of_payload": 0.181
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0458
+        },
+        "LOG: f2p": {
+          "byte_offset": 22035,
+          "fraction_of_payload": 0.3544
+        },
+        "LOG: p2p": {
+          "byte_offset": 35537,
+          "fraction_of_payload": 0.5716
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 49035,
+          "fraction_of_payload": 0.7887
+        },
+        "LOG: symptom": {
+          "byte_offset": 61029,
+          "fraction_of_payload": 0.9816
+        },
+        "PROBE SOURCE": {
+          "byte_offset": 61457,
+          "fraction_of_payload": 0.9885
+        },
+        "short test summary": {
+          "byte_offset": 34838,
+          "fraction_of_payload": 0.5604
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.049
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_8f41672ea242cd7a__structured",
+      "bundle_id": "cee_8f41672ea242cd7a",
+      "layer": "structured",
+      "bytes": 36189,
+      "whitespace_punct_tokens": 6996,
+      "tokens_chars_div_4_conservative": 9040,
+      "tokens_anchored_div_3_62": 9989,
+      "chars": 36161,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 6523,
+          "fraction_of_payload": 0.1804
+        },
+        "TABLE 2": {
+          "byte_offset": 7148,
+          "fraction_of_payload": 0.1977
+        },
+        "TABLE 3": {
+          "byte_offset": 8137,
+          "fraction_of_payload": 0.225
+        },
+        "TABLE 4": {
+          "byte_offset": 18096,
+          "fraction_of_payload": 0.5004
+        },
+        "TABLE 5": {
+          "byte_offset": 32958,
+          "fraction_of_payload": 0.9114
+        },
+        "TABLE 6": {
+          "byte_offset": 34357,
+          "fraction_of_payload": 0.9501
+        },
+        "TABLE 7": {
+          "byte_offset": 35530,
+          "fraction_of_payload": 0.9826
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 35785,
+          "fraction_of_payload": 0.9896
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 35935,
+          "fraction_of_payload": 0.9938
+        },
+        "exit_code": {
+          "byte_offset": 34527,
+          "fraction_of_payload": 0.9548
+        },
+        "FAILED": {
+          "byte_offset": 29726,
+          "fraction_of_payload": 0.822
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_8f41672ea242cd7a__adjudicated",
+      "bundle_id": "cee_8f41672ea242cd7a",
+      "layer": "adjudicated",
+      "bytes": 7253,
+      "whitespace_punct_tokens": 1554,
+      "tokens_chars_div_4_conservative": 1810,
+      "tokens_anchored_div_3_62": 2001,
+      "chars": 7243,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 6972,
+          "fraction_of_payload": 0.9626
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.3209
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.053
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_017f5443ec813709__raw",
+      "bundle_id": "cee_017f5443ec813709",
+      "layer": "raw",
+      "bytes": 26875,
+      "whitespace_punct_tokens": 9770,
+      "tokens_chars_div_4_conservative": 6714,
+      "tokens_anchored_div_3_62": 7420,
+      "chars": 26859,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 7978,
+          "fraction_of_payload": 0.297
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 8053,
+          "fraction_of_payload": 0.2998
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 10761,
+          "fraction_of_payload": 0.4006
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.1059
+        },
+        "LOG: f2p": {
+          "byte_offset": 12399,
+          "fraction_of_payload": 0.4616
+        },
+        "LOG: p2p": {
+          "byte_offset": 25703,
+          "fraction_of_payload": 0.957
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 25902,
+          "fraction_of_payload": 0.9644
+        },
+        "LOG: symptom": {
+          "byte_offset": 26002,
+          "fraction_of_payload": 0.9681
+        },
+        "PROBE SOURCE": {
+          "byte_offset": 26432,
+          "fraction_of_payload": 0.9841
+        },
+        "log not retained": {
+          "byte_offset": 25965,
+          "fraction_of_payload": 0.9667
+        },
+        "short test summary": {
+          "byte_offset": 22020,
+          "fraction_of_payload": 0.8198
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.1133
+        }
+      },
+      "n_distinct_markers_found": 12,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_017f5443ec813709__structured",
+      "bundle_id": "cee_017f5443ec813709",
+      "layer": "structured",
+      "bytes": 25432,
+      "whitespace_punct_tokens": 5135,
+      "tokens_chars_div_4_conservative": 6351,
+      "tokens_anchored_div_3_62": 7018,
+      "chars": 25404,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 7394,
+          "fraction_of_payload": 0.2911
+        },
+        "TABLE 2": {
+          "byte_offset": 8019,
+          "fraction_of_payload": 0.3157
+        },
+        "TABLE 3": {
+          "byte_offset": 9008,
+          "fraction_of_payload": 0.3546
+        },
+        "TABLE 4": {
+          "byte_offset": 13863,
+          "fraction_of_payload": 0.5457
+        },
+        "TABLE 5": {
+          "byte_offset": 22229,
+          "fraction_of_payload": 0.875
+        },
+        "TABLE 6": {
+          "byte_offset": 23628,
+          "fraction_of_payload": 0.9301
+        },
+        "TABLE 7": {
+          "byte_offset": 24771,
+          "fraction_of_payload": 0.9751
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 25026,
+          "fraction_of_payload": 0.9851
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 25182,
+          "fraction_of_payload": 0.9913
+        },
+        "exit_code": {
+          "byte_offset": 23798,
+          "fraction_of_payload": 0.9368
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_017f5443ec813709__adjudicated",
+      "bundle_id": "cee_017f5443ec813709",
+      "layer": "adjudicated",
+      "bytes": 8062,
+      "whitespace_punct_tokens": 1877,
+      "tokens_chars_div_4_conservative": 2013,
+      "tokens_anchored_div_3_62": 2224,
+      "chars": 8052,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 7782,
+          "fraction_of_payload": 0.9665
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.2886
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0477
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_13b04ca1faae0894__raw",
+      "bundle_id": "cee_13b04ca1faae0894",
+      "layer": "raw",
+      "bytes": 36369,
+      "whitespace_punct_tokens": 8304,
+      "tokens_chars_div_4_conservative": 9088,
+      "tokens_anchored_div_3_62": 10042,
+      "chars": 36353,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 8839,
+          "fraction_of_payload": 0.2431
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 8914,
+          "fraction_of_payload": 0.2452
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 13216,
+          "fraction_of_payload": 0.3635
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0783
+        },
+        "LOG: f2p": {
+          "byte_offset": 16064,
+          "fraction_of_payload": 0.4419
+        },
+        "LOG: p2p": {
+          "byte_offset": 33343,
+          "fraction_of_payload": 0.9172
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 33542,
+          "fraction_of_payload": 0.9227
+        },
+        "LOG: symptom": {
+          "byte_offset": 33642,
+          "fraction_of_payload": 0.9254
+        },
+        "PROBE SOURCE": {
+          "byte_offset": 35907,
+          "fraction_of_payload": 0.9877
+        },
+        "log not retained": {
+          "byte_offset": 33605,
+          "fraction_of_payload": 0.9244
+        },
+        "short test summary": {
+          "byte_offset": 32377,
+          "fraction_of_payload": 0.8906
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0837
+        }
+      },
+      "n_distinct_markers_found": 12,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_13b04ca1faae0894__structured",
+      "bundle_id": "cee_13b04ca1faae0894",
+      "layer": "structured",
+      "bytes": 33960,
+      "whitespace_punct_tokens": 6779,
+      "tokens_chars_div_4_conservative": 8483,
+      "tokens_anchored_div_3_62": 9373,
+      "chars": 33932,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 8255,
+          "fraction_of_payload": 0.2433
+        },
+        "TABLE 2": {
+          "byte_offset": 8880,
+          "fraction_of_payload": 0.2617
+        },
+        "TABLE 3": {
+          "byte_offset": 9869,
+          "fraction_of_payload": 0.2908
+        },
+        "TABLE 4": {
+          "byte_offset": 18340,
+          "fraction_of_payload": 0.5405
+        },
+        "TABLE 5": {
+          "byte_offset": 30440,
+          "fraction_of_payload": 0.8971
+        },
+        "TABLE 6": {
+          "byte_offset": 31839,
+          "fraction_of_payload": 0.9383
+        },
+        "TABLE 7": {
+          "byte_offset": 33367,
+          "fraction_of_payload": 0.9833
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 33622,
+          "fraction_of_payload": 0.9909
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 33720,
+          "fraction_of_payload": 0.9938
+        },
+        "exit_code": {
+          "byte_offset": 32086,
+          "fraction_of_payload": 0.9456
+        },
+        "FAILED": {
+          "byte_offset": 25481,
+          "fraction_of_payload": 0.7509
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_13b04ca1faae0894__adjudicated",
+      "bundle_id": "cee_13b04ca1faae0894",
+      "layer": "adjudicated",
+      "bytes": 8976,
+      "whitespace_punct_tokens": 2095,
+      "tokens_chars_div_4_conservative": 2241,
+      "tokens_anchored_div_3_62": 2477,
+      "chars": 8966,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 8696,
+          "fraction_of_payload": 0.9699
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.2592
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0428
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_f0328f55403163cb__raw",
+      "bundle_id": "cee_f0328f55403163cb",
+      "layer": "raw",
+      "bytes": 24692,
+      "whitespace_punct_tokens": 5864,
+      "tokens_chars_div_4_conservative": 6169,
+      "tokens_anchored_div_3_62": 6817,
+      "chars": 24676,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 7239,
+          "fraction_of_payload": 0.2934
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 7314,
+          "fraction_of_payload": 0.2964
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 10873,
+          "fraction_of_payload": 0.4406
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.1153
+        },
+        "LOG: f2p": {
+          "byte_offset": 13696,
+          "fraction_of_payload": 0.555
+        },
+        "LOG: p2p": {
+          "byte_offset": 21184,
+          "fraction_of_payload": 0.8585
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 21383,
+          "fraction_of_payload": 0.8666
+        },
+        "LOG: symptom": {
+          "byte_offset": 21483,
+          "fraction_of_payload": 0.8706
+        },
+        "PROBE SOURCE": {
+          "byte_offset": 24027,
+          "fraction_of_payload": 0.9737
+        },
+        "log not retained": {
+          "byte_offset": 21446,
+          "fraction_of_payload": 0.8691
+        },
+        "short test summary": {
+          "byte_offset": 20890,
+          "fraction_of_payload": 0.8466
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.1234
+        }
+      },
+      "n_distinct_markers_found": 12,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_f0328f55403163cb__structured",
+      "bundle_id": "cee_f0328f55403163cb",
+      "layer": "structured",
+      "bytes": 28842,
+      "whitespace_punct_tokens": 5587,
+      "tokens_chars_div_4_conservative": 7203,
+      "tokens_anchored_div_3_62": 7960,
+      "chars": 28814,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 6655,
+          "fraction_of_payload": 0.231
+        },
+        "TABLE 2": {
+          "byte_offset": 7280,
+          "fraction_of_payload": 0.2527
+        },
+        "TABLE 3": {
+          "byte_offset": 8269,
+          "fraction_of_payload": 0.287
+        },
+        "TABLE 4": {
+          "byte_offset": 14088,
+          "fraction_of_payload": 0.4889
+        },
+        "TABLE 5": {
+          "byte_offset": 25218,
+          "fraction_of_payload": 0.8752
+        },
+        "TABLE 6": {
+          "byte_offset": 26617,
+          "fraction_of_payload": 0.9238
+        },
+        "TABLE 7": {
+          "byte_offset": 28100,
+          "fraction_of_payload": 0.9752
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 28355,
+          "fraction_of_payload": 0.9841
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 28573,
+          "fraction_of_payload": 0.9916
+        },
+        "exit_code": {
+          "byte_offset": 26855,
+          "fraction_of_payload": 0.932
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_f0328f55403163cb__adjudicated",
+      "bundle_id": "cee_f0328f55403163cb",
+      "layer": "adjudicated",
+      "bytes": 7322,
+      "whitespace_punct_tokens": 1699,
+      "tokens_chars_div_4_conservative": 1828,
+      "tokens_anchored_div_3_62": 2020,
+      "chars": 7312,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 7042,
+          "fraction_of_payload": 0.9631
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.3178
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0525
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_d054bcf1e4e8b26c__raw",
+      "bundle_id": "cee_d054bcf1e4e8b26c",
+      "layer": "raw",
+      "bytes": 33206,
+      "whitespace_punct_tokens": 7331,
+      "tokens_chars_div_4_conservative": 8295,
+      "tokens_anchored_div_3_62": 9166,
+      "chars": 33180,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 8842,
+          "fraction_of_payload": 0.2665
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 8917,
+          "fraction_of_payload": 0.2687
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 11583,
+          "fraction_of_payload": 0.3491
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0857
+        },
+        "LOG: f2p": {
+          "byte_offset": 15961,
+          "fraction_of_payload": 0.481
+        },
+        "LOG: p2p": {
+          "byte_offset": 23965,
+          "fraction_of_payload": 0.7223
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 31965,
+          "fraction_of_payload": 0.9634
+        },
+        "LOG: symptom": {
+          "byte_offset": 32065,
+          "fraction_of_payload": 0.9664
+        },
+        "PROBE SOURCE": {
+          "byte_offset": 32597,
+          "fraction_of_payload": 0.9824
+        },
+        "log not retained": {
+          "byte_offset": 32028,
+          "fraction_of_payload": 0.9653
+        },
+        "short test summary": {
+          "byte_offset": 23525,
+          "fraction_of_payload": 0.709
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0917
+        }
+      },
+      "n_distinct_markers_found": 12,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_d054bcf1e4e8b26c__structured",
+      "bundle_id": "cee_d054bcf1e4e8b26c",
+      "layer": "structured",
+      "bytes": 26441,
+      "whitespace_punct_tokens": 5273,
+      "tokens_chars_div_4_conservative": 6600,
+      "tokens_anchored_div_3_62": 7294,
+      "chars": 26403,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 8258,
+          "fraction_of_payload": 0.3128
+        },
+        "TABLE 2": {
+          "byte_offset": 8883,
+          "fraction_of_payload": 0.3364
+        },
+        "TABLE 3": {
+          "byte_offset": 9872,
+          "fraction_of_payload": 0.3739
+        },
+        "TABLE 4": {
+          "byte_offset": 15539,
+          "fraction_of_payload": 0.5885
+        },
+        "TABLE 5": {
+          "byte_offset": 23136,
+          "fraction_of_payload": 0.8763
+        },
+        "TABLE 6": {
+          "byte_offset": 24535,
+          "fraction_of_payload": 0.9293
+        },
+        "TABLE 7": {
+          "byte_offset": 25663,
+          "fraction_of_payload": 0.972
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 25918,
+          "fraction_of_payload": 0.9816
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 26152,
+          "fraction_of_payload": 0.9905
+        },
+        "exit_code": {
+          "byte_offset": 24702,
+          "fraction_of_payload": 0.9356
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_d054bcf1e4e8b26c__adjudicated",
+      "bundle_id": "cee_d054bcf1e4e8b26c",
+      "layer": "adjudicated",
+      "bytes": 8938,
+      "whitespace_punct_tokens": 1875,
+      "tokens_chars_div_4_conservative": 2229,
+      "tokens_anchored_div_3_62": 2464,
+      "chars": 8918,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 8648,
+          "fraction_of_payload": 0.9697
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.2606
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0431
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_5449e183c637f604__raw",
+      "bundle_id": "cee_5449e183c637f604",
+      "layer": "raw",
+      "bytes": 157239,
+      "whitespace_punct_tokens": 36842,
+      "tokens_chars_div_4_conservative": 39305,
+      "tokens_anchored_div_3_62": 43432,
+      "chars": 157223,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 8839,
+          "fraction_of_payload": 0.0562
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 8914,
+          "fraction_of_payload": 0.0567
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 13216,
+          "fraction_of_payload": 0.0841
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0181
+        },
+        "LOG: f2p": {
+          "byte_offset": 19772,
+          "fraction_of_payload": 0.1258
+        },
+        "LOG: p2p": {
+          "byte_offset": 87094,
+          "fraction_of_payload": 0.554
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 154412,
+          "fraction_of_payload": 0.9821
+        },
+        "LOG: symptom": {
+          "byte_offset": 154512,
+          "fraction_of_payload": 0.9828
+        },
+        "PROBE SOURCE": {
+          "byte_offset": 156777,
+          "fraction_of_payload": 0.9972
+        },
+        "log not retained": {
+          "byte_offset": 154475,
+          "fraction_of_payload": 0.9825
+        },
+        "short test summary": {
+          "byte_offset": 31957,
+          "fraction_of_payload": 0.2033
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0194
+        }
+      },
+      "n_distinct_markers_found": 12,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_5449e183c637f604__structured",
+      "bundle_id": "cee_5449e183c637f604",
+      "layer": "structured",
+      "bytes": 33900,
+      "whitespace_punct_tokens": 6855,
+      "tokens_chars_div_4_conservative": 8468,
+      "tokens_anchored_div_3_62": 9357,
+      "chars": 33872,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 8255,
+          "fraction_of_payload": 0.2437
+        },
+        "TABLE 2": {
+          "byte_offset": 8880,
+          "fraction_of_payload": 0.2622
+        },
+        "TABLE 3": {
+          "byte_offset": 9869,
+          "fraction_of_payload": 0.2914
+        },
+        "TABLE 4": {
+          "byte_offset": 18340,
+          "fraction_of_payload": 0.5415
+        },
+        "TABLE 5": {
+          "byte_offset": 30440,
+          "fraction_of_payload": 0.8987
+        },
+        "TABLE 6": {
+          "byte_offset": 31839,
+          "fraction_of_payload": 0.94
+        },
+        "TABLE 7": {
+          "byte_offset": 33307,
+          "fraction_of_payload": 0.9833
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 33562,
+          "fraction_of_payload": 0.9908
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 33660,
+          "fraction_of_payload": 0.9937
+        },
+        "exit_code": {
+          "byte_offset": 32074,
+          "fraction_of_payload": 0.9469
+        },
+        "FAILED": {
+          "byte_offset": 23219,
+          "fraction_of_payload": 0.6855
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_5449e183c637f604__adjudicated",
+      "bundle_id": "cee_5449e183c637f604",
+      "layer": "adjudicated",
+      "bytes": 8980,
+      "whitespace_punct_tokens": 2095,
+      "tokens_chars_div_4_conservative": 2242,
+      "tokens_anchored_div_3_62": 2478,
+      "chars": 8970,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 8700,
+          "fraction_of_payload": 0.9699
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.2591
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0428
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_037b37020e5d9a37__raw",
+      "bundle_id": "cee_037b37020e5d9a37",
+      "layer": "raw",
+      "bytes": 79626,
+      "whitespace_punct_tokens": 19434,
+      "tokens_chars_div_4_conservative": 19902,
+      "tokens_anchored_div_3_62": 21992,
+      "chars": 79610,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 8752,
+          "fraction_of_payload": 0.1099
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 8827,
+          "fraction_of_payload": 0.1109
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 10954,
+          "fraction_of_payload": 0.1376
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0357
+        },
+        "LOG: f2p": {
+          "byte_offset": 16153,
+          "fraction_of_payload": 0.2029
+        },
+        "LOG: p2p": {
+          "byte_offset": 36736,
+          "fraction_of_payload": 0.4614
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 57315,
+          "fraction_of_payload": 0.7199
+        },
+        "LOG: symptom": {
+          "byte_offset": 78057,
+          "fraction_of_payload": 0.9805
+        },
+        "PROBE SOURCE": {
+          "byte_offset": 79183,
+          "fraction_of_payload": 0.9946
+        },
+        "short test summary": {
+          "byte_offset": 31055,
+          "fraction_of_payload": 0.3901
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0382
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_037b37020e5d9a37__structured",
+      "bundle_id": "cee_037b37020e5d9a37",
+      "layer": "structured",
+      "bytes": 22051,
+      "whitespace_punct_tokens": 4662,
+      "tokens_chars_div_4_conservative": 5505,
+      "tokens_anchored_div_3_62": 6084,
+      "chars": 22023,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 8168,
+          "fraction_of_payload": 0.3709
+        },
+        "TABLE 2": {
+          "byte_offset": 8793,
+          "fraction_of_payload": 0.3993
+        },
+        "TABLE 3": {
+          "byte_offset": 9782,
+          "fraction_of_payload": 0.4442
+        },
+        "TABLE 4": {
+          "byte_offset": 13101,
+          "fraction_of_payload": 0.5949
+        },
+        "TABLE 5": {
+          "byte_offset": 18274,
+          "fraction_of_payload": 0.8298
+        },
+        "TABLE 6": {
+          "byte_offset": 19673,
+          "fraction_of_payload": 0.8933
+        },
+        "TABLE 7": {
+          "byte_offset": 21166,
+          "fraction_of_payload": 0.9611
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 21421,
+          "fraction_of_payload": 0.9727
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 21803,
+          "fraction_of_payload": 0.99
+        },
+        "exit_code": {
+          "byte_offset": 19913,
+          "fraction_of_payload": 0.9042
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_037b37020e5d9a37__adjudicated",
+      "bundle_id": "cee_037b37020e5d9a37",
+      "layer": "adjudicated",
+      "bytes": 8841,
+      "whitespace_punct_tokens": 1790,
+      "tokens_chars_div_4_conservative": 2207,
+      "tokens_anchored_div_3_62": 2440,
+      "chars": 8831,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 8560,
+          "fraction_of_payload": 0.9693
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.2632
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0435
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_58d93f77f0c49f82__raw",
+      "bundle_id": "cee_58d93f77f0c49f82",
+      "layer": "raw",
+      "bytes": 41324,
+      "whitespace_punct_tokens": 9130,
+      "tokens_chars_div_4_conservative": 10324,
+      "tokens_anchored_div_3_62": 11408,
+      "chars": 41298,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 6735,
+          "fraction_of_payload": 0.1631
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 6810,
+          "fraction_of_payload": 0.1649
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 9476,
+          "fraction_of_payload": 0.2295
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0689
+        },
+        "LOG: f2p": {
+          "byte_offset": 16211,
+          "fraction_of_payload": 0.3925
+        },
+        "LOG: p2p": {
+          "byte_offset": 24215,
+          "fraction_of_payload": 0.5863
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 32215,
+          "fraction_of_payload": 0.7801
+        },
+        "LOG: symptom": {
+          "byte_offset": 40146,
+          "fraction_of_payload": 0.9721
+        },
+        "PROBE SOURCE": {
+          "byte_offset": 40715,
+          "fraction_of_payload": 0.9859
+        },
+        "short test summary": {
+          "byte_offset": 23775,
+          "fraction_of_payload": 0.5757
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0737
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_58d93f77f0c49f82__structured",
+      "bundle_id": "cee_58d93f77f0c49f82",
+      "layer": "structured",
+      "bytes": 24770,
+      "whitespace_punct_tokens": 4997,
+      "tokens_chars_div_4_conservative": 6183,
+      "tokens_anchored_div_3_62": 6832,
+      "chars": 24732,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 6151,
+          "fraction_of_payload": 0.2487
+        },
+        "TABLE 2": {
+          "byte_offset": 6776,
+          "fraction_of_payload": 0.274
+        },
+        "TABLE 3": {
+          "byte_offset": 7765,
+          "fraction_of_payload": 0.314
+        },
+        "TABLE 4": {
+          "byte_offset": 13432,
+          "fraction_of_payload": 0.5431
+        },
+        "TABLE 5": {
+          "byte_offset": 21428,
+          "fraction_of_payload": 0.8664
+        },
+        "TABLE 6": {
+          "byte_offset": 22827,
+          "fraction_of_payload": 0.923
+        },
+        "TABLE 7": {
+          "byte_offset": 23955,
+          "fraction_of_payload": 0.9686
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 24210,
+          "fraction_of_payload": 0.9789
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 24444,
+          "fraction_of_payload": 0.9884
+        },
+        "exit_code": {
+          "byte_offset": 22994,
+          "fraction_of_payload": 0.9297
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_58d93f77f0c49f82__adjudicated",
+      "bundle_id": "cee_58d93f77f0c49f82",
+      "layer": "adjudicated",
+      "bytes": 6833,
+      "whitespace_punct_tokens": 1415,
+      "tokens_chars_div_4_conservative": 1703,
+      "tokens_anchored_div_3_62": 1882,
+      "chars": 6813,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 6544,
+          "fraction_of_payload": 0.9605
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.3411
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0564
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_cfc14244c59a8ceb__raw",
+      "bundle_id": "cee_cfc14244c59a8ceb",
+      "layer": "raw",
+      "bytes": 245381,
+      "whitespace_punct_tokens": 57521,
+      "tokens_chars_div_4_conservative": 61341,
+      "tokens_anchored_div_3_62": 67780,
+      "chars": 245365,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 7239,
+          "fraction_of_payload": 0.0295
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 7314,
+          "fraction_of_payload": 0.0298
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 10873,
+          "fraction_of_payload": 0.0443
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0116
+        },
+        "LOG: f2p": {
+          "byte_offset": 19358,
+          "fraction_of_payload": 0.0789
+        },
+        "LOG: p2p": {
+          "byte_offset": 93349,
+          "fraction_of_payload": 0.3804
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 167336,
+          "fraction_of_payload": 0.682
+        },
+        "LOG: symptom": {
+          "byte_offset": 242288,
+          "fraction_of_payload": 0.9875
+        },
+        "PROBE SOURCE": {
+          "byte_offset": 244716,
+          "fraction_of_payload": 0.9974
+        },
+        "short test summary": {
+          "byte_offset": 31361,
+          "fraction_of_payload": 0.1278
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0124
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_cfc14244c59a8ceb__structured",
+      "bundle_id": "cee_cfc14244c59a8ceb",
+      "layer": "structured",
+      "bytes": 29443,
+      "whitespace_punct_tokens": 5938,
+      "tokens_chars_div_4_conservative": 7353,
+      "tokens_anchored_div_3_62": 8126,
+      "chars": 29415,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 6655,
+          "fraction_of_payload": 0.2262
+        },
+        "TABLE 2": {
+          "byte_offset": 7280,
+          "fraction_of_payload": 0.2475
+        },
+        "TABLE 3": {
+          "byte_offset": 8269,
+          "fraction_of_payload": 0.2811
+        },
+        "TABLE 4": {
+          "byte_offset": 14088,
+          "fraction_of_payload": 0.4789
+        },
+        "TABLE 5": {
+          "byte_offset": 25834,
+          "fraction_of_payload": 0.8783
+        },
+        "TABLE 6": {
+          "byte_offset": 27233,
+          "fraction_of_payload": 0.9258
+        },
+        "TABLE 7": {
+          "byte_offset": 28701,
+          "fraction_of_payload": 0.9757
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 28956,
+          "fraction_of_payload": 0.9844
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 29174,
+          "fraction_of_payload": 0.9918
+        },
+        "exit_code": {
+          "byte_offset": 27468,
+          "fraction_of_payload": 0.9338
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_cfc14244c59a8ceb__adjudicated",
+      "bundle_id": "cee_cfc14244c59a8ceb",
+      "layer": "adjudicated",
+      "bytes": 7325,
+      "whitespace_punct_tokens": 1699,
+      "tokens_chars_div_4_conservative": 1828,
+      "tokens_anchored_div_3_62": 2021,
+      "chars": 7315,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 7046,
+          "fraction_of_payload": 0.9632
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.3177
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0525
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_76028c65f51defe8__raw",
+      "bundle_id": "cee_76028c65f51defe8",
+      "layer": "raw",
+      "bytes": 37885,
+      "whitespace_punct_tokens": 8808,
+      "tokens_chars_div_4_conservative": 9467,
+      "tokens_anchored_div_3_62": 10461,
+      "chars": 37869,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 14331,
+          "fraction_of_payload": 0.3784
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 14406,
+          "fraction_of_payload": 0.3804
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 15809,
+          "fraction_of_payload": 0.4175
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0751
+        },
+        "LOG: f2p": {
+          "byte_offset": 18256,
+          "fraction_of_payload": 0.4821
+        },
+        "LOG: p2p": {
+          "byte_offset": 35903,
+          "fraction_of_payload": 0.9481
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 36102,
+          "fraction_of_payload": 0.9533
+        },
+        "LOG: symptom": {
+          "byte_offset": 36202,
+          "fraction_of_payload": 0.956
+        },
+        "log not retained": {
+          "byte_offset": 36165,
+          "fraction_of_payload": 0.955
+        },
+        "short test summary": {
+          "byte_offset": 34871,
+          "fraction_of_payload": 0.9208
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0804
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_76028c65f51defe8__structured",
+      "bundle_id": "cee_76028c65f51defe8",
+      "layer": "structured",
+      "bytes": 20588,
+      "whitespace_punct_tokens": 4731,
+      "tokens_chars_div_4_conservative": 5140,
+      "tokens_anchored_div_3_62": 5680,
+      "chars": 20560,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 13747,
+          "fraction_of_payload": 0.6686
+        },
+        "TABLE 2": {
+          "byte_offset": 14372,
+          "fraction_of_payload": 0.699
+        },
+        "TABLE 3": {
+          "byte_offset": 15361,
+          "fraction_of_payload": 0.7471
+        },
+        "TABLE 4": {
+          "byte_offset": 16032,
+          "fraction_of_payload": 0.7798
+        },
+        "TABLE 5": {
+          "byte_offset": 17383,
+          "fraction_of_payload": 0.8455
+        },
+        "TABLE 6": {
+          "byte_offset": 18782,
+          "fraction_of_payload": 0.9135
+        },
+        "TABLE 7": {
+          "byte_offset": 19965,
+          "fraction_of_payload": 0.9711
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 20220,
+          "fraction_of_payload": 0.9835
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 20371,
+          "fraction_of_payload": 0.9908
+        },
+        "exit_code": {
+          "byte_offset": 18960,
+          "fraction_of_payload": 0.9222
+        },
+        "FAILED": {
+          "byte_offset": 16660,
+          "fraction_of_payload": 0.8103
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_76028c65f51defe8__adjudicated",
+      "bundle_id": "cee_76028c65f51defe8",
+      "layer": "adjudicated",
+      "bytes": 14480,
+      "whitespace_punct_tokens": 3307,
+      "tokens_chars_div_4_conservative": 3617,
+      "tokens_anchored_div_3_62": 3997,
+      "chars": 14470,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 14200,
+          "fraction_of_payload": 0.9813
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.1606
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0265
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_b203936c59e46a77__raw",
+      "bundle_id": "cee_b203936c59e46a77",
+      "layer": "raw",
+      "bytes": 39716,
+      "whitespace_punct_tokens": 8970,
+      "tokens_chars_div_4_conservative": 9925,
+      "tokens_anchored_div_3_62": 10967,
+      "chars": 39700,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 8831,
+          "fraction_of_payload": 0.2224
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 8906,
+          "fraction_of_payload": 0.2243
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 12945,
+          "fraction_of_payload": 0.3261
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0717
+        },
+        "LOG: f2p": {
+          "byte_offset": 16083,
+          "fraction_of_payload": 0.4051
+        },
+        "LOG: p2p": {
+          "byte_offset": 37588,
+          "fraction_of_payload": 0.9468
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 37787,
+          "fraction_of_payload": 0.9518
+        },
+        "LOG: symptom": {
+          "byte_offset": 37887,
+          "fraction_of_payload": 0.9543
+        },
+        "log not retained": {
+          "byte_offset": 37850,
+          "fraction_of_payload": 0.9534
+        },
+        "short test summary": {
+          "byte_offset": 36064,
+          "fraction_of_payload": 0.9084
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0767
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_b203936c59e46a77__structured",
+      "bundle_id": "cee_b203936c59e46a77",
+      "layer": "structured",
+      "bytes": 31454,
+      "whitespace_punct_tokens": 5948,
+      "tokens_chars_div_4_conservative": 7856,
+      "tokens_anchored_div_3_62": 8681,
+      "chars": 31426,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 8247,
+          "fraction_of_payload": 0.2624
+        },
+        "TABLE 2": {
+          "byte_offset": 8872,
+          "fraction_of_payload": 0.2823
+        },
+        "TABLE 3": {
+          "byte_offset": 9861,
+          "fraction_of_payload": 0.3138
+        },
+        "TABLE 4": {
+          "byte_offset": 16476,
+          "fraction_of_payload": 0.5243
+        },
+        "TABLE 5": {
+          "byte_offset": 27952,
+          "fraction_of_payload": 0.8895
+        },
+        "TABLE 6": {
+          "byte_offset": 29351,
+          "fraction_of_payload": 0.934
+        },
+        "TABLE 7": {
+          "byte_offset": 30834,
+          "fraction_of_payload": 0.9812
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 31089,
+          "fraction_of_payload": 0.9893
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 31240,
+          "fraction_of_payload": 0.9941
+        },
+        "exit_code": {
+          "byte_offset": 29589,
+          "fraction_of_payload": 0.9415
+        },
+        "FAILED": {
+          "byte_offset": 21185,
+          "fraction_of_payload": 0.6741
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_b203936c59e46a77__adjudicated",
+      "bundle_id": "cee_b203936c59e46a77",
+      "layer": "adjudicated",
+      "bytes": 8986,
+      "whitespace_punct_tokens": 1895,
+      "tokens_chars_div_4_conservative": 2244,
+      "tokens_anchored_div_3_62": 2480,
+      "chars": 8976,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 8706,
+          "fraction_of_payload": 0.9699
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.2589
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0428
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_03df4f19a25d0cf5__raw",
+      "bundle_id": "cee_03df4f19a25d0cf5",
+      "layer": "raw",
+      "bytes": 42786,
+      "whitespace_punct_tokens": 9511,
+      "tokens_chars_div_4_conservative": 10692,
+      "tokens_anchored_div_3_62": 11815,
+      "chars": 42770,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 13490,
+          "fraction_of_payload": 0.3154
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 13565,
+          "fraction_of_payload": 0.3172
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 17604,
+          "fraction_of_payload": 0.4116
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0665
+        },
+        "LOG: f2p": {
+          "byte_offset": 20694,
+          "fraction_of_payload": 0.4838
+        },
+        "LOG: p2p": {
+          "byte_offset": 40781,
+          "fraction_of_payload": 0.9535
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 40980,
+          "fraction_of_payload": 0.9581
+        },
+        "LOG: symptom": {
+          "byte_offset": 41080,
+          "fraction_of_payload": 0.9605
+        },
+        "log not retained": {
+          "byte_offset": 41043,
+          "fraction_of_payload": 0.9596
+        },
+        "short test summary": {
+          "byte_offset": 39700,
+          "fraction_of_payload": 0.9282
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0712
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_03df4f19a25d0cf5__structured",
+      "bundle_id": "cee_03df4f19a25d0cf5",
+      "layer": "structured",
+      "bytes": 36113,
+      "whitespace_punct_tokens": 6914,
+      "tokens_chars_div_4_conservative": 9021,
+      "tokens_anchored_div_3_62": 9968,
+      "chars": 36085,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 12906,
+          "fraction_of_payload": 0.3577
+        },
+        "TABLE 2": {
+          "byte_offset": 13531,
+          "fraction_of_payload": 0.375
+        },
+        "TABLE 3": {
+          "byte_offset": 14520,
+          "fraction_of_payload": 0.4024
+        },
+        "TABLE 4": {
+          "byte_offset": 21135,
+          "fraction_of_payload": 0.5857
+        },
+        "TABLE 5": {
+          "byte_offset": 32611,
+          "fraction_of_payload": 0.9037
+        },
+        "TABLE 6": {
+          "byte_offset": 34010,
+          "fraction_of_payload": 0.9425
+        },
+        "TABLE 7": {
+          "byte_offset": 35493,
+          "fraction_of_payload": 0.9836
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 35748,
+          "fraction_of_payload": 0.9907
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 35899,
+          "fraction_of_payload": 0.9948
+        },
+        "exit_code": {
+          "byte_offset": 34248,
+          "fraction_of_payload": 0.9491
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_03df4f19a25d0cf5__adjudicated",
+      "bundle_id": "cee_03df4f19a25d0cf5",
+      "layer": "adjudicated",
+      "bytes": 13573,
+      "whitespace_punct_tokens": 2853,
+      "tokens_chars_div_4_conservative": 3390,
+      "tokens_anchored_div_3_62": 3747,
+      "chars": 13563,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 13293,
+          "fraction_of_payload": 0.9801
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.1713
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0283
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_58df0b222c11095a__raw",
+      "bundle_id": "cee_58df0b222c11095a",
+      "layer": "raw",
+      "bytes": 49898,
+      "whitespace_punct_tokens": 11756,
+      "tokens_chars_div_4_conservative": 12470,
+      "tokens_anchored_div_3_62": 13780,
+      "chars": 49882,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 8003,
+          "fraction_of_payload": 0.1604
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 8078,
+          "fraction_of_payload": 0.1619
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 10198,
+          "fraction_of_payload": 0.2044
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.057
+        },
+        "LOG: f2p": {
+          "byte_offset": 13751,
+          "fraction_of_payload": 0.2757
+        },
+        "LOG: p2p": {
+          "byte_offset": 30717,
+          "fraction_of_payload": 0.6158
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 47679,
+          "fraction_of_payload": 0.9558
+        },
+        "LOG: symptom": {
+          "byte_offset": 47779,
+          "fraction_of_payload": 0.9578
+        },
+        "log not retained": {
+          "byte_offset": 47742,
+          "fraction_of_payload": 0.9571
+        },
+        "short test summary": {
+          "byte_offset": 30450,
+          "fraction_of_payload": 0.6104
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.061
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_58df0b222c11095a__structured",
+      "bundle_id": "cee_58df0b222c11095a",
+      "layer": "structured",
+      "bytes": 17924,
+      "whitespace_punct_tokens": 3968,
+      "tokens_chars_div_4_conservative": 4474,
+      "tokens_anchored_div_3_62": 4944,
+      "chars": 17896,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 7419,
+          "fraction_of_payload": 0.4146
+        },
+        "TABLE 2": {
+          "byte_offset": 8044,
+          "fraction_of_payload": 0.4495
+        },
+        "TABLE 3": {
+          "byte_offset": 9033,
+          "fraction_of_payload": 0.5047
+        },
+        "TABLE 4": {
+          "byte_offset": 11216,
+          "fraction_of_payload": 0.6267
+        },
+        "TABLE 5": {
+          "byte_offset": 14510,
+          "fraction_of_payload": 0.8108
+        },
+        "TABLE 6": {
+          "byte_offset": 15909,
+          "fraction_of_payload": 0.889
+        },
+        "TABLE 7": {
+          "byte_offset": 17337,
+          "fraction_of_payload": 0.9688
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 17592,
+          "fraction_of_payload": 0.983
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 17723,
+          "fraction_of_payload": 0.9903
+        },
+        "exit_code": {
+          "byte_offset": 16136,
+          "fraction_of_payload": 0.9017
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_58df0b222c11095a__adjudicated",
+      "bundle_id": "cee_58df0b222c11095a",
+      "layer": "adjudicated",
+      "bytes": 8088,
+      "whitespace_punct_tokens": 1802,
+      "tokens_chars_div_4_conservative": 2019,
+      "tokens_anchored_div_3_62": 2231,
+      "chars": 8078,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 7808,
+          "fraction_of_payload": 0.9666
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.2877
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0475
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_0108367f62dfb1c6__raw",
+      "bundle_id": "cee_0108367f62dfb1c6",
+      "layer": "raw",
+      "bytes": 42544,
+      "whitespace_punct_tokens": 9788,
+      "tokens_chars_div_4_conservative": 10632,
+      "tokens_anchored_div_3_62": 11748,
+      "chars": 42528,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 7581,
+          "fraction_of_payload": 0.1783
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 7656,
+          "fraction_of_payload": 0.18
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 9023,
+          "fraction_of_payload": 0.2122
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0669
+        },
+        "LOG: f2p": {
+          "byte_offset": 11634,
+          "fraction_of_payload": 0.2736
+        },
+        "LOG: p2p": {
+          "byte_offset": 26182,
+          "fraction_of_payload": 0.6156
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 40726,
+          "fraction_of_payload": 0.9576
+        },
+        "LOG: symptom": {
+          "byte_offset": 40826,
+          "fraction_of_payload": 0.96
+        },
+        "log not retained": {
+          "byte_offset": 40789,
+          "fraction_of_payload": 0.9591
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0716
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_0108367f62dfb1c6__structured",
+      "bundle_id": "cee_0108367f62dfb1c6",
+      "layer": "structured",
+      "bytes": 13638,
+      "whitespace_punct_tokens": 3116,
+      "tokens_chars_div_4_conservative": 3402,
+      "tokens_anchored_div_3_62": 3760,
+      "chars": 13610,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 6997,
+          "fraction_of_payload": 0.5141
+        },
+        "TABLE 2": {
+          "byte_offset": 7622,
+          "fraction_of_payload": 0.56
+        },
+        "TABLE 3": {
+          "byte_offset": 8611,
+          "fraction_of_payload": 0.6327
+        },
+        "TABLE 4": {
+          "byte_offset": 9238,
+          "fraction_of_payload": 0.6788
+        },
+        "TABLE 5": {
+          "byte_offset": 10398,
+          "fraction_of_payload": 0.764
+        },
+        "TABLE 6": {
+          "byte_offset": 11797,
+          "fraction_of_payload": 0.8668
+        },
+        "TABLE 7": {
+          "byte_offset": 12980,
+          "fraction_of_payload": 0.9537
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 13235,
+          "fraction_of_payload": 0.9724
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 13442,
+          "fraction_of_payload": 0.9877
+        },
+        "exit_code": {
+          "byte_offset": 11975,
+          "fraction_of_payload": 0.8799
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_0108367f62dfb1c6__adjudicated",
+      "bundle_id": "cee_0108367f62dfb1c6",
+      "layer": "adjudicated",
+      "bytes": 7664,
+      "whitespace_punct_tokens": 1617,
+      "tokens_chars_div_4_conservative": 1913,
+      "tokens_anchored_div_3_62": 2114,
+      "chars": 7654,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 7384,
+          "fraction_of_payload": 0.9647
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.3036
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0502
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_a6aba2553d04e0f9__raw",
+      "bundle_id": "cee_a6aba2553d04e0f9",
+      "layer": "raw",
+      "bytes": 55581,
+      "whitespace_punct_tokens": 13069,
+      "tokens_chars_div_4_conservative": 13891,
+      "tokens_anchored_div_3_62": 15349,
+      "chars": 55565,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 14331,
+          "fraction_of_payload": 0.2579
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 14406,
+          "fraction_of_payload": 0.2593
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 15809,
+          "fraction_of_payload": 0.2845
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0512
+        },
+        "LOG: f2p": {
+          "byte_offset": 18508,
+          "fraction_of_payload": 0.3331
+        },
+        "LOG: p2p": {
+          "byte_offset": 36155,
+          "fraction_of_payload": 0.6507
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 53798,
+          "fraction_of_payload": 0.9682
+        },
+        "LOG: symptom": {
+          "byte_offset": 53898,
+          "fraction_of_payload": 0.97
+        },
+        "log not retained": {
+          "byte_offset": 53861,
+          "fraction_of_payload": 0.9693
+        },
+        "short test summary": {
+          "byte_offset": 35123,
+          "fraction_of_payload": 0.6321
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0548
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_a6aba2553d04e0f9__structured",
+      "bundle_id": "cee_a6aba2553d04e0f9",
+      "layer": "structured",
+      "bytes": 20588,
+      "whitespace_punct_tokens": 4802,
+      "tokens_chars_div_4_conservative": 5140,
+      "tokens_anchored_div_3_62": 5680,
+      "chars": 20560,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 13747,
+          "fraction_of_payload": 0.6686
+        },
+        "TABLE 2": {
+          "byte_offset": 14372,
+          "fraction_of_payload": 0.699
+        },
+        "TABLE 3": {
+          "byte_offset": 15361,
+          "fraction_of_payload": 0.7471
+        },
+        "TABLE 4": {
+          "byte_offset": 16032,
+          "fraction_of_payload": 0.7798
+        },
+        "TABLE 5": {
+          "byte_offset": 17383,
+          "fraction_of_payload": 0.8455
+        },
+        "TABLE 6": {
+          "byte_offset": 18782,
+          "fraction_of_payload": 0.9135
+        },
+        "TABLE 7": {
+          "byte_offset": 19965,
+          "fraction_of_payload": 0.9711
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 20220,
+          "fraction_of_payload": 0.9835
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 20371,
+          "fraction_of_payload": 0.9908
+        },
+        "exit_code": {
+          "byte_offset": 18960,
+          "fraction_of_payload": 0.9222
+        },
+        "FAILED": {
+          "byte_offset": 16660,
+          "fraction_of_payload": 0.8103
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_a6aba2553d04e0f9__adjudicated",
+      "bundle_id": "cee_a6aba2553d04e0f9",
+      "layer": "adjudicated",
+      "bytes": 14480,
+      "whitespace_punct_tokens": 3307,
+      "tokens_chars_div_4_conservative": 3617,
+      "tokens_anchored_div_3_62": 3997,
+      "chars": 14470,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 14200,
+          "fraction_of_payload": 0.9813
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.1606
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0265
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_5cfbc476af83be49__raw",
+      "bundle_id": "cee_5cfbc476af83be49",
+      "layer": "raw",
+      "bytes": 47561,
+      "whitespace_punct_tokens": 11092,
+      "tokens_chars_div_4_conservative": 11886,
+      "tokens_anchored_div_3_62": 13134,
+      "chars": 47545,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 8718,
+          "fraction_of_payload": 0.1834
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 8793,
+          "fraction_of_payload": 0.1849
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 10196,
+          "fraction_of_payload": 0.2144
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0598
+        },
+        "LOG: f2p": {
+          "byte_offset": 12904,
+          "fraction_of_payload": 0.2714
+        },
+        "LOG: p2p": {
+          "byte_offset": 28967,
+          "fraction_of_payload": 0.6093
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 45026,
+          "fraction_of_payload": 0.947
+        },
+        "LOG: symptom": {
+          "byte_offset": 45126,
+          "fraction_of_payload": 0.9491
+        },
+        "log not retained": {
+          "byte_offset": 45089,
+          "fraction_of_payload": 0.9483
+        },
+        "short test summary": {
+          "byte_offset": 28612,
+          "fraction_of_payload": 0.6018
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.064
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_5cfbc476af83be49__structured",
+      "bundle_id": "cee_5cfbc476af83be49",
+      "layer": "structured",
+      "bytes": 14602,
+      "whitespace_punct_tokens": 3162,
+      "tokens_chars_div_4_conservative": 3643,
+      "tokens_anchored_div_3_62": 4026,
+      "chars": 14574,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 8134,
+          "fraction_of_payload": 0.5581
+        },
+        "TABLE 2": {
+          "byte_offset": 8759,
+          "fraction_of_payload": 0.601
+        },
+        "TABLE 3": {
+          "byte_offset": 9748,
+          "fraction_of_payload": 0.6689
+        },
+        "TABLE 4": {
+          "byte_offset": 10419,
+          "fraction_of_payload": 0.7149
+        },
+        "TABLE 5": {
+          "byte_offset": 11770,
+          "fraction_of_payload": 0.8076
+        },
+        "TABLE 6": {
+          "byte_offset": 13169,
+          "fraction_of_payload": 0.9036
+        },
+        "TABLE 7": {
+          "byte_offset": 14027,
+          "fraction_of_payload": 0.9625
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 14282,
+          "fraction_of_payload": 0.98
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 14433,
+          "fraction_of_payload": 0.9903
+        },
+        "exit_code": {
+          "byte_offset": 13347,
+          "fraction_of_payload": 0.9158
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_5cfbc476af83be49__adjudicated",
+      "bundle_id": "cee_5cfbc476af83be49",
+      "layer": "adjudicated",
+      "bytes": 8868,
+      "whitespace_punct_tokens": 1843,
+      "tokens_chars_div_4_conservative": 2214,
+      "tokens_anchored_div_3_62": 2447,
+      "chars": 8858,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 8588,
+          "fraction_of_payload": 0.9695
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.2624
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0434
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_4001af2fc564f50f__raw",
+      "bundle_id": "cee_4001af2fc564f50f",
+      "layer": "raw",
+      "bytes": 67793,
+      "whitespace_punct_tokens": 16058,
+      "tokens_chars_div_4_conservative": 16944,
+      "tokens_anchored_div_3_62": 18723,
+      "chars": 67777,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 8003,
+          "fraction_of_payload": 0.1181
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 8078,
+          "fraction_of_payload": 0.1192
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 10198,
+          "fraction_of_payload": 0.1505
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.042
+        },
+        "LOG: f2p": {
+          "byte_offset": 14773,
+          "fraction_of_payload": 0.218
+        },
+        "LOG: p2p": {
+          "byte_offset": 31739,
+          "fraction_of_payload": 0.4683
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 48701,
+          "fraction_of_payload": 0.7185
+        },
+        "LOG: symptom": {
+          "byte_offset": 65674,
+          "fraction_of_payload": 0.969
+        },
+        "short test summary": {
+          "byte_offset": 31472,
+          "fraction_of_payload": 0.4643
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0449
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_4001af2fc564f50f__structured",
+      "bundle_id": "cee_4001af2fc564f50f",
+      "layer": "structured",
+      "bytes": 18120,
+      "whitespace_punct_tokens": 4113,
+      "tokens_chars_div_4_conservative": 4523,
+      "tokens_anchored_div_3_62": 4998,
+      "chars": 18092,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 7419,
+          "fraction_of_payload": 0.4101
+        },
+        "TABLE 2": {
+          "byte_offset": 8044,
+          "fraction_of_payload": 0.4446
+        },
+        "TABLE 3": {
+          "byte_offset": 9033,
+          "fraction_of_payload": 0.4993
+        },
+        "TABLE 4": {
+          "byte_offset": 11216,
+          "fraction_of_payload": 0.6199
+        },
+        "TABLE 5": {
+          "byte_offset": 14706,
+          "fraction_of_payload": 0.8128
+        },
+        "TABLE 6": {
+          "byte_offset": 16105,
+          "fraction_of_payload": 0.8902
+        },
+        "TABLE 7": {
+          "byte_offset": 17533,
+          "fraction_of_payload": 0.9691
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 17788,
+          "fraction_of_payload": 0.9832
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 17919,
+          "fraction_of_payload": 0.9904
+        },
+        "exit_code": {
+          "byte_offset": 16332,
+          "fraction_of_payload": 0.9027
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_4001af2fc564f50f__adjudicated",
+      "bundle_id": "cee_4001af2fc564f50f",
+      "layer": "adjudicated",
+      "bytes": 8091,
+      "whitespace_punct_tokens": 1802,
+      "tokens_chars_div_4_conservative": 2020,
+      "tokens_anchored_div_3_62": 2232,
+      "chars": 8081,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 7810,
+          "fraction_of_payload": 0.9665
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.2876
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0475
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_9e8c95b6fac59e18__raw",
+      "bundle_id": "cee_9e8c95b6fac59e18",
+      "layer": "raw",
+      "bytes": 57345,
+      "whitespace_punct_tokens": 13267,
+      "tokens_chars_div_4_conservative": 14332,
+      "tokens_anchored_div_3_62": 15837,
+      "chars": 57329,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 7581,
+          "fraction_of_payload": 0.1322
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 7656,
+          "fraction_of_payload": 0.1335
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 9023,
+          "fraction_of_payload": 0.1574
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0496
+        },
+        "LOG: f2p": {
+          "byte_offset": 11980,
+          "fraction_of_payload": 0.209
+        },
+        "LOG: p2p": {
+          "byte_offset": 26528,
+          "fraction_of_payload": 0.4627
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 41072,
+          "fraction_of_payload": 0.7164
+        },
+        "LOG: symptom": {
+          "byte_offset": 55627,
+          "fraction_of_payload": 0.9703
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0531
+        }
+      },
+      "n_distinct_markers_found": 9,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_9e8c95b6fac59e18__structured",
+      "bundle_id": "cee_9e8c95b6fac59e18",
+      "layer": "structured",
+      "bytes": 13708,
+      "whitespace_punct_tokens": 3220,
+      "tokens_chars_div_4_conservative": 3420,
+      "tokens_anchored_div_3_62": 3779,
+      "chars": 13680,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 6997,
+          "fraction_of_payload": 0.5115
+        },
+        "TABLE 2": {
+          "byte_offset": 7622,
+          "fraction_of_payload": 0.5572
+        },
+        "TABLE 3": {
+          "byte_offset": 8611,
+          "fraction_of_payload": 0.6295
+        },
+        "TABLE 4": {
+          "byte_offset": 9238,
+          "fraction_of_payload": 0.6753
+        },
+        "TABLE 5": {
+          "byte_offset": 10468,
+          "fraction_of_payload": 0.7652
+        },
+        "TABLE 6": {
+          "byte_offset": 11867,
+          "fraction_of_payload": 0.8675
+        },
+        "TABLE 7": {
+          "byte_offset": 13050,
+          "fraction_of_payload": 0.9539
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 13305,
+          "fraction_of_payload": 0.9726
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 13512,
+          "fraction_of_payload": 0.9877
+        },
+        "exit_code": {
+          "byte_offset": 12045,
+          "fraction_of_payload": 0.8805
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_9e8c95b6fac59e18__adjudicated",
+      "bundle_id": "cee_9e8c95b6fac59e18",
+      "layer": "adjudicated",
+      "bytes": 7667,
+      "whitespace_punct_tokens": 1617,
+      "tokens_chars_div_4_conservative": 1914,
+      "tokens_anchored_div_3_62": 2115,
+      "chars": 7657,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 7386,
+          "fraction_of_payload": 0.9646
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.3035
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0502
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_1278b80ecd502546__raw",
+      "bundle_id": "cee_1278b80ecd502546",
+      "layer": "raw",
+      "bytes": 201076,
+      "whitespace_punct_tokens": 46038,
+      "tokens_chars_div_4_conservative": 50265,
+      "tokens_anchored_div_3_62": 55541,
+      "chars": 201060,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 13490,
+          "fraction_of_payload": 0.0671
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 13565,
+          "fraction_of_payload": 0.0675
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 17604,
+          "fraction_of_payload": 0.0876
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0142
+        },
+        "LOG: f2p": {
+          "byte_offset": 26938,
+          "fraction_of_payload": 0.134
+        },
+        "LOG: p2p": {
+          "byte_offset": 84623,
+          "fraction_of_payload": 0.4209
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 142304,
+          "fraction_of_payload": 0.7078
+        },
+        "LOG: symptom": {
+          "byte_offset": 199370,
+          "fraction_of_payload": 0.9916
+        },
+        "short test summary": {
+          "byte_offset": 51378,
+          "fraction_of_payload": 0.2555
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0151
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_1278b80ecd502546__structured",
+      "bundle_id": "cee_1278b80ecd502546",
+      "layer": "structured",
+      "bytes": 36729,
+      "whitespace_punct_tokens": 7296,
+      "tokens_chars_div_4_conservative": 9175,
+      "tokens_anchored_div_3_62": 10138,
+      "chars": 36701,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 12906,
+          "fraction_of_payload": 0.3517
+        },
+        "TABLE 2": {
+          "byte_offset": 13531,
+          "fraction_of_payload": 0.3687
+        },
+        "TABLE 3": {
+          "byte_offset": 14520,
+          "fraction_of_payload": 0.3956
+        },
+        "TABLE 4": {
+          "byte_offset": 21135,
+          "fraction_of_payload": 0.5759
+        },
+        "TABLE 5": {
+          "byte_offset": 33262,
+          "fraction_of_payload": 0.9063
+        },
+        "TABLE 6": {
+          "byte_offset": 34661,
+          "fraction_of_payload": 0.9444
+        },
+        "TABLE 7": {
+          "byte_offset": 36109,
+          "fraction_of_payload": 0.9839
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 36364,
+          "fraction_of_payload": 0.9908
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 36515,
+          "fraction_of_payload": 0.9949
+        },
+        "exit_code": {
+          "byte_offset": 34892,
+          "fraction_of_payload": 0.9507
+        },
+        "FAILED": {
+          "byte_offset": 21871,
+          "fraction_of_payload": 0.5959
+        }
+      },
+      "n_distinct_markers_found": 11,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_1278b80ecd502546__adjudicated",
+      "bundle_id": "cee_1278b80ecd502546",
+      "layer": "adjudicated",
+      "bytes": 13690,
+      "whitespace_punct_tokens": 2874,
+      "tokens_chars_div_4_conservative": 3420,
+      "tokens_anchored_div_3_62": 3779,
+      "chars": 13680,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 13409,
+          "fraction_of_payload": 0.9802
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.1699
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0281
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_ad6e89a460dfbe92__raw",
+      "bundle_id": "cee_ad6e89a460dfbe92",
+      "layer": "raw",
+      "bytes": 56629,
+      "whitespace_punct_tokens": 13032,
+      "tokens_chars_div_4_conservative": 14153,
+      "tokens_anchored_div_3_62": 15639,
+      "chars": 56613,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 6865,
+          "fraction_of_payload": 0.1213
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 6940,
+          "fraction_of_payload": 0.1226
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 8307,
+          "fraction_of_payload": 0.1467
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0503
+        },
+        "LOG: f2p": {
+          "byte_offset": 11264,
+          "fraction_of_payload": 0.199
+        },
+        "LOG: p2p": {
+          "byte_offset": 25812,
+          "fraction_of_payload": 0.4559
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 40356,
+          "fraction_of_payload": 0.7128
+        },
+        "LOG: symptom": {
+          "byte_offset": 54911,
+          "fraction_of_payload": 0.9699
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0538
+        }
+      },
+      "n_distinct_markers_found": 9,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_ad6e89a460dfbe92__structured",
+      "bundle_id": "cee_ad6e89a460dfbe92",
+      "layer": "structured",
+      "bytes": 12992,
+      "whitespace_punct_tokens": 2985,
+      "tokens_chars_div_4_conservative": 3241,
+      "tokens_anchored_div_3_62": 3581,
+      "chars": 12964,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 6281,
+          "fraction_of_payload": 0.4845
+        },
+        "TABLE 2": {
+          "byte_offset": 6906,
+          "fraction_of_payload": 0.5327
+        },
+        "TABLE 3": {
+          "byte_offset": 7895,
+          "fraction_of_payload": 0.609
+        },
+        "TABLE 4": {
+          "byte_offset": 8522,
+          "fraction_of_payload": 0.6574
+        },
+        "TABLE 5": {
+          "byte_offset": 9752,
+          "fraction_of_payload": 0.7522
+        },
+        "TABLE 6": {
+          "byte_offset": 11151,
+          "fraction_of_payload": 0.8602
+        },
+        "TABLE 7": {
+          "byte_offset": 12334,
+          "fraction_of_payload": 0.9514
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 12589,
+          "fraction_of_payload": 0.9711
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 12796,
+          "fraction_of_payload": 0.987
+        },
+        "exit_code": {
+          "byte_offset": 11329,
+          "fraction_of_payload": 0.8739
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_ad6e89a460dfbe92__adjudicated",
+      "bundle_id": "cee_ad6e89a460dfbe92",
+      "layer": "adjudicated",
+      "bytes": 6951,
+      "whitespace_punct_tokens": 1382,
+      "tokens_chars_div_4_conservative": 1735,
+      "tokens_anchored_div_3_62": 1917,
+      "chars": 6941,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 6670,
+          "fraction_of_payload": 0.961
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.3348
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0553
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_a8063781f0851759__raw",
+      "bundle_id": "cee_a8063781f0851759",
+      "layer": "raw",
+      "bytes": 66858,
+      "whitespace_punct_tokens": 15798,
+      "tokens_chars_div_4_conservative": 16710,
+      "tokens_anchored_div_3_62": 18465,
+      "chars": 66842,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 7068,
+          "fraction_of_payload": 0.1057
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 7143,
+          "fraction_of_payload": 0.1069
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 9263,
+          "fraction_of_payload": 0.1386
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0426
+        },
+        "LOG: f2p": {
+          "byte_offset": 13838,
+          "fraction_of_payload": 0.207
+        },
+        "LOG: p2p": {
+          "byte_offset": 30804,
+          "fraction_of_payload": 0.4608
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 47766,
+          "fraction_of_payload": 0.7146
+        },
+        "LOG: symptom": {
+          "byte_offset": 64739,
+          "fraction_of_payload": 0.9685
+        },
+        "short test summary": {
+          "byte_offset": 30537,
+          "fraction_of_payload": 0.4569
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0455
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_a8063781f0851759__structured",
+      "bundle_id": "cee_a8063781f0851759",
+      "layer": "structured",
+      "bytes": 17185,
+      "whitespace_punct_tokens": 3853,
+      "tokens_chars_div_4_conservative": 4289,
+      "tokens_anchored_div_3_62": 4740,
+      "chars": 17157,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 6484,
+          "fraction_of_payload": 0.3779
+        },
+        "TABLE 2": {
+          "byte_offset": 7109,
+          "fraction_of_payload": 0.4143
+        },
+        "TABLE 3": {
+          "byte_offset": 8098,
+          "fraction_of_payload": 0.472
+        },
+        "TABLE 4": {
+          "byte_offset": 10281,
+          "fraction_of_payload": 0.5992
+        },
+        "TABLE 5": {
+          "byte_offset": 13771,
+          "fraction_of_payload": 0.8026
+        },
+        "TABLE 6": {
+          "byte_offset": 15170,
+          "fraction_of_payload": 0.8842
+        },
+        "TABLE 7": {
+          "byte_offset": 16598,
+          "fraction_of_payload": 0.9674
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 16853,
+          "fraction_of_payload": 0.9823
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 16984,
+          "fraction_of_payload": 0.9899
+        },
+        "exit_code": {
+          "byte_offset": 15397,
+          "fraction_of_payload": 0.8974
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_a8063781f0851759__adjudicated",
+      "bundle_id": "cee_a8063781f0851759",
+      "layer": "adjudicated",
+      "bytes": 7156,
+      "whitespace_punct_tokens": 1542,
+      "tokens_chars_div_4_conservative": 1786,
+      "tokens_anchored_div_3_62": 1974,
+      "chars": 7146,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 6875,
+          "fraction_of_payload": 0.9621
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.3252
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.0537
+        }
+      },
+      "n_distinct_markers_found": 3
+    },
+    {
+      "payload_id": "cee_a81c2a012161efe0__raw",
+      "bundle_id": "cee_a81c2a012161efe0",
+      "layer": "raw",
+      "bytes": 56311,
+      "whitespace_punct_tokens": 12966,
+      "tokens_chars_div_4_conservative": 14073,
+      "tokens_anchored_div_3_62": 15551,
+      "chars": 56295,
+      "evidence_marker_positions": {
+        "REPOSITORY ATTESTATION": {
+          "byte_offset": 6547,
+          "fraction_of_payload": 0.1163
+        },
+        "ATTESTATION RECORD": {
+          "byte_offset": 6622,
+          "fraction_of_payload": 0.1176
+        },
+        "SIGNED CI RUN RECORD": {
+          "byte_offset": 7989,
+          "fraction_of_payload": 0.1419
+        },
+        "RUN RECORD": {
+          "byte_offset": 2845,
+          "fraction_of_payload": 0.0505
+        },
+        "LOG: f2p": {
+          "byte_offset": 10946,
+          "fraction_of_payload": 0.1944
+        },
+        "LOG: p2p": {
+          "byte_offset": 25494,
+          "fraction_of_payload": 0.4529
+        },
+        "LOG: p2p_baseline": {
+          "byte_offset": 40038,
+          "fraction_of_payload": 0.7112
+        },
+        "LOG: symptom": {
+          "byte_offset": 54593,
+          "fraction_of_payload": 0.9698
+        },
+        "exit code": {
+          "byte_offset": 3044,
+          "fraction_of_payload": 0.0541
+        }
+      },
+      "n_distinct_markers_found": 9,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_a81c2a012161efe0__structured",
+      "bundle_id": "cee_a81c2a012161efe0",
+      "layer": "structured",
+      "bytes": 12674,
+      "whitespace_punct_tokens": 2919,
+      "tokens_chars_div_4_conservative": 3161,
+      "tokens_anchored_div_3_62": 3493,
+      "chars": 12646,
+      "evidence_marker_positions": {
+        "TABLE 1": {
+          "byte_offset": 5963,
+          "fraction_of_payload": 0.4715
+        },
+        "TABLE 2": {
+          "byte_offset": 6588,
+          "fraction_of_payload": 0.521
+        },
+        "TABLE 3": {
+          "byte_offset": 7577,
+          "fraction_of_payload": 0.5992
+        },
+        "TABLE 4": {
+          "byte_offset": 8204,
+          "fraction_of_payload": 0.6487
+        },
+        "TABLE 5": {
+          "byte_offset": 9434,
+          "fraction_of_payload": 0.746
+        },
+        "TABLE 6": {
+          "byte_offset": 10833,
+          "fraction_of_payload": 0.8566
+        },
+        "TABLE 7": {
+          "byte_offset": 12016,
+          "fraction_of_payload": 0.9502
+        },
+        "pre-patch BASELINE": {
+          "byte_offset": 12271,
+          "fraction_of_payload": 0.9703
+        },
+        "post-patch CANDIDATE": {
+          "byte_offset": 12478,
+          "fraction_of_payload": 0.9867
+        },
+        "exit_code": {
+          "byte_offset": 11011,
+          "fraction_of_payload": 0.8707
+        }
+      },
+      "n_distinct_markers_found": 10,
+      "leak_verdict_hits": [],
+      "leak_metadata_hits": []
+    },
+    {
+      "payload_id": "cee_a81c2a012161efe0__adjudicated",
+      "bundle_id": "cee_a81c2a012161efe0",
+      "layer": "adjudicated",
+      "bytes": 6633,
+      "whitespace_punct_tokens": 1316,
+      "tokens_chars_div_4_conservative": 1655,
+      "tokens_anchored_div_3_62": 1830,
+      "chars": 6623,
+      "evidence_marker_positions": {
+        "INTEGRITY VERDICTS": {
+          "byte_offset": 6352,
+          "fraction_of_payload": 0.9591
+        },
+        "linked to THIS patch": {
+          "byte_offset": 2324,
+          "fraction_of_payload": 0.3509
+        },
+        "fully executed": {
+          "byte_offset": 384,
+          "fraction_of_payload": 0.058
+        }
+      },
+      "n_distinct_markers_found": 3
+    }
+  ]
+}

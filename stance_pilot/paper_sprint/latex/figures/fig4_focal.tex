@@ -1,0 +1,25 @@
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,
+  panel/.style={draw,rounded corners=3pt,line width=0.9pt,align=left,
+                inner sep=7pt,text width=5.9cm,minimum height=2.55cm},
+  >={Stealth[length=3.4mm]}]
+
+\node[panel,fill=grCond,draw=grReject,anchor=north west] (p1) at (0,0)
+  {\textbf{Static sufficient (T2A-T)}\\[3pt]\ttfamily\scriptsize
+   test\_issue\_12420 \textbf{FAILED}\\
+   assert [4 + I, 0, 1] == []\\[5pt]\rmfamily
+   \textcolor{grReject}{\bfseries GPT verdict: ACCEPT}\\[2pt]
+   \scriptsize\textcolor{grMuted}{failure already visible, ignored}};
+
+\node[panel,fill=grOracle,draw=grAccept,anchor=north west] (p2) at (8.0,0)
+  {\textbf{Active sufficient (T3A-T)}\\[3pt]\ttfamily\scriptsize
+   agent fetches the same failed F2P result\\[5pt]\rmfamily
+   \textcolor{grAccept}{\bfseries GPT verdict: REJECT}\\[2pt]
+   \scriptsize\textcolor{grMuted}{matches oracle gold}};
+
+\draw[line width=1.4pt,grNeed,->] (p1.east) -- node[above,font=\scriptsize\itshape,text=grNeed]{active retrieval} (p2.west);
+
+\node[anchor=north west,font=\scriptsize,text=grInk] at (0,-3.0)
+  {Issue 17318, oracle gold \textcolor{grReject}{\bfseries REJECT}. Same decisive artifact, different surface.};
+\node[anchor=north west,font=\scriptsize\itshape,text=grMuted] at (0,-3.55)
+  {$n=3$ reject issues --- focal case illustration, not a population rate.};
+\end{tikzpicture}

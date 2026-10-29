@@ -1,0 +1,74 @@
+diff --git a/sympy/physics/quantum/tensorproduct.py b/sympy/physics/quantum/tensorproduct.py
+index 9dd10d219..ff5d83cc2 100644
+--- a/sympy/physics/quantum/tensorproduct.py
++++ b/sympy/physics/quantum/tensorproduct.py
+@@ -113,6 +113,12 @@ class TensorProduct(Expr):
+         (A + B)xC
+         >>> tp.expand(tensorproduct=True)
+         AxC + BxC
++
++    Powers of tensor products are distributed to each argument:
++
++        >>> tp = TensorProduct(A, B)
++        >>> tp**2
++        (A**2)x(B**2)
+     """
+     is_commutative = False
+ 
+@@ -257,6 +263,10 @@ def _eval_expand_tensorproduct(self, **hints):
+         else:
+             return self
+ 
++    def _eval_power(self, exp):
++        """Evaluate powers of TensorProduct."""
++        return TensorProduct(*[arg**exp for arg in self.args])
++
+     def _eval_trace(self, **kwargs):
+         indices = kwargs.get('indices', None)
+         exp = tensor_product_simp(self)
+@@ -376,7 +386,7 @@ def tensor_product_simp(e, **hints):
+     commutators and anticommutators as well:
+ 
+     >>> tensor_product_simp(e**2)
+-    (A*C)x(B*D)**2
++    ((A*C)**2)x((B*D)**2)
+ 
+     """
+     if isinstance(e, Add):
+diff --git a/sympy/physics/quantum/tests/test_tensorproduct.py b/sympy/physics/quantum/tests/test_tensorproduct.py
+index 9f65844c8..b9c2d6742 100644
+--- a/sympy/physics/quantum/tests/test_tensorproduct.py
++++ b/sympy/physics/quantum/tests/test_tensorproduct.py
+@@ -105,3 +105,32 @@ def test_eval_trace():
+                         1.0*A*Dagger(C)*Tr(B*Dagger(D)) +
+                         1.0*C*Dagger(A)*Tr(D*Dagger(B)) +
+                         1.0*C*Dagger(C)*Tr(D*Dagger(D)))
++
++
++def test_tensor_product_power():
++    # Test for issue <ISSUE_REF_REDACTED> - powers of TensorProduct
++    from sympy.physics.paulialgebra import Pauli
++    a = symbols('a', commutative=False)
++    
++    # Test power with symbolic arguments
++    assert TP(A, B)**2 == TP(A**2, B**2)
++    assert TP(A, B)**3 == TP(A**3, B**3)
++    
++    # Test power with numeric arguments
++    # Note: numeric values are pulled out as commutative factors
++    assert TP(1, 1)**2 == TP(1, 1)
++    # TP(2, 3) becomes 6*TP(1,1), so TP(2,3)**2 = 36*TP(1,1)
++    
++    # Test power with Pauli matrices
++    assert TP(1, Pauli(3))**2 == TP(1, 1)
++    
++    # Test that tensor_product_simp works with powers
++    assert tensor_product_simp(TP(A, B)**2) == TP(A**2, B**2)
++    assert tensor_product_simp(TP(1, 1)**2) == TP(1, 1)
++    
++    # Test that multiplication then power works
++    t1 = TP(1, 1)*TP(1, 1)
++    assert t1 == TP(1, 1)
++    
++    t2 = TP(1, Pauli(3))*TP(1, Pauli(3))
++    assert t2 == TP(1, 1)

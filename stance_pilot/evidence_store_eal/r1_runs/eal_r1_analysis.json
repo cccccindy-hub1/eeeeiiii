@@ -1,0 +1,1059 @@
+{
+  "document": "R1 test-retest independent analysis",
+  "global_cost_audit": {
+    "gate2_round0_is_separate_timepoint": true,
+    "hard_cap_usd": 1.5,
+    "total_new_spend_usd": 0.476574,
+    "within_hard_cap": true
+  },
+  "models": {
+    "deepseek-flash": {
+      "config_audit": {
+        "all_served_match_expected": true,
+        "cost_usd_r1": 0.216396,
+        "expected_served_ids": [
+          "deepseek-flash"
+        ],
+        "max_tokens_set": [
+          4096
+        ],
+        "n_api_errors": 0,
+        "n_invalid_ambiguous": 0,
+        "payload_sha_match_freeze": true,
+        "prompt_fingerprints": [
+          "41d18ba0c3c2e3def1e3a316100914c0a0e66eb9a306c0e073dafc6b94b34dc8",
+          "cfde192634fedc00c4f5c3e17bf99bbc812943e10bfe962f910ffbe0d73b6773",
+          "fa21390ddfc0d84181f0c6f71399ee0ab4e3baf4b2afe154b5c8bca76a4e90ae"
+        ],
+        "r1_served_ids": {
+          "deepseek-flash": 66
+        },
+        "response_format_set": [
+          "{\"type\": \"json_object\"}"
+        ],
+        "retries": [
+          0
+        ],
+        "temperature_set": [
+          0
+        ],
+        "tokens_in_r1": 643744,
+        "tokens_out_r1": 19394,
+        "tools_sent": [
+          0
+        ]
+      },
+      "decision_appropriateness": {
+        "delta_boot": {
+          "ci_hi": 0.0167,
+          "ci_lo": -0.0833,
+          "n_cells": 66,
+          "n_clusters": 10,
+          "point": -0.0333
+        },
+        "overall_round0": [
+          0.8485,
+          66
+        ],
+        "overall_round1": [
+          0.8182,
+          66
+        ],
+        "per_layer": {
+          "adjudicated": {
+            "delta_boot": {
+              "ci_hi": 0.0,
+              "ci_lo": 0.0,
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.0
+            },
+            "round0": [
+              0.9091,
+              22
+            ],
+            "round1": [
+              0.9091,
+              22
+            ]
+          },
+          "raw": {
+            "delta_boot": {
+              "ci_hi": 0.1,
+              "ci_lo": -0.15,
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": -0.0167
+            },
+            "round0": [
+              0.7727,
+              22
+            ],
+            "round1": [
+              0.7727,
+              22
+            ]
+          },
+          "structured": {
+            "delta_boot": {
+              "ci_hi": 0.0,
+              "ci_lo": -0.2,
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": -0.0833
+            },
+            "round0": [
+              0.8636,
+              22
+            ],
+            "round1": [
+              0.7727,
+              22
+            ]
+          }
+        }
+      },
+      "diagnostic_8_need_to_accept": [
+        {
+          "audited_family": "freshness",
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-12419",
+          "r1": "NEED_EVIDENCE",
+          "short": "2c11095a",
+          "stable": true
+        },
+        {
+          "audited_family": "coverage",
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-14531",
+          "r1": "NEED_EVIDENCE",
+          "short": "403163cb",
+          "stable": true
+        },
+        {
+          "audited_family": "freshness",
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-12481",
+          "r1": "NEED_EVIDENCE",
+          "short": "62dfb1c6",
+          "stable": true
+        },
+        {
+          "audited_family": "coverage",
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-13091",
+          "r1": "NEED_EVIDENCE",
+          "short": "a25d0cf5",
+          "stable": true
+        },
+        {
+          "audited_family": "linkage+freshness",
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-14531",
+          "r1": "NEED_EVIDENCE",
+          "short": "c59a8ceb",
+          "stable": true
+        },
+        {
+          "audited_family": "freshness+coverage",
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-13798",
+          "r1": "REJECT",
+          "short": "c637f604",
+          "stable": false
+        },
+        {
+          "audited_family": "freshness",
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-18211",
+          "r1": "NEED_EVIDENCE",
+          "short": "e4e8b26c",
+          "stable": true
+        },
+        {
+          "audited_family": "coverage",
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-17139",
+          "r1": "NEED_EVIDENCE",
+          "short": "ec813709",
+          "stable": true
+        }
+      ],
+      "diagnostic_8_summary": {
+        "gate2_all_ACCEPT": false,
+        "n": 8,
+        "r1_back_to_NEED": 7,
+        "r1_other": 1,
+        "r1_still_ACCEPT": 0
+      },
+      "directed_flips": [
+        {
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-14531",
+          "layer": "raw",
+          "round0": "NEED_EVIDENCE",
+          "round1": "REJECT",
+          "short": "403163cb"
+        },
+        {
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-13091",
+          "layer": "raw",
+          "round0": "REJECT",
+          "round1": "NEED_EVIDENCE",
+          "short": "a25d0cf5"
+        },
+        {
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-12419",
+          "layer": "structured",
+          "round0": "ACCEPT",
+          "round1": "NEED_EVIDENCE",
+          "short": "c564f50f"
+        },
+        {
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-13798",
+          "layer": "structured",
+          "round0": "NEED_EVIDENCE",
+          "round1": "REJECT",
+          "short": "c637f604"
+        }
+      ],
+      "error_families": {
+        "adjudicated_round0": {
+          "over_abstention": 2
+        },
+        "adjudicated_round1": {
+          "over_abstention": 2
+        },
+        "raw_round0": {
+          "unsupported_rejection": 5
+        },
+        "raw_round1": {
+          "unsupported_rejection": 5
+        },
+        "structured_round0": {
+          "over_abstention": 3
+        },
+        "structured_round1": {
+          "over_abstention": 4,
+          "unsupported_rejection": 1
+        }
+      },
+      "exact_agreement": {
+        "fraction": 0.9394,
+        "n_disagreements": 4,
+        "overall": {
+          "ci_hi": 0.9833,
+          "ci_lo": 0.9,
+          "n_cells": 66,
+          "n_clusters": 10,
+          "point": 0.9444
+        }
+      },
+      "n_cells": 66,
+      "over_abstention_on_reject_gold": {
+        "adjudicated_round0": {
+          "abstained": 2,
+          "reject_gold_cells": 6
+        },
+        "adjudicated_round1": {
+          "abstained": 2,
+          "reject_gold_cells": 6
+        },
+        "raw_round0": {
+          "abstained": 0,
+          "reject_gold_cells": 6
+        },
+        "raw_round1": {
+          "abstained": 0,
+          "reject_gold_cells": 6
+        },
+        "structured_round0": {
+          "abstained": 2,
+          "reject_gold_cells": 6
+        },
+        "structured_round1": {
+          "abstained": 2,
+          "reject_gold_cells": 6
+        }
+      },
+      "per_layer": {
+        "adjudicated": {
+          "agreement": {
+            "ci_hi": 1.0,
+            "ci_lo": 1.0,
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 1.0
+          }
+        },
+        "raw": {
+          "agreement": {
+            "ci_hi": 1.0,
+            "ci_lo": 0.8,
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.9167
+          }
+        },
+        "structured": {
+          "agreement": {
+            "ci_hi": 1.0,
+            "ci_lo": 0.8,
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.9167
+          }
+        }
+      },
+      "structured_all22": [
+        {
+          "gate2": "ACCEPT",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-16450",
+          "r1": "ACCEPT",
+          "short": "0e5d9a37",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-12481",
+          "r1": "ACCEPT",
+          "short": "2161efe0",
+          "stable": true
+        },
+        {
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-12419",
+          "r1": "NEED_EVIDENCE",
+          "short": "2c11095a",
+          "stable": true
+        },
+        {
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-12489",
+          "r1": "NEED_EVIDENCE",
+          "short": "3d04e0f9",
+          "stable": true
+        },
+        {
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-14531",
+          "r1": "NEED_EVIDENCE",
+          "short": "403163cb",
+          "stable": true
+        },
+        {
+          "gate2": "REJECT",
+          "gold": "REJECT",
+          "instance": "sympy__sympy-13091",
+          "r1": "REJECT",
+          "short": "59e46a77",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-12481",
+          "r1": "ACCEPT",
+          "short": "60dfbe92",
+          "stable": true
+        },
+        {
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-12481",
+          "r1": "NEED_EVIDENCE",
+          "short": "62dfb1c6",
+          "stable": true
+        },
+        {
+          "gate2": "REJECT",
+          "gold": "REJECT",
+          "instance": "sympy__sympy-18199",
+          "r1": "REJECT",
+          "short": "a242cd7a",
+          "stable": true
+        },
+        {
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-13091",
+          "r1": "NEED_EVIDENCE",
+          "short": "a25d0cf5",
+          "stable": true
+        },
+        {
+          "gate2": "NEED_EVIDENCE",
+          "gold": "REJECT",
+          "instance": "sympy__sympy-12489",
+          "r1": "NEED_EVIDENCE",
+          "short": "af83be49",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-12419",
+          "r1": "NEED_EVIDENCE",
+          "short": "c564f50f",
+          "stable": false
+        },
+        {
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-14531",
+          "r1": "NEED_EVIDENCE",
+          "short": "c59a8ceb",
+          "stable": true
+        },
+        {
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-13798",
+          "r1": "REJECT",
+          "short": "c637f604",
+          "stable": false
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-13091",
+          "r1": "ACCEPT",
+          "short": "cd502546",
+          "stable": true
+        },
+        {
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-18211",
+          "r1": "NEED_EVIDENCE",
+          "short": "e4e8b26c",
+          "stable": true
+        },
+        {
+          "gate2": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-17139",
+          "r1": "NEED_EVIDENCE",
+          "short": "ec813709",
+          "stable": true
+        },
+        {
+          "gate2": "NEED_EVIDENCE",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-12419",
+          "r1": "NEED_EVIDENCE",
+          "short": "f0851759",
+          "stable": true
+        },
+        {
+          "gate2": "NEED_EVIDENCE",
+          "gold": "REJECT",
+          "instance": "sympy__sympy-18211",
+          "r1": "NEED_EVIDENCE",
+          "short": "f0c49f82",
+          "stable": true
+        },
+        {
+          "gate2": "REJECT",
+          "gold": "REJECT",
+          "instance": "sympy__sympy-12489",
+          "r1": "REJECT",
+          "short": "f51defe8",
+          "stable": true
+        },
+        {
+          "gate2": "REJECT",
+          "gold": "REJECT",
+          "instance": "sympy__sympy-13798",
+          "r1": "REJECT",
+          "short": "faae0894",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-12481",
+          "r1": "ACCEPT",
+          "short": "fac59e18",
+          "stable": true
+        }
+      ],
+      "transition_matrices": {
+        "adjudicated": {
+          "ACCEPT->ACCEPT": 7,
+          "ACCEPT->NEED_EVIDENCE": 0,
+          "ACCEPT->REJECT": 0,
+          "NEED_EVIDENCE->ACCEPT": 0,
+          "NEED_EVIDENCE->NEED_EVIDENCE": 11,
+          "NEED_EVIDENCE->REJECT": 0,
+          "REJECT->ACCEPT": 0,
+          "REJECT->NEED_EVIDENCE": 0,
+          "REJECT->REJECT": 4
+        },
+        "raw": {
+          "ACCEPT->ACCEPT": 6,
+          "ACCEPT->NEED_EVIDENCE": 0,
+          "ACCEPT->REJECT": 0,
+          "NEED_EVIDENCE->ACCEPT": 0,
+          "NEED_EVIDENCE->NEED_EVIDENCE": 4,
+          "NEED_EVIDENCE->REJECT": 1,
+          "REJECT->ACCEPT": 0,
+          "REJECT->NEED_EVIDENCE": 1,
+          "REJECT->REJECT": 10
+        },
+        "structured": {
+          "ACCEPT->ACCEPT": 5,
+          "ACCEPT->NEED_EVIDENCE": 1,
+          "ACCEPT->REJECT": 0,
+          "NEED_EVIDENCE->ACCEPT": 0,
+          "NEED_EVIDENCE->NEED_EVIDENCE": 11,
+          "NEED_EVIDENCE->REJECT": 1,
+          "REJECT->ACCEPT": 0,
+          "REJECT->NEED_EVIDENCE": 0,
+          "REJECT->REJECT": 4
+        }
+      },
+      "unscored_round1": []
+    },
+    "gpt-4.1-mini": {
+      "config_audit": {
+        "all_served_match_expected": true,
+        "cost_usd_r1": 0.260178,
+        "expected_served_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ],
+        "max_tokens_set": [
+          4096
+        ],
+        "n_api_errors": 0,
+        "n_invalid_ambiguous": 0,
+        "payload_sha_match_freeze": true,
+        "prompt_fingerprints": [
+          "41d18ba0c3c2e3def1e3a316100914c0a0e66eb9a306c0e073dafc6b94b34dc8",
+          "cfde192634fedc00c4f5c3e17bf99bbc812943e10bfe962f910ffbe0d73b6773",
+          "fa21390ddfc0d84181f0c6f71399ee0ab4e3baf4b2afe154b5c8bca76a4e90ae"
+        ],
+        "r1_served_ids": {
+          "gpt-4.1-mini-2025-04-14": 66
+        },
+        "response_format_set": [
+          "{\"type\": \"json_object\"}"
+        ],
+        "retries": [
+          0
+        ],
+        "temperature_set": [
+          0
+        ],
+        "tokens_in_r1": 600010,
+        "tokens_out_r1": 12609,
+        "tools_sent": [
+          0
+        ]
+      },
+      "decision_appropriateness": {
+        "delta_boot": {
+          "ci_hi": 0.1,
+          "ci_lo": -0.0333,
+          "n_cells": 66,
+          "n_clusters": 10,
+          "point": 0.0222
+        },
+        "overall_round0": [
+          0.5909,
+          66
+        ],
+        "overall_round1": [
+          0.5909,
+          66
+        ],
+        "per_layer": {
+          "adjudicated": {
+            "delta_boot": {
+              "ci_hi": 0.3,
+              "ci_lo": -0.1,
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.0667
+            },
+            "round0": [
+              0.8182,
+              22
+            ],
+            "round1": [
+              0.8182,
+              22
+            ]
+          },
+          "raw": {
+            "delta_boot": {
+              "ci_hi": 0.0,
+              "ci_lo": 0.0,
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.0
+            },
+            "round0": [
+              0.4091,
+              22
+            ],
+            "round1": [
+              0.4091,
+              22
+            ]
+          },
+          "structured": {
+            "delta_boot": {
+              "ci_hi": 0.0,
+              "ci_lo": 0.0,
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.0
+            },
+            "round0": [
+              0.5455,
+              22
+            ],
+            "round1": [
+              0.5455,
+              22
+            ]
+          }
+        }
+      },
+      "diagnostic_8_need_to_accept": [
+        {
+          "audited_family": "freshness",
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-12419",
+          "r1": "ACCEPT",
+          "short": "2c11095a",
+          "stable": true
+        },
+        {
+          "audited_family": "coverage",
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-14531",
+          "r1": "ACCEPT",
+          "short": "403163cb",
+          "stable": true
+        },
+        {
+          "audited_family": "freshness",
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-12481",
+          "r1": "ACCEPT",
+          "short": "62dfb1c6",
+          "stable": true
+        },
+        {
+          "audited_family": "coverage",
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-13091",
+          "r1": "ACCEPT",
+          "short": "a25d0cf5",
+          "stable": true
+        },
+        {
+          "audited_family": "linkage+freshness",
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-14531",
+          "r1": "ACCEPT",
+          "short": "c59a8ceb",
+          "stable": true
+        },
+        {
+          "audited_family": "freshness+coverage",
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-13798",
+          "r1": "ACCEPT",
+          "short": "c637f604",
+          "stable": true
+        },
+        {
+          "audited_family": "freshness",
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-18211",
+          "r1": "ACCEPT",
+          "short": "e4e8b26c",
+          "stable": true
+        },
+        {
+          "audited_family": "coverage",
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-17139",
+          "r1": "ACCEPT",
+          "short": "ec813709",
+          "stable": true
+        }
+      ],
+      "diagnostic_8_summary": {
+        "gate2_all_ACCEPT": true,
+        "n": 8,
+        "r1_back_to_NEED": 0,
+        "r1_other": 0,
+        "r1_still_ACCEPT": 8
+      },
+      "directed_flips": [
+        {
+          "gold": "REJECT",
+          "instance": "sympy__sympy-13091",
+          "layer": "adjudicated",
+          "round0": "REJECT",
+          "round1": "NEED_EVIDENCE",
+          "short": "59e46a77"
+        },
+        {
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-17139",
+          "layer": "adjudicated",
+          "round0": "ACCEPT",
+          "round1": "NEED_EVIDENCE",
+          "short": "ec813709"
+        },
+        {
+          "gold": "REJECT",
+          "instance": "sympy__sympy-18199",
+          "layer": "structured",
+          "round0": "ACCEPT",
+          "round1": "NEED_EVIDENCE",
+          "short": "a242cd7a"
+        }
+      ],
+      "error_families": {
+        "adjudicated_round0": {
+          "over_abstention": 3,
+          "unsupported_acceptance": 1
+        },
+        "adjudicated_round1": {
+          "over_abstention": 4
+        },
+        "raw_round0": {
+          "over_abstention": 5,
+          "unsupported_acceptance": 7,
+          "unsupported_rejection": 1
+        },
+        "raw_round1": {
+          "over_abstention": 5,
+          "unsupported_acceptance": 7,
+          "unsupported_rejection": 1
+        },
+        "structured_round0": {
+          "unsupported_acceptance": 9,
+          "unsupported_rejection": 1
+        },
+        "structured_round1": {
+          "over_abstention": 1,
+          "unsupported_acceptance": 8,
+          "unsupported_rejection": 1
+        }
+      },
+      "exact_agreement": {
+        "fraction": 0.9545,
+        "n_disagreements": 3,
+        "overall": {
+          "ci_hi": 1.0,
+          "ci_lo": 0.8333,
+          "n_cells": 66,
+          "n_clusters": 10,
+          "point": 0.9222
+        }
+      },
+      "n_cells": 66,
+      "over_abstention_on_reject_gold": {
+        "adjudicated_round0": {
+          "abstained": 3,
+          "reject_gold_cells": 6
+        },
+        "adjudicated_round1": {
+          "abstained": 4,
+          "reject_gold_cells": 6
+        },
+        "raw_round0": {
+          "abstained": 3,
+          "reject_gold_cells": 6
+        },
+        "raw_round1": {
+          "abstained": 3,
+          "reject_gold_cells": 6
+        },
+        "structured_round0": {
+          "abstained": 0,
+          "reject_gold_cells": 6
+        },
+        "structured_round1": {
+          "abstained": 1,
+          "reject_gold_cells": 6
+        }
+      },
+      "per_layer": {
+        "adjudicated": {
+          "agreement": {
+            "ci_hi": 1.0,
+            "ci_lo": 0.6667,
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.8667
+          }
+        },
+        "raw": {
+          "agreement": {
+            "ci_hi": 1.0,
+            "ci_lo": 1.0,
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 1.0
+          }
+        },
+        "structured": {
+          "agreement": {
+            "ci_hi": 1.0,
+            "ci_lo": 0.7,
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.9
+          }
+        }
+      },
+      "structured_all22": [
+        {
+          "gate2": "ACCEPT",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-16450",
+          "r1": "ACCEPT",
+          "short": "0e5d9a37",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-12481",
+          "r1": "ACCEPT",
+          "short": "2161efe0",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-12419",
+          "r1": "ACCEPT",
+          "short": "2c11095a",
+          "stable": true
+        },
+        {
+          "gate2": "REJECT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-12489",
+          "r1": "REJECT",
+          "short": "3d04e0f9",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-14531",
+          "r1": "ACCEPT",
+          "short": "403163cb",
+          "stable": true
+        },
+        {
+          "gate2": "REJECT",
+          "gold": "REJECT",
+          "instance": "sympy__sympy-13091",
+          "r1": "REJECT",
+          "short": "59e46a77",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-12481",
+          "r1": "ACCEPT",
+          "short": "60dfbe92",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-12481",
+          "r1": "ACCEPT",
+          "short": "62dfb1c6",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "REJECT",
+          "instance": "sympy__sympy-18199",
+          "r1": "NEED_EVIDENCE",
+          "short": "a242cd7a",
+          "stable": false
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-13091",
+          "r1": "ACCEPT",
+          "short": "a25d0cf5",
+          "stable": true
+        },
+        {
+          "gate2": "REJECT",
+          "gold": "REJECT",
+          "instance": "sympy__sympy-12489",
+          "r1": "REJECT",
+          "short": "af83be49",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-12419",
+          "r1": "ACCEPT",
+          "short": "c564f50f",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-14531",
+          "r1": "ACCEPT",
+          "short": "c59a8ceb",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-13798",
+          "r1": "ACCEPT",
+          "short": "c637f604",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-13091",
+          "r1": "ACCEPT",
+          "short": "cd502546",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-18211",
+          "r1": "ACCEPT",
+          "short": "e4e8b26c",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "instance": "sympy__sympy-17139",
+          "r1": "ACCEPT",
+          "short": "ec813709",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-12419",
+          "r1": "ACCEPT",
+          "short": "f0851759",
+          "stable": true
+        },
+        {
+          "gate2": "REJECT",
+          "gold": "REJECT",
+          "instance": "sympy__sympy-18211",
+          "r1": "REJECT",
+          "short": "f0c49f82",
+          "stable": true
+        },
+        {
+          "gate2": "REJECT",
+          "gold": "REJECT",
+          "instance": "sympy__sympy-12489",
+          "r1": "REJECT",
+          "short": "f51defe8",
+          "stable": true
+        },
+        {
+          "gate2": "REJECT",
+          "gold": "REJECT",
+          "instance": "sympy__sympy-13798",
+          "r1": "REJECT",
+          "short": "faae0894",
+          "stable": true
+        },
+        {
+          "gate2": "ACCEPT",
+          "gold": "ACCEPT",
+          "instance": "sympy__sympy-12481",
+          "r1": "ACCEPT",
+          "short": "fac59e18",
+          "stable": true
+        }
+      ],
+      "transition_matrices": {
+        "adjudicated": {
+          "ACCEPT->ACCEPT": 7,
+          "ACCEPT->NEED_EVIDENCE": 1,
+          "ACCEPT->REJECT": 0,
+          "NEED_EVIDENCE->ACCEPT": 0,
+          "NEED_EVIDENCE->NEED_EVIDENCE": 11,
+          "NEED_EVIDENCE->REJECT": 0,
+          "REJECT->ACCEPT": 0,
+          "REJECT->NEED_EVIDENCE": 1,
+          "REJECT->REJECT": 2
+        },
+        "raw": {
+          "ACCEPT->ACCEPT": 12,
+          "ACCEPT->NEED_EVIDENCE": 0,
+          "ACCEPT->REJECT": 0,
+          "NEED_EVIDENCE->ACCEPT": 0,
+          "NEED_EVIDENCE->NEED_EVIDENCE": 7,
+          "NEED_EVIDENCE->REJECT": 0,
+          "REJECT->ACCEPT": 0,
+          "REJECT->NEED_EVIDENCE": 0,
+          "REJECT->REJECT": 3
+        },
+        "structured": {
+          "ACCEPT->ACCEPT": 15,
+          "ACCEPT->NEED_EVIDENCE": 1,
+          "ACCEPT->REJECT": 0,
+          "NEED_EVIDENCE->ACCEPT": 0,
+          "NEED_EVIDENCE->NEED_EVIDENCE": 0,
+          "NEED_EVIDENCE->REJECT": 0,
+          "REJECT->ACCEPT": 0,
+          "REJECT->NEED_EVIDENCE": 0,
+          "REJECT->REJECT": 6
+        }
+      },
+      "unscored_round1": []
+    }
+  },
+  "note_independence": "paired repeats of the SAME 22 fixtures; NOT independent new issues. Bootstrap unit=instance_id (10 clusters); two rounds do not estimate a per-cell backend variance."
+}

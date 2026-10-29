@@ -1,0 +1,42 @@
+{
+  "document": "Gate 3-B.2 task 8: 100-cell offline mock pipeline audit. Mock decisions are research-excluded; this validates plumbing and repaired-protocol alignment only.",
+  "protocol_version": "g3b2-protocol-v1",
+  "n_cells": 100,
+  "n_mock_models": 2,
+  "api_calls_total": 0,
+  "cost_usd_total": 0.0,
+  "mock_matches_repaired_condition_gold": 100,
+  "mock_match_rate": 1.0,
+  "n_active_cells": 60,
+  "freshness_true_issues_seen_via_tool": 10,
+  "strict_403_cells": 20,
+  "escalate_full_400_then_grant_cells": 20,
+  "t3a_full_access_cells": 20,
+  "decision_distribution": {
+    "T2D-T": {
+      "NEED_EVIDENCE": 20
+    },
+    "T3D-Strict": {
+      "NEED_EVIDENCE": 20
+    },
+    "T3D-Escalate": {
+      "ACCEPT": 14,
+      "REJECT": 6
+    },
+    "T2A-T": {
+      "ACCEPT": 14,
+      "REJECT": 6
+    },
+    "T3A-T": {
+      "ACCEPT": 14,
+      "REJECT": 6
+    }
+  },
+  "note": "A 100% mock/gold match is EXPECTED for these 10 genuine issues under the repaired protocol and is not a model result.",
+  "gold_authority": {
+    "gold_tier": "PROVISIONAL",
+    "annotators": 1,
+    "annotator2": "NOT_OBTAINED",
+    "note": "Single-annotator gold; no second adjudicator obtained. The G3-B.2 protocol repair does not raise gold authority. Until a second annotator adjudicates, all condition/oracle gold and all derived model comparisons remain PROVISIONAL."
+  }
+}

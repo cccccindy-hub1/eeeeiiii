@@ -1,0 +1,633 @@
+You are an independent code reviewer. Review the candidate patch as a resolution of the issue and return exactly one of three decisions, based ONLY on evidence you can trust and that actually applies to THIS patch and its current commit tree:
+  "ACCEPT" — the evidence is intact (linked to this patch/commit, fresh for the current tree, and the declared acceptance/regression set was fully executed) AND demonstrates success: the reported issue is resolved and no executed acceptance check fails and no scoped regression is introduced.
+  "REJECT" — you have trustworthy evidence that APPLIES to this patch and current tree and that contains a decisive failure: an applicable acceptance check fails or a scoped regression is introduced. A single credible, applicable failing check is enough to REJECT even if not every declared check was run. But a failure seen in a stale run, in an artifact linked to a different patch, or in an inapplicable log is NOT grounds to reject THIS patch.
+  "NEED_EVIDENCE" — you cannot reach either conclusion: the available evidence does not link to this patch/commit, is not fresh for the current tree, or does not cover the declared set, and no decisive applicable failure has been established. You are explicitly allowed and expected to abstain in this case; set evidence_mismatch=true and use missing_evidence to name the specific gap.
+Asymmetry rule: the bar to REJECT is a credible applicable failure; the bar to ACCEPT is complete, fresh, linked, failure-free success. Invalid evidence is a property of the EVIDENCE, not a verdict that the patch code is wrong — do not REJECT merely because evidence is stale/mismatched/incomplete. Conversely, do not hide behind NEED_EVIDENCE when intact sufficient evidence already lets you decide; abstaining on a decisive applicable failure or on complete success is an error.
+Author statements are unverified claims. Ground truth about mergeability is never given to you.
+
+CHANNEL INTEGRITY (identical in every condition of this study): every run record below was served through the repository integrity service: its HMAC signature was verified before you received it, and every attached log hashes to the digest recorded in that signed record. Treat record/log authenticity and log-to-record binding as established. What is NOT established for you in advance is whether an authentic record actually applies to THIS patch and its current commit tree, whether its run covered the declared acceptance set, and what the raw runs show. Those judgments are yours to make from the materials provided.
+
+RAW-EVIDENCE CONDITION: you receive primary records only. Nothing is pre-adjudicated. The TARGET block names the patch under review. The ATTESTATION is the maintainers’ separately-signed declaration of the canonical run tree and the declared acceptance/regression sets. The RUN RECORD is the CI runner’s signed record of what actually ran (identity hashes, run tree, scope, per-test status maps, aggregated summary, log digests). The RUNNER LOGS are the verbatim commands, exit codes and stdout/stderr (host-local paths redacted; each redacted log is shown with its original digest so the redaction is auditable). You must yourself: (1) compare the record identity hashes against the TARGET; (2) compare the record run tree against the attested expected run tree; (3) compare the declared test sets against the per-test entries that actually executed; (4) determine acceptance and regression outcomes from the per-test statuses and the base-commit baseline (a check failing already at the base commit is recorded in the baseline map); (5) read the pre/post symptom-probe logs to determine whether the reported symptom is present before and after the patch. There are no tools and no further endpoints; decide solely from these materials.
+Evidence-gap taxonomy when you answer "NEED_EVIDENCE": stale = the run is not fresh for the current commit tree; linkage_mismatch = the record does not link to THIS patch/commit; coverage_incomplete = the declared set was not fully executed; contradiction = bundle evidence conflicts (e.g. the issue symptom still reproduces or an applicable check fails — note such a contradiction on linked, fresh evidence is decisive grounds to REJECT, not to abstain); unspecified = you cannot name a concrete, bundle-supported gap. Report a gap only when it is directly supported by the materials; never invent one.
+Respond with a single JSON object containing exactly these keys: {"decision":"ACCEPT|REJECT|NEED_EVIDENCE","reason":"...","evidence_mismatch":false,"missing_evidence":"","evidence_gap":"stale|linkage_mismatch|coverage_incomplete|contradiction|unspecified|"}. Always include every key. Set missing_evidence and evidence_gap to "" unless the decision is NEED_EVIDENCE; for NEED_EVIDENCE choose exactly one non-empty evidence_gap directly supported by the materials in this condition.
+
+DERIVED-SUMMARY DISCLOSURE — this condition is "RAW EXECUTION EVIDENCE WITH DERIVED SUMMARIES". The primary records below also contain a small number of fields computed BY THE UPSTREAM CI RUNNER AFTER it compared the post-patch run against the base-commit run: the run record's nested summary object (run counts and id lists, including the runner-classified "regressed" and "pre-existing-bad" id lists) and its scope metadata. Those are derived classifications, not raw per-test observations — they already encode a post-vs-base comparison you did not perform. Every raw per-test status map, command and exit code needed to re-derive them is provided wherever the archive retained it; where a per-test base map is absent the runner classification cannot be independently re-derived from the items shown. Treat such fields as runner-provided summaries: separate conclusions you verify yourself from primary outputs from conclusions you merely inherit from a summary, and say which is which in your reason. This disclosure states nothing about the final decision.
+
+Your review target is MERGE ACCEPTABILITY of the patch (issue resolved AND no applicable acceptance failure / scoped regression).
+
+RAW EVIDENCE PACKAGE (protocol eal-v0-draft1).
+[DERIVED SUMMARY WITHIN THIS JSON RECORD] Most fields are primary observations (identity hashes, run_tree, per-test status maps, log digests). The nested "summary" object (counts and id lists, incl. runner-classified "regressed" and "pre-existing-bad" lists) and the "scope" object are DERIVED by the runner from a post-vs-base comparison; they are summaries rather than raw per-test outputs.
+
+ISSUE:
+latex() and mul_symbol
+The `latex()` pretty-printing function accepts a `mul_symbol` kwarg that must be one of four choices. I would like to be able to supply my own choice which is not in the list. Specifically, I want the multiplication symbol to be `\,` (i.e., a thin space). This is what I mean
+```
+>>> latex(3*x**2*y)
+'3 \\, x^{2} \\, y' # I typed the thin spaces in after the fact
+```
+
+Thin spaces are used by sympy to separate differentials from integrands in integrals.
+```
+>>> latex(Integral(2*x**2*y, x))
+'\\int 2 x^{2} y\\, dx' # This thin space is sympy's current behavior
+```
+
+Is there a reason why the user cannot supply the `mul_symbol` of their choosing? Or are the 4 choices a historical artifact? I'm willing to attempt making a PR to allow `mul_symbol` to be arbitrary (and backwards-compatible) if such a PR would be considered.
+
+
+PATCH:
+diff --git a/sympy/printing/latex.py b/sympy/printing/latex.py
+index ad4d7d961..4a31cd02b 100644
+--- a/sympy/printing/latex.py
++++ b/sympy/printing/latex.py
+@@ -156,11 +156,17 @@ def __init__(self, settings=None):
+             "times": r" \times "
+         }
+ 
+-        self._settings['mul_symbol_latex'] = \
+-            mul_symbol_table[self._settings['mul_symbol']]
+-
+-        self._settings['mul_symbol_latex_numbers'] = \
+-            mul_symbol_table[self._settings['mul_symbol'] or 'dot']
++        # If mul_symbol is one of the predefined values, use the table
++        # Otherwise, treat it as a custom string
++        if self._settings['mul_symbol'] in mul_symbol_table:
++            self._settings['mul_symbol_latex'] = \
++                mul_symbol_table[self._settings['mul_symbol']]
++            self._settings['mul_symbol_latex_numbers'] = \
++                mul_symbol_table[self._settings['mul_symbol'] or 'dot']
++        else:
++            # Use custom mul_symbol string directly
++            self._settings['mul_symbol_latex'] = self._settings['mul_symbol']
++            self._settings['mul_symbol_latex_numbers'] = self._settings['mul_symbol']
+ 
+         self._delim_dict = {'(': ')', '[': ']'}
+ 
+@@ -2155,11 +2161,14 @@ def latex(expr, **settings):
+     \frac{1}{2 \pi} \int r\, dr
+ 
+     mul_symbol: The symbol to use for multiplication. Can be one of None,
+-    "ldot", "dot", or "times".
++    "ldot", "dot", or "times", or a custom string.
+ 
+     >>> print(latex((2*tau)**sin(Rational(7,2)), mul_symbol="times"))
+     \left(2 \times \tau\right)^{\sin{\left (\frac{7}{2} \right )}}
+ 
++    >>> print(latex((2*tau)**sin(Rational(7,2)), mul_symbol=r"\,"))
++    \left(2\,\tau\right)^{\sin{\left (\frac{7}{2} \right )}}
++
+     inv_trig_style: How inverse trig functions should be displayed. Can be one
+     of "abbreviated", "full", or "power". Defaults to "abbreviated".
+ 
+diff --git a/sympy/printing/tests/test_latex.py b/sympy/printing/tests/test_latex.py
+index ef4724e96..c174a5f41 100644
+--- a/sympy/printing/tests/test_latex.py
++++ b/sympy/printing/tests/test_latex.py
+@@ -991,6 +991,12 @@ def test_latex_mul_symbol():
+     assert latex(4*x, mul_symbol='dot') == "4 \\cdot x"
+     assert latex(4*x, mul_symbol='ldot') == r"4 \,.\, x"
+ 
++    # Test custom mul_symbol
++    assert latex(4*x, mul_symbol=r'\,') == r"4\,x"
++    assert latex(4*x**2, mul_symbol=r'\,') == r"4\,x^{2}"
++    assert latex(3*x*y, mul_symbol=r'\,') == r"3\,x\,y"
++    assert latex(4*x, mul_symbol=' * ') == r"4 * x"
++
+ 
+ def test_latex_issue_4381():
+     y = 4*4**log(2)
+
+
+AUTHOR STATEMENT:
+Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass.
+
+=== TARGET PATCH UNDER REVIEW ===instance_id: sympy__sympy-13798base_commit: 7121bdf1facdd90d05b6994b4c2e5b2865a4638apatch_sha256: ba86753ebfcb7477352ebe2367b92a8a535823360cc0e67cf55f2776b7bda952
+
+=== REPOSITORY ATTESTATION (maintainers’ separately-signed declaration) ===--- ATTESTATION RECORD ---
+{
+  "base_commit": "7121bdf1facdd90d05b6994b4c2e5b2865a4638a",
+  "built_at": "2026-10-20T05:37:07+00:00",
+  "declared_fail_to_pass": [
+    "test_latex_basic"
+  ],
+  "declared_p2p_scoped": [
+    "test_printmethod",
+    "test_latex_builtins",
+    "test_latex_SingularityFunction",
+    "test_latex_cycle",
+    "test_latex_permutation",
+    "test_latex_Float",
+    "test_latex_vector_expressions",
+    "test_latex_symbols",
+    "test_latex_functions",
+    "test_hyper_printing",
+    "test_latex_bessel",
+    "test_latex_fresnel",
+    "test_latex_brackets",
+    "test_latex_subs",
+    "test_latex_integrals",
+    "test_latex_sets",
+    "test_latex_Range",
+    "test_latex_sequences",
+    "test_latex_intervals",
+    "test_latex_AccumuBounds",
+    "test_latex_emptyset",
+    "test_latex_commutator",
+    "test_latex_union",
+    "test_latex_symmetric_difference",
+    "test_latex_Complement",
+    "test_latex_Complexes",
+    "test_latex_productset",
+    "test_latex_Naturals",
+    "test_latex_Naturals0",
+    "test_latex_Integers",
+    "test_latex_ImageSet",
+    "test_latex_ConditionSet",
+    "test_latex_ComplexRegion",
+    "test_latex_Contains",
+    "test_latex_sum",
+    "test_latex_product",
+    "test_latex_limits",
+    "test_issue_3568",
+    "test_latex",
+    "test_latex_dict",
+    "test_latex_list",
+    "test_latex_rational",
+    "test_latex_inverse",
+    "test_latex_DiracDelta",
+    "test_latex_Heaviside",
+    "test_latex_KroneckerDelta",
+    "test_latex_LeviCivita",
+    "test_mode",
+    "test_latex_Piecewise",
+    "test_latex_Matrix",
+    "test_latex_mul_symbol",
+    "test_latex_issue_4381",
+    "test_latex_issue_4576",
+    "test_latex_pow_fraction",
+    "test_noncommutative",
+    "test_latex_order",
+    "test_latex_Lambda",
+    "test_latex_PolyElement",
+    "test_latex_FracElement",
+    "test_latex_Poly",
+    "test_latex_ComplexRootOf",
+    "test_latex_RootSum",
+    "test_settings",
+    "test_latex_numbers",
+    "test_latex_euler",
+    "test_lamda",
+    "test_custom_symbol_names",
+    "test_matAdd",
+    "test_matMul",
+    "test_latex_MatrixSlice",
+    "test_latex_RandomDomain",
+    "test_PrettyPoly",
+    "test_integral_transforms",
+    "test_categories",
+    "test_Modules",
+    "test_QuotientRing",
+    "test_Tr",
+    "test_Adjoint",
+    "test_Hadamard",
+    "test_ZeroMatrix",
+    "test_boolean_args_order",
+    "test_imaginary",
+    "test_builtins_without_args",
+    "test_latex_greek_functions",
+    "test_translate",
+    "test_other_symbols",
+    "test_modifiers",
+    "test_greek_symbols",
+    "test_builtin_no_args",
+    "test_issue_6853",
+    "test_Mul",
+    "test_Pow",
+    "test_issue_7180",
+    "test_issue_8409",
+    "test_issue_7117",
+    "test_issue_2934",
+    "test_issue_10489",
+    "test_issue_12886",
+    "test_issue_13651",
+    "test_latex_UnevaluatedExpr",
+    "test_MatrixElement_printing",
+    "test_Quaternion_latex_printing"
+  ],
+  "declared_scope_files": [
+    "sympy/printing/tests/test_ccode.py",
+    "sympy/printing/tests/test_codeprinter.py",
+    "sympy/printing/tests/test_conventions.py",
+    "sympy/printing/tests/test_cxxcode.py",
+    "sympy/printing/tests/test_dot.py",
+    "sympy/printing/tests/test_fcode.py",
+    "sympy/printing/tests/test_glsl.py",
+    "sympy/printing/tests/test_gtk.py",
+    "sympy/printing/tests/test_jscode.py",
+    "sympy/printing/tests/test_julia.py",
+    "sympy/printing/tests/test_lambdarepr.py",
+    "sympy/printing/tests/test_latex.py",
+    "sympy/printing/tests/test_llvmjit.py",
+    "sympy/printing/tests/test_mathematica.py",
+    "sympy/printing/tests/test_mathml.py",
+    "sympy/printing/tests/test_numpy.py",
+    "sympy/printing/tests/test_octave.py",
+    "sympy/printing/tests/test_precedence.py",
+    "sympy/printing/tests/test_preview.py",
+    "sympy/printing/tests/test_pycode.py",
+    "sympy/printing/tests/test_python.py",
+    "sympy/printing/tests/test_rcode.py",
+    "sympy/printing/tests/test_repr.py",
+    "sympy/printing/tests/test_rust.py",
+    "sympy/printing/tests/test_str.py",
+    "sympy/printing/tests/test_tableform.py",
+    "sympy/printing/tests/test_theanocode.py"
+  ],
+  "expected_run_tree": "de834347b7d0caa8502d39785475b61093481bc8",
+  "instance_id": "sympy__sympy-13798",
+  "patch_sha256": "ba86753ebfcb7477352ebe2367b92a8a535823360cc0e67cf55f2776b7bda952"
+}
+
+=== SIGNED CI RUN RECORD (what the runner actually executed) ===
+[DERIVED SUMMARY WITHIN THIS JSON RECORD] Most fields are primary observations (identity hashes, run_tree, per-test status maps, log digests). The nested "summary" object (counts and id lists, incl. runner-classified "regressed" and "pre-existing-bad" lists) and the "scope" object are DERIVED by the runner from a post-vs-base comparison; they are summaries rather than raw per-test outputs.--- RUN RECORD ---
+{
+  "artifact_id": "art_97ac402dfa11643a",
+  "base_commit": "7121bdf1facdd90d05b6994b4c2e5b2865a4638a",
+  "fail_to_pass": {
+    "test_latex_basic": "FAILED"
+  },
+  "finished_at": "2026-10-20T05:37:14+00:00",
+  "instance_id": "sympy__sympy-13798",
+  "log_digests": {
+    "f2p": "f2ddd5975e870ba90ee08c98f1619e83ca09a7c4665ffade5c7ce821ea862bf4",
+    "p2p": "f702168483c3d36fc452cceb5868d3fcdcecbcd76629f14b463c0f50ebaa8c46",
+    "symptom": "91f1d1ec4663812380be7a426e3535c325a5d2781c7baf0bd56924903a009b1f"
+  },
+  "pass_to_pass_scoped": {},
+  "patch_sha256": "ba86753ebfcb7477352ebe2367b92a8a535823360cc0e67cf55f2776b7bda952",
+  "repo": "sympy/sympy",
+  "run_tree": "de834347b7d0caa8502d39785475b61093481bc8",
+  "runner": "pytest/vendored-git py=3.9.25 host=windows-local",
+  "schema_version": "1.0",
+  "scope": {
+    "p2p_scoped_files": [
+      "sympy/printing/tests/test_ccode.py",
+      "sympy/printing/tests/test_codeprinter.py",
+      "sympy/printing/tests/test_conventions.py",
+      "sympy/printing/tests/test_cxxcode.py",
+      "sympy/printing/tests/test_dot.py",
+      "sympy/printing/tests/test_fcode.py",
+      "sympy/printing/tests/test_glsl.py",
+      "sympy/printing/tests/test_gtk.py",
+      "sympy/printing/tests/test_jscode.py",
+      "sympy/printing/tests/test_julia.py",
+      "sympy/printing/tests/test_lambdarepr.py",
+      "sympy/printing/tests/test_latex.py",
+      "sympy/printing/tests/test_llvmjit.py",
+      "sympy/printing/tests/test_mathematica.py",
+      "sympy/printing/tests/test_mathml.py",
+      "sympy/printing/tests/test_numpy.py",
+      "sympy/printing/tests/test_octave.py",
+      "sympy/printing/tests/test_precedence.py",
+      "sympy/printing/tests/test_preview.py",
+      "sympy/printing/tests/test_pycode.py",
+      "sympy/printing/tests/test_python.py",
+      "sympy/printing/tests/test_rcode.py",
+      "sympy/printing/tests/test_repr.py",
+      "sympy/printing/tests/test_rust.py",
+      "sympy/printing/tests/test_str.py",
+      "sympy/printing/tests/test_tableform.py",
+      "sympy/printing/tests/test_theanocode.py"
+    ],
+    "p2p_total_in_dataset": 102,
+    "rule": "F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file",
+    "test_patch_applied_cleanly": true
+  },
+  "started_at": "2026-10-20T05:37:07+00:00",
+  "summary": {
+    "f2p_failed_ids": [
+      "test_latex_basic"
+    ],
+    "f2p_passed": 0,
+    "f2p_total": 1,
+    "p2p_passed": 0,
+    "p2p_preexisting_bad_ids": [],
+    "p2p_regressed_ids": [],
+    "p2p_total": 0
+  },
+  "test_patch_sha256": "2efe8cdfbacae0c20b0d90e5f3d390fb8d4c2a1fae563a78a58c4d3f91b7fff5"
+}
+
+=== RUNNER LOGS (verbatim except host-local path redaction; digests below are of the ORIGINAL pre-redaction bytes and match the run record log_digests) ===
+--- LOG: f2p (FAIL_TO_PASS acceptance run (post-patch)) ---[original log sha256: f2ddd5975e870ba90ee08c98f1619e83ca09a7c4665ffade5c7ce821ea862bf4]$ <UV_CACHE> -m pytest sympy/printing/tests/test_lambdarepr.py sympy/printing/tests/test_latex.py sympy/printing/tests/test_mathematica.py -v --tb=short -p no:cacheprovider  (exit 1, 7s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- <UV_CACHE>
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: <REPO_WORKTREE>
+collecting ... collected 134 items
+
+sympy/printing/tests/test_lambdarepr.py::test_basic PASSED               [  0%]
+sympy/printing/tests/test_lambdarepr.py::test_matrix PASSED              [  1%]
+sympy/printing/tests/test_lambdarepr.py::test_piecewise PASSED           [  2%]
+sympy/printing/tests/test_lambdarepr.py::test_sum__1 PASSED              [  2%]
+sympy/printing/tests/test_lambdarepr.py::test_sum__2 PASSED              [  3%]
+sympy/printing/tests/test_lambdarepr.py::test_multiple_sums PASSED       [  4%]
+sympy/printing/tests/test_lambdarepr.py::test_settings PASSED            [  5%]
+sympy/printing/tests/test_lambdarepr.py::test_printmethod PASSED         [  5%]
+sympy/printing/tests/test_latex.py::test_printmethod PASSED              [  6%]
+sympy/printing/tests/test_latex.py::test_latex_basic FAILED              [  7%]
+sympy/printing/tests/test_latex.py::test_latex_builtins PASSED           [  8%]
+sympy/printing/tests/test_latex.py::test_latex_SingularityFunction PASSED [  8%]
+sympy/printing/tests/test_latex.py::test_latex_cycle PASSED              [  9%]
+sympy/printing/tests/test_latex.py::test_latex_permutation PASSED        [ 10%]
+sympy/printing/tests/test_latex.py::test_latex_Float FAILED              [ 11%]
+sympy/printing/tests/test_latex.py::test_latex_vector_expressions PASSED [ 11%]
+sympy/printing/tests/test_latex.py::test_latex_symbols PASSED            [ 12%]
+sympy/printing/tests/test_latex.py::test_latex_symbols_failing FAILED    [ 13%]
+sympy/printing/tests/test_latex.py::test_latex_functions PASSED          [ 14%]
+sympy/printing/tests/test_latex.py::test_hyper_printing PASSED           [ 14%]
+sympy/printing/tests/test_latex.py::test_latex_bessel PASSED             [ 15%]
+sympy/printing/tests/test_latex.py::test_latex_fresnel PASSED            [ 16%]
+sympy/printing/tests/test_latex.py::test_latex_brackets PASSED           [ 17%]
+sympy/printing/tests/test_latex.py::test_latex_indexed PASSED            [ 17%]
+sympy/printing/tests/test_latex.py::test_latex_derivatives PASSED        [ 18%]
+sympy/printing/tests/test_latex.py::test_latex_subs PASSED               [ 19%]
+sympy/printing/tests/test_latex.py::test_latex_integrals PASSED          [ 20%]
+sympy/printing/tests/test_latex.py::test_latex_sets PASSED               [ 20%]
+sympy/printing/tests/test_latex.py::test_latex_Range PASSED              [ 21%]
+sympy/printing/tests/test_latex.py::test_latex_sequences PASSED          [ 22%]
+sympy/printing/tests/test_latex.py::test_latex_FourierSeries PASSED      [ 23%]
+sympy/printing/tests/test_latex.py::test_latex_FormalPowerSeries PASSED  [ 23%]
+sympy/printing/tests/test_latex.py::test_latex_intervals PASSED          [ 24%]
+sympy/printing/tests/test_latex.py::test_latex_AccumuBounds PASSED       [ 25%]
+sympy/printing/tests/test_latex.py::test_latex_emptyset PASSED           [ 26%]
+sympy/printing/tests/test_latex.py::test_latex_commutator PASSED         [ 26%]
+sympy/printing/tests/test_latex.py::test_latex_union PASSED              [ 27%]
+sympy/printing/tests/test_latex.py::test_latex_symmetric_difference PASSED [ 28%]
+sympy/printing/tests/test_latex.py::test_latex_Complement PASSED         [ 29%]
+sympy/printing/tests/test_latex.py::test_latex_Complexes PASSED          [ 29%]
+sympy/printing/tests/test_latex.py::test_latex_productset PASSED         [ 30%]
+sympy/printing/tests/test_latex.py::test_latex_Naturals PASSED           [ 31%]
+sympy/printing/tests/test_latex.py::test_latex_Naturals0 PASSED          [ 32%]
+sympy/printing/tests/test_latex.py::test_latex_Integers PASSED           [ 32%]
+sympy/printing/tests/test_latex.py::test_latex_ImageSet PASSED           [ 33%]
+sympy/printing/tests/test_latex.py::test_latex_ConditionSet PASSED       [ 34%]
+sympy/printing/tests/test_latex.py::test_latex_ComplexRegion PASSED      [ 35%]
+sympy/printing/tests/test_latex.py::test_latex_Contains PASSED           [ 35%]
+sympy/printing/tests/test_latex.py::test_latex_sum PASSED                [ 36%]
+sympy/printing/tests/test_latex.py::test_latex_product PASSED            [ 37%]
+sympy/printing/tests/test_latex.py::test_latex_limits PASSED             [ 38%]
+sympy/printing/tests/test_latex.py::test_issue_3568 PASSED               [ 38%]
+sympy/printing/tests/test_latex.py::test_latex PASSED                    [ 39%]
+sympy/printing/tests/test_latex.py::test_latex_dict PASSED               [ 40%]
+sympy/printing/tests/test_latex.py::test_latex_list PASSED               [ 41%]
+sympy/printing/tests/test_latex.py::test_latex_rational PASSED           [ 41%]
+sympy/printing/tests/test_latex.py::test_latex_inverse PASSED            [ 42%]
+sympy/printing/tests/test_latex.py::test_latex_DiracDelta PASSED         [ 43%]
+sympy/printing/tests/test_latex.py::test_latex_Heaviside PASSED          [ 44%]
+sympy/printing/tests/test_latex.py::test_latex_KroneckerDelta PASSED     [ 44%]
+sympy/printing/tests/test_latex.py::test_latex_LeviCivita PASSED         [ 45%]
+sympy/printing/tests/test_latex.py::test_mode PASSED                     [ 46%]
+sympy/printing/tests/test_latex.py::test_latex_Piecewise PASSED          [ 47%]
+sympy/printing/tests/test_latex.py::test_latex_Matrix PASSED             [ 47%]
+sympy/printing/tests/test_latex.py::test_latex_matrix_with_functions PASSED [ 48%]
+sympy/printing/tests/test_latex.py::test_latex_NDimArray PASSED          [ 49%]
+sympy/printing/tests/test_latex.py::test_latex_mul_symbol PASSED         [ 50%]
+sympy/printing/tests/test_latex.py::test_latex_issue_4381 PASSED         [ 50%]
+sympy/printing/tests/test_latex.py::test_latex_issue_4576 PASSED         [ 51%]
+sympy/printing/tests/test_latex.py::test_latex_pow_fraction PASSED       [ 52%]
+sympy/printing/tests/test_latex.py::test_noncommutative PASSED           [ 52%]
+sympy/printing/tests/test_latex.py::test_latex_order PASSED              [ 53%]
+sympy/printing/tests/test_latex.py::test_latex_Lambda PASSED             [ 54%]
+sympy/printing/tests/test_latex.py::test_latex_PolyElement PASSED        [ 55%]
+sympy/printing/tests/test_latex.py::test_latex_FracElement PASSED        [ 55%]
+sympy/printing/tests/test_latex.py::test_latex_Poly PASSED               [ 56%]
+sympy/printing/tests/test_latex.py::test_latex_ComplexRootOf PASSED      [ 57%]
+sympy/printing/tests/test_latex.py::test_latex_RootSum PASSED            [ 58%]
+sympy/printing/tests/test_latex.py::test_settings PASSED                 [ 58%]
+sympy/printing/tests/test_latex.py::test_latex_numbers PASSED            [ 59%]
+sympy/printing/tests/test_latex.py::test_latex_euler PASSED              [ 60%]
+sympy/printing/tests/test_latex.py::test_lamda PASSED                    [ 61%]
+sympy/printing/tests/test_latex.py::test_custom_symbol_names PASSED      [ 61%]
+sympy/printing/tests/test_latex.py::test_matAdd PASSED                   [ 62%]
+sympy/printing/tests/test_latex.py::test_matMul PASSED                   [ 63%]
+sympy/printing/tests/test_latex.py::test_latex_MatrixSlice PASSED        [ 64%]
+sympy/printing/tests/test_latex.py::test_latex_RandomDomain PASSED       [ 64%]
+sympy/printing/tests/test_latex.py::test_PrettyPoly PASSED               [ 65%]
+sympy/printing/tests/test_latex.py::test_integral_transforms PASSED      [ 66%]
+sympy/printing/tests/test_latex.py::test_PolynomialRingBase PASSED       [ 67%]
+sympy/printing/tests/test_latex.py::test_categories PASSED               [ 67%]
+sympy/printing/tests/test_latex.py::test_Modules PASSED                  [ 68%]
+sympy/printing/tests/test_latex.py::test_QuotientRing PASSED             [ 69%]
+sympy/printing/tests/test_latex.py::test_Tr PASSED                       [ 70%]
+sympy/printing/tests/test_latex.py::test_Adjoint PASSED                  [ 70%]
+sympy/printing/tests/test_latex.py::test_Hadamard PASSED                 [ 71%]
+sympy/printing/tests/test_latex.py::test_ZeroMatrix PASSED               [ 72%]
+sympy/printing/tests/test_latex.py::test_boolean_args_order PASSED       [ 73%]
+sympy/printing/tests/test_latex.py::test_imaginary PASSED                [ 73%]
+sympy/printing/tests/test_latex.py::test_builtins_without_args PASSED    [ 74%]
+sympy/printing/tests/test_latex.py::test_latex_greek_functions PASSED    [ 75%]
+sympy/printing/tests/test_latex.py::test_translate PASSED                [ 76%]
+sympy/printing/tests/test_latex.py::test_other_symbols PASSED            [ 76%]
+sympy/printing/tests/test_latex.py::test_modifiers PASSED                [ 77%]
+sympy/printing/tests/test_latex.py::test_greek_symbols PASSED            [ 78%]
+sympy/printing/tests/test_latex.py::test_builtin_without_args_mismatched_names FAILED [ 79%]
+sympy/printing/tests/test_latex.py::test_builtin_no_args PASSED          [ 79%]
+sympy/printing/tests/test_latex.py::test_issue_6853 PASSED               [ 80%]
+sympy/printing/tests/test_latex.py::test_Mul PASSED                      [ 81%]
+sympy/printing/tests/test_latex.py::test_Pow PASSED                      [ 82%]
+sympy/printing/tests/test_latex.py::test_issue_7180 PASSED               [ 82%]
+sympy/printing/tests/test_latex.py::test_issue_8409 PASSED               [ 83%]
+sympy/printing/tests/test_latex.py::test_issue_8470 FAILED               [ 84%]
+sympy/printing/tests/test_latex.py::test_issue_7117 PASSED               [ 85%]
+sympy/printing/tests/test_latex.py::test_issue_2934 PASSED               [ 85%]
+sympy/printing/tests/test_latex.py::test_issue_10489 PASSED              [ 86%]
+sympy/printing/tests/test_latex.py::test_issue_12886 PASSED              [ 87%]
+sympy/printing/tests/test_latex.py::test_issue_13559 FAILED              [ 88%]
+sympy/printing/tests/test_latex.py::test_issue_13651 PASSED              [ 88%]
+sympy/printing/tests/test_latex.py::test_latex_UnevaluatedExpr PASSED    [ 89%]
+sympy/printing/tests/test_latex.py::test_MatrixElement_printing PASSED   [ 90%]
+sympy/printing/tests/test_latex.py::test_Quaternion_latex_printing PASSED [ 91%]
+sympy/printing/tests/test_latex.py::test_TensorProduct_printing PASSED   [ 91%]
+sympy/printing/tests/test_latex.py::test_WedgeProduct_printing PASSED    [ 92%]
+sympy/printing/tests/test_mathematica.py::test_Integer PASSED            [ 93%]
+sympy/printing/tests/test_mathematica.py::test_Rational PASSED           [ 94%]
+sympy/printing/tests/test_mathematica.py::test_Function PASSED           [ 94%]
+sympy/printing/tests/test_mathematica.py::test_Pow PASSED                [ 95%]
+sympy/printing/tests/test_mathematica.py::test_Mul PASSED                [ 96%]
+sympy/printing/tests/test_mathematica.py::test_constants PASSED          [ 97%]
+sympy/printing/tests/test_mathematica.py::test_containers PASSED         [ 97%]
+sympy/printing/tests/test_mathematica.py::test_Integral PASSED           [ 98%]
+sympy/printing/tests/test_mathematica.py::test_Derivative PASSED         [ 99%]
+sympy/printing/tests/test_mathematica.py::test_Sum PASSED                [100%]
+
+================================== FAILURES ===================================
+______________________________ test_latex_basic _______________________________
+sympy\printing\tests\test_latex.py:67: in test_latex_basic
+    assert latex(1.5*3**x, mul_symbol='\\,') == r"1.5 \cdot 3^{x}"
+E   AssertionError: assert '1.5\\,3^{x}' == '1.5 \\cdot 3^{x}'
+E     
+E     - 1.5 \cdot 3^{x}
+E     + 1.5\,3^{x}
+______________________________ test_latex_Float _______________________________
+sympy\printing\tests\test_latex.py:175: in test_latex_Float
+    assert latex(1.0*oo) == r"\infty"
+E   AssertionError: assert 'inf' == '\\infty'
+E     
+E     - \infty
+E     + inf
+_________________________ test_latex_symbols_failing __________________________
+sympy\printing\tests\test_latex.py:236: in test_latex_symbols_failing
+    assert latex(
+E   AssertionError: assert '\\mathrm{False}' == '\\rho \\math...\mathrm{mass}'
+E     
+E     - \rho \mathrm{volume} = \mathrm{mass}
+E     + \mathrm{False}
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:121: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_latex_symbols_failing
+_________________ test_builtin_without_args_mismatched_names __________________
+sympy\printing\tests\test_latex.py:1564: in test_builtin_without_args_mismatched_names
+    assert latex(CosineTransform) == r'\mathcal{COS}'
+E   AssertionError: assert '\\operatorna...ineTransform}' == '\\mathcal{COS}'
+E     
+E     - \mathcal{COS}
+E     + \operatorname{CosineTransform}
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:121: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_builtin_without_args_mismatched_names
+_______________________________ test_issue_8470 _______________________________
+sympy\printing\tests\test_latex.py:1613: in test_issue_8470
+    e = parse_expr("-B*A", evaluate=False)
+sympy\parsing\sympy_parser.py:892: in parse_expr
+    code = compile(evaluateFalse(code), '<string>', 'eval')
+E   ValueError: Name node can't be used with 'False' constant
+______________________________ test_issue_13559 _______________________________
+sympy\printing\tests\test_latex.py:1646: in test_issue_13559
+    expr = parse_expr('5/1', evaluate=False)
+sympy\parsing\sympy_parser.py:892: in parse_expr
+    code = compile(evaluateFalse(code), '<string>', 'eval')
+E   ValueError: Name node can't be used with 'False' constant
+============================== warnings summary ===============================
+sympy\core\basic.py:3
+  <REPO_WORKTREE> DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping, defaultdict
+
+sympy\core\containers.py:271
+  <REPO_WORKTREE> DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    class OrderedSet(collections.MutableSet):
+
+<UV_CACHE>
+  <UV_CACHE> DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+<UV_CACHE>
+<UV_CACHE>
+  <UV_CACHE> DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+sympy\solvers\diophantine.py:3188
+  <REPO_WORKTREE> SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if feasible is 1:  # it's prime and k == 2
+
+sympy\plotting\plot.py:28
+  <REPO_WORKTREE> DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Callable
+
+sympy\vector\coordsysrect.py:171
+  <REPO_WORKTREE> SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if transformation.name is 'spherical':
+
+sympy\vector\coordsysrect.py:173
+  <REPO_WORKTREE> SyntaxWarning: "is" with a literal. Did you mean "=="?
+    elif transformation.name is 'cylindrical':
+
+sympy/printing/tests/test_latex.py::test_latex_indexed
+  <REPO_WORKTREE> DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    if isinstance(base, (NDimArray, collections.Iterable, Tuple, MatrixBase)) and all([i.is_number for i in args]):
+
+sympy/printing/tests/test_latex.py: 19 warnings
+  <UV_CACHE> DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+sympy/printing/tests/test_latex.py::test_PolynomialRingBase
+  <REPO_WORKTREE> SyntaxWarning: "is" with a literal. Did you mean "=="?
+    elif elem is 0:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+                               DO *NOT* COMMIT!                               
+=========================== short test summary info ===========================
+FAILED sympy/printing/tests/test_latex.py::test_latex_basic - AssertionError: assert '1.5\\,3^{x}' == '1.5 \\cdot 3^{x}'
+  
+  - 1.5 \cdot 3^{x}
+  + 1.5\,3^{x}
+FAILED sympy/printing/tests/test_latex.py::test_latex_Float - AssertionError: assert 'inf' == '\\infty'
+  
+  - \infty
+  + inf
+FAILED sympy/printing/tests/test_latex.py::test_latex_symbols_failing - sympy.utilities.pytest.XFail: test_latex_symbols_failing
+FAILED sympy/printing/tests/test_latex.py::test_builtin_without_args_mismatched_names - sympy.utilities.pytest.XFail: test_builtin_without_args_mismatched_names
+FAILED sympy/printing/tests/test_latex.py::test_issue_8470 - ValueError: Name node can't be used with 'False' constant
+FAILED sympy/printing/tests/test_latex.py::test_issue_13559 - ValueError: Name node can't be used with 'False' constant
+================= 6 failed, 128 passed, 30 warnings in 3.57s ==================
+
+--- stderr ---
+--- LOG: p2p (scoped PASS_TO_PASS run (post-patch)) ---[original log sha256: f702168483c3d36fc452cceb5868d3fcdcecbcd76629f14b463c0f50ebaa8c46](no scoped regression checks were executed for this run)
+--- LOG: p2p_baseline (scoped PASS_TO_PASS run at BASE commit) ---(log not retained in the archive)
+--- LOG: symptom (issue-symptom probe (pre-patch + post-patch)) ---[original log sha256: 91f1d1ec4663812380be7a426e3535c325a5d2781c7baf0bd56924903a009b1f]### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+
+--- stderr ---
+<REPO_WORKTREE> DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+<REPO_WORKTREE> DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+<REPO_WORKTREE> SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+<REPO_WORKTREE> DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+Traceback (most recent call last):
+  File "<REPO_WORKTREE>", line 7, in <module>
+    out = latex(3*x**2*y, mul_symbol=r"\,")
+  File "<REPO_WORKTREE>", line 2203, in latex
+    return LatexPrinter(settings).doprint(expr)
+  File "<REPO_WORKTREE>", line 160, in __init__
+    mul_symbol_table[self._settings['mul_symbol']]
+KeyError: '\\,'
+
+
+### POST candidate patch
+$ python probe.py  (exit 0)
+--- stdout ---
+OK: 3\,x^{2}\,y
+
+--- stderr ---
+<REPO_WORKTREE> DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+<REPO_WORKTREE> DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+<REPO_WORKTREE> SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+<REPO_WORKTREE> DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+
+=== ISSUE-SYMPTOM PROBE SOURCE (executable check derived from the issue text; exit 0 = symptom assertion does not fire, non-zero = it fires) ===
+# issue: latex(mul_symbol=...) should accept an arbitrary separator string
+import sys
+from sympy import symbols
+from sympy.printing.latex import latex
+x, y = symbols("x y")
+out = latex(3*x**2*y, mul_symbol=r"\,")
+if r"\," not in out:
+    print("FAIL: custom mul_symbol not used:", out)
+    sys.exit(1)
+print("OK:", out)

@@ -1,0 +1,1171 @@
+{
+  "borderline_cells": [
+    "B004",
+    "B005",
+    "B013",
+    "B014",
+    "B032",
+    "B044"
+  ],
+  "by_model_confirm": {
+    "deepseek-flash": {
+      "both_confirmed": 0,
+      "both_not_confirmed": 8,
+      "cohen_kappa": 0.0,
+      "n_cells": 14,
+      "pass2_confirmed": 6,
+      "pass2_confirmed_rate": 0.4286,
+      "pass3_confirmed": 0,
+      "pass3_confirmed_rate": 0.0,
+      "raw_agreement": 0.5714
+    },
+    "gpt-4.1-mini": {
+      "both_confirmed": 24,
+      "both_not_confirmed": 9,
+      "cohen_kappa": 0.927,
+      "n_cells": 34,
+      "pass2_confirmed": 24,
+      "pass2_confirmed_rate": 0.7059,
+      "pass3_confirmed": 25,
+      "pass3_confirmed_rate": 0.7353,
+      "raw_agreement": 0.9706
+    }
+  },
+  "coding_standard": "",
+  "disagreements": [
+    {
+      "blind_id": "B009",
+      "borderline": false,
+      "bundle8": "faae0894",
+      "condition": "a1b0",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P3_coverage_complete",
+        "P4_all_checks_pass"
+      ],
+      "gold": "REJECT",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P3_coverage_complete"
+      ],
+      "pass3_note": "P3: ends asserting coverage complete/ACCEPT vs 102 absent; P4: explicitly acknowledges test_latex_basic FAILED then rationalizes (decision error, not all-pass claim)",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B016",
+      "borderline": false,
+      "bundle8": "62dfb1c6",
+      "condition": "a0b1",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "deepseek-flash",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states run-tree comparison fails, not fresh; abstains",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B019",
+      "borderline": false,
+      "bundle8": "e4e8b26c",
+      "condition": "a0b0",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "deepseek-flash",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states tree differs, not demonstrably fresh",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B025",
+      "borderline": false,
+      "bundle8": "c59a8ceb",
+      "condition": "a0b1",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P1_identity_match"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "deepseek-flash",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states record does NOT link, patch_sha differs; abstains",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B031",
+      "borderline": false,
+      "bundle8": "62dfb1c6",
+      "condition": "a0b0",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "deepseek-flash",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states run-tree operand does not match, not fresh",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B041",
+      "borderline": false,
+      "bundle8": "c637f604",
+      "condition": "a1b0",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P4_all_checks_pass"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "deepseek-flash",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "names test_latex_basic FAILED, tree mismatch, abstains",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B045",
+      "borderline": false,
+      "bundle8": "2c11095a",
+      "condition": "a1b1",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "deepseek-flash",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states run-tree differs, not demonstrably fresh",
+      "pass3_operative_on_accept": false
+    }
+  ],
+  "document": "Post-unblinding pass-3 (blind) vs frozen pass-2 join. Same-coder, partially-blind sensitivity check, NOT independent inter-annotator reliability.",
+  "n_disagreements": 7,
+  "operative_on_accept_by_model": {
+    "deepseek-flash": {
+      "pass2_operative_accept": 0,
+      "pass3_operative_accept": 0
+    },
+    "gpt-4.1-mini": {
+      "pass2_operative_accept": 20,
+      "pass3_operative_accept": 20
+    }
+  },
+  "overall_confirm": {
+    "both_confirmed": 24,
+    "both_not_confirmed": 17,
+    "cohen_kappa": 0.7053,
+    "n_cells": 48,
+    "pass2_confirmed": 30,
+    "pass2_confirmed_rate": 0.625,
+    "pass3_confirmed": 25,
+    "pass3_confirmed_rate": 0.5208,
+    "raw_agreement": 0.8542
+  },
+  "rows": [
+    {
+      "blind_id": "B001",
+      "borderline": false,
+      "bundle8": "2c11095a",
+      "condition": "a1b1",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "affirms fresh/linked to current commit tree + ACCEPT; tree differs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B002",
+      "borderline": false,
+      "bundle8": "f0c49f82",
+      "condition": "a0b1",
+      "confirm_agreement": true,
+      "decision": "REJECT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "REJECT",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "'applicable to current commit tree' qualifies the failure; rejects; no tree-match assertion",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B003",
+      "borderline": false,
+      "bundle8": "ec813709",
+      "condition": "a1b0",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P3_coverage_complete"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P3_coverage_complete"
+      ],
+      "pass3_note": "asserts declared set fully covered; 67 p2p + 1 f2p absent",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B004",
+      "borderline": true,
+      "bundle8": "3d04e0f9",
+      "condition": "a1b1",
+      "confirm_agreement": true,
+      "decision": "REJECT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "borderline: affirms 'correctly linked to current commit tree' then rejects on failure; literal tree-linkage assertion contradicted",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B005",
+      "borderline": true,
+      "bundle8": "af83be49",
+      "condition": "a1b1",
+      "confirm_agreement": true,
+      "decision": "REJECT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "REJECT",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "borderline: 'run is fresh and linked to this patch' then rejects; literal contradiction",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B006",
+      "borderline": false,
+      "bundle8": "f0c49f82",
+      "condition": "a1b0",
+      "confirm_agreement": true,
+      "decision": "REJECT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "REJECT",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "failure 'linked to patch/current commit tree' = applicability; rejects; no freshness claim",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B007",
+      "borderline": false,
+      "bundle8": "a242cd7a",
+      "condition": "a1b1",
+      "confirm_agreement": true,
+      "decision": "REJECT",
+      "flagged_properties": [
+        "P4_all_checks_pass"
+      ],
+      "gold": "REJECT",
+      "model": "deepseek-flash",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly names test_solve_modular FAILED and rejects",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B008",
+      "borderline": false,
+      "bundle8": "2c11095a",
+      "condition": "a0b1",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "fresh/linked commit tree + ACCEPT; tree differs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B009",
+      "borderline": false,
+      "bundle8": "faae0894",
+      "condition": "a1b0",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P3_coverage_complete",
+        "P4_all_checks_pass"
+      ],
+      "gold": "REJECT",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P3_coverage_complete"
+      ],
+      "pass3_note": "P3: ends asserting coverage complete/ACCEPT vs 102 absent; P4: explicitly acknowledges test_latex_basic FAILED then rationalizes (decision error, not all-pass claim)",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B010",
+      "borderline": false,
+      "bundle8": "62dfb1c6",
+      "condition": "a1b0",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "fresh/linked exact patch + ACCEPT; tree differs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B011",
+      "borderline": false,
+      "bundle8": "c637f604",
+      "condition": "a1b0",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness",
+        "P4_all_checks_pass"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "P2: correctly linked/matching + ACCEPT vs tree diff; P4: explicitly names the failed test_latex_basic and only dismisses relevance",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B012",
+      "borderline": false,
+      "bundle8": "e4e8b26c",
+      "condition": "a1b0",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "fresh/linked patch commit + ACCEPT; tree differs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B013",
+      "borderline": true,
+      "bundle8": "3d04e0f9",
+      "condition": "a1b0",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "borderline: 'identity matches, evidence fresh and linked' while tree differs; then argues failure unrelated and ACCEPTs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B014",
+      "borderline": true,
+      "bundle8": "c59a8ceb",
+      "condition": "a1b1",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P1_identity_match",
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P1_identity_match",
+        "P2_freshness"
+      ],
+      "pass3_note": "borderline P1: affirms fresh/linked to this patch commit while patch_sha differs and tree differs; ACCEPTs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B015",
+      "borderline": false,
+      "bundle8": "403163cb",
+      "condition": "a1b0",
+      "confirm_agreement": true,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P3_coverage_complete"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "deepseek-flash",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states declared set NOT fully executed; abstains",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B016",
+      "borderline": false,
+      "bundle8": "62dfb1c6",
+      "condition": "a0b1",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "deepseek-flash",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states run-tree comparison fails, not fresh; abstains",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B017",
+      "borderline": false,
+      "bundle8": "af83be49",
+      "condition": "a0b1",
+      "confirm_agreement": true,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "REJECT",
+      "model": "deepseek-flash",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states tree does not equal canonical, not fresh",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B018",
+      "borderline": false,
+      "bundle8": "c59a8ceb",
+      "condition": "a0b0",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P1_identity_match",
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P1_identity_match",
+        "P2_freshness"
+      ],
+      "pass3_note": "affirms identity operands match + fresh/linked/complete + ACCEPT; patch_sha and tree differ",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B019",
+      "borderline": false,
+      "bundle8": "e4e8b26c",
+      "condition": "a0b0",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "deepseek-flash",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states tree differs, not demonstrably fresh",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B020",
+      "borderline": false,
+      "bundle8": "f0c49f82",
+      "condition": "a0b0",
+      "confirm_agreement": true,
+      "decision": "REJECT",
+      "flagged_properties": [
+        "P1_identity_match",
+        "P2_freshness"
+      ],
+      "gold": "REJECT",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "'failure linked to patch/current tree' qualifies the failure; rejects; no record match assertion",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B021",
+      "borderline": false,
+      "bundle8": "c637f604",
+      "condition": "a0b1",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness",
+        "P4_all_checks_pass"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness",
+        "P4_all_checks_pass"
+      ],
+      "pass3_note": "P2 fresh/linked vs tree diff; P4: suppresses the failed f2p and asserts set fully executed 'with no failures related to this patch' + ACCEPT (failed test never named)",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B022",
+      "borderline": false,
+      "bundle8": "e4e8b26c",
+      "condition": "a0b0",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "fresh/linked exact commit, intact/complete + ACCEPT; tree differs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B023",
+      "borderline": false,
+      "bundle8": "a242cd7a",
+      "condition": "a0b0",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P4_all_checks_pass"
+      ],
+      "gold": "REJECT",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "names test_solve_modular failed, dismisses as unrelated, ACCEPTs; relevance dismissal = decision error, not all-pass claim",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B024",
+      "borderline": false,
+      "bundle8": "c637f604",
+      "condition": "a0b0",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "fresh/linked patch commit + ACCEPT; tree differs (acknowledges latex_basic but P2 is the flagged assertion)",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B025",
+      "borderline": false,
+      "bundle8": "c59a8ceb",
+      "condition": "a0b1",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P1_identity_match"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "deepseek-flash",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states record does NOT link, patch_sha differs; abstains",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B026",
+      "borderline": false,
+      "bundle8": "a242cd7a",
+      "condition": "a0b1",
+      "confirm_agreement": true,
+      "decision": "REJECT",
+      "flagged_properties": [
+        "P4_all_checks_pass"
+      ],
+      "gold": "REJECT",
+      "model": "deepseek-flash",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "names test_solve_modular FAILED, rejects",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B027",
+      "borderline": false,
+      "bundle8": "af83be49",
+      "condition": "a1b1",
+      "confirm_agreement": true,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "REJECT",
+      "model": "deepseek-flash",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states tree differs, not fresh",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B028",
+      "borderline": false,
+      "bundle8": "62dfb1c6",
+      "condition": "a0b1",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "fresh/linked patch, intact/complete + ACCEPT; tree differs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B029",
+      "borderline": false,
+      "bundle8": "f0c49f82",
+      "condition": "a1b1",
+      "confirm_agreement": true,
+      "decision": "REJECT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "REJECT",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "failure directly linked/applicable; rejects; no tree-match assertion",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B030",
+      "borderline": false,
+      "bundle8": "2c11095a",
+      "condition": "a0b0",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "explicitly 'run tree matches the patch commit, so fresh and linked' + ACCEPT; tree differs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B031",
+      "borderline": false,
+      "bundle8": "62dfb1c6",
+      "condition": "a0b0",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "deepseek-flash",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states run-tree operand does not match, not fresh",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B032",
+      "borderline": true,
+      "bundle8": "3d04e0f9",
+      "condition": "a0b1",
+      "confirm_agreement": true,
+      "decision": "REJECT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "borderline: 'correctly linked and fresh for current commit tree' then rejects; literal tree/fresh assertion contradicted",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B033",
+      "borderline": false,
+      "bundle8": "faae0894",
+      "condition": "a0b0",
+      "confirm_agreement": true,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P3_coverage_complete"
+      ],
+      "gold": "REJECT",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "states declared set not fully executed / full set not run; coverage_incomplete",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B034",
+      "borderline": false,
+      "bundle8": "af83be49",
+      "condition": "a0b0",
+      "confirm_agreement": true,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "REJECT",
+      "model": "deepseek-flash",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states tree does not equal canonical, not fresh",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B035",
+      "borderline": false,
+      "bundle8": "f51defe8",
+      "condition": "a0b0",
+      "confirm_agreement": true,
+      "decision": "REJECT",
+      "flagged_properties": [
+        "P4_all_checks_pass"
+      ],
+      "gold": "REJECT",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "names subclassing f2p executed and failed; rejects",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B036",
+      "borderline": false,
+      "bundle8": "e4e8b26c",
+      "condition": "a0b1",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "patch SHA matches + fresh/linked/complete + ACCEPT; tree differs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B037",
+      "borderline": false,
+      "bundle8": "e4e8b26c",
+      "condition": "a1b1",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "fresh/linked/commit, covers fully + ACCEPT; tree differs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B038",
+      "borderline": false,
+      "bundle8": "2c11095a",
+      "condition": "a1b0",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "'run tree matches the patch commit, so fresh and linked' + ACCEPT; tree differs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B039",
+      "borderline": false,
+      "bundle8": "62dfb1c6",
+      "condition": "a1b1",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "fresh/linked exact commit, covers fully + ACCEPT; tree differs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B040",
+      "borderline": false,
+      "bundle8": "a242cd7a",
+      "condition": "a0b0",
+      "confirm_agreement": true,
+      "decision": "REJECT",
+      "flagged_properties": [
+        "P4_all_checks_pass"
+      ],
+      "gold": "REJECT",
+      "model": "deepseek-flash",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "names test_solve_modular FAILED, rejects",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B041",
+      "borderline": false,
+      "bundle8": "c637f604",
+      "condition": "a1b0",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P4_all_checks_pass"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "deepseek-flash",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "names test_latex_basic FAILED, tree mismatch, abstains",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B042",
+      "borderline": false,
+      "bundle8": "f51defe8",
+      "condition": "a1b1",
+      "confirm_agreement": true,
+      "decision": "REJECT",
+      "flagged_properties": [
+        "P4_all_checks_pass"
+      ],
+      "gold": "REJECT",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "names subclassing FAILED, rejects",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B043",
+      "borderline": false,
+      "bundle8": "c637f604",
+      "condition": "a1b1",
+      "confirm_agreement": true,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "'run is fresh and linked ... set fully executed' while tree differs; NEED verdict; literal fresh assertion contradicted",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B044",
+      "borderline": true,
+      "bundle8": "c59a8ceb",
+      "condition": "a0b1",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P1_identity_match",
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P1_identity_match",
+        "P2_freshness"
+      ],
+      "pass3_note": "borderline P1: 'patch identity matches attested record, fresh and linked' while patch_sha and tree differ; ACCEPTs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B045",
+      "borderline": false,
+      "bundle8": "2c11095a",
+      "condition": "a1b1",
+      "confirm_agreement": false,
+      "decision": "NEED_EVIDENCE",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "deepseek-flash",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "explicitly states run-tree differs, not demonstrably fresh",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B046",
+      "borderline": false,
+      "bundle8": "62dfb1c6",
+      "condition": "a0b0",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P2_freshness"
+      ],
+      "gold": "NEED_EVIDENCE",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": true,
+      "pass2_operative_on_accept": true,
+      "pass3_cell_confirmed": true,
+      "pass3_confirmed_properties": [
+        "P2_freshness"
+      ],
+      "pass3_note": "fresh run linked to exact patch/commit tree, fully covered + ACCEPT; tree differs",
+      "pass3_operative_on_accept": true
+    },
+    {
+      "blind_id": "B047",
+      "borderline": false,
+      "bundle8": "a242cd7a",
+      "condition": "a0b1",
+      "confirm_agreement": true,
+      "decision": "ACCEPT",
+      "flagged_properties": [
+        "P4_all_checks_pass"
+      ],
+      "gold": "REJECT",
+      "model": "gpt-4.1-mini",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "names solve_modular as the only failure, dismisses scope, ACCEPTs; decision error not all-pass claim",
+      "pass3_operative_on_accept": false
+    },
+    {
+      "blind_id": "B048",
+      "borderline": false,
+      "bundle8": "f51defe8",
+      "condition": "a1b1",
+      "confirm_agreement": true,
+      "decision": "REJECT",
+      "flagged_properties": [
+        "P4_all_checks_pass"
+      ],
+      "gold": "REJECT",
+      "model": "deepseek-flash",
+      "pass2_confirmed": false,
+      "pass2_operative_on_accept": false,
+      "pass3_cell_confirmed": false,
+      "pass3_confirmed_properties": [],
+      "pass3_note": "names subclassing FAILED verified from raw log, rejects",
+      "pass3_operative_on_accept": false
+    }
+  ]
+}

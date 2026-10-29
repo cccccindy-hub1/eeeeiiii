@@ -1,0 +1,65 @@
+{
+  "cell": "g3b:sympy__sympy-17318:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "a829c57768b9cf031e3ab9c8",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_851f5a80d20947a9\", \"base_commit\": \"d4e0231b08147337745dcf601e62de7eefe2fb2d\", \"finished_at\": \"2026-10-25T18:43:35+00:00\", \"instance_id\": \"sympy__sympy-17318\", \"log_digests\": {\"symptom\": \"a81f9433d5c18cac34b633ca962569f629e186314abeb1b446023e41ec621a54\"}, \"pass_to_pass_baseline\": {\"test_issue_5653\": \"PASSED\", \"test_issue_5857\": \"PASSED\", \"test_issue_6241\": \"PASSED\", \"test_sqrt_symbolic_denest\": \"PASSED\", \"test_sqrtdenest\": \"PASSED\", \"test_sqrtdenest2\": \"PASSED\", \"test_sqrtdenest3\": \"PASSED\", \"test_sqrtdenest4\": \"PASSED\", \"test_sqrtdenest_rec\": \"PASSED\", \"test_subsets\": \"PASSED\"}, \"patch_sha256\": \"5e0ca074ed721048a698e87e89754ef9b583e062d402e0c146ae858d4e44d37b\", \"repo\": \"sympy/sympy\", \"runner\": \"pytest/vendored-git  py=3.9.25  host=windows-local\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/simplify/tests/test_combsimp.py\", \"sympy/simplify/tests/test_cse.py\", \"sympy/simplify/tests/test_epathtools.py\", \"sympy/simplify/tests/test_fu.py\", \"sympy/simplify/tests/test_function.py\", \"sympy/simplify/tests/test_gammasimp.py\", \"sympy/simplify/tests/test_hyperexpand.py\", \"sympy/simplify/tests/test_powsimp.py\", \"sympy/simplify/tests/test_radsimp.py\", \"sympy/simplify/tests/test_ratsimp.py\", \"sympy/simplify/tests/test_rewrite.py\", \"sympy/simplify/tests/test_simplify.py\", \"sympy/simplify/tests/test_sqrtdenest.py\", \"sympy/simplify/tests/test_traversaltools.py\", \"sympy/simplify/tests/test_trigsimp.py\"], \"p2p_total_in_dataset\": 10, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-25T18:40:22+00:00\", \"summary\": {\"f2p_total\": 1, \"p2p_total\": 10, \"outcomes_withheld\": true, \"note\": \"acceptance-test outcomes and regression verdicts are withheld at the diagnostic tier; use the verification service to seek them.\"}, \"test_patch_sha256\": \"bd1d58da2ab8231d3d0f56f268e9118c59cbc03202604a71ce63d5aeeda20545\", \"evidence_tier\": \"diagnostic\"}, \"authentic_signature\": true, \"evidence_tier\": \"D\"}"
+    },
+    {
+      "turn": 1,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"d4e0231b08147337745dcf601e62de7eefe2fb2d\", \"record_patch_sha256\": \"5e0ca074ed721048a698e87e89754ef9b583e062d402e0c146ae858d4e44d37b\"}"
+    },
+    {
+      "turn": 2,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": null, \"expected_run_tree\": \"43e56d0079e63cecb7626d19200244279be5c1c0\", \"artifact_started_at\": \"2026-10-25T18:40:22+00:00\", \"attestation_built_at\": \"2026-10-25T18:43:36+00:00\"}"
+    },
+    {
+      "turn": 3,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 10, \"executed\": 10, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 4,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: sqrtdenest raised IndexError tuple index out of range\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: sqrtdenest no crash -> 3 - sqrt(2)*sqrt(4 + I) + 3*I\n\n--- stderr ---\n"
+    },
+    {
+      "turn": 5,
+      "tool": "get_run_log",
+      "args": {
+        "name": "f2p"
+      },
+      "http_status": 403,
+      "result_preview": "[http_status=403] {\"error\": \"acceptance logs are disabled under the strict evidence policy\"}"
+    },
+    {
+      "turn": 6,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    }
+  ],
+  "final_answer": "{\"decision\": \"NEED_EVIDENCE\", \"reason\": \"evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established\", \"evidence_mismatch\": true, \"missing_evidence\": \"linked/fresh applicability\", \"evidence_gap\": \"stale\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

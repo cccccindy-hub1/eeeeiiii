@@ -1,0 +1,155 @@
+{
+  "api_calls_made": 0,
+  "design_version": "groundedreview-gate3c0-zero-api-design-freeze-v1",
+  "document": "Gate G3-C.0 tasks 9-10: three-phase execution/budget plan (not executed) and unified engineering checks",
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold carried unchanged from Gate 3-A.1; no second independent human adjudicator has been obtained as of Gate G3-C.0. All Gate 3-C endpoint definitions are pre-registered against the FUTURE adjudicated gold; PROVISIONAL-gold re-analyses are secondary only. The AI preparing this design is NOT an independent human annotator or arbiter."
+  },
+  "task10_engineering_standards": {
+    "budget_protection": [
+      "pre-call worst-case bound computed from token caps BEFORE the HTTP call (the regression test that would have caught the CompositeGuard None bug); guard returns a float and is unit-tested for None/NaN",
+      "mock gate and zero-API local live gate must pass before any paid batch; cumulative cost is persisted per row and re-checked on resume (no double-spend across restarts)"
+    ],
+    "integrity_persistence": [
+      "raw-first persistence (raw response + tool trace written before parsing), row-level sha256, resume idempotency, post-hoc analyzer hash match — the same discipline as G3-B.3"
+    ],
+    "missing_reason_or_unparseable": [
+      "a missing/empty reason or unparseable verdict is a PRE-DEFINED outcome: verdict=UNPARSEABLE is logged and retained (not retried away); for P1 it counts as non-commitment/NEED; for P2 it is failure-to-evaluate with a complete-case sensitivity bound",
+      "no post-hoc exclusion of such rows from the frozen analysis"
+    ],
+    "model_version_drift": [
+      "record expected_model_id and model_served for EVERY cell; mismatch flags the row and fails the batch",
+      "pin provider model snapshot/date where supported; log the raw version field; a version change mid-phase forces a pause and a fresh calibration cell",
+      "no silent alias resolution (e.g. mini -> a newer revision)"
+    ],
+    "prompt_length": [
+      "capture tokens_in per cell; fail if a prompt exceeds a pre-set fraction of the context (guard basis p90 observed ~22975.0 tokens); log truncation indicators",
+      "rendered prompts are persisted raw-first and byte-hashed so prompt changes across phases are detectable"
+    ],
+    "randomness": [
+      "record temperature/seed/top_p per call; use a fixed pre-registered seed schedule; any repeat/replicate cells average WITHIN issue (never inflate n)",
+      "log raw_model_calls and retries; retries must reuse the seed policy and are audited, never silently dropped"
+    ],
+    "tool_capability": [
+      "validate the tool schema is accepted before the batch; count HTTP 4xx/5xx and tool-schema errors; any new tool error type halts the phase",
+      "assert 403 (never 200) for f2p/p2p/p2p_baseline under strict and that the body is never read",
+      "synthetic canary cells confirm linkage/freshness/coverage still return the designed structural fields under projection v2"
+    ],
+    "truncation": [
+      "set and record max_tokens; detect finish_reason=length / cut-off JSON; truncated verdicts are flagged and treated like UNPARSEABLE, with the raw tail retained"
+    ]
+  },
+  "task9_execution_and_budget_plan": {
+    "budget_spent_in_gate_g3c0_usd": 0,
+    "executed_in_gate_g3c0": false,
+    "observed_real_cell_profile_from_g3b3": {
+      "ALL": {
+        "max_cost_usd": 0.015676,
+        "mean_cost_usd": 0.003035,
+        "n_live_cells": 100
+      },
+      "deepseek-flash": {
+        "max_cost_usd": 0.015676,
+        "max_model_requests_per_cell": 5,
+        "max_tokens_in": 46917.0,
+        "mean_cost_usd": 0.003781,
+        "mean_model_requests_per_cell": 2.28,
+        "mean_tokens_in": 10770.0,
+        "mean_tokens_out": 458.3,
+        "mean_wall_s": 3.96,
+        "n_live_cells": 50,
+        "p90_tokens_in": 22975.0
+      },
+      "gpt-4.1-mini": {
+        "max_cost_usd": 0.00569,
+        "max_model_requests_per_cell": 4,
+        "max_tokens_in": 13230.0,
+        "mean_cost_usd": 0.00229,
+        "mean_model_requests_per_cell": 1.88,
+        "mean_tokens_in": 5029.9,
+        "mean_tokens_out": 173.7,
+        "mean_wall_s": 2.99,
+        "n_live_cells": 50,
+        "p90_tokens_in": 11065.0
+      }
+    },
+    "phases": [
+      {
+        "arms_per_issue": 7,
+        "estimated_cells": 112,
+        "estimated_model_requests_mean": 233.0,
+        "estimated_total_input_tokens_at_observed_mean": 884794.0,
+        "expected_cost_at_observed_mean_usd": 0.34,
+        "hard_pre_call_cap_usd": 2.02,
+        "issues": 8,
+        "models": 2,
+        "note": "validates projection v2, the non-interference gate, packets, drift checks and budget guard on a tiny real sample; gates release of batch 1",
+        "phase": "P0 quality pilot (mock + zero-API live gate + small real)",
+        "worst_case_cost_if_every_cell_hits_observed_max_usd": 1.76
+      },
+      {
+        "arms_per_issue": 6,
+        "estimated_cells": 240,
+        "estimated_model_requests_mean": 499.0,
+        "estimated_total_input_tokens_at_observed_mean": 1895988.0,
+        "expected_cost_at_observed_mean_usd": 0.73,
+        "hard_pre_call_cap_usd": 4.32,
+        "issues": 20,
+        "models": 2,
+        "note": "the P2-defining cohort; P1 measured on the tier-D arms; orthogonal static/active cells collected for P1a",
+        "phase": "B1 first external validation (>=20 new independent REJECT issues)",
+        "worst_case_cost_if_every_cell_hits_observed_max_usd": 3.76
+      },
+      {
+        "arms_per_issue": 5,
+        "estimated_cells": 200,
+        "estimated_model_requests_mean": 416.0,
+        "estimated_total_input_tokens_at_observed_mean": 1579990.0,
+        "expected_cost_at_observed_mean_usd": 0.61,
+        "hard_pre_call_cap_usd": 3.61,
+        "issues": 20,
+        "models": 2,
+        "note": "ACCEPT/need controls and additional repos; only after B1 quality review and a written (separately approved) release",
+        "phase": "B2 expansion to balanced 40-issue design",
+        "worst_case_cost_if_every_cell_hits_observed_max_usd": 3.14
+      }
+    ],
+    "planning_assumptions": {
+      "arms": [
+        "T2D-T",
+        "T3D-Strict(v2)",
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T",
+        "active-tier-D-stubbed-same-content (turns control)",
+        "active-tier-D-positive-signals+reminder"
+      ],
+      "issues_full_design": 40,
+      "mean_cell_cost_source": "frozen G3-B.3 REAL live rows (100 cells), not mock",
+      "new_reject_floor": 20,
+      "observed_max_cell_usd": 0.015676,
+      "observed_mean_cell_usd": 0.003035,
+      "p90_input_tokens_any_model": 22975.0,
+      "price_drift_warning": "provider list prices and model versions can change; recompute mean/max from the pilot before B1 and re-approve caps; estimates here are planning figures, not commitments",
+      "two_models": [
+        "gpt-4.1-mini",
+        "deepseek-flash",
+        "ALL"
+      ]
+    },
+    "stopping_rules": [
+      "HARD pre-call budget guard (the repaired CompositeGuard pattern): float(bound) is evaluated before any network call; no call that could breach the phase cap is issued; per-model sub-caps too.",
+      "stop the phase if the cumulative run-rate projects > hard cap with the next batch; require a new written approval to continue.",
+      "stop and freeze on any protocol-capability drift: silent response_format downgrade, wire fallback, unexpected model id served, or tool-schema rejection.",
+      "stop if the zero-API live gate / preflight / non-interference scan (tier1>0 or tier2>0) fails.",
+      "abort-and-investigate trigger (harm-only interim look, at most once): e.g. a model commits unsupported ACCEPT on essentially every REJECT issue in B1; never stop to cherry-pick a favourable result.",
+      "no expansion beyond the frozen issue/projection list without a new separate written approval (G3-C.2); G3-C.0 executes none of this."
+    ],
+    "totals_estimated_cells": 552,
+    "totals_expected_cost_usd": 1.68,
+    "totals_worst_case_observed_max_usd": 8.65
+  }
+}

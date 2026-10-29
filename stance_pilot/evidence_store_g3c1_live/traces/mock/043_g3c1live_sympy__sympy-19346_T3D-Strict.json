@@ -1,0 +1,65 @@
+{
+  "cell": "g3c1live:sympy__sympy-19346:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "7c18a22738ec552ccf83588e",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_9f04ba11366d02e0\", \"base_commit\": \"94fb720696f5f5d12bad8bc813699fd696afd2fb\", \"finished_at\": \"2026-10-28T10:14:14+00:00\", \"instance_id\": \"sympy__sympy-19346\", \"log_digests\": {\"symptom\": \"1106173a390dd44d44697bb48ad39fe0d459353e156eb13a76826b2f7e18ffb9\"}, \"patch_sha256\": \"7a2feab82cadb33bcfdb242d5d33a2361ea2802eaaebfb252fd45b49f3efd052\", \"repo\": \"sympy/sympy\", \"runner\": \"pytest/vendored-git  py=3.9.25  host=windows-local  gate=G3-C.1\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/printing/tests/test_ccode.py\", \"sympy/printing/tests/test_codeprinter.py\", \"sympy/printing/tests/test_conventions.py\", \"sympy/printing/tests/test_cxxcode.py\", \"sympy/printing/tests/test_dot.py\", \"sympy/printing/tests/test_fcode.py\", \"sympy/printing/tests/test_glsl.py\", \"sympy/printing/tests/test_gtk.py\", \"sympy/printing/tests/test_jscode.py\", \"sympy/printing/tests/test_julia.py\", \"sympy/printing/tests/test_lambdarepr.py\", \"sympy/printing/tests/test_latex.py\", \"sympy/printing/tests/test_llvmjit.py\", \"sympy/printing/tests/test_maple.py\", \"sympy/printing/tests/test_mathematica.py\", \"sympy/printing/tests/test_mathml.py\", \"sympy/printing/tests/test_numpy.py\", \"sympy/printing/tests/test_octave.py\", \"sympy/printing/tests/test_precedence.py\", \"sympy/printing/tests/test_preview.py\", \"sympy/printing/tests/test_pycode.py\", \"sympy/printing/tests/test_python.py\", \"sympy/printing/tests/test_rcode.py\", \"sympy/printing/tests/test_repr.py\", \"sympy/printing/tests/test_rust.py\", \"sympy/printing/tests/test_str.py\", \"sympy/printing/tests/test_tableform.py\", \"sympy/printing/tests/test_tensorflow.py\", \"sympy/printing/tests/test_theanocode.py\", \"sympy/printing/tests/test_tree.py\"], \"p2p_total_in_dataset\": 40, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-28T10:12:14+00:00\", \"summary\": {\"f2p_total\": 1, \"p2p_total\": 40, \"outcomes_withheld\": true, \"note\": \"acceptance-test outcomes and regression verdicts are withheld at the diagnostic tier; use the verification service to seek them.\"}, \"test_patch_sha256\": \"793eca615bc60287ca9d13ac542d8ea53aa37f484bde2335d99821a892fc0d76\", \"evidence_tier\": \"diagnostic\", \"projection_version\": \"diagnostic-v2-no-baseline-map-v1\"}, \"authentic_signature\": true, \"evidence_tier\": \"D\"}"
+    },
+    {
+      "turn": 1,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"94fb720696f5f5d12bad8bc813699fd696afd2fb\", \"record_patch_sha256\": \"7a2feab82cadb33bcfdb242d5d33a2361ea2802eaaebfb252fd45b49f3efd052\"}"
+    },
+    {
+      "turn": 2,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"aa8817b59cf51161212d70ab372a514f49a27b47\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"aa8817b59cf51161212d70ab372a514f49a27b47\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:12:14+00:00\", \"attestation_built_at\": \"2026-10-28T10:14:15+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}"
+    },
+    {
+      "turn": 3,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 40, \"executed\": 40, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 4,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python sympy__sympy-19346-baseline.py  (exit 1)\n--- stdout ---\nsrepr(set)  = {x, y}\nsrepr(dict) = {x: y}\nFAIL: srepr did not recurse into set elements: {x, y}\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python sympy__sympy-19346-post-candidate.py  (exit 0)\n--- stdout ---\nsrepr(set)  = {Symbol('y'), Symbol('x')}\nsrepr(dict) = {Symbol('x'): Symbol('y')}\nOK: srepr recurses into set and dict\n\n--- stderr ---\n"
+    },
+    {
+      "turn": 5,
+      "tool": "get_run_log",
+      "args": {
+        "name": "f2p"
+      },
+      "http_status": 403,
+      "result_preview": "[http_status=403] {\"error\": \"acceptance logs are disabled under the strict evidence policy\"}"
+    },
+    {
+      "turn": 6,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    }
+  ],
+  "final_answer": "{\"decision\": \"NEED_EVIDENCE\", \"reason\": \"strict policy withholds maintainer acceptance outcomes; symptom evidence alone cannot establish success\", \"evidence_mismatch\": false, \"missing_evidence\": \"maintainer acceptance outcomes\", \"evidence_gap\": \"unspecified\"}",
+  "parsed": "NEED_EVIDENCE",
+  "fresh_state_served": "TRUE",
+  "error": null
+}

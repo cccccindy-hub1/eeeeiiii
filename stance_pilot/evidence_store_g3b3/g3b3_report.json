@@ -1,0 +1,922 @@
+{
+  "document": "Gate 3-B.3 Corrective Replication report",
+  "gate": "gate3b3_corrective_replication",
+  "created_utc": "2026-10-27T03:20:40.473400+00:00",
+  "gold_authority": {
+    "gold_tier": "PROVISIONAL",
+    "annotators": 1,
+    "annotator2": "NOT_OBTAINED",
+    "note": "Single-annotator gold; no second adjudicator obtained. Neither the G3-B.2 protocol repair nor the G3-B.3 corrective replication raises gold authority. No Cohen kappa against a second human is reported; gold is never called human-adjudicated. Every model comparison is against PROVISIONAL gold only."
+  },
+  "approval_basis": "Conditional written approval after Gate 3-B.2 acceptance: 100 REAL model cells over the G3-B.2 repaired protocol; TOTAL hard cap $3.00; per-model cap $1.50; retries_per_cell 0; PROVISIONAL gold (annotator2 NOT_OBTAINED, n=1). No new issue, no Gemini/R2, no Gate 3-C, no modification of historical frozen artifacts, no git commit.",
+  "headline": "100/100 real cells completed for $0.3035 (cap $3.00) with zero errors, retries, served-id drift and capability fallback. Under the repaired G3-B.2 protocol DeepSeek sufficient-regiment over-abstention fell from 9/10 (G3-B) to 1/10 (G3-B.3) on strict same-issue/condition/model pairs, i.e. the original C2 effect was largely protocol-induced; GPT still unsupported-accepts the specific static sympy-17318/T2A cell despite visible FAIL_TO_PASS 0/1.",
+  "budget_audit": {
+    "total_spend_usd": 0.303539,
+    "total_hard_cap_usd": 3.0,
+    "per_model_spend_usd": {
+      "deepseek-flash": 0.189045,
+      "gpt-4.1-mini": 0.114494
+    },
+    "per_model_cap_usd": 1.5,
+    "within_total_cap": true,
+    "per_model_within_cap": {
+      "deepseek-flash": true,
+      "gpt-4.1-mini": true
+    },
+    "total_margin_usd": 2.696461,
+    "cost_recomputed_from_rows_matches_audit": true,
+    "retries_per_cell": 0,
+    "stop_msg": "",
+    "price_basis": "DS $0.30/$1.20, GPT $0.40/$1.60 per 1M tokens (identical to frozen G3-B profiles)"
+  },
+  "model_version_audit": {
+    "deepseek-flash": {
+      "n_rows": 50,
+      "expected_served_model_id": "deepseek-flash",
+      "served_model_id_distribution": {
+        "deepseek-flash": 50
+      },
+      "served_id_drift": false,
+      "adapter_response_format_distribution": {
+        "plain_text": 94,
+        "json_object": 20
+      },
+      "capability_fallback_calls": 0,
+      "total_tokens_in": 538498,
+      "total_tokens_out": 22913,
+      "total_model_calls": 114,
+      "total_tool_calls": 209,
+      "total_cost_usd": 0.189044,
+      "error_rows": 0,
+      "retries_per_row": [
+        0
+      ]
+    },
+    "gpt-4.1-mini": {
+      "n_rows": 50,
+      "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+      "served_model_id_distribution": {
+        "gpt-4.1-mini-2025-04-14": 50
+      },
+      "served_id_drift": false,
+      "adapter_response_format_distribution": {
+        "json_object": 20,
+        "plain_text": 74
+      },
+      "capability_fallback_calls": 0,
+      "total_tokens_in": 251495,
+      "total_tokens_out": 8685,
+      "total_model_calls": 94,
+      "total_tool_calls": 126,
+      "total_cost_usd": 0.114493,
+      "error_rows": 0,
+      "retries_per_row": [
+        0
+      ]
+    }
+  },
+  "engineering_gates": {
+    "rows_per_model_50_50": true,
+    "zero_error_rows": true,
+    "zero_served_id_drift": true,
+    "zero_capability_fallback": true,
+    "raw_files": 100,
+    "live_trace_files": 100
+  },
+  "findings": {
+    "Q10_deepseek_over_abstention_corrected": {
+      "g3b_needany": {
+        "k": 9,
+        "n": 10,
+        "bootstrap_ci95": [
+          0.7,
+          1.0
+        ]
+      },
+      "g3b3_needany": {
+        "k": 1,
+        "n": 10,
+        "cp_ci95": [
+          0.0025,
+          0.445
+        ],
+        "bootstrap_ci95": [
+          0.0,
+          0.3
+        ]
+      },
+      "matched_per_issue_delta": {
+        "point": -0.8,
+        "bootstrap_ci95": [
+          -1.0,
+          -0.5
+        ]
+      },
+      "discordant_pairs_need_to_other": 8,
+      "discordant_pairs_other_to_need": 0,
+      "interpretation": "DeepSeek sufficient-regime NEED fell 9/10 -> 1/10 over the repaired protocol with 8 matched issue-level reversals and zero reversals in the other direction (the matched CI is entirely below zero). Under the pre-registered reading the original G3-B C2 over-abstention was therefore largely PROTOCOL-INDUCED, which WEAKENS the model-defect claim. It is not erased: the single residual issue (sympy-13974) still abstains on T2A/T3D-Escalate under visible sufficient evidence, the only candidate calibration/decision-policy case left in the DeepSeek arm.",
+      "associational_only": "G3-B -> G3-B.3 differences are cross-version, cross-run-time and ASSOCIATIONAL. The release changed three-state freshness handling AND T2A policy trust together; their separate causal effects are NOT identified. Temperature=0 does not make two runs at different times identical. Do not generalise beyond these 10 SymPy issues."
+    },
+    "Q11_gpt_unsupported_acceptance": {
+      "sufficient_or_aggregate": {
+        "k_issues": 2,
+        "n_issues": 3,
+        "cp_ci95": [
+          0.0943,
+          0.9916
+        ],
+        "bootstrap_ci95": [
+          0.0,
+          1.0
+        ]
+      },
+      "full_15_cell_unsupported_acceptance": 4,
+      "focal_sympy_17318_T2A": {
+        "g3b_verdict": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "unsupported_acceptance": true,
+        "interpretation": "The specific evidence-verification failure PERSISTS unchanged: GPT returns ACCEPT on the static T2A block that renders FAIL_TO_PASS 0/1 + failing id test_issue_12420. T2A is static (no freshness tool), so this is not a freshness artefact and cannot be explained away by the repair."
+      },
+      "decision_policy_probe_sympy_17630_T3A": {
+        "g3b_verdict": "REJECT",
+        "g3b3_verdict": "NEED_EVIDENCE",
+        "interpretation": "Separately tagged, never pooled. Under repaired TRUE freshness the cell moved REJECT(G3-B) -> NEED_EVIDENCE(G3-B.3); it is no longer an unsupported ACCEPTANCE but is still not the gold REJECT, so it remains an over-abstention/decision-policy residual."
+      },
+      "note": "Two additional G3-B.3 ACCEPTs occur on the two RESTRICTED regimes for issues 17318/17630 (T3D-Strict); these are improper commitments under restricted evidence (reported in Q12), not sufficient-evidence unsupported acceptances."
+    },
+    "Q12_restricted_regime_abstention": {
+      "deepseek-flash": {
+        "T2D-T": {
+          "correct_abstain": 10,
+          "n": 10,
+          "improper_commitments": 0
+        },
+        "T3D-Strict": {
+          "correct_abstain": 10,
+          "n": 10,
+          "improper_commitments": 0
+        }
+      },
+      "gpt-4.1-mini": {
+        "T2D-T": {
+          "correct_abstain": 10,
+          "n": 10,
+          "improper_commitments": 0
+        },
+        "T3D-Strict": {
+          "correct_abstain": 3,
+          "n": 10,
+          "improper_commitments": 7
+        }
+      }
+    },
+    "parse_failures": {
+      "deepseek-flash": {
+        "non_verdict_cells": 0,
+        "cells": 50,
+        "rate": 0.0,
+        "detail": []
+      },
+      "gpt-4.1-mini": {
+        "non_verdict_cells": 0,
+        "cells": 50,
+        "rate": 0.0,
+        "detail": []
+      }
+    }
+  },
+  "gold_sensitivity": {
+    "provisional_all_10": {
+      "issues": [
+        "sympy__sympy-13615",
+        "sympy__sympy-13974",
+        "sympy__sympy-15349",
+        "sympy__sympy-17318",
+        "sympy__sympy-17630",
+        "sympy__sympy-19783",
+        "sympy__sympy-20590",
+        "sympy__sympy-21847",
+        "sympy__sympy-24213",
+        "sympy__sympy-24443"
+      ],
+      "DS_need_sufficient": {
+        "conditions": [
+          "T2A-T",
+          "T3D-Escalate",
+          "T3A-T"
+        ],
+        "n_issues": 10,
+        "n_cells": 30,
+        "need_cells": 2,
+        "cell_need_rate": {
+          "k": 2,
+          "n": 30,
+          "point": 0.0667,
+          "ci95_low": 0.0082,
+          "ci95_high": 0.2207,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "needany_k_issues": 1,
+        "needany_exact": {
+          "k": 1,
+          "n": 10,
+          "point": 0.1,
+          "ci95_low": 0.0025,
+          "ci95_high": 0.445,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "needany_bootstrap": {
+          "point": 0.1,
+          "ci95_low": 0.0,
+          "ci95_high": 0.3,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+          "n_issues": 10
+        }
+      },
+      "GPT_unsupported_accept_sufficient": {
+        "conditions": [
+          "T2A-T",
+          "T3D-Escalate",
+          "T3A-T"
+        ],
+        "n_issues": 10,
+        "n_cells": 30,
+        "unsupported_accept_cells": 2,
+        "cell_ua_rate": {
+          "k": 2,
+          "n": 30,
+          "point": 0.0667,
+          "ci95_low": 0.0082,
+          "ci95_high": 0.2207,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "ua_any_k_issues": 2
+      }
+    },
+    "drop_3_reject_issues__accept7_only": {
+      "issues": [
+        "sympy__sympy-13615",
+        "sympy__sympy-13974",
+        "sympy__sympy-15349",
+        "sympy__sympy-20590",
+        "sympy__sympy-21847",
+        "sympy__sympy-24213",
+        "sympy__sympy-24443"
+      ],
+      "note": "C1 (GPT unsupported ACCEPT) is NOT estimable without the 3 oracle-REJECT issues.",
+      "DS_need_sufficient": {
+        "conditions": [
+          "T2A-T",
+          "T3D-Escalate",
+          "T3A-T"
+        ],
+        "n_issues": 7,
+        "n_cells": 21,
+        "need_cells": 2,
+        "cell_need_rate": {
+          "k": 2,
+          "n": 21,
+          "point": 0.0952,
+          "ci95_low": 0.0117,
+          "ci95_high": 0.3038,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "needany_k_issues": 1,
+        "needany_exact": {
+          "k": 1,
+          "n": 7,
+          "point": 0.1429,
+          "ci95_low": 0.0036,
+          "ci95_high": 0.5787,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "needany_bootstrap": {
+          "point": 0.1429,
+          "ci95_low": 0.0,
+          "ci95_high": 0.4286,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+          "n_issues": 7
+        }
+      },
+      "GPT_C1_estimable": false
+    },
+    "reject3_only": {
+      "issues": [
+        "sympy__sympy-17318",
+        "sympy__sympy-17630",
+        "sympy__sympy-19783"
+      ],
+      "DS_need_sufficient": {
+        "conditions": [
+          "T2A-T",
+          "T3D-Escalate",
+          "T3A-T"
+        ],
+        "n_issues": 3,
+        "n_cells": 9,
+        "need_cells": 0,
+        "cell_need_rate": {
+          "k": 0,
+          "n": 9,
+          "point": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 0.3363,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "needany_k_issues": 0,
+        "needany_exact": {
+          "k": 0,
+          "n": 3,
+          "point": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 0.7076,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "needany_bootstrap": {
+          "point": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 0.0,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+          "n_issues": 3
+        }
+      },
+      "GPT_unsupported_accept_sufficient": {
+        "conditions": [
+          "T2A-T",
+          "T3D-Escalate",
+          "T3A-T"
+        ],
+        "n_issues": 3,
+        "n_cells": 9,
+        "unsupported_accept_cells": 2,
+        "cell_ua_rate": {
+          "k": 2,
+          "n": 9,
+          "point": 0.2222,
+          "ci95_low": 0.0281,
+          "ci95_high": 0.6001,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "ua_any_k_issues": 2
+      }
+    },
+    "trust_grant_counterfactual_boundary": {
+      "observed_sufficient_cell_need_rate": 0.0667,
+      "active_sufficient_only_T3DEsc_T3A": {
+        "k": 1,
+        "n": 20,
+        "rate": {
+          "k": 1,
+          "n": 20,
+          "point": 0.05,
+          "ci95_low": 0.0013,
+          "ci95_high": 0.2487,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        }
+      },
+      "T2A_only_static_trust_block": {
+        "k": 1,
+        "n": 10,
+        "rate": {
+          "k": 1,
+          "n": 10,
+          "point": 0.1,
+          "ci95_low": 0.0025,
+          "ci95_high": 0.445,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        }
+      },
+      "counterfactual_envelope_if_T2A_trust_revoked": {
+        "lower_bound_assume_all_T2A_accept": 0.0333,
+        "upper_bound_assume_all_T2A_need": 0.3667,
+        "interpretation": "Envelope over the 30 sufficient cells holding the 20 active-condition verdicts fixed and letting the 10 static T2A verdicts range; it is an ASSOCIATIONAL accounting boundary, NOT a causal effect of trust vs freshness."
+      },
+      "paired_g3b_to_g3b3_T2A_DS_need_transition": {
+        "transitions": {
+          "NEED_EVIDENCE->ACCEPT": 6,
+          "NEED_EVIDENCE->NEED_EVIDENCE": 1,
+          "NEED_EVIDENCE->REJECT": 2,
+          "REJECT->REJECT": 1
+        },
+        "g3b_need_rate": 0.9,
+        "g3b3_need_rate": 0.1,
+        "matched_rate_delta": -0.8
+      }
+    }
+  },
+  "decision_appropriateness": {
+    "deepseek-flash": {
+      "T2D-T": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 10,
+        "condition_DA_rate": 1.0,
+        "oracle_DA_correct": 0,
+        "oracle_DA_rate": 0.0
+      },
+      "T3D-Strict": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 10,
+        "condition_DA_rate": 1.0,
+        "oracle_DA_correct": 0,
+        "oracle_DA_rate": 0.0
+      },
+      "T3D-Escalate": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 9,
+        "condition_DA_rate": 0.9,
+        "oracle_DA_correct": 9,
+        "oracle_DA_rate": 0.9
+      },
+      "T2A-T": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 9,
+        "condition_DA_rate": 0.9,
+        "oracle_DA_correct": 9,
+        "oracle_DA_rate": 0.9
+      },
+      "T3A-T": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 10,
+        "condition_DA_rate": 1.0,
+        "oracle_DA_correct": 10,
+        "oracle_DA_rate": 1.0
+      }
+    },
+    "gpt-4.1-mini": {
+      "T2D-T": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 10,
+        "condition_DA_rate": 1.0,
+        "oracle_DA_correct": 0,
+        "oracle_DA_rate": 0.0
+      },
+      "T3D-Strict": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 3,
+        "condition_DA_rate": 0.3,
+        "oracle_DA_correct": 5,
+        "oracle_DA_rate": 0.5
+      },
+      "T3D-Escalate": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 8,
+        "condition_DA_rate": 0.8,
+        "oracle_DA_correct": 8,
+        "oracle_DA_rate": 0.8
+      },
+      "T2A-T": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 8,
+        "condition_DA_rate": 0.8,
+        "oracle_DA_correct": 8,
+        "oracle_DA_rate": 0.8
+      },
+      "T3A-T": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 9,
+        "condition_DA_rate": 0.9,
+        "oracle_DA_correct": 9,
+        "oracle_DA_rate": 0.9
+      }
+    }
+  },
+  "per_issue_raw_verdict_grids": {
+    "deepseek-flash": [
+      {
+        "issue": "sympy__sympy-13615",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "ACCEPT",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "NEED_EVIDENCE",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "NEED_EVIDENCE",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "oracle_gold": "REJECT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "REJECT",
+        "T3D-Escalate|g3b3": "REJECT",
+        "T3D-Escalate|gold": "REJECT",
+        "T2A-T|g3b": "REJECT",
+        "T2A-T|g3b3": "REJECT",
+        "T2A-T|gold": "REJECT",
+        "T3A-T|g3b": "REJECT",
+        "T3A-T|g3b3": "REJECT",
+        "T3A-T|gold": "REJECT"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "oracle_gold": "REJECT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "REJECT",
+        "T3D-Escalate|g3b3": "REJECT",
+        "T3D-Escalate|gold": "REJECT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "REJECT",
+        "T2A-T|gold": "REJECT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "REJECT",
+        "T3A-T|gold": "REJECT"
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "oracle_gold": "REJECT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "REJECT",
+        "T3D-Escalate|g3b3": "REJECT",
+        "T3D-Escalate|gold": "REJECT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "REJECT",
+        "T2A-T|gold": "REJECT",
+        "T3A-T|g3b": "REJECT",
+        "T3A-T|g3b3": "REJECT",
+        "T3A-T|gold": "REJECT"
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      }
+    ],
+    "gpt-4.1-mini": [
+      {
+        "issue": "sympy__sympy-13615",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "NEED_EVIDENCE",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "oracle_gold": "REJECT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "REJECT",
+        "T3D-Escalate|g3b3": "REJECT",
+        "T3D-Escalate|gold": "REJECT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "REJECT",
+        "T3A-T|g3b": "REJECT",
+        "T3A-T|g3b3": "REJECT",
+        "T3A-T|gold": "REJECT"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "oracle_gold": "REJECT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "REJECT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "NEED_EVIDENCE",
+        "T2A-T|gold": "REJECT",
+        "T3A-T|g3b": "REJECT",
+        "T3A-T|g3b3": "NEED_EVIDENCE",
+        "T3A-T|gold": "REJECT"
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "oracle_gold": "REJECT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "REJECT",
+        "T3D-Escalate|g3b3": "REJECT",
+        "T3D-Escalate|gold": "REJECT",
+        "T2A-T|g3b": "REJECT",
+        "T2A-T|g3b3": "REJECT",
+        "T2A-T|gold": "REJECT",
+        "T3A-T|g3b": "REJECT",
+        "T3A-T|g3b3": "REJECT",
+        "T3A-T|gold": "REJECT"
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      }
+    ]
+  },
+  "evidence_package_classification_tag_counts": {
+    "deepseek-flash|unchanged_correct": 27,
+    "deepseek-flash|policy_trust_change": 8,
+    "deepseek-flash|evidence_utilization_improvement": 13,
+    "gpt-4.1-mini|unchanged_correct": 25,
+    "gpt-4.1-mini|remaining_error": 12,
+    "gpt-4.1-mini|evidence_utilization_improvement": 13,
+    "deepseek-flash|remaining_error": 2
+  },
+  "associational_comparison_notice": "All G3-B vs G3-B.3 paired numbers are cross-version, cross-run-time and ASSOCIATIONAL. Freshness repair and T2A policy-trust repair shipped together; separate causal effects are not identified and are not claimed.",
+  "scope_and_generalisation_limits": [
+    "do not pool with the E1 22 fixtures or the G3-B cells as independent observations (paired repeated measures)",
+    "do not call gold human-adjudicated (PROVISIONAL, n=1, annotator2 NOT_OBTAINED; no kappa)",
+    "do not report a Cohen kappa",
+    "do not interpret restricted-regime NEED as reasoning calibration",
+    "do not separate freshness vs trust causal effects (not identified); do not extrapolate beyond the 10 issues",
+    "do not pool the sympy-17630/T3A Decision-Policy probe with freshness-driven abstention"
+  ],
+  "result_freeze_path": "evidence_store_g3b3/freeze/g3b3_result_freeze_manifest.json",
+  "git_state": {
+    "head": "2097ecd87310bd1df1f3dcfddfbc7e3cedea1123",
+    "head_matches_frozen": true,
+    "frozen_head_expected": "2097ecd87310bd1df1f3dcfddfbc7e3cedea1123",
+    "staged_files": [],
+    "n_staged": 0,
+    "modified_or_added_tracked": [
+      "trae/specs/groundedreview-w2-offline/tasks.md"
+    ],
+    "untracked_count": 88,
+    "commits_made_in_g3b3": 0,
+    "note": "untracked (??) g3b3 artifacts are expected; tracked modifications and staged files must be zero."
+  },
+  "gate_state": "COMPLETE; stopped pending the next written approval. No Gate 3-C, no new issue/model, no commit."
+}

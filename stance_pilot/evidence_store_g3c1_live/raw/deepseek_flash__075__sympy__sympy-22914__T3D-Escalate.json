@@ -1,0 +1,205 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "The escalated logs show exit 0 with all visible tests PASSED (including `test_ccode_Max_Min`, `test_ccode_Max`, `test_ccode_Min_performance`), and the claim-consistency adjudication returned \"consistent.\" Combined with verified linkage, TRUE freshness, complete coverage (1/1 F2P, 17/17 P2P), and the symptom removed, the evidence is intact and failure-free.\n\n{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and demonstrates success. Linkage verified (base_commit and patch_sha256 match, authentic signature). Freshness is TRUE (authoritative restage tree 5df550bf... matches attestation). Coverage is complete: 1/1 declared FAIL_TO_PASS executed and 17/17 scoped PASS_TO_PASS executed, no missing ids. The issue-reproduction probe shows the symptom present before the patch and gone after (pycode(Min) now yields 'min(a, b)', pycode(Max) yields 'max(a, b)'), directly resolving the reported issue. Escalated acceptance/regression logs show exit 0 with all tests PASSED, including the Min/Max-related printer tests, and the author claim adjudicated as consistent. No applicable acceptance failure or scoped regression is established.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "cell": "g3c1live:sympy__sympy-22914:T3D-Escalate",
+  "condition": "T3D-Escalate",
+  "cost_usd": 0.005419,
+  "evidence_session": "762b99fb18f22a50f1097a54",
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-22914",
+  "instance_id": "sympy__sympy-22914",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 3,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": "escalate",
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010563,
+    0.010854,
+    0.012547
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 162,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 2797,
+      "raw_content": "I'll start with the integrity checks: linkage, freshness, coverage, symptom log, and claim consistency.",
+      "served_model": "deepseek-flash",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_00_1WCD9XjD4c0Oe0DWpw1g7885",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_01_BCyz6wM4Tr5aDIBNJu9g1259",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_02_yUAgKpKErpNVmEPGDQUu3639",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{\"name\": \"symptom\"}",
+          "id": "call_03_WYfmBo53wOwWxnjtrgFB6861",
+          "name": "get_run_log"
+        },
+        {
+          "arguments": "{\"reason\": \"To determine whether the author's claim that all relevant tests pass is consistent with the recorded evidence, which requires adjudicating against acceptance outcomes.\"}",
+          "id": "call_04_TatTOOvEykT2mLe4LsA59940",
+          "name": "check_claim_consistency"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 223,
+      "finish_reason": "tool_calls",
+      "model_call": 2,
+      "prompt_tokens": 3662,
+      "raw_content": "All integrity checks pass: linkage verified, freshness TRUE, coverage complete (1/1 F2P, 17/17 P2P), symptom removed, and the author claim is consistent. The claim-consistency adjudication (which required acceptance outcomes) returned \"consistent,\" so no decisive failure is established.",
+      "served_model": "deepseek-flash",
+      "tool_calls": [
+        {
+          "arguments": "{\"name\": \"f2p\", \"reason\": \"To confirm the single declared acceptance (FAIL_TO_PASS) check actually passed for this patch, resolving whether the issue is resolved per maintainer tests.\"}",
+          "id": "call_00_PLPRYUw3zowCUnJSjCSH5204",
+          "name": "get_run_log"
+        },
+        {
+          "arguments": "{\"name\": \"p2p\", \"reason\": \"To confirm the 17 scoped regression (PASS_TO_PASS) checks passed with no regression introduced, resolving the no-regression half of merge acceptability.\"}",
+          "id": "call_01_GicuAieLVxcQUnV8TcdS4987",
+          "name": "get_run_log"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 8,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 293,
+      "finish_reason": "stop",
+      "model_call": 3,
+      "prompt_tokens": 8891,
+      "raw_content": "The escalated logs show exit 0 with all visible tests PASSED (including `test_ccode_Max_Min`, `test_ccode_Max`, `test_ccode_Min_performance`), and the claim-consistency adjudication returned \"consistent.\" Combined with verified linkage, TRUE freshness, complete coverage (1/1 F2P, 17/17 P2P), and the symptom removed, the evidence is intact and failure-free.\n\n{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and demonstrates success. Linkage verified (base_commit and patch_sha256 match, authentic signature). Freshness is TRUE (authoritative restage tree 5df550bf... matches attestation). Coverage is complete: 1/1 declared FAIL_TO_PASS executed and 17/17 scoped PASS_TO_PASS executed, no missing ids. The issue-reproduction probe shows the symptom present before the patch and gone after (pycode(Min) now yields 'min(a, b)', pycode(Max) yields 'max(a, b)'), directly resolving the reported issue. Escalated acceptance/regression logs show exit 0 with all tests PASSED, including the Min/Max-related printer tests, and the author claim adjudicated as consistent. No applicable acceptance failure or scoped regression is established.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 11,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_b970f89709fb3265",
+  "tokens_in": 15350,
+  "tokens_out": 678,
+  "tool_calls": 7,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"c4e836cdf73fc6aa7bab6a86719a0f08861ffb1d\", \"record_patch_sha256\": \"dc1ed99edd680affe1b4b93bb2798d9ef6442636892f1d2fbad60487f203fd5e\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"5df550bf1fed52cfd49c8e914660bf91c79102fd\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"5df550bf1fed52cfd49c8e914660bf91c79102fd\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:03:01+00:00\", \"attestation_built_at\": \"2026-10-28T10:04:51+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 17, \"executed\": 17, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python sympy__sympy-22914-baseline.py  (exit 1)\n--- stdout ---\npycode(Min) = '((a) if (a <= b) else (b))'\npycode(Max) = '((a) if (a >= b) else (b))'\nFAIL: expected min(a, b), got ((a) if (a <= b) else (b))\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python sympy__sympy-22914-post-candidate.py  (exit 0)\n--- stdout ---\npycode(Min) = 'min(a, b)'\npycode(Max) = 'max(a, b)'\nOK: pycode supports Min/Max\n\n--- stderr ---\n",
+      "tool": "get_run_log",
+      "turn": 0
+    },
+    {
+      "args": {
+        "reason": "To determine whether the author's claim that all relevant tests pass is consistent with the recorded evidence, which requires adjudicating against acceptance outcomes."
+      },
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the claim is consistent with the normalised verdicts of this artifact\", \"escalated\": true}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    },
+    {
+      "args": {
+        "name": "f2p",
+        "reason": "To confirm the single declared acceptance (FAIL_TO_PASS) check actually passed for this patch, resolving whether the issue is resolved per maintainer tests."
+      },
+      "http_status": 200,
+      "result_preview": "# TIER ESCALATION: this acceptance-test log reveals maintainer verdict columns; your stated reason and this access are recorded.\n$ C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmp6YSjAU\\Scripts\\python.exe -m pytest sympy/printing/tests/test_c.py sympy/printing/tests/test_fortran.py sympy/printing/tests/test_glsl.py -v --tb=short -p no:cacheprovider  (exit 0, 11s)\n--- stdout ---\n============================= test session starts =============================\nplatform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmp6YSjAU\\Scripts\\python.exe\narchitecture: 64-bit\ncache:        yes\nground types: python \n\nrootdir: C:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\nconfigfile: pytest.ini\ncollecting ... collected 133 items\n\nsympy/printing/tests/test_c.py::test_printmethod PASSED                  [  0%]\nsympy/printing/tests/test_c.py::test_ccode_sqrt PASSED                   [  1%]\nsympy/printing/tests/test_c.py::test_ccode_Pow PASSED                    [  2%]\nsympy/printing/tests/test_c.py::test_ccode_Max PASSED                    [  3%]\nsympy/printing/tests/test_c.py::test_ccode_Min_performance PASSED        [  3%]\nsympy/printing/tests/test_c.py::test_ccode_constants_mathh PASSED        [  4%]\nsympy/printing/tests/test_c.py::test_ccode_constants_other PASSED        [  5%]\nsympy/printing/tests/test_c.py::test_ccode_Rational PASSED               [  6%]\nsympy/printing/tests/test_c.py::test_ccode_Integer PASSED                [  6%]\nsympy/printing/tests/test_c.py::test_ccode_functions PASSED              [  7%]\nsympy/printing/tests/test_c.py::test_ccode_inline_function PASSED        [  8%]\nsympy/printing/tests/test_c.py::test_ccode_exceptions PASSED             [  9%]\nsympy/printing/tests/test_c.py::test_ccode_functions2 PASSED             [  9%]\nsympy/printing/tests/test_c.py::test_ccode_user_functions PASSED         [ 10%]\nsympy/printing/tests/test_c.py::test_ccode_boolean PASSED                [ 11%]\nsympy/printing/tests/test_c.py::test_ccode_Relational PASSED             [ 12%]\nsympy/printing/tests/test_c.py::test_ccode_Piecewise PASSED              [ 12%]\nsympy/printing/tests/test_c.py::test_ccode_sinc PASSED                   [ 13%]\nsympy/printing/tests/test_c.py::test_ccode_Piecewise_deep PASSED         [ 14%]\nsympy/printing/tests/test_c.py::test_ccode_ITE PASSED                    [ 15%]\nsympy/printing/tests/test_c.py::test_ccode_settings PASSED               [ 15%]\nsympy/printing/tests/test_c.py::test_ccode_Indexed PASSED                [ 16%]\nsympy/printing/tests/test_c.py::test_Element PASSED                      [ 17%]\nsympy/printing/tests/test_c.py::test_ccode_Indexed_without_looking_for_contraction PASSED [ 18%]\nsympy/printing/tests/test_c.py::test_ccode_loops_matrix_vector PASSED    [ 18%]\nsympy/printing/tests/test_c.py::test_dummy_loops PASSED                  [ 19%]\nsympy/printing/tests/test_c.py::test_ccode_loops_add PASSED              [ 20%]\nsympy/printing/tests/test_c.py::test_ccode_loops_multiple_contractions PASSED [ 21%]\nsympy/printing/tests/test_c.py::test_ccode_loops_addfactor PASSED        [ 21%]\nsympy/printing/tests/test_c.py::test_ccode_loops_multiple_terms PASSED   [ 22%]\nsympy/printing/tests/test_c.py::test_dereference_printing PASSED         [ 23%]\nsympy/printing/tests/test_c.py::test_Matrix_printing PASSED              [ 24%]\nsympy/printing/tests/test_c.py::test_sparse_matrix PASSED                [ 24%]\nsympy/printing/tests/test_c.py::test_ccode_reserved_words PASSED         [ 25%]\nsympy/printing/tests/test_c.py::test_ccode_sign PASSED                   [ 26%]\nsympy/printing/tests/test_c.py::test_ccode_Assignment PASSED             [ 27%]\nsympy/printing/tests/test_c.py::test_ccode_For PASSED                    [ 27%]\nsympy/printing/tests/test_c.py::test_ccode_Max_Min PASSED                [ 28%]\nsympy/printing/tests/test_c.py::test_ccode_standard PASSED               [ 29%]\nsympy/printing/tests/test_c.py::test_C89CodePrinter PASSED               [ 30%]\nsympy/printing/tests/test_c.py::test_C99CodePrinter PASSED               [ 30%]\nsympy/printing/tests/test_c.py::test_C99CodePrinter__precision_f80 XFAIL [ 31%]\nsympy/printing/tests/test_c.py::test_C99CodePrinter__precision PASSED    [ 32%]\nsympy/printing/tests/test_c.py::test_get_math_macros PASSED              [ 33%]\nsympy/printing/tests/test_c.py::test_ccode_Declaration PASSED            [ 33%]\nsympy/printing/tests/test_c.py::test_C99CodePrinter_custom_type PASSED   [ 34%]\nsympy/printing/tests/test_c.py::test_MatrixElement_printing PASSED       [ 35%]\nsympy/printing/tests/test_c.py::test_ccode_math_macros PASSED            [ 36%]\nsympy/printing/tests/test_c.py::test_ccode_Type PASSED                   [ 36%]\nsympy/printing/tests/test_c.py::test_ccode_codegen_ast PASSED            [ 37%]\nsympy/printing/tests/test_c.py::test_ccode_submodule PASSED              [ 38%]\nsympy/printing/tests/test_c.py::test_ccode_UnevaluatedExpr PASSED        [ 39%]\nsympy/printing/tests/test_c.py::test_ccode_array_like_containers PASSED  [ 39%]\nsympy/printing/tests/test_fortran.py::test_UnevaluatedExpr PASSED        [ 40%]\nsympy/printing/tests/test_fortran.py::test_printmethod PASSED            [ 41%]\nsympy/printing/tests/test_fortran.py::test_fcode_sign PASSED             [ 42%]\nsympy/printing/tests/test_fortran.py::test_fcode_Pow PASSED              [ 42%]\nsympy/printing/tests/test_fortran.py::test_fcode_Rational PASSED         [ 43%]\nsympy/printing/tests/test_fortran.py::test_fcode_Integer PASSED          [ 44%]\nsympy/printing/tests/test_fortran.py::test_fcode_Float PASSED            [ 45%]\nsympy/printing/tests/test_fortran.py::test_fcode_functions PASSED        [ 45%]\nsympy/printing/tests/test_fortran.py::test_case PASSED                   [ 46%]\nsympy/printing/tests/test_fortran.py::test_fcode_functions_with_integers PASSED [ 47%]\nsympy/printing/tests/test_fortran.py::test_fcode_NumberSymbol PASSED     [ 48%]\nsympy/printing/tests/test_fortran.py::test_fcode_complex PASSED          [ 48%]\nsympy/printing/tests/test_fortran.py::test_implicit PASSED               [ 49%]\nsympy/printing/tests/test_fortran.py::test_not_fortran PASSED            [ 50%]\nsympy/printing/tests/test_fortran.py::test_user_functions PASSED         [ 51%]\nsympy/printing/tests/test_fortran.py::test_inline_function PASSED        [ 51%]\nsympy/printing/tests/test_fortran.py::test_assign_to PASSED              [ 52%]\nsympy/printing/tests/test_fortran.py::test_line_wrapping PASSED          [ 53%]\nsympy/printing/tests/test_fortran.py::test_fcode_precedence PASSED       [ 54%]\nsympy/printing/tests/test_fortran.py::test_fcode_Logical PASSED          [ 54%]\nsympy/printing/tests/test_fortran.py::test_fcode_Xlogical PASSED         [ 55%]\nsympy/printing/tests/test_fortran.py::test_fcode_Relational PASSED       [ 56%]\nsympy/printing/tests/test_fortran.py::test_fcode_Piecewise PASSED        [ 57%]\nsympy/printing/tests/test_fortran.py::test_wrap_fortran PASSED           [ 57%]\nsympy/printing/tests/test_fortran.py::test_wrap_fortran_keep_d0 PASSED   [ 58%]\nsympy/printing/tests/test_fortran.py::test_settings PASSED               [ 59%]\nsympy/printing/tests/test_fortran.py::test_free_form_code_line PASSED    [ 60%]\nsympy/printing/tests/test_fortran.py::test_free_form_continuation_line PASSED [ 60%]\nsympy/printing/tests/test_fortran.py::test_free_form_comment_line PASSED [ 61%]\nsympy/printing/tests/test_fortran.py::test_loops PASSED                  [ 62%]\nsympy/printing/tests/test_fortran.py::test_dummy_loops PASSED            [ 63%]\nsympy/printing/tests/test_fortran.py::test_fcode_Indexed_without_looking_for_contraction PASSED [ 63%]\nsympy/printing/tests/test_fortran.py::test_derived_classes PASSED        [ 64%]\nsympy/printing/tests/test_fortran.py::test_indent PASSED                 [ 65%]\nsympy/printing/tests/test_fortran.py::test_Matrix_printing PASSED        [ 66%]\nsympy/printing/tests/test_fortran.py::test_fcode_For PASSED              [ 66%]\nsympy/printing/tests/test_for",
+      "tool": "get_run_log",
+      "turn": 1
+    },
+    {
+      "args": {
+        "name": "p2p",
+        "reason": "To confirm the 17 scoped regression (PASS_TO_PASS) checks passed with no regression introduced, resolving the no-regression half of merge acceptability."
+      },
+      "http_status": 200,
+      "result_preview": "# TIER ESCALATION: this acceptance-test log reveals maintainer verdict columns; your stated reason and this access are recorded.\n$ C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmp6YSjAU\\Scripts\\python.exe -m pytest sympy/printing/tests/test_c.py sympy/printing/tests/test_fortran.py sympy/printing/tests/test_glsl.py -v --tb=short -p no:cacheprovider  (exit 0, 11s)\n--- stdout ---\n============================= test session starts =============================\nplatform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmp6YSjAU\\Scripts\\python.exe\narchitecture: 64-bit\ncache:        yes\nground types: python \n\nrootdir: C:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\nconfigfile: pytest.ini\ncollecting ... collected 133 items\n\nsympy/printing/tests/test_c.py::test_printmethod PASSED                  [  0%]\nsympy/printing/tests/test_c.py::test_ccode_sqrt PASSED                   [  1%]\nsympy/printing/tests/test_c.py::test_ccode_Pow PASSED                    [  2%]\nsympy/printing/tests/test_c.py::test_ccode_Max PASSED                    [  3%]\nsympy/printing/tests/test_c.py::test_ccode_Min_performance PASSED        [  3%]\nsympy/printing/tests/test_c.py::test_ccode_constants_mathh PASSED        [  4%]\nsympy/printing/tests/test_c.py::test_ccode_constants_other PASSED        [  5%]\nsympy/printing/tests/test_c.py::test_ccode_Rational PASSED               [  6%]\nsympy/printing/tests/test_c.py::test_ccode_Integer PASSED                [  6%]\nsympy/printing/tests/test_c.py::test_ccode_functions PASSED              [  7%]\nsympy/printing/tests/test_c.py::test_ccode_inline_function PASSED        [  8%]\nsympy/printing/tests/test_c.py::test_ccode_exceptions PASSED             [  9%]\nsympy/printing/tests/test_c.py::test_ccode_functions2 PASSED             [  9%]\nsympy/printing/tests/test_c.py::test_ccode_user_functions PASSED         [ 10%]\nsympy/printing/tests/test_c.py::test_ccode_boolean PASSED                [ 11%]\nsympy/printing/tests/test_c.py::test_ccode_Relational PASSED             [ 12%]\nsympy/printing/tests/test_c.py::test_ccode_Piecewise PASSED              [ 12%]\nsympy/printing/tests/test_c.py::test_ccode_sinc PASSED                   [ 13%]\nsympy/printing/tests/test_c.py::test_ccode_Piecewise_deep PASSED         [ 14%]\nsympy/printing/tests/test_c.py::test_ccode_ITE PASSED                    [ 15%]\nsympy/printing/tests/test_c.py::test_ccode_settings PASSED               [ 15%]\nsympy/printing/tests/test_c.py::test_ccode_Indexed PASSED                [ 16%]\nsympy/printing/tests/test_c.py::test_Element PASSED                      [ 17%]\nsympy/printing/tests/test_c.py::test_ccode_Indexed_without_looking_for_contraction PASSED [ 18%]\nsympy/printing/tests/test_c.py::test_ccode_loops_matrix_vector PASSED    [ 18%]\nsympy/printing/tests/test_c.py::test_dummy_loops PASSED                  [ 19%]\nsympy/printing/tests/test_c.py::test_ccode_loops_add PASSED              [ 20%]\nsympy/printing/tests/test_c.py::test_ccode_loops_multiple_contractions PASSED [ 21%]\nsympy/printing/tests/test_c.py::test_ccode_loops_addfactor PASSED        [ 21%]\nsympy/printing/tests/test_c.py::test_ccode_loops_multiple_terms PASSED   [ 22%]\nsympy/printing/tests/test_c.py::test_dereference_printing PASSED         [ 23%]\nsympy/printing/tests/test_c.py::test_Matrix_printing PASSED              [ 24%]\nsympy/printing/tests/test_c.py::test_sparse_matrix PASSED                [ 24%]\nsympy/printing/tests/test_c.py::test_ccode_reserved_words PASSED         [ 25%]\nsympy/printing/tests/test_c.py::test_ccode_sign PASSED                   [ 26%]\nsympy/printing/tests/test_c.py::test_ccode_Assignment PASSED             [ 27%]\nsympy/printing/tests/test_c.py::test_ccode_For PASSED                    [ 27%]\nsympy/printing/tests/test_c.py::test_ccode_Max_Min PASSED                [ 28%]\nsympy/printing/tests/test_c.py::test_ccode_standard PASSED               [ 29%]\nsympy/printing/tests/test_c.py::test_C89CodePrinter PASSED               [ 30%]\nsympy/printing/tests/test_c.py::test_C99CodePrinter PASSED               [ 30%]\nsympy/printing/tests/test_c.py::test_C99CodePrinter__precision_f80 XFAIL [ 31%]\nsympy/printing/tests/test_c.py::test_C99CodePrinter__precision PASSED    [ 32%]\nsympy/printing/tests/test_c.py::test_get_math_macros PASSED              [ 33%]\nsympy/printing/tests/test_c.py::test_ccode_Declaration PASSED            [ 33%]\nsympy/printing/tests/test_c.py::test_C99CodePrinter_custom_type PASSED   [ 34%]\nsympy/printing/tests/test_c.py::test_MatrixElement_printing PASSED       [ 35%]\nsympy/printing/tests/test_c.py::test_ccode_math_macros PASSED            [ 36%]\nsympy/printing/tests/test_c.py::test_ccode_Type PASSED                   [ 36%]\nsympy/printing/tests/test_c.py::test_ccode_codegen_ast PASSED            [ 37%]\nsympy/printing/tests/test_c.py::test_ccode_submodule PASSED              [ 38%]\nsympy/printing/tests/test_c.py::test_ccode_UnevaluatedExpr PASSED        [ 39%]\nsympy/printing/tests/test_c.py::test_ccode_array_like_containers PASSED  [ 39%]\nsympy/printing/tests/test_fortran.py::test_UnevaluatedExpr PASSED        [ 40%]\nsympy/printing/tests/test_fortran.py::test_printmethod PASSED            [ 41%]\nsympy/printing/tests/test_fortran.py::test_fcode_sign PASSED             [ 42%]\nsympy/printing/tests/test_fortran.py::test_fcode_Pow PASSED              [ 42%]\nsympy/printing/tests/test_fortran.py::test_fcode_Rational PASSED         [ 43%]\nsympy/printing/tests/test_fortran.py::test_fcode_Integer PASSED          [ 44%]\nsympy/printing/tests/test_fortran.py::test_fcode_Float PASSED            [ 45%]\nsympy/printing/tests/test_fortran.py::test_fcode_functions PASSED        [ 45%]\nsympy/printing/tests/test_fortran.py::test_case PASSED                   [ 46%]\nsympy/printing/tests/test_fortran.py::test_fcode_functions_with_integers PASSED [ 47%]\nsympy/printing/tests/test_fortran.py::test_fcode_NumberSymbol PASSED     [ 48%]\nsympy/printing/tests/test_fortran.py::test_fcode_complex PASSED          [ 48%]\nsympy/printing/tests/test_fortran.py::test_implicit PASSED               [ 49%]\nsympy/printing/tests/test_fortran.py::test_not_fortran PASSED            [ 50%]\nsympy/printing/tests/test_fortran.py::test_user_functions PASSED         [ 51%]\nsympy/printing/tests/test_fortran.py::test_inline_function PASSED        [ 51%]\nsympy/printing/tests/test_fortran.py::test_assign_to PASSED              [ 52%]\nsympy/printing/tests/test_fortran.py::test_line_wrapping PASSED          [ 53%]\nsympy/printing/tests/test_fortran.py::test_fcode_precedence PASSED       [ 54%]\nsympy/printing/tests/test_fortran.py::test_fcode_Logical PASSED          [ 54%]\nsympy/printing/tests/test_fortran.py::test_fcode_Xlogical PASSED         [ 55%]\nsympy/printing/tests/test_fortran.py::test_fcode_Relational PASSED       [ 56%]\nsympy/printing/tests/test_fortran.py::test_fcode_Piecewise PASSED        [ 57%]\nsympy/printing/tests/test_fortran.py::test_wrap_fortran PASSED           [ 57%]\nsympy/printing/tests/test_fortran.py::test_wrap_fortran_keep_d0 PASSED   [ 58%]\nsympy/printing/tests/test_fortran.py::test_settings PASSED               [ 59%]\nsympy/printing/tests/test_fortran.py::test_free_form_code_line PASSED    [ 60%]\nsympy/printing/tests/test_fortran.py::test_free_form_continuation_line PASSED [ 60%]\nsympy/printing/tests/test_fortran.py::test_free_form_comment_line PASSED [ 61%]\nsympy/printing/tests/test_fortran.py::test_loops PASSED                  [ 62%]\nsympy/printing/tests/test_fortran.py::test_dummy_loops PASSED            [ 63%]\nsympy/printing/tests/test_fortran.py::test_fcode_Indexed_without_looking_for_contraction PASSED [ 63%]\nsympy/printing/tests/test_fortran.py::test_derived_classes PASSED        [ 64%]\nsympy/printing/tests/test_fortran.py::test_indent PASSED                 [ 65%]\nsympy/printing/tests/test_fortran.py::test_Matrix_printing PASSED        [ 66%]\nsympy/printing/tests/test_fortran.py::test_fcode_For PASSED              [ 66%]\nsympy/printing/tests/test_for",
+      "tool": "get_run_log",
+      "turn": 1
+    }
+  ],
+  "wall_s": 6.19
+}

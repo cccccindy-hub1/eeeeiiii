@@ -1,0 +1,11 @@
+{
+  "cell": "g3b:sympy__sympy-21847:T2A-T",
+  "condition": "T2A-T",
+  "policy": null,
+  "session_id": null,
+  "trace": [],
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The test artifact reports 1/1 FAIL_TO_PASS and 9/9 scoped PASS_TO_PASS, which would suggest success, but the artifact's linkage to this patch is not verified. The patch_sha256 (7223f91c...) and base_commit (d9b18c5...) cannot be confirmed to correspond to the candidate patch and its current commit tree, and the runner is a 'vendored-git' environment on a local Windows host. Without verified linkage and freshness for the current tree, I cannot confirm the declared acceptance/regression set was executed against THIS patch. No decisive applicable failure is established, so REJECT is not warranted; but the success evidence is not intact enough to ACCEPT.\",\"evidence_mismatch\":true,\"missing_evidence\":\"Verification that artifact art_ec15a96822c8d6ff is linked to this exact patch (patch_sha256 7223f91c...) and the current commit tree, and that the run is fresh for that tree; also confirmation of which specific tests constitute the FAIL_TO_PASS and scoped PASS_TO_PASS set and that they cover the issue's min_degrees behavior.\",\"evidence_gap\":\"linkage_mismatch\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

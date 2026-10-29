@@ -1,0 +1,189 @@
+{
+  "api_calls_made_by_this_audit": 0,
+  "artifacts": {
+    "blind_independence": {
+      "independent_human_coder": "NOT OBTAINED",
+      "independent_review": "NOT OBTAINED",
+      "note": "results are an internal reproducible characterisation; a real second-annotator plan is in the G3-B.4 report (task 11) and must not be substituted by this coding.",
+      "rule_based": true,
+      "single_ai_coder": true,
+      "this_is_not_independent_arbitration": true
+    },
+    "classification_13974": "RESIDUAL MODEL EVIDENCE-INTERPRETATION / POLICY ERROR (over-abstention), NOT a legitimate evidential-standard difference and NOT a new protocol inconsistency",
+    "gate3c_not_executed": true,
+    "gpt_f1_17318": "On the static tier-A T2A surface GPT asserted \"all relevant acceptance tests passing\" and \"no failures or regressions\" although the declared F2P test test_issue_12420 FAILED (assert [4 + I, 0, 1] == []). The static surface exposes aggregate counts but not the rendered per-test failure, and the model did not verify; it converted a \"fresh/linked/complete\" presentation into an unverified green claim. The active T3A control on the SAME issue correctly REJECTed once the per-test failure was rendered.",
+    "gpt_f2_17630": "GPT saw the failing declared F2P test but classified it as \"unrelated to the patch issue\" and therefore abstained NEED_EVIDENCE instead of REJECT. Under the declared acceptance contract a failing declared FAIL_TO_PASS id is decisive for non-resolution regardless of the model’s subjective relevance judgement. This is a decision-policy / over-abstention error (relitigating declared-test relevance), not a missing-evidence situation.",
+    "integrity": "Gate 3-B.4 independent result-integrity verification (tasks 1 & 10)",
+    "recompute_headline": null,
+    "strict_headline": {
+      "all_seven_errors_upgraded_nondecisive_to_sufficient": true,
+      "cells": 10,
+      "condition_gold_all": "NEED_EVIDENCE",
+      "correct_abstention_issues": [
+        "19783",
+        "20590",
+        "24213"
+      ],
+      "correct_abstentions_NEED": 3,
+      "error_family_note": "ACCEPT and REJECT error families are counted separately; nothing is auto-bucketed as unsupported acceptance. All 7 observed over-commitments are ACCEPT; 0 are REJECT.",
+      "unsupported_ACCEPT_errors": 7,
+      "unsupported_REJECT_errors": 0,
+      "unsupported_accept_issues": [
+        "13615",
+        "13974",
+        "15349",
+        "17318",
+        "17630",
+        "21847",
+        "24443"
+      ],
+      "unsupported_reject_issues": []
+    },
+    "t2d_headline": {
+      "deepseek-flash": {
+        "Strict_g3b3_need": [
+          "13615",
+          "13974",
+          "15349",
+          "17318",
+          "17630",
+          "19783",
+          "20590",
+          "21847",
+          "24213",
+          "24443"
+        ],
+        "Strict_g3b_need": [
+          "13615",
+          "13974",
+          "15349",
+          "17318",
+          "17630",
+          "19783",
+          "20590",
+          "21847",
+          "24213",
+          "24443"
+        ],
+        "T2D-T_g3b3_need": [
+          "13615",
+          "13974",
+          "15349",
+          "17318",
+          "17630",
+          "19783",
+          "20590",
+          "21847",
+          "24213",
+          "24443"
+        ],
+        "T2D-T_g3b_need": [
+          "13615",
+          "13974",
+          "15349",
+          "17318",
+          "17630",
+          "19783",
+          "20590",
+          "21847",
+          "24213",
+          "24443"
+        ],
+        "T2D_10of10_abstain_both_gates": true,
+        "strict_g3b_to_g3b3_new_accepts": [],
+        "strict_g3b_to_g3b3_new_need": []
+      },
+      "gpt-4.1-mini": {
+        "Strict_g3b3_need": [
+          "19783",
+          "20590",
+          "24213"
+        ],
+        "Strict_g3b_need": [
+          "13615",
+          "13974",
+          "15349",
+          "17318",
+          "17630",
+          "19783",
+          "20590",
+          "21847",
+          "24213",
+          "24443"
+        ],
+        "T2D-T_g3b3_need": [
+          "13615",
+          "13974",
+          "15349",
+          "17318",
+          "17630",
+          "19783",
+          "20590",
+          "21847",
+          "24213",
+          "24443"
+        ],
+        "T2D-T_g3b_need": [
+          "13615",
+          "13974",
+          "15349",
+          "17318",
+          "17630",
+          "19783",
+          "20590",
+          "21847",
+          "24213",
+          "24443"
+        ],
+        "T2D_10of10_abstain_both_gates": true,
+        "strict_g3b_to_g3b3_new_accepts": [
+          "13615",
+          "13974",
+          "15349",
+          "17318",
+          "17630",
+          "21847",
+          "24443"
+        ],
+        "strict_g3b_to_g3b3_new_need": []
+      }
+    }
+  },
+  "audit_version": "groundedreview-gate3b4-zero-api-strict-audit-v1",
+  "budget_usd": 0,
+  "document": "GroundedReview Gate 3-B.4 zero-API strict audit report",
+  "git_commits_made": 0,
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold carried unchanged from Gate 3-A.1; no second adjudicator has been obtained as of Gate 3-B.4. No Cohen kappa is reported and gold is never called human-adjudicated. Gate 3-B.4 audits model behaviour against this PROVISIONAL gold only; the same AI operator performing the audit is NOT an independent human adjudicator."
+  },
+  "gold_changed": false,
+  "headline": {
+    "blind_coding": "single AI rule-based coder (no independent human/review): all 7 primary code = C3 absence-of-failure-as-evidence, co-firing C1+C2+C5, C4 never",
+    "deepseek_recompute": "need-any 9/10 (G3-B) -> 1/10 (G3-B.3); 8 need->non-need, 0 reverse; residual = SymPy-13974 only; cluster bootstrap 95% CI paired difference 0.5-1.0",
+    "first_run": "CompositeGuard.check returned None -> float(None) failed pre-network on the first live attempt, $0, repaired (return bound), $0 products discarded, freeze regenerated; final 100/100 is post-repair",
+    "gpt_strict": "7 unsupported ACCEPT, 0 unsupported REJECT, 3 correct NEED; all 7 structurally upgrade non-decisive diagnostic evidence to sufficient acceptance",
+    "integrity": "100/100 real rows, raw responses and live traces re-verified against the frozen pins; raw-first persistence; 208 real model calls; retries/errors/resume-skips all 0; mock and live fully isolated; analyser post-collected; prompt/protocol fingerprints match the pre-paid freeze",
+    "mechanism_status": "active-evidence-induced over-commitment is a NEW CANDIDATE mechanism, associational and NOT proven (freshness/trust changed with activeness)",
+    "non_interference": "tier-1 post-patch/gold masking 61/61 clean; one tier-2 minimisation gap (pre-patch all-PASSED pass_to_pass_baseline map survives projection), present for 10/10 issues but seen by none of the 7 error cells and unable to reconstruct gold; fix required before Gate 3-C",
+    "spend_note": "~1e-6 gap is rounding convention only; this audit itself spent $0",
+    "total_live_spend_usd_guard_basis": 0.303539,
+    "total_live_spend_usd_rows_rounded": 0.303537
+  },
+  "issues_added": 0,
+  "stop_and_await_approval": true,
+  "task_index": {
+    "per_issue_audit_table": "g3b4_per_issue_audit_table.json",
+    "task11_12_13_planning_and_revisions": "g3b4_planning_and_revisions.json",
+    "task1_result_freeze_and_protocol": "g3b4_integrity_verification.json",
+    "task2_deepseek_recompute": "g3b4_deepseek_recompute.json",
+    "task3_6_gpt_strict_and_noninterference": "g3b4_gpt_strict_audit.json",
+    "task4_blind_coding": "../blind_coding/g3b4_blind_coding_results.json",
+    "task5_t2d_vs_strict": "g3b4_t2d_vs_strict.json",
+    "task7_sympy_13974": "g3b4_sympy_13974_audit.json",
+    "task8_gpt_focal_families": "g3b4_gpt_focal_families.json",
+    "task9_first_run_timeline": "g3b4_first_run_timeline.json"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch changes the dimension comparison to use equivalent_dims, which addresses the reported issue. The issue reproduction test confirms the symptom is gone after the patch. However, the available evidence does not include the maintainer acceptance test outcomes or the scoped regression check results for this patch. Without fresh, linked, and complete acceptance test results confirming no failures or regressions, the patch cannot be accepted yet.\",\"evidence_mismatch\":false,\"missing_evidence\":\"maintainer acceptance test outcomes and scoped regression check results\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "cell": "g3b3:sympy__sympy-24213:T2D-T",
+  "condition": "T2D-T",
+  "cost_usd": 0.000722,
+  "evidence_session": null,
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-24213",
+  "instance_id": "sympy__sympy-24213",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.013839
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 119,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 1330,
+      "raw_content": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch changes the dimension comparison to use equivalent_dims, which addresses the reported issue. The issue reproduction test confirms the symptom is gone after the patch. However, the available evidence does not include the maintainer acceptance test outcomes or the scoped regression check results for this patch. Without fresh, linked, and complete acceptance test results confirming no failures or regressions, the patch cannot be accepted yet.\",\"evidence_mismatch\":false,\"missing_evidence\":\"maintainer acceptance test outcomes and scoped regression check results\",\"evidence_gap\":\"coverage_incomplete\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_5711762ccfb7ae48",
+  "tokens_in": 1330,
+  "tokens_out": 119,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.52
+}

@@ -1,0 +1,49 @@
+diff --git a/sympy/polys/sqfreetools.py b/sympy/polys/sqfreetools.py
+index 1783a7744a..9048fa5572 100644
+--- a/sympy/polys/sqfreetools.py
++++ b/sympy/polys/sqfreetools.py
+@@ -17,7 +17,7 @@
+     dmp_raise, dmp_inject,
+     dup_convert)
+ from sympy.polys.densetools import (
+-    dup_diff, dmp_diff,
++    dup_diff, dmp_diff, dmp_diff_in,
+     dup_shift, dmp_compose,
+     dup_monic, dmp_ground_monic,
+     dup_primitive, dmp_ground_primitive)
+@@ -252,7 +252,12 @@ def dmp_sqf_part(f, u, K):
+     if K.is_negative(dmp_ground_LC(f, u, K)):
+         f = dmp_neg(f, u, K)
+ 
+-    gcd = dmp_gcd(f, dmp_diff(f, 1, u, K), u, K)
++    # For multivariate polynomials, we need to compute GCD with
++    # all partial derivatives to get the correct square-free part
++    gcd = dmp_diff_in(f, 1, 0, u, K)
++    for j in range(1, u + 1):
++        gcd = dmp_gcd(gcd, dmp_diff_in(f, 1, j, u, K), u, K)
++    gcd = dmp_gcd(f, gcd, u, K)
+     sqf = dmp_quo(f, gcd, u, K)
+ 
+     if K.is_Field:
+diff --git a/sympy/polys/tests/test_factortools.py b/sympy/polys/tests/test_factortools.py
+index 7bcd935756..0601020d74 100644
+--- a/sympy/polys/tests/test_factortools.py
++++ b/sympy/polys/tests/test_factortools.py
+@@ -496,6 +496,17 @@ def anp(x):
+         (anp([QQ(2)]), [(anp([QQ(1)])*x + anp([QQ(-1), QQ(0)])*y, 1),
+                         (anp([QQ(1)])*x + anp([QQ( 1), QQ(0)])*y, 1)])
+ 
++    # Test for issue #18895
++    R, x, y = ring("x,y", QQ.algebraic_field(I))
++    f = (x - 1)*(y - 1)
++    coeff, factors = R.dmp_ext_factor(f)
++    assert R.one == coeff  # Note: R.one == coeff works, but coeff == R.one doesn't
++    assert len(factors) == 2
++    # The order might vary, so we check both factors are present
++    factor_exprs = [f[0].as_expr() for f in factors]
++    assert (x - 1).as_expr() in factor_exprs
++    assert (y - 1).as_expr() in factor_exprs
++
+ 
+ def test_dup_factor_list():
+     R, x = ring("x", ZZ)

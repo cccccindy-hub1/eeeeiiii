@@ -1,0 +1,56 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The only evidence provided is a diagnostic-tier artifact whose maintainer acceptance-test outcomes and scoped regression verdicts are explicitly withheld. The issue-reproduction probe shows the symptom is gone after the patch, but that is not proof of merge acceptability, and the declared acceptance/regression set was not demonstrated as fully executed and passing. No decisive applicable failure is established, so REJECT is not warranted; but complete, fresh, linked, failure-free success is also not demonstrated, so ACCEPT is not warranted.\",\"evidence_mismatch\":true,\"missing_evidence\":\"Maintainer acceptance-test outcomes (1 scheduled) and scoped regression verdicts (9 scheduled) are withheld; the artifact does not demonstrate the declared acceptance/regression set was executed and passed for this patch/commit.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "cell": "g3b3:sympy__sympy-21847:T2D-T",
+  "condition": "T2D-T",
+  "cost_usd": 0.00087,
+  "evidence_session": null,
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-21847",
+  "instance_id": "sympy__sympy-21847",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010569
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 179,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 2185,
+      "raw_content": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The only evidence provided is a diagnostic-tier artifact whose maintainer acceptance-test outcomes and scoped regression verdicts are explicitly withheld. The issue-reproduction probe shows the symptom is gone after the patch, but that is not proof of merge acceptability, and the declared acceptance/regression set was not demonstrated as fully executed and passing. No decisive applicable failure is established, so REJECT is not warranted; but complete, fresh, linked, failure-free success is also not demonstrated, so ACCEPT is not warranted.\",\"evidence_mismatch\":true,\"missing_evidence\":\"Maintainer acceptance-test outcomes (1 scheduled) and scoped regression verdicts (9 scheduled) are withheld; the artifact does not demonstrate the declared acceptance/regression set was executed and passed for this patch/commit.\",\"evidence_gap\":\"coverage_incomplete\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_ec15a96822c8d6ff",
+  "tokens_in": 2185,
+  "tokens_out": 179,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.58
+}

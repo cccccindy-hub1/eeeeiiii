@@ -1,0 +1,62 @@
+\section{Experimental Setup}
+\label{sec:setup}
+
+\paragraph{Models.}
+Two chat models are served through a fixed client: \texttt{deepseek-flash}
+(``DeepSeek'') and \texttt{gpt-4.1-mini} (``GPT''). The served model id is
+asserted against the requested id; a mismatch is a hard stop, and a missing id
+does not silently pass.
+
+\paragraph{Protocol versions.}
+The corrective run uses runner \texttt{g3b3-runner-v1}, protocol
+\texttt{g3b2-protocol-v1}, and prompt \texttt{p3-ternary-g3b2-v1}, all frozen
+and fingerprinted before the paid run. The independent-issue run uses a
+separate runner \texttt{g3c1live-runner-v1} over the same frozen prompt and
+the \texttt{g3c1-protocol-v1} evidence server, again fingerprinted before any
+paid call. The prompt is strictly ternary:
+\ACCEPT, \REJECT, or \NEED.
+
+\paragraph{Three evidentiary classes.}
+Results are kept in three classes and never pooled:
+\begin{enumerate}[leftmargin=1.6em,itemsep=1pt,topsep=2pt]
+  \item \textbf{Corrective replication} (G3-B.3): 100 real model cells on the
+  ten original issues across both models and five conditions.
+  \item \textbf{Exploratory cross-sectional analysis} (P1/P2 on G3-B.3):
+  restricted-commitment and sufficient-appropriateness slices; the
+  oracle-\REJECT\ slice has only three issues.
+  \item \textbf{Exploratory independent-issue validation} (G3-C.1 live):
+  80 real model cells on the eight \emph{disjoint}, newly constructed issues
+  across both models and the same five conditions, with PROVISIONAL gold and
+  \texttt{annotator2 = NOT\_OBTAINED}. This is an exploratory external
+  validation on a different issue set at a different time; it is not a
+  human-arbitrated benchmark and is never pooled with classes 1--2.
+\end{enumerate}
+
+\paragraph{Execution accounting.}
+G3-B.3 made 208 model calls (DeepSeek 114, GPT 94) at a recorded spend of
+\textbf{\$0.303539} (DeepSeek \$0.189045, GPT \$0.114494) under caps of
+\$3.00 total / \$1.50 per model, with zero retries, zero transport errors, and
+zero resume-skips. Every response is persisted raw before analysis.
+
+\paragraph{Independent-issue run accounting.}
+The G3-C.1 live run made 162 model calls (DeepSeek 88, GPT 74) over all 80
+cells at a recorded spend of \textbf{\$0.258198} (DeepSeek \$0.163936,
+GPT \$0.094262; exact token-by-price arithmetic gives \$0.2581976), well
+under the tightened hard caps of \$2.00 total /
+\$1.00 per model. Summing the per-cell ledger entries, each rounded to six
+decimals at write time, yields \$0.258199, a one-microdollar rounding
+accumulation; the pre-call guard accumulator and the exact recomputation are
+our reported figures. A pre-call worst-case guard bound was computed before every
+paid call and enforced by both a per-model guard and one shared total guard;
+retries per cell were zero, there were zero terminal errors, zero
+response-format downgrades, and zero resume-skips, and every served model id
+matched its asserted id. Each raw response, tool trace, token usage, cost,
+served id, and parse exception was persisted before scoring.
+
+\paragraph{Statistics.}
+The unit is the issue. Where we summarise a proportion over $n$ issues we
+report a Clopper--Pearson 95\,\% interval. Paired within-issue contrasts use an
+issue-cluster bootstrap (10{,}000 resamples); because cells repeat within an
+issue, pooled cell counts are presented with a repeated-measures caveat and are
+not treated as independent. With $n\le 10$ (and $n=3$ for rejects) these
+intervals are necessarily wide and are reported for honesty, not power.

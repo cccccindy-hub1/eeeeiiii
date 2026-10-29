@@ -1,0 +1,2808 @@
+{
+  "document": "Gate 3-B External Feasibility Pilot analysis",
+  "gold_tier": "PROVISIONAL (mechanically adjudicated, single annotator; annotator2 NOT_OBTAINED, n=1). Against provisional, singly-adjudicated gold only.",
+  "basis": "against PROVISIONAL, singly-adjudicated gold; NOT an independent human-adjudicated validation; n independent units = 10 issues, cells are repeated measures",
+  "result_tag": "mock",
+  "n_independent_issues": 10,
+  "n_cells": 100,
+  "missing_cells": [],
+  "confirmatory_directional": {
+    "C1": {
+      "model": "gpt-4.1-mini",
+      "denominator_issues": 3,
+      "issues": [
+        "sympy__sympy-17318",
+        "sympy__sympy-17630",
+        "sympy__sympy-19783"
+      ],
+      "ua_per_issue": {
+        "sympy__sympy-17318": 0,
+        "sympy__sympy-17630": 0,
+        "sympy__sympy-19783": 0
+      },
+      "k": 0,
+      "exact": {
+        "k": 0,
+        "n": 3,
+        "point": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 1.0,
+        "method": "exact Clopper-Pearson (binomial tail grid)"
+      },
+      "issue_cluster_bootstrap": {
+        "point": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "method": "issue-cluster non-parametric bootstrap B=10000 seed=7",
+        "n_issues": 3
+      },
+      "per_condition_exploratory": {
+        "T3D-Escalate": {
+          "k": 0,
+          "n": 3
+        },
+        "T2A-T": {
+          "k": 0,
+          "n": 3
+        },
+        "T3A-T": {
+          "k": 0,
+          "n": 3
+        }
+      },
+      "directional_reproduced": false
+    },
+    "C2": {
+      "model": "deepseek-flash",
+      "denominator_issues": 10,
+      "k": 10,
+      "over_abstain_per_issue": {
+        "sympy__sympy-13615": 1,
+        "sympy__sympy-13974": 1,
+        "sympy__sympy-15349": 1,
+        "sympy__sympy-17318": 1,
+        "sympy__sympy-17630": 1,
+        "sympy__sympy-19783": 1,
+        "sympy__sympy-20590": 1,
+        "sympy__sympy-21847": 1,
+        "sympy__sympy-24213": 1,
+        "sympy__sympy-24443": 1
+      },
+      "exact": {
+        "k": 10,
+        "n": 10,
+        "point": 1.0,
+        "ci95_low": 0.0,
+        "ci95_high": 1.0,
+        "method": "exact Clopper-Pearson (binomial tail grid)"
+      },
+      "issue_cluster_bootstrap": {
+        "point": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "method": "issue-cluster non-parametric bootstrap B=10000 seed=7",
+        "n_issues": 10
+      },
+      "stratified_by_oracle_gold": {
+        "ACCEPT": {
+          "k": 7,
+          "n": 7,
+          "rate": 1.0
+        },
+        "REJECT": {
+          "k": 3,
+          "n": 3,
+          "rate": 1.0
+        }
+      },
+      "per_condition_exploratory": {
+        "T3D-Escalate": {
+          "k": 0,
+          "n": 10
+        },
+        "T2A-T": {
+          "k": 0,
+          "n": 10
+        },
+        "T3A-T": {
+          "k": 10,
+          "n": 10
+        }
+      },
+      "directional_reproduced": true
+    },
+    "rule": "directional reproduction iff point>0 AND issue-cluster bootstrap 95% CI lower bound > 0; no p-value"
+  },
+  "primary": {
+    "label": "PRIMARY: provisional gold n=10",
+    "n_issues": 10,
+    "per_model": {
+      "deepseek-flash": {
+        "decision_appropriateness": {
+          "T2D-T": {
+            "n_issues": 10,
+            "scored": 10,
+            "parse_or_error": 0,
+            "condition_DA_correct": 10,
+            "condition_DA_rate": 1.0,
+            "oracle_DA_correct": 0,
+            "oracle_DA_rate": 0.0,
+            "condition_gold_distribution": {
+              "NEED_EVIDENCE": 10
+            }
+          },
+          "T3D-Strict": {
+            "n_issues": 10,
+            "scored": 10,
+            "parse_or_error": 0,
+            "condition_DA_correct": 10,
+            "condition_DA_rate": 1.0,
+            "oracle_DA_correct": 0,
+            "oracle_DA_rate": 0.0,
+            "condition_gold_distribution": {
+              "NEED_EVIDENCE": 10
+            }
+          },
+          "T3D-Escalate": {
+            "n_issues": 10,
+            "scored": 0,
+            "parse_or_error": 10,
+            "condition_DA_correct": 0,
+            "condition_DA_rate": 0.0,
+            "oracle_DA_correct": 0,
+            "oracle_DA_rate": 0.0,
+            "condition_gold_distribution": {
+              "ACCEPT": 7,
+              "REJECT": 3
+            }
+          },
+          "T2A-T": {
+            "n_issues": 10,
+            "scored": 10,
+            "parse_or_error": 0,
+            "condition_DA_correct": 10,
+            "condition_DA_rate": 1.0,
+            "oracle_DA_correct": 10,
+            "oracle_DA_rate": 1.0,
+            "condition_gold_distribution": {
+              "ACCEPT": 7,
+              "REJECT": 3
+            }
+          },
+          "T3A-T": {
+            "n_issues": 10,
+            "scored": 10,
+            "parse_or_error": 0,
+            "condition_DA_correct": 0,
+            "condition_DA_rate": 0.0,
+            "oracle_DA_correct": 0,
+            "oracle_DA_rate": 0.0,
+            "condition_gold_distribution": {
+              "ACCEPT": 7,
+              "REJECT": 3
+            }
+          }
+        },
+        "restricted_abstention": {
+          "T2D-T": {
+            "correct_NEED": 10,
+            "n": 10,
+            "rate": 1.0,
+            "inappropriate_commitments": []
+          },
+          "T3D-Strict": {
+            "correct_NEED": 10,
+            "n": 10,
+            "rate": 1.0,
+            "inappropriate_commitments": []
+          }
+        },
+        "parse_or_transport_failure": {
+          "non_verdict_cells": 10,
+          "cells": 50,
+          "rate": 0.2,
+          "detail": [
+            {
+              "issue": "sympy__sympy-13615",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-13974",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-15349",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-17318",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-17630",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-19783",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-20590",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-21847",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-24213",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-24443",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            }
+          ]
+        },
+        "error_families": {
+          "parse_or_transport_failure": 10,
+          "over_abstention_under_sufficient_evidence": 10
+        }
+      },
+      "gpt-4.1-mini": {
+        "decision_appropriateness": {
+          "T2D-T": {
+            "n_issues": 10,
+            "scored": 10,
+            "parse_or_error": 0,
+            "condition_DA_correct": 10,
+            "condition_DA_rate": 1.0,
+            "oracle_DA_correct": 0,
+            "oracle_DA_rate": 0.0,
+            "condition_gold_distribution": {
+              "NEED_EVIDENCE": 10
+            }
+          },
+          "T3D-Strict": {
+            "n_issues": 10,
+            "scored": 10,
+            "parse_or_error": 0,
+            "condition_DA_correct": 10,
+            "condition_DA_rate": 1.0,
+            "oracle_DA_correct": 0,
+            "oracle_DA_rate": 0.0,
+            "condition_gold_distribution": {
+              "NEED_EVIDENCE": 10
+            }
+          },
+          "T3D-Escalate": {
+            "n_issues": 10,
+            "scored": 0,
+            "parse_or_error": 10,
+            "condition_DA_correct": 0,
+            "condition_DA_rate": 0.0,
+            "oracle_DA_correct": 0,
+            "oracle_DA_rate": 0.0,
+            "condition_gold_distribution": {
+              "ACCEPT": 7,
+              "REJECT": 3
+            }
+          },
+          "T2A-T": {
+            "n_issues": 10,
+            "scored": 10,
+            "parse_or_error": 0,
+            "condition_DA_correct": 10,
+            "condition_DA_rate": 1.0,
+            "oracle_DA_correct": 10,
+            "oracle_DA_rate": 1.0,
+            "condition_gold_distribution": {
+              "ACCEPT": 7,
+              "REJECT": 3
+            }
+          },
+          "T3A-T": {
+            "n_issues": 10,
+            "scored": 10,
+            "parse_or_error": 0,
+            "condition_DA_correct": 0,
+            "condition_DA_rate": 0.0,
+            "oracle_DA_correct": 0,
+            "oracle_DA_rate": 0.0,
+            "condition_gold_distribution": {
+              "ACCEPT": 7,
+              "REJECT": 3
+            }
+          }
+        },
+        "restricted_abstention": {
+          "T2D-T": {
+            "correct_NEED": 10,
+            "n": 10,
+            "rate": 1.0,
+            "inappropriate_commitments": []
+          },
+          "T3D-Strict": {
+            "correct_NEED": 10,
+            "n": 10,
+            "rate": 1.0,
+            "inappropriate_commitments": []
+          }
+        },
+        "parse_or_transport_failure": {
+          "non_verdict_cells": 10,
+          "cells": 50,
+          "rate": 0.2,
+          "detail": [
+            {
+              "issue": "sympy__sympy-13615",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-13974",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-15349",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-17318",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-17630",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-19783",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-20590",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-21847",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-24213",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            },
+            {
+              "issue": "sympy__sympy-24443",
+              "condition": "T3D-Escalate",
+              "parsed": "INVALID",
+              "error": ""
+            }
+          ]
+        },
+        "error_families": {
+          "parse_or_transport_failure": 10,
+          "over_abstention_under_sufficient_evidence": 10
+        }
+      }
+    },
+    "C1_gpt_unsupported_accept": {
+      "model": "gpt-4.1-mini",
+      "denominator_issues": 3,
+      "issues": [
+        "sympy__sympy-17318",
+        "sympy__sympy-17630",
+        "sympy__sympy-19783"
+      ],
+      "ua_per_issue": {
+        "sympy__sympy-17318": 0,
+        "sympy__sympy-17630": 0,
+        "sympy__sympy-19783": 0
+      },
+      "k": 0,
+      "exact": {
+        "k": 0,
+        "n": 3,
+        "point": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 1.0,
+        "method": "exact Clopper-Pearson (binomial tail grid)"
+      },
+      "issue_cluster_bootstrap": {
+        "point": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "method": "issue-cluster non-parametric bootstrap B=10000 seed=7",
+        "n_issues": 3
+      },
+      "per_condition_exploratory": {
+        "T3D-Escalate": {
+          "k": 0,
+          "n": 3
+        },
+        "T2A-T": {
+          "k": 0,
+          "n": 3
+        },
+        "T3A-T": {
+          "k": 0,
+          "n": 3
+        }
+      },
+      "directional_reproduced": false
+    },
+    "C2_deepseek_over_abstention": {
+      "model": "deepseek-flash",
+      "denominator_issues": 10,
+      "k": 10,
+      "over_abstain_per_issue": {
+        "sympy__sympy-13615": 1,
+        "sympy__sympy-13974": 1,
+        "sympy__sympy-15349": 1,
+        "sympy__sympy-17318": 1,
+        "sympy__sympy-17630": 1,
+        "sympy__sympy-19783": 1,
+        "sympy__sympy-20590": 1,
+        "sympy__sympy-21847": 1,
+        "sympy__sympy-24213": 1,
+        "sympy__sympy-24443": 1
+      },
+      "exact": {
+        "k": 10,
+        "n": 10,
+        "point": 1.0,
+        "ci95_low": 0.0,
+        "ci95_high": 1.0,
+        "method": "exact Clopper-Pearson (binomial tail grid)"
+      },
+      "issue_cluster_bootstrap": {
+        "point": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "method": "issue-cluster non-parametric bootstrap B=10000 seed=7",
+        "n_issues": 10
+      },
+      "stratified_by_oracle_gold": {
+        "ACCEPT": {
+          "k": 7,
+          "n": 7,
+          "rate": 1.0
+        },
+        "REJECT": {
+          "k": 3,
+          "n": 3,
+          "rate": 1.0
+        }
+      },
+      "per_condition_exploratory": {
+        "T3D-Escalate": {
+          "k": 0,
+          "n": 10
+        },
+        "T2A-T": {
+          "k": 0,
+          "n": 10
+        },
+        "T3A-T": {
+          "k": 10,
+          "n": 10
+        }
+      },
+      "directional_reproduced": true
+    },
+    "paired_contrasts": {
+      "gpt_vs_deepseek_verdict_agreement": {
+        "T2D-T": {
+          "agree": 10,
+          "n": 10,
+          "rate": 1.0
+        },
+        "T3D-Strict": {
+          "agree": 10,
+          "n": 10,
+          "rate": 1.0
+        },
+        "T3D-Escalate": {
+          "agree": 10,
+          "n": 10,
+          "rate": 1.0
+        },
+        "T2A-T": {
+          "agree": 10,
+          "n": 10,
+          "rate": 1.0
+        },
+        "T3A-T": {
+          "agree": 10,
+          "n": 10,
+          "rate": 1.0
+        }
+      },
+      "sufficient_minus_restricted_commitment": {
+        "deepseek-flash": {
+          "point": 0.3333,
+          "ci95_low": 0.3333,
+          "ci95_high": 0.3333,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=7",
+          "n_issues": 10,
+          "note": "per-issue commit-rate(sufficient)-commit-rate(restricted); positive = more commitment when more evidence is available"
+        },
+        "gpt-4.1-mini": {
+          "point": 0.3333,
+          "ci95_low": 0.3333,
+          "ci95_high": 0.3333,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=7",
+          "n_issues": 10,
+          "note": "per-issue commit-rate(sufficient)-commit-rate(restricted); positive = more commitment when more evidence is available"
+        }
+      }
+    },
+    "gpt_source_verification_failures": [
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "claim_contradicted"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "claim_contradicted"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "claim_contradicted"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      }
+    ],
+    "deepseek_source_verification_failures": [
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "claim_contradicted"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "claim_contradicted"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "claim_contradicted"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3D-Strict",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false",
+          "strict_403_denial"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [
+          "log:strict_denied"
+        ],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3D-Escalate",
+        "verdict": "INVALID",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [
+          "log"
+        ],
+        "escalation_granted": [
+          "log"
+        ],
+        "escalation_denied": [
+          "log:missing_reason",
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim": ""
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "source_flags": [
+          "fresh_false"
+        ],
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "reason_verbatim": "evidence is not linked/fresh for this patch and current tree; any apparent failure does not apply here and no decisive applicable failure is established"
+      }
+    ]
+  },
+  "per_issue_raw_verdicts": [
+    {
+      "issue": "sympy__sympy-13615",
+      "oracle_gold": "ACCEPT",
+      "deepseek-flash|T2D-T": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Strict": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Escalate": "INVALID",
+      "deepseek-flash|T2A-T": "ACCEPT",
+      "deepseek-flash|T3A-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T2D-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Strict": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Escalate": "INVALID",
+      "gpt-4.1-mini|T2A-T": "ACCEPT",
+      "gpt-4.1-mini|T3A-T": "NEED_EVIDENCE"
+    },
+    {
+      "issue": "sympy__sympy-13974",
+      "oracle_gold": "ACCEPT",
+      "deepseek-flash|T2D-T": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Strict": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Escalate": "INVALID",
+      "deepseek-flash|T2A-T": "ACCEPT",
+      "deepseek-flash|T3A-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T2D-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Strict": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Escalate": "INVALID",
+      "gpt-4.1-mini|T2A-T": "ACCEPT",
+      "gpt-4.1-mini|T3A-T": "NEED_EVIDENCE"
+    },
+    {
+      "issue": "sympy__sympy-15349",
+      "oracle_gold": "ACCEPT",
+      "deepseek-flash|T2D-T": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Strict": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Escalate": "INVALID",
+      "deepseek-flash|T2A-T": "ACCEPT",
+      "deepseek-flash|T3A-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T2D-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Strict": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Escalate": "INVALID",
+      "gpt-4.1-mini|T2A-T": "ACCEPT",
+      "gpt-4.1-mini|T3A-T": "NEED_EVIDENCE"
+    },
+    {
+      "issue": "sympy__sympy-17318",
+      "oracle_gold": "REJECT",
+      "deepseek-flash|T2D-T": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Strict": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Escalate": "INVALID",
+      "deepseek-flash|T2A-T": "REJECT",
+      "deepseek-flash|T3A-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T2D-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Strict": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Escalate": "INVALID",
+      "gpt-4.1-mini|T2A-T": "REJECT",
+      "gpt-4.1-mini|T3A-T": "NEED_EVIDENCE"
+    },
+    {
+      "issue": "sympy__sympy-17630",
+      "oracle_gold": "REJECT",
+      "deepseek-flash|T2D-T": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Strict": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Escalate": "INVALID",
+      "deepseek-flash|T2A-T": "REJECT",
+      "deepseek-flash|T3A-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T2D-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Strict": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Escalate": "INVALID",
+      "gpt-4.1-mini|T2A-T": "REJECT",
+      "gpt-4.1-mini|T3A-T": "NEED_EVIDENCE"
+    },
+    {
+      "issue": "sympy__sympy-19783",
+      "oracle_gold": "REJECT",
+      "deepseek-flash|T2D-T": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Strict": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Escalate": "INVALID",
+      "deepseek-flash|T2A-T": "REJECT",
+      "deepseek-flash|T3A-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T2D-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Strict": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Escalate": "INVALID",
+      "gpt-4.1-mini|T2A-T": "REJECT",
+      "gpt-4.1-mini|T3A-T": "NEED_EVIDENCE"
+    },
+    {
+      "issue": "sympy__sympy-20590",
+      "oracle_gold": "ACCEPT",
+      "deepseek-flash|T2D-T": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Strict": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Escalate": "INVALID",
+      "deepseek-flash|T2A-T": "ACCEPT",
+      "deepseek-flash|T3A-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T2D-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Strict": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Escalate": "INVALID",
+      "gpt-4.1-mini|T2A-T": "ACCEPT",
+      "gpt-4.1-mini|T3A-T": "NEED_EVIDENCE"
+    },
+    {
+      "issue": "sympy__sympy-21847",
+      "oracle_gold": "ACCEPT",
+      "deepseek-flash|T2D-T": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Strict": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Escalate": "INVALID",
+      "deepseek-flash|T2A-T": "ACCEPT",
+      "deepseek-flash|T3A-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T2D-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Strict": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Escalate": "INVALID",
+      "gpt-4.1-mini|T2A-T": "ACCEPT",
+      "gpt-4.1-mini|T3A-T": "NEED_EVIDENCE"
+    },
+    {
+      "issue": "sympy__sympy-24213",
+      "oracle_gold": "ACCEPT",
+      "deepseek-flash|T2D-T": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Strict": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Escalate": "INVALID",
+      "deepseek-flash|T2A-T": "ACCEPT",
+      "deepseek-flash|T3A-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T2D-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Strict": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Escalate": "INVALID",
+      "gpt-4.1-mini|T2A-T": "ACCEPT",
+      "gpt-4.1-mini|T3A-T": "NEED_EVIDENCE"
+    },
+    {
+      "issue": "sympy__sympy-24443",
+      "oracle_gold": "ACCEPT",
+      "deepseek-flash|T2D-T": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Strict": "NEED_EVIDENCE",
+      "deepseek-flash|T3D-Escalate": "INVALID",
+      "deepseek-flash|T2A-T": "ACCEPT",
+      "deepseek-flash|T3A-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T2D-T": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Strict": "NEED_EVIDENCE",
+      "gpt-4.1-mini|T3D-Escalate": "INVALID",
+      "gpt-4.1-mini|T2A-T": "ACCEPT",
+      "gpt-4.1-mini|T3A-T": "NEED_EVIDENCE"
+    }
+  ],
+  "gold_sensitivity_three_views": {
+    "provisional_all_10": {
+      "label": "provisional all 10",
+      "n_issues": 10,
+      "per_model": {
+        "deepseek-flash": {
+          "decision_appropriateness": {
+            "T2D-T": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 10,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "NEED_EVIDENCE": 10
+              }
+            },
+            "T3D-Strict": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 10,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "NEED_EVIDENCE": 10
+              }
+            },
+            "T3D-Escalate": {
+              "n_issues": 10,
+              "scored": 0,
+              "parse_or_error": 10,
+              "condition_DA_correct": 0,
+              "condition_DA_rate": 0.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 3
+              }
+            },
+            "T2A-T": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 10,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 10,
+              "oracle_DA_rate": 1.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 3
+              }
+            },
+            "T3A-T": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 0,
+              "condition_DA_rate": 0.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 3
+              }
+            }
+          },
+          "restricted_abstention": {
+            "T2D-T": {
+              "correct_NEED": 10,
+              "n": 10,
+              "rate": 1.0,
+              "inappropriate_commitments": []
+            },
+            "T3D-Strict": {
+              "correct_NEED": 10,
+              "n": 10,
+              "rate": 1.0,
+              "inappropriate_commitments": []
+            }
+          },
+          "parse_or_transport_failure": {
+            "non_verdict_cells": 10,
+            "cells": 50,
+            "rate": 0.2,
+            "detail": [
+              {
+                "issue": "sympy__sympy-13615",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-13974",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-15349",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-17318",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-17630",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-19783",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-20590",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-21847",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-24213",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-24443",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              }
+            ]
+          },
+          "error_families": {
+            "parse_or_transport_failure": 10,
+            "over_abstention_under_sufficient_evidence": 10
+          }
+        },
+        "gpt-4.1-mini": {
+          "decision_appropriateness": {
+            "T2D-T": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 10,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "NEED_EVIDENCE": 10
+              }
+            },
+            "T3D-Strict": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 10,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "NEED_EVIDENCE": 10
+              }
+            },
+            "T3D-Escalate": {
+              "n_issues": 10,
+              "scored": 0,
+              "parse_or_error": 10,
+              "condition_DA_correct": 0,
+              "condition_DA_rate": 0.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 3
+              }
+            },
+            "T2A-T": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 10,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 10,
+              "oracle_DA_rate": 1.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 3
+              }
+            },
+            "T3A-T": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 0,
+              "condition_DA_rate": 0.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 3
+              }
+            }
+          },
+          "restricted_abstention": {
+            "T2D-T": {
+              "correct_NEED": 10,
+              "n": 10,
+              "rate": 1.0,
+              "inappropriate_commitments": []
+            },
+            "T3D-Strict": {
+              "correct_NEED": 10,
+              "n": 10,
+              "rate": 1.0,
+              "inappropriate_commitments": []
+            }
+          },
+          "parse_or_transport_failure": {
+            "non_verdict_cells": 10,
+            "cells": 50,
+            "rate": 0.2,
+            "detail": [
+              {
+                "issue": "sympy__sympy-13615",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-13974",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-15349",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-17318",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-17630",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-19783",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-20590",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-21847",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-24213",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-24443",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              }
+            ]
+          },
+          "error_families": {
+            "parse_or_transport_failure": 10,
+            "over_abstention_under_sufficient_evidence": 10
+          }
+        }
+      },
+      "C1_gpt_unsupported_accept": {
+        "model": "gpt-4.1-mini",
+        "denominator_issues": 3,
+        "issues": [
+          "sympy__sympy-17318",
+          "sympy__sympy-17630",
+          "sympy__sympy-19783"
+        ],
+        "ua_per_issue": {
+          "sympy__sympy-17318": 0,
+          "sympy__sympy-17630": 0,
+          "sympy__sympy-19783": 0
+        },
+        "k": 0,
+        "exact": {
+          "k": 0,
+          "n": 3,
+          "point": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 1.0,
+          "method": "exact Clopper-Pearson (binomial tail grid)"
+        },
+        "issue_cluster_bootstrap": {
+          "point": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 0.0,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=7",
+          "n_issues": 3
+        },
+        "per_condition_exploratory": {
+          "T3D-Escalate": {
+            "k": 0,
+            "n": 3
+          },
+          "T2A-T": {
+            "k": 0,
+            "n": 3
+          },
+          "T3A-T": {
+            "k": 0,
+            "n": 3
+          }
+        },
+        "directional_reproduced": false
+      },
+      "C2_deepseek_over_abstention": {
+        "model": "deepseek-flash",
+        "denominator_issues": 10,
+        "k": 10,
+        "over_abstain_per_issue": {
+          "sympy__sympy-13615": 1,
+          "sympy__sympy-13974": 1,
+          "sympy__sympy-15349": 1,
+          "sympy__sympy-17318": 1,
+          "sympy__sympy-17630": 1,
+          "sympy__sympy-19783": 1,
+          "sympy__sympy-20590": 1,
+          "sympy__sympy-21847": 1,
+          "sympy__sympy-24213": 1,
+          "sympy__sympy-24443": 1
+        },
+        "exact": {
+          "k": 10,
+          "n": 10,
+          "point": 1.0,
+          "ci95_low": 0.0,
+          "ci95_high": 1.0,
+          "method": "exact Clopper-Pearson (binomial tail grid)"
+        },
+        "issue_cluster_bootstrap": {
+          "point": 1.0,
+          "ci95_low": 1.0,
+          "ci95_high": 1.0,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=7",
+          "n_issues": 10
+        },
+        "stratified_by_oracle_gold": {
+          "ACCEPT": {
+            "k": 7,
+            "n": 7,
+            "rate": 1.0
+          },
+          "REJECT": {
+            "k": 3,
+            "n": 3,
+            "rate": 1.0
+          }
+        },
+        "per_condition_exploratory": {
+          "T3D-Escalate": {
+            "k": 0,
+            "n": 10
+          },
+          "T2A-T": {
+            "k": 0,
+            "n": 10
+          },
+          "T3A-T": {
+            "k": 10,
+            "n": 10
+          }
+        },
+        "directional_reproduced": true
+      }
+    },
+    "drop_3_reject_issues": {
+      "label": "7 ACCEPT issues only; C1 not estimable",
+      "n_issues": 7,
+      "per_model": {
+        "deepseek-flash": {
+          "decision_appropriateness": {
+            "T2D-T": {
+              "n_issues": 7,
+              "scored": 7,
+              "parse_or_error": 0,
+              "condition_DA_correct": 7,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "NEED_EVIDENCE": 7
+              }
+            },
+            "T3D-Strict": {
+              "n_issues": 7,
+              "scored": 7,
+              "parse_or_error": 0,
+              "condition_DA_correct": 7,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "NEED_EVIDENCE": 7
+              }
+            },
+            "T3D-Escalate": {
+              "n_issues": 7,
+              "scored": 0,
+              "parse_or_error": 7,
+              "condition_DA_correct": 0,
+              "condition_DA_rate": 0.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7
+              }
+            },
+            "T2A-T": {
+              "n_issues": 7,
+              "scored": 7,
+              "parse_or_error": 0,
+              "condition_DA_correct": 7,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 7,
+              "oracle_DA_rate": 1.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7
+              }
+            },
+            "T3A-T": {
+              "n_issues": 7,
+              "scored": 7,
+              "parse_or_error": 0,
+              "condition_DA_correct": 0,
+              "condition_DA_rate": 0.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7
+              }
+            }
+          },
+          "restricted_abstention": {
+            "T2D-T": {
+              "correct_NEED": 7,
+              "n": 7,
+              "rate": 1.0,
+              "inappropriate_commitments": []
+            },
+            "T3D-Strict": {
+              "correct_NEED": 7,
+              "n": 7,
+              "rate": 1.0,
+              "inappropriate_commitments": []
+            }
+          },
+          "parse_or_transport_failure": {
+            "non_verdict_cells": 7,
+            "cells": 35,
+            "rate": 0.2,
+            "detail": [
+              {
+                "issue": "sympy__sympy-13615",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-13974",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-15349",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-20590",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-21847",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-24213",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-24443",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              }
+            ]
+          },
+          "error_families": {
+            "parse_or_transport_failure": 7,
+            "over_abstention_under_sufficient_evidence": 7
+          }
+        },
+        "gpt-4.1-mini": {
+          "decision_appropriateness": {
+            "T2D-T": {
+              "n_issues": 7,
+              "scored": 7,
+              "parse_or_error": 0,
+              "condition_DA_correct": 7,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "NEED_EVIDENCE": 7
+              }
+            },
+            "T3D-Strict": {
+              "n_issues": 7,
+              "scored": 7,
+              "parse_or_error": 0,
+              "condition_DA_correct": 7,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "NEED_EVIDENCE": 7
+              }
+            },
+            "T3D-Escalate": {
+              "n_issues": 7,
+              "scored": 0,
+              "parse_or_error": 7,
+              "condition_DA_correct": 0,
+              "condition_DA_rate": 0.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7
+              }
+            },
+            "T2A-T": {
+              "n_issues": 7,
+              "scored": 7,
+              "parse_or_error": 0,
+              "condition_DA_correct": 7,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 7,
+              "oracle_DA_rate": 1.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7
+              }
+            },
+            "T3A-T": {
+              "n_issues": 7,
+              "scored": 7,
+              "parse_or_error": 0,
+              "condition_DA_correct": 0,
+              "condition_DA_rate": 0.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7
+              }
+            }
+          },
+          "restricted_abstention": {
+            "T2D-T": {
+              "correct_NEED": 7,
+              "n": 7,
+              "rate": 1.0,
+              "inappropriate_commitments": []
+            },
+            "T3D-Strict": {
+              "correct_NEED": 7,
+              "n": 7,
+              "rate": 1.0,
+              "inappropriate_commitments": []
+            }
+          },
+          "parse_or_transport_failure": {
+            "non_verdict_cells": 7,
+            "cells": 35,
+            "rate": 0.2,
+            "detail": [
+              {
+                "issue": "sympy__sympy-13615",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-13974",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-15349",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-20590",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-21847",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-24213",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-24443",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              }
+            ]
+          },
+          "error_families": {
+            "parse_or_transport_failure": 7,
+            "over_abstention_under_sufficient_evidence": 7
+          }
+        }
+      },
+      "C1_gpt_unsupported_accept": {
+        "estimable": false,
+        "reason": "no REJECT issues in this view"
+      },
+      "C2_deepseek_over_abstention": {
+        "model": "deepseek-flash",
+        "denominator_issues": 7,
+        "k": 7,
+        "over_abstain_per_issue": {
+          "sympy__sympy-13615": 1,
+          "sympy__sympy-13974": 1,
+          "sympy__sympy-15349": 1,
+          "sympy__sympy-20590": 1,
+          "sympy__sympy-21847": 1,
+          "sympy__sympy-24213": 1,
+          "sympy__sympy-24443": 1
+        },
+        "exact": {
+          "k": 7,
+          "n": 7,
+          "point": 1.0,
+          "ci95_low": 0.0,
+          "ci95_high": 1.0,
+          "method": "exact Clopper-Pearson (binomial tail grid)"
+        },
+        "issue_cluster_bootstrap": {
+          "point": 1.0,
+          "ci95_low": 1.0,
+          "ci95_high": 1.0,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=7",
+          "n_issues": 7
+        },
+        "stratified_by_oracle_gold": {
+          "ACCEPT": {
+            "k": 7,
+            "n": 7,
+            "rate": 1.0
+          }
+        },
+        "per_condition_exploratory": {
+          "T3D-Escalate": {
+            "k": 0,
+            "n": 7
+          },
+          "T2A-T": {
+            "k": 0,
+            "n": 7
+          },
+          "T3A-T": {
+            "k": 7,
+            "n": 7
+          }
+        },
+        "directional_reproduced": true
+      }
+    },
+    "drop_recorded_disputes": {
+      "label": "disputed removed (n_disputed=0)",
+      "n_issues": 10,
+      "per_model": {
+        "deepseek-flash": {
+          "decision_appropriateness": {
+            "T2D-T": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 10,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "NEED_EVIDENCE": 10
+              }
+            },
+            "T3D-Strict": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 10,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "NEED_EVIDENCE": 10
+              }
+            },
+            "T3D-Escalate": {
+              "n_issues": 10,
+              "scored": 0,
+              "parse_or_error": 10,
+              "condition_DA_correct": 0,
+              "condition_DA_rate": 0.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 3
+              }
+            },
+            "T2A-T": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 10,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 10,
+              "oracle_DA_rate": 1.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 3
+              }
+            },
+            "T3A-T": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 0,
+              "condition_DA_rate": 0.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 3
+              }
+            }
+          },
+          "restricted_abstention": {
+            "T2D-T": {
+              "correct_NEED": 10,
+              "n": 10,
+              "rate": 1.0,
+              "inappropriate_commitments": []
+            },
+            "T3D-Strict": {
+              "correct_NEED": 10,
+              "n": 10,
+              "rate": 1.0,
+              "inappropriate_commitments": []
+            }
+          },
+          "parse_or_transport_failure": {
+            "non_verdict_cells": 10,
+            "cells": 50,
+            "rate": 0.2,
+            "detail": [
+              {
+                "issue": "sympy__sympy-13615",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-13974",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-15349",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-17318",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-17630",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-19783",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-20590",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-21847",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-24213",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-24443",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              }
+            ]
+          },
+          "error_families": {
+            "parse_or_transport_failure": 10,
+            "over_abstention_under_sufficient_evidence": 10
+          }
+        },
+        "gpt-4.1-mini": {
+          "decision_appropriateness": {
+            "T2D-T": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 10,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "NEED_EVIDENCE": 10
+              }
+            },
+            "T3D-Strict": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 10,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "NEED_EVIDENCE": 10
+              }
+            },
+            "T3D-Escalate": {
+              "n_issues": 10,
+              "scored": 0,
+              "parse_or_error": 10,
+              "condition_DA_correct": 0,
+              "condition_DA_rate": 0.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 3
+              }
+            },
+            "T2A-T": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 10,
+              "condition_DA_rate": 1.0,
+              "oracle_DA_correct": 10,
+              "oracle_DA_rate": 1.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 3
+              }
+            },
+            "T3A-T": {
+              "n_issues": 10,
+              "scored": 10,
+              "parse_or_error": 0,
+              "condition_DA_correct": 0,
+              "condition_DA_rate": 0.0,
+              "oracle_DA_correct": 0,
+              "oracle_DA_rate": 0.0,
+              "condition_gold_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 3
+              }
+            }
+          },
+          "restricted_abstention": {
+            "T2D-T": {
+              "correct_NEED": 10,
+              "n": 10,
+              "rate": 1.0,
+              "inappropriate_commitments": []
+            },
+            "T3D-Strict": {
+              "correct_NEED": 10,
+              "n": 10,
+              "rate": 1.0,
+              "inappropriate_commitments": []
+            }
+          },
+          "parse_or_transport_failure": {
+            "non_verdict_cells": 10,
+            "cells": 50,
+            "rate": 0.2,
+            "detail": [
+              {
+                "issue": "sympy__sympy-13615",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-13974",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-15349",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-17318",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-17630",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-19783",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-20590",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-21847",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-24213",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              },
+              {
+                "issue": "sympy__sympy-24443",
+                "condition": "T3D-Escalate",
+                "parsed": "INVALID",
+                "error": ""
+              }
+            ]
+          },
+          "error_families": {
+            "parse_or_transport_failure": 10,
+            "over_abstention_under_sufficient_evidence": 10
+          }
+        }
+      },
+      "C1_gpt_unsupported_accept": {
+        "model": "gpt-4.1-mini",
+        "denominator_issues": 3,
+        "issues": [
+          "sympy__sympy-17318",
+          "sympy__sympy-17630",
+          "sympy__sympy-19783"
+        ],
+        "ua_per_issue": {
+          "sympy__sympy-17318": 0,
+          "sympy__sympy-17630": 0,
+          "sympy__sympy-19783": 0
+        },
+        "k": 0,
+        "exact": {
+          "k": 0,
+          "n": 3,
+          "point": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 1.0,
+          "method": "exact Clopper-Pearson (binomial tail grid)"
+        },
+        "issue_cluster_bootstrap": {
+          "point": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 0.0,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=7",
+          "n_issues": 3
+        },
+        "per_condition_exploratory": {
+          "T3D-Escalate": {
+            "k": 0,
+            "n": 3
+          },
+          "T2A-T": {
+            "k": 0,
+            "n": 3
+          },
+          "T3A-T": {
+            "k": 0,
+            "n": 3
+          }
+        },
+        "directional_reproduced": false
+      },
+      "C2_deepseek_over_abstention": {
+        "model": "deepseek-flash",
+        "denominator_issues": 10,
+        "k": 10,
+        "over_abstain_per_issue": {
+          "sympy__sympy-13615": 1,
+          "sympy__sympy-13974": 1,
+          "sympy__sympy-15349": 1,
+          "sympy__sympy-17318": 1,
+          "sympy__sympy-17630": 1,
+          "sympy__sympy-19783": 1,
+          "sympy__sympy-20590": 1,
+          "sympy__sympy-21847": 1,
+          "sympy__sympy-24213": 1,
+          "sympy__sympy-24443": 1
+        },
+        "exact": {
+          "k": 10,
+          "n": 10,
+          "point": 1.0,
+          "ci95_low": 0.0,
+          "ci95_high": 1.0,
+          "method": "exact Clopper-Pearson (binomial tail grid)"
+        },
+        "issue_cluster_bootstrap": {
+          "point": 1.0,
+          "ci95_low": 1.0,
+          "ci95_high": 1.0,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=7",
+          "n_issues": 10
+        },
+        "stratified_by_oracle_gold": {
+          "ACCEPT": {
+            "k": 7,
+            "n": 7,
+            "rate": 1.0
+          },
+          "REJECT": {
+            "k": 3,
+            "n": 3,
+            "rate": 1.0
+          }
+        },
+        "per_condition_exploratory": {
+          "T3D-Escalate": {
+            "k": 0,
+            "n": 10
+          },
+          "T2A-T": {
+            "k": 0,
+            "n": 10
+          },
+          "T3A-T": {
+            "k": 10,
+            "n": 10
+          }
+        },
+        "directional_reproduced": true
+      }
+    }
+  },
+  "disputed_issues": [],
+  "do_not": [
+    "do not pool with the E1 22 fixtures",
+    "do not interpret restricted-regime NEED as reasoning calibration",
+    "do not extrapolate k/3 or k/10 to a population rate"
+  ]
+}

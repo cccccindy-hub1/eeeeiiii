@@ -1,0 +1,362 @@
+{
+  "api_calls_made_by_this_audit": 0,
+  "audit_version": "groundedreview-gate3b4-zero-api-strict-audit-v1",
+  "classification": {
+    "answer": "RESIDUAL MODEL EVIDENCE-INTERPRETATION / POLICY ERROR (over-abstention), NOT a legitimate evidential-standard difference and NOT a new protocol inconsistency",
+    "contributing_presentation_issue": "Serving a byte-identical file for f2p and p2p (same combined test-file run) is faithful to the harness but is an interpretability hazard: a sceptical model reads duplication as evidence of missing tests. This is a presentation/trust-rule hardening candidate for Gate 3-C, not a frozen-data defect.",
+    "residual_after_g3b3_fix": "This is the SINGLE remaining DeepSeek sufficient-evidence over-abstention after the G3-B.3 protocol repair (the 9/10 -> 1/10 residual).",
+    "why_not_legitimate_standard_difference": [
+      "Under T3D-Escalate the decisive post-patch outcomes were actually reachable and granted (f2p/p2p logs 200); the declared acceptance test was present and passing. Withholding therefore does not explain the NEED.",
+      "The abstention rests on two factually wrong readings: (A) that all three logs are identical, and (B) that the declared acceptance test is missing. Both are contradicted by the frozen logs (see fact-check).",
+      "T2A-T abstention is partly understandable (aggregate counts without rendered per-test results plus self-raised code doubts), but T3A shows that once per-test outcomes are rendered the same model accepts correctly — confirming the evidence objectively supports ACCEPT."
+    ],
+    "why_not_protocol_inconsistency": [
+      "The protocol behaved identically and correctly across cells: the artifact id, linkage, freshness, coverage counts and served logs are the same frozen record; T3A rendered the very outcomes T3D-Escalate granted.",
+      "The differing decision traces to the MODEL interpretation of an ambiguous presentation (byte-identical f2p/p2p file), not to different information being served by condition in a way that contradicts the protocol."
+    ]
+  },
+  "coverage_trust_rules_by_condition": {
+    "T2A-T": "static tier-A surface with aggregate F2P/P2P COUNTS (1/1, 4/4) but no rendered per-test outcomes to read",
+    "T2D-T": "static tier-D surface, no tools; maintainer outcomes withheld; symptom only",
+    "T3A-T_active": "active tier-A; artifact + per-test f2p log rendered, showing test_tensor_product_simp PASSED and the four P2P PASSED; model then ACCEPTs",
+    "T3A-T_note": "the model additionally doubted the patch from its own reading of the candidate test assertions",
+    "T3D-Escalate": "model CAN escalate and request f2p/p2p logs; granted 200. The model in fact received them but mis-read the identical-file artifact as missing tests and over-weighted the candidate-added test",
+    "T3D-Strict": "active tools; f2p/p2p logs return 403/disabled; consistency adjudicates symptom only and states acceptance outcomes are not adjudicated; coverage shows execution counts but not outcomes"
+  },
+  "declared_gold_test_sets": {
+    "FAIL_TO_PASS_declared": [
+      "test_tensor_product_simp"
+    ],
+    "PASS_TO_PASS_declared": [
+      "test_tensor_product_abstract",
+      "test_tensor_product_expand",
+      "test_tensor_product_commutator",
+      "test_issue_5923"
+    ],
+    "dataset_resolved_flag": true
+  },
+  "document": "Gate 3-B.4 task 7 SymPy-13974 dedicated DeepSeek audit",
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold carried unchanged from Gate 3-A.1; no second adjudicator has been obtained as of Gate 3-B.4. No Cohen kappa is reported and gold is never called human-adjudicated. Gate 3-B.4 audits model behaviour against this PROVISIONAL gold only; the same AI operator performing the audit is NOT an independent human adjudicator."
+  },
+  "instance_id": "sympy__sympy-13974",
+  "model": "deepseek-flash",
+  "model_claims_fact_check": {
+    "claim_A_all_three_logs_byte_identical": {
+      "model_claim": "f2p, p2p and p2p_baseline logs are byte-identical",
+      "reality": {
+        "f2p_equals_p2p": true,
+        "f2p_sha": "1c677f20f23831419112d5d0df46a1e238392a0beea4acbc60e8a75e12c5ad76",
+        "p2p_baseline_sha": "8e20e92957a268913eb69322985417c7ffcdb9172d724a8d574ba05a7f5f6332",
+        "p2p_equals_baseline": false,
+        "p2p_sha": "1c677f20f23831419112d5d0df46a1e238392a0beea4acbc60e8a75e12c5ad76"
+      },
+      "verdict": "PARTLY WRONG: f2p and p2p post-patch logs ARE byte-identical (the same tensor-product test file run), but p2p_baseline is a DIFFERENT sha; the three logs are not all identical."
+    },
+    "claim_B_declared_acceptance_test_absent": {
+      "model_claim": "the raw logs do not contain the declared FAIL_TO_PASS acceptance test",
+      "reality": {
+        "declared_F2P": [
+          "test_tensor_product_simp"
+        ],
+        "declared_F2P_present_and_passing_in_f2p_log": true,
+        "test_the_model_expected": "test_tensor_product_power",
+        "that_test_in_logs": false,
+        "what_test_tensor_product_power_is": "a test added inside the CANDIDATE model_patch, NOT a maintainer-declared FAIL_TO_PASS test"
+      },
+      "verdict": "FALSE: the declared FAIL_TO_PASS test test_tensor_product_simp IS present and PASSED. The model confused the maintainer-declared acceptance test with a different test (test_tensor_product_power) that the candidate patch itself introduces."
+    },
+    "declared_P2P_all_present_and_passing": true
+  },
+  "oracle_gold_PROVISIONAL": "ACCEPT",
+  "per_condition": {
+    "T2A-T": {
+      "condition_gold": "ACCEPT",
+      "f2p_or_p2p_log_granted": false,
+      "final_verdict_g3b3": "NEED_EVIDENCE",
+      "model_reasoning_full": "The artifact reports only aggregate counts (FAIL_TO_PASS 1/1, PASS_TO_PASS 4/4) with no rendered per-check outcomes, so I cannot read the actual executed results myself. Additionally, the patch's own test file contains assertions that appear inconsistent with the implemented behavior (e.g., TP(1,1)**2 == TP(1,1) and TP(1,Pauli(3))**2 == TP(1,1) rely on Pauli(3)**2 simplifying to 1 and on numeric extraction, while the new _eval_power distributes exp to each arg), and the doctest change to tensor_product_simp output is not clearly covered by the declared set. No decisive applicable failure is rendered, so I cannot REJECT; but the presentation is not a complete, readable green success, so I cannot ACCEPT.",
+      "outcomes_visible_to_model": "aggregate counts only / outcomes withheld",
+      "tool_requests": []
+    },
+    "T3A-T": {
+      "condition_gold": "ACCEPT",
+      "f2p_or_p2p_log_granted": true,
+      "final_verdict_g3b3": "ACCEPT",
+      "model_reasoning_full": "Evidence is intact and applies to this patch: linkage verified (base_commit 84c1259 and patch_sha256 e6680a7 both match), freshness is TRUE (authoritative restage tree bf56cbc equals the attested run tree), and coverage is complete (1/1 declared FAIL_TO_PASS and 4/4 scoped PASS_TO_PASS executed, no missing ids). Outcomes show success: the acceptance check test_tensor_product_simp PASSED, all four scoped regression tests PASSED with no regressions or pre-existing bad ids, and the symptom log shows the pre-patch failure ('1x1**2') becoming the expected '1x1 1x1' post-patch, matching the issue's expected results in [5] and [9]. The added _eval_power distributes the exponent over each TensorProduct argument, which is the correct fix, and the docstring update in tensor_product_simp reflects the new behavior. Author claim is consistent with the evidence.",
+      "outcomes_visible_to_model": "post-patch per-test f2p/p2P outcomes rendered",
+      "tool_requests": [
+        {
+          "args": {},
+          "http_status": 200,
+          "response_excerpt": "{\"artifact\": {\"artifact_id\": \"art_42af95edfb29747c\", \"base_commit\": \"84c125972ad535b2dfb245f8d311d347b45e5b8a\", \"fail_to_pass\": {\"test_tensor_product_simp\": \"PASSED\"}, \"finished_at\": \"2026-10-25T18:20:40+00:00\", \"instance_id\": \"sympy__sympy-13974\", \"log_digests\": {\"f2p\": \"1c677f20f23831419112d5d0df46a1e238392a0beea4acbc60e8a75e12c5ad76\", \"p2p\": \"1c677f20f23831419112d5d0df46a1e238392a0beea4acbc60e8a75e12c5ad76\", \"p2p_baseline\": \"8e20e92957a268913eb69322985417c7ffcdb9172d724a8d574ba05a7f5f6332\", \"symptom\": \"b161d97e9f43dfeaa7c7520c46a61000dda57e97b7aa42da0ef2e79eb1d11f13\"}, \"pass_to_pass_baselin",
+          "tool": "get_test_artifact",
+          "turn": 0
+        },
+        {
+          "args": {},
+          "http_status": 200,
+          "response_excerpt": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"84c125972ad535b2dfb245f8d311d347b45e5b8a\", \"record_patch_sha256\": \"e6680a7bf29762b056f96772ab732787ef9bb9ce5750be49e728565f6fc32faa\"}",
+          "tool": "verify_artifact_linkage",
+          "turn": 0
+        },
+        {
+          "args": {},
+          "http_status": 200,
+          "response_excerpt": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"bf56cbca1daf1db1c75cc20d556358b803523dfe\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"bf56cbca1daf1db1c75cc20d556358b803523dfe\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:20:28+00:00\", \"attestation_built_at\": \"2026-",
+          "tool": "check_evidence_freshness",
+          "turn": 0
+        },
+        {
+          "args": {},
+          "http_status": 200,
+          "response_excerpt": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 4, \"executed\": 4, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+          "tool": "check_test_coverage",
+          "turn": 0
+        },
+        {
+          "args": {
+            "claim": "Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass."
+          },
+          "http_status": 200,
+          "response_excerpt": "{\"verdict\": \"consistent\", \"reason\": \"executed acceptance/regression checks show no failure\", \"failed_acceptance_checks\": 0, \"regression_checks\": 0, \"executed_checks\": 5}",
+          "tool": "check_claim_consistency",
+          "turn": 0
+        },
+        {
+          "args": {
+            "name": "f2p"
+          },
+          "http_status": 200,
+          "response_excerpt": "$ C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpDysd9i\\Scripts\\python.exe -m pytest sympy/physics/quantum/tests/test_tensorproduct.py -v --tb=short -p no:cacheprovider  (exit 0, 4s)\n--- stdout ---\n============================= test session starts =============================\nplatform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpDysd9i\\Scripts\\python.exe\narchitecture: 64-bit\ncache:        yes\nground types: python \n\nrootdir: C:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\ncollecting ... collected 7 items\n\nsympy/physics",
+          "tool": "get_run_log",
+          "turn": 1
+        },
+        {
+          "args": {
+            "name": "symptom"
+          },
+          "http_status": 200,
+          "response_excerpt": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: t1 tensor_product_simp = 1x1**2\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Mapping, defaultdict\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.",
+          "tool": "get_run_log",
+          "turn": 1
+        }
+      ]
+    },
+    "T3D-Escalate": {
+      "condition_gold": "ACCEPT",
+      "f2p_or_p2p_log_granted": true,
+      "final_verdict_g3b3": "NEED_EVIDENCE",
+      "model_reasoning_full": "The claim-consistency service says \"consistent,\" but that is based on \"normalised verdicts\" of an artifact whose raw logs demonstrably do not contain the declared acceptance test. The raw logs are the ground truth here, and they contradict the coverage report.\n\nSummary of what I can trust:\n- **Linkage**: intact (base_commit and patch_sha256 match).\n- **Freshness**: fresh=true (authoritative restage tree matches).\n- **Symptom**: removed (probe passes post-patch).\n- **Coverage**: tool says complete (1/1 F2P, 4/4 P2P), **but** the raw f2p/p2p/p2p_baseline logs are byte-identical and contain only ",
+      "outcomes_visible_to_model": "post-patch f2p/p2p logs requestable under escalated adjudication",
+      "tool_requests": [
+        {
+          "args": {},
+          "http_status": 200,
+          "response_excerpt": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"84c125972ad535b2dfb245f8d311d347b45e5b8a\", \"record_patch_sha256\": \"e6680a7bf29762b056f96772ab732787ef9bb9ce5750be49e728565f6fc32faa\"}",
+          "tool": "verify_artifact_linkage",
+          "turn": 0
+        },
+        {
+          "args": {},
+          "http_status": 200,
+          "response_excerpt": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"bf56cbca1daf1db1c75cc20d556358b803523dfe\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"bf56cbca1daf1db1c75cc20d556358b803523dfe\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:20:28+00:00\", \"attestation_built_at\": \"2026-",
+          "tool": "check_evidence_freshness",
+          "turn": 0
+        },
+        {
+          "args": {},
+          "http_status": 200,
+          "response_excerpt": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 4, \"executed\": 4, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+          "tool": "check_test_coverage",
+          "turn": 0
+        },
+        {
+          "args": {
+            "name": "symptom"
+          },
+          "http_status": 200,
+          "response_excerpt": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: t1 tensor_product_simp = 1x1**2\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Mapping, defaultdict\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.",
+          "tool": "get_run_log",
+          "turn": 0
+        },
+        {
+          "args": {
+            "name": "f2p",
+            "reason": "Diagnostic tier withholds acceptance outcomes; linkage, freshness, and coverage are all verified intact, so the only remaining question for ACCEPT vs REJECT is whether the single declared FAIL_TO_PASS acceptance check actually passed on this exact tree."
+          },
+          "http_status": 200,
+          "response_excerpt": "# TIER ESCALATION: this acceptance-test log reveals maintainer verdict columns; your stated reason and this access are recorded.\n$ C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpDysd9i\\Scripts\\python.exe -m pytest sympy/physics/quantum/tests/test_tensorproduct.py -v --tb=short -p no:cacheprovider  (exit 0, 4s)\n--- stdout ---\n============================= test session starts =============================\nplatform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpDysd9i\\Scripts\\python.exe\narchitecture: 64-bit\ncache:        yes\nground t",
+          "tool": "get_run_log",
+          "turn": 1
+        },
+        {
+          "args": {
+            "name": "p2p",
+            "reason": "Need the scoped regression verdicts for the 4 declared PASS_TO_PASS checks to confirm the new _eval_power does not break existing tensorproduct behavior on this exact tree."
+          },
+          "http_status": 200,
+          "response_excerpt": "# TIER ESCALATION: this acceptance-test log reveals maintainer verdict columns; your stated reason and this access are recorded.\n$ C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpDysd9i\\Scripts\\python.exe -m pytest sympy/physics/quantum/tests/test_tensorproduct.py -v --tb=short -p no:cacheprovider  (exit 0, 4s)\n--- stdout ---\n============================= test session starts =============================\nplatform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpDysd9i\\Scripts\\python.exe\narchitecture: 64-bit\ncache:        yes\nground t",
+          "tool": "get_run_log",
+          "turn": 1
+        },
+        {
+          "args": {
+            "reason": "The author claims the fix is fully correct and all relevant tests pass; the served f2p/p2p logs show only 7 pre-existing tests with the new test_tensor_product_power absent, so I need to adjudicate the claim against actual acceptance outcomes."
+          },
+          "http_status": 200,
+          "response_excerpt": "{\"verdict\": \"consistent\", \"reason\": \"the claim is consistent with the normalised verdicts of this artifact\", \"escalated\": true}",
+          "tool": "check_claim_consistency",
+          "turn": 2
+        },
+        {
+          "args": {
+            "name": "p2p_baseline",
+            "reason": "To determine whether the 7 tests shown are the pre-patch baseline set and whether the declared acceptance test (test_tensor_product_power) was ever executed, distinguishing a genuinely passing acceptance run from a run that silently omitted the new test."
+          },
+          "http_status": 200,
+          "response_excerpt": "# TIER ESCALATION: this acceptance-test log reveals maintainer verdict columns; your stated reason and this access are recorded.\n$ C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpDysd9i\\Scripts\\python.exe -m pytest sympy/physics/quantum/tests/test_tensorproduct.py -v --tb=short -p no:cacheprovider  (exit 0, 4s)\n--- stdout ---\n============================= test session starts =============================\nplatform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpDysd9i\\Scripts\\python.exe\narchitecture: 64-bit\ncache:        yes\nground t",
+          "tool": "get_run_log",
+          "turn": 2
+        },
+        {
+          "args": {
+            "reason": "The coverage tool reports the 1 declared FAIL_TO_PASS test as executed, but all three raw logs (f2p, p2p, p2p_baseline) are identical and contain only 7 pre-existing tests with test_tensor_product_power entirely absent. I need to resolve whether the author's 'all relevant tests pass' claim is actually backed by an executed acceptance test or contradicted by the logs."
+          },
+          "http_status": 200,
+          "response_excerpt": "{\"verdict\": \"consistent\", \"reason\": \"the claim is consistent with the normalised verdicts of this artifact\", \"escalated\": true}",
+          "tool": "check_claim_consistency",
+          "turn": 3
+        }
+      ]
+    },
+    "T3D-Strict": {
+      "condition_gold": "NEED_EVIDENCE",
+      "f2p_or_p2p_log_granted": false,
+      "final_verdict_g3b3": "NEED_EVIDENCE",
+      "model_reasoning_full": "Linkage is intact (base_commit and patch_sha256 match, authentic signature), freshness is TRUE (authoritative restage tree equals attestation tree), and coverage is complete (1/1 declared acceptance executed, 4/4 scoped regression checks executed). The issue-symptom probe flips from FAIL pre-patch to OK post-patch, and the registered author statement is consistent with that diagnostic. However, under the STRICT policy all maintainer acceptance-test and scoped-regression verdicts are withheld (403/disabled), so no tool exposes whether the executed acceptance check passes or whether the 4 scoped regression checks pass. Coverage confirms execution but not outcomes. Therefore I cannot establish the failure-free success required for ACCEPT, and there is no decisive applicable failure to justify REJECT.",
+      "outcomes_visible_to_model": "aggregate counts only / outcomes withheld",
+      "tool_requests": [
+        {
+          "args": {},
+          "http_status": 200,
+          "response_excerpt": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"84c125972ad535b2dfb245f8d311d347b45e5b8a\", \"record_patch_sha256\": \"e6680a7bf29762b056f96772ab732787ef9bb9ce5750be49e728565f6fc32faa\"}",
+          "tool": "verify_artifact_linkage",
+          "turn": 0
+        },
+        {
+          "args": {},
+          "http_status": 200,
+          "response_excerpt": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"bf56cbca1daf1db1c75cc20d556358b803523dfe\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"bf56cbca1daf1db1c75cc20d556358b803523dfe\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:20:28+00:00\", \"attestation_built_at\": \"2026-",
+          "tool": "check_evidence_freshness",
+          "turn": 0
+        },
+        {
+          "args": {},
+          "http_status": 200,
+          "response_excerpt": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 4, \"executed\": 4, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+          "tool": "check_test_coverage",
+          "turn": 0
+        },
+        {
+          "args": {
+            "claim": "Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass."
+          },
+          "http_status": 200,
+          "response_excerpt": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}",
+          "tool": "check_claim_consistency",
+          "turn": 0
+        },
+        {
+          "args": {
+            "name": "symptom"
+          },
+          "http_status": 200,
+          "response_excerpt": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: t1 tensor_product_simp = 1x1**2\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Mapping, defaultdict\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.",
+          "tool": "get_run_log",
+          "turn": 0
+        }
+      ]
+    }
+  },
+  "store_log_facts": {
+    "f2p": {
+      "bytes": 3840,
+      "contains_candidate_added_test_tensor_product_power": false,
+      "contains_declared_F2P_test_tensor_product_simp": true,
+      "file": "art_42af95edfb29747c.f2p.log",
+      "sha256": "1c677f20f23831419112d5d0df46a1e238392a0beea4acbc60e8a75e12c5ad76",
+      "status_counts": {
+        "PASSED": 7
+      },
+      "unique_test_tokens": [
+        "test_eval_trace",
+        "test_issue_5923",
+        "test_tensor_product_abstract",
+        "test_tensor_product_commutator",
+        "test_tensor_product_dagger",
+        "test_tensor_product_expand",
+        "test_tensor_product_simp",
+        "test_tensorproduct"
+      ]
+    },
+    "p2p": {
+      "bytes": 3840,
+      "contains_candidate_added_test_tensor_product_power": false,
+      "contains_declared_F2P_test_tensor_product_simp": true,
+      "file": "art_42af95edfb29747c.p2p.log",
+      "sha256": "1c677f20f23831419112d5d0df46a1e238392a0beea4acbc60e8a75e12c5ad76",
+      "status_counts": {
+        "PASSED": 7
+      },
+      "unique_test_tokens": [
+        "test_eval_trace",
+        "test_issue_5923",
+        "test_tensor_product_abstract",
+        "test_tensor_product_commutator",
+        "test_tensor_product_dagger",
+        "test_tensor_product_expand",
+        "test_tensor_product_simp",
+        "test_tensorproduct"
+      ]
+    },
+    "p2p_baseline": {
+      "bytes": 3840,
+      "contains_candidate_added_test_tensor_product_power": false,
+      "contains_declared_F2P_test_tensor_product_simp": true,
+      "file": "art_42af95edfb29747c.p2p_baseline.log",
+      "sha256": "8e20e92957a268913eb69322985417c7ffcdb9172d724a8d574ba05a7f5f6332",
+      "status_counts": {
+        "PASSED": 7
+      },
+      "unique_test_tokens": [
+        "test_eval_trace",
+        "test_issue_5923",
+        "test_tensor_product_abstract",
+        "test_tensor_product_commutator",
+        "test_tensor_product_dagger",
+        "test_tensor_product_expand",
+        "test_tensor_product_simp",
+        "test_tensorproduct"
+      ]
+    },
+    "symptom": {
+      "bytes": 2394,
+      "contains_candidate_added_test_tensor_product_power": false,
+      "contains_declared_F2P_test_tensor_product_simp": false,
+      "file": "art_42af95edfb29747c.symptom.log",
+      "sha256": "b161d97e9f43dfeaa7c7520c46a61000dda57e97b7aa42da0ef2e79eb1d11f13",
+      "status_counts": {},
+      "unique_test_tokens": []
+    }
+  },
+  "verdict_pattern": {
+    "T2A-T": "NEED_EVIDENCE",
+    "T2D-T": "NEED_EVIDENCE",
+    "T3A-T": "ACCEPT",
+    "T3D-Escalate": "NEED_EVIDENCE",
+    "T3D-Strict": "NEED_EVIDENCE"
+  }
+}

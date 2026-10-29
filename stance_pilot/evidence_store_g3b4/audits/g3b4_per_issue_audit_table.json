@@ -1,0 +1,623 @@
+{
+  "audit_version": "groundedreview-gate3b4-zero-api-strict-audit-v1",
+  "columns": "oracle gold (PROVISIONAL n=1 annotator2 NOT_OBTAINED); DeepSeek and GPT verdicts per condition for G3-B and G3-B.3; GPT T3D-Strict audit fields; blind primary code; special-focus flags",
+  "document": "Gate 3-B.4 per-issue audit master table",
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold carried unchanged from Gate 3-A.1; no second adjudicator has been obtained as of Gate 3-B.4. No Cohen kappa is reported and gold is never called human-adjudicated. Gate 3-B.4 audits model behaviour against this PROVISIONAL gold only; the same AI operator performing the audit is NOT an independent human adjudicator."
+  },
+  "rows": [
+    {
+      "deepseek": {
+        "T2A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "ACCEPT",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        }
+      },
+      "gpt": {
+        "T2A-T": {
+          "g3b": "ACCEPT",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        }
+      },
+      "gpt_T3D_Strict_audit": {
+        "acceptance_verdict_reachable": false,
+        "artifact_fetched_saw_baseline_map": false,
+        "error_family": "UNSUPPORTED_ACCEPT",
+        "final_verdict": "ACCEPT",
+        "nondecisive_upgraded_to_sufficient": true,
+        "primary_blind_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE"
+      },
+      "issue": "13615",
+      "oracle_gold_PROVISIONAL": "ACCEPT",
+      "special_focus": {
+        "is_DeepSeek_residual_overabstention_13974": false,
+        "is_GPT_false_accept_family_F1_17318": false,
+        "is_GPT_reject_to_need_family_F2_17630": false
+      }
+    },
+    {
+      "deepseek": {
+        "T2A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        }
+      },
+      "gpt": {
+        "T2A-T": {
+          "g3b": "ACCEPT",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        }
+      },
+      "gpt_T3D_Strict_audit": {
+        "acceptance_verdict_reachable": false,
+        "artifact_fetched_saw_baseline_map": false,
+        "error_family": "UNSUPPORTED_ACCEPT",
+        "final_verdict": "ACCEPT",
+        "nondecisive_upgraded_to_sufficient": true,
+        "primary_blind_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE"
+      },
+      "issue": "13974",
+      "oracle_gold_PROVISIONAL": "ACCEPT",
+      "special_focus": {
+        "is_DeepSeek_residual_overabstention_13974": true,
+        "is_GPT_false_accept_family_F1_17318": false,
+        "is_GPT_reject_to_need_family_F2_17630": false
+      }
+    },
+    {
+      "deepseek": {
+        "T2A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        }
+      },
+      "gpt": {
+        "T2A-T": {
+          "g3b": "ACCEPT",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        }
+      },
+      "gpt_T3D_Strict_audit": {
+        "acceptance_verdict_reachable": false,
+        "artifact_fetched_saw_baseline_map": false,
+        "error_family": "UNSUPPORTED_ACCEPT",
+        "final_verdict": "ACCEPT",
+        "nondecisive_upgraded_to_sufficient": true,
+        "primary_blind_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE"
+      },
+      "issue": "15349",
+      "oracle_gold_PROVISIONAL": "ACCEPT",
+      "special_focus": {
+        "is_DeepSeek_residual_overabstention_13974": false,
+        "is_GPT_false_accept_family_F1_17318": false,
+        "is_GPT_reject_to_need_family_F2_17630": false
+      }
+    },
+    {
+      "deepseek": {
+        "T2A-T": {
+          "g3b": "REJECT",
+          "g3b3": "REJECT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "REJECT",
+          "g3b3": "REJECT"
+        },
+        "T3D-Escalate": {
+          "g3b": "REJECT",
+          "g3b3": "REJECT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        }
+      },
+      "gpt": {
+        "T2A-T": {
+          "g3b": "ACCEPT",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "REJECT",
+          "g3b3": "REJECT"
+        },
+        "T3D-Escalate": {
+          "g3b": "REJECT",
+          "g3b3": "REJECT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        }
+      },
+      "gpt_T3D_Strict_audit": {
+        "acceptance_verdict_reachable": false,
+        "artifact_fetched_saw_baseline_map": false,
+        "error_family": "UNSUPPORTED_ACCEPT",
+        "final_verdict": "ACCEPT",
+        "nondecisive_upgraded_to_sufficient": true,
+        "primary_blind_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE"
+      },
+      "issue": "17318",
+      "oracle_gold_PROVISIONAL": "REJECT",
+      "special_focus": {
+        "is_DeepSeek_residual_overabstention_13974": false,
+        "is_GPT_false_accept_family_F1_17318": true,
+        "is_GPT_reject_to_need_family_F2_17630": false
+      }
+    },
+    {
+      "deepseek": {
+        "T2A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "REJECT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "REJECT"
+        },
+        "T3D-Escalate": {
+          "g3b": "REJECT",
+          "g3b3": "REJECT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        }
+      },
+      "gpt": {
+        "T2A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "REJECT",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        }
+      },
+      "gpt_T3D_Strict_audit": {
+        "acceptance_verdict_reachable": false,
+        "artifact_fetched_saw_baseline_map": false,
+        "error_family": "UNSUPPORTED_ACCEPT",
+        "final_verdict": "ACCEPT",
+        "nondecisive_upgraded_to_sufficient": true,
+        "primary_blind_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE"
+      },
+      "issue": "17630",
+      "oracle_gold_PROVISIONAL": "REJECT",
+      "special_focus": {
+        "is_DeepSeek_residual_overabstention_13974": false,
+        "is_GPT_false_accept_family_F1_17318": false,
+        "is_GPT_reject_to_need_family_F2_17630": true
+      }
+    },
+    {
+      "deepseek": {
+        "T2A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "REJECT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "REJECT",
+          "g3b3": "REJECT"
+        },
+        "T3D-Escalate": {
+          "g3b": "REJECT",
+          "g3b3": "REJECT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        }
+      },
+      "gpt": {
+        "T2A-T": {
+          "g3b": "REJECT",
+          "g3b3": "REJECT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "REJECT",
+          "g3b3": "REJECT"
+        },
+        "T3D-Escalate": {
+          "g3b": "REJECT",
+          "g3b3": "REJECT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        }
+      },
+      "gpt_T3D_Strict_audit": {
+        "acceptance_verdict_reachable": false,
+        "artifact_fetched_saw_baseline_map": false,
+        "error_family": "CORRECT_ABSTENTION",
+        "final_verdict": "NEED_EVIDENCE",
+        "nondecisive_upgraded_to_sufficient": false,
+        "primary_blind_code": null
+      },
+      "issue": "19783",
+      "oracle_gold_PROVISIONAL": "REJECT",
+      "special_focus": {
+        "is_DeepSeek_residual_overabstention_13974": false,
+        "is_GPT_false_accept_family_F1_17318": false,
+        "is_GPT_reject_to_need_family_F2_17630": false
+      }
+    },
+    {
+      "deepseek": {
+        "T2A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        }
+      },
+      "gpt": {
+        "T2A-T": {
+          "g3b": "ACCEPT",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        }
+      },
+      "gpt_T3D_Strict_audit": {
+        "acceptance_verdict_reachable": false,
+        "artifact_fetched_saw_baseline_map": true,
+        "error_family": "CORRECT_ABSTENTION",
+        "final_verdict": "NEED_EVIDENCE",
+        "nondecisive_upgraded_to_sufficient": false,
+        "primary_blind_code": null
+      },
+      "issue": "20590",
+      "oracle_gold_PROVISIONAL": "ACCEPT",
+      "special_focus": {
+        "is_DeepSeek_residual_overabstention_13974": false,
+        "is_GPT_false_accept_family_F1_17318": false,
+        "is_GPT_reject_to_need_family_F2_17630": false
+      }
+    },
+    {
+      "deepseek": {
+        "T2A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        }
+      },
+      "gpt": {
+        "T2A-T": {
+          "g3b": "ACCEPT",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        }
+      },
+      "gpt_T3D_Strict_audit": {
+        "acceptance_verdict_reachable": false,
+        "artifact_fetched_saw_baseline_map": false,
+        "error_family": "UNSUPPORTED_ACCEPT",
+        "final_verdict": "ACCEPT",
+        "nondecisive_upgraded_to_sufficient": true,
+        "primary_blind_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE"
+      },
+      "issue": "21847",
+      "oracle_gold_PROVISIONAL": "ACCEPT",
+      "special_focus": {
+        "is_DeepSeek_residual_overabstention_13974": false,
+        "is_GPT_false_accept_family_F1_17318": false,
+        "is_GPT_reject_to_need_family_F2_17630": false
+      }
+    },
+    {
+      "deepseek": {
+        "T2A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        }
+      },
+      "gpt": {
+        "T2A-T": {
+          "g3b": "ACCEPT",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        }
+      },
+      "gpt_T3D_Strict_audit": {
+        "acceptance_verdict_reachable": false,
+        "artifact_fetched_saw_baseline_map": false,
+        "error_family": "CORRECT_ABSTENTION",
+        "final_verdict": "NEED_EVIDENCE",
+        "nondecisive_upgraded_to_sufficient": false,
+        "primary_blind_code": null
+      },
+      "issue": "24213",
+      "oracle_gold_PROVISIONAL": "ACCEPT",
+      "special_focus": {
+        "is_DeepSeek_residual_overabstention_13974": false,
+        "is_GPT_false_accept_family_F1_17318": false,
+        "is_GPT_reject_to_need_family_F2_17630": false
+      }
+    },
+    {
+      "deepseek": {
+        "T2A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        }
+      },
+      "gpt": {
+        "T2A-T": {
+          "g3b": "ACCEPT",
+          "g3b3": "ACCEPT"
+        },
+        "T2D-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE"
+        },
+        "T3A-T": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Escalate": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        },
+        "T3D-Strict": {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT"
+        }
+      },
+      "gpt_T3D_Strict_audit": {
+        "acceptance_verdict_reachable": false,
+        "artifact_fetched_saw_baseline_map": false,
+        "error_family": "UNSUPPORTED_ACCEPT",
+        "final_verdict": "ACCEPT",
+        "nondecisive_upgraded_to_sufficient": true,
+        "primary_blind_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE"
+      },
+      "issue": "24443",
+      "oracle_gold_PROVISIONAL": "ACCEPT",
+      "special_focus": {
+        "is_DeepSeek_residual_overabstention_13974": false,
+        "is_GPT_false_accept_family_F1_17318": false,
+        "is_GPT_reject_to_need_family_F2_17630": false
+      }
+    }
+  ]
+}

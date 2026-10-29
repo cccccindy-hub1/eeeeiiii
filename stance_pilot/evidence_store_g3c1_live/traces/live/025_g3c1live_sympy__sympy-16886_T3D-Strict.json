@@ -1,0 +1,58 @@
+{
+  "cell": "g3c1live:sympy__sympy-16886:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "e4d98d79c692a3e4bf5950de",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_cf228260cdf9b995\", \"base_commit\": \"c50643a49811e9fe2f4851adff4313ad46f7325e\", \"finished_at\": \"2026-10-28T10:10:10+00:00\", \"instance_id\": \"sympy__sympy-16886\", \"log_digests\": {\"symptom\": \"da1eec9c6b030bba0876b251a60971b21b6e5576c5f9df641c692c4e2c4d899d\"}, \"patch_sha256\": \"a50328b99218b5ba1700715b18873104fd3521660e654c38c0d041a458b15849\", \"repo\": \"sympy/sympy\", \"runner\": \"pytest/vendored-git  py=3.9.25  host=windows-local  gate=G3-C.1\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/crypto/tests/test_crypto.py\"], \"p2p_total_in_dataset\": 42, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-28T10:09:50+00:00\", \"summary\": {\"f2p_total\": 1, \"p2p_total\": 42, \"outcomes_withheld\": true, \"note\": \"acceptance-test outcomes and regression verdicts are withheld at the diagnostic tier; use the verification service to seek them.\"}, \"test_patch_sha256\": \"2b098bb6326a2da6b4e999419a98d1cfefb7f1ca10c329a4b06aca7d2788ec58\", \"evidence_tier\": \"diagnostic\", \"projection_version\": \"diagnostic-v2-no-baseline-map-v1\"}, \"authentic_signature\": true, \"evidence_tier\": \"D\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"c50643a49811e9fe2f4851adff4313ad46f7325e\", \"record_patch_sha256\": \"a50328b99218b5ba1700715b18873104fd3521660e654c38c0d041a458b15849\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"5440049ab0b9a9582894155ae4bdac6457928455\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"5440049ab0b9a9582894155ae4bdac6457928455\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:09:50+00:00\", \"attestation_built_at\": \"2026-10-28T10:10:11+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 42, \"executed\": 42, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_claim_consistency",
+      "args": {
+        "claim": "This fix is correct and all relevant tests pass."
+      },
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python sympy__sympy-16886-baseline.py  (exit 1)\n--- stdout ---\nencode_morse(\"1\") = '----'\nFAIL: Morse code for \"1\" is '----', expected \".----\"\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3185: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:645: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:674: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:681: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\n\n\n### POST candidate patch\n$ python sympy__sympy-16886-post-candidate.py  (exit 0)\n--- stdout ---\nencode_morse(\"1\") = '.----'\nOK: Morse \"1\" -> .----\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3185: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:645: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:674: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:681: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\n"
+    }
+  ],
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage are all intact: the artifact is authentically signed, base_commit and patch_sha256 match this patch, the authoritative restaged tree matches (fresh=true), and the declared set was fully executed (1/1 F2P, 42/42 scoped P2P, no missing ids). The issue-symptom probe also shows the symptom gone (encode_morse('1') now returns '.----'), and the author statement is consistent at the issue level. However, under the STRICT diagnostic tier all acceptance-test outcomes and scoped regression verdicts are withheld, and maintainer logs are disabled (403). Coverage confirms the checks were executed but exposes no pass/fail results, so I cannot verify that the acceptance check passes or that no scoped regression was introduced. With no decisive applicable failure established, REJECT is not warranted; but the bar for ACCEPT (demonstrated failure-free success across the declared set) is not met because outcomes are unavailable.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Pass/fail verdicts for the 1 declared FAIL_TO_PASS acceptance check and the 42 scoped PASS_TO_PASS regression checks are withheld at the diagnostic tier; maintainer acceptance logs are disabled under the STRICT policy, so success (no failing acceptance check, no scoped regression) cannot be confirmed.\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "NEED_EVIDENCE",
+  "fresh_state_served": "TRUE",
+  "error": null
+}

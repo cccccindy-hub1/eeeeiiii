@@ -1,0 +1,194 @@
+{
+  "document": "v2.1 offline preflight (design gate; no paid call can be made by this module)",
+  "n_checks": 15,
+  "checks": [
+    {
+      "check": "design: 22 items x 4 conditions = 88 payloads",
+      "pass": true,
+      "detail": "22 items, 88 payloads"
+    },
+    {
+      "check": "design: 10 unique issue clusters",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "design: frozen gold distribution 7/6/9",
+      "pass": true,
+      "detail": "{'REJECT': 6, 'NEED_EVIDENCE': 9, 'ACCEPT': 7}"
+    },
+    {
+      "check": "design: 22/22 gold determined from visible materials",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "design: A0B0 byte-identical to frozen Gate-2 structured (22/22)",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "design: A touches body only / B touches head only / deltas add",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "audit: 0 verdict/metadata/verdict-word leaks in 88 bodies",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "audit: no credentials in any payload",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "audit: TABLE 0 counts are internally consistent (additive)",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "audit: Gate-2 structured body preserved verbatim inside A1",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "audit: every Factor-B quote is verbatim in the frozen Gate-2 head",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "audit: Factor-B head delta is exactly the reminder block",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "audit: frozen Gate-1 engineering self-check still 20/20",
+      "pass": true,
+      "detail": "GATE 1 SELF-CHECK: 20/20 gates pass; all_pass=True"
+    },
+    {
+      "check": "mock: oracle responder scores 88/88 per model",
+      "pass": true,
+      "detail": "{\"deepseek-flash\": {\"a0b0\": 1.0, \"a1b0\": 1.0, \"a0b1\": 1.0, \"a1b1\": 1.0}, \"gpt-4.1-mini\": {\"a0b0\": 1.0, \"a1b0\": 1.0, \"a0b1\": 1.0, \"a1b1\": 1.0}}"
+    },
+    {
+      "check": "rubric: operand flags reproduce all 8 G2.5 case attributions",
+      "pass": true,
+      "detail": "[]"
+    }
+  ],
+  "mock_analysis_2x2": {
+    "deepseek-flash": {
+      "per_condition": {
+        "a0b0": {
+          "da": 1.0,
+          "n": 22,
+          "need_to_accept_rate": 0.0,
+          "over_abstention_rate": 0.0,
+          "over_abstention_on_negatives_rate": 0.0
+        },
+        "a1b0": {
+          "da": 1.0,
+          "n": 22,
+          "need_to_accept_rate": 0.0,
+          "over_abstention_rate": 0.0,
+          "over_abstention_on_negatives_rate": 0.0
+        },
+        "a0b1": {
+          "da": 1.0,
+          "n": 22,
+          "need_to_accept_rate": 0.0,
+          "over_abstention_rate": 0.0,
+          "over_abstention_on_negatives_rate": 0.0
+        },
+        "a1b1": {
+          "da": 1.0,
+          "n": 22,
+          "need_to_accept_rate": 0.0,
+          "over_abstention_rate": 0.0,
+          "over_abstention_on_negatives_rate": 0.0
+        }
+      },
+      "effects": {
+        "A": {
+          "point": 0.0,
+          "ci95_cluster_bootstrap": [
+            0.0,
+            0.0
+          ]
+        },
+        "B": {
+          "point": 0.0,
+          "ci95_cluster_bootstrap": [
+            0.0,
+            0.0
+          ]
+        },
+        "AB": {
+          "point": 0.0,
+          "ci95_cluster_bootstrap": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "gpt-4.1-mini": {
+      "per_condition": {
+        "a0b0": {
+          "da": 1.0,
+          "n": 22,
+          "need_to_accept_rate": 0.0,
+          "over_abstention_rate": 0.0,
+          "over_abstention_on_negatives_rate": 0.0
+        },
+        "a1b0": {
+          "da": 1.0,
+          "n": 22,
+          "need_to_accept_rate": 0.0,
+          "over_abstention_rate": 0.0,
+          "over_abstention_on_negatives_rate": 0.0
+        },
+        "a0b1": {
+          "da": 1.0,
+          "n": 22,
+          "need_to_accept_rate": 0.0,
+          "over_abstention_rate": 0.0,
+          "over_abstention_on_negatives_rate": 0.0
+        },
+        "a1b1": {
+          "da": 1.0,
+          "n": 22,
+          "need_to_accept_rate": 0.0,
+          "over_abstention_rate": 0.0,
+          "over_abstention_on_negatives_rate": 0.0
+        }
+      },
+      "effects": {
+        "A": {
+          "point": 0.0,
+          "ci95_cluster_bootstrap": [
+            0.0,
+            0.0
+          ]
+        },
+        "B": {
+          "point": 0.0,
+          "ci95_cluster_bootstrap": [
+            0.0,
+            0.0
+          ]
+        },
+        "AB": {
+          "point": 0.0,
+          "ci95_cluster_bootstrap": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  },
+  "all_pass": true
+}

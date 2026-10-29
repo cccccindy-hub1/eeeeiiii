@@ -1,0 +1,281 @@
+"""Gate 3-B.4 tasks 11-13 (design/revision ONLY, nothing executed, $0):
+
+  task 11: implementable SECOND independent human annotator plan (blind packet
+           assignment, adjudication of disagreement, sensitivity analysis for
+           gold flips). AI self-review is explicitly NOT allowed to stand in
+           for independent human arbitration.
+  task 12: revised Gate 3-C design prioritising more independent REJECT
+           issues and evaluating genuinely restricted-evidence cases, with a
+           pre-registered primary endpoint, sample size, budget and stopping
+           rule. NOT executed.
+  task 13: paper Results/Discussion revision language grounded in the audit.
+"""
+from __future__ import annotations
+
+import statistics
+from collections import defaultdict
+
+from evidence import g3b4_common as C
+
+
+def cost_profile():
+    rows = C.read_jsonl(C.G3B3_LIVE_DEEPSEEK) + C.read_jsonl(C.G3B3_LIVE_GPT)
+    by = defaultdict(list)
+    by_model = defaultdict(list)
+    for r in rows:
+        if r.get('mock'):
+            continue
+        by[r['condition']].append(float(r['cost_usd'] or 0))
+        by_model[r['model_profile']].append(float(r['cost_usd'] or 0))
+    per_cond = {c: {'n': len(v), 'mean_usd': round(statistics.mean(v), 6),
+                    'max_usd': round(max(v), 6)}
+                for c, v in sorted(by.items())}
+    per_model = {m: {'n': len(v), 'mean_usd': round(statistics.mean(v), 6)}
+                 for m, v in sorted(by_model.items())}
+    mean_all = statistics.mean(
+        [float(r['cost_usd'] or 0) for r in rows if not r.get('mock')])
+    return per_cond, per_model, mean_all
+
+
+def main():
+    per_cond, per_model, mean_all = cost_profile()
+
+    task11 = {
+        'title': 'Second independent annotator (human) review plan',
+        'status': 'PROPOSED ONLY - not executed in Gate 3-B.4',
+        'current_gold_status': 'PROVISIONAL, single annotator (n=1); '
+                               'annotator2 = NOT_OBTAINED for all 10 issues',
+        'why_needed': 'the GPT false-accept rate and the SymPy-13974 residual '
+                      'both rest on gold labels produced by one annotator; an '
+                      'AI re-read is not independent adjudication',
+        'annotator_selection': {
+            'independence': 'a human annotator who has NOT seen any model '
+                            'output, the G3-A/G3-B analyses, or the existing '
+                            'gold; separate institution/team preferred',
+            'competence': 'familiar with Python/SymPy test semantics '
+                          '(FAIL_TO_PASS / PASS_TO_PASS, xfail, flaky tests)',
+            'no_ai_arbitration': 'an LLM or the pipeline author must not be '
+                                 'used as annotator2 or as the tie-break'},
+        'blind_packet_assignment': [
+            'For each of the 10 (later: Gate 3-C N) issues build a packet '
+            'containing ONLY: problem statement, base commit, candidate '
+            'patch, maintainer test_patch, and the raw CI log (f2p, p2p, '
+            'p2p_baseline). Remove all model verdicts/reasons, coverage '
+            'summaries and prior labels.',
+            'Randomise packet order with a fresh seed; label packets P01.., '
+            'never by issue number; keep the mapping in a sealed file.',
+            'Give annotator2 the SAME written decision rubric annotator1 '
+            'used (ACCEPT iff every declared F2P transitions fail->pass and '
+            'no declared P2P regresses; REJECT if a decisive applicable '
+            'failure/regression is shown; mark any genuinely un-decidable '
+            'packet NEEDS_REVIEW rather than forcing a label).'],
+        'agreement_and_adjudication': {
+            'measure': 'raw agreement + Cohen kappa on ACCEPT/REJECT (treat '
+                       'NEEDS_REVIEW as a third category or exclude with the '
+                       'rule pre-stated)',
+            'disagreement_path': 'any ACCEPT/REJECT mismatch, or either party'
+                                 ' NEEDS_REVIEW, goes to a THIRD senior human '
+                                 'arbiter who sees both independent labels but'
+                                 ' not the model outputs; the arbiter records '
+                                 'a reason and the final label',
+            'no_silent_override': 'the final gold set records annotator1, '
+                                  'annotator2, arbiter labels and the reason '
+                                  'for every changed label'},
+        'sensitivity_analysis_on_gold_flips': [
+            'Recompute every headline rate (DeepSeek need-any 1/10 residual, '
+            'GPT strict unsupported-accept 7/10, focal-family cases) under '
+            '(a) annotator1 labels, (b) annotator2 labels, (c) adjudicated '
+            'labels.',
+            'Report how many of the 7 GPT strict "errors" survive if a '
+            'label flips; if any issue flips ACCEPT<->REJECT, present the '
+            'rate both with and without that issue (leave-one-issue-out) and '
+            'as a bounds interval over all plausible adjudications.',
+            'Pre-register that a conclusion is "robust" only if its sign '
+            'holds across all three label sets.'],
+        'deliverable_before_gate_3c_claims': 'human annotator2 labels + '
+            'adjudication + sensitivity table must exist before any paper '
+            'claim that depends on gold correctness is stated as fact'}
+
+    task12 = {
+        'title': 'Revised Gate 3-C design (NOT executed; budget approval '
+                 'separately required)',
+        'current_limitation': 'independent REJECT issues are only n=3 '
+                              '(17318, 17630, 19783); GPT false-accept and '
+                              'the relevance-relitigation error cannot be '
+                              'rate-estimated from three negatives',
+        'sample_expansion': {
+            'priority_1_more_independent_reject_issues': 'add new candidate '
+                'issues whose frozen CI shows a decisive applicable FAILURE '
+                '(oracle REJECT), drawn so they are not reused G3-A/G3-B '
+                'issues and balanced across failure reasons (declared F2P '
+                'still fails; new regression in P2P; flaky/xfail traps).',
+            'reject_target': 'pre-register a target of at least 20 '
+                             'independent REJECT issues total (>=17 added) so'
+                             ' a false-accept RATE among negatives has a '
+                             'usable confidence width',
+            'accept_control': 'retain/refresh ACCEPT issues to keep the '
+                              'design balanced and to re-estimate DeepSeek '
+                              'residual over-abstention',
+            'priority_2_genuine_restricted_evidence': 'evaluate REAL '
+                'restricted-evidence cases (tier-D withheld outcomes) as a '
+                'stratified condition, but separate them from gold-ACCEPT/'
+                'gold-REJECT sufficient-evidence trials so withholding is '
+                'never conflated with the objective verdict'},
+        'mechanism_experiment_to_identify_overcommitment': {
+            'candidate_mechanism': 'active evidence query inducing over-'
+                                   'commitment (currently UNPROVEN)',
+            'design': 'hold freshness and coverage/trust rules FIXED (all '
+                      'fresh=TRUE) and toggle ONLY tool availability: static '
+                      'tier-D vs active strict tier-D, within-issue, both '
+                      'models. This isolates activeness from the G3-B->G3-B.3'
+                      ' freshness/trust confound.',
+            'additional_arm': 'an active arm that returns the SAME positive '
+                'signals but with an explicit on-screen reminder that '
+                'completeness/freshness/symptom-resolution do not imply '
+                'outcomes, to test whether the over-commitment is a '
+                'presentational fixable failure'},
+        'pre_registered_primary_endpoint': {
+            'endpoint': 'unsupported-commitment rate on independent REJECT '
+                        'issues under the sufficient-evidence active '
+                        'condition (ACCEPT when oracle=REJECT), and NEED rate '
+                        'on ACCEPT issues, estimated per model',
+            'secondary': [
+                'strict over-commitment rate (ACCEPT under gold-NEED in the '
+                'restricted active arm) vs static arm, paired by issue',
+                'interaction model x activeness',
+                'symptom-only/coverage-only/absence-of-failure reason-code '
+                'prevalence using the frozen g3b4 codebook'],
+            'analysis': 'issue-clustered paired differences with exact/'
+                        'bootstrap CIs; no pooling across error families'},
+        'sample_size_and_power': {
+            'basis': 'with ~20 independent negatives, the half-width of a '
+                     'Wilson 95% interval for a false-accept proportion is '
+                     'roughly +/-0.2 near p=0.5 and +/-0.15 near p=0.2; '
+                     'exact size to be recomputed against the observed G3-B.3'
+                     ' GPT negative false-accept rate once annotator2 labels '
+                     'exist',
+            'paired_design': 'every issue run in every arm by both models to'
+                             ' keep the issue as the independent unit'},
+        'budget_estimate': {
+            'observed_mean_per_live_cell_usd': round(mean_all, 6),
+            'observed_per_condition': per_cond,
+            'observed_per_model': per_model,
+            'illustration_not_approved': 'at the observed mean, a design of '
+                '40 issues x 5 conditions x 2 models = 400 cells would cost '
+                'on the order of 400 * mean (plus the two extra arms), before'
+                ' any cap; this is a PLANNING figure only and is NOT approved '
+                'in Gate 3-B.4, which spends $0',
+            'hard_caps_required': 'per-model and total pre-call budget caps '
+                                  'with the repaired CompositeGuard, plus a '
+                                  'mock gate before any paid run'},
+        'stopping_rules': [
+            'hard stop at the pre-approved total USD cap via pre-call '
+            'bounds (no call that could breach it is issued)',
+            'stop and freeze if a protocol-capability drift (silent '
+            'response_format downgrade / fallback) is detected',
+            'stop if the local zero-API live gate or preflight fails',
+            'pre-specified interim look at most once; stop for harm only '
+            '(e.g., a model commits on every negative), never to cherry-pick '
+            'a favourable result',
+            'no expansion beyond the frozen issue list without a new written'
+            ' approval'],
+        'prerequisite_fixes': [
+            'strip pass_to_pass_baseline at tier D '
+            '(views._ACCEPTANCE_RECORD_FIELDS) to close the minimisation gap',
+            'human annotator2 + adjudication completed',
+            'harden the f2p/p2p identical-file presentation (distinct labels'
+            ' or an explicit combined-run note) to reduce the 13974-type '
+            'mis-read']}
+
+    task13 = {
+        'title': 'Paper Results / Discussion revisions grounded in G3-B.4',
+        'results_revisions': [
+            {'claim': 'DeepSeek earlier 9/10 sufficient-evidence abstention',
+             'revised_wording': 'The originally observed 9/10 over-'
+                 'abstention was substantially driven by PROTOCOL-CONSTRUCT '
+                 'problems in the G3-B instrument (structural fresh=FALSE and '
+                 'the coverage/trust handling), not by a stable model '
+                 'property. After the G3-B.3 corrective replication the '
+                 'paired need-any rate moved 9/10 -> 1/10 (8 need->non-need '
+                 'reversals, 0 reverse; issue-cluster bootstrap 95% CI for '
+                 'the paired difference 0.5-1.0). Report as an ASSOCIATIONAL '
+                 'before/after contrast.'},
+            {'claim': 'residual DeepSeek over-abstention',
+             'revised_wording': 'After repair the only residual sufficient-'
+                 'evidence over-abstention is SymPy-13974 (NEED under T2A '
+                 'and T3D-Escalate while ACCEPT under T3A). Fact-checking '
+                 'shows the abstention rests on two wrong readings (a '
+                 'declared acceptance test believed missing that is actually '
+                 'present and passing; three logs believed identical when '
+                 'the baseline differs); classify as a residual model '
+                 'evidence-interpretation/policy error, n=1, gold PROVISIONAL'
+                 ' pending annotator2.'},
+            {'claim': 'GPT erroneous acceptance',
+             'revised_wording': 'GPT false acceptance PERSISTS after the '
+                 'protocol repair (e.g., SymPy-17318 T2A accepts although the'
+                 ' declared F2P test failed; active T3A on the same issue '
+                 'rejects). However the independent REJECT sample is only '
+                 'n=3, so report specific cases, not a population rate, and '
+                 'flag the estimate as underpowered pending Gate 3-C.'},
+            {'claim': 'strict over-commitment',
+             'revised_wording': 'Under T3D-Strict, GPT returned unsupported '
+                 'ACCEPT on 7/10 gold-NEED cells in G3-B.3 vs 0/10 in G3-B, '
+                 'while both models abstain 10/10 on the static T2D surface '
+                 'and DeepSeek abstains 10/10 even when actively querying. '
+                 'Describe active-evidence-induced over-commitment strictly '
+                 'as a NEW CANDIDATE MECHANISM: the cross-version comparison '
+                 'is confounded (freshness and trust rules changed with '
+                 'activeness), so it must NOT be called demonstrated until '
+                 'the activeness-only controlled experiment is run.'}],
+        'discussion_revisions': [
+            'Add the non-interference finding: post-patch acceptance/regression'
+            ' outcomes and hidden gold were not exposed (tier-1 scan 61/61 '
+            'clean); disclose the tier-2 minimisation gap (the all-PASSED, '
+            'zero-discrimination pre-patch pass_to_pass_baseline map survived '
+            'projection and was seen by one correctly-abstaining GPT cell and '
+            'by 8 DeepSeek cells) and that it is fixed before Gate 3-C.',
+            'State that the blind reason coding was a SINGLE AI, rule-based '
+            'coding with no independent human coder/review; present it as '
+            'template characterisation (all 7 errors share provenance+'
+            'coverage+symptom+absence-of-failure phrasing, C3 primary), not '
+            'as validated qualitative evidence.',
+            'Report operational integrity honestly: the first live attempt '
+            'failed before any API call due to CompositeGuard.check returning'
+            ' None (float(None) pre-network), was repaired, the $0 products '
+            'discarded, and the freeze regenerated; the final 100/100 is the '
+            'post-repair run.',
+            'Frame all gold-dependent statements as PROVISIONAL until the '
+            'human second-annotator review and flip sensitivity analysis are '
+            'complete.'],
+        'claims_not_to_make': [
+            'do not claim strict over-commitment is proven/causal',
+            'do not report a GPT false-accept RATE from n=3 negatives',
+            'do not present AI self-coding or AI self-review as independent '
+            'human adjudication',
+            'do not treat the all-PASSED baseline-map exposure as a gold leak']}
+
+    out = {
+        'document': 'Gate 3-B.4 tasks 11-13: second-annotator plan, revised '
+                    'Gate 3-C design (not executed), paper revisions',
+        'audit_version': C.G3B4_AUDIT_VERSION,
+        'api_calls_made_by_this_audit': 0,
+        'gate3c_not_executed': True,
+        'budget_of_this_audit_usd': 0,
+        'planning_cost_inputs': {
+            'observed_mean_per_live_cell_usd': round(mean_all, 6),
+            'per_condition': per_cond, 'per_model': per_model},
+        'task11_second_annotator_plan': task11,
+        'task12_gate3c_revised_design': task12,
+        'task13_paper_revisions': task13,
+        'gold_authority': C.GOLD_AUTHORITY}
+
+    C.OUT_AUDIT_DIR.mkdir(parents=True, exist_ok=True)
+    dest = C.OUT_AUDIT_DIR / 'g3b4_planning_and_revisions.json'
+    dest.write_bytes(C.canonical_bytes(out))
+    print('mean live cell USD:', round(mean_all, 6))
+    print('per condition:', {k: v['mean_usd'] for k, v in per_cond.items()})
+    print('->', dest.relative_to(C.HERE))
+
+
+if __name__ == '__main__':
+    main()

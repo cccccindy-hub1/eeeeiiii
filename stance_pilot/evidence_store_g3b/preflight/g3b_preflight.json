@@ -1,0 +1,138 @@
+{
+  "document": "Gate 3-B offline preflight (must pass before any paid call)",
+  "all_pass": true,
+  "n_checks": 21,
+  "checks": [
+    {
+      "check": "freeze on-disk == canonical derivation",
+      "pass": true,
+      "detail": "728a0731da93"
+    },
+    {
+      "check": "100 frozen cells",
+      "pass": true,
+      "detail": "100"
+    },
+    {
+      "check": "100 ordered calls",
+      "pass": true,
+      "detail": "100"
+    },
+    {
+      "check": "10 model-condition combos x 10",
+      "pass": true,
+      "detail": "{('deepseek-flash', 'T2D-T'): 10, ('gpt-4.1-mini', 'T2D-T'): 10, ('deepseek-flash', 'T3D-Strict'): 10, ('gpt-4.1-mini', 'T3D-Strict'): 10, ('deepseek-flash', 'T3D-Escalate'): 10, ('gpt-4.1-mini', 'T3D-Escalate'): 10, ('deepseek-flash', 'T2A-T'): 10, ('gpt-4.1-mini', 'T2A-T'): 10, ('deepseek-flash', 'T3A-T'): 10, ('gpt-4.1-mini', 'T3A-T'): 10}"
+    },
+    {
+      "check": "order == deterministic interleaved order",
+      "pass": true,
+      "detail": "seed=7"
+    },
+    {
+      "check": "label leakage audit clean on 50 items x2 models",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "tier-D projection withholds acceptance outcomes",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "condition-gold correspondence matches frozen projection",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "T2D-T & T3D-Strict = 10/10 NEED (abstention-only scope)",
+      "pass": true,
+      "detail": "{'T2D-T': {'NEED_EVIDENCE': 10}, 'T3D-Strict': {'NEED_EVIDENCE': 10}, 'T3D-Escalate': {'ACCEPT': 7, 'REJECT': 3}, 'T2A-T': {'ACCEPT': 7, 'REJECT': 3}, 'T3A-T': {'ACCEPT': 7, 'REJECT': 3}}"
+    },
+    {
+      "check": "T2A-T sufficiency is an INSTITUTIONAL trust assumption disclosed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "temp0 / cap8192 / tool-turns8 / retries0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "total cap $3.00 and per-model $1.50 x2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "budgetguard: normal call within caps accepted",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "budgetguard: per-cell 12th model call REFUSED",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "budgetguard: per-model $1.50 breach REFUSED",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "budgetguard: TOTAL $3.00 breach REFUSED",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "budgetguard: bound prices full completion cap",
+      "pass": true,
+      "detail": "0.017107==0.017107"
+    },
+    {
+      "check": "gate: live without G3-B ACK REFUSED",
+      "pass": true,
+      "detail": "REFUSED: --allow-paid-run also requires --i-acknowledge-g3b-approved.\n"
+    },
+    {
+      "check": "gate: bare invocation REFUSED (offline default)",
+      "pass": true,
+      "detail": "gate --allow-paid-run --i-acknowledge-g3b-approved (conditional written approval: 100 cells, TOTAL $3.00, per-model $1.50, PROVISIONAL gold). No call was made.\n"
+    },
+    {
+      "check": "frozen code hashes match runnable files",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "G3-A 141 + G3-A.1 122 files reverified unchanged at freeze time",
+      "pass": true,
+      "detail": "{'g3a': 141, 'g3a1': 122}"
+    }
+  ],
+  "condition_gold_counts": {
+    "T2D-T": {
+      "NEED_EVIDENCE": 10
+    },
+    "T3D-Strict": {
+      "NEED_EVIDENCE": 10
+    },
+    "T3D-Escalate": {
+      "ACCEPT": 7,
+      "REJECT": 3
+    },
+    "T2A-T": {
+      "ACCEPT": 7,
+      "REJECT": 3
+    },
+    "T3A-T": {
+      "ACCEPT": 7,
+      "REJECT": 3
+    }
+  },
+  "disclosures": {
+    "under_determination": "T2D-T/T3D-Strict gold is 10/10 NEED; they measure appropriate abstention only, NOT selective judgement under full information.",
+    "unavailable_source": "at T3D-Strict the maintainer acceptance logs are a hard 403 wall; only the issue-derived symptom channel is readable.",
+    "institutional_trust": "T2A-T/T3A-T \"sufficient\" presumes the presented signed acceptance artifact is trustworthy; that institutional assumption is not independently confirmed by the model.",
+    "gold_tier": "PROVISIONAL (mechanically adjudicated, single annotator; annotator2 NOT_OBTAINED, n=1). Against provisional, singly-adjudicated gold only."
+  }
+}

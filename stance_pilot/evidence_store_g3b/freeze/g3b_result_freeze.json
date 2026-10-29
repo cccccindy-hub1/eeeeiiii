@@ -1,0 +1,180 @@
+{
+  "document": "GroundedReview Gate 3-B RESULT FREEZE (appendix; does NOT modify the data-collection freeze)",
+  "created_utc": "2026-10-26T03:57:39+00:00",
+  "approved_scope_executed": {
+    "models": [
+      "deepseek-flash",
+      "gpt-4.1-mini"
+    ],
+    "conditions": [
+      "T2D-T",
+      "T3D-Strict",
+      "T3D-Escalate",
+      "T2A-T",
+      "T3A-T"
+    ],
+    "cells": 100,
+    "total_hard_cap_usd": 3.0,
+    "per_model_cap_usd": 1.5,
+    "no_new_issues_or_mirrors": true,
+    "no_prompt_gold_evidence_change": true,
+    "no_gemini_r2_gate3c": true,
+    "git_commit": false
+  },
+  "data_collection_freeze": {
+    "freeze_manifest": "evidence_store_g3b/freeze/g3b_freeze_manifest.json",
+    "freeze_manifest_sha256": "728a0731da9315ef78b01d20562bc196f10f2e74b4c05301ea39cd05a66fc151",
+    "freeze_manifest_sha256_recorded_in_every_row": "728a0731da9315ef78b01d20562bc196f10f2e74b4c05301ea39cd05a66fc151",
+    "on_disk_equals_recorded": true,
+    "g3b_runner_sha256": "c9a7651e2dd85eb4b488a418b4b116b55ff3a652218342dbce4ab6e678a5df30",
+    "runner_sha_recorded_in_every_row": "c9a7651e2dd85eb4b488a418b4b116b55ff3a652218342dbce4ab6e678a5df30",
+    "prompt_version": "p3-ternary-v2",
+    "parent_freezes": {
+      "g3a": {
+        "files_verified": 141,
+        "manifest": "g3a_freeze_manifest.json",
+        "manifest_sha256": "589ad8b704d954fddd64c4d24aa3f59ff5c07efa2c954ef0a72f2571bac6554c"
+      },
+      "g3a1": {
+        "files_verified": 122,
+        "manifest": "g3a1_freeze_manifest.json",
+        "manifest_sha256": "c4d3ffbdc00b8b56fd4d39f2fef62fc99f2b4a447f9d02036a3f97d62cd60ea2"
+      }
+    }
+  },
+  "post_collection_analyzer_change_disclosure": {
+    "file": "evidence/g3b_analyze.py",
+    "frozen_hash_at_collection": "913e831943ece4642c6c08bcbedd3b3bf5e7f0e8d3789f7e15f44ba9d38bc2db",
+    "current_hash": "3cdcaf1c3ddd322a6f6bbd8f0fd498b912795b4bbaa840c2374f63e6b1be27c0",
+    "nature": "offline-analysis-only numerical fix: the initial Clopper-Pearson grid tail search returned degenerate 0.0/1.0 endpoints; replaced with exact Beta-quantile CP (validated against standard CP tables).",
+    "scope": "analysis artifacts only; no model call, verdict, DA tally, bootstrap point/CI, or directional conclusion depends on this function except the printed exact interval; freeze manifest, runner, prompt, gold, evidence and all 100 rows UNCHANGED; freeze manifest deliberately NOT rebuilt to preserve the recorded sha256.",
+    "recomputed": true
+  },
+  "execution": {
+    "rows_total": 100,
+    "per_model": {
+      "deepseek-flash": 50,
+      "gpt-4.1-mini": 50
+    },
+    "error_rows": {
+      "deepseek-flash": 0,
+      "gpt-4.1-mini": 0
+    },
+    "retries": {
+      "deepseek-flash": {
+        "0": 50
+      },
+      "gpt-4.1-mini": {
+        "0": 50
+      }
+    },
+    "served_model_ids": {
+      "deepseek-flash": {
+        "deepseek-flash": 50
+      },
+      "gpt-4.1-mini": {
+        "gpt-4.1-mini-2025-04-14": 50
+      }
+    },
+    "served_id_drift": false,
+    "spend_usd": {
+      "deepseek-flash": 0.190706,
+      "gpt-4.1-mini": 0.099952,
+      "total": 0.290658,
+      "total_cap": 3.0,
+      "per_model_cap": 1.5
+    },
+    "tokens": {
+      "deepseek-flash": {
+        "in": 531239,
+        "out": 26112
+      },
+      "gpt-4.1-mini": {
+        "in": 216846,
+        "out": 8260
+      }
+    },
+    "wall_s": {
+      "deepseek-flash": 217.1,
+      "gpt-4.1-mini": 132.9
+    },
+    "temperature": 0,
+    "completion_cap_tokens": 8192,
+    "max_tool_turns": 8,
+    "max_model_calls_per_cell": 12,
+    "tool_protocol_audit": {
+      "deepseek-flash": {
+        "strict_cells": 10,
+        "strict_acceptance_log_attempts": 0,
+        "strict_403_observed_live": 0,
+        "escalate_cells": 10,
+        "escalate_requests": 30,
+        "escalate_granted": 30,
+        "escalate_denied_reason_missing": 3,
+        "static_cells_with_tool_calls": 0
+      },
+      "gpt-4.1-mini": {
+        "strict_cells": 10,
+        "strict_acceptance_log_attempts": 0,
+        "strict_403_observed_live": 0,
+        "escalate_cells": 10,
+        "escalate_requests": 5,
+        "escalate_granted": 5,
+        "escalate_denied_reason_missing": 0,
+        "static_cells_with_tool_calls": 0
+      }
+    },
+    "model_calls_total": {
+      "deepseek-flash": 127,
+      "gpt-4.1-mini": 91
+    }
+  },
+  "gold_tier": "PROVISIONAL singly-adjudicated gold (annotator2 = NOT_OBTAINED 10/10, n=1); NOT human-adjudicated; no independent gold validation claimed",
+  "artifacts": [
+    {
+      "path": "evidence_store_g3b/runs/g3b_live_deepseek_flash_results.jsonl",
+      "bytes": 535281,
+      "sha256": "aac4a96c34541aaaf7d4fc5a435c2e72e7f02b9e9659ad919dd0d4e6d81c720c"
+    },
+    {
+      "path": "evidence_store_g3b/runs/g3b_live_gpt_41_mini_results.jsonl",
+      "bytes": 242675,
+      "sha256": "421117e4cd41e5a1845f59a457d25bce144fbccdfac5f965f72a461dd169b7f5"
+    },
+    {
+      "path": "evidence_store_g3b/runs/g3b_live_run_audit.json",
+      "bytes": 628,
+      "sha256": "c548e3be3614add7131fec3fca93b89a21184a9f7341a30cb5eb6b214a72a138"
+    },
+    {
+      "path": "evidence_store_g3b/runs/g3b_mock_deepseek_flash_results.jsonl",
+      "bytes": 403221,
+      "sha256": "0f76e6565a679c52b546df5913cb1d6b337dfba41066e9cdab569eea94cffc64"
+    },
+    {
+      "path": "evidence_store_g3b/runs/g3b_mock_gpt_41_mini_results.jsonl",
+      "bytes": 403371,
+      "sha256": "d210e6ecb46375ea6eebcee7f38354a4e1632dd7915b42e07fda3600cdb2ec65"
+    },
+    {
+      "path": "evidence_store_g3b/runs/g3b_mock_run_audit.json",
+      "bytes": 615,
+      "sha256": "c5f086d7c85205fb6b5761e12c87663fe82cd8a102a9f039c8edbc7323ae03a7"
+    },
+    {
+      "path": "evidence_store_g3b/preflight/g3b_preflight.json",
+      "bytes": 4493,
+      "sha256": "62f54c8398b57fd0a40f950e42564b512dd4a7c27e7fa9ea690baa245ae82902"
+    },
+    {
+      "path": "evidence_store_g3b/analysis/g3b_live_analysis.json",
+      "bytes": 97092,
+      "sha256": "db302e93bfc511de0feaf56046b3bc5298cb1310fd7b591fefcc72d0ee5a1a13"
+    },
+    {
+      "path": "evidence_store_g3b/analysis/g3b_mock_analysis.json",
+      "bytes": 87923,
+      "sha256": "c671d101c67af3c66142e146aa58ee84262052cc21ebfe6eeb108de7f928b96d"
+    }
+  ]
+}

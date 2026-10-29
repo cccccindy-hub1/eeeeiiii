@@ -1,0 +1,16 @@
+diff --git a/sympy/core/add.py b/sympy/core/add.py
+index 83a5f2aed..3a6e6cfd2 100644
+--- a/sympy/core/add.py
++++ b/sympy/core/add.py
+@@ -534,6 +534,11 @@ def _eval_is_zero(self):
+             # issue 10528: there is no way to know if a nc symbol
+             # is zero or not
+             return
++        # Simplify the expression before checking if it's zero
++        simplified = self.simplify()
++        if simplified.is_zero is not None:
++            return simplified.is_zero
++        
+         nz = []
+         z = 0
+         im_or_z = False

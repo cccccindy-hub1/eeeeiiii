@@ -1,0 +1,14 @@
+### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+FAIL: Symbol instance carries an instance __dict__: {}
+
+--- stderr ---
+
+
+### POST candidate patch
+$ python probe.py  (exit 0)
+--- stdout ---
+OK: Symbol has no instance __dict__ (slots only)
+
+--- stderr ---

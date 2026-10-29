@@ -1,0 +1,3317 @@
+{
+  "metric": "groundedreview_eal_gate2_abstraction_pilot",
+  "protocol": "eal-v0-draft1",
+  "gate2_condition": "eal-v0-draft1+gate2-derived-summary-disclosure",
+  "bootstrap": {
+    "unit": "issue cluster (instance_id)",
+    "seed": 7,
+    "n_boot": 10000
+  },
+  "n_independent_issues": 10,
+  "models": {
+    "deepseek-flash": {
+      "layers": {
+        "raw": {
+          "n_requests": 22,
+          "n_parseable": 22,
+          "n_invalid": 0,
+          "n_ambiguous": 0,
+          "n_api_error": 0,
+          "n_correct": 8,
+          "da_parseable": {
+            "rate": 0.3636,
+            "n_correct": 8,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.15,
+              0.6316
+            ],
+            "n_clusters": 10
+          },
+          "da_all_requests": {
+            "rate": 0.3636,
+            "n_correct": 8,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.15,
+              0.6316
+            ],
+            "n_clusters": 10,
+            "note": "INVALID/AMBIGUOUS/API_ERROR count as not appropriate"
+          },
+          "always_need_baseline": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22
+          },
+          "confusion_matrix": {
+            "rows_decision": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "columns_gold": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 1,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 1
+              },
+              "REJECT": {
+                "ACCEPT": 2,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 4
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 4,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 4
+              }
+            },
+            "n_invalid": 0,
+            "n_ambiguous": 0,
+            "n_api_error": 0
+          },
+          "error_families": {
+            "over_abstention": {
+              "cells": 5,
+              "rate_over_decisive_gold": 0.3846,
+              "on_sufficient_positive": 4,
+              "on_decisive_negative": 1
+            },
+            "unsupported_acceptance_false_commit": {
+              "cells": 3,
+              "rate_over_non_accept_gold": 0.2,
+              "on_decisive_negative": 2,
+              "on_insufficient": 1
+            },
+            "unsupported_rejection": {
+              "cells": 6,
+              "rate_over_non_reject_gold": 0.375,
+              "on_sufficient_positive": 2,
+              "on_insufficient": 4
+            }
+          },
+          "by_evidence_class": {
+            "sufficient_positive": {
+              "n_cells": 7,
+              "n_issues": 4,
+              "n_correct": 1,
+              "da": 0.1429,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.4286
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 4
+              }
+            },
+            "decisive_negative": {
+              "n_cells": 6,
+              "n_issues": 5,
+              "n_correct": 3,
+              "da": 0.5,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.125,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 2,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 1
+              }
+            },
+            "insufficient": {
+              "n_cells": 9,
+              "n_issues": 8,
+              "n_correct": 4,
+              "da": 0.4444,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.125,
+                0.75
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 4,
+                "NEED_EVIDENCE": 4
+              }
+            }
+          }
+        },
+        "structured": {
+          "n_requests": 22,
+          "n_parseable": 22,
+          "n_invalid": 0,
+          "n_ambiguous": 0,
+          "n_api_error": 0,
+          "n_correct": 9,
+          "da_parseable": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.1818,
+              0.619
+            ],
+            "n_clusters": 10
+          },
+          "da_all_requests": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.1818,
+              0.619
+            ],
+            "n_clusters": 10,
+            "note": "INVALID/AMBIGUOUS/API_ERROR count as not appropriate"
+          },
+          "always_need_baseline": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22
+          },
+          "confusion_matrix": {
+            "rows_decision": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "columns_gold": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 4,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 2
+              },
+              "REJECT": {
+                "ACCEPT": 1,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 3
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 2,
+                "REJECT": 4,
+                "NEED_EVIDENCE": 4
+              }
+            },
+            "n_invalid": 0,
+            "n_ambiguous": 0,
+            "n_api_error": 0
+          },
+          "error_families": {
+            "over_abstention": {
+              "cells": 6,
+              "rate_over_decisive_gold": 0.4615,
+              "on_sufficient_positive": 2,
+              "on_decisive_negative": 4
+            },
+            "unsupported_acceptance_false_commit": {
+              "cells": 3,
+              "rate_over_non_accept_gold": 0.2,
+              "on_decisive_negative": 1,
+              "on_insufficient": 2
+            },
+            "unsupported_rejection": {
+              "cells": 4,
+              "rate_over_non_reject_gold": 0.25,
+              "on_sufficient_positive": 1,
+              "on_insufficient": 3
+            }
+          },
+          "by_evidence_class": {
+            "sufficient_positive": {
+              "n_cells": 7,
+              "n_issues": 4,
+              "n_correct": 4,
+              "da": 0.5714,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.25,
+                0.8
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 4,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 2
+              }
+            },
+            "decisive_negative": {
+              "n_cells": 6,
+              "n_issues": 5,
+              "n_correct": 1,
+              "da": 0.1667,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.6
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 4
+              }
+            },
+            "insufficient": {
+              "n_cells": 9,
+              "n_issues": 8,
+              "n_correct": 4,
+              "da": 0.4444,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.125,
+                0.75
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 2,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 4
+              }
+            }
+          }
+        },
+        "adjudicated": {
+          "n_requests": 22,
+          "n_parseable": 22,
+          "n_invalid": 0,
+          "n_ambiguous": 0,
+          "n_api_error": 0,
+          "n_correct": 10,
+          "da_parseable": {
+            "rate": 0.4545,
+            "n_correct": 10,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.2632,
+              0.6552
+            ],
+            "n_clusters": 10
+          },
+          "da_all_requests": {
+            "rate": 0.4545,
+            "n_correct": 10,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.2632,
+              0.6552
+            ],
+            "n_clusters": 10,
+            "note": "INVALID/AMBIGUOUS/API_ERROR count as not appropriate"
+          },
+          "always_need_baseline": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22
+          },
+          "confusion_matrix": {
+            "rows_decision": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "columns_gold": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 1,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 1
+              },
+              "REJECT": {
+                "ACCEPT": 2,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 2
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 4,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 6
+              }
+            },
+            "n_invalid": 0,
+            "n_ambiguous": 0,
+            "n_api_error": 0
+          },
+          "error_families": {
+            "over_abstention": {
+              "cells": 6,
+              "rate_over_decisive_gold": 0.4615,
+              "on_sufficient_positive": 4,
+              "on_decisive_negative": 2
+            },
+            "unsupported_acceptance_false_commit": {
+              "cells": 2,
+              "rate_over_non_accept_gold": 0.1333,
+              "on_decisive_negative": 1,
+              "on_insufficient": 1
+            },
+            "unsupported_rejection": {
+              "cells": 4,
+              "rate_over_non_reject_gold": 0.25,
+              "on_sufficient_positive": 2,
+              "on_insufficient": 2
+            }
+          },
+          "by_evidence_class": {
+            "sufficient_positive": {
+              "n_cells": 7,
+              "n_issues": 4,
+              "n_correct": 1,
+              "da": 0.1429,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.3
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 4
+              }
+            },
+            "decisive_negative": {
+              "n_cells": 6,
+              "n_issues": 5,
+              "n_correct": 3,
+              "da": 0.5,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.875
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 2
+              }
+            },
+            "insufficient": {
+              "n_cells": 9,
+              "n_issues": 8,
+              "n_correct": 6,
+              "da": 0.6667,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.375,
+                0.8889
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 6
+              }
+            }
+          }
+        }
+      },
+      "paired_contrasts": [
+        {
+          "contrast": "Adjudicated_minus_Raw",
+          "high_abstraction": "adjudicated",
+          "low_abstraction": "raw",
+          "n_matched_parseable_pairs": 22,
+          "n_issues": 10,
+          "high_da": 0.4545,
+          "low_da": 0.3636,
+          "mean_paired_delta": 0.0909,
+          "delta_ci95_issue_cluster_seed7_n10000": [
+            -0.3,
+            0.4
+          ],
+          "high_correct_low_wrong": 7,
+          "low_correct_high_wrong": 5,
+          "mcnemar_exact_two_sided_p_descriptive": 0.7744,
+          "changed_pairs": [
+            {
+              "bundle_id": "cee_0108367f62dfb1c6",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_017f5443ec813709",
+              "instance_id": "sympy__sympy-17139",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_13b04ca1faae0894",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "ACCEPT",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_4001af2fc564f50f",
+              "instance_id": "sympy__sympy-12419",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "ACCEPT",
+              "adjudicated_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_58d93f77f0c49f82",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_58df0b222c11095a",
+              "instance_id": "sympy__sympy-12419",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_5cfbc476af83be49",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "raw_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_76028c65f51defe8",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "raw_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_8f41672ea242cd7a",
+              "instance_id": "sympy__sympy-18199",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_ad6e89a460dfbe92",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "ACCEPT",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_b203936c59e46a77",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "raw_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_d054bcf1e4e8b26c",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            }
+          ],
+          "sign_note": "delta may be negative; no monotonic abstraction effect is assumed"
+        },
+        {
+          "contrast": "Structured_minus_Raw",
+          "high_abstraction": "structured",
+          "low_abstraction": "raw",
+          "n_matched_parseable_pairs": 22,
+          "n_issues": 10,
+          "high_da": 0.4091,
+          "low_da": 0.3636,
+          "mean_paired_delta": 0.0455,
+          "delta_ci95_issue_cluster_seed7_n10000": [
+            -0.3889,
+            0.4
+          ],
+          "high_correct_low_wrong": 7,
+          "low_correct_high_wrong": 6,
+          "mcnemar_exact_two_sided_p_descriptive": 1.0,
+          "changed_pairs": [
+            {
+              "bundle_id": "cee_0108367f62dfb1c6",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_017f5443ec813709",
+              "instance_id": "sympy__sympy-17139",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_1278b80ecd502546",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "structured_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_13b04ca1faae0894",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_5449e183c637f604",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_58d93f77f0c49f82",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_58df0b222c11095a",
+              "instance_id": "sympy__sympy-12419",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "ACCEPT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_9e8c95b6fac59e18",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "structured_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_a6aba2553d04e0f9",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_ad6e89a460dfbe92",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "structured_decision": "ACCEPT",
+              "raw_decision": "REJECT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_cfc14244c59a8ceb",
+              "instance_id": "sympy__sympy-14531",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_d054bcf1e4e8b26c",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_f0328f55403163cb",
+              "instance_id": "sympy__sympy-14531",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            }
+          ],
+          "sign_note": "delta may be negative; no monotonic abstraction effect is assumed"
+        },
+        {
+          "contrast": "Adjudicated_minus_Structured",
+          "high_abstraction": "adjudicated",
+          "low_abstraction": "structured",
+          "n_matched_parseable_pairs": 22,
+          "n_issues": 10,
+          "high_da": 0.4545,
+          "low_da": 0.4091,
+          "mean_paired_delta": 0.0455,
+          "delta_ci95_issue_cluster_seed7_n10000": [
+            -0.2381,
+            0.3913
+          ],
+          "high_correct_low_wrong": 6,
+          "low_correct_high_wrong": 5,
+          "mcnemar_exact_two_sided_p_descriptive": 1.0,
+          "changed_pairs": [
+            {
+              "bundle_id": "cee_1278b80ecd502546",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": false,
+              "structured_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_4001af2fc564f50f",
+              "instance_id": "sympy__sympy-12419",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": false,
+              "structured_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_5449e183c637f604",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_5cfbc476af83be49",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "structured_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_76028c65f51defe8",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_8f41672ea242cd7a",
+              "instance_id": "sympy__sympy-18199",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "adjudicated_correct": false,
+              "structured_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_9e8c95b6fac59e18",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": false,
+              "structured_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_a6aba2553d04e0f9",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_b203936c59e46a77",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "structured_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_cfc14244c59a8ceb",
+              "instance_id": "sympy__sympy-14531",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_f0328f55403163cb",
+              "instance_id": "sympy__sympy-14531",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "REJECT",
+              "structured_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": false,
+              "structured_correct": true,
+              "delta": -1
+            }
+          ],
+          "sign_note": "delta may be negative; no monotonic abstraction effect is assumed"
+        }
+      ],
+      "cross_layer_transitions": {
+        "raw_to_structured": {
+          "rows_raw": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "columns_structured": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "matrix": {
+            "ACCEPT": {
+              "ACCEPT": 2,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 2
+            },
+            "REJECT": {
+              "ACCEPT": 2,
+              "REJECT": 1,
+              "NEED_EVIDENCE": 6
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 3,
+              "REJECT": 4,
+              "NEED_EVIDENCE": 2
+            }
+          },
+          "cells_skipped_nonparseable": 0
+        },
+        "structured_to_adjudicated": {
+          "rows_structured": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "columns_adjudicated": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "matrix": {
+            "ACCEPT": {
+              "ACCEPT": 1,
+              "REJECT": 2,
+              "NEED_EVIDENCE": 4
+            },
+            "REJECT": {
+              "ACCEPT": 1,
+              "REJECT": 1,
+              "NEED_EVIDENCE": 3
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 1,
+              "REJECT": 4,
+              "NEED_EVIDENCE": 5
+            }
+          },
+          "cells_skipped_nonparseable": 0
+        },
+        "raw_to_adjudicated": {
+          "rows_raw": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "columns_adjudicated": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "matrix": {
+            "ACCEPT": {
+              "ACCEPT": 0,
+              "REJECT": 2,
+              "NEED_EVIDENCE": 2
+            },
+            "REJECT": {
+              "ACCEPT": 2,
+              "REJECT": 2,
+              "NEED_EVIDENCE": 5
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 1,
+              "REJECT": 3,
+              "NEED_EVIDENCE": 5
+            }
+          },
+          "cells_skipped_nonparseable": 0
+        }
+      },
+      "mechanism_audit": {
+        "n_errors_parseable": 39,
+        "keyword_mentions_across_all_rows": {},
+        "flagged_potential_misuse": [],
+        "errors": [
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_0108367f62dfb1c6",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_017f5443ec813709",
+            "instance_id": "sympy__sympy-17139",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_037b37020e5d9a37",
+            "instance_id": "sympy__sympy-16450",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_03df4f19a25d0cf5",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_1278b80ecd502546",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_58df0b222c11095a",
+            "instance_id": "sympy__sympy-12419",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_5cfbc476af83be49",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_76028c65f51defe8",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_negative",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_9e8c95b6fac59e18",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_a8063781f0851759",
+            "instance_id": "sympy__sympy-12419",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_a81c2a012161efe0",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_positive",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_ad6e89a460dfbe92",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_positive",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_b203936c59e46a77",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_negative",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_f0328f55403163cb",
+            "instance_id": "sympy__sympy-14531",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_037b37020e5d9a37",
+            "instance_id": "sympy__sympy-16450",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_03df4f19a25d0cf5",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_13b04ca1faae0894",
+            "instance_id": "sympy__sympy-13798",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_5449e183c637f604",
+            "instance_id": "sympy__sympy-13798",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_58d93f77f0c49f82",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_5cfbc476af83be49",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_76028c65f51defe8",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_negative",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_a6aba2553d04e0f9",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_a8063781f0851759",
+            "instance_id": "sympy__sympy-12419",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_positive",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_a81c2a012161efe0",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_b203936c59e46a77",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_cfc14244c59a8ceb",
+            "instance_id": "sympy__sympy-14531",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_d054bcf1e4e8b26c",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_037b37020e5d9a37",
+            "instance_id": "sympy__sympy-16450",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_positive",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_03df4f19a25d0cf5",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_1278b80ecd502546",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_13b04ca1faae0894",
+            "instance_id": "sympy__sympy-13798",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_negative",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_4001af2fc564f50f",
+            "instance_id": "sympy__sympy-12419",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_58d93f77f0c49f82",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_8f41672ea242cd7a",
+            "instance_id": "sympy__sympy-18199",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_9e8c95b6fac59e18",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_a8063781f0851759",
+            "instance_id": "sympy__sympy-12419",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_positive",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_a81c2a012161efe0",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_d054bcf1e4e8b26c",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_f0328f55403163cb",
+            "instance_id": "sympy__sympy-14531",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (deepseek-flash): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          }
+        ]
+      }
+    },
+    "gpt-4.1-mini": {
+      "layers": {
+        "raw": {
+          "n_requests": 22,
+          "n_parseable": 22,
+          "n_invalid": 0,
+          "n_ambiguous": 0,
+          "n_api_error": 0,
+          "n_correct": 8,
+          "da_parseable": {
+            "rate": 0.3636,
+            "n_correct": 8,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.15,
+              0.6316
+            ],
+            "n_clusters": 10
+          },
+          "da_all_requests": {
+            "rate": 0.3636,
+            "n_correct": 8,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.15,
+              0.6316
+            ],
+            "n_clusters": 10,
+            "note": "INVALID/AMBIGUOUS/API_ERROR count as not appropriate"
+          },
+          "always_need_baseline": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22
+          },
+          "confusion_matrix": {
+            "rows_decision": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "columns_gold": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 1,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 1
+              },
+              "REJECT": {
+                "ACCEPT": 2,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 4
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 4,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 4
+              }
+            },
+            "n_invalid": 0,
+            "n_ambiguous": 0,
+            "n_api_error": 0
+          },
+          "error_families": {
+            "over_abstention": {
+              "cells": 5,
+              "rate_over_decisive_gold": 0.3846,
+              "on_sufficient_positive": 4,
+              "on_decisive_negative": 1
+            },
+            "unsupported_acceptance_false_commit": {
+              "cells": 3,
+              "rate_over_non_accept_gold": 0.2,
+              "on_decisive_negative": 2,
+              "on_insufficient": 1
+            },
+            "unsupported_rejection": {
+              "cells": 6,
+              "rate_over_non_reject_gold": 0.375,
+              "on_sufficient_positive": 2,
+              "on_insufficient": 4
+            }
+          },
+          "by_evidence_class": {
+            "sufficient_positive": {
+              "n_cells": 7,
+              "n_issues": 4,
+              "n_correct": 1,
+              "da": 0.1429,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.4286
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 4
+              }
+            },
+            "decisive_negative": {
+              "n_cells": 6,
+              "n_issues": 5,
+              "n_correct": 3,
+              "da": 0.5,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.125,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 2,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 1
+              }
+            },
+            "insufficient": {
+              "n_cells": 9,
+              "n_issues": 8,
+              "n_correct": 4,
+              "da": 0.4444,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.125,
+                0.75
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 4,
+                "NEED_EVIDENCE": 4
+              }
+            }
+          }
+        },
+        "structured": {
+          "n_requests": 22,
+          "n_parseable": 22,
+          "n_invalid": 0,
+          "n_ambiguous": 0,
+          "n_api_error": 0,
+          "n_correct": 9,
+          "da_parseable": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.1818,
+              0.619
+            ],
+            "n_clusters": 10
+          },
+          "da_all_requests": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.1818,
+              0.619
+            ],
+            "n_clusters": 10,
+            "note": "INVALID/AMBIGUOUS/API_ERROR count as not appropriate"
+          },
+          "always_need_baseline": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22
+          },
+          "confusion_matrix": {
+            "rows_decision": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "columns_gold": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 4,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 2
+              },
+              "REJECT": {
+                "ACCEPT": 1,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 3
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 2,
+                "REJECT": 4,
+                "NEED_EVIDENCE": 4
+              }
+            },
+            "n_invalid": 0,
+            "n_ambiguous": 0,
+            "n_api_error": 0
+          },
+          "error_families": {
+            "over_abstention": {
+              "cells": 6,
+              "rate_over_decisive_gold": 0.4615,
+              "on_sufficient_positive": 2,
+              "on_decisive_negative": 4
+            },
+            "unsupported_acceptance_false_commit": {
+              "cells": 3,
+              "rate_over_non_accept_gold": 0.2,
+              "on_decisive_negative": 1,
+              "on_insufficient": 2
+            },
+            "unsupported_rejection": {
+              "cells": 4,
+              "rate_over_non_reject_gold": 0.25,
+              "on_sufficient_positive": 1,
+              "on_insufficient": 3
+            }
+          },
+          "by_evidence_class": {
+            "sufficient_positive": {
+              "n_cells": 7,
+              "n_issues": 4,
+              "n_correct": 4,
+              "da": 0.5714,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.25,
+                0.8
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 4,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 2
+              }
+            },
+            "decisive_negative": {
+              "n_cells": 6,
+              "n_issues": 5,
+              "n_correct": 1,
+              "da": 0.1667,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.6
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 4
+              }
+            },
+            "insufficient": {
+              "n_cells": 9,
+              "n_issues": 8,
+              "n_correct": 4,
+              "da": 0.4444,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.125,
+                0.75
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 2,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 4
+              }
+            }
+          }
+        },
+        "adjudicated": {
+          "n_requests": 22,
+          "n_parseable": 22,
+          "n_invalid": 0,
+          "n_ambiguous": 0,
+          "n_api_error": 0,
+          "n_correct": 10,
+          "da_parseable": {
+            "rate": 0.4545,
+            "n_correct": 10,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.2632,
+              0.6552
+            ],
+            "n_clusters": 10
+          },
+          "da_all_requests": {
+            "rate": 0.4545,
+            "n_correct": 10,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.2632,
+              0.6552
+            ],
+            "n_clusters": 10,
+            "note": "INVALID/AMBIGUOUS/API_ERROR count as not appropriate"
+          },
+          "always_need_baseline": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22
+          },
+          "confusion_matrix": {
+            "rows_decision": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "columns_gold": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 1,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 1
+              },
+              "REJECT": {
+                "ACCEPT": 2,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 2
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 4,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 6
+              }
+            },
+            "n_invalid": 0,
+            "n_ambiguous": 0,
+            "n_api_error": 0
+          },
+          "error_families": {
+            "over_abstention": {
+              "cells": 6,
+              "rate_over_decisive_gold": 0.4615,
+              "on_sufficient_positive": 4,
+              "on_decisive_negative": 2
+            },
+            "unsupported_acceptance_false_commit": {
+              "cells": 2,
+              "rate_over_non_accept_gold": 0.1333,
+              "on_decisive_negative": 1,
+              "on_insufficient": 1
+            },
+            "unsupported_rejection": {
+              "cells": 4,
+              "rate_over_non_reject_gold": 0.25,
+              "on_sufficient_positive": 2,
+              "on_insufficient": 2
+            }
+          },
+          "by_evidence_class": {
+            "sufficient_positive": {
+              "n_cells": 7,
+              "n_issues": 4,
+              "n_correct": 1,
+              "da": 0.1429,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.3
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 4
+              }
+            },
+            "decisive_negative": {
+              "n_cells": 6,
+              "n_issues": 5,
+              "n_correct": 3,
+              "da": 0.5,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.875
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 2
+              }
+            },
+            "insufficient": {
+              "n_cells": 9,
+              "n_issues": 8,
+              "n_correct": 6,
+              "da": 0.6667,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.375,
+                0.8889
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 6
+              }
+            }
+          }
+        }
+      },
+      "paired_contrasts": [
+        {
+          "contrast": "Adjudicated_minus_Raw",
+          "high_abstraction": "adjudicated",
+          "low_abstraction": "raw",
+          "n_matched_parseable_pairs": 22,
+          "n_issues": 10,
+          "high_da": 0.4545,
+          "low_da": 0.3636,
+          "mean_paired_delta": 0.0909,
+          "delta_ci95_issue_cluster_seed7_n10000": [
+            -0.3,
+            0.4
+          ],
+          "high_correct_low_wrong": 7,
+          "low_correct_high_wrong": 5,
+          "mcnemar_exact_two_sided_p_descriptive": 0.7744,
+          "changed_pairs": [
+            {
+              "bundle_id": "cee_0108367f62dfb1c6",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_017f5443ec813709",
+              "instance_id": "sympy__sympy-17139",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_13b04ca1faae0894",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "ACCEPT",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_4001af2fc564f50f",
+              "instance_id": "sympy__sympy-12419",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "ACCEPT",
+              "adjudicated_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_58d93f77f0c49f82",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_58df0b222c11095a",
+              "instance_id": "sympy__sympy-12419",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_5cfbc476af83be49",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "raw_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_76028c65f51defe8",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "raw_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_8f41672ea242cd7a",
+              "instance_id": "sympy__sympy-18199",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_ad6e89a460dfbe92",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "ACCEPT",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_b203936c59e46a77",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "raw_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_d054bcf1e4e8b26c",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            }
+          ],
+          "sign_note": "delta may be negative; no monotonic abstraction effect is assumed"
+        },
+        {
+          "contrast": "Structured_minus_Raw",
+          "high_abstraction": "structured",
+          "low_abstraction": "raw",
+          "n_matched_parseable_pairs": 22,
+          "n_issues": 10,
+          "high_da": 0.4091,
+          "low_da": 0.3636,
+          "mean_paired_delta": 0.0455,
+          "delta_ci95_issue_cluster_seed7_n10000": [
+            -0.3889,
+            0.4
+          ],
+          "high_correct_low_wrong": 7,
+          "low_correct_high_wrong": 6,
+          "mcnemar_exact_two_sided_p_descriptive": 1.0,
+          "changed_pairs": [
+            {
+              "bundle_id": "cee_0108367f62dfb1c6",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_017f5443ec813709",
+              "instance_id": "sympy__sympy-17139",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_1278b80ecd502546",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "structured_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_13b04ca1faae0894",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_5449e183c637f604",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_58d93f77f0c49f82",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_58df0b222c11095a",
+              "instance_id": "sympy__sympy-12419",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "ACCEPT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_9e8c95b6fac59e18",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "structured_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_a6aba2553d04e0f9",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_ad6e89a460dfbe92",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "structured_decision": "ACCEPT",
+              "raw_decision": "REJECT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_cfc14244c59a8ceb",
+              "instance_id": "sympy__sympy-14531",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_d054bcf1e4e8b26c",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_f0328f55403163cb",
+              "instance_id": "sympy__sympy-14531",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            }
+          ],
+          "sign_note": "delta may be negative; no monotonic abstraction effect is assumed"
+        },
+        {
+          "contrast": "Adjudicated_minus_Structured",
+          "high_abstraction": "adjudicated",
+          "low_abstraction": "structured",
+          "n_matched_parseable_pairs": 22,
+          "n_issues": 10,
+          "high_da": 0.4545,
+          "low_da": 0.4091,
+          "mean_paired_delta": 0.0455,
+          "delta_ci95_issue_cluster_seed7_n10000": [
+            -0.2381,
+            0.3913
+          ],
+          "high_correct_low_wrong": 6,
+          "low_correct_high_wrong": 5,
+          "mcnemar_exact_two_sided_p_descriptive": 1.0,
+          "changed_pairs": [
+            {
+              "bundle_id": "cee_1278b80ecd502546",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": false,
+              "structured_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_4001af2fc564f50f",
+              "instance_id": "sympy__sympy-12419",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": false,
+              "structured_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_5449e183c637f604",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_5cfbc476af83be49",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "structured_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_76028c65f51defe8",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_8f41672ea242cd7a",
+              "instance_id": "sympy__sympy-18199",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "adjudicated_correct": false,
+              "structured_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_9e8c95b6fac59e18",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": false,
+              "structured_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_a6aba2553d04e0f9",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_b203936c59e46a77",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "structured_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_cfc14244c59a8ceb",
+              "instance_id": "sympy__sympy-14531",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_f0328f55403163cb",
+              "instance_id": "sympy__sympy-14531",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "REJECT",
+              "structured_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": false,
+              "structured_correct": true,
+              "delta": -1
+            }
+          ],
+          "sign_note": "delta may be negative; no monotonic abstraction effect is assumed"
+        }
+      ],
+      "cross_layer_transitions": {
+        "raw_to_structured": {
+          "rows_raw": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "columns_structured": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "matrix": {
+            "ACCEPT": {
+              "ACCEPT": 2,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 2
+            },
+            "REJECT": {
+              "ACCEPT": 2,
+              "REJECT": 1,
+              "NEED_EVIDENCE": 6
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 3,
+              "REJECT": 4,
+              "NEED_EVIDENCE": 2
+            }
+          },
+          "cells_skipped_nonparseable": 0
+        },
+        "structured_to_adjudicated": {
+          "rows_structured": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "columns_adjudicated": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "matrix": {
+            "ACCEPT": {
+              "ACCEPT": 1,
+              "REJECT": 2,
+              "NEED_EVIDENCE": 4
+            },
+            "REJECT": {
+              "ACCEPT": 1,
+              "REJECT": 1,
+              "NEED_EVIDENCE": 3
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 1,
+              "REJECT": 4,
+              "NEED_EVIDENCE": 5
+            }
+          },
+          "cells_skipped_nonparseable": 0
+        },
+        "raw_to_adjudicated": {
+          "rows_raw": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "columns_adjudicated": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "matrix": {
+            "ACCEPT": {
+              "ACCEPT": 0,
+              "REJECT": 2,
+              "NEED_EVIDENCE": 2
+            },
+            "REJECT": {
+              "ACCEPT": 2,
+              "REJECT": 2,
+              "NEED_EVIDENCE": 5
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 1,
+              "REJECT": 3,
+              "NEED_EVIDENCE": 5
+            }
+          },
+          "cells_skipped_nonparseable": 0
+        }
+      },
+      "mechanism_audit": {
+        "n_errors_parseable": 39,
+        "keyword_mentions_across_all_rows": {},
+        "flagged_potential_misuse": [],
+        "errors": [
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_0108367f62dfb1c6",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_017f5443ec813709",
+            "instance_id": "sympy__sympy-17139",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_037b37020e5d9a37",
+            "instance_id": "sympy__sympy-16450",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_03df4f19a25d0cf5",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_1278b80ecd502546",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_58df0b222c11095a",
+            "instance_id": "sympy__sympy-12419",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_5cfbc476af83be49",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_76028c65f51defe8",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_negative",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_9e8c95b6fac59e18",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_a8063781f0851759",
+            "instance_id": "sympy__sympy-12419",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_a81c2a012161efe0",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_positive",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_ad6e89a460dfbe92",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_positive",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_b203936c59e46a77",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_negative",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_f0328f55403163cb",
+            "instance_id": "sympy__sympy-14531",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_037b37020e5d9a37",
+            "instance_id": "sympy__sympy-16450",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_03df4f19a25d0cf5",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_13b04ca1faae0894",
+            "instance_id": "sympy__sympy-13798",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_5449e183c637f604",
+            "instance_id": "sympy__sympy-13798",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_58d93f77f0c49f82",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_5cfbc476af83be49",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_76028c65f51defe8",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_negative",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_a6aba2553d04e0f9",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_a8063781f0851759",
+            "instance_id": "sympy__sympy-12419",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_positive",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_a81c2a012161efe0",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_b203936c59e46a77",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_cfc14244c59a8ceb",
+            "instance_id": "sympy__sympy-14531",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_d054bcf1e4e8b26c",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_037b37020e5d9a37",
+            "instance_id": "sympy__sympy-16450",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_positive",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_03df4f19a25d0cf5",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_1278b80ecd502546",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_13b04ca1faae0894",
+            "instance_id": "sympy__sympy-13798",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_negative",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_4001af2fc564f50f",
+            "instance_id": "sympy__sympy-12419",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_58d93f77f0c49f82",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_8f41672ea242cd7a",
+            "instance_id": "sympy__sympy-18199",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_9e8c95b6fac59e18",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_a8063781f0851759",
+            "instance_id": "sympy__sympy-12419",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_positive",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_a81c2a012161efe0",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=NEED_EVIDENCE; grounded from served materials.",
+            "missing_evidence_verbatim": "mock missing_evidence for cell#0",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_d054bcf1e4e8b26c",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=ACCEPT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_f0328f55403163cb",
+            "instance_id": "sympy__sympy-14531",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "mock reason for cell#0 (gpt-4.1-mini): decision=REJECT; grounded from served materials.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": []
+          }
+        ]
+      }
+    }
+  },
+  "sensitivity": {
+    "n": 22,
+    "derived_summary_disclosure": "present in all 44 raw/structured Gate-2 payloads; runner summary is explicitly labelled pre-classified",
+    "fixtures_without_p2p_per_test_map": 6,
+    "fixtures_without_baseline_per_test_map": 12,
+    "fixtures_without_probe_source": 13,
+    "length_discipline": "length is condition-determined; reported and discussed, not used as a regression control",
+    "per_fixture": [
+      {
+        "bundle_id": "cee_8f41672ea242cd7a",
+        "instance_id": "sympy__sympy-18199",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": true,
+        "raw_bytes": 64040,
+        "structured_bytes": 37488,
+        "adjudicated_bytes": 7253
+      },
+      {
+        "bundle_id": "cee_017f5443ec813709",
+        "instance_id": "sympy__sympy-17139",
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": true,
+        "raw_bytes": 28765,
+        "structured_bytes": 26768,
+        "adjudicated_bytes": 8099
+      },
+      {
+        "bundle_id": "cee_13b04ca1faae0894",
+        "instance_id": "sympy__sympy-13798",
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": true,
+        "raw_bytes": 38234,
+        "structured_bytes": 35271,
+        "adjudicated_bytes": 8988
+      },
+      {
+        "bundle_id": "cee_f0328f55403163cb",
+        "instance_id": "sympy__sympy-14531",
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": true,
+        "raw_bytes": 26568,
+        "structured_bytes": 30164,
+        "adjudicated_bytes": 7345
+      },
+      {
+        "bundle_id": "cee_d054bcf1e4e8b26c",
+        "instance_id": "sympy__sympy-18211",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": true,
+        "raw_bytes": 35071,
+        "structured_bytes": 27752,
+        "adjudicated_bytes": 8950
+      },
+      {
+        "bundle_id": "cee_5449e183c637f604",
+        "instance_id": "sympy__sympy-13798",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": true,
+        "raw_bytes": 159104,
+        "structured_bytes": 35211,
+        "adjudicated_bytes": 8992
+      },
+      {
+        "bundle_id": "cee_037b37020e5d9a37",
+        "instance_id": "sympy__sympy-16450",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": true,
+        "raw_bytes": 81510,
+        "structured_bytes": 23381,
+        "adjudicated_bytes": 8872
+      },
+      {
+        "bundle_id": "cee_58d93f77f0c49f82",
+        "instance_id": "sympy__sympy-18211",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": true,
+        "raw_bytes": 43189,
+        "structured_bytes": 26081,
+        "adjudicated_bytes": 6845
+      },
+      {
+        "bundle_id": "cee_cfc14244c59a8ceb",
+        "instance_id": "sympy__sympy-14531",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": true,
+        "raw_bytes": 247257,
+        "structured_bytes": 30765,
+        "adjudicated_bytes": 7348
+      },
+      {
+        "bundle_id": "cee_76028c65f51defe8",
+        "instance_id": "sympy__sympy-12489",
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 39746,
+        "structured_bytes": 21895,
+        "adjudicated_bytes": 14488
+      },
+      {
+        "bundle_id": "cee_b203936c59e46a77",
+        "instance_id": "sympy__sympy-13091",
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 41583,
+        "structured_bytes": 32767,
+        "adjudicated_bytes": 9000
+      },
+      {
+        "bundle_id": "cee_03df4f19a25d0cf5",
+        "instance_id": "sympy__sympy-13091",
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 44653,
+        "structured_bytes": 37426,
+        "adjudicated_bytes": 13587
+      },
+      {
+        "bundle_id": "cee_58df0b222c11095a",
+        "instance_id": "sympy__sympy-12419",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 51781,
+        "structured_bytes": 19253,
+        "adjudicated_bytes": 8118
+      },
+      {
+        "bundle_id": "cee_0108367f62dfb1c6",
+        "instance_id": "sympy__sympy-12481",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 44399,
+        "structured_bytes": 14939,
+        "adjudicated_bytes": 7666
+      },
+      {
+        "bundle_id": "cee_a6aba2553d04e0f9",
+        "instance_id": "sympy__sympy-12489",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 57442,
+        "structured_bytes": 21895,
+        "adjudicated_bytes": 14488
+      },
+      {
+        "bundle_id": "cee_5cfbc476af83be49",
+        "instance_id": "sympy__sympy-12489",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 49422,
+        "structured_bytes": 15909,
+        "adjudicated_bytes": 8876
+      },
+      {
+        "bundle_id": "cee_4001af2fc564f50f",
+        "instance_id": "sympy__sympy-12419",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": false,
+        "raw_bytes": 69676,
+        "structured_bytes": 19449,
+        "adjudicated_bytes": 8121
+      },
+      {
+        "bundle_id": "cee_9e8c95b6fac59e18",
+        "instance_id": "sympy__sympy-12481",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": false,
+        "raw_bytes": 59200,
+        "structured_bytes": 15009,
+        "adjudicated_bytes": 7669
+      },
+      {
+        "bundle_id": "cee_1278b80ecd502546",
+        "instance_id": "sympy__sympy-13091",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": false,
+        "raw_bytes": 202943,
+        "structured_bytes": 38042,
+        "adjudicated_bytes": 13704
+      },
+      {
+        "bundle_id": "cee_ad6e89a460dfbe92",
+        "instance_id": "sympy__sympy-12481",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": false,
+        "raw_bytes": 58484,
+        "structured_bytes": 14293,
+        "adjudicated_bytes": 6953
+      },
+      {
+        "bundle_id": "cee_a8063781f0851759",
+        "instance_id": "sympy__sympy-12419",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": false,
+        "raw_bytes": 68741,
+        "structured_bytes": 18514,
+        "adjudicated_bytes": 7186
+      },
+      {
+        "bundle_id": "cee_a81c2a012161efe0",
+        "instance_id": "sympy__sympy-12481",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": false,
+        "raw_bytes": 58166,
+        "structured_bytes": 13975,
+        "adjudicated_bytes": 6635
+      }
+    ]
+  },
+  "engineering_audit": {
+    "models": {
+      "deepseek-flash": {
+        "model_requested": [
+          "deepseek-flash"
+        ],
+        "model_served": [
+          "mock-deepseek-flash"
+        ],
+        "e1_served_model_id": "deepseek-flash",
+        "served_id_equals_e1_all_rows": false,
+        "response_format_modes": [
+          "json_object"
+        ],
+        "server_schema_enforced_any": false,
+        "plain_text_fallback_any": false,
+        "tools_sent_total": 0,
+        "tokens_in": 774639,
+        "tokens_out": 4972,
+        "cost_usd": 0.0,
+        "wall_s_total": 0.01,
+        "n_api_error": 0,
+        "n_invalid": 0,
+        "n_ambiguous": 0,
+        "raw_persisted_before_parse_all": true,
+        "payload_hashes_match_freeze_all": true
+      },
+      "gpt-4.1-mini": {
+        "model_requested": [
+          "gpt-4.1-mini"
+        ],
+        "model_served": [
+          "mock-gpt-4.1-mini"
+        ],
+        "e1_served_model_id": "gpt-4.1-mini-2025-04-14",
+        "served_id_equals_e1_all_rows": false,
+        "response_format_modes": [
+          "json_object"
+        ],
+        "server_schema_enforced_any": false,
+        "plain_text_fallback_any": false,
+        "tools_sent_total": 0,
+        "tokens_in": 774639,
+        "tokens_out": 4941,
+        "cost_usd": 0.0,
+        "wall_s_total": 0.01,
+        "n_api_error": 0,
+        "n_invalid": 0,
+        "n_ambiguous": 0,
+        "raw_persisted_before_parse_all": true,
+        "payload_hashes_match_freeze_all": true
+      }
+    },
+    "audit_summary": {
+      "total_spend_usd": 0.0,
+      "hard_cap_usd": 3.0,
+      "within_total_cap": true,
+      "budget_status": "within_cap",
+      "cross_model_payload_byte_identity": true
+    },
+    "freeze_manifest_sha256": "54777eb2228dd69b4650ffc9a6e73f7d2e5079ed4b7b7c0e8f885bc2484d32a3"
+  }
+}

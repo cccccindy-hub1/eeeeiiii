@@ -1,0 +1,66 @@
+{
+  "protocol": "eal-v0-draft1",
+  "gate": "gate1_offline",
+  "mock": true,
+  "mock_mode": "oracle",
+  "n_cells_per_model": 66,
+  "n_models": 2,
+  "n_rows_written": 0,
+  "models": [
+    {
+      "model_profile": "deepseek-flash",
+      "new_calls": 0,
+      "errors": 0,
+      "invalid": 0,
+      "ambiguous": 0,
+      "spend_usd": 0.0,
+      "projected_envelope_usd": 0.0,
+      "out_file": "eal_gate1_mock_deepseek_flash_results.jsonl"
+    },
+    {
+      "model_profile": "gpt-4.1-mini",
+      "new_calls": 0,
+      "errors": 0,
+      "invalid": 0,
+      "ambiguous": 0,
+      "spend_usd": 0.0,
+      "projected_envelope_usd": 0.0,
+      "out_file": "eal_gate1_mock_gpt_41_mini_results.jsonl"
+    }
+  ],
+  "total_spend_usd": 0.0,
+  "total_projected_worst_case_envelope_usd": 0.0,
+  "hard_cap_usd": 3.0,
+  "projection_within_total_cap": true,
+  "cross_model_payload_byte_identity": true,
+  "payload_sha_mismatches": {},
+  "completion_cap_tokens": 4096,
+  "tools_sent": 0,
+  "plain_text_fallback_used": false,
+  "version": {
+    "protocol": "eal-v0-draft1",
+    "gate": "gate1_offline",
+    "layers": [
+      "raw",
+      "structured",
+      "adjudicated"
+    ],
+    "system_message_sha256": "2c64f3acf2e91b44ca92fab346240afb798deac2f5dc51373506a50c47c23e45",
+    "layer_prompt_fingerprints": {
+      "raw": "c09a5edfda0764b63d4e942351a07ed971c990835844aa65acd54be687942b0a",
+      "structured": "07c2aefe0f58936f0b6eba5f14854eaa71de46b4fa4fbd28bddd152996747a01",
+      "adjudicated": "30b31e43f51fd5d1e30e74b67dac67ebd3424e926b5ce7f9deec83b1a310c9dd"
+    },
+    "decision_schema_sha256": "abfc5d794b73063963627bd9eba2e3da0d8d815fe8789f49572bdf2ad70c0b51",
+    "response_format_sent": {
+      "type": "json_object"
+    },
+    "server_schema_enforced": false,
+    "local_schema_validation": "cee_protocol_v11.validate_decision_object",
+    "plain_text_fallback_permitted": false,
+    "tools": "none",
+    "turns": 1,
+    "eal_run_py_sha256": "1fa56c3b9c8217e8c5f8f7632940b19a72a3326713a32ba87aa368a1d916b296",
+    "eal_protocol_py_sha256": "26a101c72668d6394b8fd3ad2e982cabb13880a285d8180250b5bde89c6ea995"
+  }
+}

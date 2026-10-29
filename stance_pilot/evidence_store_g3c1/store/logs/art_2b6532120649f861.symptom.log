@@ -1,0 +1,20 @@
+### BASELINE (pre-patch)
+$ python sympy__sympy-19040-baseline.py  (exit 1)
+--- stdout ---
+input      : x*y - x - y + 1
+factor     : (x - 1)*(y - 1)
+factor ext : x - 1
+FAIL: factor(extension=[I]) dropped a factor; expansion = x - 1
+
+--- stderr ---
+
+
+### POST candidate patch
+$ python sympy__sympy-19040-post-candidate.py  (exit 0)
+--- stdout ---
+input      : x*y - x - y + 1
+factor     : (x - 1)*(y - 1)
+factor ext : (x - 1)*(y - 1)
+OK: factor with extension preserves the polynomial
+
+--- stderr ---

@@ -1,0 +1,2662 @@
+{
+  "metric": "groundedreview_eal_gate2_abstraction_pilot",
+  "protocol": "eal-v0-draft1",
+  "gate2_condition": "eal-v0-draft1+gate2-derived-summary-disclosure",
+  "bootstrap": {
+    "unit": "issue cluster (instance_id)",
+    "seed": 7,
+    "n_boot": 10000
+  },
+  "n_independent_issues": 10,
+  "models": {
+    "deepseek-flash": {
+      "layers": {
+        "raw": {
+          "n_requests": 22,
+          "n_parseable": 22,
+          "n_invalid": 0,
+          "n_ambiguous": 0,
+          "n_api_error": 0,
+          "n_correct": 17,
+          "da_parseable": {
+            "rate": 0.7727,
+            "n_correct": 17,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.5625,
+              0.95
+            ],
+            "n_clusters": 10
+          },
+          "da_all_requests": {
+            "rate": 0.7727,
+            "n_correct": 17,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.5625,
+              0.95
+            ],
+            "n_clusters": 10,
+            "note": "INVALID/AMBIGUOUS/API_ERROR count as not appropriate"
+          },
+          "always_need_baseline": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22
+          },
+          "confusion_matrix": {
+            "rows_decision": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "columns_gold": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 6,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 0
+              },
+              "REJECT": {
+                "ACCEPT": 1,
+                "REJECT": 6,
+                "NEED_EVIDENCE": 4
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 0,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 5
+              }
+            },
+            "n_invalid": 0,
+            "n_ambiguous": 0,
+            "n_api_error": 0
+          },
+          "error_families": {
+            "over_abstention": {
+              "cells": 0,
+              "rate_over_decisive_gold": 0.0,
+              "on_sufficient_positive": 0,
+              "on_decisive_negative": 0
+            },
+            "unsupported_acceptance_false_commit": {
+              "cells": 0,
+              "rate_over_non_accept_gold": 0.0,
+              "on_decisive_negative": 0,
+              "on_insufficient": 0
+            },
+            "unsupported_rejection": {
+              "cells": 5,
+              "rate_over_non_reject_gold": 0.3125,
+              "on_sufficient_positive": 1,
+              "on_insufficient": 4
+            }
+          },
+          "by_evidence_class": {
+            "sufficient_positive": {
+              "n_cells": 7,
+              "n_issues": 4,
+              "n_correct": 6,
+              "da": 0.8571,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.4,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 6,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 0
+              }
+            },
+            "decisive_negative": {
+              "n_cells": 6,
+              "n_issues": 5,
+              "n_correct": 6,
+              "da": 1.0,
+              "ci95_issue_cluster_seed7_n10000": [
+                1.0,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 0,
+                "REJECT": 6,
+                "NEED_EVIDENCE": 0
+              }
+            },
+            "insufficient": {
+              "n_cells": 9,
+              "n_issues": 8,
+              "n_correct": 5,
+              "da": 0.5556,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.125,
+                0.8889
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 0,
+                "REJECT": 4,
+                "NEED_EVIDENCE": 5
+              }
+            }
+          }
+        },
+        "structured": {
+          "n_requests": 22,
+          "n_parseable": 22,
+          "n_invalid": 0,
+          "n_ambiguous": 0,
+          "n_api_error": 0,
+          "n_correct": 19,
+          "da_parseable": {
+            "rate": 0.8636,
+            "n_correct": 19,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.7368,
+              1.0
+            ],
+            "n_clusters": 10
+          },
+          "da_all_requests": {
+            "rate": 0.8636,
+            "n_correct": 19,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.7368,
+              1.0
+            ],
+            "n_clusters": 10,
+            "note": "INVALID/AMBIGUOUS/API_ERROR count as not appropriate"
+          },
+          "always_need_baseline": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22
+          },
+          "confusion_matrix": {
+            "rows_decision": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "columns_gold": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 6,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 0
+              },
+              "REJECT": {
+                "ACCEPT": 0,
+                "REJECT": 4,
+                "NEED_EVIDENCE": 0
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 1,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 9
+              }
+            },
+            "n_invalid": 0,
+            "n_ambiguous": 0,
+            "n_api_error": 0
+          },
+          "error_families": {
+            "over_abstention": {
+              "cells": 3,
+              "rate_over_decisive_gold": 0.2308,
+              "on_sufficient_positive": 1,
+              "on_decisive_negative": 2
+            },
+            "unsupported_acceptance_false_commit": {
+              "cells": 0,
+              "rate_over_non_accept_gold": 0.0,
+              "on_decisive_negative": 0,
+              "on_insufficient": 0
+            },
+            "unsupported_rejection": {
+              "cells": 0,
+              "rate_over_non_reject_gold": 0.0,
+              "on_sufficient_positive": 0,
+              "on_insufficient": 0
+            }
+          },
+          "by_evidence_class": {
+            "sufficient_positive": {
+              "n_cells": 7,
+              "n_issues": 4,
+              "n_correct": 6,
+              "da": 0.8571,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.5714,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 6,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 1
+              }
+            },
+            "decisive_negative": {
+              "n_cells": 6,
+              "n_issues": 5,
+              "n_correct": 4,
+              "da": 0.6667,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.3333,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 0,
+                "REJECT": 4,
+                "NEED_EVIDENCE": 2
+              }
+            },
+            "insufficient": {
+              "n_cells": 9,
+              "n_issues": 8,
+              "n_correct": 9,
+              "da": 1.0,
+              "ci95_issue_cluster_seed7_n10000": [
+                1.0,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 0,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 9
+              }
+            }
+          }
+        },
+        "adjudicated": {
+          "n_requests": 22,
+          "n_parseable": 22,
+          "n_invalid": 0,
+          "n_ambiguous": 0,
+          "n_api_error": 0,
+          "n_correct": 20,
+          "da_parseable": {
+            "rate": 0.9091,
+            "n_correct": 20,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.7826,
+              1.0
+            ],
+            "n_clusters": 10
+          },
+          "da_all_requests": {
+            "rate": 0.9091,
+            "n_correct": 20,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.7826,
+              1.0
+            ],
+            "n_clusters": 10,
+            "note": "INVALID/AMBIGUOUS/API_ERROR count as not appropriate"
+          },
+          "always_need_baseline": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22
+          },
+          "confusion_matrix": {
+            "rows_decision": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "columns_gold": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 7,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 0
+              },
+              "REJECT": {
+                "ACCEPT": 0,
+                "REJECT": 4,
+                "NEED_EVIDENCE": 0
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 0,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 9
+              }
+            },
+            "n_invalid": 0,
+            "n_ambiguous": 0,
+            "n_api_error": 0
+          },
+          "error_families": {
+            "over_abstention": {
+              "cells": 2,
+              "rate_over_decisive_gold": 0.1538,
+              "on_sufficient_positive": 0,
+              "on_decisive_negative": 2
+            },
+            "unsupported_acceptance_false_commit": {
+              "cells": 0,
+              "rate_over_non_accept_gold": 0.0,
+              "on_decisive_negative": 0,
+              "on_insufficient": 0
+            },
+            "unsupported_rejection": {
+              "cells": 0,
+              "rate_over_non_reject_gold": 0.0,
+              "on_sufficient_positive": 0,
+              "on_insufficient": 0
+            }
+          },
+          "by_evidence_class": {
+            "sufficient_positive": {
+              "n_cells": 7,
+              "n_issues": 4,
+              "n_correct": 7,
+              "da": 1.0,
+              "ci95_issue_cluster_seed7_n10000": [
+                1.0,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 0
+              }
+            },
+            "decisive_negative": {
+              "n_cells": 6,
+              "n_issues": 5,
+              "n_correct": 4,
+              "da": 0.6667,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.3333,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 0,
+                "REJECT": 4,
+                "NEED_EVIDENCE": 2
+              }
+            },
+            "insufficient": {
+              "n_cells": 9,
+              "n_issues": 8,
+              "n_correct": 9,
+              "da": 1.0,
+              "ci95_issue_cluster_seed7_n10000": [
+                1.0,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 0,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 9
+              }
+            }
+          }
+        }
+      },
+      "paired_contrasts": [
+        {
+          "contrast": "Adjudicated_minus_Raw",
+          "high_abstraction": "adjudicated",
+          "low_abstraction": "raw",
+          "n_matched_parseable_pairs": 22,
+          "n_issues": 10,
+          "high_da": 0.9091,
+          "low_da": 0.7727,
+          "mean_paired_delta": 0.1364,
+          "delta_ci95_issue_cluster_seed7_n10000": [
+            -0.0769,
+            0.381
+          ],
+          "high_correct_low_wrong": 5,
+          "low_correct_high_wrong": 2,
+          "mcnemar_exact_two_sided_p_descriptive": 0.4531,
+          "changed_pairs": [
+            {
+              "bundle_id": "cee_017f5443ec813709",
+              "instance_id": "sympy__sympy-17139",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_03df4f19a25d0cf5",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_1278b80ecd502546",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "ACCEPT",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_5449e183c637f604",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_58d93f77f0c49f82",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_5cfbc476af83be49",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_a6aba2553d04e0f9",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            }
+          ],
+          "sign_note": "delta may be negative; no monotonic abstraction effect is assumed"
+        },
+        {
+          "contrast": "Structured_minus_Raw",
+          "high_abstraction": "structured",
+          "low_abstraction": "raw",
+          "n_matched_parseable_pairs": 22,
+          "n_issues": 10,
+          "high_da": 0.8636,
+          "low_da": 0.7727,
+          "mean_paired_delta": 0.0909,
+          "delta_ci95_issue_cluster_seed7_n10000": [
+            -0.1429,
+            0.3636
+          ],
+          "high_correct_low_wrong": 5,
+          "low_correct_high_wrong": 3,
+          "mcnemar_exact_two_sided_p_descriptive": 0.7266,
+          "changed_pairs": [
+            {
+              "bundle_id": "cee_017f5443ec813709",
+              "instance_id": "sympy__sympy-17139",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_03df4f19a25d0cf5",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_1278b80ecd502546",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "structured_decision": "ACCEPT",
+              "raw_decision": "REJECT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_5449e183c637f604",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_58d93f77f0c49f82",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_5cfbc476af83be49",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_a6aba2553d04e0f9",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_a8063781f0851759",
+              "instance_id": "sympy__sympy-12419",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "structured_decision": "NEED_EVIDENCE",
+              "raw_decision": "ACCEPT",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            }
+          ],
+          "sign_note": "delta may be negative; no monotonic abstraction effect is assumed"
+        },
+        {
+          "contrast": "Adjudicated_minus_Structured",
+          "high_abstraction": "adjudicated",
+          "low_abstraction": "structured",
+          "n_matched_parseable_pairs": 22,
+          "n_issues": 10,
+          "high_da": 0.9091,
+          "low_da": 0.8636,
+          "mean_paired_delta": 0.0455,
+          "delta_ci95_issue_cluster_seed7_n10000": [
+            0.0,
+            0.1429
+          ],
+          "high_correct_low_wrong": 1,
+          "low_correct_high_wrong": 0,
+          "mcnemar_exact_two_sided_p_descriptive": 1.0,
+          "changed_pairs": [
+            {
+              "bundle_id": "cee_a8063781f0851759",
+              "instance_id": "sympy__sympy-12419",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "ACCEPT",
+              "structured_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            }
+          ],
+          "sign_note": "delta may be negative; no monotonic abstraction effect is assumed"
+        }
+      ],
+      "cross_layer_transitions": {
+        "raw_to_structured": {
+          "rows_raw": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "columns_structured": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "matrix": {
+            "ACCEPT": {
+              "ACCEPT": 5,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 1
+            },
+            "REJECT": {
+              "ACCEPT": 1,
+              "REJECT": 4,
+              "NEED_EVIDENCE": 6
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 0,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 5
+            }
+          },
+          "cells_skipped_nonparseable": 0
+        },
+        "structured_to_adjudicated": {
+          "rows_structured": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "columns_adjudicated": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "matrix": {
+            "ACCEPT": {
+              "ACCEPT": 6,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 0
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "REJECT": 4,
+              "NEED_EVIDENCE": 0
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 1,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 11
+            }
+          },
+          "cells_skipped_nonparseable": 0
+        },
+        "raw_to_adjudicated": {
+          "rows_raw": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "columns_adjudicated": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "matrix": {
+            "ACCEPT": {
+              "ACCEPT": 6,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 0
+            },
+            "REJECT": {
+              "ACCEPT": 1,
+              "REJECT": 4,
+              "NEED_EVIDENCE": 6
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 0,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 5
+            }
+          },
+          "cells_skipped_nonparseable": 0
+        }
+      },
+      "mechanism_audit": {
+        "n_errors_parseable": 10,
+        "keyword_mentions_across_all_rows": {
+          "stale/fresh": 54,
+          "linkage": 58,
+          "symptom/probe": 64,
+          "coverage/incomplete": 19
+        },
+        "flagged_potential_misuse": [
+          {
+            "bundle_id": "cee_1278b80ecd502546",
+            "layer": "raw",
+            "pattern": "ACCEPT-gold but reason invokes stale/fresh concern",
+            "reason_excerpt": "Linkage and freshness check out: the run record's patch_sha256 (2aa3f256...) and base_commit (d1320814...) match the TARGET, and run_tree 326d6bae... matches the attested expected_run_tree. The declared F2P set (test_equality, test_comparisons_with_unknown_type) both PASSED, and "
+          },
+          {
+            "bundle_id": "cee_5cfbc476af83be49",
+            "layer": "structured",
+            "pattern": "REJECT-gold withheld via coverage/incomplete claim",
+            "reason_excerpt": "Identity operands match (base_commit and patch_sha256 identical in TARGET and signed record), but the run tree does not: the signed run's git tree is 2228437af3c5380fa2865ba3e9ef3a9096cdef7c while the attestation declares expected canonical tree e2a863d6c367cee649f77f5e391442fc55"
+          },
+          {
+            "bundle_id": "cee_a8063781f0851759",
+            "layer": "structured",
+            "pattern": "ACCEPT-gold but reason invokes stale/fresh concern",
+            "reason_excerpt": "Identity operands match (base_commit and patch_sha256 identical in TARGET and signed record), and the run tree equals the attested canonical tree, so linkage and freshness hold. The declared set was fully executed: F2P test_Identity PASSED post-patch, and all 25 scoped P2P tests "
+          }
+        ],
+        "errors": [
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_017f5443ec813709",
+            "instance_id": "sympy__sympy-17139",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "contradiction",
+            "reason_verbatim": "Linkage and freshness are intact: the run record's patch_sha256 (f6806233...) and base_commit match the TARGET, and run_tree 3d022067... matches the attested expected_run_tree. The symptom probe is decisive and applicable: pre-patch it fails with 'TypeError Invalid comparison of complex I', post-patch it exits 0 with 'OK: simplify -> cos(x)**I', so the reported symptom is resolved. However, the declared acceptance set is not satisfied. The attestation declares fail_to_pass = [test__TR56, test_issue_17137], but the executed f2p run only contains test_issue_17137 (PASSED); test__TR56 was never executed, so the declared acceptance set was not fully covered. More importantly, the f2p log shows an applicable acceptance failure: test_simplify_expr FAILED (assert simplify(expr) == 2*x/(a**2*(x**2 - y**2))), and test_simplify_expr is in the attested declared_p2p_scoped set. The runner's derived summary claims p2p_total=0 and no regressions, but that summary is contradicted by the raw per-test output, which shows test_simplify_expr failing in the post-patch run. The other two failures (test_factorial_simplify, test_simplify_float_vs_integer) are XFail-marked and not in the declared set, so they are not decisive; test_simplify_expr is. A single credible, applicable failing acceptance check is sufficient to REJECT.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_03df4f19a25d0cf5",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "Identity and tree linkage check out: the run record's patch_sha256 (2aa3f256...) and base_commit match the TARGET, and run_tree 326d6bae... matches the attested expected_run_tree, so the evidence applies to this patch. The symptom probe is fresh and linked: pre-patch it fails ('Basic == unknown did not delegate to reflected __eq__'), post-patch it passes ('rich comparison symmetric via reflected methods'), so the reported symptom is resolved. However, the acceptance run log (f2p, digest matches the record) shows a decisive applicable failure: test_NumberSymbol_comparison FAILED with 'assert (905502432259640373/288230376151711744 > pi) == (pi < 905502432259640373/288230376151711744)'. This is a direct consequence of the patch's NumberSymbol.__eq__/__ne__ returning NotImplemented, breaking the symmetry of rich comparisons against NumberSymbols. The runner's derived summary claims f2p_passed=1 with no failures, but that summary is contradicted by the raw per-test output in the same signed log, which I verified myself; the raw observation governs. Additionally, the declared fail_to_pass set includes test_equality, which does not appear in the executed run at all, and the declared p2p scoped set (89 tests) was not executed (p2p log: 'no scoped regression checks were executed'), so coverage is incomplete. But the decisive point is the credible, applicable failing check in the linked, fresh acceptance log, which is sufficient grounds to REJECT.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "coverage/incomplete",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_1278b80ecd502546",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_positive",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "Linkage and freshness check out: the run record's patch_sha256 (2aa3f256...) and base_commit (d1320814...) match the TARGET, and run_tree 326d6bae... matches the attested expected_run_tree. The declared F2P set (test_equality, test_comparisons_with_unknown_type) both PASSED, and the symptom probe flips from FAIL (pre-patch) to OK (post-patch), so the reported issue is resolved. However, I independently re-derived the post-vs-base comparison from the raw per-test maps rather than trusting the runner summary. The p2p_baseline log shows test_NumberSymbol_comparison is absent from the base run (base collected 153 items in test_function/test_noncommutative/test_numbers; post collected 155), and in the post-patch run it FAILS: 'assert (rpi > pi) == (pi < rpi)' — a direct consequence of the patch's NumberSymbol.__eq__/__ne__ now returning NotImplemented, breaking comparison symmetry. This is a genuine, applicable regression introduced by this patch, not a pre-existing failure. The runner's derived summary incorrectly lists p2p_regressed_ids as empty and only test_Float as pre-existing-bad, which contradicts the raw logs. Additionally, test_issue_8444 fails post-patch ('(x <= oo) == (x >= -oo)') and is also absent from the base run, consistent with the Infinity.__eq__/__ne__ NotImplemented change. These are decisive applicable failures in the scoped regression set, so the patch is not merge-acceptable.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_5449e183c637f604",
+            "instance_id": "sympy__sympy-13798",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "Linkage and freshness are intact: the run record's patch_sha256 (ba86753e...) and base_commit match the TARGET, and the run_tree 6caa5a62... matches the attested expected_run_tree de834347... (note: the attestation's expected_run_tree is de834347b7d0caa8502d39785475b61093481bc8, while the record's run_tree is 6caa5a62de18dbd712a1d0e9d78992de9daec0a0 — these differ, so the run tree does NOT match the attested tree; this alone would be a linkage/staleness concern). More decisively, the declared FAIL_TO_PASS acceptance test test_latex_basic is recorded FAILED in the run record's fail_to_pass map and in the raw pytest log: `assert latex(1.5*3**x, mul_symbol='\\\\,') == r\"1.5 \\cdot 3^{x}\"` fails with actual '1.5\\\\,3^{x}'. This is a raw per-test observation I verified directly from the log, not merely inherited from the derived summary. The symptom probe does show the issue is resolved (pre-patch KeyError, post-patch OK: 3\\,x^{2}\\,y), but the declared acceptance check fails, which is decisive grounds to REJECT. The runner's derived summary claims f2p_failed_ids=[test_latex_basic] and p2p_regressed_ids=[]; the p2p failures shown (test_latex_Float, test_issue_8470, test_issue_13559, etc.) are not in the declared p2p set and appear environment/pre-existing, so I do not rely on them. The decisive applicable failure is the declared acceptance test test_latex_basic.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "raw",
+            "bundle_id": "cee_a6aba2553d04e0f9",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The run record links to this patch (patch_sha256 51680724... matches TARGET) and base commit matches, but the run_tree (a24535c7...) does NOT match the attested expected_run_tree (a39039f1...). More importantly, the raw per-test statuses in the executed logs show decisive failures: the declared FAIL_TO_PASS acceptance test test_Permutation_subclassing FAILED (assert Permutation(4) == Permutation(4)), and scoped P2P tests test_ranking, test_mul, test_from_sequence FAILED, plus test_printing_non_cyclic FAILED. These are raw observations I verified directly from the logs, not merely inherited from the runner summary (which inconsistently lists p2p_regressed_ids as empty despite these failures). The symptom probe does show the subclassing symptom fixed pre->post, but the acceptance test itself fails and multiple scoped regressions are present, which is decisive grounds to reject. Note the run_tree mismatch is a linkage concern, but the failures are in logs bound to this patch's record and are consistent with the patch's changes (e.g., cls._af_new / type(self)._af_new altering equality/printing behavior).",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_58d93f77f0c49f82",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "linkage_mismatch",
+            "reason_verbatim": "The signed run record does not link to this patch: TABLE 1 shows the record's patch_sha256 (a67f41ae…) differs from the TARGET patch_sha256 (6c46558e…), and TABLE 2 shows the run's git tree (37e05506…) differs from the expected canonical tree (814d0303…). So the per-test PASSED statuses in TABLE 4 and the runner summary in TABLE 5 (1/1 F2P, 54/54 P2P, no regressions) cannot be attributed to this patch. Additionally, the issue-symptom probe (TABLE 7) shows the post-patch candidate still failing, but with a different error (TypeError: unsupported operand type(s) for +: 'ConditionSet' and 'list'), which suggests the patch may not fully resolve the issue — however, since the run tree and patch hash do not match the target, I cannot treat this as decisive applicable evidence against THIS patch. The evidence is not linked to this patch/commit, so I abstain.",
+            "missing_evidence_verbatim": "The signed run record's patch_sha256 (a67f41ae…) and git tree (37e05506…) do not match the TARGET patch_sha256 (6c46558e…) and expected canonical tree (814d0303…); no run linked to this exact patch/commit tree is provided.",
+            "keyword_flags": [
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_5cfbc476af83be49",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "stale",
+            "reason_verbatim": "Identity operands match (base_commit and patch_sha256 identical in TARGET and signed record), but the run tree does not: the signed run's git tree is 2228437af3c5380fa2865ba3e9ef3a9096cdef7c while the attestation declares expected canonical tree e2a863d6c367cee649f77f5e391442fc5534c3af, so the executed run is not demonstrably the tree under review. Coverage is also absent: TABLE 4 shows every declared check (the single FAIL_TO_PASS test_Permutation_subclassing and all 8 scoped PASS_TO_PASS ids) as 'missing' in the post maps, and TABLE 6 shows both f2p and p2p commands exiting 2 with empty pytest summaries (collection/usage error), with the p2p_baseline log not retained. The runner summary (TABLE 5) claims 0/1 f2p and 0/8 p2p passed, but that is a derived classification I cannot re-derive from any per-test base map, and it is consistent with a broken collection run rather than a demonstrated test failure. The issue-symptom probe is contradictory and unusable: pre-patch exit 1 with 'FAIL: subclass type lost in multiplication, got Permutation', post-patch exit 1 with no result lines, and the probe source is not retained, so I cannot tell whether the symptom persists or the probe itself errored. No intact, fresh, complete evidence establishes success, and no credible applicable failing acceptance check is established either (the exit-2 runs are not a demonstrated test failure of this patch).",
+            "missing_evidence_verbatim": "Run tree 2228437af3c5380fa2865ba3e9ef3a9096cdef7c does not match the attested canonical tree e2a863d6c367cee649f77f5e391442fc5534c3af, and no declared check was actually executed (all f2p/p2p ids missing; both pytest invocations exited 2 with empty summaries; baseline log not retained). A fresh run on the attested tree with the declared FAIL_TO_PASS and scoped PASS_TO_PASS set actually executed, plus a retained probe source/result, is needed.",
+            "keyword_flags": [
+              "stale/fresh",
+              "coverage/incomplete",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "structured",
+            "bundle_id": "cee_a8063781f0851759",
+            "instance_id": "sympy__sympy-12419",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "contradiction",
+            "reason_verbatim": "Identity operands match (base_commit and patch_sha256 identical in TARGET and signed record), and the run tree equals the attested canonical tree, so linkage and freshness hold. The declared set was fully executed: F2P test_Identity PASSED post-patch, and all 25 scoped P2P tests PASSED both post-patch and at base (per the primary per-check map in TABLE 4, which I can verify directly). The issue-symptom probe is decisive and favorable: pre-patch exit 1 with 'FAIL: total sum of identity elements: 0', post-patch exit 0 with 'OK: total sum of identity elements = 3', so the reported symptom is resolved. However, TABLE 6 shows every runner log (f2p, p2p, p2p_baseline) exiting 1 with '1 failed, 35 passed'. That failing test is not among the declared ids in TABLE 4, and the archive does not retain the per-test failure identity or the probe source, so I cannot determine whether the failure is an in-scope regression introduced by this patch or a pre-existing/out-of-scope failure (the baseline log also shows the same 1 failed, suggesting pre-existing, but the failing id is not shown). The runner summary (TABLE 5) reports 0 regressed and 0 pre-existing-bad, but that is a derived classification I cannot independently re-derive because the failing test's base status is absent. Because a credible failing check appears in the linked, fresh run and I cannot establish it is inapplicable, I cannot ACCEPT; because I cannot confirm it is an applicable scoped regression, I cannot REJECT. Abstaining.",
+            "missing_evidence_verbatim": "The identity of the single failing test in the f2p/p2p/p2p_baseline logs (all '1 failed, 35 passed') is not provided, nor is its base-commit status, so it cannot be determined whether this failure is an in-scope regression from this patch or a pre-existing/out-of-scope failure.",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_58d93f77f0c49f82",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "linkage_mismatch",
+            "reason_verbatim": "The fixed bundle's integrity verdicts state the signed test record is not linked to this patch/base commit and is not fresh for the current commit tree, so its 1/1 FAIL_TO_PASS and 54/54 PASS_TO_PASS results cannot be attributed to this patch. Additionally, the issue-reproduction probe reports the symptom still reproduces after the patch, but that probe is derived from the issue text rather than the maintainer suite and is part of the same unlinked/stale bundle, so it cannot serve as decisive applicable failure evidence. With no linked, fresh evidence establishing either success or failure, the correct decision is to abstain.",
+            "missing_evidence_verbatim": "A test run record linked to this patch and base commit b4f1aa3540fe68d078d76e78ba59d022dd6df39f and fresh for the current commit tree, covering the declared acceptance/regression set, plus an issue-reproduction probe tied to that same linked/fresh run.",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "deepseek-flash",
+            "layer": "adjudicated",
+            "bundle_id": "cee_5cfbc476af83be49",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "stale",
+            "reason_verbatim": "The signed record is linked to this patch and the declared set was fully executed, but the integrity verdict states the run is NOT fresh for the current commit tree. The failing acceptance test (test_Permutation_subclassing) and the still-reproducing issue symptom therefore come from a stale run and cannot be treated as decisive applicable failures for THIS patch. Because the evidence is stale, I cannot establish complete, fresh, failure-free success either, so neither ACCEPT nor REJECT is warranted.",
+            "missing_evidence_verbatim": "A fresh test run (and issue-reproduction probe) executed against the current commit tree for this patch; the provided record is stale per the integrity verdict, so its failing acceptance test and reproducing symptom cannot be adjudicated as applicable to the current tree.",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          }
+        ]
+      }
+    },
+    "gpt-4.1-mini": {
+      "layers": {
+        "raw": {
+          "n_requests": 22,
+          "n_parseable": 22,
+          "n_invalid": 0,
+          "n_ambiguous": 0,
+          "n_api_error": 0,
+          "n_correct": 9,
+          "da_parseable": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.1765,
+              0.5769
+            ],
+            "n_clusters": 10
+          },
+          "da_all_requests": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.1765,
+              0.5769
+            ],
+            "n_clusters": 10,
+            "note": "INVALID/AMBIGUOUS/API_ERROR count as not appropriate"
+          },
+          "always_need_baseline": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22
+          },
+          "confusion_matrix": {
+            "rows_decision": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "columns_gold": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 5,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 6
+              },
+              "REJECT": {
+                "ACCEPT": 0,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 1
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 2,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 2
+              }
+            },
+            "n_invalid": 0,
+            "n_ambiguous": 0,
+            "n_api_error": 0
+          },
+          "error_families": {
+            "over_abstention": {
+              "cells": 5,
+              "rate_over_decisive_gold": 0.3846,
+              "on_sufficient_positive": 2,
+              "on_decisive_negative": 3
+            },
+            "unsupported_acceptance_false_commit": {
+              "cells": 7,
+              "rate_over_non_accept_gold": 0.4667,
+              "on_decisive_negative": 1,
+              "on_insufficient": 6
+            },
+            "unsupported_rejection": {
+              "cells": 1,
+              "rate_over_non_reject_gold": 0.0625,
+              "on_sufficient_positive": 0,
+              "on_insufficient": 1
+            }
+          },
+          "by_evidence_class": {
+            "sufficient_positive": {
+              "n_cells": 7,
+              "n_issues": 4,
+              "n_correct": 5,
+              "da": 0.7143,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 5,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 2
+              }
+            },
+            "decisive_negative": {
+              "n_cells": 6,
+              "n_issues": 5,
+              "n_correct": 2,
+              "da": 0.3333,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.75
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 2,
+                "NEED_EVIDENCE": 3
+              }
+            },
+            "insufficient": {
+              "n_cells": 9,
+              "n_issues": 8,
+              "n_correct": 2,
+              "da": 0.2222,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.4545
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 6,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 2
+              }
+            }
+          }
+        },
+        "structured": {
+          "n_requests": 22,
+          "n_parseable": 22,
+          "n_invalid": 0,
+          "n_ambiguous": 0,
+          "n_api_error": 0,
+          "n_correct": 12,
+          "da_parseable": {
+            "rate": 0.5455,
+            "n_correct": 12,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.3529,
+              0.6774
+            ],
+            "n_clusters": 10
+          },
+          "da_all_requests": {
+            "rate": 0.5455,
+            "n_correct": 12,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.3529,
+              0.6774
+            ],
+            "n_clusters": 10,
+            "note": "INVALID/AMBIGUOUS/API_ERROR count as not appropriate"
+          },
+          "always_need_baseline": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22
+          },
+          "confusion_matrix": {
+            "rows_decision": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "columns_gold": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 7,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 8
+              },
+              "REJECT": {
+                "ACCEPT": 0,
+                "REJECT": 5,
+                "NEED_EVIDENCE": 1
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 0,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 0
+              }
+            },
+            "n_invalid": 0,
+            "n_ambiguous": 0,
+            "n_api_error": 0
+          },
+          "error_families": {
+            "over_abstention": {
+              "cells": 0,
+              "rate_over_decisive_gold": 0.0,
+              "on_sufficient_positive": 0,
+              "on_decisive_negative": 0
+            },
+            "unsupported_acceptance_false_commit": {
+              "cells": 9,
+              "rate_over_non_accept_gold": 0.6,
+              "on_decisive_negative": 1,
+              "on_insufficient": 8
+            },
+            "unsupported_rejection": {
+              "cells": 1,
+              "rate_over_non_reject_gold": 0.0625,
+              "on_sufficient_positive": 0,
+              "on_insufficient": 1
+            }
+          },
+          "by_evidence_class": {
+            "sufficient_positive": {
+              "n_cells": 7,
+              "n_issues": 4,
+              "n_correct": 7,
+              "da": 1.0,
+              "ci95_issue_cluster_seed7_n10000": [
+                1.0,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 0
+              }
+            },
+            "decisive_negative": {
+              "n_cells": 6,
+              "n_issues": 5,
+              "n_correct": 5,
+              "da": 0.8333,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.4,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 5,
+                "NEED_EVIDENCE": 0
+              }
+            },
+            "insufficient": {
+              "n_cells": 9,
+              "n_issues": 8,
+              "n_correct": 0,
+              "da": 0.0,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.0,
+                0.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 8,
+                "REJECT": 1,
+                "NEED_EVIDENCE": 0
+              }
+            }
+          }
+        },
+        "adjudicated": {
+          "n_requests": 22,
+          "n_parseable": 22,
+          "n_invalid": 0,
+          "n_ambiguous": 0,
+          "n_api_error": 0,
+          "n_correct": 18,
+          "da_parseable": {
+            "rate": 0.8182,
+            "n_correct": 18,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.6364,
+              0.9565
+            ],
+            "n_clusters": 10
+          },
+          "da_all_requests": {
+            "rate": 0.8182,
+            "n_correct": 18,
+            "n": 22,
+            "ci95_issue_cluster_seed7_n10000": [
+              0.6364,
+              0.9565
+            ],
+            "n_clusters": 10,
+            "note": "INVALID/AMBIGUOUS/API_ERROR count as not appropriate"
+          },
+          "always_need_baseline": {
+            "rate": 0.4091,
+            "n_correct": 9,
+            "n": 22
+          },
+          "confusion_matrix": {
+            "rows_decision": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "columns_gold": [
+              "ACCEPT",
+              "REJECT",
+              "NEED_EVIDENCE"
+            ],
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 7,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 1
+              },
+              "REJECT": {
+                "ACCEPT": 0,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 0
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 0,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 8
+              }
+            },
+            "n_invalid": 0,
+            "n_ambiguous": 0,
+            "n_api_error": 0
+          },
+          "error_families": {
+            "over_abstention": {
+              "cells": 3,
+              "rate_over_decisive_gold": 0.2308,
+              "on_sufficient_positive": 0,
+              "on_decisive_negative": 3
+            },
+            "unsupported_acceptance_false_commit": {
+              "cells": 1,
+              "rate_over_non_accept_gold": 0.0667,
+              "on_decisive_negative": 0,
+              "on_insufficient": 1
+            },
+            "unsupported_rejection": {
+              "cells": 0,
+              "rate_over_non_reject_gold": 0.0,
+              "on_sufficient_positive": 0,
+              "on_insufficient": 0
+            }
+          },
+          "by_evidence_class": {
+            "sufficient_positive": {
+              "n_cells": 7,
+              "n_issues": 4,
+              "n_correct": 7,
+              "da": 1.0,
+              "ci95_issue_cluster_seed7_n10000": [
+                1.0,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 7,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 0
+              }
+            },
+            "decisive_negative": {
+              "n_cells": 6,
+              "n_issues": 5,
+              "n_correct": 3,
+              "da": 0.5,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.1667,
+                0.8333
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 0,
+                "REJECT": 3,
+                "NEED_EVIDENCE": 3
+              }
+            },
+            "insufficient": {
+              "n_cells": 9,
+              "n_issues": 8,
+              "n_correct": 8,
+              "da": 0.8889,
+              "ci95_issue_cluster_seed7_n10000": [
+                0.625,
+                1.0
+              ],
+              "parsed_distribution": {
+                "ACCEPT": 1,
+                "REJECT": 0,
+                "NEED_EVIDENCE": 8
+              }
+            }
+          }
+        }
+      },
+      "paired_contrasts": [
+        {
+          "contrast": "Adjudicated_minus_Raw",
+          "high_abstraction": "adjudicated",
+          "low_abstraction": "raw",
+          "n_matched_parseable_pairs": 22,
+          "n_issues": 10,
+          "high_da": 0.8182,
+          "low_da": 0.4091,
+          "mean_paired_delta": 0.4091,
+          "delta_ci95_issue_cluster_seed7_n10000": [
+            0.25,
+            0.6
+          ],
+          "high_correct_low_wrong": 10,
+          "low_correct_high_wrong": 1,
+          "mcnemar_exact_two_sided_p_descriptive": 0.0117,
+          "changed_pairs": [
+            {
+              "bundle_id": "cee_0108367f62dfb1c6",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_037b37020e5d9a37",
+              "instance_id": "sympy__sympy-16450",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_1278b80ecd502546",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "adjudicated_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_5449e183c637f604",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_58df0b222c11095a",
+              "instance_id": "sympy__sympy-12419",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_76028c65f51defe8",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_8f41672ea242cd7a",
+              "instance_id": "sympy__sympy-18199",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "raw_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_a6aba2553d04e0f9",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "REJECT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_b203936c59e46a77",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "raw_decision": "NEED_EVIDENCE",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_cfc14244c59a8ceb",
+              "instance_id": "sympy__sympy-14531",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_d054bcf1e4e8b26c",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "raw_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            }
+          ],
+          "sign_note": "delta may be negative; no monotonic abstraction effect is assumed"
+        },
+        {
+          "contrast": "Structured_minus_Raw",
+          "high_abstraction": "structured",
+          "low_abstraction": "raw",
+          "n_matched_parseable_pairs": 22,
+          "n_issues": 10,
+          "high_da": 0.5455,
+          "low_da": 0.4091,
+          "mean_paired_delta": 0.1364,
+          "delta_ci95_issue_cluster_seed7_n10000": [
+            -0.0476,
+            0.35
+          ],
+          "high_correct_low_wrong": 5,
+          "low_correct_high_wrong": 2,
+          "mcnemar_exact_two_sided_p_descriptive": 0.4531,
+          "changed_pairs": [
+            {
+              "bundle_id": "cee_037b37020e5d9a37",
+              "instance_id": "sympy__sympy-16450",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "structured_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_03df4f19a25d0cf5",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_1278b80ecd502546",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "sufficient_positive",
+              "gold": "ACCEPT",
+              "structured_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_13b04ca1faae0894",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "structured_decision": "REJECT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_58d93f77f0c49f82",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "structured_decision": "REJECT",
+              "raw_decision": "ACCEPT",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_b203936c59e46a77",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "structured_decision": "REJECT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": true,
+              "raw_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_f0328f55403163cb",
+              "instance_id": "sympy__sympy-14531",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "raw_decision": "NEED_EVIDENCE",
+              "structured_correct": false,
+              "raw_correct": true,
+              "delta": -1
+            }
+          ],
+          "sign_note": "delta may be negative; no monotonic abstraction effect is assumed"
+        },
+        {
+          "contrast": "Adjudicated_minus_Structured",
+          "high_abstraction": "adjudicated",
+          "low_abstraction": "structured",
+          "n_matched_parseable_pairs": 22,
+          "n_issues": 10,
+          "high_da": 0.8182,
+          "low_da": 0.5455,
+          "mean_paired_delta": 0.2727,
+          "delta_ci95_issue_cluster_seed7_n10000": [
+            0.1053,
+            0.4762
+          ],
+          "high_correct_low_wrong": 9,
+          "low_correct_high_wrong": 3,
+          "mcnemar_exact_two_sided_p_descriptive": 0.146,
+          "changed_pairs": [
+            {
+              "bundle_id": "cee_0108367f62dfb1c6",
+              "instance_id": "sympy__sympy-12481",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_03df4f19a25d0cf5",
+              "instance_id": "sympy__sympy-13091",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_13b04ca1faae0894",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "adjudicated_correct": false,
+              "structured_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_5449e183c637f604",
+              "instance_id": "sympy__sympy-13798",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_58d93f77f0c49f82",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "adjudicated_correct": false,
+              "structured_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_58df0b222c11095a",
+              "instance_id": "sympy__sympy-12419",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_76028c65f51defe8",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "adjudicated_correct": false,
+              "structured_correct": true,
+              "delta": -1
+            },
+            {
+              "bundle_id": "cee_8f41672ea242cd7a",
+              "instance_id": "sympy__sympy-18199",
+              "evidence_class": "decisive_negative",
+              "gold": "REJECT",
+              "adjudicated_decision": "REJECT",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_a6aba2553d04e0f9",
+              "instance_id": "sympy__sympy-12489",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "REJECT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_cfc14244c59a8ceb",
+              "instance_id": "sympy__sympy-14531",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_d054bcf1e4e8b26c",
+              "instance_id": "sympy__sympy-18211",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            },
+            {
+              "bundle_id": "cee_f0328f55403163cb",
+              "instance_id": "sympy__sympy-14531",
+              "evidence_class": "insufficient",
+              "gold": "NEED_EVIDENCE",
+              "adjudicated_decision": "NEED_EVIDENCE",
+              "structured_decision": "ACCEPT",
+              "adjudicated_correct": true,
+              "structured_correct": false,
+              "delta": 1
+            }
+          ],
+          "sign_note": "delta may be negative; no monotonic abstraction effect is assumed"
+        }
+      ],
+      "cross_layer_transitions": {
+        "raw_to_structured": {
+          "rows_raw": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "columns_structured": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "matrix": {
+            "ACCEPT": {
+              "ACCEPT": 11,
+              "REJECT": 1,
+              "NEED_EVIDENCE": 0
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "REJECT": 3,
+              "NEED_EVIDENCE": 0
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 5,
+              "REJECT": 2,
+              "NEED_EVIDENCE": 0
+            }
+          },
+          "cells_skipped_nonparseable": 0
+        },
+        "structured_to_adjudicated": {
+          "rows_structured": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "columns_adjudicated": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "matrix": {
+            "ACCEPT": {
+              "ACCEPT": 8,
+              "REJECT": 1,
+              "NEED_EVIDENCE": 7
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "REJECT": 2,
+              "NEED_EVIDENCE": 4
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 0,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 0
+            }
+          },
+          "cells_skipped_nonparseable": 0
+        },
+        "raw_to_adjudicated": {
+          "rows_raw": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "columns_adjudicated": [
+            "ACCEPT",
+            "REJECT",
+            "NEED_EVIDENCE"
+          ],
+          "matrix": {
+            "ACCEPT": {
+              "ACCEPT": 6,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 6
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "REJECT": 1,
+              "NEED_EVIDENCE": 2
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 2,
+              "REJECT": 2,
+              "NEED_EVIDENCE": 3
+            }
+          },
+          "cells_skipped_nonparseable": 0
+        }
+      },
+      "mechanism_audit": {
+        "n_errors_parseable": 27,
+        "keyword_mentions_across_all_rows": {
+          "stale/fresh": 60,
+          "linkage": 62,
+          "symptom/probe": 57,
+          "coverage/incomplete": 13
+        },
+        "flagged_potential_misuse": [
+          {
+            "bundle_id": "cee_1278b80ecd502546",
+            "layer": "raw",
+            "pattern": "ACCEPT-gold but reason invokes stale/fresh concern",
+            "reason_excerpt": "The patch correctly changes comparison methods to return NotImplemented instead of False when the other operand is of an unknown type, which addresses the reported issue and is confirmed by the symptom probe showing the issue resolved post-patch. The declared acceptance set inclu"
+          },
+          {
+            "bundle_id": "cee_8f41672ea242cd7a",
+            "layer": "raw",
+            "pattern": "REJECT-gold withheld via coverage/incomplete claim",
+            "reason_excerpt": "The patch correctly adds handling for the case a % p == 0 in nthroot_mod and adds tests for it, which pass. The scoped tests related to the patch files (p2p) all pass, showing no regression in the changed code area. However, the fail-to-pass acceptance run (f2p) shows a failure i"
+          },
+          {
+            "bundle_id": "cee_b203936c59e46a77",
+            "layer": "raw",
+            "pattern": "REJECT-gold withheld via coverage/incomplete claim",
+            "reason_excerpt": "The patch correctly changes the __eq__ method to return NotImplemented instead of False when sympification fails, which is the intended fix for the issue. The included test explicitly checks that Basic.__eq__ returns NotImplemented for unknown types, and this test was executed an"
+          },
+          {
+            "bundle_id": "cee_76028c65f51defe8",
+            "layer": "adjudicated",
+            "pattern": "REJECT-gold withheld via coverage/incomplete claim",
+            "reason_excerpt": "The patch addresses the subclassing issue by replacing static method calls with classmethod calls and using the class reference for instance creation, which should fix the problem. The issue-reproduction probe confirms the symptom is gone after the patch. However, the acceptance "
+          }
+        ],
+        "errors": [
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_0108367f62dfb1c6",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch modifies the Permutation constructor to allow non-disjoint cycles by removing the previous ValueError and permitting left-to-right application of cycles. The patch adds tests confirming that non-disjoint cycles are now accepted and produce correct permutations, including the identity permutation when applying the same cycle twice. The fail-to-pass acceptance test 'test_args' passed post-patch, demonstrating the fix resolved the issue. All scoped pass-to-pass tests (7 total) passed with no regressions. The symptom probe confirms the issue reproduces pre-patch and is resolved post-patch. The run records and logs are fresh, linked to this patch and commit tree, and cover the declared acceptance set fully with no failures or regressions. Therefore, there is intact, fresh, and applicable evidence demonstrating the issue is fixed and no regressions introduced.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_017f5443ec813709",
+            "instance_id": "sympy__sympy-17139",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch adds a check for complex exponents in the _f function to avoid invalid comparisons involving the complex unit I, which directly addresses the reported TypeError. The issue-symptom probe confirms that the error no longer occurs post-patch (exit code 0, output 'OK: simplify -> cos(x)**I'). The fail-to-pass test 'test_issue_17137' linked to this issue passes after the patch. No scoped regressions are reported in the scoped pass-to-pass run (no regressions in the declared acceptance set). The failures in the acceptance run are unrelated to this patch and are known issues (e.g., missing module 'sympy.specfun' causing XFail, and a floating point simplification test marked as XFail). The patch applied cleanly and the run tree matches the expected run tree. Therefore, the evidence is fresh, linked, and complete for the declared acceptance set, and shows the issue resolved with no regressions introduced.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_037b37020e5d9a37",
+            "instance_id": "sympy__sympy-16450",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "The patch correctly addresses the issue by preserving the 'finite' assumption in posify, as confirmed by the symptom probe which passes post-patch and fails pre-patch. The test_posify test also passes post-patch, indicating the fix is effective for the declared acceptance test. However, the full test suite shows multiple test failures unrelated to the patch scope, including failures in test_cse.py and test_simplify.py, some due to missing modules or unrelated issues. These failures appear both pre- and post-patch (as indicated by XFail exceptions), but the patch's declared acceptance set is limited and fully executed with no failures. Since the patch scope and declared acceptance set are covered and pass, but there are unrelated test failures in the broader suite, the evidence is insufficient to ACCEPT or REJECT based solely on this patch. The failures do not constitute a regression linked to this patch. Therefore, the decision is NEED_EVIDENCE due to incomplete coverage of all relevant acceptance tests for full confidence, with evidence_gap coverage_incomplete.",
+            "missing_evidence_verbatim": "full acceptance test coverage beyond test_posify",
+            "keyword_flags": [
+              "linkage",
+              "coverage/incomplete",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_1278b80ecd502546",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "sufficient_positive",
+            "gold": "ACCEPT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_positive",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "The patch correctly changes comparison methods to return NotImplemented instead of False when the other operand is of an unknown type, which addresses the reported issue and is confirmed by the symptom probe showing the issue resolved post-patch. The declared acceptance set includes tests such as test_equality and test_comparisons_with_unknown_type, which passed in the post-patch run. However, the scoped pass-to-pass run shows 7 failures and the full pass-to-pass run shows 8 failures, including failures in test_Float, test_mpmath_issues, test_NumberSymbol_comparison, test_Subs2, test_function_comparable_infinities, test_collect, test_ratsimp, test_rcollect, test_call_2, test_float_0_fail, test_multivariate_relational_as_set, test_issue_8444, and test_mul2. These failures are not clearly linked to the patch changes and may be pre-existing or unrelated regressions. The baseline run at the base commit shows these tests also failing or marked as expected failures (XFail). Therefore, there is no decisive evidence that the patch introduces regressions or that all acceptance tests passed cleanly. The evidence is fresh and linked to this patch, but coverage of the declared acceptance set is incomplete or ambiguous due to these failures and XFails. Hence, more evidence is needed to confirm that no scoped regressions are introduced and that all acceptance tests pass cleanly post-patch.",
+            "missing_evidence_verbatim": "complete fresh pass-to-pass success for all declared acceptance tests without XFail or failure",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "coverage/incomplete",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_13b04ca1faae0894",
+            "instance_id": "sympy__sympy-13798",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch modifies the latex printer to accept arbitrary strings for the mul_symbol setting, with tests added for this feature. The issue symptom probe confirms the patch fixes the symptom (custom mul_symbol is used). However, the acceptance test run for this patch shows 6 test failures in the scoped acceptance set, including test_latex_basic and test_latex_Float, which fail due to changed output formatting (e.g., '1.5\\,3^{x}' vs '1.5 \\cdot 3^{x}'). These failures are in tests that are part of the declared acceptance set and are fresh and linked to this patch. This indicates regressions introduced by the patch. Since there is a credible applicable failure in the acceptance tests, the patch cannot be accepted as is. However, the evidence does not include a full regression run or confirmation that these failures are caused solely by the patch's change to mul_symbol handling or if they are unrelated. The failures are decisive for rejection if linked and fresh, which they are. Therefore, the correct decision is REJECT based on the evidence. But since the user requested a decision based ONLY on evidence that applies to this patch and its current commit tree, and the failures are indeed fresh and linked, the decision must be REJECT. The initial reasoning mistakenly suggested NEED_EVIDENCE, but the evidence clearly shows applicable acceptance test failures caused by the patch. Hence, the final decision is REJECT.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_5449e183c637f604",
+            "instance_id": "sympy__sympy-13798",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch modifies the LaTeX printer to allow the mul_symbol argument to accept arbitrary strings, not just predefined ones, which directly addresses the issue. The patch includes new tests for custom mul_symbol values that pass in the scoped post-patch run. The issue symptom probe confirms that the custom mul_symbol '\\,' is correctly used in the output after the patch, whereas it failed before. Although there are unrelated test failures and xfails in the overall test suite, none of these are in the scoped acceptance tests related to this patch (test_latex_mul_symbol and related LaTeX printing tests). The scoped acceptance tests for this patch all pass with no regressions. The evidence is fresh, linked to this patch and commit tree, and covers the declared acceptance set. Therefore, the patch is acceptable as it resolves the issue without introducing regressions in the relevant scope.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_58d93f77f0c49f82",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_negative",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch changes the behavior of the solveset function to return the ConditionSet instead of raising NotImplementedError, directly addressing the reported issue. The fail-to-pass test 'test_issue_18188' which covers this fix passes post-patch, confirming the issue is resolved. All 54 scoped acceptance tests relevant to the patch files pass with no regressions introduced. The two test failures observed are marked as expected xfail tests unrelated to this patch's scope or the solveset functionality fixed here. The symptom probe shows the issue is fixed by the patch, as the output is now a ConditionSet rather than raising NotImplementedError. The evidence is fresh, linked to this patch and commit tree, covers the declared acceptance set, and shows no applicable failures or regressions. Therefore, the patch is acceptable for merge.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_58df0b222c11095a",
+            "instance_id": "sympy__sympy-12419",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch replaces the _entry method of the Identity matrix expression to return KroneckerDelta(i, j) instead of a hardcoded 1 or 0. This correctly models the identity matrix entries symbolically, enabling symbolic sums over indices to evaluate correctly, fixing the reported issue where the sum of all elements was incorrectly zero. The provided symptom probe shows the issue is resolved post-patch (sum of identity elements is correctly 'n'). The patch passes all relevant acceptance tests in the scoped set, including the previously failing test_Identity. The only test failure is test_symmetry in test_slice.py, which is marked as an expected xfail and unrelated to the patch scope. The run record confirms no regressions and all declared acceptance tests for the patch scope passed. The evidence is fresh, linked to this patch and commit, and covers the declared acceptance set. Therefore, the patch is acceptable as it resolves the issue without regressions.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_8f41672ea242cd7a",
+            "instance_id": "sympy__sympy-18199",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "The patch correctly adds handling for the case a % p == 0 in nthroot_mod and adds tests for it, which pass. The scoped tests related to the patch files (p2p) all pass, showing no regression in the changed code area. However, the fail-to-pass acceptance run (f2p) shows a failure in test_solve_modular, which is part of the declared acceptance set. This failure is fresh, linked to this patch, and applies to the current commit tree. The failure is a mismatch in the solveset output for a modular equation, which may or may not be related to the patch but is within the acceptance scope. Because there is a credible applicable failure in the acceptance run, the patch cannot be accepted. However, the failure is not explicitly proven to be caused by this patch (the failure existed pre-patch as the baseline run shows the test passing), so it is not a regression. The evidence is contradictory in that the patch fixes the reported issue and passes scoped tests but the acceptance test fails. The failure is decisive for rejection, but since it is a fail-to-pass test (previously failed, now passes), it is not a regression. The acceptance run failure is decisive evidence to reject the patch as mergeable until the acceptance test passes fully. Therefore, the decision is NEED_EVIDENCE with evidence_gap=coverage_incomplete because the acceptance test set is not fully passing, and the failure is applicable and fresh.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "coverage/incomplete"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_a6aba2553d04e0f9",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch aims to fix subclassing of Permutation by changing internal instance creation to use the class reference (cls) instead of a fixed Permutation class. However, the fail-to-pass acceptance run for the patch shows that the test 'test_Permutation_subclassing' still fails, indicating the subclassing issue is not resolved. Additionally, several other scoped acceptance tests (test_ranking, test_mul, test_from_sequence, test_printing_non_cyclic) fail post-patch, which were passing before, indicating regressions introduced by this patch. The failure logs show mismatches in expected and actual Permutation instances and representations, confirming that the patch breaks existing functionality. The evidence is fresh, directly linked to this patch and commit tree, and covers the declared acceptance set. Therefore, the patch cannot be accepted as it does not resolve the issue and introduces regressions.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_b203936c59e46a77",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "The patch correctly changes the __eq__ method to return NotImplemented instead of False when sympification fails, which is the intended fix for the issue. The included test explicitly checks that Basic.__eq__ returns NotImplemented for unknown types, and this test was executed and passed. The symptom probe confirms that the issue symptom (lack of symmetric rich comparison) is resolved by the patch. However, the fail-to-pass acceptance run for the patch shows 10 test failures unrelated to the patch change, including failures in test_comparisons_with_unknown_type (which is declared as a fail-to-pass test), and other failures in core tests. These failures are not linked to the patch change itself but indicate the patch does not cleanly pass all acceptance tests. The scoped pass-to-pass run shows no regressions but did not cover acceptance tests. Since the acceptance set is declared as including test_comparisons_with_unknown_type and it failed in the fail-to-pass run, the acceptance set is not fully passing. Therefore, there is incomplete evidence of full acceptance. The patch fixes the issue symptom and passes the targeted test, but the overall acceptance test suite is not fully passing post-patch. Hence, the decision is NEED_EVIDENCE due to coverage_incomplete: the declared acceptance set was not fully executed successfully.",
+            "missing_evidence_verbatim": "full acceptance test pass for declared acceptance set including test_comparisons_with_unknown_type",
+            "keyword_flags": [
+              "linkage",
+              "coverage/incomplete",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_cfc14244c59a8ceb",
+            "instance_id": "sympy__sympy-14531",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch modifies the _print_Limit and _print_Relational methods to recursively call self._print on subexpressions, ensuring that StrPrinter settings like sympy_integers=True are respected by subexpressions. The issue symptom probe confirms that the problem is resolved: the post-patch probe run exits with 0 and prints the expected output, indicating the issue is fixed. The acceptance test runs show no failures in the tests directly related to the patch scope (sympy/printing/tests/test_str.py passes fully). The failures and skips in other unrelated test files are either due to missing optional dependencies (e.g., NumPy, lxml) or are marked as expected failures (XFail) unrelated to this patch. The patch applied cleanly and the declared acceptance set was fully executed with no regressions or failures in the scoped tests. Therefore, the evidence is fresh, linked, and complete for this patch and demonstrates success in resolving the reported issue without regressions.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "raw",
+            "bundle_id": "cee_d054bcf1e4e8b26c",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch addresses the issue by modifying solve_univariate_inequality to return a ConditionSet instead of raising NotImplementedError for unsolvable equalities, matching the expected behavior. The patch adds a test confirming that Eq(n*cos(n) - 3*sin(n), 0).as_set() returns a ConditionSet as expected. The provided CI evidence shows that all relevant acceptance tests in the patch scope passed, including the new test 'test_univariate_relational_as_set' which covers the fix. The symptom probe confirms the issue is resolved post-patch. The two test failures in the logs are known XFail tests unrelated to this patch and do not affect the scoped acceptance tests. The run tree and patch SHA match the patch under review, and the acceptance set is fully covered with no regressions or failures in the relevant tests. Therefore, the evidence is fresh, linked, complete, and failure-free for the declared acceptance scope, supporting ACCEPT.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_0108367f62dfb1c6",
+            "instance_id": "sympy__sympy-12481",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch modifies the Permutation constructor to allow non-disjoint cycles by removing the ValueError and instead applying the cycles in left-to-right order using the Cycle class. The test suite includes a new test confirming that non-disjoint cycles are allowed and produce the expected permutation, including the case where applying (0,1) twice yields the identity permutation. All declared acceptance tests (test_args, test_Permutation, and others) passed cleanly in the post-patch run with no regressions. The issue symptom probe confirms that the original failure (ValueError on non-disjoint cycles) is resolved, as the post-patch probe exits with code 0 indicating success. The run is fresh and linked to the exact patch and commit tree under review. The declared acceptance set was fully executed with no failures or regressions. Therefore, the evidence is intact, fresh, linked, and demonstrates that the reported issue is resolved with no regressions introduced.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_017f5443ec813709",
+            "instance_id": "sympy__sympy-17139",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch addresses the issue of invalid comparison of complex exponent I by adding a check for complex exponents before performing comparisons. The issue symptom probe shows that the error is resolved post-patch (exit code 0 vs 1 pre-patch). The declared fail_to_pass tests (test__TR56 and test_issue_17137) relevant to this fix passed in the post-patch run. No scoped regressions or acceptance failures are reported. The run tree matches the patch commit, and the acceptance set coverage for the fix is adequate. Therefore, the evidence is fresh, linked, complete, and demonstrates success with no regressions.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "coverage/incomplete",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_03df4f19a25d0cf5",
+            "instance_id": "sympy__sympy-13091",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch correctly replaces returns of False with NotImplemented in rich comparison methods where appropriate, enabling proper delegation to reflected methods and preserving symmetric equivalence relations. The provided evidence includes a fresh, linked run record for the exact patch and commit tree under review. The declared acceptance test 'test_comparisons_with_unknown_type' that directly probes the issue symptom passes in the post-patch run (exit code 0), demonstrating the issue is resolved. No acceptance or scoped regression failures are reported in the executed tests. The patch also updates related __ne__ methods and other comparison-related code consistently. The evidence is fresh, linked, covers the declared acceptance set relevant to the issue, and shows no failures or regressions. Therefore, the patch meets the criteria for ACCEPT.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_5449e183c637f604",
+            "instance_id": "sympy__sympy-13798",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch modifies the latex printer to allow the mul_symbol argument to accept arbitrary strings, not just a fixed set of four predefined values. The patch updates the code to check if the mul_symbol is in the predefined table and otherwise uses the custom string directly. The docstring is updated accordingly, and new tests are added to verify custom mul_symbol strings including the thin space '\\,'. The test_latex_mul_symbol test passes in the post-patch run, confirming the new behavior works as intended. The issue symptom probe shows the problem is resolved (exit code 0 post-patch vs 1 pre-patch). All other acceptance tests relevant to the patch pass, with no regressions introduced. The evidence is fresh, linked to this patch and commit, and covers the declared acceptance set. There is no applicable failure or regression. Therefore, the patch is acceptable for merge.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_58df0b222c11095a",
+            "instance_id": "sympy__sympy-12419",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch replaces the Identity matrix element access from returning 1 or 0 directly to returning KroneckerDelta(i, j), which correctly models the identity matrix elements symbolically. This fixes the issue where summing all elements of an identity matrix symbolically returned 0 instead of n. The provided probe test shows the symptom (sum of all elements of identity matrix) fails pre-patch and passes post-patch, confirming the fix. The acceptance test set relevant to the patch (including test_Identity and related tests) passes fully post-patch with no regressions. The patch is linked to the current commit tree and the test coverage is complete for the declared acceptance set. No failures or regressions are observed in the fresh, linked evidence. Therefore, the patch resolves the reported issue and maintains correctness.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "coverage/incomplete",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_8f41672ea242cd7a",
+            "instance_id": "sympy__sympy-18199",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_negative",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch correctly addresses the issue by adding a check for the case when a % p == 0, returning 0 or [0] accordingly. The patch includes new tests that verify this behavior for various inputs where a is zero modulo p. The run record is fresh and matches the patch commit. The declared acceptance set for the patch was fully executed with all relevant tests passing (113/113 pass-to-pass). The issue symptom probe shows that the problem is resolved post-patch (exit code 0) whereas it failed pre-patch (exit code 1). There are no scoped regressions introduced by this patch. The single fail-to-pass test failure (test_solve_modular) is unrelated to this patch and does not affect the acceptance decision for this patch. Therefore, the evidence is intact, fresh, linked, and demonstrates success in resolving the reported issue without regressions.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_a6aba2553d04e0f9",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "REJECT",
+            "error_label": "unsupported_reject_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch addresses the subclassing issue by replacing static method calls with classmethod calls and using the class reference for instance creation, which is the correct approach. However, the test results show that the declared fail_to_pass test 'test_Permutation_subclassing' still fails after the patch, indicating the issue is not resolved. Additionally, several pass_to_pass tests related to Permutation also fail post-patch, suggesting regressions or breakages introduced by the patch. The evidence is fresh, linked to this patch and commit tree, and the failing tests are applicable acceptance checks. Therefore, there is trustworthy evidence to reject this patch as it does not fully resolve the issue and introduces failures.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_cfc14244c59a8ceb",
+            "instance_id": "sympy__sympy-14531",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch modifies the _print_Limit and _print_Relational methods to use self._print on subexpressions, ensuring that StrPrinter settings are respected recursively. The issue symptom probe shows that the problem is resolved post-patch (exit code 0, correct output). The patch is correctly linked to the current commit tree (identity operands match). The declared acceptance set for scoped PASS_TO_PASS tests is fully executed with all passing results, indicating no regressions. The FAIL_TO_PASS tests related to the issue also pass post-patch. Although the overall pytest exit code is 1 due to unrelated failures, these are pre-existing and not scoped to this patch. The evidence is fresh, linked, and complete for the declared acceptance set and issue symptom probe, which demonstrates success and no regression. Therefore, the patch is acceptable for merge.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_d054bcf1e4e8b26c",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch addresses the issue by modifying solve_univariate_inequality to return a ConditionSet instead of raising NotImplementedError for unsolvable equalities, matching the expected behavior. The test added in sympy/core/tests/test_relational.py verifies that Eq(n*cos(n) - 3*sin(n), 0).as_set() returns the correct ConditionSet. The signed run record shows that the test_issue_18188, which was previously failing due to this issue, now passes (F2P). Additionally, all other relevant acceptance tests in the declared set passed with no regressions. The run is fresh and linked to the exact patch commit, and the declared acceptance set was fully executed. The probe testing the issue symptom confirms the problem is resolved post-patch. Therefore, there is intact, fresh, and linked evidence demonstrating the issue is fixed with no regressions.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "structured",
+            "bundle_id": "cee_f0328f55403163cb",
+            "instance_id": "sympy__sympy-14531",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch correctly modifies the _print_Limit and _print_Relational methods to use self._print on subexpressions, ensuring that StrPrinter settings are respected recursively. The issue symptom probe shows a failing exit code (1) pre-patch with incorrect string outputs, and a passing exit code (0) post-patch with correct outputs matching the expected format. The patch SHA256 and base commit match the attested run record, confirming the evidence is fresh and linked to this patch. The declared acceptance set includes the probe test, which passed post-patch. No scoped regressions or acceptance failures are reported in the relevant tests. The author statement aligns with the observed evidence. Therefore, the patch resolves the reported issue without introducing regressions, meeting the criteria for ACCEPT.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_017f5443ec813709",
+            "instance_id": "sympy__sympy-17139",
+            "evidence_class": "insufficient",
+            "gold": "NEED_EVIDENCE",
+            "decision": "ACCEPT",
+            "error_label": "false_commit_accept_on_insufficient",
+            "evidence_gap_verbatim": "",
+            "reason_verbatim": "The patch adds a check for complex exponents before performing comparisons, preventing the TypeError caused by invalid comparison of complex I. The issue-reproduction probe confirms the symptom is resolved after the patch. The acceptance test suite passed without failures, and the evidence is linked, fresh, and shows no regression. Although the declared acceptance/regression set was not fully executed, the available evidence is sufficient to accept the patch as it fixes the issue and introduces no failures.",
+            "missing_evidence_verbatim": "",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_13b04ca1faae0894",
+            "instance_id": "sympy__sympy-13798",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "The patch correctly implements the requested feature to allow arbitrary custom mul_symbol strings in latex(), and the issue-reproduction probe confirms the symptom is resolved. However, the acceptance test suite run linked to this patch shows one failing acceptance test (test_latex_basic), which is a decisive failure. Since the acceptance test set is not fully executed and there is a failing acceptance test linked and fresh for this patch, this is a credible applicable failure. Therefore, the patch cannot be accepted as is. More evidence or a fix for the failing acceptance test is needed before acceptance.",
+            "missing_evidence_verbatim": "full acceptance test suite run with all tests passing",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_58d93f77f0c49f82",
+            "instance_id": "sympy__sympy-18211",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "stale",
+            "reason_verbatim": "The evidence bundle is not fresh for the current commit tree and is not linked to this patch/commit. Although the acceptance tests pass and the issue reproduction probe is present, the probe still reproduces the issue after the patch, indicating the symptom is not resolved in the tested environment. Due to the lack of fresh and linked evidence demonstrating that the patch resolves the issue without regression, a definitive decision cannot be made.",
+            "missing_evidence_verbatim": "fresh test run linked to this patch",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "symptom/probe"
+            ]
+          },
+          {
+            "model": "gpt-4.1-mini",
+            "layer": "adjudicated",
+            "bundle_id": "cee_76028c65f51defe8",
+            "instance_id": "sympy__sympy-12489",
+            "evidence_class": "decisive_negative",
+            "gold": "REJECT",
+            "decision": "NEED_EVIDENCE",
+            "error_label": "over_abstain_on_negative",
+            "evidence_gap_verbatim": "coverage_incomplete",
+            "reason_verbatim": "The patch addresses the subclassing issue by replacing static method calls with classmethod calls and using the class reference for instance creation, which should fix the problem. The issue-reproduction probe confirms the symptom is gone after the patch. However, the acceptance test suite run linked to this patch shows a failure in the scoped acceptance test 'test_Permutation_subclassing', which is directly relevant to the issue. Since this is a decisive failure in an applicable acceptance test, the patch cannot be accepted as is. The evidence bundle is fresh and linked to this patch, but the declared acceptance/regression set was not fully executed (coverage incomplete). Therefore, more evidence is needed to confirm whether the failure is a regression introduced by this patch or a test issue.",
+            "missing_evidence_verbatim": "full acceptance/regression test suite including all relevant tests for Permutation subclassing",
+            "keyword_flags": [
+              "stale/fresh",
+              "linkage",
+              "coverage/incomplete",
+              "symptom/probe"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "sensitivity": {
+    "n": 22,
+    "derived_summary_disclosure": "present in all 44 raw/structured Gate-2 payloads; runner summary is explicitly labelled pre-classified",
+    "fixtures_without_p2p_per_test_map": 6,
+    "fixtures_without_baseline_per_test_map": 12,
+    "fixtures_without_probe_source": 13,
+    "length_discipline": "length is condition-determined; reported and discussed, not used as a regression control",
+    "per_fixture": [
+      {
+        "bundle_id": "cee_8f41672ea242cd7a",
+        "instance_id": "sympy__sympy-18199",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": true,
+        "raw_bytes": 64040,
+        "structured_bytes": 37488,
+        "adjudicated_bytes": 7253
+      },
+      {
+        "bundle_id": "cee_017f5443ec813709",
+        "instance_id": "sympy__sympy-17139",
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": true,
+        "raw_bytes": 28765,
+        "structured_bytes": 26768,
+        "adjudicated_bytes": 8099
+      },
+      {
+        "bundle_id": "cee_13b04ca1faae0894",
+        "instance_id": "sympy__sympy-13798",
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": true,
+        "raw_bytes": 38234,
+        "structured_bytes": 35271,
+        "adjudicated_bytes": 8988
+      },
+      {
+        "bundle_id": "cee_f0328f55403163cb",
+        "instance_id": "sympy__sympy-14531",
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": true,
+        "raw_bytes": 26568,
+        "structured_bytes": 30164,
+        "adjudicated_bytes": 7345
+      },
+      {
+        "bundle_id": "cee_d054bcf1e4e8b26c",
+        "instance_id": "sympy__sympy-18211",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": true,
+        "raw_bytes": 35071,
+        "structured_bytes": 27752,
+        "adjudicated_bytes": 8950
+      },
+      {
+        "bundle_id": "cee_5449e183c637f604",
+        "instance_id": "sympy__sympy-13798",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": true,
+        "raw_bytes": 159104,
+        "structured_bytes": 35211,
+        "adjudicated_bytes": 8992
+      },
+      {
+        "bundle_id": "cee_037b37020e5d9a37",
+        "instance_id": "sympy__sympy-16450",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": true,
+        "raw_bytes": 81510,
+        "structured_bytes": 23381,
+        "adjudicated_bytes": 8872
+      },
+      {
+        "bundle_id": "cee_58d93f77f0c49f82",
+        "instance_id": "sympy__sympy-18211",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": true,
+        "raw_bytes": 43189,
+        "structured_bytes": 26081,
+        "adjudicated_bytes": 6845
+      },
+      {
+        "bundle_id": "cee_cfc14244c59a8ceb",
+        "instance_id": "sympy__sympy-14531",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": true,
+        "raw_bytes": 247257,
+        "structured_bytes": 30765,
+        "adjudicated_bytes": 7348
+      },
+      {
+        "bundle_id": "cee_76028c65f51defe8",
+        "instance_id": "sympy__sympy-12489",
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 39746,
+        "structured_bytes": 21895,
+        "adjudicated_bytes": 14488
+      },
+      {
+        "bundle_id": "cee_b203936c59e46a77",
+        "instance_id": "sympy__sympy-13091",
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 41583,
+        "structured_bytes": 32767,
+        "adjudicated_bytes": 9000
+      },
+      {
+        "bundle_id": "cee_03df4f19a25d0cf5",
+        "instance_id": "sympy__sympy-13091",
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 44653,
+        "structured_bytes": 37426,
+        "adjudicated_bytes": 13587
+      },
+      {
+        "bundle_id": "cee_58df0b222c11095a",
+        "instance_id": "sympy__sympy-12419",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 51781,
+        "structured_bytes": 19253,
+        "adjudicated_bytes": 8118
+      },
+      {
+        "bundle_id": "cee_0108367f62dfb1c6",
+        "instance_id": "sympy__sympy-12481",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 44399,
+        "structured_bytes": 14939,
+        "adjudicated_bytes": 7666
+      },
+      {
+        "bundle_id": "cee_a6aba2553d04e0f9",
+        "instance_id": "sympy__sympy-12489",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 57442,
+        "structured_bytes": 21895,
+        "adjudicated_bytes": 14488
+      },
+      {
+        "bundle_id": "cee_5cfbc476af83be49",
+        "instance_id": "sympy__sympy-12489",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "probe_source_archived": false,
+        "raw_bytes": 49422,
+        "structured_bytes": 15909,
+        "adjudicated_bytes": 8876
+      },
+      {
+        "bundle_id": "cee_4001af2fc564f50f",
+        "instance_id": "sympy__sympy-12419",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": false,
+        "raw_bytes": 69676,
+        "structured_bytes": 19449,
+        "adjudicated_bytes": 8121
+      },
+      {
+        "bundle_id": "cee_9e8c95b6fac59e18",
+        "instance_id": "sympy__sympy-12481",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": false,
+        "raw_bytes": 59200,
+        "structured_bytes": 15009,
+        "adjudicated_bytes": 7669
+      },
+      {
+        "bundle_id": "cee_1278b80ecd502546",
+        "instance_id": "sympy__sympy-13091",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": false,
+        "raw_bytes": 202943,
+        "structured_bytes": 38042,
+        "adjudicated_bytes": 13704
+      },
+      {
+        "bundle_id": "cee_ad6e89a460dfbe92",
+        "instance_id": "sympy__sympy-12481",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": false,
+        "raw_bytes": 58484,
+        "structured_bytes": 14293,
+        "adjudicated_bytes": 6953
+      },
+      {
+        "bundle_id": "cee_a8063781f0851759",
+        "instance_id": "sympy__sympy-12419",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": false,
+        "raw_bytes": 68741,
+        "structured_bytes": 18514,
+        "adjudicated_bytes": 7186
+      },
+      {
+        "bundle_id": "cee_a81c2a012161efe0",
+        "instance_id": "sympy__sympy-12481",
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "probe_source_archived": false,
+        "raw_bytes": 58166,
+        "structured_bytes": 13975,
+        "adjudicated_bytes": 6635
+      }
+    ]
+  },
+  "engineering_audit": {
+    "models": {
+      "deepseek-flash": {
+        "model_requested": [
+          "deepseek-flash"
+        ],
+        "model_served": [
+          "deepseek-flash"
+        ],
+        "e1_served_model_id": "deepseek-flash",
+        "served_id_equals_e1_all_rows": true,
+        "response_format_modes": [
+          "json_object"
+        ],
+        "server_schema_enforced_any": false,
+        "plain_text_fallback_any": false,
+        "tools_sent_total": 0,
+        "tokens_in": 643744,
+        "tokens_out": 20032,
+        "cost_usd": 0.217162,
+        "wall_s_total": 163.08,
+        "n_api_error": 0,
+        "n_invalid": 0,
+        "n_ambiguous": 0,
+        "raw_persisted_before_parse_all": true,
+        "payload_hashes_match_freeze_all": true
+      },
+      "gpt-4.1-mini": {
+        "model_requested": [
+          "gpt-4.1-mini"
+        ],
+        "model_served": [
+          "gpt-4.1-mini-2025-04-14"
+        ],
+        "e1_served_model_id": "gpt-4.1-mini-2025-04-14",
+        "served_id_equals_e1_all_rows": true,
+        "response_format_modes": [
+          "json_object"
+        ],
+        "server_schema_enforced_any": false,
+        "plain_text_fallback_any": false,
+        "tools_sent_total": 0,
+        "tokens_in": 600010,
+        "tokens_out": 12318,
+        "cost_usd": 0.259713,
+        "wall_s_total": 133.93,
+        "n_api_error": 0,
+        "n_invalid": 0,
+        "n_ambiguous": 0,
+        "raw_persisted_before_parse_all": true,
+        "payload_hashes_match_freeze_all": true
+      }
+    },
+    "audit_summary": {
+      "total_spend_usd": 0.476875,
+      "hard_cap_usd": 3.0,
+      "within_total_cap": true,
+      "budget_status": "within_cap",
+      "cross_model_payload_byte_identity": true
+    },
+    "freeze_manifest_sha256": "6faffc8261e7b03b7203a0f51998baf68c33b53164f77910ad68a32119ccc94b"
+  }
+}

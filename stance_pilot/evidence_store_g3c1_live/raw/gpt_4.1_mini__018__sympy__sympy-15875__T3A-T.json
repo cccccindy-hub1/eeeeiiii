@@ -1,0 +1,128 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"The test artifact is fully linked and fresh for this patch and commit tree, and the declared acceptance and regression test sets were fully executed. However, the acceptance test 'test_Add_is_zero' failed, contradicting the author statement that the fix is correct and all relevant tests pass. This is decisive evidence that the patch does not fully resolve the issue without failure.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"contradiction\"}",
+  "cell": "g3c1live:sympy__sympy-15875:T3A-T",
+  "condition": "T3A-T",
+  "cost_usd": 0.001846,
+  "evidence_session": "00d14d318a4fbf55124d7fab",
+  "evidence_tier": "A",
+  "id": "qwen3_30b_instruct2507_500:sympy__sympy-15875",
+  "instance_id": "sympy__sympy-15875",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 2,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.013822,
+    0.014095
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 72,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 1678,
+      "raw_content": "",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_e3Vqen1aEw3R0w9wOc96j4Df",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_8Kl7GvIcWeTdJatI1ctYBIPQ",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_s6luThJIr5fgm6MS75Nnt81a",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_q9wN5CuQPb9INZgEunGvKaaR",
+          "name": "check_claim_consistency"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 100,
+      "finish_reason": "stop",
+      "model_call": 2,
+      "prompt_tokens": 2248,
+      "raw_content": "{\"decision\":\"REJECT\",\"reason\":\"The test artifact is fully linked and fresh for this patch and commit tree, and the declared acceptance and regression test sets were fully executed. However, the acceptance test 'test_Add_is_zero' failed, contradicting the author statement that the fix is correct and all relevant tests pass. This is decisive evidence that the patch does not fully resolve the issue without failure.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"contradiction\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 7,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_69562ae39095d2d5",
+  "tokens_in": 3926,
+  "tokens_out": 172,
+  "tool_calls": 4,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"b506169ad727ee39cb3d60c8b3ff5e315d443d8e\", \"record_patch_sha256\": \"79a054ec73e11f87d823e076d724dc11406ea67fd6ea1a766fc2776c0a44502f\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"06cf87860fba3bbb8aef5986017967674ab8fb7f\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"06cf87860fba3bbb8aef5986017967674ab8fb7f\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:07:45+00:00\", \"attestation_built_at\": \"2026-10-28T10:09:34+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 80, \"executed\": 80, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"contradicted\", \"reason\": \"claim asserts success; the artifact records 1 failed acceptance and 0 regression checks\", \"failed_acceptance_checks\": 1, \"regression_checks\": 0, \"executed_checks\": 81}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    }
+  ],
+  "wall_s": 2.88
+}

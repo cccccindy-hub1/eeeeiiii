@@ -1,0 +1,40 @@
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpDysd9i\Scripts\python.exe -m pytest sympy/algebras/tests/test_quaternion.py -v --tb=short -p no:cacheprovider  (exit 0, 5s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpDysd9i\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+collecting ... collected 5 items
+
+sympy/algebras/tests/test_quaternion.py::test_quaternion_construction PASSED [ 20%]
+sympy/algebras/tests/test_quaternion.py::test_quaternion_complex_real_addition PASSED [ 40%]
+sympy/algebras/tests/test_quaternion.py::test_quaternion_functions PASSED [ 60%]
+sympy/algebras/tests/test_quaternion.py::test_quaternion_conversions PASSED [ 80%]
+sympy/algebras/tests/test_quaternion.py::test_quaternion_rotation_iss1593 PASSED [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+sympy\solvers\diophantine.py:3188
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if feasible is 1:  # it's prime and k == 2
+
+sympy/algebras/tests/test_quaternion.py: 42 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 5 passed, 47 warnings in 0.64s ========================
+
+--- stderr ---

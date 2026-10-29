@@ -1,0 +1,124 @@
+{
+  "budget": {
+    "enforcement": "pre-call worst-case bound (fresh transcript tokens*price_in + completion_cap*price_out) checked by BOTH a per-model guard and one shared total guard before EVERY paid call; resume restores cumulative spend; NaN/Inf/negative cost poisons the ledger and blocks all further calls",
+    "per_model_cap_usd": 1.0,
+    "total_hard_cap_usd": 2.0
+  },
+  "code_hashes": {
+    "ev1_adapters.py": "62ee4be5221d7b7c2f7555f44371a310f4994a76d5f024c34821016c7d966b77",
+    "g3b2_prompts.py": "72ddf82a1cac2e30884a26d6de0e8a6af8abd210152245bd1f892edd3bba7650",
+    "g3b3_run.py (acquire/score/guard primitives)": "00a8787d78a277213f163936b64a5fa14f737a861f3407619c888ded0096b487",
+    "g3c0_projection_v2.py": "13381401c0c91b16f2fa2f1974793fecd65fd7341446670214ee25dc8748d4a6",
+    "g3c1_live_run.py": "c09a6fcee43785adf09571b3ca8db73a75ef37fd6f8575129346193028231b46",
+    "g3c1_server.py": "2ae80e0007515e388146d2e54750d4c4ea80590f26551bfc8e4011b734e9a52a",
+    "phase3_run.py (BudgetGuard/P3Client/ScriptedModel)": "500715ed2493c314830fe6e632788a70c518f6e3acd33ac4e296df22d0af7df5",
+    "server.py": "32e6ea821e0937b68449489b4f071d16ae4f5f5c8bada0a06bb342177a53933a",
+    "ternary.py": "c23439487dce5c5ac885b8016aca8af3dd3d87c17a5bb822804468c1d2f81836",
+    "views.py": "76874d825e5361707e0bf88fa5cd79fb6f465907b5b94b3c2196e61dd886b8d6",
+    "visibility.py": "123041cc91122ba8d41443327eee264a495cd4e03b432d9e11b0d164b184eaf8"
+  },
+  "document": "G3-C.1 exploratory 80-cell live run PRE-RUN fingerprint",
+  "executed": {
+    "gold_cert_version": "g3c1-gold-cert-v1",
+    "projection_version": "diagnostic-v2-no-baseline-map-v1",
+    "prompt_fingerprints": {
+      "T2A-T": "d7cfe95df8b38622a4674e98c19c549dec1741c7cc2058136c6767b3a7f40f55",
+      "T2D-T": "70fa99b2accd5cda53e051eb79d82d3c0d12c1f05c0034fa98411e916b1d2e89",
+      "T3A-T": "73376a609581db804c6516509ef5ba9ba22f93b1d33126cee0511dba5755ce87",
+      "T3D-Escalate": "6effc9d7fd2e31bfd54c25332a95781a76033beeb133c56c0aeea23de7c3a00b",
+      "T3D-Strict": "556b8a4008809c1f0b36fb2d0a1d3117d91d7fda3513f1c6d15085b73be81f49"
+    },
+    "prompt_module": "evidence.g3b2_prompts.build_g3b2_messages",
+    "prompt_version": "p3-ternary-g3b2-v1",
+    "protocol_version": "g3c1-protocol-v1",
+    "server_factory": "evidence.g3c1_server.build_g3c1_server",
+    "server_version_tag": "EvidenceAPI/g3c1-v1",
+    "tools_fingerprints": {
+      "T2A-T": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "T2D-T": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "T3A-T": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+      "T3D-Escalate": "47212f28337b36a191426262df0ee9e2c284d1f4ee3567a090d2382799e1d284",
+      "T3D-Strict": "2e7bc39c3ec52a3bf309698b108fe1797493477e1adf857d1d793fe0cc2f7d49"
+    }
+  },
+  "frozen_parent_pins": {
+    "g3c1_condition_certificates": {
+      "sha256": "f33ea832bca676d375020d9f8b52a75f91ca1b178e744ff26bcdcc18cbfb05ac"
+    },
+    "g3c1_freeze_declared_sha": null,
+    "g3c1_freeze_manifest": {
+      "path": "evidence_store_g3c1\\freeze\\g3c1_freeze_manifest.json",
+      "sha256": "7a40d231989b27f9c899d6f0ea0d3ce1c57153945e7067d06981af1bce478394"
+    },
+    "g3c1_oracle_gold": {
+      "sha256": "340195a9f4070622be89a793e4d024e0268e3d7d1c75b71732e4f3d57db98ac6"
+    },
+    "g3c1_target_rows": {
+      "path": "evidence_store_g3c1\\raw\\g3c1_target_rows.jsonl",
+      "sha256": "adc15798c229099934e89981d76c6ddccf34c765f65815f812c97178f2a23ad9"
+    },
+    "g3c1_truth": {
+      "path": "evidence_store_g3c1\\g3c1_truth.jsonl",
+      "sha256": "9d9f4d5d3f4015d56724b3cc4038116b6e0397c45f6a7f827bc2ceb3abd58e31"
+    }
+  },
+  "gate": "gate3c1_exploratory_80cell_validation",
+  "generated_at_utc": "2026-10-29T10:43:27Z",
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold constructed in Gate G3-C.1 from executed local evidence only; no second independent human adjudicator has been obtained. All gold stays PROVISIONAL until the sealed blind packet is labelled by a real annotator2 and adjudicated. The AI building this gate is NOT an independent human annotator or arbiter."
+  },
+  "models": {
+    "deepseek-flash": {
+      "base_url": "https://api.deepseek.com/v1",
+      "completion_param": "max_tokens",
+      "expected_served_model_id": "deepseek-flash",
+      "extra_body": {
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "key_env": "DEEPSEEK_API_KEY",
+      "model": "deepseek-flash",
+      "per_model_cap_usd": 1.0,
+      "price_in_per_1m": 0.3,
+      "price_out_per_1m": 1.2,
+      "response_format": "json_object"
+    },
+    "gpt-4.1-mini": {
+      "base_url": "https://api.openai.com/v1",
+      "completion_param": "max_tokens",
+      "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+      "extra_body": {},
+      "key_env": "OPENAI_API_KEY",
+      "model": "gpt-4.1-mini",
+      "per_model_cap_usd": 1.0,
+      "price_in_per_1m": 0.4,
+      "price_out_per_1m": 1.6,
+      "response_format": "json_object"
+    }
+  },
+  "research_kind": "Exploratory Independent-Issue Validation (PROVISIONAL gold; annotator2 NOT_OBTAINED; not a human-arbitrated benchmark)",
+  "runner_version": "g3c1live-runner-v1",
+  "sampling": {
+    "completion_cap_tokens": 8192,
+    "max_model_calls_per_cell": 12,
+    "max_tool_turns": 8,
+    "order_seed": 418401,
+    "response_format": "json_schema strict on the final decision turn (frozen ternary schema); tools on tool turns; no error-triggered downgrade, no retry",
+    "retries_per_cell": 0,
+    "temperature": 0
+  },
+  "scope": {
+    "cells": 80,
+    "conditions": 5,
+    "issues": 8,
+    "models": 2,
+    "no_fallback_model": true,
+    "no_new_issues_models_conditions": true,
+    "no_rerun_successful_cell": true,
+    "no_response_format_downgrade": true
+  }
+}

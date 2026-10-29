@@ -1,0 +1,635 @@
+{
+  "document": "X pass-2 reason-contradiction adjudication",
+  "standard": "frozen G2.5 affirmative property-assertion rule",
+  "models": {
+    "deepseek-flash": {
+      "denominator_parseable": 88,
+      "pass1_auto_cells": 14,
+      "pass2_confirmed_cells": 6,
+      "pass2_rate": 0.0682,
+      "operative_on_accept_cells": 0,
+      "operative_on_accept_rate": 0.0,
+      "pass1_pass2_agreement": 0.4286,
+      "per_condition_confirmed": {
+        "a0b0": 2,
+        "a1b0": 1,
+        "a0b1": 2,
+        "a1b1": 1
+      },
+      "per_condition_operative_on_accept": {
+        "a0b0": 0,
+        "a1b0": 0,
+        "a0b1": 0,
+        "a1b1": 0
+      },
+      "rows": [
+        {
+          "bundle8": "62dfb1c6",
+          "condition": "a0b0",
+          "decision": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": false,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "af83be49",
+          "condition": "a0b0",
+          "decision": "NEED_EVIDENCE",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "a0b0/a0b1 use \"fresh/applicable\" to qualify the FAILURE (not a tree-match assertion); a1b1 literally asserts the run is fresh/linked and is retained"
+        },
+        {
+          "bundle8": "a242cd7a",
+          "condition": "a0b0",
+          "decision": "REJECT",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P4_all_checks_pass"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "explicitly names the executed f2p failure (test_solve_modular FAILED) and only disputes relevance; no all-checks-pass assertion"
+        },
+        {
+          "bundle8": "e4e8b26c",
+          "condition": "a0b0",
+          "decision": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": false,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "c637f604",
+          "condition": "a1b0",
+          "decision": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P4_all_checks_pass"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": false,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "403163cb",
+          "condition": "a1b0",
+          "decision": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P3_coverage_complete"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "describes a subset of tests and \"no failures\"; never asserts the full declared set executed (P3)"
+        },
+        {
+          "bundle8": "62dfb1c6",
+          "condition": "a0b1",
+          "decision": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": false,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "af83be49",
+          "condition": "a0b1",
+          "decision": "NEED_EVIDENCE",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "a0b0/a0b1 use \"fresh/applicable\" to qualify the FAILURE (not a tree-match assertion); a1b1 literally asserts the run is fresh/linked and is retained"
+        },
+        {
+          "bundle8": "a242cd7a",
+          "condition": "a0b1",
+          "decision": "REJECT",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P4_all_checks_pass"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "explicitly names the executed f2p failure (test_solve_modular FAILED) and only disputes relevance; no all-checks-pass assertion"
+        },
+        {
+          "bundle8": "c59a8ceb",
+          "condition": "a0b1",
+          "decision": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P1_identity_match"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": false,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "2c11095a",
+          "condition": "a1b1",
+          "decision": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": false,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "af83be49",
+          "condition": "a1b1",
+          "decision": "NEED_EVIDENCE",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "a0b0/a0b1 use \"fresh/applicable\" to qualify the FAILURE (not a tree-match assertion); a1b1 literally asserts the run is fresh/linked and is retained"
+        },
+        {
+          "bundle8": "f51defe8",
+          "condition": "a1b1",
+          "decision": "REJECT",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P4_all_checks_pass"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "acknowledges the executed f2p failure and rejects on it; no all-checks-pass assertion"
+        },
+        {
+          "bundle8": "a242cd7a",
+          "condition": "a1b1",
+          "decision": "REJECT",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P4_all_checks_pass"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "explicitly names the executed f2p failure (test_solve_modular FAILED) and only disputes relevance; no all-checks-pass assertion"
+        }
+      ]
+    },
+    "gpt-4.1-mini": {
+      "denominator_parseable": 88,
+      "pass1_auto_cells": 34,
+      "pass2_confirmed_cells": 24,
+      "pass2_rate": 0.2727,
+      "operative_on_accept_cells": 20,
+      "operative_on_accept_rate": 0.2273,
+      "pass1_pass2_agreement": 0.7059,
+      "per_condition_confirmed": {
+        "a0b0": 5,
+        "a1b0": 6,
+        "a0b1": 6,
+        "a1b1": 7
+      },
+      "per_condition_operative_on_accept": {
+        "a0b0": 5,
+        "a1b0": 6,
+        "a0b1": 5,
+        "a1b1": 4
+      },
+      "rows": [
+        {
+          "bundle8": "62dfb1c6",
+          "condition": "a0b0",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "faae0894",
+          "condition": "a0b0",
+          "decision": "NEED_EVIDENCE",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P3_coverage_complete"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "a0b0 asserts coverage is INCOMPLETE; a1b0 is internally hedged and reverses within the same reason"
+        },
+        {
+          "bundle8": "c637f604",
+          "condition": "a0b0",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "f0c49f82",
+          "condition": "a0b0",
+          "decision": "REJECT",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P1_identity_match",
+            "P2_freshness"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "\"linked to this patch\" means the FAILURE applies; not an identity/run-tree-match assertion"
+        },
+        {
+          "bundle8": "2c11095a",
+          "condition": "a0b0",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "f51defe8",
+          "condition": "a0b0",
+          "decision": "REJECT",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P4_all_checks_pass"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "acknowledges the executed f2p failure and rejects on it; no all-checks-pass assertion"
+        },
+        {
+          "bundle8": "a242cd7a",
+          "condition": "a0b0",
+          "decision": "ACCEPT",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P4_all_checks_pass"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "explicitly names the executed f2p failure (test_solve_modular FAILED) and only disputes relevance; no all-checks-pass assertion"
+        },
+        {
+          "bundle8": "c59a8ceb",
+          "condition": "a0b0",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P1_identity_match",
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "e4e8b26c",
+          "condition": "a0b0",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "62dfb1c6",
+          "condition": "a1b0",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "ec813709",
+          "condition": "a1b0",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P3_coverage_complete"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "faae0894",
+          "condition": "a1b0",
+          "decision": "NEED_EVIDENCE",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P3_coverage_complete",
+            "P4_all_checks_pass"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "a0b0 asserts coverage is INCOMPLETE; a1b0 is internally hedged and reverses within the same reason"
+        },
+        {
+          "bundle8": "c637f604",
+          "condition": "a1b0",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness",
+            "P4_all_checks_pass"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "f0c49f82",
+          "condition": "a1b0",
+          "decision": "REJECT",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "\"linked to this patch\" means the FAILURE applies; not an identity/run-tree-match assertion"
+        },
+        {
+          "bundle8": "2c11095a",
+          "condition": "a1b0",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "3d04e0f9",
+          "condition": "a1b0",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "e4e8b26c",
+          "condition": "a1b0",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "62dfb1c6",
+          "condition": "a0b1",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "c637f604",
+          "condition": "a0b1",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness",
+            "P4_all_checks_pass"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "f0c49f82",
+          "condition": "a0b1",
+          "decision": "REJECT",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "\"linked to this patch\" means the FAILURE applies; not an identity/run-tree-match assertion"
+        },
+        {
+          "bundle8": "2c11095a",
+          "condition": "a0b1",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "a242cd7a",
+          "condition": "a0b1",
+          "decision": "ACCEPT",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P4_all_checks_pass"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "explicitly names the executed f2p failure (test_solve_modular FAILED) and only disputes relevance; no all-checks-pass assertion"
+        },
+        {
+          "bundle8": "3d04e0f9",
+          "condition": "a0b1",
+          "decision": "REJECT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": false,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "c59a8ceb",
+          "condition": "a0b1",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P1_identity_match",
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "e4e8b26c",
+          "condition": "a0b1",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "62dfb1c6",
+          "condition": "a1b1",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "c637f604",
+          "condition": "a1b1",
+          "decision": "NEED_EVIDENCE",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": false,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "f0c49f82",
+          "condition": "a1b1",
+          "decision": "REJECT",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "\"linked to this patch\" means the FAILURE applies; not an identity/run-tree-match assertion"
+        },
+        {
+          "bundle8": "2c11095a",
+          "condition": "a1b1",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "af83be49",
+          "condition": "a1b1",
+          "decision": "REJECT",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": false,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "f51defe8",
+          "condition": "a1b1",
+          "decision": "REJECT",
+          "gold": "REJECT",
+          "auto_flags": [
+            "P4_all_checks_pass"
+          ],
+          "pass2_confirmed": false,
+          "operative_on_accept": false,
+          "pass2_note": "acknowledges the executed f2p failure and rejects on it; no all-checks-pass assertion"
+        },
+        {
+          "bundle8": "3d04e0f9",
+          "condition": "a1b1",
+          "decision": "REJECT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": false,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "c59a8ceb",
+          "condition": "a1b1",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P1_identity_match",
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        },
+        {
+          "bundle8": "e4e8b26c",
+          "condition": "a1b1",
+          "decision": "ACCEPT",
+          "gold": "NEED_EVIDENCE",
+          "auto_flags": [
+            "P2_freshness"
+          ],
+          "pass2_confirmed": true,
+          "operative_on_accept": true,
+          "pass2_note": ""
+        }
+      ]
+    }
+  }
+}

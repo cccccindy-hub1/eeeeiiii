@@ -1,0 +1,37 @@
+LLM-based code-review agents are increasingly entrusted with gating code
+changes, yet current benchmarks largely measure whether an agent produces the
+correct accept/reject label without separating two distinct questions: whether
+the \emph{evidence} presented is intact and trustworthy, and whether it is
+\emph{sufficient} to justify a decision at all. We introduce
+\textbf{GroundedReview}, a benchmark that (i) casts code review as a three-way
+decision---\ACCEPT, \REJECT, or \NEED---and (ii) evaluates the same real
+issue--patch pair under several evidence conditions that independently control
+which test outcomes are visible, whether the agent may actively fetch
+artifacts, and whether provenance and freshness are verifiable. We distinguish
+\emph{Oracle Gold} (the decision warranted by a fresh, scoped pytest run) from
+\emph{Condition Gold} (the decision warranted by the evidence actually
+granted, which is legitimately \NEED\ on restricted surfaces). On ten SymPy
+issue--patch pairs served to two models (\texttt{deepseek-flash} and
+\texttt{gpt-4.1-mini}) across five conditions, a corrective replication shows
+that repairing protocol-construct defects in our own instrument moved one
+model's sufficient-evidence abstention from $9/10$ to $1/10$---an
+associational, not causal, contrast---whereas the other model, under a
+restricted ``strict'' surface whose correct answer is \NEED, returned
+unsupported \ACCEPT\ on $7/10$ issues, upgrading non-decisive evidence into
+acceptance. A traceable case shows an agent accepting a patch after an
+already-visible fail-to-pass test had failed. We further contribute eight
+newly constructed, independently de-duplicated issues with 40 per-condition
+gold certificates and a non-interference-checked evidence projection, and we
+report a \emph{capped, exploratory} 80-cell run on these independent issues
+(two models $\times$ five conditions, spend \$0.258 under \$2.00/\$1.00
+hard caps, zero retries or errors). On this second, disjoint issue set the
+restricted-evidence pattern recurs: one model abstains on all $8/8$ strict
+cells, while the other upgrades the non-decisive strict surface into
+unsupported \ACCEPT\ on $6/8$ issues (CP95 $[0.35,0.97]$), including both
+oracle-\REJECT\ issues; under sufficient tier-A evidence both models match
+the oracle on $8/8$ issues. Because this run uses a different issue set and
+time, the recurrence is an associational cross-set replication, not a causal
+estimate. All labels remain \textbf{PROVISIONAL} pending independent human
+arbitration (\texttt{annotator2 = NOT\_OBTAINED}); we therefore present a
+measurement framework and clearly bounded evidence rather than
+population-level claims about model behaviour.

@@ -1,0 +1,32 @@
+### BASELINE (pre-patch)
+$ python sympy__sympy-16886-baseline.py  (exit 1)
+--- stdout ---
+encode_morse("1") = '----'
+FAIL: Morse code for "1" is '----', expected ".----"
+
+--- stderr ---
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3185: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:645: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:674: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:681: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+
+
+### POST candidate patch
+$ python sympy__sympy-16886-post-candidate.py  (exit 0)
+--- stdout ---
+encode_morse("1") = '.----'
+OK: Morse "1" -> .----
+
+--- stderr ---
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3185: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:645: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:674: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:681: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if self.xscale is 'log':

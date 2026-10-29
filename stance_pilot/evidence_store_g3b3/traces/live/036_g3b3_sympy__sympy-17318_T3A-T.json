@@ -1,0 +1,40 @@
+{
+  "cell": "g3b3:sympy__sympy-17318:T3A-T",
+  "condition": "T3A-T",
+  "policy": null,
+  "session_id": "6b2e21126450128dc566ae0f",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"d4e0231b08147337745dcf601e62de7eefe2fb2d\", \"record_patch_sha256\": \"5e0ca074ed721048a698e87e89754ef9b583e062d402e0c146ae858d4e44d37b\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"43e56d0079e63cecb7626d19200244279be5c1c0\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"43e56d0079e63cecb7626d19200244279be5c1c0\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:40:22+00:00\", \"attestation_built_at\": \"2026-10-25T18:43:36+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 10, \"executed\": 10, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"contradicted\", \"reason\": \"claim asserts success; the artifact records 1 failed acceptance and 0 regression checks\", \"failed_acceptance_checks\": 1, \"regression_checks\": 0, \"executed_checks\": 11}"
+    }
+  ],
+  "final_answer": "{\"decision\":\"REJECT\",\"reason\":\"The test artifact is fully linked and fresh for this patch and commit tree, and the declared acceptance and regression test sets were fully executed. However, the acceptance test 'test_issue_12420' specifically related to the patch's issue failed, contradicting the author statement that the fix is fully correct and all relevant tests pass. This decisive failure in an applicable acceptance check requires rejection of the patch.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"contradiction\"}",
+  "parsed": "REJECT",
+  "fresh_state_served": "TRUE",
+  "error": null
+}

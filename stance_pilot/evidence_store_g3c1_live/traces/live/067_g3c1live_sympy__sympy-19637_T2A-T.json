@@ -1,0 +1,11 @@
+{
+  "cell": "g3c1live:sympy__sympy-19637:T2A-T",
+  "condition": "T2A-T",
+  "policy": null,
+  "session_id": null,
+  "trace": [],
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch moves `hit = kern in s` inside the `if ' ' in s:` block, so `kern` is only referenced after it is assigned, resolving the UnboundLocalError for inputs like '(2*x)/(x-1)' that contain no spaces. The attested artifact for this exact patch/commit shows the full declared set executed: FAIL_TO_PASS 1/1 passed and scoped PASS_TO_PASS 40/40 passed, with no rendered failures or regressions. Complete, fresh, linked, failure-free success supports ACCEPT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "fresh_state_served": null,
+  "error": null
+}

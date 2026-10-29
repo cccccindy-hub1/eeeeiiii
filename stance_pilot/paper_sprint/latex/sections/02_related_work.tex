@@ -1,0 +1,42 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{LLM code review and agent benchmarks.}
+Modern code review is a lightweight, understanding-centric practice whose
+benefits extend beyond defect finding to knowledge transfer and team awareness
+\citep{bacchelli2013expectations}. Learned approaches first automated comment
+generation and code refinement: CodeReviewer pre-trains on code-change and
+review corpora across nine languages \citep{li2022codereviewer}, while
+Tufano et al. train models to automate review activities and boost them with
+pre-trained transformers \citep{tufano2021towards,tufano2022using}. At the
+agentic end, SWE-bench evaluates whether language models can resolve real
+GitHub issues using post-PR unit tests as the reference solution
+\citep{jimenez2024swebench}, and SWE-agent shows that the agent--computer
+interface materially affects performance on these tasks
+\citep{yang2024sweagent}. Such benchmarks typically present a single fixed
+evidence bundle and a binary label, so abstention and evidence insufficiency
+are not first-class outcomes. GroundedReview instead fixes the issue--patch
+pair and varies the evidence grant.
+
+\paragraph{Tool use and information-seeking agents.}
+Active agents interleave reasoning with external calls: ReAct interleaves
+thoughts and actions against external sources \citep{yao2023react}, and
+Toolformer trains models when and how to call external APIs
+\citep{schick2023toolformer}. We treat the tool surface itself as an
+experimental variable (static versus active; outcomes granted versus withheld)
+and verify non-interference rather than assuming it.
+
+\paragraph{Abstention, selective prediction, and calibration.}
+The reject option has a classical decision-theoretic foundation
+\citep{chow1957optimum}, and modern neural networks are known to be
+miscalibrated \citep{guo2017calibration}. Large language models can partially
+predict which questions they can answer \citep{kadavath2022know}. Our \NEED\
+label is a contextual analogue where abstention is defined relative to the
+\emph{granted evidence}, not merely model uncertainty.
+
+\paragraph{Test-based patch correctness.}
+Fail-to-pass and pass-to-pass tests are the standard oracle mechanism in
+automated program repair, and the LLM era is surveyed in recent systematic
+reviews \citep{hou2024large,zhang2024systematic}. We adopt these tests as the
+oracle mechanism but explicitly bound acceptance to declared, in-scope tests
+and track collateral, undeclared test changes as a disclosed blind spot.

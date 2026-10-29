@@ -1,0 +1,52 @@
+{
+  "document": "R1 offline preflight (must pass before paid call)",
+  "n_checks": 9,
+  "all_pass": true,
+  "checks": [
+    {
+      "check": "r1: 66 frozen Gate-2 cells loaded (22 x 3)",
+      "pass": true,
+      "detail": "66"
+    },
+    {
+      "check": "r1: served set == Gate-2 freeze manifest cell set",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "r1: Gate-2 layers only (no A1/B1 v2.1 material)",
+      "pass": true,
+      "detail": "['adjudicated', 'raw', 'structured']"
+    },
+    {
+      "check": "r1: expected served id was observed in Gate-2 (no pre-known drift)",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "r1: pre-send leak guard clean on 66 cells",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "r1: per-model caps sum to total cap",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "r1: live without R1 acknowledgement REFUSED",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "r1: bare invocation REFUSED (offline default)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "r1: mock --dry-run ok",
+      "pass": true,
+      "detail": "ly)\n  deepseek-flash: guard in=$0.3 out=$1.2 expected_served=deepseek-flash\n  gpt-4.1-mini: guard in=$0.4 out=$1.6 expected_served=gpt-4.1-mini-2025-04-14\ndry-run: no backend invoked, no rows written\n"
+    }
+  ]
+}

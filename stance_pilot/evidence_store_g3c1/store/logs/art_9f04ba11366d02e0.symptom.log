@@ -1,0 +1,18 @@
+### BASELINE (pre-patch)
+$ python sympy__sympy-19346-baseline.py  (exit 1)
+--- stdout ---
+srepr(set)  = {x, y}
+srepr(dict) = {x: y}
+FAIL: srepr did not recurse into set elements: {x, y}
+
+--- stderr ---
+
+
+### POST candidate patch
+$ python sympy__sympy-19346-post-candidate.py  (exit 0)
+--- stdout ---
+srepr(set)  = {Symbol('y'), Symbol('x')}
+srepr(dict) = {Symbol('x'): Symbol('y')}
+OK: srepr recurses into set and dict
+
+--- stderr ---

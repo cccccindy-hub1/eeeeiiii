@@ -1,0 +1,161 @@
+{
+  "all_parent_pins_read_only": true,
+  "approved_scope": {
+    "ai_self_labelling_as_annotator2": false,
+    "frozen_raw_tests_rewritten": false,
+    "gate_3c2_execution": false,
+    "gemini_or_r2": false,
+    "git_commit_or_add": false,
+    "historical_gold_modified": false,
+    "modify_historical_frozen_artifacts": false,
+    "new_data_collection": false,
+    "new_issues": 0,
+    "real_model_calls": 0,
+    "spend_usd": 0.0
+  },
+  "canonical_form": "json.dumps({'files': sorted(entries)}, ensure_ascii=False, indent=2, sort_keys=True) + '\\n'",
+  "design_version": "groundedreview-gate3c11-zero-api-audit-freeze-v1",
+  "document": "GroundedReview Gate G3-C.1.1 zero-API audit freeze manifest (task 13)",
+  "files": [
+    {
+      "bytes": 5015,
+      "relpath": "audit/g3c11_funnel.json",
+      "sha256": "2240bff60ca45715e8742604eac6bebee4938b549ad6ce7c88e40a16a6182cc3"
+    },
+    {
+      "bytes": 8239,
+      "relpath": "audit/g3c11_gate3c2_decision.json",
+      "sha256": "9107b4c81c3f47d1dfd151898e67dd39fccc1236294010019c521b46ec5f14ef"
+    },
+    {
+      "bytes": 25091,
+      "relpath": "audit/g3c11_issue_audit.json",
+      "sha256": "3a1bf6d7769818b3b3ea0d829d918dba71c998435453614d635049eb852bad9a"
+    },
+    {
+      "bytes": 9239,
+      "relpath": "audit/g3c11_priority_audit.json",
+      "sha256": "51ea350f064ae6a57ab6c7759aeadff1b4f3b54ca83a4955d294f57ea9d1a76f"
+    },
+    {
+      "bytes": 12774,
+      "relpath": "audit/g3c11_sensitivity.json",
+      "sha256": "0e7c0b43b23f84827e30a25c936120e78a134c06b00ff870eedcd5bd7d6d03ba"
+    },
+    {
+      "bytes": 80066,
+      "relpath": "audit/g3c11_verification.json",
+      "sha256": "8b0ac35d71a49eb92932977464cb073dbe422c86a2b099bcd61ed4fa5b5d992e"
+    },
+    {
+      "bytes": 557,
+      "relpath": "human_annotation/g3c11_annotator2_blank_labels.csv",
+      "sha256": "0d6de772c66ed7a7d62cb58e4b6e947a3d195c6415340abadd3bec5d09cdd6e5"
+    },
+    {
+      "bytes": 3391,
+      "relpath": "human_annotation/g3c11_annotator2_registry_study_team.csv",
+      "sha256": "51d46e9fe295674e2baa576a9a539d5041d0aca63400ffd9f9060d06993d6e69"
+    },
+    {
+      "bytes": 5722,
+      "relpath": "human_annotation/g3c11_human_focused_review_items.json",
+      "sha256": "22389ee201f6ad86e0294b50c883d37abed234791ae41b7b9e3fc16b2112d8da"
+    },
+    {
+      "bytes": 340,
+      "relpath": "human_annotation/g3c11_human_focused_review_worksheet.csv",
+      "sha256": "463adeec63527a8d916b56fe8f9fa3c34dd2fb0a0aed0255d881798aec115b1c"
+    },
+    {
+      "bytes": 16324,
+      "relpath": "human_annotation/g3c11_second_annotator_plan.json",
+      "sha256": "13972fb564f847f22d4477dfbb50754888978cc50751eeaf3a4d5966bb9c6ae8"
+    },
+    {
+      "bytes": 27240,
+      "relpath": "report/g3c11_audit_report.json",
+      "sha256": "0378320cd4ce1d05ea713f1bdc54429fda8c7bdc4d554151345989908205b008"
+    },
+    {
+      "bytes": 12576,
+      "relpath": "report/g3c11_audit_report.md",
+      "sha256": "62fcdb57001d2fe9b1af3dbba9eb9922b50666750bd68f8d7aec5b38416afaa9"
+    }
+  ],
+  "files_by_top_dir": {
+    "audit": {
+      "bytes": 140424,
+      "files": 6
+    },
+    "human_annotation": {
+      "bytes": 26334,
+      "files": 5
+    },
+    "report": {
+      "bytes": 39816,
+      "files": 2
+    }
+  },
+  "files_canonical_sha256": "fe4cf59a75a68aa570be2e65e19aa5951305ce5ee424bed6294c061a199703d4",
+  "gate": "G3-C.1.1",
+  "gate3c2_recommendation": "NO-GO pending PC1/PC2/PC3; see report/",
+  "manifest_excluded_from_own_digest": true,
+  "n_files": 13,
+  "next_action": "STOP and await separate written G3-C.2 approval.",
+  "parent_pins": [
+    {
+      "file_bytes": 36338,
+      "file_sha256": "7a40d231989b27f9c899d6f0ea0d3ce1c57153945e7067d06981af1bce478394",
+      "name": "g3c1_freeze",
+      "parent_files_canonical_sha256": "004c312b8480a5249df7ac8f8229f630bca86ec029a5d202a41e7306bf52caaa",
+      "parent_n_files": 185,
+      "path": "evidence_store_g3c1/freeze/g3c1_freeze_manifest.json"
+    },
+    {
+      "file_bytes": 21304,
+      "file_sha256": "ef85962111d4cc2de57cc3e4866154d69cad397bbd51fd195159a94118328d39",
+      "name": "g3c0_design_freeze",
+      "parent_files_canonical_sha256": "740f6c61501a28f1b101503ea1a5859b32cb5204860de1532c571f204e5798af",
+      "parent_n_files": 101,
+      "path": "evidence_store_g3c0/freeze/g3c0_design_freeze_manifest.json"
+    },
+    {
+      "file_bytes": 4108,
+      "file_sha256": "45fef964f053ff2b6c8fb2f18428ec9dc9abbc276308a76e10b35284fd10b345",
+      "name": "g3b4_result_freeze",
+      "parent_files_canonical_sha256": "0a9815d65177c46070e9497caa23d5c10fc2e203c17af7c3a971c7012b2bbe89",
+      "parent_n_files": 16,
+      "path": "evidence_store_g3b4/freeze/g3b4_result_freeze_manifest.json"
+    },
+    {
+      "file_bytes": 51286,
+      "file_sha256": "752a4f2980b243c55705bcc25c18425f1da75ecd63ba0437a30df4558e93c5c8",
+      "name": "g3b3_result_freeze",
+      "path": "evidence_store_g3b3/freeze/g3b3_result_freeze_manifest.json"
+    },
+    {
+      "file_bytes": 167724,
+      "file_sha256": "8ca2c984faed1e01623c42e1dfcfad0fbf77ebf78366d037ce9fdca3062a1e4c",
+      "name": "g3b3_data_freeze",
+      "path": "evidence_store_g3b3/freeze/g3b3_freeze_manifest.json"
+    }
+  ],
+  "protocol_version": "g3c11-protocol-v1",
+  "root": "evidence_store_g3c11",
+  "scope_assertions": {
+    "ai_labels_substituted_for_human": false,
+    "all_18_gold_remain_provisional": true,
+    "annotator2": "NOT_OBTAINED",
+    "frozen_raw_tests_rewritten": false,
+    "g3c2_executed": false,
+    "git_commit_or_add": false,
+    "historical_gold_modified": false,
+    "new_api_spend_usd": 0,
+    "new_data_collection": false,
+    "new_issues_added": 0,
+    "r2_or_gemini_used": false,
+    "real_model_calls": 0
+  },
+  "total_bytes": 206574
+}

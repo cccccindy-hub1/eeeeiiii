@@ -1,0 +1,976 @@
+{
+  "audit": "groundedreview_eal_gate25_offline",
+  "api_calls": 0,
+  "gpt_structured_need_accept_cases": [
+    {
+      "bundle_id": "cee_0108367f62dfb1c6",
+      "short": "62dfb1c6",
+      "instance_id": "sympy__sympy-12481",
+      "gold": "NEED_EVIDENCE",
+      "gpt_decisions": {
+        "raw": "ACCEPT",
+        "structured": "ACCEPT",
+        "adjudicated": "NEED_EVIDENCE"
+      },
+      "ds_structured_decision": "NEED_EVIDENCE",
+      "ds_structured_gap": "stale",
+      "oracle_facts": {
+        "linked": true,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "missing_channels": {
+        "p2p_baseline_map": false,
+        "probe_source_archived": false,
+        "acceptance_logs": false
+      },
+      "reason_verbatim": "The patch modifies the Permutation constructor to allow non-disjoint cycles by removing the ValueError and instead applying the cycles in left-to-right order using the Cycle class. The test suite includes a new test confirming that non-disjoint cycles are allowed and produce the expected permutation, including the case where applying (0,1) twice yields the identity permutation. All declared acceptance tests (test_args, test_Permutation, and others) passed cleanly in the post-patch run with no regressions. The issue symptom probe confirms that the original failure (ValueError on non-disjoint cycles) is resolved, as the post-patch probe exits with code 0 indicating success. The run is fresh and linked to the exact patch and commit tree under review. The declared acceptance set was fully executed with no failures or regressions. Therefore, the evidence is intact, fresh, linked, and demonstrates that the reported issue is resolved with no regressions introduced.",
+      "missing_evidence_verbatim": "",
+      "evidence_gap_verbatim": "",
+      "classification": {
+        "dominant": "freshness",
+        "all_": [
+          "freshness"
+        ],
+        "illusion": true,
+        "note": "reason asserts \"fresh\"; run tree != attested expected tree (def06.. vs 0ffe..)"
+      }
+    },
+    {
+      "bundle_id": "cee_017f5443ec813709",
+      "short": "ec813709",
+      "instance_id": "sympy__sympy-17139",
+      "gold": "NEED_EVIDENCE",
+      "gpt_decisions": {
+        "raw": "ACCEPT",
+        "structured": "ACCEPT",
+        "adjudicated": "ACCEPT"
+      },
+      "ds_structured_decision": "NEED_EVIDENCE",
+      "ds_structured_gap": "coverage_incomplete",
+      "oracle_facts": {
+        "linked": true,
+        "fresh": true,
+        "complete": false,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "missing_channels": {
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "acceptance_logs": false
+      },
+      "reason_verbatim": "The patch addresses the issue of invalid comparison of complex exponent I by adding a check for complex exponents before performing comparisons. The issue symptom probe shows that the error is resolved post-patch (exit code 0 vs 1 pre-patch). The declared fail_to_pass tests (test__TR56 and test_issue_17137) relevant to this fix passed in the post-patch run. No scoped regressions or acceptance failures are reported. The run tree matches the patch commit, and the acceptance set coverage for the fix is adequate. Therefore, the evidence is fresh, linked, complete, and demonstrates success with no regressions.",
+      "missing_evidence_verbatim": "",
+      "evidence_gap_verbatim": "",
+      "classification": {
+        "dominant": "coverage",
+        "all_": [
+          "coverage"
+        ],
+        "illusion": true,
+        "note": "claims \"acceptance set coverage adequate\"; only 1 f2p of 2 declared f2p + 67 declared p2p executed (all p2p absent), no baseline map"
+      }
+    },
+    {
+      "bundle_id": "cee_03df4f19a25d0cf5",
+      "short": "a25d0cf5",
+      "instance_id": "sympy__sympy-13091",
+      "gold": "NEED_EVIDENCE",
+      "gpt_decisions": {
+        "raw": "NEED_EVIDENCE",
+        "structured": "ACCEPT",
+        "adjudicated": "NEED_EVIDENCE"
+      },
+      "ds_structured_decision": "NEED_EVIDENCE",
+      "ds_structured_gap": "coverage_incomplete",
+      "oracle_facts": {
+        "linked": true,
+        "fresh": true,
+        "complete": false,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "missing_channels": {
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "probe_source_archived": false,
+        "acceptance_logs": false
+      },
+      "reason_verbatim": "The patch correctly replaces returns of False with NotImplemented in rich comparison methods where appropriate, enabling proper delegation to reflected methods and preserving symmetric equivalence relations. The provided evidence includes a fresh, linked run record for the exact patch and commit tree under review. The declared acceptance test 'test_comparisons_with_unknown_type' that directly probes the issue symptom passes in the post-patch run (exit code 0), demonstrating the issue is resolved. No acceptance or scoped regression failures are reported in the executed tests. The patch also updates related __ne__ methods and other comparison-related code consistently. The evidence is fresh, linked, covers the declared acceptance set relevant to the issue, and shows no failures or regressions. Therefore, the patch meets the criteria for ACCEPT.",
+      "missing_evidence_verbatim": "",
+      "evidence_gap_verbatim": "",
+      "classification": {
+        "dominant": "coverage",
+        "all_": [
+          "coverage"
+        ],
+        "illusion": true,
+        "note": "declares \"no acceptance/regression failures reported\"; 89 declared p2p absent, only 1 f2p ran; complete=false"
+      }
+    },
+    {
+      "bundle_id": "cee_5449e183c637f604",
+      "short": "c637f604",
+      "instance_id": "sympy__sympy-13798",
+      "gold": "NEED_EVIDENCE",
+      "gpt_decisions": {
+        "raw": "ACCEPT",
+        "structured": "ACCEPT",
+        "adjudicated": "NEED_EVIDENCE"
+      },
+      "ds_structured_decision": "NEED_EVIDENCE",
+      "ds_structured_gap": "stale",
+      "oracle_facts": {
+        "linked": true,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": true,
+        "acceptance_success": false,
+        "symptom_persists": false
+      },
+      "missing_channels": {
+        "p2p_baseline_map": false,
+        "acceptance_logs": false
+      },
+      "reason_verbatim": "The patch modifies the latex printer to allow the mul_symbol argument to accept arbitrary strings, not just a fixed set of four predefined values. The patch updates the code to check if the mul_symbol is in the predefined table and otherwise uses the custom string directly. The docstring is updated accordingly, and new tests are added to verify custom mul_symbol strings including the thin space '\\,'. The test_latex_mul_symbol test passes in the post-patch run, confirming the new behavior works as intended. The issue symptom probe shows the problem is resolved (exit code 0 post-patch vs 1 pre-patch). All other acceptance tests relevant to the patch pass, with no regressions introduced. The evidence is fresh, linked to this patch and commit, and covers the declared acceptance set. There is no applicable failure or regression. Therefore, the patch is acceptable for merge.",
+      "missing_evidence_verbatim": "",
+      "evidence_gap_verbatim": "",
+      "classification": {
+        "dominant": "freshness",
+        "all_": [
+          "freshness",
+          "coverage"
+        ],
+        "illusion": true,
+        "note": "asserts tests \"pass fully/no regressions\"; tree mismatch AND f2p test_latex_basic FAILED (0/1 f2p, 101/102 p2p)"
+      }
+    },
+    {
+      "bundle_id": "cee_58df0b222c11095a",
+      "short": "2c11095a",
+      "instance_id": "sympy__sympy-12419",
+      "gold": "NEED_EVIDENCE",
+      "gpt_decisions": {
+        "raw": "ACCEPT",
+        "structured": "ACCEPT",
+        "adjudicated": "NEED_EVIDENCE"
+      },
+      "ds_structured_decision": "NEED_EVIDENCE",
+      "ds_structured_gap": "stale",
+      "oracle_facts": {
+        "linked": true,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "missing_channels": {
+        "p2p_baseline_map": false,
+        "probe_source_archived": false,
+        "acceptance_logs": false
+      },
+      "reason_verbatim": "The patch replaces the Identity matrix element access from returning 1 or 0 directly to returning KroneckerDelta(i, j), which correctly models the identity matrix elements symbolically. This fixes the issue where summing all elements of an identity matrix symbolically returned 0 instead of n. The provided probe test shows the symptom (sum of all elements of identity matrix) fails pre-patch and passes post-patch, confirming the fix. The acceptance test set relevant to the patch (including test_Identity and related tests) passes fully post-patch with no regressions. The patch is linked to the current commit tree and the test coverage is complete for the declared acceptance set. No failures or regressions are observed in the fresh, linked evidence. Therefore, the patch resolves the reported issue and maintains correctness.",
+      "missing_evidence_verbatim": "",
+      "evidence_gap_verbatim": "",
+      "classification": {
+        "dominant": "freshness",
+        "all_": [
+          "freshness"
+        ],
+        "illusion": true,
+        "note": "claims \"linked to current tree\"; tree mismatch (8dee.. vs 4b19..)"
+      }
+    },
+    {
+      "bundle_id": "cee_cfc14244c59a8ceb",
+      "short": "c59a8ceb",
+      "instance_id": "sympy__sympy-14531",
+      "gold": "NEED_EVIDENCE",
+      "gpt_decisions": {
+        "raw": "ACCEPT",
+        "structured": "ACCEPT",
+        "adjudicated": "NEED_EVIDENCE"
+      },
+      "ds_structured_decision": "NEED_EVIDENCE",
+      "ds_structured_gap": "linkage_mismatch",
+      "oracle_facts": {
+        "linked": false,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "missing_channels": {},
+      "reason_verbatim": "The patch modifies the _print_Limit and _print_Relational methods to use self._print on subexpressions, ensuring that StrPrinter settings are respected recursively. The issue symptom probe shows that the problem is resolved post-patch (exit code 0, correct output). The patch is correctly linked to the current commit tree (identity operands match). The declared acceptance set for scoped PASS_TO_PASS tests is fully executed with all passing results, indicating no regressions. The FAIL_TO_PASS tests related to the issue also pass post-patch. Although the overall pytest exit code is 1 due to unrelated failures, these are pre-existing and not scoped to this patch. The evidence is fresh, linked, and complete for the declared acceptance set and issue symptom probe, which demonstrates success and no regression. Therefore, the patch is acceptable for merge.",
+      "missing_evidence_verbatim": "",
+      "evidence_gap_verbatim": "",
+      "classification": {
+        "dominant": "linkage",
+        "all_": [
+          "linkage",
+          "freshness"
+        ],
+        "illusion": true,
+        "note": "claims \"identity operands match\"; record patch sha 235a.. != TARGET 172a.. (linked=false); tree mismatch too"
+      }
+    },
+    {
+      "bundle_id": "cee_d054bcf1e4e8b26c",
+      "short": "e4e8b26c",
+      "instance_id": "sympy__sympy-18211",
+      "gold": "NEED_EVIDENCE",
+      "gpt_decisions": {
+        "raw": "ACCEPT",
+        "structured": "ACCEPT",
+        "adjudicated": "NEED_EVIDENCE"
+      },
+      "ds_structured_decision": "NEED_EVIDENCE",
+      "ds_structured_gap": "stale",
+      "oracle_facts": {
+        "linked": true,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "missing_channels": {
+        "p2p_baseline_map": false,
+        "acceptance_logs": false
+      },
+      "reason_verbatim": "The patch addresses the issue by modifying solve_univariate_inequality to return a ConditionSet instead of raising NotImplementedError for unsolvable equalities, matching the expected behavior. The test added in sympy/core/tests/test_relational.py verifies that Eq(n*cos(n) - 3*sin(n), 0).as_set() returns the correct ConditionSet. The signed run record shows that the test_issue_18188, which was previously failing due to this issue, now passes (F2P). Additionally, all other relevant acceptance tests in the declared set passed with no regressions. The run is fresh and linked to the exact patch commit, and the declared acceptance set was fully executed. The probe testing the issue symptom confirms the problem is resolved post-patch. Therefore, there is intact, fresh, and linked evidence demonstrating the issue is fixed with no regressions.",
+      "missing_evidence_verbatim": "",
+      "evidence_gap_verbatim": "",
+      "classification": {
+        "dominant": "freshness",
+        "all_": [
+          "freshness"
+        ],
+        "illusion": true,
+        "note": "calls run \"fresh\"; tree mismatch (3aa3.. vs 37e0..)"
+      }
+    },
+    {
+      "bundle_id": "cee_f0328f55403163cb",
+      "short": "403163cb",
+      "instance_id": "sympy__sympy-14531",
+      "gold": "NEED_EVIDENCE",
+      "gpt_decisions": {
+        "raw": "NEED_EVIDENCE",
+        "structured": "ACCEPT",
+        "adjudicated": "NEED_EVIDENCE"
+      },
+      "ds_structured_decision": "NEED_EVIDENCE",
+      "ds_structured_gap": "coverage_incomplete",
+      "oracle_facts": {
+        "linked": true,
+        "fresh": true,
+        "complete": false,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "missing_channels": {
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "acceptance_logs": false
+      },
+      "reason_verbatim": "The patch correctly modifies the _print_Limit and _print_Relational methods to use self._print on subexpressions, ensuring that StrPrinter settings are respected recursively. The issue symptom probe shows a failing exit code (1) pre-patch with incorrect string outputs, and a passing exit code (0) post-patch with correct outputs matching the expected format. The patch SHA256 and base commit match the attested run record, confirming the evidence is fresh and linked to this patch. The declared acceptance set includes the probe test, which passed post-patch. No scoped regressions or acceptance failures are reported in the relevant tests. The author statement aligns with the observed evidence. Therefore, the patch resolves the reported issue without introducing regressions, meeting the criteria for ACCEPT.",
+      "missing_evidence_verbatim": "",
+      "evidence_gap_verbatim": "",
+      "classification": {
+        "dominant": "coverage",
+        "all_": [
+          "coverage"
+        ],
+        "illusion": true,
+        "note": "says \"no scoped regressions/acceptance failures\"; 84 declared p2p all absent (p2p 0/0)"
+      }
+    }
+  ],
+  "gpt_structured_other_errors": [
+    {
+      "short": "a242cd7a",
+      "predicted": "ACCEPT",
+      "gold": "REJECT",
+      "gap": "",
+      "oracle_facts": {
+        "linked": true,
+        "fresh": true,
+        "complete": true,
+        "acceptance_failure": true,
+        "acceptance_success": false,
+        "symptom_persists": false
+      },
+      "reason_excerpt": "The patch correctly addresses the issue by adding a check for the case when a % p == 0, returning 0 or [0] accordingly. The patch includes new tests that verify this behavior for various inputs where a is zero modulo p. The run record is fresh and matches the patch commit. The declared acceptance se"
+    },
+    {
+      "short": "3d04e0f9",
+      "predicted": "REJECT",
+      "gold": "NEED_EVIDENCE",
+      "gap": "",
+      "ds_structured_decision": "NEED_EVIDENCE",
+      "reason_excerpt": "The patch addresses the subclassing issue by replacing static method calls with classmethod calls and using the class reference for instance creation, which is the correct approach. However, the test results show that the declared fail_to_pass test 'test_Permutation_subclassing' still fails after th"
+    }
+  ],
+  "cee_v11_cell_level_comparison": {
+    "deepseek-flash": {
+      "n_flips": 0,
+      "flips": [],
+      "prompt_system_identical": true,
+      "all_bundle_bytes_equal": true,
+      "all_served_ids_equal": true,
+      "cee_served": "deepseek-flash",
+      "eal_served": "deepseek-flash",
+      "temperature": {
+        "cee": 0,
+        "eal": 0
+      },
+      "max_tokens": {
+        "cee": 4096,
+        "eal": 4096
+      },
+      "response_format": {
+        "cee": "json_object",
+        "eal": "json_object"
+      },
+      "tools": {
+        "cee": 0,
+        "eal": 0
+      },
+      "plain_text_fallback": {
+        "cee": false,
+        "eal": false
+      },
+      "residual_explanation_when_wire_identical": "API nondeterminism at temperature=0 (no weight pinning)"
+    },
+    "gpt-4.1-mini": {
+      "n_flips": 2,
+      "flips": [
+        {
+          "bundle_id": "cee_017f5443ec813709",
+          "instance_id": "sympy__sympy-17139",
+          "evidence_class": "insufficient",
+          "gold": "NEED_EVIDENCE",
+          "cee_decision": "NEED_EVIDENCE",
+          "eal_adjudicated_decision": "ACCEPT",
+          "cee_appropriate": true,
+          "eal_appropriate": false
+        },
+        {
+          "bundle_id": "cee_b203936c59e46a77",
+          "instance_id": "sympy__sympy-13091",
+          "evidence_class": "decisive_negative",
+          "gold": "REJECT",
+          "cee_decision": "NEED_EVIDENCE",
+          "eal_adjudicated_decision": "REJECT",
+          "cee_appropriate": false,
+          "eal_appropriate": true
+        }
+      ],
+      "prompt_system_identical": true,
+      "all_bundle_bytes_equal": true,
+      "all_served_ids_equal": true,
+      "cee_served": "gpt-4.1-mini-2025-04-14",
+      "eal_served": "gpt-4.1-mini-2025-04-14",
+      "temperature": {
+        "cee": 0,
+        "eal": 0
+      },
+      "max_tokens": {
+        "cee": 4096,
+        "eal": 4096
+      },
+      "response_format": {
+        "cee": "json_object",
+        "eal": "json_object"
+      },
+      "tools": {
+        "cee": 0,
+        "eal": 0
+      },
+      "plain_text_fallback": {
+        "cee": false,
+        "eal": false
+      },
+      "residual_explanation_when_wire_identical": "API nondeterminism at temperature=0 (no weight pinning)"
+    }
+  },
+  "decisive_negative_audit": [
+    {
+      "bundle_id": "cee_13b04ca1faae0894",
+      "short": "faae0894",
+      "instance_id": "sympy__sympy-13798",
+      "oracle_facts": {
+        "linked": true,
+        "fresh": true,
+        "complete": false,
+        "acceptance_failure": true,
+        "acceptance_success": false,
+        "symptom_persists": false
+      },
+      "missing_channels": {
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "acceptance_logs": false
+      },
+      "decisions": {
+        "DS": {
+          "raw": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "structured": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "adjudicated": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          }
+        },
+        "GPT": {
+          "raw": {
+            "decision": "NEED_EVIDENCE",
+            "gap": "",
+            "appropriate": false
+          },
+          "structured": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "adjudicated": {
+            "decision": "NEED_EVIDENCE",
+            "gap": "coverage_incomplete",
+            "appropriate": false
+          }
+        }
+      }
+    },
+    {
+      "bundle_id": "cee_58d93f77f0c49f82",
+      "short": "f0c49f82",
+      "instance_id": "sympy__sympy-18211",
+      "oracle_facts": {
+        "linked": false,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": true
+      },
+      "missing_channels": {},
+      "decisions": {
+        "DS": {
+          "raw": {
+            "decision": "REJECT",
+            "gap": "contradiction",
+            "appropriate": true
+          },
+          "structured": {
+            "decision": "NEED_EVIDENCE",
+            "gap": "linkage_mismatch",
+            "appropriate": false
+          },
+          "adjudicated": {
+            "decision": "NEED_EVIDENCE",
+            "gap": "linkage_mismatch",
+            "appropriate": false
+          }
+        },
+        "GPT": {
+          "raw": {
+            "decision": "ACCEPT",
+            "gap": "",
+            "appropriate": false
+          },
+          "structured": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "adjudicated": {
+            "decision": "NEED_EVIDENCE",
+            "gap": "stale",
+            "appropriate": false
+          }
+        }
+      }
+    },
+    {
+      "bundle_id": "cee_5cfbc476af83be49",
+      "short": "af83be49",
+      "instance_id": "sympy__sympy-12489",
+      "oracle_facts": {
+        "linked": true,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": true
+      },
+      "missing_channels": {
+        "p2p_baseline_map": false,
+        "probe_source_archived": false,
+        "acceptance_logs": false
+      },
+      "decisions": {
+        "DS": {
+          "raw": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "structured": {
+            "decision": "NEED_EVIDENCE",
+            "gap": "stale",
+            "appropriate": false
+          },
+          "adjudicated": {
+            "decision": "NEED_EVIDENCE",
+            "gap": "stale",
+            "appropriate": false
+          }
+        },
+        "GPT": {
+          "raw": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "structured": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "adjudicated": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          }
+        }
+      }
+    },
+    {
+      "bundle_id": "cee_76028c65f51defe8",
+      "short": "f51defe8",
+      "instance_id": "sympy__sympy-12489",
+      "oracle_facts": {
+        "linked": true,
+        "fresh": true,
+        "complete": false,
+        "acceptance_failure": true,
+        "acceptance_success": false,
+        "symptom_persists": false
+      },
+      "missing_channels": {
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "probe_source_archived": false,
+        "acceptance_logs": false
+      },
+      "decisions": {
+        "DS": {
+          "raw": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "structured": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "adjudicated": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          }
+        },
+        "GPT": {
+          "raw": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "structured": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "adjudicated": {
+            "decision": "NEED_EVIDENCE",
+            "gap": "coverage_incomplete",
+            "appropriate": false
+          }
+        }
+      }
+    },
+    {
+      "bundle_id": "cee_8f41672ea242cd7a",
+      "short": "a242cd7a",
+      "instance_id": "sympy__sympy-18199",
+      "oracle_facts": {
+        "linked": true,
+        "fresh": true,
+        "complete": true,
+        "acceptance_failure": true,
+        "acceptance_success": false,
+        "symptom_persists": false
+      },
+      "missing_channels": {},
+      "decisions": {
+        "DS": {
+          "raw": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "structured": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "adjudicated": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          }
+        },
+        "GPT": {
+          "raw": {
+            "decision": "NEED_EVIDENCE",
+            "gap": "coverage_incomplete",
+            "appropriate": false
+          },
+          "structured": {
+            "decision": "ACCEPT",
+            "gap": "",
+            "appropriate": false
+          },
+          "adjudicated": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          }
+        }
+      }
+    },
+    {
+      "bundle_id": "cee_b203936c59e46a77",
+      "short": "59e46a77",
+      "instance_id": "sympy__sympy-13091",
+      "oracle_facts": {
+        "linked": true,
+        "fresh": true,
+        "complete": false,
+        "acceptance_failure": true,
+        "acceptance_success": false,
+        "symptom_persists": false
+      },
+      "missing_channels": {
+        "p2p_map": false,
+        "p2p_baseline_map": false,
+        "probe_source_archived": false,
+        "acceptance_logs": false
+      },
+      "decisions": {
+        "DS": {
+          "raw": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "structured": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "adjudicated": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          }
+        },
+        "GPT": {
+          "raw": {
+            "decision": "NEED_EVIDENCE",
+            "gap": "coverage_incomplete",
+            "appropriate": false
+          },
+          "structured": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          },
+          "adjudicated": {
+            "decision": "REJECT",
+            "gap": "",
+            "appropriate": true
+          }
+        }
+      }
+    }
+  ],
+  "independent_recheck": {
+    "models": {
+      "deepseek-flash": {
+        "raw": {
+          "da_n": 17.0,
+          "n": 22,
+          "da_rate": 0.7727,
+          "ci95": [
+            0.5625,
+            0.9524
+          ],
+          "confusion": {
+            "ACCEPT": {
+              "ACCEPT": 6,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 0
+            },
+            "REJECT": {
+              "ACCEPT": 1,
+              "REJECT": 6,
+              "NEED_EVIDENCE": 4
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 0,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 5
+            }
+          },
+          "class_da": {
+            "sufficient_positive": [
+              6,
+              7
+            ],
+            "decisive_negative": [
+              6,
+              6
+            ],
+            "insufficient": [
+              5,
+              9
+            ]
+          }
+        },
+        "structured": {
+          "da_n": 19.0,
+          "n": 22,
+          "da_rate": 0.8636,
+          "ci95": [
+            0.7368,
+            1.0
+          ],
+          "confusion": {
+            "ACCEPT": {
+              "ACCEPT": 6,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 0
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "REJECT": 4,
+              "NEED_EVIDENCE": 0
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 1,
+              "REJECT": 2,
+              "NEED_EVIDENCE": 9
+            }
+          },
+          "class_da": {
+            "sufficient_positive": [
+              6,
+              7
+            ],
+            "decisive_negative": [
+              4,
+              6
+            ],
+            "insufficient": [
+              9,
+              9
+            ]
+          }
+        },
+        "adjudicated": {
+          "da_n": 20.0,
+          "n": 22,
+          "da_rate": 0.9091,
+          "ci95": [
+            0.7826,
+            1.0
+          ],
+          "confusion": {
+            "ACCEPT": {
+              "ACCEPT": 7,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 0
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "REJECT": 4,
+              "NEED_EVIDENCE": 0
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 0,
+              "REJECT": 2,
+              "NEED_EVIDENCE": 9
+            }
+          },
+          "class_da": {
+            "sufficient_positive": [
+              7,
+              7
+            ],
+            "decisive_negative": [
+              4,
+              6
+            ],
+            "insufficient": [
+              9,
+              9
+            ]
+          }
+        }
+      },
+      "gpt-4.1-mini": {
+        "raw": {
+          "da_n": 9.0,
+          "n": 22,
+          "da_rate": 0.4091,
+          "ci95": [
+            0.1765,
+            0.5769
+          ],
+          "confusion": {
+            "ACCEPT": {
+              "ACCEPT": 5,
+              "REJECT": 1,
+              "NEED_EVIDENCE": 6
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "REJECT": 2,
+              "NEED_EVIDENCE": 1
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 2,
+              "REJECT": 3,
+              "NEED_EVIDENCE": 2
+            }
+          },
+          "class_da": {
+            "sufficient_positive": [
+              5,
+              7
+            ],
+            "decisive_negative": [
+              2,
+              6
+            ],
+            "insufficient": [
+              2,
+              9
+            ]
+          }
+        },
+        "structured": {
+          "da_n": 12.0,
+          "n": 22,
+          "da_rate": 0.5455,
+          "ci95": [
+            0.3529,
+            0.6786
+          ],
+          "confusion": {
+            "ACCEPT": {
+              "ACCEPT": 7,
+              "REJECT": 1,
+              "NEED_EVIDENCE": 8
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "REJECT": 5,
+              "NEED_EVIDENCE": 1
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 0,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 0
+            }
+          },
+          "class_da": {
+            "sufficient_positive": [
+              7,
+              7
+            ],
+            "decisive_negative": [
+              5,
+              6
+            ],
+            "insufficient": [
+              0,
+              9
+            ]
+          }
+        },
+        "adjudicated": {
+          "da_n": 18.0,
+          "n": 22,
+          "da_rate": 0.8182,
+          "ci95": [
+            0.6364,
+            0.9583
+          ],
+          "confusion": {
+            "ACCEPT": {
+              "ACCEPT": 7,
+              "REJECT": 0,
+              "NEED_EVIDENCE": 1
+            },
+            "REJECT": {
+              "ACCEPT": 0,
+              "REJECT": 3,
+              "NEED_EVIDENCE": 0
+            },
+            "NEED_EVIDENCE": {
+              "ACCEPT": 0,
+              "REJECT": 3,
+              "NEED_EVIDENCE": 8
+            }
+          },
+          "class_da": {
+            "sufficient_positive": [
+              7,
+              7
+            ],
+            "decisive_negative": [
+              3,
+              6
+            ],
+            "insufficient": [
+              8,
+              9
+            ]
+          }
+        }
+      }
+    },
+    "always_need_baseline": 0.4090909090909091
+  }
+}

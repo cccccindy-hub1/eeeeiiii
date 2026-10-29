@@ -1,0 +1,128 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is linked to this patch and commit, and it is fresh for the current commit tree. The declared acceptance and regression test sets were fully executed with no missing tests. The author statement is consistent with the evidence, and the issue symptom no longer reproduces after the patch. There is no evidence of any acceptance test failure or regression introduced by this patch. Therefore, the patch is acceptable for merge.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+  "cell": "g3c1live:sympy__sympy-15875:T3D-Strict",
+  "condition": "T3D-Strict",
+  "cost_usd": 0.001924,
+  "evidence_session": "89a701878f989b39418f858f",
+  "evidence_tier": "D",
+  "id": "qwen3_30b_instruct2507_500:sympy__sympy-15875",
+  "instance_id": "sympy__sympy-15875",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 2,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": "strict",
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.013908,
+    0.014184
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 72,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 1766,
+      "raw_content": "",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_FWlX7OhBS19SuFQrQ7tNtd9I",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_V3Dh7mWjBixkKRnSzSUE3zf5",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_XnD19H70olGmATmLhgqCQnRB",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_T7OQUCUGiwjq9clfUfV5G9lf",
+          "name": "check_claim_consistency"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 108,
+      "finish_reason": "stop",
+      "model_call": 2,
+      "prompt_tokens": 2325,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is linked to this patch and commit, and it is fresh for the current commit tree. The declared acceptance and regression test sets were fully executed with no missing tests. The author statement is consistent with the evidence, and the issue symptom no longer reproduces after the patch. There is no evidence of any acceptance test failure or regression introduced by this patch. Therefore, the patch is acceptable for merge.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 7,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_69562ae39095d2d5",
+  "tokens_in": 4091,
+  "tokens_out": 180,
+  "tool_calls": 4,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"b506169ad727ee39cb3d60c8b3ff5e315d443d8e\", \"record_patch_sha256\": \"79a054ec73e11f87d823e076d724dc11406ea67fd6ea1a766fc2776c0a44502f\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"06cf87860fba3bbb8aef5986017967674ab8fb7f\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"06cf87860fba3bbb8aef5986017967674ab8fb7f\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:07:45+00:00\", \"attestation_built_at\": \"2026-10-28T10:09:34+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 80, \"executed\": 80, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    }
+  ],
+  "wall_s": 3.18
+}

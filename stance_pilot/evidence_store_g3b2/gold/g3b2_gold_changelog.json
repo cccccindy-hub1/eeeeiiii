@@ -1,0 +1,64 @@
+{
+  "document": "Gate 3-B.2 task 6: condition-gold new vs old changelog for the 10 frozen issues.",
+  "gold_cert_version": "g3b2-gold-cert-v1",
+  "gold_rule_version": "w2-gold-v1",
+  "old_source": "evidence_store_g3a\\gold\\g3a1_condition_gold.jsonl",
+  "new_source": "evidence_store_g3b2\\gold\\g3b2_condition_gold_certificates.jsonl",
+  "n_issues": 10,
+  "n_conditions": 5,
+  "n_certificates": 50,
+  "n_value_changes": 0,
+  "expected_n_value_changes": 0,
+  "expectation_rationale": "The frozen G3-A.1 condition gold already took freshness from the build-time restage guarantee (fresh=true) and already contained the T2A institutional branch. The G3-B construct defects were in the LIVE freshness endpoint (absent record.run_tree compared to the attestation) and in the T2A PROMPT (trust grant never communicated), not in the gold rule or these gold values. The repair aligns endpoint + prompt with the gold; it must not edit gold to flatter a model.",
+  "rule_changes": [],
+  "fact_source_changes": [
+    "applicability freshness is explicitly sourced from the independent git-restage write-tree vs signed attestation (g3a_freshness_recompute.json), surfaced three-state (TRUE/FALSE/UNKNOWN); missing record.run_tree can no longer be read as stale."
+  ],
+  "trust_expression_changes": [
+    "T2A prompt/block now explicitly state the institutional L/F/C warranty the T2A gold branch assumed; ACCEPT/REJECT is never revealed."
+  ],
+  "new_distribution": {
+    "T2D-T": {
+      "NEED_EVIDENCE": 10
+    },
+    "T3D-Strict": {
+      "NEED_EVIDENCE": 10
+    },
+    "T3D-Escalate": {
+      "ACCEPT": 7,
+      "REJECT": 3
+    },
+    "T2A-T": {
+      "ACCEPT": 7,
+      "REJECT": 3
+    },
+    "T3A-T": {
+      "ACCEPT": 7,
+      "REJECT": 3
+    }
+  },
+  "old_distribution": {
+    "T2D-T": {
+      "NEED_EVIDENCE": 10
+    },
+    "T3D-Strict": {
+      "NEED_EVIDENCE": 10
+    },
+    "T3D-Escalate": {
+      "ACCEPT": 7,
+      "REJECT": 3
+    },
+    "T2A-T": {
+      "ACCEPT": 7,
+      "REJECT": 3
+    },
+    "T3A-T": {
+      "ACCEPT": 7,
+      "REJECT": 3
+    }
+  },
+  "n_sufficient_cells": 30,
+  "n_need_evidence_cells": 20,
+  "changed_items": [],
+  "gold_tier": "PROVISIONAL (n=1; annotator2 NOT_OBTAINED); protocol repair does not raise authority"
+}

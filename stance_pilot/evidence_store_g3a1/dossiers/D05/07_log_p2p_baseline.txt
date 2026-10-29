@@ -1,0 +1,67 @@
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpDysd9i\Scripts\python.exe -m pytest sympy/physics/quantum/tests/test_dagger.py sympy/physics/quantum/tests/test_operator.py sympy/physics/quantum/tests/test_printing.py -v --tb=short -p no:cacheprovider  (exit 0, 7s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpDysd9i\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 29 items
+
+sympy/physics/quantum/tests/test_dagger.py::test_scalars PASSED          [  3%]
+sympy/physics/quantum/tests/test_dagger.py::test_matrix PASSED           [  6%]
+sympy/physics/quantum/tests/test_dagger.py::test_eval_adjoint PASSED     [ 10%]
+sympy/physics/quantum/tests/test_dagger.py::test_numpy_dagger SKIPPED    [ 13%]
+sympy/physics/quantum/tests/test_dagger.py::test_scipy_sparse_dagger SKIPPED [ 17%]
+sympy/physics/quantum/tests/test_operator.py::test_operator PASSED       [ 20%]
+sympy/physics/quantum/tests/test_operator.py::test_operator_inv PASSED   [ 24%]
+sympy/physics/quantum/tests/test_operator.py::test_hermitian PASSED      [ 27%]
+sympy/physics/quantum/tests/test_operator.py::test_unitary PASSED        [ 31%]
+sympy/physics/quantum/tests/test_operator.py::test_identity PASSED       [ 34%]
+sympy/physics/quantum/tests/test_operator.py::test_outer_product PASSED  [ 37%]
+sympy/physics/quantum/tests/test_operator.py::test_operator_dagger PASSED [ 41%]
+sympy/physics/quantum/tests/test_operator.py::test_differential_operator PASSED [ 44%]
+sympy/physics/quantum/tests/test_printing.py::test_anticommutator PASSED [ 48%]
+sympy/physics/quantum/tests/test_printing.py::test_cg PASSED             [ 51%]
+sympy/physics/quantum/tests/test_printing.py::test_commutator PASSED     [ 55%]
+sympy/physics/quantum/tests/test_printing.py::test_constants PASSED      [ 58%]
+sympy/physics/quantum/tests/test_printing.py::test_dagger PASSED         [ 62%]
+sympy/physics/quantum/tests/test_printing.py::test_gate_failing XFAIL    [ 65%]
+sympy/physics/quantum/tests/test_printing.py::test_gate PASSED           [ 68%]
+sympy/physics/quantum/tests/test_printing.py::test_hilbert PASSED        [ 72%]
+sympy/physics/quantum/tests/test_printing.py::test_innerproduct PASSED   [ 75%]
+sympy/physics/quantum/tests/test_printing.py::test_operator PASSED       [ 79%]
+sympy/physics/quantum/tests/test_printing.py::test_qexpr PASSED          [ 82%]
+sympy/physics/quantum/tests/test_printing.py::test_qubit PASSED          [ 86%]
+sympy/physics/quantum/tests/test_printing.py::test_spin PASSED           [ 89%]
+sympy/physics/quantum/tests/test_printing.py::test_state PASSED          [ 93%]
+sympy/physics/quantum/tests/test_printing.py::test_tensorproduct PASSED  [ 96%]
+sympy/physics/quantum/tests/test_printing.py::test_big_expr PASSED       [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474: PytestConfigWarning: Unknown config option: doctestplus
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+sympy/physics/quantum/tests/test_printing.py::test_qubit
+sympy/physics/quantum/tests/test_printing.py::test_qubit
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============ 26 passed, 2 skipped, 1 xfailed, 7 warnings in 2.19s =============
+
+--- stderr ---

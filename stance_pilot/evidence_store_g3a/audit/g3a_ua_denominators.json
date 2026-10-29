@@ -1,0 +1,105 @@
+{
+  "conditional_ua_rate_cell_weighted": {
+    "denominator_acceptance_eligible_cells": 60,
+    "eligible_gold_mix": {
+      "NEED_EVIDENCE": 36,
+      "REJECT": 24
+    },
+    "numerator_ua": 34,
+    "population": "cells whose gold is REJECT or NEED_EVIDENCE; mirror fixtures x 4 conditions are counted separately (cell-weighted)",
+    "value_34_over_60": 0.5667
+  },
+  "document": "Exact denominator accounting for the three GroundedReview X unsupported-acceptance proportions (gpt-4.1-mini).",
+  "error_family_rate_per_cell": {
+    "denominator_all_parseable_cells": 88,
+    "numerator_ua": 34,
+    "population": "all 88 parseable cells incl. 28 ACCEPT-gold cells where UA is structurally impossible",
+    "value_34_over_88": 0.3864
+  },
+  "events_are_not_independent": {
+    "distinct_fixtures_with_ua": 10,
+    "note": "34 UA events come from 9 fixtures, 24 inside mirrored negative fixtures; issue-equal weighting does not turn them into 34 independent failures."
+  },
+  "issue_equal_weighted_conditional_rate": {
+    "denominator_n_issues_with_eligible_cells": 9,
+    "population": "one equal vote per independent issue over the 9 issues with >=1 eligible cell; within-issue mirrors/conditions averaged first",
+    "value": 0.662
+  },
+  "issue_equal_weighted_per_cell_rate": {
+    "denominator_n_issues": 10,
+    "population": "one equal vote per independent issue across all 10 issues; includes the pure-ACCEPT issue 16450 at 0",
+    "value": 0.4375
+  },
+  "per_issue": {
+    "12419": {
+      "all_cells": 12,
+      "eligible_cells": 4,
+      "ua": 4,
+      "ua_rate_over_all_cells": 0.3333,
+      "ua_rate_over_eligible": 1.0
+    },
+    "12481": {
+      "all_cells": 16,
+      "eligible_cells": 4,
+      "ua": 4,
+      "ua_rate_over_all_cells": 0.25,
+      "ua_rate_over_eligible": 1.0
+    },
+    "12489": {
+      "all_cells": 12,
+      "eligible_cells": 12,
+      "ua": 1,
+      "ua_rate_over_all_cells": 0.0833,
+      "ua_rate_over_eligible": 0.0833
+    },
+    "13091": {
+      "all_cells": 12,
+      "eligible_cells": 8,
+      "ua": 4,
+      "ua_rate_over_all_cells": 0.3333,
+      "ua_rate_over_eligible": 0.5
+    },
+    "13798": {
+      "all_cells": 8,
+      "eligible_cells": 8,
+      "ua": 3,
+      "ua_rate_over_all_cells": 0.375,
+      "ua_rate_over_eligible": 0.375
+    },
+    "14531": {
+      "all_cells": 8,
+      "eligible_cells": 8,
+      "ua": 8,
+      "ua_rate_over_all_cells": 1.0,
+      "ua_rate_over_eligible": 1.0
+    },
+    "16450": {
+      "all_cells": 4,
+      "eligible_cells": 0,
+      "ua": 0,
+      "ua_rate_over_all_cells": 0.0,
+      "ua_rate_over_eligible": null
+    },
+    "17139": {
+      "all_cells": 4,
+      "eligible_cells": 4,
+      "ua": 4,
+      "ua_rate_over_all_cells": 1.0,
+      "ua_rate_over_eligible": 1.0
+    },
+    "18199": {
+      "all_cells": 4,
+      "eligible_cells": 4,
+      "ua": 2,
+      "ua_rate_over_all_cells": 0.5,
+      "ua_rate_over_eligible": 0.5
+    },
+    "18211": {
+      "all_cells": 8,
+      "eligible_cells": 8,
+      "ua": 4,
+      "ua_rate_over_all_cells": 0.5,
+      "ua_rate_over_eligible": 0.5
+    }
+  }
+}

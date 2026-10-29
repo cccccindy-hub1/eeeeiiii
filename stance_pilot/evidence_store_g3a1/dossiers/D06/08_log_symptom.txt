@@ -1,0 +1,14 @@
+### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+FAIL: _collect_factor_and_dimension raised ValueError Dimension of "v1" is Dimension(velocity), but it should be Dimension(acceleration*time)
+
+--- stderr ---
+
+
+### POST candidate patch
+$ python probe.py  (exit 0)
+--- stdout ---
+OK: no dimension error for a*t + v -> factor -47.0000000000000 dimension Dimension(acceleration*time)
+
+--- stderr ---

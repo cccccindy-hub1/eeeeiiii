@@ -1,0 +1,11 @@
+{
+  "cell": "g3b3:sympy__sympy-21847:T2A-T",
+  "condition": "T2A-T",
+  "policy": null,
+  "session_id": null,
+  "trace": [],
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch changes the condition from checking max(powers.values()) to sum(powers.values()) for the min_degree filter, which correctly implements the intended behavior of filtering monomials by total degree rather than maximum single variable degree. The added tests explicitly cover the reported issue (issue 21847) and verify that monomials with total degree equal to or greater than min_degrees and up to max_degrees are returned, including for multiple variables and non-commutative variables. The provided test artifact is a full, fresh, and linked run for this exact patch and base commit, showing all declared acceptance tests passing with no failures or regressions. This confirms that the issue is resolved and no regressions are introduced. Therefore, the patch is acceptable as a resolution of the issue.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"none\"}",
+  "parsed": "ACCEPT",
+  "fresh_state_served": null,
+  "error": null
+}

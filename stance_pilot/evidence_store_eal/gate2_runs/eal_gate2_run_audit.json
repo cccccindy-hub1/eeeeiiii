@@ -1,0 +1,62 @@
+{
+  "protocol": "eal-v0-draft1",
+  "gate": "gate2_live",
+  "live": true,
+  "gate2_condition": "eal-v0-draft1+gate2-derived-summary-disclosure",
+  "n_cells_per_model_planned": 66,
+  "n_models": 2,
+  "models": [
+    {
+      "model_profile": "deepseek-flash",
+      "new_calls": 63,
+      "errors": 0,
+      "invalid": 0,
+      "ambiguous": 0,
+      "spend_usd": 0.217162,
+      "budget_stopped": "",
+      "out_file": "eal_gate2_live_deepseek_flash_results.jsonl"
+    },
+    {
+      "model_profile": "gpt-4.1-mini",
+      "new_calls": 63,
+      "errors": 0,
+      "invalid": 0,
+      "ambiguous": 0,
+      "spend_usd": 0.259713,
+      "budget_stopped": "",
+      "out_file": "eal_gate2_live_gpt_41_mini_results.jsonl"
+    }
+  ],
+  "total_spend_usd": 0.476875,
+  "hard_cap_usd": 3.0,
+  "per_model_cap_usd": 1.5,
+  "within_total_cap": true,
+  "budget_status": "within_cap",
+  "cross_model_payload_byte_identity": true,
+  "payload_sha_mismatches": {},
+  "completion_cap_tokens": 4096,
+  "tools_sent": 0,
+  "plain_text_fallback_used": false,
+  "freeze_manifest_sha256": "6faffc8261e7b03b7203a0f51998baf68c33b53164f77910ad68a32119ccc94b",
+  "version": {
+    "protocol": "eal-v0-draft1",
+    "gate": "gate2_live",
+    "gate2_condition": "eal-v0-draft1+gate2-derived-summary-disclosure",
+    "layers": [
+      "raw",
+      "structured",
+      "adjudicated"
+    ],
+    "system_message_sha256": "2c64f3acf2e91b44ca92fab346240afb798deac2f5dc51373506a50c47c23e45",
+    "decision_schema_sha256": "abfc5d794b73063963627bd9eba2e3da0d8d815fe8789f49572bdf2ad70c0b51",
+    "response_format_sent": {
+      "type": "json_object"
+    },
+    "local_schema_validation": "cee_protocol_v11.validate_decision_object",
+    "tools": "none",
+    "turns": 1,
+    "eal_gate2_run_py_sha256": "5de616b05d3bb328f39eae7beca128dbc4d493d6caa4e8d230dcc0afc709f3ff",
+    "eal_gate2_freeze_manifest_sha256": "6faffc8261e7b03b7203a0f51998baf68c33b53164f77910ad68a32119ccc94b",
+    "mode": "live"
+  }
+}

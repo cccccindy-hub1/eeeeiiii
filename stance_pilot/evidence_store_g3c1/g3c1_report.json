@@ -1,0 +1,560 @@
+{
+  "actual_new_issues_materialised": 8,
+  "api_calls_made": 0,
+  "approved_scope": {
+    "edit_frozen_runtime_code": false,
+    "gate_3c2_execution": false,
+    "gemini_or_r2": false,
+    "git_commit_or_add": false,
+    "gold_quota_editing": false,
+    "issue_choice_from_model_errors": false,
+    "max_new_issues": 8,
+    "mirror_fixtures": false,
+    "modify_historical_frozen_artifacts": false,
+    "real_model_calls": 0,
+    "spend_usd": 0.0
+  },
+  "coverage_scope_disclosure": "PASS_TO_PASS was executed only for the attested SCOPED subset (maintainer test_patch files plus tests/ adjacent to changed code files). The full dataset P2P suite was NOT run locally; therefore every oracle ACCEPT here means SCOPED acceptability, not full-suite merge certification.",
+  "decision_acknowledged": "G3-C.0 complete, accepted and frozen (never re-run or rewritten). Gate G3-C.1 executed under the prior written approval: at most 8 brand-new independent SymPy issues, local data/patch/pytest/gold/signing/HTTP/mock work only, model API budget $0. G3-C.2, real Reviewer calls, Gemini, R2 and git commit remain un-executed.",
+  "deliverables": [
+    "selection/g3c1_selection.json (dual-queue frozen funnel)",
+    "raw/g3c1_target_rows.jsonl + raw/g3c1_target_digest.json",
+    "probes/ (8 symptom probes) + patches/ (8 candidate + 8 test)",
+    "store/ signed artifacts, logs, attestations + fixtures meta",
+    "g3c1_truth.jsonl + g3c1_failures.jsonl",
+    "audit/g3c1_freshness_recompute.json",
+    "gold/g3c1_oracle_gold.jsonl + g3c1_condition_certificates.jsonl",
+    "projection/g3c1_noninterference_audit.json",
+    "audit/g3c1_http_crosscheck.json + g3c1_http_transcript.jsonl",
+    "audit/g3c1_mock_audit.json + runs/g3c1_mock_results.jsonl",
+    "audit/g3c1_probe_revision_note_19495.json",
+    "audit/g3c1_determinism_check.json",
+    "human_annotation/ (protocol, blank CSV, 8 blind packets, sealed mapping)",
+    "g3c1_report.{json,md}",
+    "freeze/g3c1_freeze_manifest.json"
+  ],
+  "design_version": "groundedreview-gate3c1-local-pilot-freeze-v1",
+  "determinism": {
+    "audit": "audit/g3c1_determinism_check.json",
+    "deterministic": true,
+    "n_targets_byte_identical": 3
+  },
+  "document": "GroundedReview Gate G3-C.1 - local zero-API pilot construction of 8 new independent SymPy issues",
+  "failures_and_instrument_revision": {
+    "failure_file": "g3c1_failures.jsonl",
+    "n_failure_records": 1,
+    "records": [
+      {
+        "apply_error_tail": "",
+        "baseline_log_tail": "$ python sympy__sympy-19495-baseline.py  (exit 0)\n--- stdout ---\nbefore: ConditionSet(x, Contains(y, Interval(-1, 1)), ImageSet(Lambda(n, 2*pi*n + asin(y)), Integers))\nafter : ConditionSet(1/3, Contains(1/3, ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)), ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers))\nOK: ConditionSet.subs returns a well-formed set\n\n--- stderr ---\n",
+        "baseline_probe_passed": true,
+        "candidate_applied_cleanly": true,
+        "instance_id": "sympy__sympy-19495",
+        "post_candidate_probe_passed": true,
+        "post_log_tail": "$ python sympy__sympy-19495-post-candidate.py  (exit 0)\n--- stdout ---\nbefore: ConditionSet(x, Contains(y, Interval(-1, 1)), ImageSet(Lambda(n, 2*pi*n + asin(y)), Integers))\nafter : ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nOK: ConditionSet.subs returns a well-formed set\n\n--- stderr ---\n",
+        "reason": "probe did not fail-at-base -> pass-after-candidate",
+        "recorded_at": "2026-10-28T09:48:33+00:00",
+        "stage": "probe_flip_gate"
+      }
+    ],
+    "sympy_19495_revision_note": {
+      "action": "Replaced the weak probe with the strengthened symptom probe and re-ran the probe-flip gate over all 8 issues. All 8 then flipped (baseline exit!=0, post-candidate exit==0). The original failure record is retained unchanged; the issue was kept, not substituted.",
+      "audit": "g3c1_probe_instrument_revision",
+      "diagnosis": "The selected issue genuinely reproduces and the candidate genuinely fixes it. At the clean base_commit plain ConditionSet.subs produced ConditionSet(1/3, Contains(1/3, ImageSet(...)), ImageSet(...)) -- exactly the malformed over-substitution reported publicly (the ConditionSet bound dummy x was replaced by 1/3) -- and after the candidate it correctly became ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers). The first hand-written probe was a faulty INSTRUMENT: its assertions only checked for a free symbol y and for a collapse to the singleton {1/3}, neither of which distinguishes ConditionSet(1/3, ...) from the correct result, so it exited 0 at baseline. This was a probe-authoring defect, NOT a non-evaluable issue and NOT a reason to replace the issue.",
+      "maintainer_test_patch_consulted": false,
+      "no_gold_changed": true,
+      "no_issue_replaced": true,
+      "post_revision_gate": {
+        "all_probes_flip": true,
+        "evidence": "audit/g3c1_probe_selftest.json",
+        "n_issues": 8
+      }
+    }
+  },
+  "freshness_audit": {
+    "all_match": true,
+    "authoritative_tree_source": "independent_git_restage_write_tree",
+    "n_attestation_authentic": 8,
+    "n_issues": 8,
+    "n_tree_match": 8,
+    "semantics": "G3-B.2 three-state (TRUE/FALSE/UNKNOWN); a missing run tree is never silently treated as stale"
+  },
+  "gate_3c2_recommendation": {
+    "not_executed_in_g3c1": [
+      "G3-C.2",
+      "real Reviewer model calls",
+      "Gemini",
+      "R2",
+      "new paid models"
+    ],
+    "prerequisites_before_any_paid_cell": [
+      "annotator2 labels collected for P01-P08 (labels CSV currently blank)",
+      "third-human arbitration of every annotator1/annotator2 disagreement; flip-sensitivity recomputation",
+      "re-confirm the machine non-interference gate (tier1=0/tier2=0/gold-key=0) on the exact G3-C.2 build",
+      "separate explicit written G3-C.2 approval with a hard per-phase API budget and the G3-C.0 pre-registered P1/P2 endpoints, sampling and stats",
+      "expand toward the G3-C.0 floor of >=20 NEW independent REJECT issues; report natural vs enriched rates separately"
+    ],
+    "ready_for_paid_expansion_now": false,
+    "recommended_next_step": "First obtain a REAL independent second human annotator on the 8 sealed blind packets, run the pre-registered third-human arbitration and gold-flip sensitivity, and only then consider any paid Reviewer-model expansion (G3-C.2)."
+  },
+  "git_commits_made": 0,
+  "gold": {
+    "condition_distribution": {
+      "T2A-T": {
+        "ACCEPT": 6,
+        "REJECT": 2
+      },
+      "T2D-T": {
+        "NEED_EVIDENCE": 8
+      },
+      "T3A-T": {
+        "ACCEPT": 6,
+        "REJECT": 2
+      },
+      "T3D-Escalate": {
+        "ACCEPT": 6,
+        "REJECT": 2
+      },
+      "T3D-Strict": {
+        "NEED_EVIDENCE": 8
+      }
+    },
+    "n_condition_certificates": 40,
+    "need_evidence": 16,
+    "oracle_distribution": {
+      "ACCEPT": 6,
+      "REJECT": 2
+    },
+    "rule_version": "gold_w2 w2-gold-v1 (frozen; no rule drift)",
+    "sufficient_for_decision": 24,
+    "tier_A_conditions": [
+      "T2A-T",
+      "T3A-T"
+    ],
+    "tier_D_conditions": [
+      "T2D-T",
+      "T3D-Strict",
+      "T3D-Escalate"
+    ]
+  },
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold constructed in Gate G3-C.1 from executed local evidence only; no second independent human adjudicator has been obtained. All gold stays PROVISIONAL until the sealed blind packet is labelled by a real annotator2 and adjudicated. The AI building this gate is NOT an independent human annotator or arbiter."
+  },
+  "gold_cert_version": "g3c1-gold-cert-v1",
+  "http_crosscheck": {
+    "n_cells": 40,
+    "n_checks": 456,
+    "n_checks_pass": 456,
+    "n_errors": 0,
+    "network_egress": "127.0.0.1 only",
+    "server_version": "EvidenceAPI/g3c1-v1"
+  },
+  "human_annotation": {
+    "arbitration": "third senior human; never an LLM or the pipeline author; all three labels + reason retained",
+    "blind_seed": 418307,
+    "blinding_limitation": "IDENTITY blinding is PARTIAL: folder names and mapping are blinded, but verbatim patch/problem text may quote the upstream issue number; evidence is not rewritten because doing so would corrupt the adjudication target.",
+    "gold_tier": "PROVISIONAL",
+    "identity_blinding": "PARTIAL",
+    "n_packets": 8,
+    "n_packets_partial_self_reference": 8,
+    "status": "PENDING — no independent human labels obtained"
+  },
+  "network_egress": "127.0.0.1 only",
+  "new_issues": [
+    {
+      "base_commit": "9986b38181cdd556a3f3411e553864f11912244e",
+      "builder_label_class_audit_only": "A",
+      "canon_run_tree": "7764dee84838a5e0e4d2e9901f27facf1f85600b",
+      "fail_to_pass_failed_over_total": [
+        1,
+        2
+      ],
+      "instance_id": "sympy__sympy-14248",
+      "issue_addressed": true,
+      "oracle_basis": "4 executed declared check(s) failed on linked, fresh evidence",
+      "oracle_gold": "REJECT",
+      "pass_to_pass_preexisting_bad": 1,
+      "pass_to_pass_scoped_regressed_over_total": [
+        2,
+        433
+      ],
+      "primary_stratum": "R-P2P",
+      "queue": "enriched",
+      "resolved_in_dataset": false,
+      "symptom": "pre_fail->post_pass (gone)",
+      "target_generator": "glm5_500",
+      "test_patch_applied_cleanly": true
+    },
+    {
+      "base_commit": "b506169ad727ee39cb3d60c8b3ff5e315d443d8e",
+      "builder_label_class_audit_only": "A",
+      "canon_run_tree": "06cf87860fba3bbb8aef5986017967674ab8fb7f",
+      "fail_to_pass_failed_over_total": [
+        1,
+        1
+      ],
+      "instance_id": "sympy__sympy-15875",
+      "issue_addressed": true,
+      "oracle_basis": "1 executed declared check(s) failed on linked, fresh evidence",
+      "oracle_gold": "REJECT",
+      "pass_to_pass_preexisting_bad": 0,
+      "pass_to_pass_scoped_regressed_over_total": [
+        0,
+        80
+      ],
+      "primary_stratum": "R-P2P",
+      "queue": "natural",
+      "resolved_in_dataset": false,
+      "symptom": "pre_fail->post_pass (gone)",
+      "target_generator": "qwen3_30b_instruct2507_500",
+      "test_patch_applied_cleanly": true
+    },
+    {
+      "base_commit": "c50643a49811e9fe2f4851adff4313ad46f7325e",
+      "builder_label_class_audit_only": "B",
+      "canon_run_tree": "5440049ab0b9a9582894155ae4bdac6457928455",
+      "fail_to_pass_failed_over_total": [
+        0,
+        1
+      ],
+      "instance_id": "sympy__sympy-16886",
+      "issue_addressed": true,
+      "oracle_basis": "43 checks executed, linked/fresh/complete, no failure; symptom gone (SCOPED P2P)",
+      "oracle_gold": "ACCEPT",
+      "pass_to_pass_preexisting_bad": 0,
+      "pass_to_pass_scoped_regressed_over_total": [
+        0,
+        42
+      ],
+      "primary_stratum": "R-P2P",
+      "queue": "enriched",
+      "resolved_in_dataset": true,
+      "symptom": "pre_fail->post_pass (gone)",
+      "target_generator": "glm5_500",
+      "test_patch_applied_cleanly": true
+    },
+    {
+      "base_commit": "b9179e80d2daa1bb6cba1ffe35ca9e6612e115c9",
+      "builder_label_class_audit_only": "B",
+      "canon_run_tree": "f4e726a7c967d5a1d0056469ec4ce81089347638",
+      "fail_to_pass_failed_over_total": [
+        0,
+        1
+      ],
+      "instance_id": "sympy__sympy-19040",
+      "issue_addressed": true,
+      "oracle_basis": "149 checks executed, linked/fresh/complete, no failure; symptom gone (SCOPED P2P)",
+      "oracle_gold": "ACCEPT",
+      "pass_to_pass_preexisting_bad": 0,
+      "pass_to_pass_scoped_regressed_over_total": [
+        0,
+        148
+      ],
+      "primary_stratum": "R-TRAP",
+      "queue": "enriched",
+      "resolved_in_dataset": true,
+      "symptom": "pre_fail->post_pass (gone)",
+      "target_generator": "glm5_500",
+      "test_patch_applied_cleanly": true
+    },
+    {
+      "base_commit": "94fb720696f5f5d12bad8bc813699fd696afd2fb",
+      "builder_label_class_audit_only": "B",
+      "canon_run_tree": "aa8817b59cf51161212d70ab372a514f49a27b47",
+      "fail_to_pass_failed_over_total": [
+        0,
+        1
+      ],
+      "instance_id": "sympy__sympy-19346",
+      "issue_addressed": true,
+      "oracle_basis": "41 checks executed, linked/fresh/complete, no failure; symptom gone (SCOPED P2P)",
+      "oracle_gold": "ACCEPT",
+      "pass_to_pass_preexisting_bad": 0,
+      "pass_to_pass_scoped_regressed_over_total": [
+        0,
+        40
+      ],
+      "primary_stratum": "R-P2P",
+      "queue": "natural",
+      "resolved_in_dataset": true,
+      "symptom": "pre_fail->post_pass (gone)",
+      "target_generator": "glm5_500",
+      "test_patch_applied_cleanly": true
+    },
+    {
+      "base_commit": "25fbcce5b1a4c7e3956e6062930f4a44ce95a632",
+      "builder_label_class_audit_only": "B",
+      "canon_run_tree": "d67a7035423c8fabb58d08cd7441de66b51aefba",
+      "fail_to_pass_failed_over_total": [
+        0,
+        1
+      ],
+      "instance_id": "sympy__sympy-19495",
+      "issue_addressed": true,
+      "oracle_basis": "9 checks executed, linked/fresh/complete, no failure; symptom gone (SCOPED P2P)",
+      "oracle_gold": "ACCEPT",
+      "pass_to_pass_preexisting_bad": 0,
+      "pass_to_pass_scoped_regressed_over_total": [
+        0,
+        8
+      ],
+      "primary_stratum": "R-TRAP",
+      "queue": "natural",
+      "resolved_in_dataset": true,
+      "symptom": "pre_fail->post_pass (gone)",
+      "target_generator": "glm5_500",
+      "test_patch_applied_cleanly": true
+    },
+    {
+      "base_commit": "63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef",
+      "builder_label_class_audit_only": "B",
+      "canon_run_tree": "30c590486f7145f872816c58a3de930a62b81492",
+      "fail_to_pass_failed_over_total": [
+        0,
+        1
+      ],
+      "instance_id": "sympy__sympy-19637",
+      "issue_addressed": true,
+      "oracle_basis": "41 checks executed, linked/fresh/complete, no failure; symptom gone (SCOPED P2P)",
+      "oracle_gold": "ACCEPT",
+      "pass_to_pass_preexisting_bad": 0,
+      "pass_to_pass_scoped_regressed_over_total": [
+        0,
+        40
+      ],
+      "primary_stratum": "R-P2P",
+      "queue": "enriched",
+      "resolved_in_dataset": true,
+      "symptom": "pre_fail->post_pass (gone)",
+      "target_generator": "glm5_500",
+      "test_patch_applied_cleanly": true
+    },
+    {
+      "base_commit": "c4e836cdf73fc6aa7bab6a86719a0f08861ffb1d",
+      "builder_label_class_audit_only": "B",
+      "canon_run_tree": "5df550bf1fed52cfd49c8e914660bf91c79102fd",
+      "fail_to_pass_failed_over_total": [
+        0,
+        1
+      ],
+      "instance_id": "sympy__sympy-22914",
+      "issue_addressed": true,
+      "oracle_basis": "18 checks executed, linked/fresh/complete, no failure; symptom gone (SCOPED P2P)",
+      "oracle_gold": "ACCEPT",
+      "pass_to_pass_preexisting_bad": 0,
+      "pass_to_pass_scoped_regressed_over_total": [
+        0,
+        17
+      ],
+      "primary_stratum": "R-F2P",
+      "queue": "natural",
+      "resolved_in_dataset": true,
+      "symptom": "pre_fail->post_pass (gone)",
+      "target_generator": "glm5_500",
+      "test_patch_applied_cleanly": true
+    }
+  ],
+  "no_quota_editing": {
+    "gold_edited_to_fill_quota": false,
+    "issues_chosen_for_model_errors": false,
+    "mirror_fixtures_created": false,
+    "note": "Both class-A candidates (sympy-14248 fails a declared check; sympy-15875 fails its single declared F2P) are also resolved_in_dataset=False. They were kept and honestly labelled oracle REJECT; no issue was swapped and no gold was changed to manufacture ACCEPTs."
+  },
+  "noninterference_audit": {
+    "authorized_reveal_policy": "reason-granted escalation logs (200) and ungated tier-A logs are institutional acceptance channels by design and are excluded from the restricted scan; strict 403 and reason-less 400 bodies are in scope and must be clean.",
+    "hidden_gold_key_findings_any_tier": 0,
+    "n_restricted_tier_d_surfaces": 144,
+    "n_surfaces": 224,
+    "passed": true,
+    "scanner": "frozen evidence.g3b4_strict_audit._scan_text (reused, not modified)",
+    "tier1_forbidden_findings": 0,
+    "tier2_baseline_gap_findings": 0,
+    "tier_d_schema_lint_findings": 0
+  },
+  "oracle_distribution": {
+    "ACCEPT": 6,
+    "REJECT": 2
+  },
+  "projection_version": "diagnostic-v2-no-baseline-map-v1",
+  "protocol_version": "g3c1-protocol-v1",
+  "selection": {
+    "dedup_rule": "one issue per repo+sha256(sorted changed-file-set) cluster; earliest queue rank kept",
+    "enriched_is_conditional_warning": "The REJECT-enriched queue is a screen-positive sample chosen by static CI structure. Its 1 REJECT / 3 ACCEPT outcome MUST NOT be reported as the natural-population rate; it estimates CONDITIONAL behaviour among structure-screen-positive issues only.",
+    "enriched_queue": {
+      "labels_in_queue_order": [
+        {
+          "instance_id": "sympy__sympy-19040",
+          "oracle_gold": "ACCEPT"
+        },
+        {
+          "instance_id": "sympy__sympy-14248",
+          "oracle_gold": "REJECT"
+        },
+        {
+          "instance_id": "sympy__sympy-19637",
+          "oracle_gold": "ACCEPT"
+        },
+        {
+          "instance_id": "sympy__sympy-16886",
+          "oracle_gold": "ACCEPT"
+        }
+      ],
+      "oracle_distribution": {
+        "ACCEPT": 3,
+        "REJECT": 1
+      },
+      "picks": [
+        "sympy__sympy-19040",
+        "sympy__sympy-14248",
+        "sympy__sympy-19637",
+        "sympy__sympy-16886"
+      ]
+    },
+    "enriched_stratum_sizes": {
+      "R-F2P": 16,
+      "R-P2P": 29,
+      "R-TRAP": 2,
+      "UNENRICHED": 0
+    },
+    "enrichment_rule": {
+      "R_F2P": "f2p_declared_n <= 2",
+      "R_P2P": "p2p_declared_n >= 20",
+      "R_TRAP": "xfail/skip/flaky marker in test_patch OR test_patch adds a new tests/ file",
+      "forbidden_inputs": [
+        "model prediction text",
+        "generator resolved posterior for eligibility/stratification",
+        "any executed pytest outcome",
+        "any prior gate gold/model error"
+      ],
+      "inputs": "frozen wave2 gates (f2p/p2p declared counts) + maintainer test_patch text + candidate changed files",
+      "interpretation": "enriched-sample rates estimate CONDITIONAL error behaviour among screen-positive issues, NOT the natural population rate",
+      "primary_stratum_priority": [
+        "R-TRAP",
+        "R-P2P",
+        "R-F2P"
+      ]
+    },
+    "exclusion_reason_counts": {
+      "no_clean_target_patch": 1,
+      "offline_blob_incomplete": 1,
+      "previously_used_g3a_cohort": 10,
+      "previously_used_wave2": 12
+    },
+    "n_eligible": 51,
+    "n_excluded_total": 24,
+    "natural_dedup_suppressed": [
+      {
+        "cluster_kept_first": "sympy__sympy-21379",
+        "instance_id": "sympy__sympy-13757",
+        "reason": "duplicate_changed_file_cluster"
+      },
+      {
+        "cluster_kept_first": "sympy__sympy-21379",
+        "instance_id": "sympy__sympy-18698",
+        "reason": "duplicate_changed_file_cluster"
+      },
+      {
+        "cluster_kept_first": "sympy__sympy-22914",
+        "instance_id": "sympy__sympy-16766",
+        "reason": "duplicate_changed_file_cluster"
+      },
+      {
+        "cluster_kept_first": "sympy__sympy-22714",
+        "instance_id": "sympy__sympy-17655",
+        "reason": "duplicate_changed_file_cluster"
+      }
+    ],
+    "natural_queue": {
+      "labels_in_queue_order": [
+        {
+          "instance_id": "sympy__sympy-19346",
+          "oracle_gold": "ACCEPT"
+        },
+        {
+          "instance_id": "sympy__sympy-22914",
+          "oracle_gold": "ACCEPT"
+        },
+        {
+          "instance_id": "sympy__sympy-19495",
+          "oracle_gold": "ACCEPT"
+        },
+        {
+          "instance_id": "sympy__sympy-15875",
+          "oracle_gold": "REJECT"
+        }
+      ],
+      "oracle_distribution": {
+        "ACCEPT": 3,
+        "REJECT": 1
+      },
+      "picks": [
+        "sympy__sympy-19346",
+        "sympy__sympy-22914",
+        "sympy__sympy-19495",
+        "sympy__sympy-15875"
+      ]
+    },
+    "prevalence_estimate_natural_pilot_only": "1 REJECT / 3 ACCEPT across the first 4 natural-order picks (n=4; descriptive, no population-rate claim at this size)",
+    "screening_funnel": [
+      {
+        "n_in": 75,
+        "n_out": 75,
+        "rule": "locally cached wave2 candidate pool (frozen audit)",
+        "step": "S0_pool_instances"
+      },
+      {
+        "n_removed": 12,
+        "rule": "12 pre-G3A issues",
+        "step": "S1_exclude_wave2_consumed"
+      },
+      {
+        "n_removed": 10,
+        "rule": "10 G3-A materialised issues",
+        "step": "S2_exclude_g3a_cohort"
+      },
+      {
+        "n_removed": 1,
+        "rule": "sympy-11618 blobs",
+        "step": "S3_exclude_offline_incomplete"
+      },
+      {
+        "n_removed": 0,
+        "rule": "all six frozen wave2 gates must pass",
+        "step": "S4_static_test_spec_gates"
+      },
+      {
+        "n_removed": 1,
+        "rule": ">=1 clean-apply generator row required",
+        "step": "S5_no_clean_target_patch"
+      },
+      {
+        "n_out": 51,
+        "rule": "G3-C.1 eligible pool (expect 51)",
+        "step": "S6_eligible"
+      }
+    ],
+    "seeds": {
+      "enriched_strata_shuffle_seed": 418241,
+      "natural_shuffle_seed": 418237
+    },
+    "slot_rule": {
+      "cap": 8,
+      "enriched_slots": 4,
+      "natural_slots": 4,
+      "union_dedup_capped": true
+    }
+  },
+  "spend_usd": 0,
+  "stopping_statement": "G3-C.1 is complete: 8 new independent SymPy issues were built, executed, gold-certified, non-interference-audited, HTTP cross-checked and zero-API-mocked, then hash frozen. Stopping now. G3-C.0 was NOT re-run; no historical frozen artifact was modified; no real model call, Gemini, R2 or G3-C.2 cell was run; API spend $0; no git commit was made. Awaiting separate written approval for G3-C.2.",
+  "zero_api_mock": {
+    "api_calls_total": 0,
+    "cost_usd_total": 0.0,
+    "mock_match_rate": 1.0,
+    "mock_matches_condition_gold": 40,
+    "n_cells": 40,
+    "research_excluded": "Mock decisions are plumbing/protocol checks only and are excluded from research results."
+  }
+}

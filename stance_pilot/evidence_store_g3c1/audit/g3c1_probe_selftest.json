@@ -1,0 +1,112 @@
+{
+  "all_probes_flip": true,
+  "design_version": "groundedreview-gate3c1-local-pilot-freeze-v1",
+  "gate": "g3c1_probe_flip",
+  "issues": [
+    {
+      "base_commit": "9986b38181cdd556a3f3411e553864f11912244e",
+      "baseline_log": "$ python sympy__sympy-14248-baseline.py  (exit 1)\n--- stdout ---\nstr   : (-1)*B + (-1)*A*B + A\nlatex : -1 B + -1 A B + A\npretty:\n-B + -A⋅B + A\nFAIL: str prints explicit (-1) coefficients: (-1)*B + (-1)*A*B + A\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Mapping, defaultdict\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import defaultdict, Iterable\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  class OrderedSet(collections.MutableSet):\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Callable\n",
+      "baseline_probe_passed": false,
+      "candidate_applied_cleanly": true,
+      "flip_baseline_fail_to_post_pass": true,
+      "instance_id": "sympy__sympy-14248",
+      "patch_sha256": "b7ede2b6fe9d1e3188c975f9bf7ceddb3ea77721b4e8004ed183e94d625662cf",
+      "post_candidate_probe_passed": true,
+      "post_log": "$ python sympy__sympy-14248-post-candidate.py  (exit 0)\n--- stdout ---\nstr   : -B - A*B + A\nlatex : -B - A B + A\npretty:\n-B - A⋅B + A\nOK: MatrixSymbol difference prints with subtraction\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Mapping, defaultdict\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import defaultdict, Iterable\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  class OrderedSet(collections.MutableSet):\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Callable\n",
+      "probe_file": "evidence_store_g3c1/probes/sympy__sympy-14248.py",
+      "probe_sha256": "f2c9b16f7402e26f9066c4f7de3f4295d51c6727360bca47555895c769eb15a3"
+    },
+    {
+      "base_commit": "b506169ad727ee39cb3d60c8b3ff5e315d443d8e",
+      "baseline_log": "$ python sympy__sympy-15875-baseline.py  (exit 1)\n--- stdout ---\nexpr         : -2*I + (1 + I)**2\nsimplify     : 0\ne.is_zero    : False\nsimplified 0 : True\nFAIL: is_zero wrongly False for provably-zero complex Add\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:520: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:540: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:553: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:560: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\n",
+      "baseline_probe_passed": false,
+      "candidate_applied_cleanly": true,
+      "flip_baseline_fail_to_post_pass": true,
+      "instance_id": "sympy__sympy-15875",
+      "patch_sha256": "79a054ec73e11f87d823e076d724dc11406ea67fd6ea1a766fc2776c0a44502f",
+      "post_candidate_probe_passed": true,
+      "post_log": "$ python sympy__sympy-15875-post-candidate.py  (exit 0)\n--- stdout ---\nexpr         : -2*I + (1 + I)**2\nsimplify     : 0\ne.is_zero    : True\nsimplified 0 : True\nOK: is_zero is not wrongly False for the zero complex Add\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:520: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:540: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:553: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:560: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\n",
+      "probe_file": "evidence_store_g3c1/probes/sympy__sympy-15875.py",
+      "probe_sha256": "3144b7f583c9477c4ed319a50a821c6e3def027f665e463ae7eebcb55069b791"
+    },
+    {
+      "base_commit": "c50643a49811e9fe2f4851adff4313ad46f7325e",
+      "baseline_log": "$ python sympy__sympy-16886-baseline.py  (exit 1)\n--- stdout ---\nencode_morse(\"1\") = '----'\nFAIL: Morse code for \"1\" is '----', expected \".----\"\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3185: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:645: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:674: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:681: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\n",
+      "baseline_probe_passed": false,
+      "candidate_applied_cleanly": true,
+      "flip_baseline_fail_to_post_pass": true,
+      "instance_id": "sympy__sympy-16886",
+      "patch_sha256": "a50328b99218b5ba1700715b18873104fd3521660e654c38c0d041a458b15849",
+      "post_candidate_probe_passed": true,
+      "post_log": "$ python sympy__sympy-16886-post-candidate.py  (exit 0)\n--- stdout ---\nencode_morse(\"1\") = '.----'\nOK: Morse \"1\" -> .----\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3185: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:645: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:674: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:681: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if self.xscale is 'log':\n",
+      "probe_file": "evidence_store_g3c1/probes/sympy__sympy-16886.py",
+      "probe_sha256": "7b597bc732476c8184a138f327cbf7acbda924d5203c900d37d6739200e1dc07"
+    },
+    {
+      "base_commit": "b9179e80d2daa1bb6cba1ffe35ca9e6612e115c9",
+      "baseline_log": "$ python sympy__sympy-19040-baseline.py  (exit 1)\n--- stdout ---\ninput      : x*y - x - y + 1\nfactor     : (x - 1)*(y - 1)\nfactor ext : x - 1\nFAIL: factor(extension=[I]) dropped a factor; expansion = x - 1\n\n--- stderr ---\n",
+      "baseline_probe_passed": false,
+      "candidate_applied_cleanly": true,
+      "flip_baseline_fail_to_post_pass": true,
+      "instance_id": "sympy__sympy-19040",
+      "patch_sha256": "cadf95a1362954e0dab4165d467ba7e147359642f0dc213ded4eb404f3cdaa10",
+      "post_candidate_probe_passed": true,
+      "post_log": "$ python sympy__sympy-19040-post-candidate.py  (exit 0)\n--- stdout ---\ninput      : x*y - x - y + 1\nfactor     : (x - 1)*(y - 1)\nfactor ext : (x - 1)*(y - 1)\nOK: factor with extension preserves the polynomial\n\n--- stderr ---\n",
+      "probe_file": "evidence_store_g3c1/probes/sympy__sympy-19040.py",
+      "probe_sha256": "7f0ba90990c84466fe2190a273cf0460512fc07b6191cb95c8ef7735ce50367d"
+    },
+    {
+      "base_commit": "94fb720696f5f5d12bad8bc813699fd696afd2fb",
+      "baseline_log": "$ python sympy__sympy-19346-baseline.py  (exit 1)\n--- stdout ---\nsrepr(set)  = {x, y}\nsrepr(dict) = {x: y}\nFAIL: srepr did not recurse into set elements: {x, y}\n\n--- stderr ---\n",
+      "baseline_probe_passed": false,
+      "candidate_applied_cleanly": true,
+      "flip_baseline_fail_to_post_pass": true,
+      "instance_id": "sympy__sympy-19346",
+      "patch_sha256": "7a2feab82cadb33bcfdb242d5d33a2361ea2802eaaebfb252fd45b49f3efd052",
+      "post_candidate_probe_passed": true,
+      "post_log": "$ python sympy__sympy-19346-post-candidate.py  (exit 0)\n--- stdout ---\nsrepr(set)  = {Symbol('y'), Symbol('x')}\nsrepr(dict) = {Symbol('x'): Symbol('y')}\nOK: srepr recurses into set and dict\n\n--- stderr ---\n",
+      "probe_file": "evidence_store_g3c1/probes/sympy__sympy-19346.py",
+      "probe_sha256": "f8dc15b4712bf3965f56f4d4b03e0a5479e2b502fb187045c3943f0701e1d675"
+    },
+    {
+      "base_commit": "25fbcce5b1a4c7e3956e6062930f4a44ce95a632",
+      "baseline_log": "$ python sympy__sympy-19495-baseline.py  (exit 1)\n--- stdout ---\nbefore          : ConditionSet(x, Contains(y, Interval(-1, 1)), ImageSet(Lambda(n, 2*pi*n + asin(y)), Integers))\nplain subs      : ConditionSet(1/3, Contains(1/3, ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)), ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers))\nxreplace ref    : ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nsimultaneous ref: ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nFAIL: ConditionSet bound variable was over-substituted to 1/3\n\n--- stderr ---\n",
+      "baseline_probe_passed": false,
+      "candidate_applied_cleanly": true,
+      "flip_baseline_fail_to_post_pass": true,
+      "instance_id": "sympy__sympy-19495",
+      "patch_sha256": "cf8cf88dd11a5b8bfae974bbcc709c98ff8e5b0447b083350b4a779f5b92ca04",
+      "post_candidate_probe_passed": true,
+      "post_log": "$ python sympy__sympy-19495-post-candidate.py  (exit 0)\n--- stdout ---\nbefore          : ConditionSet(x, Contains(y, Interval(-1, 1)), ImageSet(Lambda(n, 2*pi*n + asin(y)), Integers))\nplain subs      : ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nxreplace ref    : ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nsimultaneous ref: ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nOK: ConditionSet.subs no longer over-substitutes the bound variable\n\n--- stderr ---\n",
+      "probe_file": "evidence_store_g3c1/probes/sympy__sympy-19495.py",
+      "probe_sha256": "6c4965b0b1ffa43918c502182cf243f760c929820d59c26ccfa19bd5330fd973"
+    },
+    {
+      "base_commit": "63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef",
+      "baseline_log": "$ python sympy__sympy-19637-baseline.py  (exit 1)\n--- stdout ---\nFAIL: kernS raised UnboundLocalError local variable 'kern' referenced before assignment\n\n--- stderr ---\n",
+      "baseline_probe_passed": false,
+      "candidate_applied_cleanly": true,
+      "flip_baseline_fail_to_post_pass": true,
+      "instance_id": "sympy__sympy-19637",
+      "patch_sha256": "b390b959e90cbcbc769629d4055aac6662564970cb11b5d58e2a251725321e76",
+      "post_candidate_probe_passed": true,
+      "post_log": "$ python sympy__sympy-19637-post-candidate.py  (exit 0)\n--- stdout ---\nOK: kernS no crash -> 2*x/(x - 1)\n\n--- stderr ---\n",
+      "probe_file": "evidence_store_g3c1/probes/sympy__sympy-19637.py",
+      "probe_sha256": "5a1e5097af729566c82c0349d63c7309747dbcc958ff9e90e8ac9416f630e639"
+    },
+    {
+      "base_commit": "c4e836cdf73fc6aa7bab6a86719a0f08861ffb1d",
+      "baseline_log": "$ python sympy__sympy-22914-baseline.py  (exit 1)\n--- stdout ---\npycode(Min) = '((a) if (a <= b) else (b))'\npycode(Max) = '((a) if (a >= b) else (b))'\nFAIL: expected min(a, b), got ((a) if (a <= b) else (b))\n\n--- stderr ---\n",
+      "baseline_probe_passed": false,
+      "candidate_applied_cleanly": true,
+      "flip_baseline_fail_to_post_pass": true,
+      "instance_id": "sympy__sympy-22914",
+      "patch_sha256": "dc1ed99edd680affe1b4b93bb2798d9ef6442636892f1d2fbad60487f203fd5e",
+      "post_candidate_probe_passed": true,
+      "post_log": "$ python sympy__sympy-22914-post-candidate.py  (exit 0)\n--- stdout ---\npycode(Min) = 'min(a, b)'\npycode(Max) = 'max(a, b)'\nOK: pycode supports Min/Max\n\n--- stderr ---\n",
+      "probe_file": "evidence_store_g3c1/probes/sympy__sympy-22914.py",
+      "probe_sha256": "d275de1d4a89eba9ca0f81fd890cd693038b1e851d1821948c02df057d205979"
+    }
+  ],
+  "n_issues": 8
+}

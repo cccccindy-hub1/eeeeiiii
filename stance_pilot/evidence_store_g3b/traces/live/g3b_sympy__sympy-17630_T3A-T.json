@@ -1,0 +1,40 @@
+{
+  "cell": "g3b:sympy__sympy-17630:T3A-T",
+  "condition": "T3A-T",
+  "policy": null,
+  "session_id": "294f456f53f0db5f8f4ec12a",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"58e78209c8577b9890e957b624466e5beed7eb08\", \"record_patch_sha256\": \"7c197026b3d50e673d35a590f28e59ab200c96fbc4a6c290507f3210161bd850\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": null, \"expected_run_tree\": \"ac8da47f6f4accd80d892e1d2ff409a6729a1714\", \"artifact_started_at\": \"2026-10-25T18:43:43+00:00\", \"attestation_built_at\": \"2026-10-25T18:44:13+00:00\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 2, \"executed\": 2, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 19, \"executed\": 19, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"contradicted\", \"reason\": \"claim asserts success; the artifact records 1 failed acceptance and 0 regression checks\", \"failed_acceptance_checks\": 1, \"regression_checks\": 0, \"executed_checks\": 21}"
+    }
+  ],
+  "final_answer": "{\"decision\":\"REJECT\",\"reason\":\"The test artifact is linked to this patch and the base commit, but the evidence is stale for the current commit tree. Despite that, the author statement claiming full correctness is contradicted by the artifact which records 1 failed acceptance test (test_zero_matrix_add) and no regression checks. This failing acceptance test is trustworthy evidence of a decisive failure related to this patch. Therefore, the patch must be rejected.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"stale\"}",
+  "parsed": "REJECT",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

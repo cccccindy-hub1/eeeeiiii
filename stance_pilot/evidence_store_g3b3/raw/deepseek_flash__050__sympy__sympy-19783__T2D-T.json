@@ -1,0 +1,56 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The only evidence provided is a diagnostic-tier artifact whose linkage to this patch is explicitly unverified, and it deliberately withholds the maintainer acceptance-test outcomes (2 scheduled) and scoped regression verdicts (9 scheduled). The issue-reproduction probe shows the symptom is gone, but that is explicitly not proof of merge acceptability. No intact, linked, fresh evidence demonstrates that the declared acceptance/regression set was fully executed and passed, and no decisive applicable failure is established either.\",\"evidence_mismatch\":true,\"missing_evidence\":\"Maintainer acceptance-test outcomes (2 scheduled) and scoped regression verdicts (9 scheduled) are withheld; artifact linkage to this patch/commit is unverified, so success of the declared acceptance/regression set cannot be confirmed.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "cell": "g3b3:sympy__sympy-19783:T2D-T",
+  "condition": "T2D-T",
+  "cost_usd": 0.000613,
+  "evidence_session": null,
+  "evidence_tier": "D",
+  "id": "qwen3_coder_30b_500:sympy__sympy-19783",
+  "instance_id": "sympy__sympy-19783",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010346
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 177,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 1336,
+      "raw_content": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The only evidence provided is a diagnostic-tier artifact whose linkage to this patch is explicitly unverified, and it deliberately withholds the maintainer acceptance-test outcomes (2 scheduled) and scoped regression verdicts (9 scheduled). The issue-reproduction probe shows the symptom is gone, but that is explicitly not proof of merge acceptability. No intact, linked, fresh evidence demonstrates that the declared acceptance/regression set was fully executed and passed, and no decisive applicable failure is established either.\",\"evidence_mismatch\":true,\"missing_evidence\":\"Maintainer acceptance-test outcomes (2 scheduled) and scoped regression verdicts (9 scheduled) are withheld; artifact linkage to this patch/commit is unverified, so success of the declared acceptance/regression set cannot be confirmed.\",\"evidence_gap\":\"coverage_incomplete\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_e5fa3e3506649e6b",
+  "tokens_in": 1336,
+  "tokens_out": 177,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.54
+}

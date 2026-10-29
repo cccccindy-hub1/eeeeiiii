@@ -1,0 +1,295 @@
+{
+  "api_calls_made": 0,
+  "construct_impact": {
+    "construct_affected": "restricted-evidence (tier-D) information MINIMISATION, not the evidence-availability construct itself",
+    "could_v2_change_any_g3b3_verdict": "NO for the observed runs: none of the 7 GPT unsupported-ACCEPT cells fetched the artifact, and the only GPT cell that fetched it (20590) abstained; DeepSeek fetched in 8/10 and abstained 10/10. The field had zero causal role (G3-B.4 finding); v2 is a hygiene/minimisation tightening, not a re-interpretation of any model behaviour.",
+    "historical_reproducibility": "G3-B/G3-B.3 keep projection v1 byte-for-byte; Gate 3-C serves v2 and tags every record with projection_version so the two are never conflated",
+    "what_is_preserved": "symptom probe, linkage/provenance, freshness, coverage declared/executed counts and missing ids, declared scheduled counts, scope file list, identity metadata, and the withholding notes — i.e. every legitimate diagnostic signal needed for P1",
+    "what_is_removed": "a PRE-patch base-commit scoped P2P per-test status map that is all-PASSED for all 10 issues (zero ACCEPT/REJECT discrimination), reachable only via an explicit get_test_artifact call"
+  },
+  "design_version": "groundedreview-gate3c0-zero-api-design-freeze-v1",
+  "document": "Gate G3-C.0 task 2: versioned restricted-evidence projection v2 (pass_to_pass_baseline removed), field diff, non-interference test, channel invariance",
+  "frozen_code_modified": false,
+  "non_interference_test": {
+    "expected": "v1 reproduces 10 tier-2 baseline-map findings (one per issue); v2 removes all 10 while introducing zero tier-1 findings and removing nothing else",
+    "scanner": "frozen evidence.g3b4_strict_audit._scan_text (reused, not modified)",
+    "surfaces": "canonical JSON of the projected active artifact for each of the 10 frozen served issues",
+    "v1_total_tier1_forbidden_findings": 0,
+    "v1_total_tier2_baseline_gap_findings": 10,
+    "v2_tier1_clean": true,
+    "v2_tier2_clean": true,
+    "v2_total_tier1_forbidden_findings": 0,
+    "v2_total_tier2_baseline_gap_findings": 0
+  },
+  "other_channels_unchanged_evidence": {
+    "artifact_json": "v2 differs from v1 ONLY in removing pass_to_pass_baseline and adding a projection_version tag (all 10 issues: True)",
+    "consistency_strict_endpoint": "under policy=strict,tier=D it adjudicates ONLY the registered symptom probe; the acceptance branch reads summary f2p/p2p counts, never pass_to_pass_baseline (evidence/server.py L413-462)",
+    "coverage_endpoint": "server._coverage reads fail_to_pass / pass_to_pass_scoped keys + attestation declared sets, never the baseline map (evidence/server.py L210-245)",
+    "freshness_endpoint": "server._freshness reads run_tree/attestation, never pass_to_pass_baseline (evidence/server.py L200-208)",
+    "linkage_endpoint": "hashes/attestation based; does not surface the baseline per-test map",
+    "log_endpoint": "the p2p_baseline RAW LOG is already denied at tier D via views.log_allowed/_ACCEPTANCE_LOGS and strict returns 403 before body read (views.py L38,L154-158; server.py L266-273); v2 removes only the embedded JSON map, not a log that was ever served",
+    "static_diagnostic_block": "byte-identical v1 vs v2 for all 10 issues (the baseline map was never rendered into the static block): True",
+    "tier_A_unchanged": "proposed change is scoped to the diagnostic tier only; acceptance tier A output is untouched"
+  },
+  "per_issue_offline_demonstration": [
+    {
+      "issue": "13615",
+      "static_diagnostic_block_byte_identical_v1_v2": true,
+      "v1_baseline_map_present": true,
+      "v1_baseline_n_tests": 70,
+      "v1_scan_tier1_forbidden": 0,
+      "v1_scan_tier2_baseline_gap": 1,
+      "v2_baseline_map_present": false,
+      "v2_equals_v1_minus_baseline_field_plus_tag": true,
+      "v2_scan_tier1_forbidden": 0,
+      "v2_scan_tier2_baseline_gap": 0
+    },
+    {
+      "issue": "13974",
+      "static_diagnostic_block_byte_identical_v1_v2": true,
+      "v1_baseline_map_present": true,
+      "v1_baseline_n_tests": 4,
+      "v1_scan_tier1_forbidden": 0,
+      "v1_scan_tier2_baseline_gap": 1,
+      "v2_baseline_map_present": false,
+      "v2_equals_v1_minus_baseline_field_plus_tag": true,
+      "v2_scan_tier1_forbidden": 0,
+      "v2_scan_tier2_baseline_gap": 0
+    },
+    {
+      "issue": "15349",
+      "static_diagnostic_block_byte_identical_v1_v2": true,
+      "v1_baseline_map_present": true,
+      "v1_baseline_n_tests": 3,
+      "v1_scan_tier1_forbidden": 0,
+      "v1_scan_tier2_baseline_gap": 1,
+      "v2_baseline_map_present": false,
+      "v2_equals_v1_minus_baseline_field_plus_tag": true,
+      "v2_scan_tier1_forbidden": 0,
+      "v2_scan_tier2_baseline_gap": 0
+    },
+    {
+      "issue": "17318",
+      "static_diagnostic_block_byte_identical_v1_v2": true,
+      "v1_baseline_map_present": true,
+      "v1_baseline_n_tests": 10,
+      "v1_scan_tier1_forbidden": 0,
+      "v1_scan_tier2_baseline_gap": 1,
+      "v2_baseline_map_present": false,
+      "v2_equals_v1_minus_baseline_field_plus_tag": true,
+      "v2_scan_tier1_forbidden": 0,
+      "v2_scan_tier2_baseline_gap": 0
+    },
+    {
+      "issue": "17630",
+      "static_diagnostic_block_byte_identical_v1_v2": true,
+      "v1_baseline_map_present": true,
+      "v1_baseline_n_tests": 19,
+      "v1_scan_tier1_forbidden": 0,
+      "v1_scan_tier2_baseline_gap": 1,
+      "v2_baseline_map_present": false,
+      "v2_equals_v1_minus_baseline_field_plus_tag": true,
+      "v2_scan_tier1_forbidden": 0,
+      "v2_scan_tier2_baseline_gap": 0
+    },
+    {
+      "issue": "19783",
+      "static_diagnostic_block_byte_identical_v1_v2": true,
+      "v1_baseline_map_present": true,
+      "v1_baseline_n_tests": 9,
+      "v1_scan_tier1_forbidden": 0,
+      "v1_scan_tier2_baseline_gap": 1,
+      "v2_baseline_map_present": false,
+      "v2_equals_v1_minus_baseline_field_plus_tag": true,
+      "v2_scan_tier1_forbidden": 0,
+      "v2_scan_tier2_baseline_gap": 0
+    },
+    {
+      "issue": "20590",
+      "static_diagnostic_block_byte_identical_v1_v2": true,
+      "v1_baseline_map_present": true,
+      "v1_baseline_n_tests": 21,
+      "v1_scan_tier1_forbidden": 0,
+      "v1_scan_tier2_baseline_gap": 1,
+      "v2_baseline_map_present": false,
+      "v2_equals_v1_minus_baseline_field_plus_tag": true,
+      "v2_scan_tier1_forbidden": 0,
+      "v2_scan_tier2_baseline_gap": 0
+    },
+    {
+      "issue": "21847",
+      "static_diagnostic_block_byte_identical_v1_v2": true,
+      "v1_baseline_map_present": true,
+      "v1_baseline_n_tests": 9,
+      "v1_scan_tier1_forbidden": 0,
+      "v1_scan_tier2_baseline_gap": 1,
+      "v2_baseline_map_present": false,
+      "v2_equals_v1_minus_baseline_field_plus_tag": true,
+      "v2_scan_tier1_forbidden": 0,
+      "v2_scan_tier2_baseline_gap": 0
+    },
+    {
+      "issue": "24213",
+      "static_diagnostic_block_byte_identical_v1_v2": true,
+      "v1_baseline_map_present": true,
+      "v1_baseline_n_tests": 31,
+      "v1_scan_tier1_forbidden": 0,
+      "v1_scan_tier2_baseline_gap": 1,
+      "v2_baseline_map_present": false,
+      "v2_equals_v1_minus_baseline_field_plus_tag": true,
+      "v2_scan_tier1_forbidden": 0,
+      "v2_scan_tier2_baseline_gap": 0
+    },
+    {
+      "issue": "24443",
+      "static_diagnostic_block_byte_identical_v1_v2": true,
+      "v1_baseline_map_present": true,
+      "v1_baseline_n_tests": 1,
+      "v1_scan_tier1_forbidden": 0,
+      "v1_scan_tier2_baseline_gap": 1,
+      "v2_baseline_map_present": false,
+      "v2_equals_v1_minus_baseline_field_plus_tag": true,
+      "v2_scan_tier1_forbidden": 0,
+      "v2_scan_tier2_baseline_gap": 0
+    }
+  ],
+  "projection_v2_version": "diagnostic-v2-no-baseline-map-v1",
+  "proposed_change_and_migration": {
+    "frozen_file_not_modified": "evidence/views.py L32 stays as-is",
+    "implementation_options": [
+      "option A (preferred): a versioned project_artifact_v2 used only by Gate 3-C sessions, leaving project_artifact/v1 frozen",
+      "option B: add the field to a v2 allow/deny table keyed by a session projection_version; deny-by-default deny list derived from this matrix"
+    ],
+    "one_line_intent_for_new_code_path": "_ACCEPTANCE_RECORD_FIELDS_V2 = ('fail_to_pass', 'pass_to_pass_scoped', 'pass_to_pass_baseline')  # Gate 3-C v2 tier-D only",
+    "regression_tests_required_before_3c": [
+      "assert pass_to_pass_baseline not in project_artifact_v2(rec,\"D\")",
+      "assert project_artifact_v2(rec,\"A\") == project_artifact(rec,\"A\")",
+      "assert evidence_block output identical v1/v2 at tier D",
+      "assert frozen g3b3 artifacts re-project identically under v1",
+      "run the g3b4 three-tier scanner over every v2 surface in the Gate 3-C mock gate and require tier1==tier2==0"
+    ]
+  },
+  "top_level_field_matrix": [
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "artifact_id",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": true
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "base_commit",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": true
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "fail_to_pass",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": true,
+      "retained_as_structural_in_v2": false
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "finished_at",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": true
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "instance_id",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": true
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "log_digests",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": true
+    },
+    {
+      "additionally_removed_by_proposed_v2": true,
+      "field": "pass_to_pass_baseline",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": false
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "pass_to_pass_scoped",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": true,
+      "retained_as_structural_in_v2": false
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "patch_sha256",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": true
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "repo",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": true
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "runner",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": true
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "schema_version",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": true
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "scope",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": true
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "started_at",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": true
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "summary",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": true
+    },
+    {
+      "additionally_removed_by_proposed_v2": false,
+      "field": "test_patch_sha256",
+      "present_in_full_tier_A_record": true,
+      "removed_by_frozen_v1_tier_D": false,
+      "retained_as_structural_in_v2": true
+    }
+  ],
+  "v2_single_additional_removed_field": [
+    "pass_to_pass_baseline"
+  ],
+  "versioning_plan": {
+    "no_silent_swap": "the version is shown in prompts/metadata and recorded; historical gates are never re-projected",
+    "tagging": "every served artifact/static block/tool payload carries projection_version; the run row records it; analyses stratify on it",
+    "v1": "diagnostic-v1-g3b (frozen; G3-A..G3-B.3; baseline map retained)",
+    "v2": "diagnostic-v2-no-baseline-map-v1 (Gate 3-C restricted tier)"
+  }
+}

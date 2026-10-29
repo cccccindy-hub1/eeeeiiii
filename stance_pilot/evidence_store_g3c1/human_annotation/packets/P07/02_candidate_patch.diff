@@ -1,0 +1,42 @@
+diff --git a/sympy/printing/pycode.py b/sympy/printing/pycode.py
+index 3a72ab606c..9e9de7f4dd 100644
+--- a/sympy/printing/pycode.py
++++ b/sympy/printing/pycode.py
+@@ -230,6 +230,12 @@ def _print_NegativeInfinity(self, expr):
+     def _print_ComplexInfinity(self, expr):
+         return self._print_NaN(expr)
+ 
++    def _print_Min(self, expr):
++        return 'min({})'.format(', '.join(self._print(arg) for arg in expr.args))
++
++    def _print_Max(self, expr):
++        return 'max({})'.format(', '.join(self._print(arg) for arg in expr.args))
++
+     def _print_Mod(self, expr):
+         PREC = precedence(expr)
+         return ('{} % {}'.format(*map(lambda x: self.parenthesize(x, PREC), expr.args)))
+diff --git a/sympy/printing/tests/test_pycode.py b/sympy/printing/tests/test_pycode.py
+index 9c1285d7dd..8e64c34d68 100644
+--- a/sympy/printing/tests/test_pycode.py
++++ b/sympy/printing/tests/test_pycode.py
+@@ -7,6 +7,7 @@
+ from sympy.core.numbers import pi
+ from sympy.core.singleton import S
+ from sympy.functions import acos, KroneckerDelta, Piecewise, sign, sqrt
++from sympy.functions.elementary.miscellaneous import Min, Max
+ from sympy.logic import And, Or
+ from sympy.matrices import SparseMatrix, MatrixSymbol, Identity
+ from sympy.printing.pycode import (
+@@ -58,6 +59,12 @@ def test_PythonCodePrinter():
+     assert prntr.doprint((2,3)) == "(2, 3)"
+     assert prntr.doprint([2,3]) == "[2, 3]"
+ 
++    # Test Min and Max
++    assert prntr.doprint(Min(x, y)) == 'min(x, y)'
++    assert prntr.doprint(Max(x, y)) == 'max(x, y)'
++    assert prntr.doprint(Min(x, y, z)) == 'min(x, y, z)'
++    assert prntr.doprint(Max(x, y, z)) == 'max(x, y, z)'
++
+ 
+ def test_PythonCodePrinter_standard():
+     prntr = PythonCodePrinter()

@@ -1,0 +1,11 @@
+{
+  "cell": "g3b:sympy__sympy-17318:T2A-T",
+  "condition": "T2A-T",
+  "policy": null,
+  "session_id": null,
+  "trace": [],
+  "final_answer": "{\n  \"decision\": \"ACCEPT\",\n  \"reason\": \"The patch adds a guard clause in _split_gcd to handle empty input tuples, preventing the IndexError previously raised by sqrtdenest on certain complex expressions. The included test test_issue_12420 directly exercises the problematic case and passes in the acceptance test run linked to this patch. All scoped acceptance tests pass with no failures or regressions. The evidence is fresh, linked to this patch, and covers the declared fix scenario, demonstrating that the issue is resolved and no regressions are introduced.\",\n  \"evidence_mismatch\": false,\n  \"missing_evidence\": \"\",\n  \"evidence_gap\": \"unspecified\"\n}",
+  "parsed": "ACCEPT",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

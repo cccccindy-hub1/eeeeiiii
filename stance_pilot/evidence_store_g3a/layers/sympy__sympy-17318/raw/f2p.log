@@ -1,0 +1,78 @@
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpnmQIXb\Scripts\python.exe -m pytest sympy/simplify/tests/test_sqrtdenest.py -v --tb=short -p no:cacheprovider  (exit 1, 97s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpnmQIXb\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 13 items
+
+sympy/simplify/tests/test_sqrtdenest.py::test_sqrtdenest PASSED          [  7%]
+sympy/simplify/tests/test_sqrtdenest.py::test_sqrtdenest2 PASSED         [ 15%]
+sympy/simplify/tests/test_sqrtdenest.py::test_sqrtdenest_rec PASSED      [ 23%]
+sympy/simplify/tests/test_sqrtdenest.py::test_issue_6241 PASSED          [ 30%]
+sympy/simplify/tests/test_sqrtdenest.py::test_sqrtdenest3 PASSED         [ 38%]
+sympy/simplify/tests/test_sqrtdenest.py::test_sqrtdenest3_slow PASSED    [ 46%]
+sympy/simplify/tests/test_sqrtdenest.py::test_sqrtdenest4 PASSED         [ 53%]
+sympy/simplify/tests/test_sqrtdenest.py::test_sqrt_symbolic_denest PASSED [ 61%]
+sympy/simplify/tests/test_sqrtdenest.py::test_issue_5857 PASSED          [ 69%]
+sympy/simplify/tests/test_sqrtdenest.py::test_subsets PASSED             [ 76%]
+sympy/simplify/tests/test_sqrtdenest.py::test_issue_5653 PASSED          [ 84%]
+sympy/simplify/tests/test_sqrtdenest.py::test_issue_12420 FAILED         [ 92%]
+sympy/simplify/tests/test_sqrtdenest.py::test_sqrt_ratcomb PASSED        [100%]
+
+================================== FAILURES ===================================
+______________________________ test_issue_12420 _______________________________
+sympy\simplify\tests\test_sqrtdenest.py:187: in test_issue_12420
+    assert _sqrt_match(4 + I) == []
+E   assert [4 + I, 0, 1] == []
+E     
+E     Left contains 3 more items, first extra item: 4 + I
+E     
+E     Full diff:
+E     - []
+E     + [
+E     +     4 + I,
+E     +     0,
+E     +     1,
+E     + ]
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474: PytestConfigWarning: Unknown config option: doctestplus
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+sympy/simplify/tests/test_sqrtdenest.py: 21658 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+                               DO *NOT* COMMIT!                               
+=========================== short test summary info ===========================
+FAILED sympy/simplify/tests/test_sqrtdenest.py::test_issue_12420 - assert [4 + I, 0, 1] == []
+  
+  Left contains 3 more items, first extra item: 4 + I
+  
+  Full diff:
+  - []
+  + [
+  +     4 + I,
+  +     0,
+  +     1,
+  + ]
+=========== 1 failed, 12 passed, 21663 warnings in 92.17s (0:01:32) ===========
+
+--- stderr ---

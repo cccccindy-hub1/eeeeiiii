@@ -1,0 +1,11 @@
+{
+  "cell": "g3b:sympy__sympy-17318:T2D-T",
+  "condition": "T2D-T",
+  "policy": null,
+  "session_id": null,
+  "trace": [],
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch fixes the IndexError by adding a guard clause in _split_gcd to handle empty input, and a new test in test_sqrtdenest.py verifies that sqrtdenest no longer raises the error and produces a correct result for the problematic input. The issue symptom is confirmed removed in the provided reproduction probe. However, the available evidence does not include the full acceptance test results or regression checks for the entire declared acceptance set. Without confirmation that all relevant acceptance tests pass and no regressions are introduced, the patch cannot be fully accepted yet.\",\"evidence_mismatch\":false,\"missing_evidence\":\"full acceptance test results and regression verdicts for the patch\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

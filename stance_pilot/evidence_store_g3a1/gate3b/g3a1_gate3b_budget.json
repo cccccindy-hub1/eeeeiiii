@@ -1,0 +1,67 @@
+{
+  "budgetguard": {
+    "approval_note": "caps are PROPOSED; only set after written Gate 3-B approval; no call is made in A.1",
+    "check_timing": "before every send; resume restores cumulative spend",
+    "global_hard_cap_usd": 5.0,
+    "global_is_across_both_models": true,
+    "how_envelope_relates_to_cap": "planning worst (~$1.13 both models) is < global $5.00 and each model planning worst (<$0.65) is < $2.50; caps bind before overspend even under adversarial output length",
+    "implementation": "reuse evidence.phase3_run.BudgetGuard (pre-call bound_usd = actual est input + full completion cap; raises BudgetGuardStop)",
+    "per_model_hard_cap_usd": 2.5
+  },
+  "cell_count": {
+    "calls_per_model": 50,
+    "calls_total": 100,
+    "conditions": 5,
+    "independent_unit": "issue (conditions are repeated measures)",
+    "issues": 10,
+    "models": 2
+  },
+  "envelope_usd": {
+    "observed_bounded_worst_total": 0.8605,
+    "planning_worst_total_16k_in_full_output": 1.1334,
+    "point_estimate_total": 0.223
+  },
+  "no_paid_ci_or_data_cost": true,
+  "per_model": {
+    "deepseek-flash": {
+      "calls": 50,
+      "observed_bounded_worst_assumption": "every call: X max input 8382 + full 4096 output tokens",
+      "observed_bounded_worst_usd": 0.3715,
+      "planning_worst_assumption": "every call: 16000 input + 4096 output",
+      "planning_worst_usd_16k_in": 0.4858,
+      "point_estimate_usd": 0.1035,
+      "point_per_call_usd": 0.002069,
+      "proposed_hard_cap_usd": 2.5,
+      "x_frozen_price_in_per_mtok": 0.3,
+      "x_frozen_price_out_per_mtok": 1.2,
+      "x_served_model_id": "deepseek-flash"
+    },
+    "gpt-4.1-mini": {
+      "calls": 50,
+      "observed_bounded_worst_assumption": "every call: X max input 8066 + full 4096 output tokens",
+      "observed_bounded_worst_usd": 0.489,
+      "planning_worst_assumption": "every call: 16000 input + 4096 output",
+      "planning_worst_usd_16k_in": 0.6477,
+      "point_estimate_usd": 0.1195,
+      "point_per_call_usd": 0.00239,
+      "proposed_hard_cap_usd": 2.5,
+      "x_frozen_price_in_per_mtok": 0.4,
+      "x_frozen_price_out_per_mtok": 1.6,
+      "x_served_model_id": "gpt-4.1-mini-2025-04-14"
+    }
+  },
+  "price_drift_guard": "hard stop + require re-approval if execution list price > 1.5x X-frozen price",
+  "price_source": "frozen Experiment X (eal_v21x); re-pin at execution",
+  "sampling": {
+    "max_model_calls_per_cell": 1,
+    "max_tokens": 4096,
+    "response_format": "json_object",
+    "retries_per_cell": 0,
+    "temperature": 0,
+    "tools": 0,
+    "turns": 1
+  },
+  "served_id_drift_guard": "hard stop if served model id != requested",
+  "version": "g3a1-gate3b-budget-v1",
+  "zero_api_true_at_freeze": true
+}

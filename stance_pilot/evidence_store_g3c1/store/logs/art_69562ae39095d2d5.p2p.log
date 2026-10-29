@@ -1,0 +1,1138 @@
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpi8ZGiW\Scripts\python.exe -m pytest sympy/core/tests/test_arit.py sympy/core/tests/test_function.py sympy/core/tests/test_priority.py -v --tb=short -p no:cacheprovider  (exit 1, 66s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpi8ZGiW\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 170 items
+
+sympy/core/tests/test_arit.py::test_bug1 PASSED                          [  0%]
+sympy/core/tests/test_arit.py::test_Symbol PASSED                        [  1%]
+sympy/core/tests/test_arit.py::test_arit0 PASSED                         [  1%]
+sympy/core/tests/test_arit.py::test_div PASSED                           [  2%]
+sympy/core/tests/test_arit.py::test_pow PASSED                           [  2%]
+sympy/core/tests/test_arit.py::test_pow2 PASSED                          [  3%]
+sympy/core/tests/test_arit.py::test_pow3 PASSED                          [  4%]
+sympy/core/tests/test_arit.py::test_mod_pow PASSED                       [  4%]
+sympy/core/tests/test_arit.py::test_pow_E PASSED                         [  5%]
+sympy/core/tests/test_arit.py::test_pow_issue_3516 PASSED                [  5%]
+sympy/core/tests/test_arit.py::test_pow_im PASSED                        [  6%]
+sympy/core/tests/test_arit.py::test_real_mul PASSED                      [  7%]
+sympy/core/tests/test_arit.py::test_ncmul PASSED                         [  7%]
+sympy/core/tests/test_arit.py::test_ncpow PASSED                         [  8%]
+sympy/core/tests/test_arit.py::test_powerbug PASSED                      [  8%]
+sympy/core/tests/test_arit.py::test_Mul_doesnt_expand_exp PASSED         [  9%]
+sympy/core/tests/test_arit.py::test_Add_Mul_is_integer PASSED            [ 10%]
+sympy/core/tests/test_arit.py::test_Add_Mul_is_finite PASSED             [ 10%]
+sympy/core/tests/test_arit.py::test_Mul_is_even_odd PASSED               [ 11%]
+sympy/core/tests/test_arit.py::test_evenness_in_ternary_integer_product_with_odd FAILED [ 11%]
+sympy/core/tests/test_arit.py::test_evenness_in_ternary_integer_product_with_even PASSED [ 12%]
+sympy/core/tests/test_arit.py::test_oddness_in_ternary_integer_product_with_odd FAILED [ 12%]
+sympy/core/tests/test_arit.py::test_oddness_in_ternary_integer_product_with_even PASSED [ 13%]
+sympy/core/tests/test_arit.py::test_Mul_is_rational PASSED               [ 14%]
+sympy/core/tests/test_arit.py::test_Add_is_rational PASSED               [ 14%]
+sympy/core/tests/test_arit.py::test_Add_is_even_odd PASSED               [ 15%]
+sympy/core/tests/test_arit.py::test_Mul_is_negative_positive PASSED      [ 15%]
+sympy/core/tests/test_arit.py::test_Mul_is_negative_positive_2 PASSED    [ 16%]
+sympy/core/tests/test_arit.py::test_Mul_is_nonpositive_nonnegative PASSED [ 17%]
+sympy/core/tests/test_arit.py::test_Add_is_negative_positive PASSED      [ 17%]
+sympy/core/tests/test_arit.py::test_Add_is_nonpositive_nonnegative PASSED [ 18%]
+sympy/core/tests/test_arit.py::test_Pow_is_integer PASSED                [ 18%]
+sympy/core/tests/test_arit.py::test_Pow_is_real PASSED                   [ 19%]
+sympy/core/tests/test_arit.py::test_real_Pow PASSED                      [ 20%]
+sympy/core/tests/test_arit.py::test_Pow_is_finite PASSED                 [ 20%]
+sympy/core/tests/test_arit.py::test_Pow_is_even_odd PASSED               [ 21%]
+sympy/core/tests/test_arit.py::test_Pow_is_negative_positive PASSED      [ 21%]
+sympy/core/tests/test_arit.py::test_Pow_is_zero PASSED                   [ 22%]
+sympy/core/tests/test_arit.py::test_Pow_is_nonpositive_nonnegative PASSED [ 22%]
+sympy/core/tests/test_arit.py::test_Mul_is_imaginary_real PASSED         [ 23%]
+sympy/core/tests/test_arit.py::test_Mul_hermitian_antihermitian PASSED   [ 24%]
+sympy/core/tests/test_arit.py::test_Add_is_comparable PASSED             [ 24%]
+sympy/core/tests/test_arit.py::test_Mul_is_comparable PASSED             [ 25%]
+sympy/core/tests/test_arit.py::test_Pow_is_comparable PASSED             [ 25%]
+sympy/core/tests/test_arit.py::test_Add_is_positive_2 PASSED             [ 26%]
+sympy/core/tests/test_arit.py::test_Add_is_irrational PASSED             [ 27%]
+sympy/core/tests/test_arit.py::test_issue_3531 FAILED                    [ 27%]
+sympy/core/tests/test_arit.py::test_issue_3531b PASSED                   [ 28%]
+sympy/core/tests/test_arit.py::test_bug3 PASSED                          [ 28%]
+sympy/core/tests/test_arit.py::test_suppressed_evaluation PASSED         [ 29%]
+sympy/core/tests/test_arit.py::test_Add_as_coeff_mul PASSED              [ 30%]
+sympy/core/tests/test_arit.py::test_Pow_as_coeff_mul_doesnt_expand PASSED [ 30%]
+sympy/core/tests/test_arit.py::test_issue_3514 PASSED                    [ 31%]
+sympy/core/tests/test_arit.py::test_make_args PASSED                     [ 31%]
+sympy/core/tests/test_arit.py::test_issue_5126 PASSED                    [ 32%]
+sympy/core/tests/test_arit.py::test_Rational_as_content_primitive PASSED [ 32%]
+sympy/core/tests/test_arit.py::test_Add_as_content_primitive PASSED      [ 33%]
+sympy/core/tests/test_arit.py::test_Mul_as_content_primitive PASSED      [ 34%]
+sympy/core/tests/test_arit.py::test_Pow_as_content_primitive PASSED      [ 34%]
+sympy/core/tests/test_arit.py::test_issue_5460 PASSED                    [ 35%]
+sympy/core/tests/test_arit.py::test_product_irrational PASSED            [ 35%]
+sympy/core/tests/test_arit.py::test_issue_5919 PASSED                    [ 36%]
+sympy/core/tests/test_arit.py::test_Mod PASSED                           [ 37%]
+sympy/core/tests/test_arit.py::test_Mod_is_integer PASSED                [ 37%]
+sympy/core/tests/test_arit.py::test_Mod_is_nonposneg PASSED              [ 38%]
+sympy/core/tests/test_arit.py::test_issue_6001 PASSED                    [ 38%]
+sympy/core/tests/test_arit.py::test_polar PASSED                         [ 39%]
+sympy/core/tests/test_arit.py::test_issue_6040 PASSED                    [ 40%]
+sympy/core/tests/test_arit.py::test_issue_6082 PASSED                    [ 40%]
+sympy/core/tests/test_arit.py::test_issue_6077 PASSED                    [ 41%]
+sympy/core/tests/test_arit.py::test_mul_flatten_oo PASSED                [ 41%]
+sympy/core/tests/test_arit.py::test_add_flatten PASSED                   [ 42%]
+sympy/core/tests/test_arit.py::test_issue_5160_6087_6089_6090 PASSED     [ 42%]
+sympy/core/tests/test_arit.py::test_float_int PASSED                     [ 43%]
+sympy/core/tests/test_arit.py::test_issue_6611a PASSED                   [ 44%]
+sympy/core/tests/test_arit.py::test_denest_add_mul PASSED                [ 44%]
+sympy/core/tests/test_arit.py::test_mul_coeff PASSED                     [ 45%]
+sympy/core/tests/test_arit.py::test_mul_zero_detection PASSED            [ 45%]
+sympy/core/tests/test_arit.py::test_Mul_with_zero_infinite PASSED        [ 46%]
+sympy/core/tests/test_arit.py::test_Mul_does_not_cancel_infinities PASSED [ 47%]
+sympy/core/tests/test_arit.py::test_Mul_does_not_distribute_infinity PASSED [ 47%]
+sympy/core/tests/test_arit.py::test_issue_8247_8354 PASSED               [ 48%]
+sympy/core/tests/test_arit.py::test_Add_is_zero FAILED                   [ 48%]
+sympy/core/tests/test_arit.py::test_issue_14392 PASSED                   [ 49%]
+sympy/core/tests/test_arit.py::test_divmod PASSED                        [ 50%]
+sympy/core/tests/test_function.py::test_f_expand_complex PASSED          [ 50%]
+sympy/core/tests/test_function.py::test_bug1 PASSED                      [ 51%]
+sympy/core/tests/test_function.py::test_general_function PASSED          [ 51%]
+sympy/core/tests/test_function.py::test_general_function_nullary PASSED  [ 52%]
+sympy/core/tests/test_function.py::test_derivative_subs_bug PASSED       [ 52%]
+sympy/core/tests/test_function.py::test_derivative_subs_self_bug PASSED  [ 53%]
+sympy/core/tests/test_function.py::test_derivative_linearity PASSED      [ 54%]
+sympy/core/tests/test_function.py::test_derivative_evaluate PASSED       [ 54%]
+sympy/core/tests/test_function.py::test_diff_symbols PASSED              [ 55%]
+sympy/core/tests/test_function.py::test_Function PASSED                  [ 55%]
+sympy/core/tests/test_function.py::test_nargs PASSED                     [ 56%]
+sympy/core/tests/test_function.py::test_Lambda PASSED                    [ 57%]
+sympy/core/tests/test_function.py::test_IdentityFunction PASSED          [ 57%]
+sympy/core/tests/test_function.py::test_Lambda_symbols PASSED            [ 58%]
+sympy/core/tests/test_function.py::test_functionclas_symbols PASSED      [ 58%]
+sympy/core/tests/test_function.py::test_Lambda_arguments PASSED          [ 59%]
+sympy/core/tests/test_function.py::test_Lambda_equality PASSED           [ 60%]
+sympy/core/tests/test_function.py::test_Subs PASSED                      [ 60%]
+sympy/core/tests/test_function.py::test_doitdoit PASSED                  [ 61%]
+sympy/core/tests/test_function.py::test_Subs2 FAILED                     [ 61%]
+sympy/core/tests/test_function.py::test_expand_function PASSED           [ 62%]
+sympy/core/tests/test_function.py::test_function_comparable PASSED       [ 62%]
+sympy/core/tests/test_function.py::test_function_comparable_infinities FAILED [ 63%]
+sympy/core/tests/test_function.py::test_deriv1 PASSED                    [ 64%]
+sympy/core/tests/test_function.py::test_deriv2 PASSED                    [ 64%]
+sympy/core/tests/test_function.py::test_func_deriv PASSED                [ 65%]
+sympy/core/tests/test_function.py::test_suppressed_evaluation PASSED     [ 65%]
+sympy/core/tests/test_function.py::test_function_evalf PASSED            [ 66%]
+sympy/core/tests/test_function.py::test_extensibility_eval PASSED        [ 67%]
+sympy/core/tests/test_function.py::test_function_non_commutative PASSED  [ 67%]
+sympy/core/tests/test_function.py::test_function_complex PASSED          [ 68%]
+sympy/core/tests/test_function.py::test_function__eval_nseries PASSED    [ 68%]
+sympy/core/tests/test_function.py::test_doit PASSED                      [ 69%]
+sympy/core/tests/test_function.py::test_evalf_default PASSED             [ 70%]
+sympy/core/tests/test_function.py::test_issue_5399 PASSED                [ 70%]
+sympy/core/tests/test_function.py::test_derivative_numerically PASSED    [ 71%]
+sympy/core/tests/test_function.py::test_fdiff_argument_index_error PASSED [ 71%]
+sympy/core/tests/test_function.py::test_deriv_wrt_function PASSED        [ 72%]
+sympy/core/tests/test_function.py::test_diff_wrt_value PASSED            [ 72%]
+sympy/core/tests/test_function.py::test_diff_wrt PASSED                  [ 73%]
+sympy/core/tests/test_function.py::test_diff_wrt_func_subs PASSED        [ 74%]
+sympy/core/tests/test_function.py::test_subs_in_derivative FAILED        [ 74%]
+sympy/core/tests/test_function.py::test_diff_wrt_not_allowed PASSED      [ 75%]
+sympy/core/tests/test_function.py::test_klein_gordon_lagrangian PASSED   [ 75%]
+sympy/core/tests/test_function.py::test_sho_lagrangian PASSED            [ 76%]
+sympy/core/tests/test_function.py::test_straight_line PASSED             [ 77%]
+sympy/core/tests/test_function.py::test_sort_variable PASSED             [ 77%]
+sympy/core/tests/test_function.py::test_multiple_derivative PASSED       [ 78%]
+sympy/core/tests/test_function.py::test_unhandled PASSED                 [ 78%]
+sympy/core/tests/test_function.py::test_nfloat FAILED                    [ 79%]
+sympy/core/tests/test_function.py::test_issue_7068 PASSED                [ 80%]
+sympy/core/tests/test_function.py::test_issue_7231 PASSED                [ 80%]
+sympy/core/tests/test_function.py::test_issue_7687 PASSED                [ 81%]
+sympy/core/tests/test_function.py::test_issue_7688 PASSED                [ 81%]
+sympy/core/tests/test_function.py::test_mexpand PASSED                   [ 82%]
+sympy/core/tests/test_function.py::test_issue_8469 PASSED                [ 82%]
+sympy/core/tests/test_function.py::test_issue_12996 PASSED               [ 83%]
+sympy/core/tests/test_function.py::test_should_evalf PASSED              [ 84%]
+sympy/core/tests/test_function.py::test_Derivative_as_finite_difference PASSED [ 84%]
+sympy/core/tests/test_function.py::test_issue_11159 PASSED               [ 85%]
+sympy/core/tests/test_function.py::test_issue_12005 PASSED               [ 85%]
+sympy/core/tests/test_function.py::test_issue_13843 PASSED               [ 86%]
+sympy/core/tests/test_function.py::test_order_could_be_zero PASSED       [ 87%]
+sympy/core/tests/test_function.py::test_undefined_function_eq PASSED     [ 87%]
+sympy/core/tests/test_function.py::test_function_assumptions PASSED      [ 88%]
+sympy/core/tests/test_function.py::test_undef_fcn_float_issue_6938 PASSED [ 88%]
+sympy/core/tests/test_function.py::test_undefined_function_eval PASSED   [ 89%]
+sympy/core/tests/test_function.py::test_issue_15241 PASSED               [ 90%]
+sympy/core/tests/test_function.py::test_issue_15266 PASSED               [ 90%]
+sympy/core/tests/test_function.py::test_issue_7027 PASSED                [ 91%]
+sympy/core/tests/test_function.py::test_derivative_quick_exit PASSED     [ 91%]
+sympy/core/tests/test_function.py::test_issue_15084_13166 PASSED         [ 92%]
+sympy/core/tests/test_function.py::test_negative_counts PASSED           [ 92%]
+sympy/core/tests/test_function.py::test_Derivative__new__ PASSED         [ 93%]
+sympy/core/tests/test_function.py::test_issue_14719_10150 PASSED         [ 94%]
+sympy/core/tests/test_function.py::test_noncommutative_issue_15131 PASSED [ 94%]
+sympy/core/tests/test_function.py::test_Subs_Derivative PASSED           [ 95%]
+sympy/core/tests/test_function.py::test_issue_15360 PASSED               [ 95%]
+sympy/core/tests/test_priority.py::test_mul PASSED                       [ 96%]
+sympy/core/tests/test_priority.py::test_add PASSED                       [ 97%]
+sympy/core/tests/test_priority.py::test_sub PASSED                       [ 97%]
+sympy/core/tests/test_priority.py::test_pow PASSED                       [ 98%]
+sympy/core/tests/test_priority.py::test_div PASSED                       [ 98%]
+sympy/core/tests/test_priority.py::test_mod PASSED                       [ 99%]
+sympy/core/tests/test_priority.py::test_floordiv PASSED                  [100%]
+
+================================== FAILURES ===================================
+______________ test_evenness_in_ternary_integer_product_with_odd ______________
+sympy\core\tests\test_arit.py:461: in test_evenness_in_ternary_integer_product_with_odd
+    assert (y*x*(x + k)).is_even is True
+E   assert None is True
+E    +  where None = ((y * x) * (x + k)).is_even
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:129: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_evenness_in_ternary_integer_product_with_odd
+______________ test_oddness_in_ternary_integer_product_with_odd _______________
+sympy\core\tests\test_arit.py:480: in test_oddness_in_ternary_integer_product_with_odd
+    assert (y*x*(x + k)).is_odd is False
+E   assert None is False
+E    +  where None = ((y * x) * (x + k)).is_odd
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:129: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_oddness_in_ternary_integer_product_with_odd
+_______________________________ test_issue_3531 _______________________________
+sympy\core\tests\test_arit.py:1351: in test_issue_3531
+    assert sympify(1)/MightyNumeric((1, 2)) == "something"
+sympy\core\decorators.py:91: in __sympifyit_wrapper
+    return func(a, b)
+sympy\core\numbers.py:1625: in __div__
+    return Number.__div__(self, other)
+sympy\core\decorators.py:91: in __sympifyit_wrapper
+    return func(a, b)
+sympy\core\numbers.py:673: in __div__
+    return AtomicExpr.__div__(self, other)
+sympy\core\decorators.py:91: in __sympifyit_wrapper
+    return func(a, b)
+sympy\core\decorators.py:132: in binary_op_wrapper
+    return func(self, other)
+sympy\core\expr.py:188: in __div__
+    return Mul(self, Pow(other, S.NegativeOne))
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\power.py:286: in __new__
+    obj = b._eval_power(e)
+E   AttributeError: 'Tuple' object has no attribute '_eval_power'
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:129: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_issue_3531
+______________________________ test_Add_is_zero _______________________________
+sympy\core\tests\test_arit.py:1991: in test_Add_is_zero
+    assert e.is_zero is None
+E   assert True is None
+E    +  where True = -2*I + (1 + I)**2.is_zero
+_________________________________ test_Subs2 __________________________________
+sympy\core\tests\test_function.py:318: in test_Subs2
+    assert Subs(f(x), x**2, x).doit() == f(sqrt(x))
+E   assert f(x) == f(sqrt(x))
+E    +  where f(x) = doit()
+E    +    where doit = Subs(f(x), x**2, x).doit
+E    +      where Subs(f(x), x**2, x) = Subs(f(x), (x ** 2), x)
+E    +        where f(x) = f(x)
+E    +  and   f(sqrt(x)) = f(sqrt(x))
+E    +    where sqrt(x) = sqrt(x)
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:129: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_Subs2
+_____________________ test_function_comparable_infinities _____________________
+sympy\core\tests\test_function.py:343: in test_function_comparable_infinities
+    assert sin(oo).is_comparable is False
+E   NameError: name 'oo' is not defined
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:129: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_function_comparable_infinities
+___________________________ test_subs_in_derivative ___________________________
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\tests\test_function.py:635: in test_subs_in_derivative
+    concrete = F(x, F(x, x)).diff(x, 2)
+sympy\core\expr.py:3067: in diff
+    return Derivative(self, *symbols, **assumptions)
+sympy\core\function.py:1372: in __new__
+    if obj is not None and obj.is_zero:
+sympy\core\assumptions.py:248: in getit
+    return _ask(fact, self)
+sympy\core\assumptions.py:291: in _ask
+    a = evaluate(obj)
+sympy\core\add.py:538: in _eval_is_zero
+    simplified = self.simplify()
+sympy\core\expr.py:3214: in simplify
+    return simplify(self, ratio, measure)
+sympy\simplify\simplify.py:609: in simplify
+    short = exptrigsimp(short)
+sympy\simplify\trigsimp.py:538: in exptrigsimp
+    newexpr = bottom_up(expr, exp_trig)
+sympy\simplify\simplify.py:1084: in bottom_up
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in <listcomp>
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1088: in bottom_up
+    rv = F(rv)
+sympy\simplify\trigsimp.py:536: in exp_trig
+    choices.append(e.rewrite(cos))
+sympy\core\basic.py:1748: in rewrite
+    return self._eval_rewrite(None, rule, **hints)
+sympy\core\basic.py:1655: in _eval_rewrite
+    rewritten = getattr(self, rule)(*args, **hints)
+sympy\functions\elementary\exponential.py:455: in _eval_rewrite_as_cos
+    return cos(I*arg) + I*cos(I*arg + S.Pi/2)
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\function.py:449: in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\function.py:270: in __new__
+    evaluated = cls.eval(*args)
+sympy\functions\elementary\trigonometric.py:558: in eval
+    i_coeff = arg.as_coefficient(S.ImaginaryUnit)
+sympy\core\expr.py:1578: in as_coefficient
+    r = self.extract_multiplicatively(expr)
+sympy\core\expr.py:2071: in extract_multiplicatively
+    quotient = self / c
+sympy\core\decorators.py:91: in __sympifyit_wrapper
+    return func(a, b)
+sympy\core\decorators.py:132: in binary_op_wrapper
+    return func(self, other)
+sympy\core\expr.py:188: in __div__
+    return Mul(self, Pow(other, S.NegativeOne))
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\operations.py:45: in __new__
+    c_part, nc_part, order_symbols = cls.flatten(args)
+sympy\core\mul.py:185: in flatten
+    if not a.is_zero and a.is_Rational:
+sympy\core\assumptions.py:248: in getit
+    return _ask(fact, self)
+sympy\core\assumptions.py:291: in _ask
+    a = evaluate(obj)
+sympy\core\add.py:538: in _eval_is_zero
+    simplified = self.simplify()
+sympy\core\expr.py:3214: in simplify
+    return simplify(self, ratio, measure)
+sympy\simplify\simplify.py:583: in simplify
+    expr = trigsimp(expr, deep=True)
+sympy\simplify\trigsimp.py:509: in trigsimp
+    return trigsimpfunc(expr)
+sympy\simplify\trigsimp.py:502: in <lambda>
+    'matching': (lambda x: futrig(x)),
+sympy\simplify\trigsimp.py:1106: in futrig
+    e = f(_futrig(e))
+sympy\simplify\trigsimp.py:1170: in _futrig
+    e = greedy(tree, objective=Lops)(e)
+sympy\strategies\core.py:117: in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+sympy\strategies\core.py:117: in <listcomp>
+    return min([rule(expr) for rule in rules], key=objective)
+sympy\strategies\core.py:44: in chain_rl
+    expr = rule(expr)
+sympy\simplify\trigsimp.py:1138: in <lambda>
+    lambda x: _eapply(factor, x, trigs),
+sympy\simplify\trigsimp.py:1191: in _eapply
+    return func(e)
+sympy\polys\polytools.py:6339: in factor
+    return _generic_factor(f, gens, args, method='factor')
+sympy\polys\polytools.py:6019: in _generic_factor
+    return _symbolic_factor(sympify(expr), opt, method)
+sympy\polys\polytools.py:5964: in _symbolic_factor
+    coeff, factors = _symbolic_factor_list(together(expr), opt, method)
+sympy\polys\rationaltools.py:85: in together
+    return _together(sympify(expr))
+sympy\polys\rationaltools.py:68: in _together
+    return gcd_terms(list(map(_together, Add.make_args(expr))))
+sympy\core\exprtools.py:1063: in gcd_terms
+    cont, numer, denom = _gcd_terms(terms, isprimitive, fraction)
+sympy\core\exprtools.py:967: in _gcd_terms
+    numers.append(term.coeff*numer.as_expr())
+sympy\core\exprtools.py:455: in as_expr
+    return Mul(*args)
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\operations.py:45: in __new__
+    c_part, nc_part, order_symbols = cls.flatten(args)
+sympy\core\mul.py:185: in flatten
+    if not a.is_zero and a.is_Rational:
+sympy\core\assumptions.py:248: in getit
+    return _ask(fact, self)
+sympy\core\assumptions.py:291: in _ask
+    a = evaluate(obj)
+sympy\core\add.py:538: in _eval_is_zero
+    simplified = self.simplify()
+sympy\core\expr.py:3214: in simplify
+    return simplify(self, ratio, measure)
+sympy\simplify\simplify.py:609: in simplify
+    short = exptrigsimp(short)
+sympy\simplify\trigsimp.py:538: in exptrigsimp
+    newexpr = bottom_up(expr, exp_trig)
+sympy\simplify\simplify.py:1084: in bottom_up
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in <listcomp>
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in bottom_up
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in <listcomp>
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1088: in bottom_up
+    rv = F(rv)
+sympy\simplify\trigsimp.py:535: in exp_trig
+    choices.append(e.rewrite(exp))
+sympy\core\basic.py:1748: in rewrite
+    return self._eval_rewrite(None, rule, **hints)
+sympy\core\basic.py:1655: in _eval_rewrite
+    rewritten = getattr(self, rule)(*args, **hints)
+sympy\functions\elementary\trigonometric.py:385: in _eval_rewrite_as_exp
+    return (exp(arg*I) - exp(-arg*I)) / (2*I)
+sympy\core\decorators.py:91: in __sympifyit_wrapper
+    return func(a, b)
+sympy\core\decorators.py:132: in binary_op_wrapper
+    return func(self, other)
+sympy\core\expr.py:188: in __div__
+    return Mul(self, Pow(other, S.NegativeOne))
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\operations.py:45: in __new__
+    c_part, nc_part, order_symbols = cls.flatten(args)
+sympy\core\mul.py:185: in flatten
+    if not a.is_zero and a.is_Rational:
+sympy\core\assumptions.py:248: in getit
+    return _ask(fact, self)
+sympy\core\assumptions.py:291: in _ask
+    a = evaluate(obj)
+sympy\core\add.py:538: in _eval_is_zero
+    simplified = self.simplify()
+sympy\core\expr.py:3214: in simplify
+    return simplify(self, ratio, measure)
+sympy\simplify\simplify.py:609: in simplify
+    short = exptrigsimp(short)
+sympy\simplify\trigsimp.py:538: in exptrigsimp
+    newexpr = bottom_up(expr, exp_trig)
+sympy\simplify\simplify.py:1088: in bottom_up
+    rv = F(rv)
+sympy\simplify\trigsimp.py:536: in exp_trig
+    choices.append(e.rewrite(cos))
+sympy\core\basic.py:1748: in rewrite
+    return self._eval_rewrite(None, rule, **hints)
+sympy\core\basic.py:1659: in _eval_rewrite
+    return self.func(*args) if hints.get('evaluate', True) else self
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\operations.py:45: in __new__
+    c_part, nc_part, order_symbols = cls.flatten(args)
+sympy\core\mul.py:185: in flatten
+    if not a.is_zero and a.is_Rational:
+sympy\core\assumptions.py:248: in getit
+    return _ask(fact, self)
+sympy\core\assumptions.py:291: in _ask
+    a = evaluate(obj)
+sympy\core\add.py:538: in _eval_is_zero
+    simplified = self.simplify()
+sympy\core\expr.py:3214: in simplify
+    return simplify(self, ratio, measure)
+sympy\simplify\simplify.py:609: in simplify
+    short = exptrigsimp(short)
+sympy\simplify\trigsimp.py:538: in exptrigsimp
+    newexpr = bottom_up(expr, exp_trig)
+sympy\simplify\simplify.py:1084: in bottom_up
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in <listcomp>
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in bottom_up
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in <listcomp>
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1088: in bottom_up
+    rv = F(rv)
+sympy\simplify\trigsimp.py:535: in exp_trig
+    choices.append(e.rewrite(exp))
+sympy\core\basic.py:1748: in rewrite
+    return self._eval_rewrite(None, rule, **hints)
+sympy\core\basic.py:1655: in _eval_rewrite
+    rewritten = getattr(self, rule)(*args, **hints)
+sympy\functions\elementary\trigonometric.py:385: in _eval_rewrite_as_exp
+    return (exp(arg*I) - exp(-arg*I)) / (2*I)
+sympy\core\decorators.py:91: in __sympifyit_wrapper
+    return func(a, b)
+sympy\core\decorators.py:132: in binary_op_wrapper
+    return func(self, other)
+sympy\core\expr.py:188: in __div__
+    return Mul(self, Pow(other, S.NegativeOne))
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\operations.py:45: in __new__
+    c_part, nc_part, order_symbols = cls.flatten(args)
+sympy\core\mul.py:185: in flatten
+    if not a.is_zero and a.is_Rational:
+sympy\core\assumptions.py:248: in getit
+    return _ask(fact, self)
+sympy\core\assumptions.py:291: in _ask
+    a = evaluate(obj)
+sympy\core\add.py:538: in _eval_is_zero
+    simplified = self.simplify()
+sympy\core\expr.py:3214: in simplify
+    return simplify(self, ratio, measure)
+sympy\simplify\simplify.py:609: in simplify
+    short = exptrigsimp(short)
+sympy\simplify\trigsimp.py:538: in exptrigsimp
+    newexpr = bottom_up(expr, exp_trig)
+sympy\simplify\simplify.py:1088: in bottom_up
+    rv = F(rv)
+sympy\simplify\trigsimp.py:536: in exp_trig
+    choices.append(e.rewrite(cos))
+sympy\core\basic.py:1748: in rewrite
+    return self._eval_rewrite(None, rule, **hints)
+sympy\core\basic.py:1659: in _eval_rewrite
+    return self.func(*args) if hints.get('evaluate', True) else self
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\operations.py:45: in __new__
+    c_part, nc_part, order_symbols = cls.flatten(args)
+sympy\core\mul.py:185: in flatten
+    if not a.is_zero and a.is_Rational:
+sympy\core\assumptions.py:248: in getit
+    return _ask(fact, self)
+sympy\core\assumptions.py:291: in _ask
+    a = evaluate(obj)
+sympy\core\add.py:538: in _eval_is_zero
+    simplified = self.simplify()
+sympy\core\expr.py:3214: in simplify
+    return simplify(self, ratio, measure)
+sympy\simplify\simplify.py:609: in simplify
+    short = exptrigsimp(short)
+sympy\simplify\trigsimp.py:538: in exptrigsimp
+    newexpr = bottom_up(expr, exp_trig)
+sympy\simplify\simplify.py:1084: in bottom_up
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in <listcomp>
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in bottom_up
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in <listcomp>
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1088: in bottom_up
+    rv = F(rv)
+sympy\simplify\trigsimp.py:535: in exp_trig
+    choices.append(e.rewrite(exp))
+sympy\core\basic.py:1748: in rewrite
+    return self._eval_rewrite(None, rule, **hints)
+sympy\core\basic.py:1655: in _eval_rewrite
+    rewritten = getattr(self, rule)(*args, **hints)
+sympy\functions\elementary\trigonometric.py:385: in _eval_rewrite_as_exp
+    return (exp(arg*I) - exp(-arg*I)) / (2*I)
+sympy\core\decorators.py:91: in __sympifyit_wrapper
+    return func(a, b)
+sympy\core\decorators.py:132: in binary_op_wrapper
+    return func(self, other)
+sympy\core\expr.py:188: in __div__
+    return Mul(self, Pow(other, S.NegativeOne))
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\operations.py:45: in __new__
+    c_part, nc_part, order_symbols = cls.flatten(args)
+sympy\core\mul.py:185: in flatten
+    if not a.is_zero and a.is_Rational:
+sympy\core\assumptions.py:248: in getit
+    return _ask(fact, self)
+sympy\core\assumptions.py:291: in _ask
+    a = evaluate(obj)
+sympy\core\add.py:538: in _eval_is_zero
+    simplified = self.simplify()
+sympy\core\expr.py:3214: in simplify
+    return simplify(self, ratio, measure)
+sympy\simplify\simplify.py:609: in simplify
+    short = exptrigsimp(short)
+sympy\simplify\trigsimp.py:538: in exptrigsimp
+    newexpr = bottom_up(expr, exp_trig)
+sympy\simplify\simplify.py:1088: in bottom_up
+    rv = F(rv)
+sympy\simplify\trigsimp.py:536: in exp_trig
+    choices.append(e.rewrite(cos))
+sympy\core\basic.py:1748: in rewrite
+    return self._eval_rewrite(None, rule, **hints)
+sympy\core\basic.py:1659: in _eval_rewrite
+    return self.func(*args) if hints.get('evaluate', True) else self
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\operations.py:45: in __new__
+    c_part, nc_part, order_symbols = cls.flatten(args)
+sympy\core\mul.py:185: in flatten
+    if not a.is_zero and a.is_Rational:
+sympy\core\assumptions.py:248: in getit
+    return _ask(fact, self)
+sympy\core\assumptions.py:291: in _ask
+    a = evaluate(obj)
+sympy\core\add.py:538: in _eval_is_zero
+    simplified = self.simplify()
+sympy\core\expr.py:3214: in simplify
+    return simplify(self, ratio, measure)
+sympy\simplify\simplify.py:583: in simplify
+    expr = trigsimp(expr, deep=True)
+sympy\simplify\trigsimp.py:509: in trigsimp
+    return trigsimpfunc(expr)
+sympy\simplify\trigsimp.py:502: in <lambda>
+    'matching': (lambda x: futrig(x)),
+sympy\simplify\trigsimp.py:1102: in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+sympy\simplify\simplify.py:1084: in bottom_up
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in <listcomp>
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in bottom_up
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in <listcomp>
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1088: in bottom_up
+    rv = F(rv)
+sympy\simplify\trigsimp.py:1102: in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+sympy\simplify\trigsimp.py:1170: in _futrig
+    e = greedy(tree, objective=Lops)(e)
+sympy\strategies\core.py:117: in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+sympy\strategies\core.py:117: in <listcomp>
+    return min([rule(expr) for rule in rules], key=objective)
+sympy\strategies\core.py:44: in chain_rl
+    expr = rule(expr)
+sympy\strategies\core.py:117: in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+sympy\strategies\core.py:117: in <listcomp>
+    return min([rule(expr) for rule in rules], key=objective)
+sympy\simplify\trigsimp.py:1167: in <lambda>
+    [identity, lambda x: _eapply(
+sympy\simplify\trigsimp.py:1191: in _eapply
+    return func(e)
+sympy\core\exprtools.py:1202: in factor_terms
+    return do(expr)
+sympy\core\exprtools.py:1175: in do
+    cont, p = expr.as_content_primitive(radical=radical, clear=clear)
+sympy\core\add.py:988: in as_content_primitive
+    con, prim = self.func(*[_keep_coeff(*a.as_content_primitive(
+sympy\core\add.py:988: in <listcomp>
+    con, prim = self.func(*[_keep_coeff(*a.as_content_primitive(
+sympy\core\mul.py:1690: in as_content_primitive
+    return coef, self.func(*args)
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\operations.py:45: in __new__
+    c_part, nc_part, order_symbols = cls.flatten(args)
+sympy\core\mul.py:185: in flatten
+    if not a.is_zero and a.is_Rational:
+sympy\core\assumptions.py:248: in getit
+    return _ask(fact, self)
+sympy\core\assumptions.py:303: in _ask
+    _ask(pk, obj)
+sympy\core\assumptions.py:303: in _ask
+    _ask(pk, obj)
+sympy\core\assumptions.py:303: in _ask
+    _ask(pk, obj)
+sympy\core\assumptions.py:303: in _ask
+    _ask(pk, obj)
+sympy\core\assumptions.py:303: in _ask
+    _ask(pk, obj)
+sympy\core\assumptions.py:303: in _ask
+    _ask(pk, obj)
+sympy\core\assumptions.py:303: in _ask
+    _ask(pk, obj)
+sympy\core\assumptions.py:291: in _ask
+    a = evaluate(obj)
+sympy\core\power.py:1202: in _eval_is_algebraic
+    if self.base.is_zero or _is_one(self.base):
+sympy\core\power.py:1197: in _is_one
+    return (expr - 1).is_zero
+sympy\core\assumptions.py:248: in getit
+    return _ask(fact, self)
+sympy\core\assumptions.py:291: in _ask
+    a = evaluate(obj)
+sympy\core\add.py:538: in _eval_is_zero
+    simplified = self.simplify()
+sympy\core\expr.py:3214: in simplify
+    return simplify(self, ratio, measure)
+sympy\simplify\simplify.py:609: in simplify
+    short = exptrigsimp(short)
+sympy\simplify\trigsimp.py:538: in exptrigsimp
+    newexpr = bottom_up(expr, exp_trig)
+sympy\simplify\simplify.py:1084: in bottom_up
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1084: in <listcomp>
+    args = tuple([bottom_up(a, F, atoms, nonbasic)
+sympy\simplify\simplify.py:1088: in bottom_up
+    rv = F(rv)
+sympy\simplify\trigsimp.py:535: in exp_trig
+    choices.append(e.rewrite(exp))
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+_________________________________ test_nfloat _________________________________
+sympy\core\assumptions.py:244: in getit
+    return self._assumptions[fact]
+E   KeyError: 'zero'
+
+During handling of the above exception, another exception occurred:
+sympy\core\tests\test_function.py:831: in test_nfloat
+    assert str(nfloat(eq, exponent=False, n=1)) == '-0.7*cos(3.0*x**4 + y)'
+sympy\core\function.py:3096: in nfloat
+    return rv.xreplace(Transform(
+sympy\core\basic.py:1181: in xreplace
+    value, _ = self._xreplace(rule)
+sympy\core\basic.py:1195: in _xreplace
+    a_xr = a._xreplace(rule)
+sympy\core\basic.py:1189: in _xreplace
+    return rule[self], True
+sympy\core\rules.py:59: in __getitem__
+    return self._transform(key)
+sympy\core\function.py:3097: in <lambda>
+    lambda x: x.func(*nfloat(x.args, n, exponent)),
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\function.py:449: in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\function.py:270: in __new__
+    evaluated = cls.eval(*args)
+sympy\functions\elementary\trigonometric.py:558: in eval
+    i_coeff = arg.as_coefficient(S.ImaginaryUnit)
+sympy\core\expr.py:1578: in as_coefficient
+    r = self.extract_multiplicatively(expr)
+sympy\core\expr.py:2071: in extract_multiplicatively
+    quotient = self / c
+sympy\core\decorators.py:91: in __sympifyit_wrapper
+    return func(a, b)
+sympy\core\decorators.py:132: in binary_op_wrapper
+    return func(self, other)
+sympy\core\expr.py:188: in __div__
+    return Mul(self, Pow(other, S.NegativeOne))
+sympy\core\cache.py:94: in wrapper
+    retval = cfunc(*args, **kwargs)
+sympy\core\operations.py:45: in __new__
+    c_part, nc_part, order_symbols = cls.flatten(args)
+sympy\core\mul.py:185: in flatten
+    if not a.is_zero and a.is_Rational:
+sympy\core\assumptions.py:248: in getit
+    return _ask(fact, self)
+sympy\core\assumptions.py:291: in _ask
+    a = evaluate(obj)
+sympy\core\add.py:538: in _eval_is_zero
+    simplified = self.simplify()
+sympy\core\expr.py:3214: in simplify
+    return simplify(self, ratio, measure)
+sympy\simplify\simplify.py:561: in simplify
+    _e = cancel(expr)
+sympy\polys\polytools.py:6638: in cancel
+    c, P, Q = F.cancel(G)
+sympy\polys\polytools.py:3689: in cancel
+    result = F.cancel(G, include=include)
+sympy\polys\polyclasses.py:697: in cancel
+    cF, cG, F, G = dmp_cancel(F, G, lev, dom, include=False)
+sympy\polys\euclidtools.py:1869: in dmp_cancel
+    _, p, q = dmp_inner_gcd(f, g, u, K)
+sympy\polys\euclidtools.py:1586: in dmp_inner_gcd
+    h, cff, cfg = _dmp_inner_gcd(f, g, u, K)
+sympy\polys\euclidtools.py:1534: in _dmp_inner_gcd
+    f = dmp_convert(f, u, K, exact)
+sympy\polys\densebasic.py:569: in dmp_convert
+    return dmp_strip([ dmp_convert(c, v, K0, K1) for c in f ], u)
+sympy\polys\densebasic.py:569: in <listcomp>
+    return dmp_strip([ dmp_convert(c, v, K0, K1) for c in f ], u)
+sympy\polys\densebasic.py:563: in dmp_convert
+    return dup_convert(f, K0, K1)
+sympy\polys\densebasic.py:540: in dup_convert
+    return dup_strip([ K1.convert(c, K0) for c in f ])
+sympy\polys\densebasic.py:540: in <listcomp>
+    return dup_strip([ K1.convert(c, K0) for c in f ])
+sympy\polys\domains\domain.py:107: in convert
+    return self.convert_from(element, base)
+sympy\polys\domains\domain.py:97: in convert_from
+    result = _convert(element, base)
+sympy\polys\domains\pythonrationalfield.py:61: in from_RealField
+    p, q = K0.to_rational(a)
+sympy\polys\domains\realfield.py:100: in to_rational
+    return self._context.to_rational(element, limit)
+sympy\polys\domains\mpelements.py:140: in to_rational
+    k = (ctx.max_denom - q0)//q1
+E   ZeroDivisionError: integer division or modulo by zero
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+sympy\solvers\diophantine.py:3188
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if feasible is 1:  # it's prime and k == 2
+
+sympy\plotting\plot.py:520
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:520: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if self.xscale is 'log':
+
+sympy\plotting\plot.py:540
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:540: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if self.xscale is 'log':
+
+sympy\plotting\plot.py:553
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:553: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if self.xscale is 'log':
+
+sympy\plotting\plot.py:560
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:560: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if self.xscale is 'log':
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474: PytestConfigWarning: Unknown config option: doctestplus
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+sympy/core/tests/test_arit.py: 6484 warnings
+sympy/core/tests/test_function.py: 12 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+sympy/core/tests/test_function.py::test_nfloat
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\calculus\polynomials.py:177: DeprecationWarning: Descending (wrt powers) order of polynomial coefficients is deprecated, please adapt you code to use ascending order, asc=True.
+    warnings.warn("Descending (wrt powers) order of polynomial "
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+                               DO *NOT* COMMIT!                               
+=========================== short test summary info ===========================
+FAILED sympy/core/tests/test_arit.py::test_evenness_in_ternary_integer_product_with_odd - sympy.utilities.pytest.XFail: test_evenness_in_ternary_integer_product_with_odd
+FAILED sympy/core/tests/test_arit.py::test_oddness_in_ternary_integer_product_with_odd - sympy.utilities.pytest.XFail: test_oddness_in_ternary_integer_product_with_odd
+FAILED sympy/core/tests/test_arit.py::test_issue_3531 - sympy.utilities.pytest.XFail: test_issue_3531
+FAILED sympy/core/tests/test_arit.py::test_Add_is_zero - assert True is None
+ +  where True = -2*I + (1 + I)**2.is_zero
+FAILED sympy/core/tests/test_function.py::test_Subs2 - sympy.utilities.pytest.XFail: test_Subs2
+FAILED sympy/core/tests/test_function.py::test_function_comparable_infinities - sympy.utilities.pytest.XFail: test_function_comparable_infinities
+FAILED sympy/core/tests/test_function.py::test_subs_in_derivative - RecursionError: maximum recursion depth exceeded while calling a Python object
+FAILED sympy/core/tests/test_function.py::test_nfloat - ZeroDivisionError: integer division or modulo by zero
+=========== 8 failed, 162 passed, 6507 warnings in 60.93s (0:01:00) ===========
+
+--- stderr ---
+
+
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpi8ZGiW\Scripts\python.exe -m pytest sympy/core/tests/test_symbol.py -v --tb=short -p no:cacheprovider  (exit 0, 7s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpi8ZGiW\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 12 items
+
+sympy/core/tests/test_symbol.py::test_Symbol PASSED                      [  8%]
+sympy/core/tests/test_symbol.py::test_Dummy PASSED                       [ 16%]
+sympy/core/tests/test_symbol.py::test_Dummy_force_dummy_index PASSED     [ 25%]
+sympy/core/tests/test_symbol.py::test_lt_gt PASSED                       [ 33%]
+sympy/core/tests/test_symbol.py::test_no_len PASSED                      [ 41%]
+sympy/core/tests/test_symbol.py::test_ineq_unequal PASSED                [ 50%]
+sympy/core/tests/test_symbol.py::test_Wild_properties PASSED             [ 58%]
+sympy/core/tests/test_symbol.py::test_symbols PASSED                     [ 66%]
+sympy/core/tests/test_symbol.py::test_symbols_become_functions_issue_3539 PASSED [ 75%]
+sympy/core/tests/test_symbol.py::test_unicode PASSED                     [ 83%]
+sympy/core/tests/test_symbol.py::test__uniquely_named_symbol_and__symbol PASSED [ 91%]
+sympy/core/tests/test_symbol.py::test_disambiguate PASSED                [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+sympy\solvers\diophantine.py:3188
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if feasible is 1:  # it's prime and k == 2
+
+sympy\plotting\plot.py:520
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:520: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if self.xscale is 'log':
+
+sympy\plotting\plot.py:540
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:540: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if self.xscale is 'log':
+
+sympy\plotting\plot.py:553
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:553: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if self.xscale is 'log':
+
+sympy\plotting\plot.py:560
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:560: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if self.xscale is 'log':
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474: PytestConfigWarning: Unknown config option: doctestplus
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 12 passed, 10 warnings in 1.97s =======================
+
+--- stderr ---

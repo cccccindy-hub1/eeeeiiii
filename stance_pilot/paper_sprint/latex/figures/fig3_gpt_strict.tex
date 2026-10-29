@@ -1,0 +1,27 @@
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,
+  >={Stealth[length=3mm]}]
+\def\s{0.62}
+
+% G3-B: 10/10 correct NEED
+\node[anchor=east,text width=2.2cm,align=right] (l1) at (2.3,0.75) {\textbf{G3-B}};
+\draw[line width=20pt,grNeed] (2.6,0.75) -- ($(2.6,0.75)+({10*\s},0)$);
+\node[anchor=west,font=\bfseries,text=grNeed] at ($(2.6,0.75)+({10*\s+0.15},0)$) {10 correct NEED};
+
+% G3-B.3: 7 unsupported ACCEPT + 3 correct NEED
+\node[anchor=east,text width=2.2cm,align=right] (l2) at (2.3,-0.75) {\textbf{G3-B.3}};
+\draw[line width=20pt,grReject] (2.6,-0.75) -- ($(2.6,-0.75)+({7*\s},0)$);
+\draw[line width=20pt,grNeed] ($(2.6,-0.75)+({7*\s},0)$) -- ($(2.6,-0.75)+({10*\s},0)$);
+\node[anchor=west,font=\bfseries,text=grReject] at ($(2.6,-0.75)+({7*\s/2},0)$) {7};
+\node[anchor=west,font=\bfseries,text=grNeed] at ($(2.6,-0.75)+({8.5*\s},0.05)$) {3};
+\node[anchor=west,text=grReject] at ($(2.6,-0.75)+({10*\s+0.15},0.1)$) {unsupported ACCEPT};
+\node[anchor=west,text=grNeed] at ($(2.6,-0.75)+({10*\s+0.15},-0.35)$) {correct NEED};
+
+% legend / issue ids
+\node[anchor=north west,font=\scriptsize,text=grInk,align=left,text width=11cm] at (2.6,-2.15)
+  {\textcolor{grReject}{\rule{0.8em}{0.8em}} unsupported ACCEPT issues:
+   13615,\,13974,\,15349,\,17318,\,17630,\,21847,\,24443\\[2pt]
+   \textcolor{grNeed}{\rule{0.8em}{0.8em}} correct NEED issues:
+   19783,\,20590,\,24213};
+\node[anchor=north west,font=\scriptsize\itshape,text=grMuted,align=left,text width=11cm] at (2.6,-3.25)
+  {Cross-version contrast (instrument changed between runs): associational, not causal.};
+\end{tikzpicture}

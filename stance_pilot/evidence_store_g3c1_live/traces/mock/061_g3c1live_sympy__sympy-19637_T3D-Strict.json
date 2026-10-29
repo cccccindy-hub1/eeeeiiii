@@ -1,0 +1,65 @@
+{
+  "cell": "g3c1live:sympy__sympy-19637:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "cb675a57877326e81122b4a0",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_22542096dfadeb88\", \"base_commit\": \"63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef\", \"finished_at\": \"2026-10-28T10:16:03+00:00\", \"instance_id\": \"sympy__sympy-19637\", \"log_digests\": {\"symptom\": \"5b6866264eea169d807018fa889d3ff83dbe1b8b2c7925fa57e1fec0652640eb\"}, \"patch_sha256\": \"b390b959e90cbcbc769629d4055aac6662564970cb11b5d58e2a251725321e76\", \"repo\": \"sympy/sympy\", \"runner\": \"pytest/vendored-git  py=3.9.25  host=windows-local  gate=G3-C.1\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/core/tests/test_args.py\", \"sympy/core/tests/test_arit.py\", \"sympy/core/tests/test_assumptions.py\", \"sympy/core/tests/test_basic.py\", \"sympy/core/tests/test_cache.py\", \"sympy/core/tests/test_compatibility.py\", \"sympy/core/tests/test_complex.py\", \"sympy/core/tests/test_constructor_postprocessor.py\", \"sympy/core/tests/test_containers.py\", \"sympy/core/tests/test_count_ops.py\", \"sympy/core/tests/test_diff.py\", \"sympy/core/tests/test_equal.py\", \"sympy/core/tests/test_eval.py\", \"sympy/core/tests/test_evalf.py\", \"sympy/core/tests/test_expand.py\", \"sympy/core/tests/test_expr.py\", \"sympy/core/tests/test_exprtools.py\", \"sympy/core/tests/test_facts.py\", \"sympy/core/tests/test_function.py\", \"sympy/core/tests/test_logic.py\", \"sympy/core/tests/test_match.py\", \"sympy/core/tests/test_multidimensional.py\", \"sympy/core/tests/test_noncommutative.py\", \"sympy/core/tests/test_numbers.py\", \"sympy/core/tests/test_operations.py\", \"sympy/core/tests/test_parameters.py\", \"sympy/core/tests/test_power.py\", \"sympy/core/tests/test_priority.py\", \"sympy/core/tests/test_relational.py\", \"sympy/core/tests/test_rules.py\", \"sympy/core/tests/test_singleton.py\", \"sympy/core/tests/test_subs.py\", \"sympy/core/tests/test_symbol.py\", \"sympy/core/tests/test_sympify.py\", \"sympy/core/tests/test_trace.py\", \"sympy/core/tests/test_truediv.py\", \"sympy/core/tests/test_var.py\"], \"p2p_total_in_dataset\": 40, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-28T10:15:24+00:00\", \"summary\": {\"f2p_total\": 1, \"p2p_total\": 40, \"outcomes_withheld\": true, \"note\": \"acceptance-test outcomes and regression verdicts are withheld at the diagnostic tier; use the verification service to seek them.\"}, \"test_patch_sha256\": \"b8c88d7b9c59cdc88030f940dc9f6df2e1aa5b332f5f5c8392211e178628afb6\", \"evidence_tier\": \"diagnostic\", \"projection_version\": \"diagnostic-v2-no-baseline-map-v1\"}, \"authentic_signature\": true, \"evidence_tier\": \"D\"}"
+    },
+    {
+      "turn": 1,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef\", \"record_patch_sha256\": \"b390b959e90cbcbc769629d4055aac6662564970cb11b5d58e2a251725321e76\"}"
+    },
+    {
+      "turn": 2,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"30c590486f7145f872816c58a3de930a62b81492\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"30c590486f7145f872816c58a3de930a62b81492\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:15:24+00:00\", \"attestation_built_at\": \"2026-10-28T10:16:05+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}"
+    },
+    {
+      "turn": 3,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 40, \"executed\": 40, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 4,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python sympy__sympy-19637-baseline.py  (exit 1)\n--- stdout ---\nFAIL: kernS raised UnboundLocalError local variable 'kern' referenced before assignment\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python sympy__sympy-19637-post-candidate.py  (exit 0)\n--- stdout ---\nOK: kernS no crash -> 2*x/(x - 1)\n\n--- stderr ---\n"
+    },
+    {
+      "turn": 5,
+      "tool": "get_run_log",
+      "args": {
+        "name": "f2p"
+      },
+      "http_status": 403,
+      "result_preview": "[http_status=403] {\"error\": \"acceptance logs are disabled under the strict evidence policy\"}"
+    },
+    {
+      "turn": 6,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    }
+  ],
+  "final_answer": "{\"decision\": \"NEED_EVIDENCE\", \"reason\": \"strict policy withholds maintainer acceptance outcomes; symptom evidence alone cannot establish success\", \"evidence_mismatch\": false, \"missing_evidence\": \"maintainer acceptance outcomes\", \"evidence_gap\": \"unspecified\"}",
+  "parsed": "NEED_EVIDENCE",
+  "fresh_state_served": "TRUE",
+  "error": null
+}

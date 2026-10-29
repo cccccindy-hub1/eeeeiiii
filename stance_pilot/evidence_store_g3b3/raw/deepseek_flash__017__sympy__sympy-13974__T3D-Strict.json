@@ -1,0 +1,148 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage is intact (base_commit and patch_sha256 match, authentic signature), freshness is TRUE (authoritative restage tree equals attestation tree), and coverage is complete (1/1 declared acceptance executed, 4/4 scoped regression checks executed). The issue-symptom probe flips from FAIL pre-patch to OK post-patch, and the registered author statement is consistent with that diagnostic. However, under the STRICT policy all maintainer acceptance-test and scoped-regression verdicts are withheld (403/disabled), so no tool exposes whether the executed acceptance check passes or whether the 4 scoped regression checks pass. Coverage confirms execution but not outcomes. Therefore I cannot establish the failure-free success required for ACCEPT, and there is no decisive applicable failure to justify REJECT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Acceptance (FAIL_TO_PASS) and scoped regression (PASS_TO_PASS) pass/fail verdicts are withheld under the STRICT policy; only execution coverage and the issue-symptom probe are available, so merge acceptability cannot be confirmed.\",\"evidence_gap\":\"unspecified\"}",
+  "cell": "g3b3:sympy__sympy-13974:T3D-Strict",
+  "condition": "T3D-Strict",
+  "cost_usd": 0.002821,
+  "evidence_session": "93fe91fca736527781e4e9fa",
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-13974",
+  "instance_id": "sympy__sympy-13974",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 2,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": "strict",
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.01069,
+    0.011177
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 153,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 3173,
+      "raw_content": "I'll verify the artifact's linkage, freshness, coverage, and claim consistency.",
+      "served_model": "deepseek-flash",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_00_pDwhlJP61aBxPjRy8lOk8852",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_01_rK8HJIrOFjzQgkzlMB1Y2065",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_02_7fsR6fuWAQSy5a0rG7D89309",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{\"claim\": \"Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass.\"}",
+          "id": "call_03_ugGHVUkVHAqt6LQfbyZ26259",
+          "name": "check_claim_consistency"
+        },
+        {
+          "arguments": "{\"name\": \"symptom\"}",
+          "id": "call_04_c5Nhn5YFpTDEsmP6KTkK6442",
+          "name": "get_run_log"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 246,
+      "finish_reason": "stop",
+      "model_call": 2,
+      "prompt_tokens": 4634,
+      "raw_content": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage is intact (base_commit and patch_sha256 match, authentic signature), freshness is TRUE (authoritative restage tree equals attestation tree), and coverage is complete (1/1 declared acceptance executed, 4/4 scoped regression checks executed). The issue-symptom probe flips from FAIL pre-patch to OK post-patch, and the registered author statement is consistent with that diagnostic. However, under the STRICT policy all maintainer acceptance-test and scoped-regression verdicts are withheld (403/disabled), so no tool exposes whether the executed acceptance check passes or whether the 4 scoped regression checks pass. Coverage confirms execution but not outcomes. Therefore I cannot establish the failure-free success required for ACCEPT, and there is no decisive applicable failure to justify REJECT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Acceptance (FAIL_TO_PASS) and scoped regression (PASS_TO_PASS) pass/fail verdicts are withheld under the STRICT policy; only execution coverage and the issue-symptom probe are available, so merge acceptability cannot be confirmed.\",\"evidence_gap\":\"unspecified\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 8,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_42af95edfb29747c",
+  "tokens_in": 7807,
+  "tokens_out": 399,
+  "tool_calls": 5,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"84c125972ad535b2dfb245f8d311d347b45e5b8a\", \"record_patch_sha256\": \"e6680a7bf29762b056f96772ab732787ef9bb9ce5750be49e728565f6fc32faa\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"bf56cbca1daf1db1c75cc20d556358b803523dfe\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"bf56cbca1daf1db1c75cc20d556358b803523dfe\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:20:28+00:00\", \"attestation_built_at\": \"2026-10-25T18:20:41+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 4, \"executed\": 4, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {
+        "claim": "Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass."
+      },
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    },
+    {
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: t1 tensor_product_simp = 1x1**2\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Mapping, defaultdict\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  class OrderedSet(collections.MutableSet):\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Callable\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: tensor product powers simplify: 1x1 1x1\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Mapping, defaultdict\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  class OrderedSet(collections.MutableSet):\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Callable\n",
+      "tool": "get_run_log",
+      "turn": 0
+    }
+  ],
+  "wall_s": 3.34
+}

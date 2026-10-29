@@ -1,0 +1,107 @@
+{
+  "ai_verdicts_provided": false,
+  "approved_scope": {
+    "ai_self_labelling_as_annotator2": false,
+    "frozen_raw_tests_rewritten": false,
+    "gate_3c2_execution": false,
+    "gemini_or_r2": false,
+    "git_commit_or_add": false,
+    "historical_gold_modified": false,
+    "modify_historical_frozen_artifacts": false,
+    "new_data_collection": false,
+    "new_issues": 0,
+    "real_model_calls": 0,
+    "spend_usd": 0.0
+  },
+  "design_version": "groundedreview-gate3c11-zero-api-audit-freeze-v1",
+  "document": "G3-C.1.1 human focused-review addendum (approver Risk B + section II.1)",
+  "focused_items": [
+    {
+      "ai_determination": null,
+      "before_after_assertion_evidence": {
+        "strengthened_frozen_probe": "probes/sympy__sympy-19495.py",
+        "three_strengthened_assertions": [
+          "(1) if a ConditionSet survives, its bound dummy args[0] must remain a Symbol (rejects the observed ConditionSet(1/3, ...)).",
+          "(2) plain cs.subs(y,1/3) must equal the report's own correct reference via xreplace and simultaneous=True.",
+          "(3) no free substituted symbol y may remain in the result."
+        ],
+        "weak_assertion_behavior": "printed 'OK: ConditionSet.subs returns a well-formed set' at BOTH baseline (malformed ConditionSet(1/3,...)) and post-candidate (correct ImageSet), so it could not distinguish them and exited 0 twice.",
+        "weak_probe_observed_output": {
+          "baseline_probe_passed": true,
+          "file": "g3c1_failures.jsonl",
+          "post_candidate_probe_passed": true,
+          "recorded_at": "2026-10-28T09:48:33+00:00",
+          "stage": "probe_flip_gate"
+        }
+      },
+      "blind_packet": "G3-C.1 packet P02 (identity sealed from annotator2)",
+      "frozen_probe_not_modified_by_this_gate": true,
+      "human_decision": "PENDING",
+      "human_required": true,
+      "id": "FR1_probe_19495_instrument_vs_oracle_redefinition",
+      "instance_id": "sympy__sympy-19495",
+      "question": "Was the probe strengthening a correction of the TEST INSTRUMENT only, or did observing the candidate patch succeed lead to a selective post-hoc redefinition of the acceptability oracle?",
+      "revision_timeline_utc": {
+        "all_8_flip_selftest_mtime": "2026-10-28T09:54:50Z",
+        "build_session_end": "2026-10-28T10:16:07Z",
+        "first_real_pytest_build_for_19495": "2026-10-28T10:15:07Z",
+        "frozen_strengthened_probe_file_mtime": "2026-10-28T09:51:02Z",
+        "ordering_finding": "probe strengthened ~2m29s after the flip-gate stop and ~24 minutes BEFORE the real pytest build that accepted the issue; the revision therefore predates formal build/patch-success evidence.",
+        "weak_probe_both_pass_failure_record": "2026-10-28T09:48:33Z"
+      },
+      "triggered_by": "Approver Risk B (Gate G3-C.1 acceptance memo)",
+      "what_the_human_must_verify": [
+        "The three strengthened assertions are independently derivable from the PUBLIC issue report alone (bound ConditionSet dummy must remain a Symbol; plain .subs must equal the report's xreplace / simultaneous=True references; no free substituted symbol remains).",
+        "No assertion was chosen because it happens to pass on the candidate while excluding the baseline; the assertion must distinguish the two on the report-stated semantics.",
+        "The maintainer test_patch/test_subs_CondSet was not consulted (recorded maintainer_test_patch_consulted=False).",
+        "The original failure record was retained unaltered and the issue was kept rather than swapped to an easier one."
+      ]
+    },
+    {
+      "ai_determination": null,
+      "blind_packets": {
+        "14248": "G3-C.1 P01",
+        "15875": "G3-C.1 P08"
+      },
+      "evidence_summary": {
+        "14248": {
+          "declared_f2p_still_failing": [
+            "test_MatrixSymbol_printing"
+          ],
+          "failure_mode": "declared F2P still fails AND two fresh scoped P2P regressions (jointly decisive)",
+          "preexisting_bad_excluded": [
+            "test_latex_Float"
+          ],
+          "scoped_p2p_regressions": [
+            "test_haramard",
+            "test_matMul"
+          ]
+        },
+        "15875": {
+          "declared_f2p_still_failing": [
+            "test_Add_is_zero"
+          ],
+          "failure_mode": "single decisive declared F2P failure; 0 declared scoped regressions",
+          "preexisting_bad_excluded": [],
+          "scoped_p2p_regressions": [],
+          "undeclared_collateral_disclosed": [
+            "test_nfloat",
+            "test_subs_in_derivative"
+          ]
+        }
+      },
+      "human_decision": "PENDING",
+      "human_required": true,
+      "id": "FR2_two_rejects_same_acceptability_standard",
+      "instances": [
+        "sympy__sympy-14248",
+        "sympy__sympy-15875"
+      ],
+      "question": "Do 14248 and 15875 apply the SAME acceptability standard, or do the different failure modes imply different oracle rules that should be pre-registered separately before expansion?",
+      "rubric_hypothesis_to_confirm": "The frozen rubric REJECTS if there is AT LEAST ONE decisive applicable failure (persistent declared F2P OR scoped P2P regression); under that single disjunctive rule both cases are REJECT for the same reason. The human must confirm the disjunction is intended uniformly and not retrofit to the cases.",
+      "triggered_by": "Approver section II.1 (Gate G3-C.1 acceptance memo)"
+    }
+  ],
+  "note": "The AI assembles evidence only; FR1/FR2 are left PENDING for the real annotator2 and, on disagreement, the third senior human. These items are in addition to the 18-packet three-label review and must be answered before G3-C.2.",
+  "protocol_version": "g3c11-protocol-v1"
+}

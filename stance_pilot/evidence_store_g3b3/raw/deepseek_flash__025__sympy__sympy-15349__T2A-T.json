@@ -1,0 +1,56 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch corrects the sign of the q.b*q.a term in m12, which is the source of the incorrect positive sin(x) in the reported example. The institutionally attested artifact for exactly this patch/commit shows the full declared set executed with FAIL_TO_PASS 1/1 and scoped PASS_TO_PASS 3/3, all green, with no rendered acceptance failure or scoped regression. This supports that the issue is resolved without introducing regressions.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "cell": "g3b3:sympy__sympy-15349:T2A-T",
+  "condition": "T2A-T",
+  "cost_usd": 0.000643,
+  "evidence_session": null,
+  "evidence_tier": "A",
+  "id": "qwen3_30b_instruct2507_500:sympy__sympy-15349",
+  "instance_id": "sympy__sympy-15349",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010447
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 124,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 1649,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch corrects the sign of the q.b*q.a term in m12, which is the source of the incorrect positive sin(x) in the reported example. The institutionally attested artifact for exactly this patch/commit shows the full declared set executed with FAIL_TO_PASS 1/1 and scoped PASS_TO_PASS 3/3, all green, with no rendered acceptance failure or scoped regression. This supports that the issue is resolved without introducing regressions.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_1dc2b9e38ff27115",
+  "tokens_in": 1649,
+  "tokens_out": 124,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.45
+}

@@ -1,0 +1,40 @@
+{
+  "cell": "g3c1live:sympy__sympy-19040:T3A-T",
+  "condition": "T3A-T",
+  "policy": null,
+  "session_id": "edd1e18a1758d7d79e13bac9",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"b9179e80d2daa1bb6cba1ffe35ca9e6612e115c9\", \"record_patch_sha256\": \"cadf95a1362954e0dab4165d467ba7e147359642f0dc213ded4eb404f3cdaa10\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"f4e726a7c967d5a1d0056469ec4ce81089347638\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"f4e726a7c967d5a1d0056469ec4ce81089347638\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:10:28+00:00\", \"attestation_built_at\": \"2026-10-28T10:12:00+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 148, \"executed\": 148, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"executed acceptance/regression checks show no failure\", \"failed_acceptance_checks\": 0, \"regression_checks\": 0, \"executed_checks\": 149}"
+    }
+  ],
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is fully linked to this patch and commit, is fresh for the current tree, and covers the full declared acceptance and regression test set. All executed acceptance checks pass with no failures or regressions. The author statement is consistent with the evidence. The patch correctly fixes the issue of factor dropping a factor with extension=True as demonstrated by the added test and passing tests.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+  "parsed": "ACCEPT",
+  "fresh_state_served": "TRUE",
+  "error": null
+}

@@ -1,0 +1,75 @@
+\section{Ablations and Instrument Findings}
+\label{sec:ablations}
+
+\subsection{Static vs.\ active restricted access}
+\label{sec:mechanism}
+All unsupported commitments arise on the \emph{active} strict condition; the
+static restricted condition is $10/10$ correct for both models. A partially
+blind coding of GPT's seven strict accepts (codebook frozen before coding;
+packets masked D01--D07) assigns the primary code \textbf{C3}---treating
+\emph{absence of failure evidence as evidence of absence}---to all seven,
+co-firing C1 (symptom resolution), C2 (coverage completeness), and C5
+(provenance/freshness); \textbf{C4} (explicitly acknowledging the withholding)
+never fires. This is a \emph{single AI rule-based coder with no independent
+human coder}, so it is a qualitative hypothesis only. Moreover activeness,
+freshness, and trust changed together across protocol versions, so the
+active/static comparison is confounded; an activeness-only controlled arm
+(freshness and trust held fixed) is required before calling this a demonstrated
+mechanism.
+
+\subsection{Instrument residual: baseline P2P projection gap}
+The tier-1 non-interference scan was $61/61$ clean, but a tier-2 minimisation
+found the \emph{pre-patch} \texttt{pass\_to\_pass\_baseline} per-test map
+surviving the tier-D projection (all \textsc{Pass}, zero \textsc{Fail}). It
+cannot reconstruct gold (the post-patch P2P map is removed), was reachable only
+by explicit fetch, and was seen by none of the seven error cells: the single GPT
+cell that saw it (20590) abstained, and DeepSeek saw it in eight cells and
+abstained throughout. It therefore has no causal link to the reported errors,
+but it is a disclosed non-interference imperfection and is mandated for removal
+before the next live run. The corrected v2 projection used for the prepared
+80-cell validation bed removes this field on every tool path
+(Section~\ref{sec:validation}).
+
+\subsection{Independent-issue pilot status}
+The eight G3-C.1 issues rest on 40 gold certificates, evidence projections
+with $144/144$ clean restricted surfaces (224 surfaces total), $456/456$ HTTP
+cross-checks, and frozen manifests. This measurement bed was subsequently
+exercised by the live 80-cell run (Section~\ref{sec:e80}). Mock cells used
+during engineering contribute \emph{zero} model-performance datapoints, are
+not used to fill any results cell, and are excluded from research analysis;
+every reported datapoint comes from a real, raw-first-persisted model
+response.
+
+\subsection{External validation: engineering readiness and live execution}
+\label{sec:validation}
+An 80-cell external validation on the eight new issues (2 models $\times$
+5 conditions $\times$ 8 issues) was engineered, cleared every offline gate at
+\$0, received separate written authorization, and then ran to completion
+(Section~\ref{sec:e80}). Pre-paid readiness checks reported:
+\begin{itemize}[leftmargin=1.6em,itemsep=1pt,topsep=2pt]
+  \item \textbf{non-interference:} 224 surfaces probed; 144 restricted
+  tier-D; \textbf{0} tier-1, \textbf{0} tier-2, \textbf{0} baseline, and
+  \textbf{0} hidden-gold exposures; $40/40$ dedicated mock gold alignments
+  ($64/64$ non-Escalate cells through the generic script);
+  \item \textbf{protocol:} strict 403 on all 8 restricted fetches; escalation
+  400-without-reason then 200-with-reason on all 8; v2 projection tag present;
+  \item \textbf{model id:} exact served-id match, hard stop on drift, no false
+  trip when id absent;
+  \item \textbf{budget/resume/raw-first:} guards at \$2.00 total / \$1.00 per
+  model (allow + per-cell cap + per-model block + total block, both models);
+  resume restores accumulated spend and refuses NaN/Inf/negative ledgers;
+  raw-first persistence sha-verified on all 80 raw artifacts before scoring.
+\end{itemize}
+The pre-run engineering verdict was \texttt{ENGINEERING\_READY}, with three
+\emph{non-engineering} items tracked in
+\path{paper_sprint/experiment80/READINESS.md}: (i)~\textbf{authorization}
+for live model calls, since granted in writing for 80 cells at the
+\$2.00/\$1.00 caps; (ii)~\textbf{gold authority}---\texttt{annotator2 =
+NOT\_OBTAINED}, so the run is reported as a \emph{Provisional-Gold Exploratory
+Evaluation}, not human-arbitrated benchmark validation (PROVISIONAL by
+design); and (iii)~\textbf{runner binding}---a dedicated live runner
+(\texttt{g3c1live-runner-v1}), instantiated for the eight G3-C.1 issues at
+\$2.00/\$1.00 and fingerprinted pre-run, rather than the frozen G3-B.3
+entrypoint (which defaults to \$3.00/\$1.50 and the G3-A store). The bound
+runner completed $80/80$ cells, 162 calls, spend \$0.258198, with zero
+retries, terminal errors, response-format downgrades, and resume-skips.

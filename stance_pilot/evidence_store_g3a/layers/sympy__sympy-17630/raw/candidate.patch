@@ -1,0 +1,63 @@
+diff --git a/sympy/matrices/expressions/blockmatrix.py b/sympy/matrices/expressions/blockmatrix.py
+index 95302a05ca..95b52c777c 100644
+--- a/sympy/matrices/expressions/blockmatrix.py
++++ b/sympy/matrices/expressions/blockmatrix.py
+@@ -1,6 +1,6 @@
+ from __future__ import print_function, division
+ 
+-from sympy import ask, Q
++from sympy import ask, Q, S
+ from sympy.core import Basic, Add
+ from sympy.core.compatibility import range
+ from sympy.strategies import typed, exhaust, condition, do_one, unpack
+@@ -164,7 +164,21 @@ def structurally_equal(self, other):
+     def _blockmul(self, other):
+         if (isinstance(other, BlockMatrix) and
+                 self.colblocksizes == other.rowblocksizes):
+-            return BlockMatrix(self.blocks*other.blocks)
++            blocks = self.blocks*other.blocks
++            # Convert scalar Zero to ZeroMatrix
++            from sympy.matrices.immutable import ImmutableDenseMatrix
++            if isinstance(blocks, ImmutableDenseMatrix):
++                new_blocks = [[None for j in range(blocks.shape[1])] 
++                              for i in range(blocks.shape[0])]
++                for i in range(blocks.shape[0]):
++                    for j in range(blocks.shape[1]):
++                        block = blocks[i, j]
++                        if block == S.Zero:
++                            block = ZeroMatrix(self.rowblocksizes[i], 
++                                             other.colblocksizes[j])
++                        new_blocks[i][j] = block
++                blocks = ImmutableDenseMatrix(new_blocks, evaluate=False)
++            return BlockMatrix(blocks)
+ 
+         return self * other
+ 
+diff --git a/sympy/matrices/expressions/tests/test_blockmatrix.py b/sympy/matrices/expressions/tests/test_blockmatrix.py
+index 1e1033affc..e954fa3cd1 100644
+--- a/sympy/matrices/expressions/tests/test_blockmatrix.py
++++ b/sympy/matrices/expressions/tests/test_blockmatrix.py
+@@ -222,3 +222,23 @@ def test_block_collapse_type():
+     assert block_collapse(Transpose(bm1)).__class__ == BlockDiagMatrix
+     assert bc_transpose(Transpose(bm1)).__class__ == BlockDiagMatrix
+     assert bc_inverse(Inverse(bm1)).__class__ == BlockDiagMatrix
++
++def test_BlockMatrix_ZeroMatrix_blocks():
++    # Test that multiplying BlockMatrix with ZeroMatrix blocks works correctly
++    # Issue: https://github.com/sympy/sympy/issues/17630
++    from sympy.matrices.expressions import ZeroMatrix
++    a = MatrixSymbol('a', 2, 2)
++    z = ZeroMatrix(2, 2)
++    b = BlockMatrix([[a, z], [z, z]])
++    
++    # Single multiplication should work
++    result1 = block_collapse(b * b)
++    assert result1 == BlockMatrix([[a**2, z], [z, z]])
++    
++    # Multiple multiplications should work without throwing exceptions
++    result2 = block_collapse(b * b * b)
++    assert result2 == BlockMatrix([[a**3, z], [z, z]])
++    
++    # Test _blockmul directly
++    result3 = b._blockmul(b)._blockmul(b)
++    assert result3 == BlockMatrix([[a**3, z], [z, z]])

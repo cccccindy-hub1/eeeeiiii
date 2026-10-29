@@ -1,0 +1,54 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch addresses the issue by converting scalar Zero to ZeroMatrix in block multiplication, and the test added covers the reported issue scenario. The test artifact shows all scoped PASS_TO_PASS tests passed, but one FAIL_TO_PASS test (test_zero_matrix_add) failed. It is unclear if this failure is related to the patch or the issue at hand. The declared acceptance set includes test_zero_matrix_add, which failed, so the acceptance set is not fully successful. Therefore, the evidence coverage is incomplete for acceptance. Without a fully passing acceptance test suite, the patch cannot be accepted yet. More evidence is needed to confirm that the patch resolves the issue without regressions.\",\"evidence_mismatch\":false,\"missing_evidence\":\"full acceptance test pass including test_zero_matrix_add\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "cell": "g3b3:sympy__sympy-17630:T2A-T",
+  "condition": "T2A-T",
+  "cost_usd": 0.00148,
+  "evidence_session": null,
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-17630",
+  "instance_id": "sympy__sympy-17630",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.014632
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 172,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 3011,
+      "raw_content": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch addresses the issue by converting scalar Zero to ZeroMatrix in block multiplication, and the test added covers the reported issue scenario. The test artifact shows all scoped PASS_TO_PASS tests passed, but one FAIL_TO_PASS test (test_zero_matrix_add) failed. It is unclear if this failure is related to the patch or the issue at hand. The declared acceptance set includes test_zero_matrix_add, which failed, so the acceptance set is not fully successful. Therefore, the evidence coverage is incomplete for acceptance. Without a fully passing acceptance test suite, the patch cannot be accepted yet. More evidence is needed to confirm that the patch resolves the issue without regressions.\",\"evidence_mismatch\":false,\"missing_evidence\":\"full acceptance test pass including test_zero_matrix_add\",\"evidence_gap\":\"coverage_incomplete\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_ce28321699c17b17",
+  "tokens_in": 3011,
+  "tokens_out": 172,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.82
+}

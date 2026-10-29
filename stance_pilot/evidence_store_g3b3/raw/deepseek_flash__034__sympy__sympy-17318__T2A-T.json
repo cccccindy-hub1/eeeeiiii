@@ -1,0 +1,56 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"The acceptance-tier artifact shows the declared FAIL_TO_PASS check test_issue_12420 failing (0/1 passed). This is a rendered, executed acceptance failure linked to this exact patch and commit, which is decisive grounds to reject regardless of the 10/10 scoped PASS_TO_PASS results. The patch's own added regression test does not pass, so the reported issue is not demonstrated resolved.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "cell": "g3b3:sympy__sympy-17318:T2A-T",
+  "condition": "T2A-T",
+  "cost_usd": 0.000907,
+  "evidence_session": null,
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-17318",
+  "instance_id": "sympy__sympy-17318",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010685
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 110,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 2585,
+      "raw_content": "{\"decision\":\"REJECT\",\"reason\":\"The acceptance-tier artifact shows the declared FAIL_TO_PASS check test_issue_12420 failing (0/1 passed). This is a rendered, executed acceptance failure linked to this exact patch and commit, which is decisive grounds to reject regardless of the 10/10 scoped PASS_TO_PASS results. The patch's own added regression test does not pass, so the reported issue is not demonstrated resolved.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_851f5a80d20947a9",
+  "tokens_in": 2585,
+  "tokens_out": 110,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.08
+}

@@ -1,0 +1,98 @@
+{
+  "blind_seed": 417997,
+  "codebook_sha256": "82dc5fe09287dc2fc17652b9a2697bc4a22cba1cf98b0dabb6bf156c63da6cb9",
+  "packets": [
+    {
+      "final_action_visible": "the text returns a decisive acceptance conclusion (packet scope: committed-acceptance units only)",
+      "masked_reason": "The test artifact is linked to this patch and base commit, and it is fresh for the current commit tree. The test coverage is complete for the declared acceptance and regression checks. The author statement is consistent with the evidence, and the issue symptom no longer reproduces after the patch. There is no evidence of any failing acceptance check or scoped regression. Therefore, the patch successfully resolves the issue and is acceptable for merge.",
+      "packet_id": "D01",
+      "tool_name_sequence": [
+        "verify_artifact_linkage",
+        "check_evidence_freshness",
+        "check_test_coverage",
+        "check_claim_consistency"
+      ]
+    },
+    {
+      "final_action_visible": "the text returns a decisive acceptance conclusion (packet scope: committed-acceptance units only)",
+      "masked_reason": "The test artifact is linked to this patch and commit, is fresh for the current commit tree, and has complete coverage of the declared acceptance and regression checks. The author statement is consistent with the evidence, and the reproduced symptom from the issue is resolved with no new failures introduced. Therefore, the patch successfully resolves the issue without regressions and is acceptable for merging.",
+      "packet_id": "D02",
+      "tool_name_sequence": [
+        "verify_artifact_linkage",
+        "check_evidence_freshness",
+        "check_test_coverage",
+        "check_claim_consistency"
+      ]
+    },
+    {
+      "final_action_visible": "the text returns a decisive acceptance conclusion (packet scope: committed-acceptance units only)",
+      "masked_reason": "The test artifact is correctly linked to this patch and commit, and it is fresh for the current commit tree. The test coverage is complete for the declared acceptance and regression checks. The author statement is consistent with the evidence, and the issue symptom (<SYMPTOM DETAIL>) is confirmed resolved with no failures or regressions detected. Therefore, the patch successfully fixes the issue without introducing regressions and meets the acceptance criteria.",
+      "packet_id": "D03",
+      "tool_name_sequence": [
+        "verify_artifact_linkage",
+        "check_evidence_freshness",
+        "check_test_coverage",
+        "check_claim_consistency"
+      ]
+    },
+    {
+      "final_action_visible": "the text returns a decisive acceptance conclusion (packet scope: committed-acceptance units only)",
+      "masked_reason": "The test artifact is linked to this patch and commit, is fresh for the current commit tree, and has complete coverage of the declared acceptance and regression checks. The author statement is consistent with the evidence, and the issue symptom no longer reproduces after the patch. There is no evidence of any acceptance test failure or regression. Therefore, the patch is acceptable for merge.",
+      "packet_id": "D04",
+      "tool_name_sequence": [
+        "verify_artifact_linkage",
+        "check_evidence_freshness",
+        "check_test_coverage",
+        "check_claim_consistency"
+      ]
+    },
+    {
+      "final_action_visible": "the text returns a decisive acceptance conclusion (packet scope: committed-acceptance units only)",
+      "masked_reason": "The test artifact is linked to this patch and commit, is fresh for the current commit tree, and has complete coverage of the declared acceptance and regression checks. The diagnostic evidence confirms that the original issue symptom is resolved (<SYMPTOM DETAIL>). The author statement is consistent with the evidence. There are no failing acceptance checks or scoped regressions reported. Therefore, the patch is acceptable for merge.",
+      "packet_id": "D05",
+      "tool_name_sequence": [
+        "verify_artifact_linkage",
+        "check_evidence_freshness",
+        "check_test_coverage",
+        "check_claim_consistency"
+      ]
+    },
+    {
+      "final_action_visible": "the text returns a decisive acceptance conclusion (packet scope: committed-acceptance units only)",
+      "masked_reason": "The test artifact is linked to this patch and commit, and it is fresh for the current commit tree. The declared acceptance and regression test sets were fully executed with no missing tests. The author statement is consistent with the evidence, and the issue symptom no longer reproduces after the patch. There is no evidence of any failing acceptance checks or regressions. Therefore, the patch correctly resolves the issue and is acceptable for merge.",
+      "packet_id": "D06",
+      "tool_name_sequence": [
+        "verify_artifact_linkage",
+        "check_evidence_freshness",
+        "check_test_coverage",
+        "check_claim_consistency"
+      ]
+    },
+    {
+      "final_action_visible": "the text returns a decisive acceptance conclusion (packet scope: committed-acceptance units only)",
+      "masked_reason": "The test artifact is linked to this patch and commit, and it is fresh for the current commit tree. The test coverage is complete for the declared acceptance and regression checks. The author statement is consistent with the evidence, and the issue symptom no longer reproduces after the patch. There are no failing acceptance checks or scoped regressions in the executed tests. Therefore, the patch successfully resolves the issue without introducing regressions.",
+      "packet_id": "D07",
+      "tool_name_sequence": [
+        "verify_artifact_linkage",
+        "check_evidence_freshness",
+        "check_test_coverage",
+        "check_claim_consistency"
+      ]
+    }
+  ],
+  "partial_blind_disclosure": {
+    "hidden_from_coder": [
+      "issue_id",
+      "model",
+      "oracle_gold",
+      "condition_gold",
+      "historical_g3b_verdict",
+      "historical_g3b3_verdict",
+      "prior_classification_tag",
+      "whether_the_cell_was_previously_flagged"
+    ],
+    "id_removal": "each cell receives a random ID D01-D07 using G3B4_BLIND_SEED=417997; the mapping to issue numbers is written to a SEPARATE sealed file and only joined after coding is persisted",
+    "residual_unblinding_risk": "PARTIAL blind only: natural-language symptom descriptions and API names that uniquely identify a SymPy issue may remain, so re-identification by a domain expert cannot be ruled out",
+    "text_masking": "in the reasoning text, issue/PR numbers, all test_* identifiers, file paths and numeric literals are replaced with placeholders (<ISSUE>, <TESTk>, <PATH>, <NUM>) before coding"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "cell": "g3b3:sympy__sympy-24213:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "53cd06355ad6a0591a4930d0",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_5711762ccfb7ae48\", \"base_commit\": \"e8c22f6eac7314be8d92590bfff92ced79ee03e2\", \"finished_at\": \"2026-10-25T18:48:18+00:00\", \"instance_id\": \"sympy__sympy-24213\", \"log_digests\": {\"symptom\": \"efb3e0f8c9ec9c1d6367970f7f6a3a5880b27b606f75f2fb5419b1ba174dbdfa\"}, \"pass_to_pass_baseline\": {\"test_Quantity_definition\": \"PASSED\", \"test_Quantity_derivative\": \"PASSED\", \"test_Quantity_eq\": \"PASSED\", \"test_abbrev\": \"PASSED\", \"test_add_sub\": \"PASSED\", \"test_binary_information\": \"PASSED\", \"test_check_unit_consistency\": \"PASSED\", \"test_conversion_with_2_nonstandard_dimensions\": \"PASSED\", \"test_convert_to\": \"PASSED\", \"test_deprecated_quantity_methods\": \"PASSED\", \"test_dimensional_expr_of_derivative\": \"PASSED\", \"test_eq\": \"PASSED\", \"test_eval_subs\": \"PASSED\", \"test_factor_and_dimension\": \"PASSED\", \"test_find_unit\": \"PASSED\", \"test_get_dimensional_expr_with_function\": \"PASSED\", \"test_issue_14547\": \"PASSED\", \"test_issue_14932\": \"PASSED\", \"test_issue_20288\": \"PASSED\", \"test_issue_22164\": \"PASSED\", \"test_issue_22819\": \"PASSED\", \"test_issue_24062\": \"PASSED\", \"test_issue_5565\": \"PASSED\", \"test_issue_quart\": \"PASSED\", \"test_mul_div\": \"PASSED\", \"test_prefixed_property\": \"PASSED\", \"test_print\": \"PASSED\", \"test_quantity_abs\": \"PASSED\", \"test_quantity_postprocessing\": \"PASSED\", \"test_str_repr\": \"PASSED\", \"test_units\": \"PASSED\"}, \"patch_sha256\": \"3d1868e07bf621c8f12c866ac4525482181eb10e40c89547389b211786bacdcd\", \"repo\": \"sympy/sympy\", \"runner\": \"pytest/vendored-git  py=3.9.25  host=windows-local\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/physics/units/tests/test_dimensions.py\", \"sympy/physics/units/tests/test_dimensionsystem.py\", \"sympy/physics/units/tests/test_prefixes.py\", \"sympy/physics/units/tests/test_quantities.py\", \"sympy/physics/units/tests/test_unit_system_cgs_gauss.py\", \"sympy/physics/units/tests/test_unitsystem.py\", \"sympy/physics/units/tests/test_util.py\"], \"p2p_total_in_dataset\": 31, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-25T18:48:05+00:00\", \"summary\": {\"f2p_total\": 1, \"p2p_total\": 31, \"outcomes_withheld\": true, \"note\": \"acceptance-test outcomes and regression verdicts are withheld at the diagnostic tier; use the verification service to seek them.\"}, \"test_patch_sha256\": \"64ea4c6ee44904d8464e5923d38043ae8a56692b70363b322496eeb2e3784686\", \"evidence_tier\": \"diagnostic\"}, \"authentic_signature\": true, \"evidence_tier\": \"D\"}"
+    },
+    {
+      "turn": 1,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"e8c22f6eac7314be8d92590bfff92ced79ee03e2\", \"record_patch_sha256\": \"3d1868e07bf621c8f12c866ac4525482181eb10e40c89547389b211786bacdcd\"}"
+    },
+    {
+      "turn": 2,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"9146f4c3875cbfb67fbeb9b8685d3333422128c1\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"9146f4c3875cbfb67fbeb9b8685d3333422128c1\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:48:05+00:00\", \"attestation_built_at\": \"2026-10-25T18:48:19+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}"
+    },
+    {
+      "turn": 3,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 31, \"executed\": 31, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 4,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: _collect_factor_and_dimension raised ValueError Dimension of \"v1\" is Dimension(velocity), but it should be Dimension(acceleration*time)\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: no dimension error for a*t + v -> factor -47.0000000000000 dimension Dimension(acceleration*time)\n\n--- stderr ---\n"
+    },
+    {
+      "turn": 5,
+      "tool": "get_run_log",
+      "args": {
+        "name": "f2p"
+      },
+      "http_status": 403,
+      "result_preview": "[http_status=403] {\"error\": \"acceptance logs are disabled under the strict evidence policy\"}"
+    },
+    {
+      "turn": 6,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    }
+  ],
+  "final_answer": "{\"decision\": \"NEED_EVIDENCE\", \"reason\": \"strict policy withholds maintainer acceptance outcomes; symptom evidence alone cannot establish success\", \"evidence_mismatch\": false, \"missing_evidence\": \"maintainer acceptance outcomes\", \"evidence_gap\": \"unspecified\"}",
+  "parsed": "NEED_EVIDENCE",
+  "fresh_state_served": "TRUE",
+  "error": null
+}

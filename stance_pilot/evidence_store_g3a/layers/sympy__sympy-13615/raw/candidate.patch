@@ -1,0 +1,39 @@
+diff --git a/sympy/sets/sets.py b/sympy/sets/sets.py
+index 917717bb7..2c0651649 100644
+--- a/sympy/sets/sets.py
++++ b/sympy/sets/sets.py
+@@ -217,7 +217,33 @@ def _complement(self, other):
+             return S.EmptySet
+ 
+         elif isinstance(other, FiniteSet):
+-            return FiniteSet(*[el for el in other if self.contains(el) != True])
++            # Partition elements based on membership in self
++            # Elements definitely in self (c is S.true) are removed
++            # Elements definitely not in self (c is S.false) are kept
++            # Elements with uncertain membership are kept in a Complement
++            definitely_not_in = []
++            uncertain = []
++            for el in other:
++                c = sympify(self.contains(el))
++                if c is S.false:
++                    definitely_not_in.append(el)
++                elif c is not S.true:
++                    uncertain.append(el)
++            
++            if uncertain:
++                # Some elements have uncertain membership
++                # Result should be Complement of all non-definitely-in elements
++                sifted = definitely_not_in + uncertain
++                if sifted == list(other.args):
++                    # No elements were definitely in, return unevaluated Complement
++                    return None
++                return Complement(FiniteSet(*sifted), self, evaluate=False)
++            elif definitely_not_in:
++                # All remaining elements are definitely not in
++                return FiniteSet(*definitely_not_in)
++            else:
++                # All elements were definitely in
++                return S.EmptySet
+ 
+     def symmetric_difference(self, other):
+         """

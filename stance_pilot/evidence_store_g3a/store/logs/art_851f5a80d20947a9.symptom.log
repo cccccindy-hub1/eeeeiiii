@@ -1,0 +1,14 @@
+### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+FAIL: sqrtdenest raised IndexError tuple index out of range
+
+--- stderr ---
+
+
+### POST candidate patch
+$ python probe.py  (exit 0)
+--- stdout ---
+OK: sqrtdenest no crash -> 3 - sqrt(2)*sqrt(4 + I) + 3*I
+
+--- stderr ---

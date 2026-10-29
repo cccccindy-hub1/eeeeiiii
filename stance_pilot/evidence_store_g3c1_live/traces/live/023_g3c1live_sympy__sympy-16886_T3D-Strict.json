@@ -1,0 +1,47 @@
+{
+  "cell": "g3c1live:sympy__sympy-16886:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "6883234558a4d9c8f2a2d3b1",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_cf228260cdf9b995\", \"base_commit\": \"c50643a49811e9fe2f4851adff4313ad46f7325e\", \"finished_at\": \"2026-10-28T10:10:10+00:00\", \"instance_id\": \"sympy__sympy-16886\", \"log_digests\": {\"symptom\": \"da1eec9c6b030bba0876b251a60971b21b6e5576c5f9df641c692c4e2c4d899d\"}, \"patch_sha256\": \"a50328b99218b5ba1700715b18873104fd3521660e654c38c0d041a458b15849\", \"repo\": \"sympy/sympy\", \"runner\": \"pytest/vendored-git  py=3.9.25  host=windows-local  gate=G3-C.1\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/crypto/tests/test_crypto.py\"], \"p2p_total_in_dataset\": 42, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-28T10:09:50+00:00\", \"summary\": {\"f2p_total\": 1, \"p2p_total\": 42, \"outcomes_withheld\": true, \"note\": \"acceptance-test outcomes and regression verdicts are withheld at the diagnostic tier; use the verification service to seek them.\"}, \"test_patch_sha256\": \"2b098bb6326a2da6b4e999419a98d1cfefb7f1ca10c329a4b06aca7d2788ec58\", \"evidence_tier\": \"diagnostic\", \"projection_version\": \"diagnostic-v2-no-baseline-map-v1\"}, \"authentic_signature\": true, \"evidence_tier\": \"D\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"c50643a49811e9fe2f4851adff4313ad46f7325e\", \"record_patch_sha256\": \"a50328b99218b5ba1700715b18873104fd3521660e654c38c0d041a458b15849\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"5440049ab0b9a9582894155ae4bdac6457928455\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"5440049ab0b9a9582894155ae4bdac6457928455\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:09:50+00:00\", \"attestation_built_at\": \"2026-10-28T10:10:11+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 42, \"executed\": 42, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    }
+  ],
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The test artifact is linked to this patch and is fresh for the current commit tree. The declared acceptance and regression test coverage is complete. The author statement about the fix is consistent with the evidence that the issue symptom no longer reproduces. However, acceptance test outcomes and regression verdicts are withheld at the diagnostic evidence tier, so there is no trustworthy evidence available to confirm that all acceptance checks pass and no regressions are introduced. Therefore, more evidence is needed to reach a conclusive decision on merge acceptability.\",\"evidence_mismatch\":false,\"missing_evidence\":\"acceptance test outcomes and regression verdicts\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "fresh_state_served": "TRUE",
+  "error": null
+}

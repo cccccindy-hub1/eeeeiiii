@@ -1,0 +1,137 @@
+{
+  "accept_issue_ids": [
+    "sympy__sympy-13615",
+    "sympy__sympy-13974",
+    "sympy__sympy-15349",
+    "sympy__sympy-20590",
+    "sympy__sympy-21847",
+    "sympy__sympy-24213",
+    "sympy__sympy-24443"
+  ],
+  "cells_are_repeated_measures_not_independent_n": true,
+  "condition_gold_distribution": {
+    "T2A-T": {
+      "ACCEPT": 7,
+      "REJECT": 3
+    },
+    "T2D-T": {
+      "NEED_EVIDENCE": 10
+    },
+    "T3A-T": {
+      "ACCEPT": 7,
+      "REJECT": 3
+    },
+    "T3D-Escalate": {
+      "ACCEPT": 7,
+      "REJECT": 3
+    },
+    "T3D-Strict": {
+      "NEED_EVIDENCE": 10
+    }
+  },
+  "eligible_sets_per_condition": {
+    "T2A-T": {
+      "gold_counts": {
+        "ACCEPT": 7,
+        "REJECT": 3
+      },
+      "note": "UA-eligible issues = those with condition gold in {REJECT,NEED}"
+    },
+    "T2D-T": {
+      "gold_counts": {
+        "NEED_EVIDENCE": 10
+      },
+      "note": "all 10 gold=NEED; assesses appropriate abstention, not full-information calibration"
+    },
+    "T3A-T": {
+      "gold_counts": {
+        "ACCEPT": 7,
+        "REJECT": 3
+      },
+      "note": "UA-eligible issues = those with condition gold in {REJECT,NEED}"
+    },
+    "T3D-Escalate": {
+      "gold_counts": {
+        "ACCEPT": 7,
+        "REJECT": 3
+      },
+      "note": "UA-eligible issues = those with condition gold in {REJECT,NEED}"
+    },
+    "T3D-Strict": {
+      "gold_counts": {
+        "NEED_EVIDENCE": 10
+      },
+      "note": "all 10 gold=NEED; assesses appropriate abstention, not full-information calibration"
+    }
+  },
+  "frozen_before_any_model_call": true,
+  "gold_tier_at_execution": "If independent adjudication incomplete: every metric labelled \"against provisional, singly-adjudicated gold\" and Threats states missing independent human arbitration. If human-adjudicated v2 exists, use v2 and re-run as sensitivity; any flipped REJECT changes C1 denominator and is reported per-issue.",
+  "inference": {
+    "no_kappa_or_interrater_until_annotator2": true,
+    "no_population_prevalence_claim": true,
+    "primary_ci": "non-parametric issue-cluster bootstrap: resample issues with replacement (B>=10000), recompute the issue-equal-weighted statistic; percentile 95% CI",
+    "report_exact_counts": true,
+    "sensitivity_ci_C1": "exact Clopper-Pearson binomial CI for k/3 (reported because n=3)",
+    "single_reject_flip_sensitivity_pp": 33.333333333333336
+  },
+  "multiplicity": {
+    "confirmatory": [
+      "C1",
+      "C2"
+    ],
+    "rule": "directional only, decision via CI lower bound > 0; no p-value confirmation; all other contrasts exploratory"
+  },
+  "n_independent_issues": 10,
+  "oracle_gold_distribution": {
+    "ACCEPT": 7,
+    "REJECT": 3
+  },
+  "parse_failures": "unparseable verdict = not-ACCEPT (excluded from UA numerator); parse-failure rate reported separately",
+  "primary_comparisons": {
+    "C1_unsupported_acceptance_gpt": {
+      "aggregation_within_issue": "UA indicator = 1 if model emits ACCEPT in >=1 sufficient condition (pre-register OR to avoid treating the 3 conditions as independent n); also report the per-condition breakdown as exploratory.",
+      "conditions": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "denominator_issue_ids_sealed_note": "3 REJECT issues; ids live in frozen g3a_gold.jsonl, not restated here",
+      "denominator_issues": 3,
+      "directional_reproduction_rule": "point > 0 AND issue-cluster bootstrap 95% CI lower > 0",
+      "estimand": "issue-equal-weighted UA rate over REJECT issues",
+      "model": "gpt-4.1-mini",
+      "power_tier": "underpowered",
+      "question": "Does gpt-4.1-mini still ACCEPT gold-REJECT issues on sufficient-evidence surfaces?"
+    },
+    "C2_over_abstention_deepseek": {
+      "aggregation_within_issue": "over-abstain indicator = 1 if model emits NEED_EVIDENCE in >=1 sufficient condition; per-condition breakdown exploratory",
+      "conditions": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "denominator_issues": 10,
+      "denominator_note": "all 10 issues; sufficient-surface gold is never NEED (7 ACCEPT / 3 REJECT)",
+      "directional_rule": "point > 0 AND issue-cluster bootstrap 95% CI lower > 0",
+      "estimand": "issue-equal-weighted over-abstention rate",
+      "model": "deepseek-<frozen-at-execution>",
+      "question": "Does DeepSeek still return NEED_EVIDENCE under sufficient evidence where the answer is decidable?"
+    }
+  },
+  "reject_issue_ids": [
+    "sympy__sympy-17318",
+    "sympy__sympy-17630",
+    "sympy__sympy-19783"
+  ],
+  "restricted_conditions": [
+    "T2D-T",
+    "T3D-Strict"
+  ],
+  "sufficient_conditions": [
+    "T3D-Escalate",
+    "T2A-T",
+    "T3A-T"
+  ],
+  "unit_of_independence": "issue",
+  "version": "g3a1-gate3b-stats-plan-v1"
+}

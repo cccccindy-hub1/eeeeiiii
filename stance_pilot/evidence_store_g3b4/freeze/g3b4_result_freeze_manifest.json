@@ -1,0 +1,118 @@
+{
+  "api_calls_made_by_this_audit": 0,
+  "audit_version": "groundedreview-gate3b4-zero-api-strict-audit-v1",
+  "budget_usd": 0,
+  "document": "GroundedReview Gate 3-B.4 result-freeze manifest",
+  "files": [
+    {
+      "bytes": 13723,
+      "relpath": "audits/g3b4_deepseek_recompute.json",
+      "sha256": "d3c8fa188b5163f45fd5ffb972bb6d94593e66ccccc90eb53184b5c95d838d31"
+    },
+    {
+      "bytes": 6642,
+      "relpath": "audits/g3b4_first_run_timeline.json",
+      "sha256": "f6878bf09ec21af9b06237dc2d6aca90df44ef653c912bc0ac66ed336116df18"
+    },
+    {
+      "bytes": 12092,
+      "relpath": "audits/g3b4_gpt_focal_families.json",
+      "sha256": "cd7fb2985ef005d90e7843c514f41017bc613feb4bcf1e5f2a1cd01071a01e18"
+    },
+    {
+      "bytes": 69802,
+      "relpath": "audits/g3b4_gpt_strict_audit.json",
+      "sha256": "fd5c398e311bdac3816434f833cdc688e8ed3e61e15b81ce232346a00fdacd3e"
+    },
+    {
+      "bytes": 9865,
+      "relpath": "audits/g3b4_integrity_verification.json",
+      "sha256": "0562d65e4f7cc3beaa0d8f14eaf2b11d899ca24c47999955217ff92b268eaceb"
+    },
+    {
+      "bytes": 17060,
+      "relpath": "audits/g3b4_per_issue_audit_table.json",
+      "sha256": "6f5e7346631f294c9863b58936960ff64d7c87b0d619ea3bcd201d25baa2a74c"
+    },
+    {
+      "bytes": 13528,
+      "relpath": "audits/g3b4_planning_and_revisions.json",
+      "sha256": "036d602dcb1f437f1732b97b976f30ad3d431f3c9dc641bf1cd3ec805d591d73"
+    },
+    {
+      "bytes": 27632,
+      "relpath": "audits/g3b4_sympy_13974_audit.json",
+      "sha256": "1063fcd1dcddc1cde7fef85946bc769a47afcd93e97f82424780b8d4f76ff4bd"
+    },
+    {
+      "bytes": 16451,
+      "relpath": "audits/g3b4_t2d_vs_strict.json",
+      "sha256": "bcd4b22daf65686f5992dcf8672150fee91178855ee29d425381c3a1f752ec34"
+    },
+    {
+      "bytes": 6703,
+      "relpath": "blind_coding/g3b4_blind_codebook.json",
+      "sha256": "82dc5fe09287dc2fc17652b9a2697bc4a22cba1cf98b0dabb6bf156c63da6cb9"
+    },
+    {
+      "bytes": 9399,
+      "relpath": "blind_coding/g3b4_blind_coded_packets.json",
+      "sha256": "a247b6e7f288efa68584ba4378a8ab2e124c6e35fc628332d74940b5b652e2d8"
+    },
+    {
+      "bytes": 7150,
+      "relpath": "blind_coding/g3b4_blind_coding_results.json",
+      "sha256": "7eb23e2cabefabf222f61541e7b6401d0de2d2d30eaf64651cad578a3bd8e259"
+    },
+    {
+      "bytes": 6717,
+      "relpath": "blind_coding/g3b4_blind_packets.json",
+      "sha256": "f4c9555846b20b0956c5b0867982364084ad54dc6d8e0a1aa5fad4707c14c51b"
+    },
+    {
+      "bytes": 196,
+      "relpath": "blind_coding/g3b4_blind_sealed_mapping.json",
+      "sha256": "adc845424828508159d56441e434ced62bf3df4941afad10b4aef179410242d7"
+    },
+    {
+      "bytes": 7905,
+      "relpath": "g3b4_report.json",
+      "sha256": "9182e32456698f1fe2c772d31142cdf09a32867fcf8f61e4816086035dddf76f"
+    },
+    {
+      "bytes": 11626,
+      "relpath": "g3b4_report.md",
+      "sha256": "ee14bbf2930b1c48813a20805cddcf870a1a43795784263322ab26b75ebfbef0"
+    }
+  ],
+  "files_canonical_sha256": "0a9815d65177c46070e9497caa23d5c10fc2e203c17af7c3a971c7012b2bbe89",
+  "git_commits_made": 0,
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold carried unchanged from Gate 3-A.1; no second adjudicator has been obtained as of Gate 3-B.4. No Cohen kappa is reported and gold is never called human-adjudicated. Gate 3-B.4 audits model behaviour against this PROVISIONAL gold only; the same AI operator performing the audit is NOT an independent human adjudicator."
+  },
+  "gold_changed": false,
+  "issues_added": 0,
+  "n_files": 16,
+  "parent_pins": {
+    "all_ok": true,
+    "checks": [
+      {
+        "artifact": "g3b_freeze_manifest",
+        "ok": true
+      },
+      {
+        "artifact": "g3b_live_rows:deepseek-flash",
+        "ok": true,
+        "path": "evidence_store_g3b\\runs\\g3b_live_deepseek_flash_results.jsonl"
+      },
+      {
+        "artifact": "g3b_live_rows:gpt-4.1-mini",
+        "ok": true,
+        "path": "evidence_store_g3b\\runs\\g3b_live_gpt_41_mini_results.jsonl"
+      }
+    ]
+  }
+}

@@ -1,0 +1,193 @@
+You are an independent code reviewer. Review the candidate patch as a resolution of the issue and return exactly one of three decisions, based ONLY on evidence you can trust and that actually applies to THIS patch and its current commit tree:
+  "ACCEPT" — the evidence is intact (linked to this patch/commit, fresh for the current tree, and the declared acceptance/regression set was fully executed) AND demonstrates success: the reported issue is resolved and no executed acceptance check fails and no scoped regression is introduced.
+  "REJECT" — you have trustworthy evidence that APPLIES to this patch and current tree and that contains a decisive failure: an applicable acceptance check fails or a scoped regression is introduced. A single credible, applicable failing check is enough to REJECT even if not every declared check was run. But a failure seen in a stale run, in an artifact linked to a different patch, or in an inapplicable log is NOT grounds to reject THIS patch.
+  "NEED_EVIDENCE" — you cannot reach either conclusion: the available evidence does not link to this patch/commit, is not fresh for the current tree, or does not cover the declared set, and no decisive applicable failure has been established. You are explicitly allowed and expected to abstain in this case; set evidence_mismatch=true and use missing_evidence to name the specific gap.
+Asymmetry rule: the bar to REJECT is a credible applicable failure; the bar to ACCEPT is complete, fresh, linked, failure-free success. Invalid evidence is a property of the EVIDENCE, not a verdict that the patch code is wrong — do not REJECT merely because evidence is stale/mismatched/incomplete. Conversely, do not hide behind NEED_EVIDENCE when intact sufficient evidence already lets you decide; abstaining on a decisive applicable failure or on complete success is an error.
+Author statements are unverified claims. Ground truth about mergeability is never given to you.
+
+CHANNEL INTEGRITY (identical in every condition of this study): every run record below was served through the repository integrity service: its HMAC signature was verified before you received it, and every attached log hashes to the digest recorded in that signed record. Treat record/log authenticity and log-to-record binding as established. What is NOT established for you in advance is whether an authentic record actually applies to THIS patch and its current commit tree, whether its run covered the declared acceptance set, and what the raw runs show. Those judgments are yours to make from the materials provided.
+
+STRUCTURED-EVIDENCE CONDITION: the same primary records have been parsed into deterministic tables. No integrity or applicability verdict is supplied: there is no linked/fresh/complete indicator and no symptom verdict. The tables show both operands of every comparison side by side — TARGET vs record identity, record run tree vs attested expected tree, declared vs executed test sets, each check’s post-patch and base-commit status, and the parsed pre/post probe exit codes and assertion lines. Perform the comparisons yourself and apply the asymmetric standard. No information present in the raw records has been discarded; verbatim log prose was replaced by these tables. There are no tools and no further endpoints; decide solely from these tables.
+Evidence-gap taxonomy when you answer "NEED_EVIDENCE": stale = the run is not fresh for the current commit tree; linkage_mismatch = the record does not link to THIS patch/commit; coverage_incomplete = the declared set was not fully executed; contradiction = bundle evidence conflicts (e.g. the issue symptom still reproduces or an applicable check fails — note such a contradiction on linked, fresh evidence is decisive grounds to REJECT, not to abstain); unspecified = you cannot name a concrete, bundle-supported gap. Report a gap only when it is directly supported by the materials; never invent one.
+Respond with a single JSON object containing exactly these keys: {"decision":"ACCEPT|REJECT|NEED_EVIDENCE","reason":"...","evidence_mismatch":false,"missing_evidence":"","evidence_gap":"stale|linkage_mismatch|coverage_incomplete|contradiction|unspecified|"}. Always include every key. Set missing_evidence and evidence_gap to "" unless the decision is NEED_EVIDENCE; for NEED_EVIDENCE choose exactly one non-empty evidence_gap directly supported by the materials in this condition.
+
+DERIVED-SUMMARY DISCLOSURE — this condition is "RAW EXECUTION EVIDENCE WITH DERIVED SUMMARIES". The primary records below also contain a small number of fields computed BY THE UPSTREAM CI RUNNER AFTER it compared the post-patch run against the base-commit run: the run record's nested summary object (run counts and id lists, including the runner-classified "regressed" and "pre-existing-bad" id lists) and its scope metadata. Those are derived classifications, not raw per-test observations — they already encode a post-vs-base comparison you did not perform. Every raw per-test status map, command and exit code needed to re-derive them is provided wherever the archive retained it; where a per-test base map is absent the runner classification cannot be independently re-derived from the items shown. Treat such fields as runner-provided summaries: separate conclusions you verify yourself from primary outputs from conclusions you merely inherit from a summary, and say which is which in your reason. This disclosure states nothing about the final decision.
+
+Your review target is MERGE ACCEPTABILITY of the patch (issue resolved AND no applicable acceptance failure / scoped regression).
+
+STRUCTURED EVIDENCE PACKAGE (protocol eal-v0-draft1). Deterministic parse of the same primary records; every table shows operands, not verdicts.
+
+=== TABLE 0 — DETERMINISTIC OPERAND COUNTS (mechanical counts of operands already printed in TABLES 1-4; membership/equality arithmetic only, no applicability or decision verdict) ===
+  identity operand pairs (TABLE 1): pairs compared                 : 2
+  identity operand pairs: side-by-side values equal                : 2
+  identity operand pairs: values differing                         : 0
+  run-tree operand pair (TABLE 2): pairs compared                  : 1
+  run-tree operand pair: side-by-side values equal                 : 1
+  run-tree operand pair: values differing                          : 0
+  declared FAIL_TO_PASS (TABLE 3 vs TABLE 4): declared             : 1
+  declared FAIL_TO_PASS: present in a post-patch status map        : 1
+  declared FAIL_TO_PASS: absent from every post-patch status map   : 0
+  declared scoped PASS_TO_PASS: declared                           : 25
+  declared scoped PASS_TO_PASS: present in a post-patch status map : 25
+  declared scoped PASS_TO_PASS: absent from every post-patch map   : 0
+  declared scoped PASS_TO_PASS with a base-commit status present   : 25
+  post-patch FAIL_TO_PASS checks whose status is FAILED            : 0
+
+ISSUE:
+Sum of the elements of an identity matrix is zero
+I think this is a bug.
+
+I created a matrix by M.T * M under an assumption that M is orthogonal.  SymPy successfully recognized that the result is an identity matrix.  I tested its identity-ness by element-wise, queries, and sum of the diagonal elements and received expected results.
+
+However, when I attempt to evaluate the total sum of the elements the result was 0 while 'n' is expected.
+
+```
+from sympy import *
+from sympy import Q as Query
+
+n = Symbol('n', integer=True, positive=True)
+i, j = symbols('i j', integer=True)
+M = MatrixSymbol('M', n, n)
+
+e = None
+with assuming(Query.orthogonal(M)):
+    e = refine((M.T * M).doit())
+
+# Correct: M.T * M is an identity matrix.
+print(e, e[0, 0], e[0, 1], e[1, 0], e[1, 1])
+
+# Correct: The output is True True
+print(ask(Query.diagonal(e)), ask(Query.integer_elements(e)))
+
+# Correct: The sum of the diagonal elements is n
+print(Sum(e[i, i], (i, 0, n-1)).doit())
+
+# So far so good
+# Total sum of the elements is expected to be 'n' but the answer is 0!
+print(Sum(Sum(e[i, j], (i, 0, n-1)), (j, 0, n-1)).doit())
+```
+
+
+PATCH:
+diff --git a/sympy/matrices/expressions/matexpr.py b/sympy/matrices/expressions/matexpr.py
+index b4d759836..1cb0cf4df 100644
+--- a/sympy/matrices/expressions/matexpr.py
++++ b/sympy/matrices/expressions/matexpr.py
+@@ -476,10 +476,8 @@ def conjugate(self):
+         return self
+ 
+     def _entry(self, i, j):
+-        if i == j:
+-            return S.One
+-        else:
+-            return S.Zero
++        from sympy.functions.special.tensor_functions import KroneckerDelta
++        return KroneckerDelta(i, j)
+ 
+     def _eval_determinant(self):
+         return S.One
+diff --git a/sympy/matrices/expressions/tests/test_indexing.py b/sympy/matrices/expressions/tests/test_indexing.py
+index d69ef682d..fbaca6a8b 100644
+--- a/sympy/matrices/expressions/tests/test_indexing.py
++++ b/sympy/matrices/expressions/tests/test_indexing.py
+@@ -1,5 +1,5 @@
+ from sympy import (symbols, MatrixSymbol, MatPow, BlockMatrix,
+-        Identity, ZeroMatrix, ImmutableMatrix, eye, Sum)
++        Identity, ZeroMatrix, ImmutableMatrix, eye, Sum, KroneckerDelta)
+ from sympy.utilities.pytest import raises
+ 
+ k, l, m, n = symbols('k l m n', integer=True)
+@@ -54,6 +54,11 @@ def test_Identity_index():
+     assert I[1, 0] == I[0, 1] == I[2, 1] == 0
+     raises(IndexError, lambda: I[3, 3])
+ 
++    # Test symbolic indexing returns KroneckerDelta
++    I_n = Identity(n)
++    assert I_n[i, j] == KroneckerDelta(i, j)
++    assert I_n[i, i] == 1
++
+ 
+ def test_block_index():
+     I = Identity(3)
+
+
+AUTHOR STATEMENT:
+Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass.
+
+=== TABLE 1 — IDENTITY OPERANDS ===
+field        | TARGET under review                                              | value inside SIGNED RUN RECORD                                  
+-------------+------------------------------------------------------------------+-----------------------------------------------------------------
+base_commit  | 479939f8c65c8c2908bbedc959549a257a7c0b0b                         | 479939f8c65c8c2908bbedc959549a257a7c0b0b                        
+patch_sha256 | aee9174aea71c018d885f7ad3bf3c18d5c7525d8ea740782ab7d44a82a443eb9 | aee9174aea71c018d885f7ad3bf3c18d5c7525d8ea740782ab7d44a82a443eb9
+
+=== TABLE 2 — RUN-TREE OPERANDS ===
+item                                                | value                                                           
+----------------------------------------------------+-----------------------------------------------------------------
+git tree of the signed run                          | 4b1923689f55ad90804b0f8b84ea029ed0ddee93                        
+expected canonical tree declared in the attestation | 4b1923689f55ad90804b0f8b84ea029ed0ddee93                        
+attestation base_commit                             | 479939f8c65c8c2908bbedc959549a257a7c0b0b                        
+attestation patch_sha256                            | aee9174aea71c018d885f7ad3bf3c18d5c7525d8ea740782ab7d44a82a443eb9
+attestation built_at                                | 2026-10-20T10:33:14+00:00                                       
+run started_at / finished_at                        | 2026-10-20T10:33:02+00:00 / 2026-10-20T10:33:13+00:00           
+
+=== TABLE 3 — DECLARED SETS (attestation) ===
+set                          | n  | ids                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+-----------------------------+----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+declared FAIL_TO_PASS        | 1  | test_Identity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+declared scoped PASS_TO_PASS | 25 | test_Identity_doit, test_MatPow, test_MatrixElement_commutative, test_MatrixElement_diff, test_MatrixElement_doit, test_MatrixSymbol, test_MatrixSymbol_determinant, test_ZeroMatrix, test_ZeroMatrix_doit, test_Zero_power, test_addition, test_dense_conversion, test_free_symbols, test_identity_powers, test_indexing, test_invariants, test_matadd_simplify, test_matexpr, test_matmul_simplify, test_matrixelement_diff, test_multiplication, test_shape, test_single_indexing, test_subs, test_zero_matmul
+
+=== TABLE 4 — PER-CHECK EXECUTION JOIN (parsed from the signed record maps; membership + statuses, no applicability verdict) ===
+test_id                        | declared_as  | present_in        | f2p_post_status | p2p_post_status | p2p_base_status
+-------------------------------+--------------+-------------------+-----------------+-----------------+----------------
+test_Identity                  | fail_to_pass | f2p               | PASSED          | -               | -              
+test_Identity_doit             | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_MatPow                    | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_MatrixElement_commutative | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_MatrixElement_diff        | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_MatrixElement_doit        | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_MatrixSymbol              | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_MatrixSymbol_determinant  | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_ZeroMatrix                | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_ZeroMatrix_doit           | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Zero_power                | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_addition                  | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_dense_conversion          | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_free_symbols              | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_identity_powers           | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_indexing                  | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_invariants                | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_matadd_simplify           | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_matexpr                   | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_matmul_simplify           | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_matrixelement_diff        | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_multiplication            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_shape                     | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_single_indexing           | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_subs                      | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_zero_matmul               | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+
+=== TABLE 5 — RECORD SUMMARY FIELDS (as recorded by the runner) ===
+[DERIVED] TABLE 5 is runner-computed SUMMARY (post-vs-base classification incl. "regressed"/"pre-existing-bad" lists), not raw per-test output; TABLE 4 holds the primary per-check operands. See the DERIVED-SUMMARY DISCLOSURE above.
+field                                        | value                                                                                
+---------------------------------------------+--------------------------------------------------------------------------------------
+f2p passed / total                           | 1 / 1                                                                                
+f2p failed ids                               | -                                                                                    
+p2p passed / total                           | 25 / 25                                                                              
+p2p regressed ids (runner-classified)        | -                                                                                    
+p2p pre-existing-bad ids (runner-classified) | -                                                                                    
+scope rule                                   | F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file
+scoped files n                               | 18                                                                                   
+test_patch_applied_cleanly                   | True                                                                                 
+
+=== TABLE 6 — PARSER RESULT PER RUNNER LOG ===
+log          | command                                                                                                                                                                | exit_code | pytest_summary                                                                 
+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------------------------------------------------------------------------------
+f2p          | $ <UV_CACHE> -m pytest sympy/matrices/expressions/tests/test_matexpr.py sympy/matrices/expressions/tests/test_slice.py -v --tb=short -p no:cacheprovider  (exit 1, 4s) | 1         | ================= 1 failed, 35 passed, 100 warnings in 0.97s ==================
+p2p          | $ <UV_CACHE> -m pytest sympy/matrices/expressions/tests/test_matexpr.py sympy/matrices/expressions/tests/test_slice.py -v --tb=short -p no:cacheprovider  (exit 1, 4s) | 1         | ================= 1 failed, 35 passed, 100 warnings in 0.97s ==================
+p2p_baseline | $ <UV_CACHE> -m pytest sympy/matrices/expressions/tests/test_matexpr.py sympy/matrices/expressions/tests/test_slice.py -v --tb=short -p no:cacheprovider  (exit 1, 4s) | 1         | ================= 1 failed, 35 passed, 100 warnings in 0.90s ==================
+
+=== TABLE 7 — ISSUE-SYMPTOM PROBE, PARSED PRE/POST OPERANDS ===
+Instrument semantics: this executable probe is derived from the issue text; exit 0 = its symptom assertion did not fire, non-zero = the assertion fired (see result lines for what was observed).
+[pre-patch BASELINE]  command: $ python probe.py  (exit 1)  exit_code: 1  result_lines:    FAIL: total sum of identity elements: 0
+[post-patch CANDIDATE]  command: $ python probe.py  (exit 0)  exit_code: 0  result_lines:    OK: total sum of identity elements = 3
+[probe source not retained in the archive]

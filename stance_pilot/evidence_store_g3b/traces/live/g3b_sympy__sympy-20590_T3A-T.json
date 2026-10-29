@@ -1,0 +1,40 @@
+{
+  "cell": "g3b:sympy__sympy-20590:T3A-T",
+  "condition": "T3A-T",
+  "policy": null,
+  "session_id": "b4af5f3aef1e7b34244d6031",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"cffd4e0f86fefd4802349a9f9b19ed70934ea354\", \"record_patch_sha256\": \"cdde5cb8b414d4cde27ed573bcfb1e53611e35e94ba9e53fee64cc9cb949bd0d\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": null, \"expected_run_tree\": \"200cac25dc45b4d2de8e10717dce35dbbff3e7be\", \"artifact_started_at\": \"2026-10-25T18:24:50+00:00\", \"attestation_built_at\": \"2026-10-25T18:26:09+00:00\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 21, \"executed\": 21, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"executed acceptance/regression checks show no failure\", \"failed_acceptance_checks\": 0, \"regression_checks\": 0, \"executed_checks\": 22}"
+    }
+  ],
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The test artifact is linked to the patch and covers the declared acceptance and regression checks fully, but the artifact run is not fresh for the current commit tree. Therefore, the evidence cannot be trusted as fully applicable to this patch and current tree. Fresh evidence is needed to confirm the patch's correctness and acceptance.\",\"evidence_mismatch\":true,\"missing_evidence\":\"fresh_test_run\",\"evidence_gap\":\"stale\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

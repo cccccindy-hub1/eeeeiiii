@@ -1,0 +1,128 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is correctly linked to this patch and commit, and it is fresh for the current commit tree. The test coverage is complete for the declared acceptance and regression checks. The author statement is consistent with the evidence, and the issue symptom (IndexError in sqrtdenest) is confirmed resolved with no failures or regressions detected. Therefore, the patch successfully fixes the issue without introducing regressions and meets the acceptance criteria.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+  "cell": "g3b3:sympy__sympy-17318:T3D-Strict",
+  "condition": "T3D-Strict",
+  "cost_usd": 0.002716,
+  "evidence_session": "f1ae8fc0a84d290e65462c6c",
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-17318",
+  "instance_id": "sympy__sympy-17318",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 2,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": "strict",
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.014237,
+    0.014513
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 72,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 2748,
+      "raw_content": "",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_HtkBLaiUV92cqUMA15XnD06y",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_yBZUZFppNYS3bq7YFNypJiLO",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_GsVQt3nRdg5Fjcng0RbjJAoA",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_pN4EY8vuHyzHeWGGzFMQUJfz",
+          "name": "check_claim_consistency"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 111,
+      "finish_reason": "stop",
+      "model_call": 2,
+      "prompt_tokens": 3311,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is correctly linked to this patch and commit, and it is fresh for the current commit tree. The test coverage is complete for the declared acceptance and regression checks. The author statement is consistent with the evidence, and the issue symptom (IndexError in sqrtdenest) is confirmed resolved with no failures or regressions detected. Therefore, the patch successfully fixes the issue without introducing regressions and meets the acceptance criteria.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 7,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_851f5a80d20947a9",
+  "tokens_in": 6059,
+  "tokens_out": 183,
+  "tool_calls": 4,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"d4e0231b08147337745dcf601e62de7eefe2fb2d\", \"record_patch_sha256\": \"5e0ca074ed721048a698e87e89754ef9b583e062d402e0c146ae858d4e44d37b\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"43e56d0079e63cecb7626d19200244279be5c1c0\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"43e56d0079e63cecb7626d19200244279be5c1c0\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:40:22+00:00\", \"attestation_built_at\": \"2026-10-25T18:43:36+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 10, \"executed\": 10, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    }
+  ],
+  "wall_s": 2.76
+}

@@ -1,0 +1,307 @@
+{
+  "document": "Gate 3-B.2 task 5: Gold Policy / Model-Visible Prompt+ Evidence / Actual Tool Surface three-way consistency matrix.",
+  "protocol_version": "g3b2-protocol-v1",
+  "prompt_version": "p3-ternary-g3b2-v1",
+  "n_issues": 10,
+  "all_conditions_consistent": true,
+  "conditions": [
+    {
+      "condition": "T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "policy": null,
+      "A_gold_policy": {
+        "gold_values": [
+          "NEED_EVIDENCE"
+        ],
+        "acceptance_outcomes_status": [
+          "not_visible"
+        ],
+        "linkage_values": [
+          null
+        ],
+        "freshness_values": [
+          null
+        ],
+        "coverage_values": [
+          null
+        ],
+        "symptom_polarities": [
+          "gone"
+        ]
+      },
+      "B_model_visible": {
+        "tier": "D",
+        "active_tools": false,
+        "policy": null,
+        "t2a_institutional_grant_present": false,
+        "three_state_freshness_note_present": false,
+        "acceptance_outcome_visible_in_static": false,
+        "symptom_visible_in_static": true,
+        "prompt_fingerprint": "70fa99b2accd5cda53e051eb79d82d3c0d12c1f05c0034fa98411e916b1d2e89"
+      },
+      "C_actual_tool_surface_expected": {
+        "tools_offered": false,
+        "acceptance_log": "n/a_static",
+        "consistency": "n/a_static"
+      },
+      "C_actual_http_observed": {
+        "n_issues": 10,
+        "all_http_checks_pass": true,
+        "freshness_TRUE_all_issues": null
+      },
+      "three_way_agreement": [
+        {
+          "requirement": "O restricted: gold not_visible == static hides outcomes == no tools",
+          "pass": true
+        },
+        {
+          "requirement": "P observable: gold symptom rendered == D block",
+          "pass": true
+        }
+      ],
+      "condition_consistent": true
+    },
+    {
+      "condition": "T3D-Strict",
+      "tier": "D",
+      "active_tools": true,
+      "policy": "strict",
+      "A_gold_policy": {
+        "gold_values": [
+          "NEED_EVIDENCE"
+        ],
+        "acceptance_outcomes_status": [
+          "hard_blocked"
+        ],
+        "linkage_values": [
+          true
+        ],
+        "freshness_values": [
+          true
+        ],
+        "coverage_values": [
+          true
+        ],
+        "symptom_polarities": [
+          "gone"
+        ]
+      },
+      "B_model_visible": {
+        "tier": "D",
+        "active_tools": true,
+        "policy": "strict",
+        "t2a_institutional_grant_present": false,
+        "three_state_freshness_note_present": true,
+        "acceptance_outcome_visible_in_static": false,
+        "symptom_visible_in_static": false,
+        "prompt_fingerprint": "556b8a4008809c1f0b36fb2d0a1d3117d91d7fda3513f1c6d15085b73be81f49"
+      },
+      "C_actual_tool_surface_expected": {
+        "tools_offered": true,
+        "acceptance_log": "403_denied",
+        "consistency": "symptom_only_no_reason_gate"
+      },
+      "C_actual_http_observed": {
+        "n_issues": 10,
+        "all_http_checks_pass": true,
+        "freshness_TRUE_all_issues": true
+      },
+      "three_way_agreement": [
+        {
+          "requirement": "O hard-blocked: gold == 403 tool surface == HTTP 403",
+          "pass": true
+        },
+        {
+          "requirement": "F three-state TRUE via repaired endpoint",
+          "pass": true
+        }
+      ],
+      "condition_consistent": true
+    },
+    {
+      "condition": "T3D-Escalate",
+      "tier": "D",
+      "active_tools": true,
+      "policy": "escalate",
+      "A_gold_policy": {
+        "gold_values": [
+          "ACCEPT",
+          "REJECT"
+        ],
+        "acceptance_outcomes_status": [
+          "obtainable_with_reason"
+        ],
+        "linkage_values": [
+          true
+        ],
+        "freshness_values": [
+          true
+        ],
+        "coverage_values": [
+          true
+        ],
+        "symptom_polarities": [
+          "gone"
+        ]
+      },
+      "B_model_visible": {
+        "tier": "D",
+        "active_tools": true,
+        "policy": "escalate",
+        "t2a_institutional_grant_present": false,
+        "three_state_freshness_note_present": true,
+        "acceptance_outcome_visible_in_static": false,
+        "symptom_visible_in_static": false,
+        "prompt_fingerprint": "6effc9d7fd2e31bfd54c25332a95781a76033beeb133c56c0aeea23de7c3a00b"
+      },
+      "C_actual_tool_surface_expected": {
+        "tools_offered": true,
+        "acceptance_log": "400_without_reason_then_200",
+        "consistency": "400_without_reason_then_200"
+      },
+      "C_actual_http_observed": {
+        "n_issues": 10,
+        "all_http_checks_pass": true,
+        "freshness_TRUE_all_issues": true
+      },
+      "three_way_agreement": [
+        {
+          "requirement": "O reason-gated: gold obtainable_with_reason == 400/200 surface == HTTP",
+          "pass": true
+        },
+        {
+          "requirement": "F three-state TRUE via repaired endpoint",
+          "pass": true
+        }
+      ],
+      "condition_consistent": true
+    },
+    {
+      "condition": "T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "policy": null,
+      "A_gold_policy": {
+        "gold_values": [
+          "ACCEPT",
+          "REJECT"
+        ],
+        "acceptance_outcomes_status": [
+          "presented"
+        ],
+        "linkage_values": [
+          null
+        ],
+        "freshness_values": [
+          null
+        ],
+        "coverage_values": [
+          null
+        ],
+        "symptom_polarities": [
+          "None"
+        ]
+      },
+      "B_model_visible": {
+        "tier": "A",
+        "active_tools": false,
+        "policy": null,
+        "t2a_institutional_grant_present": true,
+        "three_state_freshness_note_present": false,
+        "acceptance_outcome_visible_in_static": true,
+        "symptom_visible_in_static": false,
+        "prompt_fingerprint": "d7cfe95df8b38622a4674e98c19c549dec1741c7cc2058136c6767b3a7f40f55"
+      },
+      "C_actual_tool_surface_expected": {
+        "tools_offered": false,
+        "acceptance_log": "n/a_static",
+        "consistency": "n/a_static"
+      },
+      "C_actual_http_observed": {
+        "n_issues": 10,
+        "all_http_checks_pass": true,
+        "freshness_TRUE_all_issues": null
+      },
+      "three_way_agreement": [
+        {
+          "requirement": "O presented: gold institutional presentation == A block renders outcomes",
+          "pass": true
+        },
+        {
+          "requirement": "L/F/C institutional grant explicit to model",
+          "pass": true
+        },
+        {
+          "requirement": "no verdict leak in static/prompt",
+          "pass": true
+        }
+      ],
+      "condition_consistent": true
+    },
+    {
+      "condition": "T3A-T",
+      "tier": "A",
+      "active_tools": true,
+      "policy": null,
+      "A_gold_policy": {
+        "gold_values": [
+          "ACCEPT",
+          "REJECT"
+        ],
+        "acceptance_outcomes_status": [
+          "obtainable"
+        ],
+        "linkage_values": [
+          true
+        ],
+        "freshness_values": [
+          true
+        ],
+        "coverage_values": [
+          true
+        ],
+        "symptom_polarities": [
+          "gone"
+        ]
+      },
+      "B_model_visible": {
+        "tier": "A",
+        "active_tools": true,
+        "policy": null,
+        "t2a_institutional_grant_present": false,
+        "three_state_freshness_note_present": true,
+        "acceptance_outcome_visible_in_static": false,
+        "symptom_visible_in_static": false,
+        "prompt_fingerprint": "73376a609581db804c6516509ef5ba9ba22f93b1d33126cee0511dba5755ce87"
+      },
+      "C_actual_tool_surface_expected": {
+        "tools_offered": true,
+        "acceptance_log": "200_ungated",
+        "consistency": "acceptance_based_200"
+      },
+      "C_actual_http_observed": {
+        "n_issues": 10,
+        "all_http_checks_pass": true,
+        "freshness_TRUE_all_issues": true
+      },
+      "three_way_agreement": [
+        {
+          "requirement": "O obtainable: gold == ungated tool surface == HTTP 200",
+          "pass": true
+        },
+        {
+          "requirement": "F three-state TRUE via repaired endpoint",
+          "pass": true
+        }
+      ],
+      "condition_consistent": true
+    }
+  ],
+  "gold_authority": {
+    "gold_tier": "PROVISIONAL",
+    "annotators": 1,
+    "annotator2": "NOT_OBTAINED",
+    "note": "Single-annotator gold; no second adjudicator obtained. The G3-B.2 protocol repair does not raise gold authority. Until a second annotator adjudicates, all condition/oracle gold and all derived model comparisons remain PROVISIONAL."
+  }
+}

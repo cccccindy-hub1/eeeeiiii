@@ -1,0 +1,54 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch addresses the issue by modifying the square-free part computation to consider all partial derivatives, which is a plausible fix. The added test explicitly checks the factorization of (x-1)*(y-1) over an algebraic field extension including I, confirming that both factors are present after factoring with extension=True. The issue symptom is reproduced before the patch and removed after the patch in the provided probe. However, the available evidence does not include the full acceptance test results or regression checks for the entire declared acceptance set. The diagnostic artifact only shows limited test metadata without verdicts on all acceptance and regression tests. Therefore, there is no complete, fresh, linked, failure-free acceptance evidence to fully confirm merge acceptability. Hence, more comprehensive acceptance test results covering all declared checks are needed to conclusively accept the patch.\",\"evidence_mismatch\":false,\"missing_evidence\":\"full acceptance test results and regression check verdicts for the patch\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "cell": "g3c1live:sympy__sympy-19040:T2D-T",
+  "condition": "T2D-T",
+  "cost_usd": 0.001126,
+  "evidence_session": null,
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-19040",
+  "instance_id": "sympy__sympy-19040",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.014108
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 207,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 1986,
+      "raw_content": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch addresses the issue by modifying the square-free part computation to consider all partial derivatives, which is a plausible fix. The added test explicitly checks the factorization of (x-1)*(y-1) over an algebraic field extension including I, confirming that both factors are present after factoring with extension=True. The issue symptom is reproduced before the patch and removed after the patch in the provided probe. However, the available evidence does not include the full acceptance test results or regression checks for the entire declared acceptance set. The diagnostic artifact only shows limited test metadata without verdicts on all acceptance and regression tests. Therefore, there is no complete, fresh, linked, failure-free acceptance evidence to fully confirm merge acceptability. Hence, more comprehensive acceptance test results covering all declared checks are needed to conclusively accept the patch.\",\"evidence_mismatch\":false,\"missing_evidence\":\"full acceptance test results and regression check verdicts for the patch\",\"evidence_gap\":\"coverage_incomplete\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_2b6532120649f861",
+  "tokens_in": 1986,
+  "tokens_out": 207,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 2.19
+}

@@ -1,0 +1,14 @@
+### BASELINE (pre-patch)
+$ python sympy__sympy-19637-baseline.py  (exit 1)
+--- stdout ---
+FAIL: kernS raised UnboundLocalError local variable 'kern' referenced before assignment
+
+--- stderr ---
+
+
+### POST candidate patch
+$ python sympy__sympy-19637-post-candidate.py  (exit 0)
+--- stdout ---
+OK: kernS no crash -> 2*x/(x - 1)
+
+--- stderr ---

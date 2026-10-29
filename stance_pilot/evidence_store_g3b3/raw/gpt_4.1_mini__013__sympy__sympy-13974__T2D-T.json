@@ -1,0 +1,54 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch adds _eval_power to TensorProduct to distribute powers to each argument, and adds tests that cover powers of TensorProduct and tensor_product_simp with powers. The issue symptom is reproduced as gone in the provided probe, which is fresh and linked to this patch. However, the acceptance test outcomes and scoped regression check verdicts are withheld and not provided, so it is not possible to confirm that no acceptance test fails or no regression is introduced. Therefore, the evidence coverage is incomplete for a full acceptance decision.\",\"evidence_mismatch\":false,\"missing_evidence\":\"acceptance test outcomes and scoped regression check verdicts\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "cell": "g3b3:sympy__sympy-13974:T2D-T",
+  "condition": "T2D-T",
+  "cost_usd": 0.001082,
+  "evidence_session": null,
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-13974",
+  "instance_id": "sympy__sympy-13974",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.014097
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 144,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 2128,
+      "raw_content": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch adds _eval_power to TensorProduct to distribute powers to each argument, and adds tests that cover powers of TensorProduct and tensor_product_simp with powers. The issue symptom is reproduced as gone in the provided probe, which is fresh and linked to this patch. However, the acceptance test outcomes and scoped regression check verdicts are withheld and not provided, so it is not possible to confirm that no acceptance test fails or no regression is introduced. Therefore, the evidence coverage is incomplete for a full acceptance decision.\",\"evidence_mismatch\":false,\"missing_evidence\":\"acceptance test outcomes and scoped regression check verdicts\",\"evidence_gap\":\"coverage_incomplete\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_42af95edfb29747c",
+  "tokens_in": 2128,
+  "tokens_out": 144,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 2.15
+}

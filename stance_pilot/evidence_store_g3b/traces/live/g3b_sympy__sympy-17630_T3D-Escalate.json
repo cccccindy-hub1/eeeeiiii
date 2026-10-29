@@ -1,0 +1,33 @@
+{
+  "cell": "g3b:sympy__sympy-17630:T3D-Escalate",
+  "condition": "T3D-Escalate",
+  "policy": "escalate",
+  "session_id": "98ed79ca2dd90621542d384b",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"58e78209c8577b9890e957b624466e5beed7eb08\", \"record_patch_sha256\": \"7c197026b3d50e673d35a590f28e59ab200c96fbc4a6c290507f3210161bd850\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": null, \"expected_run_tree\": \"ac8da47f6f4accd80d892e1d2ff409a6729a1714\", \"artifact_started_at\": \"2026-10-25T18:43:43+00:00\", \"attestation_built_at\": \"2026-10-25T18:44:13+00:00\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 2, \"executed\": 2, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 19, \"executed\": 19, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    }
+  ],
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The test artifact is correctly linked to this patch and covers all declared acceptance and regression checks, but the evidence run is stale for the current commit tree. Therefore, the available evidence cannot be trusted to confirm that the patch fully resolves the issue without regressions. Fresh test results are needed to make a confident decision.\",\"evidence_mismatch\":true,\"missing_evidence\":\"fresh_test_run\",\"evidence_gap\":\"stale\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

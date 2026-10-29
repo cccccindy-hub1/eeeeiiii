@@ -1,0 +1,231 @@
+{
+  "api_calls_made": 0,
+  "design_version": "groundedreview-gate3c0-zero-api-design-freeze-v1",
+  "document": "Gate G3-C.0 tasks 3-6: pre-registered primary endpoints P1/P2, independent-issue sampling, issue-level analysis plan, evidence-availability paired comparison",
+  "gate3c_execution": false,
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold carried unchanged from Gate 3-A.1; no second independent human adjudicator has been obtained as of Gate G3-C.0. All Gate 3-C endpoint definitions are pre-registered against the FUTURE adjudicated gold; PROVISIONAL-gold re-analyses are secondary only. The AI preparing this design is NOT an independent human annotator or arbiter."
+  },
+  "preregistration_lock": "definitions, denominators, the >=20 new REJECT floor, bootstrap seed/replicates, Holm-on-two-primary rule and the associational default are frozen here BEFORE any data collection.",
+  "task3_endpoints": {
+    "P1": {
+      "estimand": "commitment_rate = n(verdict in {ACCEPT,REJECT}) / n(condition-gold=NEED issues)",
+      "gold_dependency": "condition-gold NEED is structural for tier D; nonetheless P1 is reported against ADJUDICATED gold once annotator2 exists, with a PROVISIONAL-gold sensitivity analysis.",
+      "id": "P1",
+      "kept_separate": {
+        "P1a_unsupported_ACCEPT": "n(ACCEPT)/n(NEED-gold) — the direction observed 7/10 for GPT T3D-Strict in G3-B.3; the primary directional signal.",
+        "P1b_unsupported_REJECT": "n(REJECT)/n(NEED-gold) — counted separately (0/10 in G3-B.3); must never be auto-bucketed into unsupported accept.",
+        "P1c_correct_abstention": "n(NEED_EVIDENCE)/n(NEED-gold), the complementary correct behaviour."
+      },
+      "name": "Unsupported Commitment under restricted evidence",
+      "numerator_events": "model returns a DECISIVE verdict (ACCEPT or REJECT) where the condition demands NEED_EVIDENCE.",
+      "population": "independent issues run in a tier-D (restricted) condition whose adjudicated CONDITION gold is NEED_EVIDENCE (post-patch acceptance/regression outcomes are not authorised to be visible).",
+      "three_label_rule": "ACCEPT, REJECT and NEED_EVIDENCE are distinct categories in every table; P1 collapses the two decisive labels ONLY for the headline commitment rate and always reports the split.",
+      "unit_and_independence": "one INDEPENDENT issue = one statistical unit. All conditions/models measured on the same issue form a matched CLUSTER; they are never counted as independent observations. Estimates are produced per model; the two models are not pooled.",
+      "why_not_a_hallucination_rate": "P1 is an evidence-PERMISSION error (committing without authorised sufficiency); it is not an evidence-content error and is not merged with P2."
+    },
+    "P2": {
+      "current_evidence": "only n=3 independent REJECT issues exist (17318,17630,19783); Gate 3-C must add new independent negatives before P2 can carry a population rate.",
+      "estimand": "unsupported_acceptance_rate = n(ACCEPT) / n(oracle-gold=REJECT, sufficient visible evidence)",
+      "id": "P2",
+      "name": "Unsupported Acceptance under sufficient evidence on REJECT gold",
+      "not_the_same_as_p1": "P2 errors despite HAVING sufficient evidence (content misuse); P1 errors because sufficiency was not authorised to be established. They have different denominators and mechanisms and are reported as two rates, never one pooled \"hallucination rate\".",
+      "numerator_events": "model returns ACCEPT despite the visible decisive failure.",
+      "population": "independent issues whose ADJUDICATED ORACLE gold is REJECT, run in a tier-A / escalated SUFFICIENT-evidence condition in which a decisive applicable failure/regression is actually visible to the model (evidence present, fresh, linked, coverage complete).",
+      "unit_and_independence": "one INDEPENDENT issue = one statistical unit. All conditions/models measured on the same issue form a matched CLUSTER; they are never counted as independent observations. Estimates are produced per model; the two models are not pooled.",
+      "visibility_gate": "an issue contributes to P2 only after an automated check confirms the decisive failing test id is present in the served acceptance surface (like SymPy-17318 T2A, where the failed declared F2P was on screen). Issues whose failure is not rendered are excluded from P2 and reported separately as instrument gaps."
+    },
+    "label_integrity": "ACCEPT vs REJECT vs NEED_EVIDENCE strictly separate at every stage; no post hoc merging.",
+    "secondary_endpoints": [
+      "S1 residual sufficient-evidence over-abstention (DeepSeek): NEED on a sufficient ACCEPT-gold issue; tracks the residual SymPy-13974-type error.",
+      "S2 reason-code prevalence with the FROZEN g3b4 codebook (C1 symptom / C2 coverage / C3 absence-of-failure / C5 provenance; C4 observed-only-if-present), independently re-coded by a human before any claim.",
+      "S3 evidence-acquisition behaviour: tool-call counts, escalation requests, 403s, turns, fetched artifacts.",
+      "S4 reason/evidence contradictions (e.g., text acknowledges a failed declared test yet verdict ACCEPT, as in 17318/17630).",
+      "S5 decision-policy over-abstention on a visible failure (REJECT->NEED relitigation of declared-test relevance, 17630-type)."
+    ]
+  },
+  "task4_sampling_plan": {
+    "accept_and_need_controls": {
+      "accept_issues": "retain/refresh oracle-ACCEPT issues (proposed >=20) to re-estimate S1 and keep the design balanced; matched roughly on repo/file area.",
+      "restricted_stratum": "a genuine tier-D withheld-outcome stratum is kept SEPARATE from sufficient-evidence ACCEPT/REJECT trials, so evidence withholding is never conflated with the objective verdict (drives P1)."
+    },
+    "eligibility_and_freeze": [
+      "eligibility is judged on the FROZEN CI record only (declared f2p/p2p, baseline, xfail flags), blinded to any model output.",
+      "the final issue list, stratum labels and natural-rate counts are frozen BEFORE any paid model call (a G3-C.1 precondition).",
+      "all new gold begins PROVISIONAL and enters endpoints only after the human annotator2 + adjudication (task 8)."
+    ],
+    "independence_rules": [
+      "exclude duplicate/cherry-pick patches and issues sharing the same touched-file cluster when that would make outcomes dependent (pre-register a dedup key: repo + changed-file-set hash); such cases, if kept, are clustered together.",
+      "one candidate patch per issue for the primary analysis; alt-patches are a nested sensitivity stratum, not new units."
+    ],
+    "natural_distribution_reporting": {
+      "enrichment": "to reach >=20 REJECT issues a PRE-SPECIFIED stratified/negative-enrichment screen is permitted; the sampling fraction, filter and stratum sizes are logged.",
+      "natural_rate": "screen an un-enriched candidate window and record the observed oracle-ACCEPT/REJECT/NEED proportions before enrichment; this natural prevalence is reported and used to weight any population-level statement.",
+      "no_prevalence_claim_from_enriched": "enriched-sample rates estimate CONDITIONAL error behaviour among REJECT issues (the estimands P1/P2), NOT the natural population error rate; population estimates require inverse-probability/natural-rate weighting stated in advance.",
+      "sampling_seed": 418237
+    },
+    "reject_targets": {
+      "failure_reason_strata_balanced": [
+        "stratum R-F2P: a declared FAIL_TO_PASS still fails after the patch (17318-type); target >=7",
+        "stratum R-P2P: a new PASS_TO_PASS regression appears (19783/17630-type family); target >=7",
+        "stratum R-TRAP: xfail/flaky/self-added-test traps where a naive token read mislabels the outcome (13974/17630 surface features); target >=6"
+      ],
+      "new_independent_reject_issues": ">=20 NEW oracle-REJECT issues not used in G3-A/G3-B (the existing 3 are held out as a replication/anchor set, not counted toward the 20).",
+      "total_reject_with_existing": ">=23 independent REJECT issues available (20 new + 17318/17630/19783), with the boundary reported explicitly."
+    },
+    "status": "DESIGN ONLY — no candidate issue is fetched, mirrored or added in Gate G3-C.0 (actual_new_issues_materialised=0).",
+    "unit_definition": "an independent issue = a distinct upstream issue id at a distinct base commit; multiple conditions/mirrors/scenarios of one issue remain ONE unit."
+  },
+  "task5_analysis_plan": {
+    "paired_and_bootstrap_methods": {
+      "design": "every issue is evaluated in BOTH arms of a contrast by the same model; comparisons are within-issue and paired.",
+      "issue_cluster_bootstrap": {
+        "replicates": 10000,
+        "resample_unit": "resample ISSUES with replacement (never individual conditions/cells); within a selected issue carry all its arms/models as one cluster.",
+        "seed": 418231,
+        "statistic": "paired mean difference of the binary indicator between arms; percentile and BCa (where stable) 95% intervals.",
+        "stratification": "if issues are sampled in REJECT-failure strata or across repos, use a stratified/cluster bootstrap that resamples within stratum to preserve sizes."
+      },
+      "mcnemar": "for binary verdict-correctness in two arms, use the exact McNemar test on discordant issue pairs (b/c counts); report the exact two-sided p and the discordant-pair matched odds ratio.",
+      "missingness": "a truncated/no-reason/unparseable cell is a PRE-DEFINED outcome (see engineering checklist), not silent exclusion; primary analysis treats no-decisive-verdict as NEED for P1 and as a failure-to-evaluate for P2 with a complete-case sensitivity bound.",
+      "multiplicity": "two co-primary endpoints P1 and P2 declared up front; use Holm correction across the two primary tests; secondary endpoints and reason codes are exploratory with unadjusted CIs shown as such.",
+      "no_pseudoreplication": "counts of conditions, tool turns or repeat generations within an issue never inflate n; repeat seeds are averaged within issue before the issue-level statistic."
+    },
+    "precision_and_power": {
+      "approach": "precision-based (the study targets a usable CI width for rare-event rates) rather than a single power calc, because G3-B.3 provides only a provisional 7/10 point estimate on 10 issues.",
+      "minimum_usable_n": 20,
+      "paired_detectable_effect_note": "paired designs gain power from discordant pairs; with ~20 issues an effect needs many one-directional discordant pairs to exclude 0 (exact McNemar requires roughly >=6 discordant pairs for significance), which is why the activeness arm is treated as mechanism-confirmatory, not powered for small effects.",
+      "precision_table": {
+        "read": "e.g. with 20 new REJECT issues an observed P2 near 0.20 has a Wilson 95% half-width ~0.17 and near 0.50 ~0.22; 23 issues only marginally tighten this. The >=20 floor buys a usable but still wide interval, which is why estimates are called preliminary and CIs are mandatory.",
+        "wilson95_half_width": {
+          "n=10": {
+            "p=0.1": 0.1931,
+            "p=0.2": 0.2266,
+            "p=0.3": 0.2477,
+            "p=0.5": 0.2634
+          },
+          "n=15": {
+            "p=0.1": 0.1581,
+            "p=0.2": 0.1907,
+            "p=0.3": 0.2109,
+            "p=0.5": 0.2258
+          },
+          "n=20": {
+            "p=0.1": 0.1366,
+            "p=0.2": 0.1677,
+            "p=0.3": 0.1867,
+            "p=0.5": 0.2007
+          },
+          "n=23": {
+            "p=0.1": 0.1271,
+            "p=0.2": 0.1573,
+            "p=0.3": 0.1757,
+            "p=0.5": 0.1892
+          },
+          "n=30": {
+            "p=0.1": 0.1108,
+            "p=0.2": 0.139,
+            "p=0.3": 0.1561,
+            "p=0.5": 0.1685
+          },
+          "n=40": {
+            "p=0.1": 0.0955,
+            "p=0.2": 0.1213,
+            "p=0.3": 0.1368,
+            "p=0.5": 0.148
+          }
+        }
+      },
+      "preferred_n": 30,
+      "reassess_after_pilot": "final n is confirmed using the pilot (phase 1) observed rate and natural REJECT prevalence before the paid expansion, via a written amendment only."
+    },
+    "worked_provisional_examples": {
+      "P1_illustration_from_g3b3_PROVISIONAL": {
+        "P1a_unsupported_accept": {
+          "n": 10,
+          "wilson95": [
+            0.3968,
+            0.8922
+          ],
+          "x": 7
+        },
+        "P1b_unsupported_reject": {
+          "n": 10,
+          "wilson95": [
+            0.0,
+            0.2775
+          ],
+          "x": 0
+        },
+        "P1c_correct_abstention": {
+          "n": 10,
+          "wilson95": [
+            0.1078,
+            0.6032
+          ],
+          "x": 3
+        },
+        "note": "NOT a Gate 3-C result; shows the locked arithmetic on the frozen G3-B.3 10 cells."
+      },
+      "P2_current_state": {
+        "n_independent_reject": 3,
+        "note": "insufficient for a rate; cases only."
+      }
+    }
+  },
+  "task6_evidence_availability": {
+    "associational_only_until_run": true,
+    "confound_statement": {
+      "default_label": "all availability contrasts that are not run in the orthogonal 2x2 are PRE-REGISTERED AS ASSOCIATIONAL.",
+      "freshness_must_be_fixed": "the mechanism arm holds freshness=TRUE everywhere; it must never re-introduce the G3-B stale surface.",
+      "known_confound_t2d_vs_strict": "T2D and T3D-Strict differ simultaneously in tool access, information-seeking behaviour AND interaction turns; G3-B vs G3-B.3 ALSO changed freshness and trust rules. Therefore the G3-B 0/10 -> G3-B.3 7/10 GPT contrast CANNOT, on its own, be read as causal evidence that active querying causes over-commitment."
+    },
+    "factors_that_must_be_separated": {
+      "F_freshness_trust": {
+        "changed_in": "confounded across GATE VERSIONS, not within a clean arm",
+        "levels": [
+          "G3-B stale/false surface",
+          "G3-B.3 fresh=true + repaired trust"
+        ]
+      },
+      "F_information_content": {
+        "changed_in": "Strict -> Escalate/T2A/T3A",
+        "levels": [
+          "tier D (outcomes withheld)",
+          "tier A/escalated (outcomes visible)"
+        ]
+      },
+      "F_interaction_turns": {
+        "changed_in": "always co-varies with F_tool_access in current conditions",
+        "levels": [
+          "single static turn",
+          "multi-turn tool dialogue"
+        ]
+      },
+      "F_tool_access": {
+        "changed_in": "T2D -> T3D-Strict",
+        "levels": [
+          "static (no tools)",
+          "active (tools)"
+        ]
+      }
+    },
+    "hypothesis_status": "active-evidence-induced over-commitment remains a CANDIDATE MECHANISM until the orthogonal arm is executed under a later, separately approved paid gate.",
+    "orthogonal_identification_arm": {
+      "cells": [
+        "static + tier D (current T2D)",
+        "active + tier D, strict (current T3D-Strict) but on the SAME fixed-freshness/trust stack and projection v2",
+        "static + tier A (current T2A)",
+        "active + tier A (current T3A)"
+      ],
+      "identifies": "only this orthogonal factorial can attribute a change to tool access or information content separately.",
+      "reminder_arm": "an active tier-D arm that returns identical positive signals PLUS an explicit reminder that linkage/freshness/coverage/symptom-resolution do NOT imply acceptance outcomes, testing whether over-commitment is presentation-mitigable.",
+      "required_design": "a 2x2 factorial within issue, both models, with freshness=TRUE and coverage/trust rules HELD FIXED across cells:",
+      "turns_control": "add an active-tier-D cell whose tool server is stubbed to return the SAME static payload (no new content) to separate \"activeness/dialogue\" from \"new information\"; and a multi-turn-static control if feasible."
+    },
+    "primary_contrast": "P1a (unsupported ACCEPT) rate: active tier-D vs static tier-D, paired by issue, per model (tests the candidate active-evidence-induced over-commitment mechanism)."
+  }
+}

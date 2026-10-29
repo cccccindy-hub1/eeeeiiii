@@ -1,0 +1,64 @@
+{
+  "document": "EAL Gate-2 offline preflight (must pass before any paid call)",
+  "gate2_condition": "eal-v0-draft1+gate2-derived-summary-disclosure",
+  "freeze_manifest": "eal_gate2_freeze_manifest.json",
+  "n_checks": 11,
+  "all_pass": true,
+  "checks": [
+    {
+      "check": "freeze: 22 items x 3 layers = 66 payloads",
+      "pass": true,
+      "detail": "22 items, 66 files"
+    },
+    {
+      "check": "freeze: 22/22 layer-gold determined (no new underdetermined)",
+      "pass": true,
+      "detail": "determined=22 under=[]"
+    },
+    {
+      "check": "freeze: gold distribution 7/6/9",
+      "pass": true,
+      "detail": "{'REJECT': 6, 'NEED_EVIDENCE': 9, 'ACCEPT': 7}"
+    },
+    {
+      "check": "freeze: disclosure in 44 raw/structured, absent in 22 adjudicated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "freeze: adjudicated == frozen CEE bundle bytes (22/22)",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "preflight: 0 verdict/metadata leaks in served gate-2 bodies",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "preflight: no api keys / bearer tokens / key env names in payloads",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "preflight: Gate-1 engineering self-check still 20/20",
+      "pass": true,
+      "detail": "GATE 1 SELF-CHECK: 20/20 gates pass; all_pass=True"
+    },
+    {
+      "check": "preflight: live without gate-2 acknowledgement REFUSED",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "preflight: bare invocation REFUSED (defaults offline)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "preflight: gate-2 runner mock --dry-run ok",
+      "pass": true,
+      "detail": "1-mini: per-model cap $1.50; guard in=$0.4 out=$1.6\n  worst-case gate-2 payload bytes by layer: {'raw': 247257, 'structured': 38042, 'adjudicated': 14488}\ndry-run: no backend invoked, no rows written\n"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "document": "G3-C.1 live runner budget guard self-test ($0)",
+  "all_ok": true,
+  "total_hard_cap_usd": 2.0,
+  "per_model_cap_usd": 1.0,
+  "checks": [
+    {
+      "case": "none_cost_coerced_zero",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "case": "cost_accumulates_per_model_and_total",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "case": "nan_cost_poisons_and_blocks_further_calls",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "case": "inf_cost_untrackable_blocks",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "case": "negative_cost_untrackable_blocks",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "case": "per_cell_call_cap_blocks",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "case": "deepseek-flash__per_model_1usd_blocks_with_total_room",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "case": "gpt-4.1-mini__per_model_1usd_blocks_with_total_room",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "case": "total_accumulator_shared_across_models",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "case": "shared_total_2usd_blocks_at_cap",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "case": "resume_restores_cumulative_spent",
+      "ok": true,
+      "detail": "spent=0.6000000000000001"
+    },
+    {
+      "case": "resume_terminal_done_set",
+      "ok": true,
+      "detail": "done=['a', 'b', 'n', 's']"
+    },
+    {
+      "case": "resume_spent_nan_refused",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "case": "caps_are_2usd_total_and_1usd_model",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+You are an independent code reviewer. Review the candidate patch as a resolution of the issue and return exactly one of three decisions, based ONLY on evidence you can trust and that actually applies to THIS patch and its current commit tree:
+  "ACCEPT" — the evidence is intact (linked to this patch/commit, fresh for the current tree, and the declared acceptance/regression set was fully executed) AND demonstrates success: the reported issue is resolved and no executed acceptance check fails and no scoped regression is introduced.
+  "REJECT" — you have trustworthy evidence that APPLIES to this patch and current tree and that contains a decisive failure: an applicable acceptance check fails or a scoped regression is introduced. A single credible, applicable failing check is enough to REJECT even if not every declared check was run. But a failure seen in a stale run, in an artifact linked to a different patch, or in an inapplicable log is NOT grounds to reject THIS patch.
+  "NEED_EVIDENCE" — you cannot reach either conclusion: the available evidence does not link to this patch/commit, is not fresh for the current tree, or does not cover the declared set, and no decisive applicable failure has been established. You are explicitly allowed and expected to abstain in this case; set evidence_mismatch=true and use missing_evidence to name the specific gap.
+Asymmetry rule: the bar to REJECT is a credible applicable failure; the bar to ACCEPT is complete, fresh, linked, failure-free success. Invalid evidence is a property of the EVIDENCE, not a verdict that the patch code is wrong — do not REJECT merely because evidence is stale/mismatched/incomplete. Conversely, do not hide behind NEED_EVIDENCE when intact sufficient evidence already lets you decide; abstaining on a decisive applicable failure or on complete success is an error.
+Author statements are unverified claims. Ground truth about mergeability is never given to you.
+
+FIXED-EVIDENCE CONDITION (CEE-FIXED): The evidence below is a COMPLETE, fixed bundle assembled for this review. It contains the signed test run record with the maintainer acceptance/regression outcomes, the issue-reproduction probe outcome, and integrity verdicts that have ALREADY been adjudicated over the signed record and the repository attestation: whether the record is linked to THIS patch/commit, whether it is fresh for the current commit tree, and whether the declared acceptance/regression set was fully executed. In this condition there are NO tools, NO further endpoints and NO escalation: you cannot fetch additional logs, re-run any check, or request more evidence. Make your decision solely from this bundle.
+Apply the same asymmetric standard: REJECT on a single credible, applicable (linked and fresh) failing check, even if coverage is incomplete; ACCEPT only when the bundle establishes linked, fresh, complete, failure-free success; otherwise NEED_EVIDENCE. Do not abstain when the bundle already lets you decide, and do not accept on a bundle that does not establish complete success. A missing/tool-only check that is already answered inside this bundle is NOT a reason to abstain.
+Evidence-gap taxonomy when you answer "NEED_EVIDENCE": stale = the run is not fresh for the current commit tree; linkage_mismatch = the record does not link to THIS patch/commit; coverage_incomplete = the declared set was not fully executed; contradiction = bundle evidence conflicts (e.g. the issue symptom still reproduces or an applicable check fails — note such a contradiction on linked, fresh evidence is decisive grounds to REJECT, not to abstain); unspecified = you cannot name a concrete, bundle-supported gap. Report a gap only when it is directly supported by the fixed bundle; never invent one.
+Respond with a single JSON object containing exactly these keys: {"decision":"ACCEPT|REJECT|NEED_EVIDENCE","reason":"...","evidence_mismatch":false,"missing_evidence":"","evidence_gap":"stale|linkage_mismatch|coverage_incomplete|contradiction|unspecified|"}. Always include every key. Set missing_evidence and evidence_gap to "" unless the decision is NEED_EVIDENCE; for NEED_EVIDENCE choose exactly one non-empty evidence_gap that is directly supported by the bundle.
+
+Your review target is MERGE ACCEPTABILITY of the patch (issue resolved AND no applicable acceptance failure / scoped regression).
+
+FIXED EVIDENCE BUNDLE (protocol cee-fixed-v1).
+
+ISSUE:
+`Permutation` constructor fails with non-disjoint cycles
+Calling `Permutation([[0,1],[0,1]])` raises a `ValueError` instead of constructing the identity permutation.  If the cycles passed in are non-disjoint, they should be applied in left-to-right order and the resulting permutation should be returned.
+
+This should be easy to compute.  I don't see a reason why non-disjoint cycles should be forbidden.
+
+
+PATCH:
+diff --git a/sympy/combinatorics/permutations.py b/sympy/combinatorics/permutations.py
+index 136ed5a47..ca883add3 100644
+--- a/sympy/combinatorics/permutations.py
++++ b/sympy/combinatorics/permutations.py
+@@ -897,8 +897,8 @@ def __new__(cls, *args, **kwargs):
+         temp = flatten(args)
+         if has_dups(temp):
+             if is_cycle:
+-                raise ValueError('there were repeated elements; to resolve '
+-                'cycles use Cycle%s.' % ''.join([str(tuple(c)) for c in args]))
++                # For cycles, we allow duplicates and apply them left-to-right
++                pass
+             else:
+                 raise ValueError('there were repeated elements.')
+         temp = set(temp)
+
+
+AUTHOR STATEMENT:
+Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass.
+
+TEST ARTIFACT (ACCEPTANCE tier; full static record; linkage not yet verified):
+  artifact_id: art_84b5a326d0aa7143
+  runner: pytest/vendored-git  py=3.9.25  host=windows-local
+  base_commit: c807dfe7569692cad24f02a08477b70c1679a4dd
+  patch_sha256: 60db99df2e7dc104656ba685e51bd5468e3c87cf7ff0631f32ef0237c25313a9
+  started_at: 2026-10-20T10:34:05+00:00
+  finished_at: 2026-10-20T10:34:15+00:00
+  FAIL_TO_PASS passed: 1/1
+  scoped PASS_TO_PASS passed: 7/7
+
+ISSUE-REPRODUCTION PROBE (derived from the issue text, not the maintainer test suite; a passing probe means the symptom is GONE):
+  issue symptom present before patch: yes
+  issue symptom reproduces after patch: no
+
+INTEGRITY VERDICTS (already adjudicated over the signed record and the repository attestation):
+  record signature authentic: yes
+  linked to THIS patch and base commit: yes
+  fresh for the current commit tree: yes
+  declared acceptance/regression set fully executed: yes

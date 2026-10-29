@@ -1,0 +1,187 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "The symptom log confirms the reported issue is resolved by this patch: pre-patch the reproduction raises the exact ValueError from the issue, post-patch it returns a factor and dimension without error. Combined with intact linkage, fresh tree, complete coverage, and zero failures, the evidence supports acceptance.\n\n{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and applies to this patch: linkage verified (base_commit e8c22f6eac and patch_sha256 3d1868e0 both match), freshness is TRUE (authoritative restage tree 9146f4c3 equals the attested run tree), and coverage is complete (1/1 declared FAIL_TO_PASS and 31/31 scoped PASS_TO_PASS executed, no missing ids). Outcomes are failure-free: test_issue_24211 PASSED, all 31 scoped regression tests PASSED, no regressed or preexisting-bad ids. The symptom log independently confirms the issue is resolved: pre-patch the reproduction raises 'Dimension of \\\"v1\\\" is Dimension(velocity), but it should be Dimension(acceleration*time)', while post-patch it returns factor -47.0 with dimension Dimension(acceleration*time). The patch's use of get_dimension_system().equivalent_dims(dim, addend_dim) correctly treats dimensionally equivalent addends as compatible, matching the issue's requirement.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "cell": "g3b3:sympy__sympy-24213:T3A-T",
+  "condition": "T3A-T",
+  "cost_usd": 0.004042,
+  "evidence_session": "21d126e61fecb984bbee5552",
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-24213",
+  "instance_id": "sympy__sympy-24213",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 3,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010426,
+    0.011046,
+    0.011118
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 138,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 2266,
+      "raw_content": "I'll verify the artifact's linkage, freshness, coverage, and claim consistency before deciding.",
+      "served_model": "deepseek-flash",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_00_gF26kw9fNbLw9tVFzc6F6981",
+          "name": "get_test_artifact"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_01_gHBc75NcP0TwOn4h5XD38287",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_02_PVb7owURBPAf96JIZIM75840",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_03_Lq1GxqprbM0p6OtznjsC6511",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{\"claim\": \"Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass.\"}",
+          "id": "call_04_KzV1jG1LfOqW4iARmles0238",
+          "name": "check_claim_consistency"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 81,
+      "finish_reason": "tool_calls",
+      "model_call": 2,
+      "prompt_tokens": 4451,
+      "raw_content": "All checks pass: linkage matches, freshness is TRUE (authoritative restage tree matches), coverage is complete (1/1 F2P, 31/31 P2P executed), and no failures.",
+      "served_model": "deepseek-flash",
+      "tool_calls": [
+        {
+          "arguments": "{\"name\": \"symptom\"}",
+          "id": "call_00_JQgoxO2y6kISSQ6VxvWO1700",
+          "name": "get_run_log"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 8,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 306,
+      "finish_reason": "stop",
+      "model_call": 3,
+      "prompt_tokens": 4656,
+      "raw_content": "The symptom log confirms the reported issue is resolved by this patch: pre-patch the reproduction raises the exact ValueError from the issue, post-patch it returns a factor and dimension without error. Combined with intact linkage, fresh tree, complete coverage, and zero failures, the evidence supports acceptance.\n\n{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and applies to this patch: linkage verified (base_commit e8c22f6eac and patch_sha256 3d1868e0 both match), freshness is TRUE (authoritative restage tree 9146f4c3 equals the attested run tree), and coverage is complete (1/1 declared FAIL_TO_PASS and 31/31 scoped PASS_TO_PASS executed, no missing ids). Outcomes are failure-free: test_issue_24211 PASSED, all 31 scoped regression tests PASSED, no regressed or preexisting-bad ids. The symptom log independently confirms the issue is resolved: pre-patch the reproduction raises 'Dimension of \\\"v1\\\" is Dimension(velocity), but it should be Dimension(acceleration*time)', while post-patch it returns factor -47.0 with dimension Dimension(acceleration*time). The patch's use of get_dimension_system().equivalent_dims(dim, addend_dim) correctly treats dimensionally equivalent addends as compatible, matching the issue's requirement.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 10,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_5711762ccfb7ae48",
+  "tokens_in": 11373,
+  "tokens_out": 525,
+  "tool_calls": 6,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_5711762ccfb7ae48\", \"base_commit\": \"e8c22f6eac7314be8d92590bfff92ced79ee03e2\", \"fail_to_pass\": {\"test_issue_24211\": \"PASSED\"}, \"finished_at\": \"2026-10-25T18:48:18+00:00\", \"instance_id\": \"sympy__sympy-24213\", \"log_digests\": {\"f2p\": \"a0a028b51b910c50ba667acb6b887678b5c3c8ef0a76d304ea4f7420ef6d4166\", \"p2p\": \"a0a028b51b910c50ba667acb6b887678b5c3c8ef0a76d304ea4f7420ef6d4166\", \"p2p_baseline\": \"c050b06fb13c5baa106275b9f97ff8b4a41a3b6580d0eb20e011a3b8034bfe99\", \"symptom\": \"efb3e0f8c9ec9c1d6367970f7f6a3a5880b27b606f75f2fb5419b1ba174dbdfa\"}, \"pass_to_pass_baseline\": {\"test_Quantity_definition\": \"PASSED\", \"test_Quantity_derivative\": \"PASSED\", \"test_Quantity_eq\": \"PASSED\", \"test_abbrev\": \"PASSED\", \"test_add_sub\": \"PASSED\", \"test_binary_information\": \"PASSED\", \"test_check_unit_consistency\": \"PASSED\", \"test_conversion_with_2_nonstandard_dimensions\": \"PASSED\", \"test_convert_to\": \"PASSED\", \"test_deprecated_quantity_methods\": \"PASSED\", \"test_dimensional_expr_of_derivative\": \"PASSED\", \"test_eq\": \"PASSED\", \"test_eval_subs\": \"PASSED\", \"test_factor_and_dimension\": \"PASSED\", \"test_find_unit\": \"PASSED\", \"test_get_dimensional_expr_with_function\": \"PASSED\", \"test_issue_14547\": \"PASSED\", \"test_issue_14932\": \"PASSED\", \"test_issue_20288\": \"PASSED\", \"test_issue_22164\": \"PASSED\", \"test_issue_22819\": \"PASSED\", \"test_issue_24062\": \"PASSED\", \"test_issue_5565\": \"PASSED\", \"test_issue_quart\": \"PASSED\", \"test_mul_div\": \"PASSED\", \"test_prefixed_property\": \"PASSED\", \"test_print\": \"PASSED\", \"test_quantity_abs\": \"PASSED\", \"test_quantity_postprocessing\": \"PASSED\", \"test_str_repr\": \"PASSED\", \"test_units\": \"PASSED\"}, \"pass_to_pass_scoped\": {\"test_Quantity_definition\": \"PASSED\", \"test_Quantity_derivative\": \"PASSED\", \"test_Quantity_eq\": \"PASSED\", \"test_abbrev\": \"PASSED\", \"test_add_sub\": \"PASSED\", \"test_binary_information\": \"PASSED\", \"test_check_unit_consistency\": \"PASSED\", \"test_conversion_with_2_nonstandard_dimensions\": \"PASSED\", \"test_convert_to\": \"PASSED\", \"test_deprecated_quantity_methods\": \"PASSED\", \"test_dimensional_expr_of_derivative\": \"PASSED\", \"test_eq\": \"PASSED\", \"test_eval_subs\": \"PASSED\", \"test_factor_and_dimension\": \"PASSED\", \"test_find_unit\": \"PASSED\", \"test_get_dimensional_expr_with_function\": \"PASSED\", \"test_issue_14547\": \"PASSED\", \"test_issue_14932\": \"PASSED\", \"test_issue_20288\": \"PASSED\", \"test_issue_22164\": \"PASSED\", \"test_issue_22819\": \"PASSED\", \"test_issue_24062\": \"PASSED\", \"test_issue_5565\": \"PASSED\", \"test_issue_quart\": \"PASSED\", \"test_mul_div\": \"PASSED\", \"test_prefixed_property\": \"PASSED\", \"test_print\": \"PASSED\", \"test_quantity_abs\": \"PASSED\", \"test_quantity_postprocessing\": \"PASSED\", \"test_str_repr\": \"PASSED\", \"test_units\": \"PASSED\"}, \"patch_sha256\": \"3d1868e07bf621c8f12c866ac4525482181eb10e40c89547389b211786bacdcd\", \"repo\": \"sympy/sympy\", \"runner\": \"pytest/vendored-git  py=3.9.25  host=windows-local\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/physics/units/tests/test_dimensions.py\", \"sympy/physics/units/tests/test_dimensionsystem.py\", \"sympy/physics/units/tests/test_prefixes.py\", \"sympy/physics/units/tests/test_quantities.py\", \"sympy/physics/units/tests/test_unit_system_cgs_gauss.py\", \"sympy/physics/units/tests/test_unitsystem.py\", \"sympy/physics/units/tests/test_util.py\"], \"p2p_total_in_dataset\": 31, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-25T18:48:05+00:00\", \"summary\": {\"f2p_failed_ids\": [], \"f2p_passed\": 1, \"f2p_total\": 1, \"p2p_passed\": 31, \"p2p_preexisting_bad_ids\": [], \"p2p_regressed_ids\": [], \"p2p_total\": 31}, \"test_patch_sha256\": \"64ea4c6ee44904d8464e5923d38043ae8a56692b70363b322496eeb2e3784686\"}, \"authentic_signature\": true, \"evidence_tier\": \"A\"}",
+      "tool": "get_test_artifact",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"e8c22f6eac7314be8d92590bfff92ced79ee03e2\", \"record_patch_sha256\": \"3d1868e07bf621c8f12c866ac4525482181eb10e40c89547389b211786bacdcd\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"9146f4c3875cbfb67fbeb9b8685d3333422128c1\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"9146f4c3875cbfb67fbeb9b8685d3333422128c1\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:48:05+00:00\", \"attestation_built_at\": \"2026-10-25T18:48:19+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 31, \"executed\": 31, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {
+        "claim": "Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass."
+      },
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"executed acceptance/regression checks show no failure\", \"failed_acceptance_checks\": 0, \"regression_checks\": 0, \"executed_checks\": 32}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    },
+    {
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: _collect_factor_and_dimension raised ValueError Dimension of \"v1\" is Dimension(velocity), but it should be Dimension(acceleration*time)\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: no dimension error for a*t + v -> factor -47.0000000000000 dimension Dimension(acceleration*time)\n\n--- stderr ---\n",
+      "tool": "get_run_log",
+      "turn": 1
+    }
+  ],
+  "wall_s": 4.73
+}

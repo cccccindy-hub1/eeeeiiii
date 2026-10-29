@@ -1,0 +1,108 @@
+{
+  "document": "EAL Gate-1 engineering gate self-check",
+  "protocol": "eal-v0-draft1",
+  "n_gates": 20,
+  "all_pass": true,
+  "checks": [
+    {
+      "gate": "G1-1 132 cells (2x22x3), one row set per model",
+      "pass": true,
+      "detail": "{'deepseek-flash': 66, 'gpt-4.1-mini': 66}"
+    },
+    {
+      "gate": "G1-1 deepseek-flash covers exact 66 (bundle,layer) keys",
+      "pass": true,
+      "detail": "missing=0 extra=0"
+    },
+    {
+      "gate": "G1-1 deepseek-flash no duplicate scored cell",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "gate": "G1-1 gpt-4.1-mini covers exact 66 (bundle,layer) keys",
+      "pass": true,
+      "detail": "missing=0 extra=0"
+    },
+    {
+      "gate": "G1-1 gpt-4.1-mini no duplicate scored cell",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "gate": "G1-2 identical served payload sha across models",
+      "pass": true,
+      "detail": "0 mismatches"
+    },
+    {
+      "gate": "G1-3 deepseek-flash uniform wire controls (t=0/json_object/4096/no tools)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "gate": "G1-3 gpt-4.1-mini uniform wire controls (t=0/json_object/4096/no tools)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "gate": "G1-4 deepseek-flash INVALID/AMBIGUOUS present and not repaired",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "gate": "G1-4 gpt-4.1-mini INVALID/AMBIGUOUS present and not repaired",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "gate": "G1-5 deepseek-flash full retention (raw-first; reason/gap verbatim; model/tokens/latency)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "gate": "G1-5 gpt-4.1-mini full retention (raw-first; reason/gap verbatim; model/tokens/latency)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "gate": "G1-6 mock spend exactly zero",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "gate": "G1-6 projected envelope within hard cap",
+      "pass": true,
+      "detail": "projected=$0.0 cap=$3.0"
+    },
+    {
+      "gate": "G1-7 --allow-paid-run refused in Gate 1",
+      "pass": true,
+      "detail": "refused as designed"
+    },
+    {
+      "gate": "G1-7 live (no --mock) refused",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "gate": "G1-8 raw/structured served bytes free of verdict/metadata leaks",
+      "pass": true,
+      "detail": "0 leak payloads"
+    },
+    {
+      "gate": "G1-9 22 certificates; raw+structured 22/22 determined",
+      "pass": true,
+      "detail": "underdetermined=[]"
+    },
+    {
+      "gate": "G1-9 underdetermined-layer scoring rule wired (currently vacuous as 22/22 determined)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "gate": "G1-10 adjudicated payloads byte-identical to frozen CEE bundles",
+      "pass": true,
+      "detail": "[]"
+    }
+  ]
+}

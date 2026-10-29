@@ -1,0 +1,100 @@
+{
+  "checks": {
+    "api_calls_made": 0,
+    "budget_caps_usd": {
+      "per_model": 1.0,
+      "total": 2.0
+    },
+    "budget_checks": [
+      {
+        "model": "deepseek-flash",
+        "normal_call_allowed": true,
+        "per_cell_call_cap_blocks": true,
+        "per_model_1usd_blocks_with_total_room": true,
+        "total_2usd_blocks": true
+      },
+      {
+        "model": "gpt-4.1-mini",
+        "normal_call_allowed": true,
+        "per_cell_call_cap_blocks": true,
+        "per_model_1usd_blocks_with_total_room": true,
+        "total_2usd_blocks": true
+      }
+    ],
+    "external_network": "none (127.0.0.1 only)",
+    "freshness_via_http": "mock exercised GET /freshness over real server; applicable cells require linked+fresh (8 issues freshness 8/8 already frozen in g3c1 audit)",
+    "mock": {
+      "active_diag_all_v2_tag": true,
+      "escalate_all_400_then_reason_200": true,
+      "mock_is_research_excluded": true,
+      "mock_matches_condition_gold": 40,
+      "n_cells_issue_x_condition": 40,
+      "n_escalate": 8,
+      "n_strict": 8,
+      "n_t3a": 8,
+      "strict_all_403": true,
+      "tier_d_baseline_leak_cells": 0
+    },
+    "model_id_checks": [
+      {
+        "case": "exact_match_passes",
+        "ok": true
+      },
+      {
+        "case": "id_drift_hard_stops",
+        "ok": true
+      },
+      {
+        "case": "none_does_not_trip",
+        "ok": true
+      }
+    ],
+    "n_issues": 8,
+    "n_surfaces_probed": 56,
+    "noninterference_clean": true,
+    "raw_first_persistence": {
+      "pre_call_guard_before_http": "evidence/g3b3_run.py L249-251, L270",
+      "raw_persisted_before_scoring": "evidence/g3b3_run.py L703-715",
+      "scoring_error_terminal_no_second_paid_call": "evidence/g3b3_run.py L716-734",
+      "verified_by": "code inspection only (no live call permitted)"
+    },
+    "resume_check": {
+      "done_ok": true,
+      "restored_spent_usd": 0.06,
+      "spent_expect": 0.06,
+      "spent_ok": true,
+      "terminal_done": [
+        "a",
+        "b",
+        "s"
+      ],
+      "transport_error_resume_eligible": true
+    },
+    "surface_counts": {
+      "baseline_field_hits": 0,
+      "n_restricted": 40,
+      "tier1": 0,
+      "tier2": 0
+    },
+    "surface_violations": []
+  },
+  "document": "Paper Sprint P1 final experimental readiness (zero API)",
+  "engineering_ready_offline": true,
+  "live_run_authorized": false,
+  "remaining_blockers": [
+    "AUTHORIZATION: no live API call approved; separate written go required (80 cells, $2.00/$1.00).",
+    "GOLD AUTHORITY: annotator2 NOT_OBTAINED; any run is a PROVISIONAL-GOLD EXPLORATORY pilot, not human-adjudicated benchmark validation.",
+    "RUNNER BINDING: instantiate the live runner for the 8 g3c1 issues with caps $2.00/$1.00 (the frozen g3b3 entrypoint defaults to $3.00/$1.50 and the g3a store); guards themselves are verified here at the new caps."
+  ],
+  "scope": "8 issues x 5 conditions x 2 models = 80 real cells; no new issues/models/conditions; no re-runs to improve results",
+  "source_code_reused": [
+    "evidence/g3c1_server.py",
+    "evidence/g3c0_projection_v2.py",
+    "evidence/g3c1_mock.py",
+    "evidence/g3b4_strict_audit.py",
+    "evidence/views.py",
+    "evidence/g3b3_run.py",
+    "evidence/phase3_run.py"
+  ],
+  "verdict": "ENGINEERING_READY__BLOCKED_ON_AUTHORIZATION_AND_GOLD"
+}

@@ -1,0 +1,142 @@
+{
+  "api_calls_made_by_this_audit": 0,
+  "audit_version": "groundedreview-gate3b4-zero-api-strict-audit-v1",
+  "chronology_mtime_utc": [
+    {
+      "artifact": "g3b3_freeze_code",
+      "bytes": 18284,
+      "mtime_utc": "2026-10-27T01:44:18Z",
+      "path": "evidence\\g3b3_freeze.py"
+    },
+    {
+      "artifact": "mock_run_audit",
+      "bytes": 1216,
+      "mtime_utc": "2026-10-27T01:51:31Z",
+      "path": "evidence_store_g3b3\\runs\\g3b3_mock_run_audit.json"
+    },
+    {
+      "artifact": "live_gate_spec",
+      "bytes": 91374,
+      "mtime_utc": "2026-10-27T02:04:02Z",
+      "path": "evidence_store_g3b3\\livegate\\g3b3_live_gate.json"
+    },
+    {
+      "artifact": "g3b3_run_code",
+      "bytes": 36985,
+      "mtime_utc": "2026-10-27T02:21:14Z",
+      "path": "evidence\\g3b3_run.py"
+    },
+    {
+      "artifact": "executed_freeze_manifest",
+      "bytes": 167724,
+      "mtime_utc": "2026-10-27T02:22:27Z",
+      "path": "evidence_store_g3b3\\freeze\\g3b3_freeze_manifest.json"
+    },
+    {
+      "artifact": "preflight",
+      "bytes": 214200,
+      "mtime_utc": "2026-10-27T02:22:34Z",
+      "path": "evidence_store_g3b3\\preflight\\g3b3_preflight.json"
+    },
+    {
+      "artifact": "gpt_rows",
+      "bytes": 424890,
+      "mtime_utc": "2026-10-27T02:30:01Z",
+      "path": "evidence_store_g3b3\\runs\\g3b3_live_gpt_41_mini_results.jsonl"
+    },
+    {
+      "artifact": "ds_rows",
+      "bytes": 822486,
+      "mtime_utc": "2026-10-27T02:30:07Z",
+      "path": "evidence_store_g3b3\\runs\\g3b3_live_deepseek_flash_results.jsonl"
+    },
+    {
+      "artifact": "live_run_audit",
+      "bytes": 1231,
+      "mtime_utc": "2026-10-27T02:30:07Z",
+      "path": "evidence_store_g3b3\\runs\\g3b3_live_run_audit.json"
+    },
+    {
+      "artifact": "analysis",
+      "bytes": 158115,
+      "mtime_utc": "2026-10-27T02:59:03Z",
+      "path": "evidence_store_g3b3\\analysis\\g3b3_analysis.json"
+    },
+    {
+      "artifact": "report",
+      "bytes": 31877,
+      "mtime_utc": "2026-10-27T03:20:40Z",
+      "path": "evidence_store_g3b3\\g3b3_report.json"
+    },
+    {
+      "artifact": "result_freeze_manifest",
+      "bytes": 51286,
+      "mtime_utc": "2026-10-27T03:20:40Z",
+      "path": "evidence_store_g3b3\\freeze\\g3b3_result_freeze_manifest.json"
+    }
+  ],
+  "chronology_narrative": [
+    "1) g3b3_freeze.py authored; the mock pipeline passed its mock run audit 100/100 at $0 (the mock path skips the guard, so the missing return was not exercised).",
+    "2) The live-gate artifact was produced (its mtime precedes the executed freeze; internal fields show it is a gate specification validated by the later preflight, not a post-run spend record).",
+    "3) FIRST LIVE ATTEMPT: CompositeGuard.check returned None, so the first live cell raised float(None) BEFORE any completions.create; the batch failed with zero model calls and zero spend, and its $0 products were discarded.",
+    "4) REPAIR: CompositeGuard.check was given `return bound` (current L148-153), making float(bound) valid.",
+    "5) The executed freeze manifest + preflight were regenerated for the corrected code; the corrected live run produced 50 GPT + 50 DeepSeek rows (100/100 success, 0 errors, 0 resume skips), the run audit, analysis and report.",
+    "6) The result-freeze manifest pinned the final 100 raw responses and 100 traces only after the successful re-run."
+  ],
+  "deleted_products_limitation": "The first batch $0 error artifacts were deleted and cannot now be independently hashed; this audit does not claim to hash them. It proves $0 via code ordering and the clean surviving run, and discloses the fail->repair->refreeze order rather than presenting only the final 100/100.",
+  "document": "Gate 3-B.4 task 9 first-run CompositeGuard None failure and repair timeline",
+  "failure_mechanism": {
+    "buggy_shape": "CompositeGuard.check(...) ended without a return statement, so it returned None implicitly; the runner then executed round(float(bound),6) with bound=None.",
+    "exception": "TypeError: float() argument must be a string or a real number, not 'NoneType'",
+    "ordering_proof": "guard.check / float(bound) at L249-251 executes before driver.chat.completions.create at L270. With bound=None the TypeError is raised at L251, so control never reaches L270; no HTTP request is issued for that cell.",
+    "repaired_code_current": {
+      "call_site": "L249-251: if not mock and guard is not None: bound = guard.check(...); pre_call_bounds.append(round(float(bound),6))",
+      "check_lines": "L148-153: bound = self.model_guard.check(...); self.total_guard.check(...); return bound",
+      "file": "evidence/g3b3_run.py",
+      "network_call": "L270-272: driver.chat.completions.create(...)"
+    },
+    "why_mock_did_not_catch_it": "the guard path is skipped when mock=True (L249), so the mock audit 100/100 $0 did not exercise the missing return."
+  },
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold carried unchanged from Gate 3-A.1; no second adjudicator has been obtained as of Gate 3-B.4. No Cohen kappa is reported and gold is never called human-adjudicated. Gate 3-B.4 audits model behaviour against this PROVISIONAL gold only; the same AI operator performing the audit is NOT an independent human adjudicator."
+  },
+  "internal_timestamps": {
+    "live_gate": {
+      "n_checks": 571
+    },
+    "live_run_audit": {
+      "per_model_spend_usd": {
+        "deepseek-flash": 0.189045,
+        "gpt-4.1-mini": 0.114494
+      },
+      "total_spend_usd": 0.303539,
+      "within_total_cap": true
+    },
+    "preflight": {
+      "n_checks": 41
+    },
+    "result_freeze": {
+      "created_utc": "2026-10-27T03:20:40.473400+00:00"
+    }
+  },
+  "residue_scan": {
+    "raw_dir_error_files": [],
+    "runs_dir_matching_names": []
+  },
+  "zero_api_evidence": {
+    "interpretation": "The surviving frozen run is entirely the post-repair successful run. The failed attempt reached no network call by construction; the deleted $0 error products cannot be hashed, so their absence is attested by (a) the static ordering proof, (b) zero error/zero-call rows and no on-disk residue, and (c) the run audit recording only new=50 per model, skipped=0.",
+    "ordering": "guard evaluation (L249-251) precedes the network call (L270) in the executed source",
+    "surviving_rows": {
+      "n_live_rows": 100,
+      "n_live_rows_cost_positive": 100,
+      "n_rows_model_calls_zero": 0,
+      "n_rows_with_error": 0,
+      "run_audit_n_new": null,
+      "run_audit_n_skipped": null,
+      "run_audit_total_spend_usd": 0.303539
+    }
+  }
+}

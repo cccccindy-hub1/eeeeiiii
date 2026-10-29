@@ -1,0 +1,43 @@
+Dossier D03 — 材料清单与完整性前提（中性，不含任何答案）
+
+仓库（已匿名）：SymPy（本地 vendored 仓库，真实执行）
+base_commit：58e78209c8577b9890e957b624466e5beed7eb08
+候选补丁 sha256：7c197026b3d50e673d35a590f28e59ab200c96fbc4a6c290507f3210161bd850
+维护者 test_patch sha256：534210411f2e68c4c70460ba311b6d0f56556d21cd88aa3016cc640c693d89f9
+执行环境：pytest/vendored-git  py=3.9.25  host=windows-local
+测试命令：python -m pytest <作用域文件> -v --tb=short -p no:cacheprovider
+         （3 文件一批；含全部 F2P + 作用域 P2P + 基线 P2P）
+探针执行：CPython 3.9.25 + pytest 8.4.2 + mpmath 1.4.1（uv，离线）
+
+声明的 FAIL_TO_PASS 节点（维护者回归测试）：
+  - test_issue_17624
+  - test_zero_matrix_add
+
+声明的作用域 PASS_TO_PASS 节点数：21（相邻 tests/ 包内可映射子集，
+非数据集完整 P2P 套件；完整 P2P 未在本地执行——“通过”仅指作用域内）。
+
+机械完整性前提（已由构建期 HMAC/sha256/git write-tree 核验，你无需重算）：
+- 四个日志与签名记录 log_digests 一致；
+- 执行树 = base + 候选补丁 + 维护者 test_patch 的确定性重放树；
+- 记录签名可信。
+你仍应独立判断：这些测试在**语义上**是否适用于该候选、失败是否为环境
+假失败、探针是否忠实于 issue 报告症状。
+
+匿名化说明（重要）：issue 编号与上游 URL 在 01–04 文件中已统一替换为
+<ID_REDACTED>/<UPSTREAM_ISSUE_REDACTED>（含补丁/测试注释中引用该 issue
+的位置）。替换只针对引用标记，不改任何代码行与断言语义；故 02/03 的
+显示字节与上面 sha256 绑定的权威字节仅在这些注释标记处不同。代码内部
+因测试命名惯例而保留的形如 test_issue_<数字> 的函数名未改（读懂测试所
+需）；它们不构成本案编号的可靠标识，残留的弱可识别性已在审计中披露。
+
+文件：
+  01_issue.txt              用户问题报告（issue 号已匿名）
+  02_candidate.patch        被审候选补丁（唯一 target，无镜像）
+  03_maintainer_test.patch  维护者回归测试补丁
+  04_probe.py               从 issue 报告派生的症状探针
+  05_log_f2p.txt            补丁后 F2P 的真实 pytest 日志
+  06_log_p2p.txt            补丁后作用域 P2P 的真实 pytest 日志
+  07_log_p2p_baseline.txt   基线（未打补丁）作用域 P2P 日志（用于识别 preexisting）
+  08_log_symptom.txt        症状探针 基线/补丁后 执行结果
+  09_form_blank.md          你的空白判定表
+  10_f2p_worksheet_blank.md 逐 F2P 节点的关联性/真实性/基线/适用性空白工作表

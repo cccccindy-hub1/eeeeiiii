@@ -1,0 +1,160 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage all check out: the artifact is authentically signed, base_commit and patch_sha256 match this patch, the authoritative restage tree equals the run tree (fresh=true), and the declared set was fully executed (1/1 F2P, 8/8 scoped P2P, complete=true). The issue-symptom probe also shows the reported over-substitution of the bound variable is gone after the patch, and the registered author statement is consistent at the issue level. However, under the STRICT diagnostic tier all maintainer acceptance-test outcomes and scoped regression verdicts are withheld, and the acceptance/regression logs are disabled (403). A passing symptom probe is explicitly not proof of merge acceptability, and I have no trustworthy evidence of pass/fail for the declared acceptance check or the 8 scoped regression checks. Since no decisive applicable failure is established, REJECT is not warranted; but complete failure-free success cannot be confirmed either, so I abstain.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance (FAIL_TO_PASS) outcome for the single declared check and pass/fail verdicts for the 8 scoped PASS_TO_PASS regression checks are withheld at the diagnostic tier and their logs are disabled under the STRICT policy; only coverage (executed counts) and the issue-symptom probe are available, which cannot establish that no acceptance check fails and no scoped regression is introduced.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "cell": "g3c1live:sympy__sympy-19495:T3D-Strict",
+  "condition": "T3D-Strict",
+  "cost_usd": 0.003053,
+  "evidence_session": "7f0e029802f2ea01d99afded",
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-19495",
+  "instance_id": "sympy__sympy-19495",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 2,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": "strict",
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010701,
+    0.011208
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 156,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 3314,
+      "raw_content": "I'll verify the artifact's linkage, freshness, coverage, and claim consistency before deciding.",
+      "served_model": "deepseek-flash",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_00_smq1EE4M6xNegXBKeK0E0244",
+          "name": "get_test_artifact"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_01_og0dl1PZnkcAoaWOFL4t4723",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_02_0n9njIWGxQV9kkxn0ITm4227",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_03_QmXgqypxHhWLPLdsoYD76508",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{\"claim\": \"This fix is correct and all relevant tests pass.\"}",
+          "id": "call_04_MTWWj3kkHKVACUpBiDIK3001",
+          "name": "check_claim_consistency"
+        },
+        {
+          "arguments": "{\"name\": \"symptom\"}",
+          "id": "call_05_Vl6uizkJ2LjtQLNQ7tw12896",
+          "name": "get_run_log"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 323,
+      "finish_reason": "stop",
+      "model_call": 2,
+      "prompt_tokens": 4948,
+      "raw_content": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage all check out: the artifact is authentically signed, base_commit and patch_sha256 match this patch, the authoritative restage tree equals the run tree (fresh=true), and the declared set was fully executed (1/1 F2P, 8/8 scoped P2P, complete=true). The issue-symptom probe also shows the reported over-substitution of the bound variable is gone after the patch, and the registered author statement is consistent at the issue level. However, under the STRICT diagnostic tier all maintainer acceptance-test outcomes and scoped regression verdicts are withheld, and the acceptance/regression logs are disabled (403). A passing symptom probe is explicitly not proof of merge acceptability, and I have no trustworthy evidence of pass/fail for the declared acceptance check or the 8 scoped regression checks. Since no decisive applicable failure is established, REJECT is not warranted; but complete failure-free success cannot be confirmed either, so I abstain.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance (FAIL_TO_PASS) outcome for the single declared check and pass/fail verdicts for the 8 scoped PASS_TO_PASS regression checks are withheld at the diagnostic tier and their logs are disabled under the STRICT policy; only coverage (executed counts) and the issue-symptom probe are available, which cannot establish that no acceptance check fails and no scoped regression is introduced.\",\"evidence_gap\":\"coverage_incomplete\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 9,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_fec174c8f4012a8b",
+  "tokens_in": 8262,
+  "tokens_out": 479,
+  "tool_calls": 6,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_fec174c8f4012a8b\", \"base_commit\": \"25fbcce5b1a4c7e3956e6062930f4a44ce95a632\", \"finished_at\": \"2026-10-28T10:15:07+00:00\", \"instance_id\": \"sympy__sympy-19495\", \"log_digests\": {\"symptom\": \"7b9ba40336293588c714bd1a5121c3d248f9bffef959690964ee794c4d69288e\"}, \"patch_sha256\": \"cf8cf88dd11a5b8bfae974bbcc709c98ff8e5b0447b083350b4a779f5b92ca04\", \"repo\": \"sympy/sympy\", \"runner\": \"pytest/vendored-git  py=3.9.25  host=windows-local  gate=G3-C.1\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/sets/tests/test_conditionset.py\", \"sympy/sets/tests/test_contains.py\", \"sympy/sets/tests/test_fancysets.py\", \"sympy/sets/tests/test_ordinals.py\", \"sympy/sets/tests/test_powerset.py\", \"sympy/sets/tests/test_setexpr.py\", \"sympy/sets/tests/test_sets.py\"], \"p2p_total_in_dataset\": 8, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-28T10:14:29+00:00\", \"summary\": {\"f2p_total\": 1, \"p2p_total\": 8, \"outcomes_withheld\": true, \"note\": \"acceptance-test outcomes and regression verdicts are withheld at the diagnostic tier; use the verification service to seek them.\"}, \"test_patch_sha256\": \"31c8b2e71169361f3ad3396f467381c44cfd1ee56343b2949cf28c334f00b708\", \"evidence_tier\": \"diagnostic\", \"projection_version\": \"diagnostic-v2-no-baseline-map-v1\"}, \"authentic_signature\": true, \"evidence_tier\": \"D\"}",
+      "tool": "get_test_artifact",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"25fbcce5b1a4c7e3956e6062930f4a44ce95a632\", \"record_patch_sha256\": \"cf8cf88dd11a5b8bfae974bbcc709c98ff8e5b0447b083350b4a779f5b92ca04\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"d67a7035423c8fabb58d08cd7441de66b51aefba\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"d67a7035423c8fabb58d08cd7441de66b51aefba\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:14:29+00:00\", \"attestation_built_at\": \"2026-10-28T10:15:09+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 8, \"executed\": 8, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {
+        "claim": "This fix is correct and all relevant tests pass."
+      },
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    },
+    {
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python sympy__sympy-19495-baseline.py  (exit 1)\n--- stdout ---\nbefore          : ConditionSet(x, Contains(y, Interval(-1, 1)), ImageSet(Lambda(n, 2*pi*n + asin(y)), Integers))\nplain subs      : ConditionSet(1/3, Contains(1/3, ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)), ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers))\nxreplace ref    : ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nsimultaneous ref: ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nFAIL: ConditionSet bound variable was over-substituted to 1/3\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python sympy__sympy-19495-post-candidate.py  (exit 0)\n--- stdout ---\nbefore          : ConditionSet(x, Contains(y, Interval(-1, 1)), ImageSet(Lambda(n, 2*pi*n + asin(y)), Integers))\nplain subs      : ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nxreplace ref    : ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nsimultaneous ref: ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nOK: ConditionSet.subs no longer over-substitutes the bound variable\n\n--- stderr ---\n",
+      "tool": "get_run_log",
+      "turn": 0
+    }
+  ],
+  "wall_s": 4.27
+}

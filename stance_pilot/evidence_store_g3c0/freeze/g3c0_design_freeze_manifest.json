@@ -1,0 +1,563 @@
+{
+  "actual_new_issues_materialised": 0,
+  "api_calls_made": 0,
+  "approved_scope": {
+    "actual_new_issues_materialised": 0,
+    "gate_3c_execution": false,
+    "gemini_or_r2": false,
+    "git_commit": false,
+    "gold_changes": false,
+    "modify_historical_frozen_artifacts": false,
+    "real_model_calls": 0,
+    "spend_usd": 0.0,
+    "wire_v2_into_frozen_runtime": false
+  },
+  "budget_usd": 0,
+  "design_version": "groundedreview-gate3c0-zero-api-design-freeze-v1",
+  "document": "GroundedReview Gate G3-C.0 zero-API design-freeze manifest",
+  "files": [
+    {
+      "bytes": 8189,
+      "relpath": "budget/g3c0_execution_budget_and_engineering.json",
+      "sha256": "89f99fc1818a8e05ff10212f91cf944004a8e3849f052a42efc9c52ca69583b1"
+    },
+    {
+      "bytes": 16129,
+      "relpath": "design/g3c0_preregistration_endpoints_sampling_stats.json",
+      "sha256": "e6224c2d945585c1368f6402070cb677cab48145b4b4d1e50d00b8923f26bd23"
+    },
+    {
+      "bytes": 3307,
+      "relpath": "freeze/g3c0_task1_g3b4_freeze_reverification.json",
+      "sha256": "051772eff00e24116355455eacf5f67245ca2019b574d773ec1730ca2b04c3b3"
+    },
+    {
+      "bytes": 7432,
+      "relpath": "g3c0_design_report.json",
+      "sha256": "bcaa1c277b1d47926eb7a0d8821109d588eb09c5cef5ee54377b8a09e89f220e"
+    },
+    {
+      "bytes": 6213,
+      "relpath": "g3c0_design_report.md",
+      "sha256": "8d4710634f900f044e011b92dcf82b8611a72baaf336b1648ed9ad7308e80b41"
+    },
+    {
+      "bytes": 2286,
+      "relpath": "human_annotation/00_annotator_protocol.md",
+      "sha256": "71961aed567aba8cf5209550ef3246fec3aa8816e6acee169975b4db66bb8a6e"
+    },
+    {
+      "bytes": 369,
+      "relpath": "human_annotation/annotator2_labels.csv",
+      "sha256": "5b37f7097d371324431b099c05e94a502c37ea29b7acf7a5b980bc2140f582be"
+    },
+    {
+      "bytes": 7741,
+      "relpath": "human_annotation/g3c0_human_annotation_package.json",
+      "sha256": "3b27fd7146655df5e2f9a23ad8ca8069e8318b9c882b9515d85a8b0988bf4e80"
+    },
+    {
+      "bytes": 949,
+      "relpath": "human_annotation/packets/P01/00_README.txt",
+      "sha256": "a304761dc5962b85f92ba78e73c2bb47695eb55687b782b0a56e0226f5d21b21"
+    },
+    {
+      "bytes": 704,
+      "relpath": "human_annotation/packets/P01/01_problem_statement.txt",
+      "sha256": "8baf32ee36c064fadc1dd9ba34d07fc1c63b48f8406719f4c1c8995660d8af41"
+    },
+    {
+      "bytes": 2582,
+      "relpath": "human_annotation/packets/P01/02_candidate_patch.diff",
+      "sha256": "6367c35618bc8742d2fc53c56458af54047f986cba3d4d8c4287d3e1e18c85d7"
+    },
+    {
+      "bytes": 516,
+      "relpath": "human_annotation/packets/P01/03_maintainer_test_patch.diff",
+      "sha256": "9768c84379c35a0bfbc3a87395aa20a12aa80d576e9a216a8617bedd1dbf1f41"
+    },
+    {
+      "bytes": 214,
+      "relpath": "human_annotation/packets/P01/04_declared_test_ids.json",
+      "sha256": "9f3430a5ded2def40cfb4ad4fe58f683d9da627e18e04d7f486c97b7ab741810"
+    },
+    {
+      "bytes": 2035,
+      "relpath": "human_annotation/packets/P01/05_ci_fail_to_pass.log",
+      "sha256": "620d8a754d66dc4e4300970370e0b7cdaec27fdb50e3e7006ebdc60b16c2da52"
+    },
+    {
+      "bytes": 2035,
+      "relpath": "human_annotation/packets/P01/06_ci_pass_to_pass_scoped.log",
+      "sha256": "620d8a754d66dc4e4300970370e0b7cdaec27fdb50e3e7006ebdc60b16c2da52"
+    },
+    {
+      "bytes": 2035,
+      "relpath": "human_annotation/packets/P01/07_ci_pass_to_pass_base_commit.log",
+      "sha256": "f22166f9dfb278a998e6571e0d3457124c98d9c9a436b1132b1e92ff94634284"
+    },
+    {
+      "bytes": 407,
+      "relpath": "human_annotation/packets/P01/08_issue_symptom_probe.log",
+      "sha256": "d2ed16d5f1d794111a30339ffb9f5bb863cc6b8cad4bca6691e6fd14193fe193"
+    },
+    {
+      "bytes": 949,
+      "relpath": "human_annotation/packets/P02/00_README.txt",
+      "sha256": "c4a346b541f3a8d7a28551542b12e15dae2e9d82684fdbc51672cae4e5eb682b"
+    },
+    {
+      "bytes": 209,
+      "relpath": "human_annotation/packets/P02/01_problem_statement.txt",
+      "sha256": "ab41556f43c3e765336f3574e93b686e1aa4917899f8df04dac49744e6c86c79"
+    },
+    {
+      "bytes": 1769,
+      "relpath": "human_annotation/packets/P02/02_candidate_patch.diff",
+      "sha256": "10b3a2349eb10c9b32cf0853acdcc3787b33731b82251f063fe81effc2e2106e"
+    },
+    {
+      "bytes": 567,
+      "relpath": "human_annotation/packets/P02/03_maintainer_test_patch.diff",
+      "sha256": "b0800a66bcfdddee2e2d8d466ff9de43c98c3af552a1f364f80b4f9194ab227f"
+    },
+    {
+      "bytes": 2091,
+      "relpath": "human_annotation/packets/P02/04_declared_test_ids.json",
+      "sha256": "b008d4e3d75fbd1cf4e169947e6b807ffdf521c834a7bd975684a100cef790e2"
+    },
+    {
+      "bytes": 11351,
+      "relpath": "human_annotation/packets/P02/05_ci_fail_to_pass.log",
+      "sha256": "26c6a680aaf2d8f21131e8671e525634ff75385bbbb463da2fef34ef0186805d"
+    },
+    {
+      "bytes": 11351,
+      "relpath": "human_annotation/packets/P02/06_ci_pass_to_pass_scoped.log",
+      "sha256": "26c6a680aaf2d8f21131e8671e525634ff75385bbbb463da2fef34ef0186805d"
+    },
+    {
+      "bytes": 11349,
+      "relpath": "human_annotation/packets/P02/07_ci_pass_to_pass_base_commit.log",
+      "sha256": "454d1c9e2c56e601f9840d0354520def587c25b7101fb407b4897d8fa81c2aa7"
+    },
+    {
+      "bytes": 2463,
+      "relpath": "human_annotation/packets/P02/08_issue_symptom_probe.log",
+      "sha256": "9d0d870cc884740acac952e52ca58ff6ebd0d1e90ff66ccaeffaac9957608957"
+    },
+    {
+      "bytes": 949,
+      "relpath": "human_annotation/packets/P03/00_README.txt",
+      "sha256": "39e2269676ef4587dc27f6b384845e09e914b37a72483d1fe45c55ddffdd7886"
+    },
+    {
+      "bytes": 435,
+      "relpath": "human_annotation/packets/P03/01_problem_statement.txt",
+      "sha256": "3fdcb4e536cd762dd1b602f328bf1c4768f340e4c617ca8b92592b76b7c6c126"
+    },
+    {
+      "bytes": 983,
+      "relpath": "human_annotation/packets/P03/02_candidate_patch.diff",
+      "sha256": "f2c79b7381306fdba6d7c058dd44f3f45a5eaaeecb4e4200fcd2f6f36a3b5479"
+    },
+    {
+      "bytes": 1498,
+      "relpath": "human_annotation/packets/P03/03_maintainer_test_patch.diff",
+      "sha256": "ad6401cd9ac1aab55716f0d912138ba5ff37295cea42411e7e506a1dbf29ce3a"
+    },
+    {
+      "bytes": 423,
+      "relpath": "human_annotation/packets/P03/04_declared_test_ids.json",
+      "sha256": "ec23db3b6246c3cbfc9e5711a9fb7f0f5f984cf4ccba392a2f060a21e59908b8"
+    },
+    {
+      "bytes": 5872,
+      "relpath": "human_annotation/packets/P03/05_ci_fail_to_pass.log",
+      "sha256": "bc452a68f580d3ec320f4b59aed8b72f24e29b7f1a6b29a3effcfa5db8b17683"
+    },
+    {
+      "bytes": 5872,
+      "relpath": "human_annotation/packets/P03/06_ci_pass_to_pass_scoped.log",
+      "sha256": "bc452a68f580d3ec320f4b59aed8b72f24e29b7f1a6b29a3effcfa5db8b17683"
+    },
+    {
+      "bytes": 4955,
+      "relpath": "human_annotation/packets/P03/07_ci_pass_to_pass_base_commit.log",
+      "sha256": "f838ca3a086f0e9cf732f624a98f8640fb72deb2b1739f3f01f23173e64d298c"
+    },
+    {
+      "bytes": 271,
+      "relpath": "human_annotation/packets/P03/08_issue_symptom_probe.log",
+      "sha256": "9ef8be1d55de1e942647744c5308e22bbce4e9b541b54644cbc4ac2b178dc10b"
+    },
+    {
+      "bytes": 949,
+      "relpath": "human_annotation/packets/P04/00_README.txt",
+      "sha256": "8bf98974146314f51a059dacccb15e24b3d06667196ffbc0638e1f3fd0073817"
+    },
+    {
+      "bytes": 774,
+      "relpath": "human_annotation/packets/P04/01_problem_statement.txt",
+      "sha256": "400556a4b555b3c5f93018675ea838cd57213e1d671b863371fcfbfcdf5ac0eb"
+    },
+    {
+      "bytes": 1269,
+      "relpath": "human_annotation/packets/P04/02_candidate_patch.diff",
+      "sha256": "4e8655101a4b8dfe6459851bebc848ab08cd6951a287133b50130b71c4c190d2"
+    },
+    {
+      "bytes": 476,
+      "relpath": "human_annotation/packets/P04/03_maintainer_test_patch.diff",
+      "sha256": "2819b438ba4bac3f56e17af99fa5160b6a9c192eb65a9ea52cf355c4c2fde050"
+    },
+    {
+      "bytes": 711,
+      "relpath": "human_annotation/packets/P04/04_declared_test_ids.json",
+      "sha256": "15c0f92362efa67debd0089b9f38822df20a3bc914a60cff5f2aadc79ac63dcf"
+    },
+    {
+      "bytes": 42053,
+      "relpath": "human_annotation/packets/P04/05_ci_fail_to_pass.log",
+      "sha256": "205b3e8483f34e01e9417b3326ad0caf3b15ad29014506386e6ee1e9ae0882ba"
+    },
+    {
+      "bytes": 42053,
+      "relpath": "human_annotation/packets/P04/06_ci_pass_to_pass_scoped.log",
+      "sha256": "205b3e8483f34e01e9417b3326ad0caf3b15ad29014506386e6ee1e9ae0882ba"
+    },
+    {
+      "bytes": 41920,
+      "relpath": "human_annotation/packets/P04/07_ci_pass_to_pass_base_commit.log",
+      "sha256": "268c7e45ee0eaea6b831c7b1a43027051cf5a0ed4edb731174ff4fd072529737"
+    },
+    {
+      "bytes": 288,
+      "relpath": "human_annotation/packets/P04/08_issue_symptom_probe.log",
+      "sha256": "e0d7b34e816dcf448172b8da9e5e42b950f3f89f977e03007bd4caf02b41faee"
+    },
+    {
+      "bytes": 949,
+      "relpath": "human_annotation/packets/P05/00_README.txt",
+      "sha256": "a96fc8f161d176ae7ba6aaaf8098f79bab74a47fa5b9d1906ee8c6f2da503b42"
+    },
+    {
+      "bytes": 3500,
+      "relpath": "human_annotation/packets/P05/01_problem_statement.txt",
+      "sha256": "3e27ce309067e6c1d480fc107154779b26eee12439cebbebb14c4c1d14759b51"
+    },
+    {
+      "bytes": 3043,
+      "relpath": "human_annotation/packets/P05/02_candidate_patch.diff",
+      "sha256": "0577dba2d1c1dcdcaf4dd2ce2713845e0fe9a24378a27915db2788c5b7e37895"
+    },
+    {
+      "bytes": 2315,
+      "relpath": "human_annotation/packets/P05/03_maintainer_test_patch.diff",
+      "sha256": "be6c3846483145bacd705dfca4d94e95cb4fcdadbbab11aa47e3b49befec54ff"
+    },
+    {
+      "bytes": 746,
+      "relpath": "human_annotation/packets/P05/04_declared_test_ids.json",
+      "sha256": "e4c20df1ca2f0e928aefccc28e7c16632ccd019d805c02be04a06faab1a394c3"
+    },
+    {
+      "bytes": 18117,
+      "relpath": "human_annotation/packets/P05/05_ci_fail_to_pass.log",
+      "sha256": "5eaa4c85dd72d872dc500bdfe408c7bd1be5a02469e7fbe6a0110bae4c076bdb"
+    },
+    {
+      "bytes": 18117,
+      "relpath": "human_annotation/packets/P05/06_ci_pass_to_pass_scoped.log",
+      "sha256": "5eaa4c85dd72d872dc500bdfe408c7bd1be5a02469e7fbe6a0110bae4c076bdb"
+    },
+    {
+      "bytes": 16533,
+      "relpath": "human_annotation/packets/P05/07_ci_pass_to_pass_base_commit.log",
+      "sha256": "c4a6756531a8db2ace1b6319751fa3f5f970b5de8e48c9a154820ac3f3f66980"
+    },
+    {
+      "bytes": 353,
+      "relpath": "human_annotation/packets/P05/08_issue_symptom_probe.log",
+      "sha256": "f099d3b21aa745c7fc8bbe352f249775e333659eaa618843e4ea7d9a4a8a666b"
+    },
+    {
+      "bytes": 949,
+      "relpath": "human_annotation/packets/P06/00_README.txt",
+      "sha256": "72b6a7a7ac24b4606aae405698a4fd8b2434abf12e193ccaf41dbd3368131129"
+    },
+    {
+      "bytes": 1084,
+      "relpath": "human_annotation/packets/P06/01_problem_statement.txt",
+      "sha256": "8ae0f78e2fa02b3810643418f8c22b5b6939c8ad326fd90fd8cb489fdb5b594a"
+    },
+    {
+      "bytes": 2608,
+      "relpath": "human_annotation/packets/P06/02_candidate_patch.diff",
+      "sha256": "2b4e7ff0c71a5c0f78a6fed369847cb7967cbe32bb477d1ab012fb7fa01cb0b6"
+    },
+    {
+      "bytes": 1770,
+      "relpath": "human_annotation/packets/P06/03_maintainer_test_patch.diff",
+      "sha256": "6a6bfa176bfa0e64c2590ab1f1eedb9b1b4c5928b431fb11a0d0baca8f24af4f"
+    },
+    {
+      "bytes": 425,
+      "relpath": "human_annotation/packets/P06/04_declared_test_ids.json",
+      "sha256": "03ff2032ff8078abb04d37cf76b8b9d9b097e80d307d1ee03aab1807e5e09d6d"
+    },
+    {
+      "bytes": 3000,
+      "relpath": "human_annotation/packets/P06/05_ci_fail_to_pass.log",
+      "sha256": "709c44f095bfc2dedd98779e6a340803d80c73f01b39a76866d1839b6563e3be"
+    },
+    {
+      "bytes": 3000,
+      "relpath": "human_annotation/packets/P06/06_ci_pass_to_pass_scoped.log",
+      "sha256": "709c44f095bfc2dedd98779e6a340803d80c73f01b39a76866d1839b6563e3be"
+    },
+    {
+      "bytes": 2947,
+      "relpath": "human_annotation/packets/P06/07_ci_pass_to_pass_base_commit.log",
+      "sha256": "3e426ad6127490bd29872cc0bb8f69c5edd81cf91aa661c5300212caecb90fae"
+    },
+    {
+      "bytes": 358,
+      "relpath": "human_annotation/packets/P06/08_issue_symptom_probe.log",
+      "sha256": "d46abb1eabf52acfb573e696c144a7ac9245077931d7aee5de57a7d26cca186f"
+    },
+    {
+      "bytes": 949,
+      "relpath": "human_annotation/packets/P07/00_README.txt",
+      "sha256": "528da814a75b5d0c314ac4d3dd22f0b02c344d8c54fd5bf8b7262d35c912f957"
+    },
+    {
+      "bytes": 745,
+      "relpath": "human_annotation/packets/P07/01_problem_statement.txt",
+      "sha256": "6da5f641e94091476041df146ca8b539659922cbde429f0a9cca72f437e32da6"
+    },
+    {
+      "bytes": 488,
+      "relpath": "human_annotation/packets/P07/02_candidate_patch.diff",
+      "sha256": "eb931c2077a8b35f84e102264962898def6be4e06d262db7f87809363e375bde"
+    },
+    {
+      "bytes": 2017,
+      "relpath": "human_annotation/packets/P07/03_maintainer_test_patch.diff",
+      "sha256": "2d389e5cd74a05f7673894f4ac9db049482616f3a4650a4093ccdd2b63c8d6d0"
+    },
+    {
+      "bytes": 315,
+      "relpath": "human_annotation/packets/P07/04_declared_test_ids.json",
+      "sha256": "0f474cf92c3647b9705ad46898144c13a1e4bbc385839da9eaf7e5c239ab6787"
+    },
+    {
+      "bytes": 2706,
+      "relpath": "human_annotation/packets/P07/05_ci_fail_to_pass.log",
+      "sha256": "f421912f869f6ce93af0356f3f6f5ceaa12377b482044f5979b36edb931fe8c3"
+    },
+    {
+      "bytes": 2706,
+      "relpath": "human_annotation/packets/P07/06_ci_pass_to_pass_scoped.log",
+      "sha256": "f421912f869f6ce93af0356f3f6f5ceaa12377b482044f5979b36edb931fe8c3"
+    },
+    {
+      "bytes": 2617,
+      "relpath": "human_annotation/packets/P07/07_ci_pass_to_pass_base_commit.log",
+      "sha256": "0b79521b6092ac84b22ef01c60e3269c0222834879d411f9b677a7c12496b3a2"
+    },
+    {
+      "bytes": 770,
+      "relpath": "human_annotation/packets/P07/08_issue_symptom_probe.log",
+      "sha256": "6ab5dab7098aa462a3998f8a305717c820058fcfe19688d90e00e1e63d9773dc"
+    },
+    {
+      "bytes": 949,
+      "relpath": "human_annotation/packets/P08/00_README.txt",
+      "sha256": "83ed36fba4c699ad3b7789f80f7ee9bed1f1b23e4518b56f8ad6c115411fbe48"
+    },
+    {
+      "bytes": 1052,
+      "relpath": "human_annotation/packets/P08/01_problem_statement.txt",
+      "sha256": "99990d4434fb704774f1342cb8fc542c341096463d3328a42e6800695ed3e0f6"
+    },
+    {
+      "bytes": 704,
+      "relpath": "human_annotation/packets/P08/02_candidate_patch.diff",
+      "sha256": "4871b6419e3ec4de279d3dab650d28f33e5fb451ccf092c56bd6ec19037fab32"
+    },
+    {
+      "bytes": 1053,
+      "relpath": "human_annotation/packets/P08/03_maintainer_test_patch.diff",
+      "sha256": "6f5019118b043e4edbc0f5f4a5b9a6c5fc448df95ad587ff416be733e6371f28"
+    },
+    {
+      "bytes": 1068,
+      "relpath": "human_annotation/packets/P08/04_declared_test_ids.json",
+      "sha256": "6b44b3d115d1b7e9591682d6ba6ea72b4ccfc99aef73f285be6b8bd4f30b827c"
+    },
+    {
+      "bytes": 5392,
+      "relpath": "human_annotation/packets/P08/05_ci_fail_to_pass.log",
+      "sha256": "00cb4840c9e5a1ae0850949bca6c96863d5a3e7bc3dc74d1fdef8e773d37341e"
+    },
+    {
+      "bytes": 5392,
+      "relpath": "human_annotation/packets/P08/06_ci_pass_to_pass_scoped.log",
+      "sha256": "00cb4840c9e5a1ae0850949bca6c96863d5a3e7bc3dc74d1fdef8e773d37341e"
+    },
+    {
+      "bytes": 5311,
+      "relpath": "human_annotation/packets/P08/07_ci_pass_to_pass_base_commit.log",
+      "sha256": "047376c3e64eaf509aca142346c33f62db1804e9ab9b7b69f856a45013176bd5"
+    },
+    {
+      "bytes": 428,
+      "relpath": "human_annotation/packets/P08/08_issue_symptom_probe.log",
+      "sha256": "1d665166c6a7276bd8c0dffcbecbee0fa43d884d0e78d45e92b511994e95942d"
+    },
+    {
+      "bytes": 949,
+      "relpath": "human_annotation/packets/P09/00_README.txt",
+      "sha256": "b6bdb96ee6b419510e8cf0938685d0b1b40326d07f037a686976047aa6fbe951"
+    },
+    {
+      "bytes": 2368,
+      "relpath": "human_annotation/packets/P09/01_problem_statement.txt",
+      "sha256": "4f4990aa396704a937aec34f880e6c95f303755bae5897fd0d44aa8edee8d5a0"
+    },
+    {
+      "bytes": 1251,
+      "relpath": "human_annotation/packets/P09/02_candidate_patch.diff",
+      "sha256": "62efa883673ce91ed96d3272bbf4dfa845c2c59bfa6461b8a1dcd0754eaa44a4"
+    },
+    {
+      "bytes": 1028,
+      "relpath": "human_annotation/packets/P09/03_maintainer_test_patch.diff",
+      "sha256": "0eff6c9a52daf3c8ab55170f8c7cbd2e1b73e807fabcfb69bad147cc401f01ce"
+    },
+    {
+      "bytes": 441,
+      "relpath": "human_annotation/packets/P09/04_declared_test_ids.json",
+      "sha256": "4242b41a51745644eab3ef646bfb2933de4652e7d3ca2bf0cb91b8ffb7fa6b84"
+    },
+    {
+      "bytes": 4368,
+      "relpath": "human_annotation/packets/P09/05_ci_fail_to_pass.log",
+      "sha256": "4b461971e2c8640ebacdcbba83c7f0e381ba53ffa6246efb91992e42c107ef81"
+    },
+    {
+      "bytes": 4368,
+      "relpath": "human_annotation/packets/P09/06_ci_pass_to_pass_scoped.log",
+      "sha256": "4b461971e2c8640ebacdcbba83c7f0e381ba53ffa6246efb91992e42c107ef81"
+    },
+    {
+      "bytes": 3416,
+      "relpath": "human_annotation/packets/P09/07_ci_pass_to_pass_base_commit.log",
+      "sha256": "35b34990459b7816adf1aa7fc7b968e6f593ca1b456010675fe2f6e01ed8a13c"
+    },
+    {
+      "bytes": 301,
+      "relpath": "human_annotation/packets/P09/08_issue_symptom_probe.log",
+      "sha256": "a92637cc7155ee9c98c4405b49117a404bf7067996f8d4c9f9af0436d2609a1c"
+    },
+    {
+      "bytes": 949,
+      "relpath": "human_annotation/packets/P10/00_README.txt",
+      "sha256": "fac16bc065bad03593aa3225ab9ee7f6e82258b526d38ce63004632343644f3e"
+    },
+    {
+      "bytes": 1082,
+      "relpath": "human_annotation/packets/P10/01_problem_statement.txt",
+      "sha256": "58e4711de58d5d541382bbcb3af0693a50fc0dfa54cfbad6babe105a8aa40670"
+    },
+    {
+      "bytes": 2679,
+      "relpath": "human_annotation/packets/P10/02_candidate_patch.diff",
+      "sha256": "974c8a0e499aee6300f9a43a6f31f031c618551c567425d432aa65ce2200f6ff"
+    },
+    {
+      "bytes": 1019,
+      "relpath": "human_annotation/packets/P10/03_maintainer_test_patch.diff",
+      "sha256": "d3ac68ecf122b35b7c3b56bbe171f5b596fb471d836005324a7bf734fea6a4dd"
+    },
+    {
+      "bytes": 330,
+      "relpath": "human_annotation/packets/P10/04_declared_test_ids.json",
+      "sha256": "b00af00804a420093d1604a34961789b9cd759e6e778d5e36231dbdc16cc37f2"
+    },
+    {
+      "bytes": 3893,
+      "relpath": "human_annotation/packets/P10/05_ci_fail_to_pass.log",
+      "sha256": "1425dd1dc51f3d850f3ec6561fbc2d1c5573e7657a90ea8fff6b8a8dc66cdb72"
+    },
+    {
+      "bytes": 3893,
+      "relpath": "human_annotation/packets/P10/06_ci_pass_to_pass_scoped.log",
+      "sha256": "1425dd1dc51f3d850f3ec6561fbc2d1c5573e7657a90ea8fff6b8a8dc66cdb72"
+    },
+    {
+      "bytes": 3893,
+      "relpath": "human_annotation/packets/P10/07_ci_pass_to_pass_base_commit.log",
+      "sha256": "60c5a46fe354ab44d3f7ac28836439cce98f427e46e4f7f94fe08e5f2133b06a"
+    },
+    {
+      "bytes": 2424,
+      "relpath": "human_annotation/packets/P10/08_issue_symptom_probe.log",
+      "sha256": "a47ff829b125368ce7e3bdcae8b80b28bd612e41e0cbfafb5422220636a0d906"
+    },
+    {
+      "bytes": 432,
+      "relpath": "human_annotation/SEALED_packet_mapping.json",
+      "sha256": "5a2e2eafa6de8d328c95ad7faabfe3d13fef3fab843453d58649b2ce228a1e0e"
+    },
+    {
+      "bytes": 6722,
+      "relpath": "projection/g3c0_noninterference_audit_protocol.json",
+      "sha256": "6d6eb56419757fa941155da8867944c736231eb5398272ca35ce3bc33daf497f"
+    },
+    {
+      "bytes": 12963,
+      "relpath": "projection/g3c0_projection_v2_spec_and_test.json",
+      "sha256": "dff06224715159fd5c408516822ebac36eb0d03fdf3a24cf27e1e16c9b7b9a0f"
+    }
+  ],
+  "files_canonical_sha256": "740f6c61501a28f1b101503ea1a5859b32cb5204860de1532c571f204e5798af",
+  "gate3c_execution": false,
+  "git_commits_made": 0,
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold carried unchanged from Gate 3-A.1; no second independent human adjudicator has been obtained as of Gate G3-C.0. All Gate 3-C endpoint definitions are pre-registered against the FUTURE adjudicated gold; PROVISIONAL-gold re-analyses are secondary only. The AI preparing this design is NOT an independent human annotator or arbiter."
+  },
+  "gold_changed": false,
+  "n_files": 101,
+  "parent_pins": {
+    "g3b3_parent_pins": {
+      "all_ok": true,
+      "checks": [
+        {
+          "artifact": "g3b_freeze_manifest",
+          "ok": true
+        },
+        {
+          "artifact": "g3b_live_rows:deepseek-flash",
+          "ok": true,
+          "path": "evidence_store_g3b\\runs\\g3b_live_deepseek_flash_results.jsonl"
+        },
+        {
+          "artifact": "g3b_live_rows:gpt-4.1-mini",
+          "ok": true,
+          "path": "evidence_store_g3b\\runs\\g3b_live_gpt_41_mini_results.jsonl"
+        }
+      ]
+    },
+    "g3b4_freeze_reverification": {
+      "all_ok": true,
+      "n_files": 16
+    },
+    "g3b4_result_freeze_manifest_sha256": "45fef964f053ff2b6c8fb2f18428ec9dc9abbc276308a76e10b35284fd10b345"
+  },
+  "projection_version_specified_for_gate3c": "diagnostic-v2-no-baseline-map-v1"
+}

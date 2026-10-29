@@ -1,0 +1,128 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is fully linked to this patch and commit, is fresh for the current commit tree, and covers the full declared acceptance and regression test sets. All executed acceptance and regression checks pass with no failures. The author statement is consistent with the evidence. The patch correctly implements power evaluation for TensorProduct and the tests verify the fix and related behavior. Therefore, the patch is acceptable for merge.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+  "cell": "g3b3:sympy__sympy-13974:T3A-T",
+  "condition": "T3A-T",
+  "cost_usd": 0.002588,
+  "evidence_session": "23911c1deb2249a8fafed846",
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-13974",
+  "instance_id": "sympy__sympy-13974",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 2,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.014159,
+    0.014427
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 72,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 2602,
+      "raw_content": "",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_VdXGx39nOx01TlhwUGECk5PC",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_3EmvVCW7EpJnbd94xFp0DcU3",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_BKrTbNBwH3dlzZtT8cml8pKh",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_jpHkDesmIV70UMPIF3HXhEVO",
+          "name": "check_claim_consistency"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 105,
+      "finish_reason": "stop",
+      "model_call": 2,
+      "prompt_tokens": 3161,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is fully linked to this patch and commit, is fresh for the current commit tree, and covers the full declared acceptance and regression test sets. All executed acceptance and regression checks pass with no failures. The author statement is consistent with the evidence. The patch correctly implements power evaluation for TensorProduct and the tests verify the fix and related behavior. Therefore, the patch is acceptable for merge.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 7,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_42af95edfb29747c",
+  "tokens_in": 5763,
+  "tokens_out": 177,
+  "tool_calls": 4,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"84c125972ad535b2dfb245f8d311d347b45e5b8a\", \"record_patch_sha256\": \"e6680a7bf29762b056f96772ab732787ef9bb9ce5750be49e728565f6fc32faa\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"bf56cbca1daf1db1c75cc20d556358b803523dfe\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"bf56cbca1daf1db1c75cc20d556358b803523dfe\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:20:28+00:00\", \"attestation_built_at\": \"2026-10-25T18:20:41+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 4, \"executed\": 4, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"executed acceptance/regression checks show no failure\", \"failed_acceptance_checks\": 0, \"regression_checks\": 0, \"executed_checks\": 5}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    }
+  ],
+  "wall_s": 2.65
+}

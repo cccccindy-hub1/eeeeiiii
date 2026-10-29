@@ -1,0 +1,4361 @@
+{
+  "document": "EAL Gate-1 per-fixture Evidence Sufficiency Certificates",
+  "protocol": "eal-v0-draft1",
+  "method": "minimal forcing channel subset by partial-assignment enumeration over the frozen oracle; primary-material availability evaluated independently per layer",
+  "n_fixtures": 22,
+  "n_gold_determined_raw": 22,
+  "n_gold_determined_structured": 22,
+  "n_gold_determined_adjudicated": 22,
+  "n_underdetermined_any_primary_layer": 0,
+  "underdetermined_bundle_ids": [],
+  "n_decision_forced_by_symptom_channel_alone": 2,
+  "certificates": [
+    {
+      "bundle_id": "cee_8f41672ea242cd7a",
+      "instance_id": "sympy__sympy-18199",
+      "id": "glm5_500:sympy__sympy-18199",
+      "gold": "REJECT",
+      "evidence_class": "decisive_negative",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": true,
+        "acceptance_failure": true,
+        "acceptance_success": false,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "linked",
+        "fresh",
+        "acceptance_failure"
+      ],
+      "minimal_forcing_rule": "linked & fresh & acceptance_failure forces REJECT (set=linked,fresh,acceptance_failure)",
+      "forcing_materials": {
+        "linked": {
+          "requires_primary_evidence": "TARGET base_commit+patch_sha256 compared against the same fields inside the signed run record",
+          "raw_location": "TARGET block + RUN RECORD identity fields (manual compare)",
+          "structured_location": "TABLE 1 identity operands (two columns, no verdict)",
+          "adjudicated_location": "printed boolean \"linked to THIS patch: yes/no\""
+        },
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": true,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_017f5443ec813709",
+      "instance_id": "sympy__sympy-17139",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-17139",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class": "insufficient",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": false,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "complete",
+        "acceptance_failure",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "NEED_EVIDENCE forced by blocking condition(s): complete,acceptance_failure,symptom_persists (no decisive failure and success conjunction not satisfiable)",
+      "forcing_materials": {
+        "complete": {
+          "requires_primary_evidence": "attestation declared fail_to_pass / p2p_scoped sets compared against the set of per-test keys executed",
+          "raw_location": "ATTESTATION declared sets + RUN RECORD per-test maps (membership compare)",
+          "structured_location": "TABLE 3 declared sets + TABLE 4 present_in column",
+          "adjudicated_location": "printed boolean \"declared acceptance set fully executed\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": true,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_13b04ca1faae0894",
+      "instance_id": "sympy__sympy-13798",
+      "id": "glm5_500:sympy__sympy-13798",
+      "gold": "REJECT",
+      "evidence_class": "decisive_negative",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": false,
+        "acceptance_failure": true,
+        "acceptance_success": false,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "linked",
+        "fresh",
+        "acceptance_failure"
+      ],
+      "minimal_forcing_rule": "linked & fresh & acceptance_failure forces REJECT (set=linked,fresh,acceptance_failure)",
+      "forcing_materials": {
+        "linked": {
+          "requires_primary_evidence": "TARGET base_commit+patch_sha256 compared against the same fields inside the signed run record",
+          "raw_location": "TARGET block + RUN RECORD identity fields (manual compare)",
+          "structured_location": "TABLE 1 identity operands (two columns, no verdict)",
+          "adjudicated_location": "printed boolean \"linked to THIS patch: yes/no\""
+        },
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": true,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_f0328f55403163cb",
+      "instance_id": "sympy__sympy-14531",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class": "insufficient",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": false,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "complete",
+        "acceptance_failure",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "NEED_EVIDENCE forced by blocking condition(s): complete,acceptance_failure,symptom_persists (no decisive failure and success conjunction not satisfiable)",
+      "forcing_materials": {
+        "complete": {
+          "requires_primary_evidence": "attestation declared fail_to_pass / p2p_scoped sets compared against the set of per-test keys executed",
+          "raw_location": "ATTESTATION declared sets + RUN RECORD per-test maps (membership compare)",
+          "structured_location": "TABLE 3 declared sets + TABLE 4 present_in column",
+          "adjudicated_location": "printed boolean \"declared acceptance set fully executed\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": true,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_d054bcf1e4e8b26c",
+      "instance_id": "sympy__sympy-18211",
+      "id": "glm5_500:sympy__sympy-18211",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class": "insufficient",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "fresh",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "NEED_EVIDENCE forced by blocking condition(s): fresh,symptom_persists (no decisive failure and success conjunction not satisfiable)",
+      "forcing_materials": {
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": true,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_5449e183c637f604",
+      "instance_id": "sympy__sympy-13798",
+      "id": "glm5_500:sympy__sympy-13798",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class": "insufficient",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": true,
+        "acceptance_success": false,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "fresh",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "NEED_EVIDENCE forced by blocking condition(s): fresh,symptom_persists (no decisive failure and success conjunction not satisfiable)",
+      "forcing_materials": {
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": true,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_037b37020e5d9a37",
+      "instance_id": "sympy__sympy-16450",
+      "id": "glm5_500:sympy__sympy-16450",
+      "gold": "ACCEPT",
+      "evidence_class": "sufficient_positive",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "linked",
+        "fresh",
+        "complete",
+        "acceptance_failure",
+        "acceptance_success",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "full conjunction linked&fresh&complete&acceptance_success&¬symptom forces ACCEPT",
+      "forcing_materials": {
+        "linked": {
+          "requires_primary_evidence": "TARGET base_commit+patch_sha256 compared against the same fields inside the signed run record",
+          "raw_location": "TARGET block + RUN RECORD identity fields (manual compare)",
+          "structured_location": "TABLE 1 identity operands (two columns, no verdict)",
+          "adjudicated_location": "printed boolean \"linked to THIS patch: yes/no\""
+        },
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "complete": {
+          "requires_primary_evidence": "attestation declared fail_to_pass / p2p_scoped sets compared against the set of per-test keys executed",
+          "raw_location": "ATTESTATION declared sets + RUN RECORD per-test maps (membership compare)",
+          "structured_location": "TABLE 3 declared sets + TABLE 4 present_in column",
+          "adjudicated_location": "printed boolean \"declared acceptance set fully executed\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        },
+        "acceptance_success": {
+          "requires_primary_evidence": "executed check count > 0 with zero applicable failures",
+          "raw_location": "f2p/p2p maps or runner summary totals with empty failed/regressed lists; PASSED log lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 passed/total fields",
+          "adjudicated_location": "tier-A acceptance block all-passed counts"
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": true,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_58d93f77f0c49f82",
+      "instance_id": "sympy__sympy-18211",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-18211",
+      "gold": "REJECT",
+      "evidence_class": "decisive_negative",
+      "recovered_operands": {
+        "linked": false,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": true
+      },
+      "minimal_forcing_channels": [
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "symptom_persists=True alone forces REJECT regardless of linked/fresh/complete/acceptance (P-channel decisive)",
+      "forcing_materials": {
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": true,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_cfc14244c59a8ceb",
+      "instance_id": "sympy__sympy-14531",
+      "id": "qwen3_coder_30b_500:sympy__sympy-14531",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class": "insufficient",
+      "recovered_operands": {
+        "linked": false,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "linked",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "NEED_EVIDENCE forced by blocking condition(s): linked,symptom_persists (no decisive failure and success conjunction not satisfiable)",
+      "forcing_materials": {
+        "linked": {
+          "requires_primary_evidence": "TARGET base_commit+patch_sha256 compared against the same fields inside the signed run record",
+          "raw_location": "TARGET block + RUN RECORD identity fields (manual compare)",
+          "structured_location": "TABLE 1 identity operands (two columns, no verdict)",
+          "adjudicated_location": "printed boolean \"linked to THIS patch: yes/no\""
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": true,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_76028c65f51defe8",
+      "instance_id": "sympy__sympy-12489",
+      "id": "glm5_500:sympy__sympy-12489",
+      "gold": "REJECT",
+      "evidence_class": "decisive_negative",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": false,
+        "acceptance_failure": true,
+        "acceptance_success": false,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "linked",
+        "fresh",
+        "acceptance_failure"
+      ],
+      "minimal_forcing_rule": "linked & fresh & acceptance_failure forces REJECT (set=linked,fresh,acceptance_failure)",
+      "forcing_materials": {
+        "linked": {
+          "requires_primary_evidence": "TARGET base_commit+patch_sha256 compared against the same fields inside the signed run record",
+          "raw_location": "TARGET block + RUN RECORD identity fields (manual compare)",
+          "structured_location": "TABLE 1 identity operands (two columns, no verdict)",
+          "adjudicated_location": "printed boolean \"linked to THIS patch: yes/no\""
+        },
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": false
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": false
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": false
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": false,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_b203936c59e46a77",
+      "instance_id": "sympy__sympy-13091",
+      "id": "qwen3_coder_30b_500:sympy__sympy-13091",
+      "gold": "REJECT",
+      "evidence_class": "decisive_negative",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": false,
+        "acceptance_failure": true,
+        "acceptance_success": false,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "linked",
+        "fresh",
+        "acceptance_failure"
+      ],
+      "minimal_forcing_rule": "linked & fresh & acceptance_failure forces REJECT (set=linked,fresh,acceptance_failure)",
+      "forcing_materials": {
+        "linked": {
+          "requires_primary_evidence": "TARGET base_commit+patch_sha256 compared against the same fields inside the signed run record",
+          "raw_location": "TARGET block + RUN RECORD identity fields (manual compare)",
+          "structured_location": "TABLE 1 identity operands (two columns, no verdict)",
+          "adjudicated_location": "printed boolean \"linked to THIS patch: yes/no\""
+        },
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": false
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": false
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": false
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": false,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_03df4f19a25d0cf5",
+      "instance_id": "sympy__sympy-13091",
+      "id": "glm5_500:sympy__sympy-13091",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class": "insufficient",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": false,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "complete",
+        "acceptance_failure",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "NEED_EVIDENCE forced by blocking condition(s): complete,acceptance_failure,symptom_persists (no decisive failure and success conjunction not satisfiable)",
+      "forcing_materials": {
+        "complete": {
+          "requires_primary_evidence": "attestation declared fail_to_pass / p2p_scoped sets compared against the set of per-test keys executed",
+          "raw_location": "ATTESTATION declared sets + RUN RECORD per-test maps (membership compare)",
+          "structured_location": "TABLE 3 declared sets + TABLE 4 present_in column",
+          "adjudicated_location": "printed boolean \"declared acceptance set fully executed\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": false,
+        "p2p_baseline_per_test_map": false,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": false,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_58df0b222c11095a",
+      "instance_id": "sympy__sympy-12419",
+      "id": "glm5_500:sympy__sympy-12419",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class": "insufficient",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "fresh",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "NEED_EVIDENCE forced by blocking condition(s): fresh,symptom_persists (no decisive failure and success conjunction not satisfiable)",
+      "forcing_materials": {
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": false,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_0108367f62dfb1c6",
+      "instance_id": "sympy__sympy-12481",
+      "id": "glm5_500:sympy__sympy-12481",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class": "insufficient",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "fresh",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "NEED_EVIDENCE forced by blocking condition(s): fresh,symptom_persists (no decisive failure and success conjunction not satisfiable)",
+      "forcing_materials": {
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": false,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_a6aba2553d04e0f9",
+      "instance_id": "sympy__sympy-12489",
+      "id": "glm5_500:sympy__sympy-12489",
+      "gold": "NEED_EVIDENCE",
+      "evidence_class": "insufficient",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": true,
+        "acceptance_success": false,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "fresh",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "NEED_EVIDENCE forced by blocking condition(s): fresh,symptom_persists (no decisive failure and success conjunction not satisfiable)",
+      "forcing_materials": {
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": false,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_5cfbc476af83be49",
+      "instance_id": "sympy__sympy-12489",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-12489",
+      "gold": "REJECT",
+      "evidence_class": "decisive_negative",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": false,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": true
+      },
+      "minimal_forcing_channels": [
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "symptom_persists=True alone forces REJECT regardless of linked/fresh/complete/acceptance (P-channel decisive)",
+      "forcing_materials": {
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [
+                "no per-test base map; applicability of a p2p FAILED rests on runner p2p_regressed vs pre-existing-bad classification in summary"
+              ],
+              "in_minimal_forcing_set": false
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": false,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": false,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_4001af2fc564f50f",
+      "instance_id": "sympy__sympy-12419",
+      "id": "glm5_500:sympy__sympy-12419",
+      "gold": "ACCEPT",
+      "evidence_class": "sufficient_positive",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "linked",
+        "fresh",
+        "complete",
+        "acceptance_failure",
+        "acceptance_success",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "full conjunction linked&fresh&complete&acceptance_success&¬symptom forces ACCEPT",
+      "forcing_materials": {
+        "linked": {
+          "requires_primary_evidence": "TARGET base_commit+patch_sha256 compared against the same fields inside the signed run record",
+          "raw_location": "TARGET block + RUN RECORD identity fields (manual compare)",
+          "structured_location": "TABLE 1 identity operands (two columns, no verdict)",
+          "adjudicated_location": "printed boolean \"linked to THIS patch: yes/no\""
+        },
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "complete": {
+          "requires_primary_evidence": "attestation declared fail_to_pass / p2p_scoped sets compared against the set of per-test keys executed",
+          "raw_location": "ATTESTATION declared sets + RUN RECORD per-test maps (membership compare)",
+          "structured_location": "TABLE 3 declared sets + TABLE 4 present_in column",
+          "adjudicated_location": "printed boolean \"declared acceptance set fully executed\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        },
+        "acceptance_success": {
+          "requires_primary_evidence": "executed check count > 0 with zero applicable failures",
+          "raw_location": "f2p/p2p maps or runner summary totals with empty failed/regressed lists; PASSED log lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 passed/total fields",
+          "adjudicated_location": "tier-A acceptance block all-passed counts"
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": false,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_9e8c95b6fac59e18",
+      "instance_id": "sympy__sympy-12481",
+      "id": "glm5_500:sympy__sympy-12481",
+      "gold": "ACCEPT",
+      "evidence_class": "sufficient_positive",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "linked",
+        "fresh",
+        "complete",
+        "acceptance_failure",
+        "acceptance_success",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "full conjunction linked&fresh&complete&acceptance_success&¬symptom forces ACCEPT",
+      "forcing_materials": {
+        "linked": {
+          "requires_primary_evidence": "TARGET base_commit+patch_sha256 compared against the same fields inside the signed run record",
+          "raw_location": "TARGET block + RUN RECORD identity fields (manual compare)",
+          "structured_location": "TABLE 1 identity operands (two columns, no verdict)",
+          "adjudicated_location": "printed boolean \"linked to THIS patch: yes/no\""
+        },
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "complete": {
+          "requires_primary_evidence": "attestation declared fail_to_pass / p2p_scoped sets compared against the set of per-test keys executed",
+          "raw_location": "ATTESTATION declared sets + RUN RECORD per-test maps (membership compare)",
+          "structured_location": "TABLE 3 declared sets + TABLE 4 present_in column",
+          "adjudicated_location": "printed boolean \"declared acceptance set fully executed\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        },
+        "acceptance_success": {
+          "requires_primary_evidence": "executed check count > 0 with zero applicable failures",
+          "raw_location": "f2p/p2p maps or runner summary totals with empty failed/regressed lists; PASSED log lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 passed/total fields",
+          "adjudicated_location": "tier-A acceptance block all-passed counts"
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": false,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_1278b80ecd502546",
+      "instance_id": "sympy__sympy-13091",
+      "id": "glm5_500:sympy__sympy-13091",
+      "gold": "ACCEPT",
+      "evidence_class": "sufficient_positive",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "linked",
+        "fresh",
+        "complete",
+        "acceptance_failure",
+        "acceptance_success",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "full conjunction linked&fresh&complete&acceptance_success&¬symptom forces ACCEPT",
+      "forcing_materials": {
+        "linked": {
+          "requires_primary_evidence": "TARGET base_commit+patch_sha256 compared against the same fields inside the signed run record",
+          "raw_location": "TARGET block + RUN RECORD identity fields (manual compare)",
+          "structured_location": "TABLE 1 identity operands (two columns, no verdict)",
+          "adjudicated_location": "printed boolean \"linked to THIS patch: yes/no\""
+        },
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "complete": {
+          "requires_primary_evidence": "attestation declared fail_to_pass / p2p_scoped sets compared against the set of per-test keys executed",
+          "raw_location": "ATTESTATION declared sets + RUN RECORD per-test maps (membership compare)",
+          "structured_location": "TABLE 3 declared sets + TABLE 4 present_in column",
+          "adjudicated_location": "printed boolean \"declared acceptance set fully executed\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        },
+        "acceptance_success": {
+          "requires_primary_evidence": "executed check count > 0 with zero applicable failures",
+          "raw_location": "f2p/p2p maps or runner summary totals with empty failed/regressed lists; PASSED log lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 passed/total fields",
+          "adjudicated_location": "tier-A acceptance block all-passed counts"
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": false,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_ad6e89a460dfbe92",
+      "instance_id": "sympy__sympy-12481",
+      "id": "qwen3_30b_instruct2507_500:sympy__sympy-12481",
+      "gold": "ACCEPT",
+      "evidence_class": "sufficient_positive",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "linked",
+        "fresh",
+        "complete",
+        "acceptance_failure",
+        "acceptance_success",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "full conjunction linked&fresh&complete&acceptance_success&¬symptom forces ACCEPT",
+      "forcing_materials": {
+        "linked": {
+          "requires_primary_evidence": "TARGET base_commit+patch_sha256 compared against the same fields inside the signed run record",
+          "raw_location": "TARGET block + RUN RECORD identity fields (manual compare)",
+          "structured_location": "TABLE 1 identity operands (two columns, no verdict)",
+          "adjudicated_location": "printed boolean \"linked to THIS patch: yes/no\""
+        },
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "complete": {
+          "requires_primary_evidence": "attestation declared fail_to_pass / p2p_scoped sets compared against the set of per-test keys executed",
+          "raw_location": "ATTESTATION declared sets + RUN RECORD per-test maps (membership compare)",
+          "structured_location": "TABLE 3 declared sets + TABLE 4 present_in column",
+          "adjudicated_location": "printed boolean \"declared acceptance set fully executed\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        },
+        "acceptance_success": {
+          "requires_primary_evidence": "executed check count > 0 with zero applicable failures",
+          "raw_location": "f2p/p2p maps or runner summary totals with empty failed/regressed lists; PASSED log lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 passed/total fields",
+          "adjudicated_location": "tier-A acceptance block all-passed counts"
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": false,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_a8063781f0851759",
+      "instance_id": "sympy__sympy-12419",
+      "id": "qwen3_coder_30b_500:sympy__sympy-12419",
+      "gold": "ACCEPT",
+      "evidence_class": "sufficient_positive",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "linked",
+        "fresh",
+        "complete",
+        "acceptance_failure",
+        "acceptance_success",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "full conjunction linked&fresh&complete&acceptance_success&¬symptom forces ACCEPT",
+      "forcing_materials": {
+        "linked": {
+          "requires_primary_evidence": "TARGET base_commit+patch_sha256 compared against the same fields inside the signed run record",
+          "raw_location": "TARGET block + RUN RECORD identity fields (manual compare)",
+          "structured_location": "TABLE 1 identity operands (two columns, no verdict)",
+          "adjudicated_location": "printed boolean \"linked to THIS patch: yes/no\""
+        },
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "complete": {
+          "requires_primary_evidence": "attestation declared fail_to_pass / p2p_scoped sets compared against the set of per-test keys executed",
+          "raw_location": "ATTESTATION declared sets + RUN RECORD per-test maps (membership compare)",
+          "structured_location": "TABLE 3 declared sets + TABLE 4 present_in column",
+          "adjudicated_location": "printed boolean \"declared acceptance set fully executed\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        },
+        "acceptance_success": {
+          "requires_primary_evidence": "executed check count > 0 with zero applicable failures",
+          "raw_location": "f2p/p2p maps or runner summary totals with empty failed/regressed lists; PASSED log lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 passed/total fields",
+          "adjudicated_location": "tier-A acceptance block all-passed counts"
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": false,
+        "attestation": true
+      }
+    },
+    {
+      "bundle_id": "cee_a81c2a012161efe0",
+      "instance_id": "sympy__sympy-12481",
+      "id": "qwen3_coder_30b_500:sympy__sympy-12481",
+      "gold": "ACCEPT",
+      "evidence_class": "sufficient_positive",
+      "recovered_operands": {
+        "linked": true,
+        "fresh": true,
+        "complete": true,
+        "acceptance_failure": false,
+        "acceptance_success": true,
+        "symptom_persists": false
+      },
+      "minimal_forcing_channels": [
+        "linked",
+        "fresh",
+        "complete",
+        "acceptance_failure",
+        "acceptance_success",
+        "symptom_persists"
+      ],
+      "minimal_forcing_rule": "full conjunction linked&fresh&complete&acceptance_success&¬symptom forces ACCEPT",
+      "forcing_materials": {
+        "linked": {
+          "requires_primary_evidence": "TARGET base_commit+patch_sha256 compared against the same fields inside the signed run record",
+          "raw_location": "TARGET block + RUN RECORD identity fields (manual compare)",
+          "structured_location": "TABLE 1 identity operands (two columns, no verdict)",
+          "adjudicated_location": "printed boolean \"linked to THIS patch: yes/no\""
+        },
+        "fresh": {
+          "requires_primary_evidence": "signed run run_tree compared against attestation expected_run_tree (plus base match + attestation identity)",
+          "raw_location": "RUN RECORD.run_tree + ATTESTATION.expected_run_tree",
+          "structured_location": "TABLE 2 run-tree operands (no verdict)",
+          "adjudicated_location": "printed boolean \"fresh for the current commit tree\""
+        },
+        "complete": {
+          "requires_primary_evidence": "attestation declared fail_to_pass / p2p_scoped sets compared against the set of per-test keys executed",
+          "raw_location": "ATTESTATION declared sets + RUN RECORD per-test maps (membership compare)",
+          "structured_location": "TABLE 3 declared sets + TABLE 4 present_in column",
+          "adjudicated_location": "printed boolean \"declared acceptance set fully executed\""
+        },
+        "acceptance_failure": {
+          "requires_primary_evidence": "an applicable post-patch failure: f2p FAILED per-test status, or a scoped p2p FAILED not pre-existing-bad at the base commit",
+          "raw_location": "f2p / p2p per-test maps; when maps are absent the runner summary f2p_failed_ids + p2p_regressed_ids + pre-existing-bad list; runner logs with FAILED lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 failed/regressed/pre-existing-bad id lists + TABLE 6 parsed summaries",
+          "adjudicated_location": "tier-A acceptance block counts + concrete failed/regressed test ids"
+        },
+        "acceptance_success": {
+          "requires_primary_evidence": "executed check count > 0 with zero applicable failures",
+          "raw_location": "f2p/p2p maps or runner summary totals with empty failed/regressed lists; PASSED log lines",
+          "structured_location": "TABLE 4 status columns + TABLE 5 passed/total fields",
+          "adjudicated_location": "tier-A acceptance block all-passed counts"
+        },
+        "symptom_persists": {
+          "requires_primary_evidence": "issue-symptom probe BOTH phases: pre exit/output shows the symptom can fire, post exit/output shows it still fires after the patch",
+          "raw_location": "verbatim symptom runner log: pre/post command + exit_code + result lines; probe source if archived",
+          "structured_location": "TABLE 7 parsed pre/post exit_code + result_lines",
+          "adjudicated_location": "two printed booleans (present-before / reproduces-after)"
+        }
+      },
+      "per_layer": {
+        "raw": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "structured": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        },
+        "adjudicated": {
+          "all_forcing_channels_have_primary_material": true,
+          "missing_forcing_channels": [],
+          "missing_corroborating_channels": [],
+          "channel_materials": {
+            "linked": {
+              "available": true,
+              "basis": "identity fields always present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "fresh": {
+              "available": true,
+              "basis": "attestation + run_tree present",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "complete": {
+              "available": true,
+              "basis": "declared sets vs executed keys/totals",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_failure": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "acceptance_success": {
+              "available": true,
+              "basis": "per-test maps",
+              "caveats": [],
+              "in_minimal_forcing_set": true
+            },
+            "symptom_persists": {
+              "available": true,
+              "basis": "pre/post symptom probe log retained",
+              "caveats": [
+                "probe SOURCE not archived; pre/post probe OUTPUT retained and is the decision operand, but probe-to-issue fidelity cannot be re-audited from source"
+              ],
+              "in_minimal_forcing_set": true
+            }
+          }
+        }
+      },
+      "gold_determined_raw": true,
+      "gold_determined_structured": true,
+      "gold_determined_adjudicated": true,
+      "renderer_determination_crosscheck": true,
+      "archive_granularity": {
+        "p2p_per_test_map": true,
+        "p2p_baseline_per_test_map": true,
+        "f2p_per_test_map": true,
+        "symptom_probe_log": true,
+        "probe_source_archived": false,
+        "attestation": true
+      }
+    }
+  ]
+}

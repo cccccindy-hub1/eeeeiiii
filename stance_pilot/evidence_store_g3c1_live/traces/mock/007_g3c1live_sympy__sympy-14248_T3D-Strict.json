@@ -1,0 +1,65 @@
+{
+  "cell": "g3c1live:sympy__sympy-14248:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "fb1c2963b416c46d6d6eabd3",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_38249f6606d93ef1\", \"base_commit\": \"9986b38181cdd556a3f3411e553864f11912244e\", \"finished_at\": \"2026-10-28T10:07:28+00:00\", \"instance_id\": \"sympy__sympy-14248\", \"log_digests\": {\"symptom\": \"b6805c0a412078b5d452e43615501ab82f3c1a34a0f3dad07ee28928728eb773\"}, \"patch_sha256\": \"b7ede2b6fe9d1e3188c975f9bf7ceddb3ea77721b4e8004ed183e94d625662cf\", \"repo\": \"sympy/sympy\", \"runner\": \"pytest/vendored-git  py=3.9.25  host=windows-local  gate=G3-C.1\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/printing/pretty/tests/test_pretty.py\", \"sympy/printing/tests/test_ccode.py\", \"sympy/printing/tests/test_codeprinter.py\", \"sympy/printing/tests/test_conventions.py\", \"sympy/printing/tests/test_cxxcode.py\", \"sympy/printing/tests/test_dot.py\", \"sympy/printing/tests/test_fcode.py\", \"sympy/printing/tests/test_glsl.py\", \"sympy/printing/tests/test_gtk.py\", \"sympy/printing/tests/test_jscode.py\", \"sympy/printing/tests/test_julia.py\", \"sympy/printing/tests/test_lambdarepr.py\", \"sympy/printing/tests/test_latex.py\", \"sympy/printing/tests/test_llvmjit.py\", \"sympy/printing/tests/test_mathematica.py\", \"sympy/printing/tests/test_mathml.py\", \"sympy/printing/tests/test_numpy.py\", \"sympy/printing/tests/test_octave.py\", \"sympy/printing/tests/test_precedence.py\", \"sympy/printing/tests/test_preview.py\", \"sympy/printing/tests/test_pycode.py\", \"sympy/printing/tests/test_python.py\", \"sympy/printing/tests/test_rcode.py\", \"sympy/printing/tests/test_repr.py\", \"sympy/printing/tests/test_rust.py\", \"sympy/printing/tests/test_str.py\", \"sympy/printing/tests/test_tableform.py\", \"sympy/printing/tests/test_theanocode.py\"], \"p2p_total_in_dataset\": 433, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-28T10:05:22+00:00\", \"summary\": {\"f2p_total\": 2, \"p2p_total\": 433, \"outcomes_withheld\": true, \"note\": \"acceptance-test outcomes and regression verdicts are withheld at the diagnostic tier; use the verification service to seek them.\"}, \"test_patch_sha256\": \"477f70dcbc971aac43652ad84f83d73289d84ac77973c95698033121d1eb0dff\", \"evidence_tier\": \"diagnostic\", \"projection_version\": \"diagnostic-v2-no-baseline-map-v1\"}, \"authentic_signature\": true, \"evidence_tier\": \"D\"}"
+    },
+    {
+      "turn": 1,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"9986b38181cdd556a3f3411e553864f11912244e\", \"record_patch_sha256\": \"b7ede2b6fe9d1e3188c975f9bf7ceddb3ea77721b4e8004ed183e94d625662cf\"}"
+    },
+    {
+      "turn": 2,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"7764dee84838a5e0e4d2e9901f27facf1f85600b\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"7764dee84838a5e0e4d2e9901f27facf1f85600b\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:05:22+00:00\", \"attestation_built_at\": \"2026-10-28T10:07:30+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}"
+    },
+    {
+      "turn": 3,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 2, \"executed\": 2, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 433, \"executed\": 433, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 4,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python sympy__sympy-14248-baseline.py  (exit 1)\n--- stdout ---\nstr   : (-1)*B + (-1)*A*B + A\nlatex : -1 B + -1 A B + A\npretty:\n-B + -A⋅B + A\nFAIL: str prints explicit (-1) coefficients: (-1)*B + (-1)*A*B + A\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Mapping, defaultdict\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import defaultdict, Iterable\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  class OrderedSet(collections.MutableSet):\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Callable\n\n\n### POST candidate patch\n$ python sympy__sympy-14248-post-candidate.py  (exit 0)\n--- stdout ---\nstr   : -B - A*B + A\nlatex : -B - A B + A\npretty:\n-B - A⋅B + A\nOK: MatrixSymbol difference prints with subtraction\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Mapping, defaultdict\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\expr.py:12: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import defaultdict, Iterable\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\core\\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  class OrderedSet(collections.MutableSet):\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\plotting\\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working\n  from collections import Callable\n"
+    },
+    {
+      "turn": 5,
+      "tool": "get_run_log",
+      "args": {
+        "name": "f2p"
+      },
+      "http_status": 403,
+      "result_preview": "[http_status=403] {\"error\": \"acceptance logs are disabled under the strict evidence policy\"}"
+    },
+    {
+      "turn": 6,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    }
+  ],
+  "final_answer": "{\"decision\": \"NEED_EVIDENCE\", \"reason\": \"strict policy withholds maintainer acceptance outcomes; symptom evidence alone cannot establish success\", \"evidence_mismatch\": false, \"missing_evidence\": \"maintainer acceptance outcomes\", \"evidence_gap\": \"unspecified\"}",
+  "parsed": "NEED_EVIDENCE",
+  "fresh_state_served": "TRUE",
+  "error": null
+}

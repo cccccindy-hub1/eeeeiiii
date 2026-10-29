@@ -1,0 +1,500 @@
+{
+  "api_calls_made_by_this_audit": 0,
+  "audit_version": "groundedreview-gate3b4-zero-api-strict-audit-v1",
+  "document": "Gate 3-B.4 task 5 T2D-T vs T3D-Strict G3-B vs G3-B.3 paired comparison (both models, restricted conditions)",
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold carried unchanged from Gate 3-A.1; no second adjudicator has been obtained as of Gate 3-B.4. No Cohen kappa is reported and gold is never called human-adjudicated. Gate 3-B.4 audits model behaviour against this PROVISIONAL gold only; the same AI operator performing the audit is NOT an independent human adjudicator."
+  },
+  "headline": {
+    "deepseek-flash": {
+      "Strict_g3b3_need": [
+        "13615",
+        "13974",
+        "15349",
+        "17318",
+        "17630",
+        "19783",
+        "20590",
+        "21847",
+        "24213",
+        "24443"
+      ],
+      "Strict_g3b_need": [
+        "13615",
+        "13974",
+        "15349",
+        "17318",
+        "17630",
+        "19783",
+        "20590",
+        "21847",
+        "24213",
+        "24443"
+      ],
+      "T2D-T_g3b3_need": [
+        "13615",
+        "13974",
+        "15349",
+        "17318",
+        "17630",
+        "19783",
+        "20590",
+        "21847",
+        "24213",
+        "24443"
+      ],
+      "T2D-T_g3b_need": [
+        "13615",
+        "13974",
+        "15349",
+        "17318",
+        "17630",
+        "19783",
+        "20590",
+        "21847",
+        "24213",
+        "24443"
+      ],
+      "T2D_10of10_abstain_both_gates": true,
+      "strict_g3b_to_g3b3_new_accepts": [],
+      "strict_g3b_to_g3b3_new_need": []
+    },
+    "gpt-4.1-mini": {
+      "Strict_g3b3_need": [
+        "19783",
+        "20590",
+        "24213"
+      ],
+      "Strict_g3b_need": [
+        "13615",
+        "13974",
+        "15349",
+        "17318",
+        "17630",
+        "19783",
+        "20590",
+        "21847",
+        "24213",
+        "24443"
+      ],
+      "T2D-T_g3b3_need": [
+        "13615",
+        "13974",
+        "15349",
+        "17318",
+        "17630",
+        "19783",
+        "20590",
+        "21847",
+        "24213",
+        "24443"
+      ],
+      "T2D-T_g3b_need": [
+        "13615",
+        "13974",
+        "15349",
+        "17318",
+        "17630",
+        "19783",
+        "20590",
+        "21847",
+        "24213",
+        "24443"
+      ],
+      "T2D_10of10_abstain_both_gates": true,
+      "strict_g3b_to_g3b3_new_accepts": [
+        "13615",
+        "13974",
+        "15349",
+        "17318",
+        "17630",
+        "21847",
+        "24443"
+      ],
+      "strict_g3b_to_g3b3_new_need": []
+    }
+  },
+  "mechanism_analysis": {
+    "candidate_mechanism": "ACTIVE-EVIDENCE-INDUCED OVERCOMMITMENT (candidate, not proven): under G3-B.3 the active Strict tools return a coherent set of POSITIVE-LOOKING but non-decisive signals (authentic linkage, fresh restage, complete coverage, symptom non-reproduction). GPT appears to convert that affirmative diagnostic bundle into failure-free acceptability, whereas the silent static T2D surface gives no such positive evidence and always yields abstention.",
+    "observation_active_Strict_DeepSeek": [
+      "DeepSeek Strict abstains 10/10 in both gates. In G3-B.3 it actively queried the tools (and fetched the tier-D artifact in 8/10 cells, seeing the all-PASSED pre-patch baseline map) yet still abstained — active querying alone did not move it."
+    ],
+    "observation_active_Strict_GPT": [
+      "GPT Strict abstained 10/10 in G3-B but committed ACCEPT on 7/10 in G3-B.3 (the other 3 still abstain). All 7 committed cells did NOT fetch the artifact; they committed from the linkage=true + fresh=true + coverage-complete + symptom-gone tool sequence (see g3b4_gpt_strict_audit)."
+    ],
+    "observation_static_T2D": [
+      "T2D-T serves a static tier-D surface with NO tools and NO freshness signal. Both models abstain NEED_EVIDENCE on all 10/10 issues in BOTH G3-B and G3-B.3 — static restricted evidence never licenses a commitment for either model."
+    ],
+    "supporting_pattern": "The within-G3-B.3 contrast is suggestive: T2D (no tools) 10/10 abstain for both models; DeepSeek (uses tools, high scepticism) 10/10 abstain; GPT (uses tools) 3/10 abstain. Activeness is associated with movement only for the less sceptical model, consistent with — but not demonstrating — the candidate mechanism.",
+    "why_not_causally_identified": [
+      "This is a cross-version, ASSOCIATIONAL contrast. Between G3-B and G3-B.3 more than activeness changed: the G3-B structural freshness defect served fresh_state=FALSE, while G3-B.3 serves fresh_state=TRUE, and the Coverage/trust rules were corrected at the same time.",
+      "Therefore the 10/10 -> 3/10 GPT Strict abstention shift cannot be attributed to active querying separately from the freshness/trust repair. A design that holds freshness and trust fixed while toggling only tool availability is needed (proposed for Gate 3-C, not executed)."
+    ]
+  },
+  "per_model_per_condition": {
+    "deepseek-flash": {
+      "T2D-T": {
+        "g3b3_need_n": 10,
+        "g3b_need_n": 10,
+        "per_issue": [
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "13615",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "13974",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "15349",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "17318",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "17630",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "19783",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "20590",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "21847",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "24213",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "24443",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          }
+        ],
+        "transition_counts": {
+          "NEED_EVIDENCE -> NEED_EVIDENCE": 10
+        }
+      },
+      "T3D-Strict": {
+        "g3b3_need_n": 10,
+        "g3b_need_n": 10,
+        "per_issue": [
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": 1,
+            "g3b3_tool_calls": 6,
+            "issue": "13615",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": 0,
+            "g3b3_tool_calls": 5,
+            "issue": "13974",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": 0,
+            "g3b3_tool_calls": 5,
+            "issue": "15349",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": 1,
+            "g3b3_tool_calls": 6,
+            "issue": "17318",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": 1,
+            "g3b3_tool_calls": 6,
+            "issue": "17630",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": 1,
+            "g3b3_tool_calls": 6,
+            "issue": "19783",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": 1,
+            "g3b3_tool_calls": 6,
+            "issue": "20590",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": 1,
+            "g3b3_tool_calls": 6,
+            "issue": "21847",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": 1,
+            "g3b3_tool_calls": 6,
+            "issue": "24213",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": 1,
+            "g3b3_tool_calls": 6,
+            "issue": "24443",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          }
+        ],
+        "transition_counts": {
+          "NEED_EVIDENCE -> NEED_EVIDENCE": 10
+        }
+      }
+    },
+    "gpt-4.1-mini": {
+      "T2D-T": {
+        "g3b3_need_n": 10,
+        "g3b_need_n": 10,
+        "per_issue": [
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "13615",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "13974",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "15349",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "17318",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "17630",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "19783",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "20590",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "21847",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "24213",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": null,
+            "g3b3_tool_calls": null,
+            "issue": "24443",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          }
+        ],
+        "transition_counts": {
+          "NEED_EVIDENCE -> NEED_EVIDENCE": 10
+        }
+      },
+      "T3D-Strict": {
+        "g3b3_need_n": 3,
+        "g3b_need_n": 10,
+        "per_issue": [
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "ACCEPT",
+            "g3b3_artifact_fetches": 0,
+            "g3b3_tool_calls": 4,
+            "issue": "13615",
+            "transition": "NEED_EVIDENCE -> ACCEPT"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "ACCEPT",
+            "g3b3_artifact_fetches": 0,
+            "g3b3_tool_calls": 4,
+            "issue": "13974",
+            "transition": "NEED_EVIDENCE -> ACCEPT"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "ACCEPT",
+            "g3b3_artifact_fetches": 0,
+            "g3b3_tool_calls": 4,
+            "issue": "15349",
+            "transition": "NEED_EVIDENCE -> ACCEPT"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "ACCEPT",
+            "g3b3_artifact_fetches": 0,
+            "g3b3_tool_calls": 4,
+            "issue": "17318",
+            "transition": "NEED_EVIDENCE -> ACCEPT"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "ACCEPT",
+            "g3b3_artifact_fetches": 0,
+            "g3b3_tool_calls": 4,
+            "issue": "17630",
+            "transition": "NEED_EVIDENCE -> ACCEPT"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": 0,
+            "g3b3_tool_calls": 4,
+            "issue": "19783",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": 1,
+            "g3b3_tool_calls": 5,
+            "issue": "20590",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "ACCEPT",
+            "g3b3_artifact_fetches": 0,
+            "g3b3_tool_calls": 4,
+            "issue": "21847",
+            "transition": "NEED_EVIDENCE -> ACCEPT"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "NEED_EVIDENCE",
+            "g3b3_artifact_fetches": 0,
+            "g3b3_tool_calls": 4,
+            "issue": "24213",
+            "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+          },
+          {
+            "g3b": "NEED_EVIDENCE",
+            "g3b3": "ACCEPT",
+            "g3b3_artifact_fetches": 0,
+            "g3b3_tool_calls": 4,
+            "issue": "24443",
+            "transition": "NEED_EVIDENCE -> ACCEPT"
+          }
+        ],
+        "transition_counts": {
+          "NEED_EVIDENCE -> ACCEPT": 7,
+          "NEED_EVIDENCE -> NEED_EVIDENCE": 3
+        }
+      }
+    }
+  }
+}

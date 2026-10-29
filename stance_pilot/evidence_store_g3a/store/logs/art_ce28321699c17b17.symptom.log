@@ -1,0 +1,17 @@
+### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+FAIL: block_collapse(b*b*b) raised ValueError 
+expecting a sequence of 1 or more rows containing Matrices.
+
+--- stderr ---
+
+
+### POST candidate patch
+$ python probe.py  (exit 0)
+--- stdout ---
+OK: block_collapse b*b*b = Matrix([
+[a**3, 0],
+[   0, 0]])
+
+--- stderr ---

@@ -1,0 +1,54 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch addresses the issue by changing the _eval_subs method to return the base set directly when the condition simplifies to True, which aligns with the expected behavior described in the issue. The patch includes a new test that reproduces the issue and verifies the fix. The issue symptom probe confirms the problem is resolved after the patch. However, the provided evidence does not include the results of the full acceptance test suite or the scoped regression checks scheduled by maintainers, which are necessary to confirm that no regressions are introduced and that the issue is fully resolved in the current commit tree. Therefore, the evidence coverage is incomplete for a full acceptance decision.\",\"evidence_mismatch\":false,\"missing_evidence\":\"full acceptance test results and scoped regression check outcomes\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "cell": "g3c1live:sympy__sympy-19495:T2D-T",
+  "condition": "T2D-T",
+  "cost_usd": 0.001174,
+  "evidence_session": null,
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-19495",
+  "instance_id": "sympy__sympy-19495",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.014111
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 169,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 2259,
+      "raw_content": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch addresses the issue by changing the _eval_subs method to return the base set directly when the condition simplifies to True, which aligns with the expected behavior described in the issue. The patch includes a new test that reproduces the issue and verifies the fix. The issue symptom probe confirms the problem is resolved after the patch. However, the provided evidence does not include the results of the full acceptance test suite or the scoped regression checks scheduled by maintainers, which are necessary to confirm that no regressions are introduced and that the issue is fully resolved in the current commit tree. Therefore, the evidence coverage is incomplete for a full acceptance decision.\",\"evidence_mismatch\":false,\"missing_evidence\":\"full acceptance test results and scoped regression check outcomes\",\"evidence_gap\":\"coverage_incomplete\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_fec174c8f4012a8b",
+  "tokens_in": 2259,
+  "tokens_out": 169,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 2.41
+}

@@ -1,0 +1,1236 @@
+{
+  "document": "Gate 3-B.3 Corrective Replication RESULT freeze (post-collection, offline, $0)",
+  "freeze_id": "groundedreview-gate3b3-result-freeze-v1",
+  "gate": "gate3b3_corrective_replication",
+  "created_utc": "2026-10-27T03:20:40.473400+00:00",
+  "gold_authority": {
+    "gold_tier": "PROVISIONAL",
+    "annotators": 1,
+    "annotator2": "NOT_OBTAINED",
+    "note": "Single-annotator gold; no second adjudicator obtained. Neither the G3-B.2 protocol repair nor the G3-B.3 corrective replication raises gold authority. No Cohen kappa against a second human is reported; gold is never called human-adjudicated. Every model comparison is against PROVISIONAL gold only."
+  },
+  "approved_scope_executed": {
+    "new_issues_or_mirrors": false,
+    "gemini_or_r2": false,
+    "gate_3c": false,
+    "modify_historical_frozen_artifacts": false,
+    "overwrite_or_rescore_g3b_results": false,
+    "retry_cell_on_prediction_error": false,
+    "git_commit": false,
+    "real_cells_executed": 100,
+    "new_issues": 0,
+    "gemini_or_r2_cells": 0
+  },
+  "data_collection_freeze": {
+    "manifest": "evidence_store_g3b3/freeze/g3b3_freeze_manifest.json",
+    "sha256": "8ca2c984faed1e01623c42e1dfcfad0fbf77ebf78366d037ce9fdca3062a1e4c",
+    "canonical_at_paid_run_time": true,
+    "note": "NOT rebuilt after collection: g3b3_analyze.py and g3b3_report.py were authored offline after the paid run and are recorded as null hashes in this executed manifest by design; rebuilding would rewrite history."
+  },
+  "g3b_pairing_anchor": {
+    "comparison_kind": "cross-version, cross-run-time ASSOCIATIONAL change; the repair changed freshness and T2A trust together, so their separate causal effects are NOT identified",
+    "design": "each g3b3 cell pairs to its frozen G3-B cell by SAME instance_id + condition + model_profile; only the protocol version/run time differs",
+    "g3b_freeze_manifest": "evidence_store_g3b\\freeze\\g3b_freeze_manifest.json",
+    "g3b_freeze_manifest_sha256": "728a0731da9315ef78b01d20562bc196f10f2e74b4c05301ea39cd05a66fc151",
+    "g3b_live_results": {
+      "deepseek-flash": "evidence_store_g3b\\runs\\g3b_live_deepseek_flash_results.jsonl",
+      "gpt-4.1-mini": "evidence_store_g3b\\runs\\g3b_live_gpt_41_mini_results.jsonl"
+    }
+  },
+  "post_collection_code_hashes": {
+    "g3b3_analyze.py": {
+      "sha256": "924581ed104b54c723ef9e652e2de5e4b5bf442e3ae8b6a8b2abe44239ba102e",
+      "in_executed_freeze_manifest": null
+    },
+    "g3b3_report.py": {
+      "sha256": "adbe2f2b3f663d1fce1c6f863b42575ad573dd0f00d01fbc95912c7b6862c070",
+      "in_executed_freeze_manifest": null
+    }
+  },
+  "post_collection_analyzer_change_disclosure": {
+    "analyzer_written_after_collection_offline": true,
+    "api_calls_for_analysis": 0,
+    "result_rows_modified": false,
+    "fixes": [
+      "read helper initially wrapped the already-parsed read_jsonl in json.loads (raised before any output); fixed offline.",
+      "Q11 full-sample accumulator was reset per issue so the 15-cell unsupported-acceptance count only reflected the last issue (reported 0 instead of 4); corrected with a loop-persistent accumulator and re-run. Confirmatory OR aggregate, focal probes, Q10/Q12/Q14/Q15 were unaffected."
+    ],
+    "impact": "analysis JSON only; no row, raw, trace, cost, token, served-id or freeze byte changed"
+  },
+  "execution": {
+    "runner_version": "g3b3-runner-v1",
+    "protocol_version": "g3b2-protocol-v1",
+    "prompt_version": "p3-ternary-g3b2-v1",
+    "call_order_seed": 313,
+    "budget": {
+      "total_spend_usd": 0.303539,
+      "total_hard_cap_usd": 3.0,
+      "per_model_spend_usd": {
+        "deepseek-flash": 0.189045,
+        "gpt-4.1-mini": 0.114494
+      },
+      "per_model_cap_usd": 1.5,
+      "within_total_cap": true,
+      "per_model_within_cap": {
+        "deepseek-flash": true,
+        "gpt-4.1-mini": true
+      },
+      "total_margin_usd": 2.696461,
+      "cost_recomputed_from_rows_matches_audit": true,
+      "retries_per_cell": 0,
+      "stop_msg": "",
+      "price_basis": "DS $0.30/$1.20, GPT $0.40/$1.60 per 1M tokens (identical to frozen G3-B profiles)"
+    },
+    "model_version_audit": {
+      "deepseek-flash": {
+        "n_rows": 50,
+        "expected_served_model_id": "deepseek-flash",
+        "served_model_id_distribution": {
+          "deepseek-flash": 50
+        },
+        "served_id_drift": false,
+        "adapter_response_format_distribution": {
+          "plain_text": 94,
+          "json_object": 20
+        },
+        "capability_fallback_calls": 0,
+        "total_tokens_in": 538498,
+        "total_tokens_out": 22913,
+        "total_model_calls": 114,
+        "total_tool_calls": 209,
+        "total_cost_usd": 0.189044,
+        "error_rows": 0,
+        "retries_per_row": [
+          0
+        ]
+      },
+      "gpt-4.1-mini": {
+        "n_rows": 50,
+        "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+        "served_model_id_distribution": {
+          "gpt-4.1-mini-2025-04-14": 50
+        },
+        "served_id_drift": false,
+        "adapter_response_format_distribution": {
+          "json_object": 20,
+          "plain_text": 74
+        },
+        "capability_fallback_calls": 0,
+        "total_tokens_in": 251495,
+        "total_tokens_out": 8685,
+        "total_model_calls": 94,
+        "total_tool_calls": 126,
+        "total_cost_usd": 0.114493,
+        "error_rows": 0,
+        "retries_per_row": [
+          0
+        ]
+      }
+    },
+    "engineering_gates_from_paid_run": {
+      "rows_per_model_50_50": true,
+      "zero_error_rows": true,
+      "zero_served_id_drift": true,
+      "zero_capability_fallback": true,
+      "raw_files": 100,
+      "live_trace_files": 100
+    }
+  },
+  "preflight_at_gate": {
+    "all_pass": true,
+    "n_checks": 41,
+    "n_checks_pass": 41,
+    "n_sections": 9,
+    "paid_run_authorised_only_if_all_pass": true
+  },
+  "livegate_at_gate": {
+    "n_cells": 50,
+    "n_checks": 571,
+    "n_checks_pass": 571,
+    "n_errors": 0,
+    "n_active_cells": 30,
+    "n_active_freshness_TRUE": 30,
+    "frozen_store_unchanged": true,
+    "server_protocol_version": "g3b2-protocol-v1"
+  },
+  "associational_comparison_notice": "All G3-B vs G3-B.3 paired numbers are cross-version, cross-run-time and ASSOCIATIONAL. Freshness repair and T2A policy-trust repair shipped together; separate causal effects are not identified and are not claimed.",
+  "artifacts": [
+    {
+      "name": "live_rows_deepseek_flash",
+      "path": "evidence_store_g3b3/runs/g3b3_live_deepseek_flash_results.jsonl",
+      "bytes": 822486,
+      "sha256": "89449dce95e820b86ec3ecb20fa220f44e6bc97d4a702ff4e9997e90d2cba6f6"
+    },
+    {
+      "name": "live_rows_gpt_41_mini",
+      "path": "evidence_store_g3b3/runs/g3b3_live_gpt_41_mini_results.jsonl",
+      "bytes": 424890,
+      "sha256": "c70af6f4f339ab54036b6e2ed2d3a997b4c2a68e11794889a2eab2d02ccef1e6"
+    },
+    {
+      "name": "live_run_audit",
+      "path": "evidence_store_g3b3/runs/g3b3_live_run_audit.json",
+      "bytes": 1231,
+      "sha256": "dcdfa7cbdb27da59c4188aa695f1ff8afaed61159d0c77eca1947b39893c19bd"
+    },
+    {
+      "name": "preflight",
+      "path": "evidence_store_g3b3/preflight/g3b3_preflight.json",
+      "bytes": 214200,
+      "sha256": "557e6e44229e3a42e9c54b7c46497e70fb135cfa302db1d7d3e40faa8bcdcc00"
+    },
+    {
+      "name": "livegate",
+      "path": "evidence_store_g3b3/livegate/g3b3_live_gate.json",
+      "bytes": 91374,
+      "sha256": "6c01f6d25c5ddf9e9794eb247b58241225d124f99772ac05eb6d18fb4614f417"
+    },
+    {
+      "name": "analysis",
+      "path": "evidence_store_g3b3/analysis/g3b3_analysis.json",
+      "bytes": 158115,
+      "sha256": "52351865276685eb42b866aebd10fa27a2c3046c00daca5074c6c6b83f9aee8d"
+    },
+    {
+      "name": "per_issue_evidence",
+      "path": "evidence_store_g3b3/analysis/g3b3_per_issue_evidence.json",
+      "bytes": 1701592,
+      "sha256": "3700b311de055823747ce75d31099b935baac4c2d7924777ffd40a61aad96752"
+    },
+    {
+      "name": "raw_responses_dir",
+      "path": "evidence_store_g3b3/raw",
+      "n_files": 100,
+      "sha256_of_sorted_file_manifest": "530cfac1efe96d1c11ea83bcce57bb4d89304b8199ef4dc446a26539424b44df",
+      "files": [
+        {
+          "relpath": "deepseek_flash__000__sympy__sympy-13615__T3A-T.json",
+          "bytes": 46124,
+          "sha256": "f2acbbf65275b0b6dbcfa3ef7fcbcd9438560f6d6007dbe973564d663ecf2161"
+        },
+        {
+          "relpath": "deepseek_flash__003__sympy__sympy-13615__T3D-Escalate.json",
+          "bytes": 40968,
+          "sha256": "e3c66f5a0b0efaabb0ec3be188a1f5029434fde4a16dfea62a85b25417488bec"
+        },
+        {
+          "relpath": "deepseek_flash__005__sympy__sympy-13615__T2D-T.json",
+          "bytes": 3170,
+          "sha256": "e63032bfb061a5227731737e257fa11880234b54eb34c95d430cc43bb6761b65"
+        },
+        {
+          "relpath": "deepseek_flash__007__sympy__sympy-13615__T2A-T.json",
+          "bytes": 2890,
+          "sha256": "3b19b2a437bc5cb73726705c37ec8f156c95def2263ef29fd79a3f6aa490c103"
+        },
+        {
+          "relpath": "deepseek_flash__008__sympy__sympy-13615__T3D-Strict.json",
+          "bytes": 16630,
+          "sha256": "90fe3037045727aa00eb394cd485ac65225648d7d007b7932b725a198933350c"
+        },
+        {
+          "relpath": "deepseek_flash__012__sympy__sympy-13974__T3D-Escalate.json",
+          "bytes": 35151,
+          "sha256": "eb79cf294133155baae3bd615b7ce9afaefff8940745a66995bbc842c5c914ca"
+        },
+        {
+          "relpath": "deepseek_flash__014__sympy__sympy-13974__T2D-T.json",
+          "bytes": 3467,
+          "sha256": "3a06b79d125291f537ff8198a41364c1e14857713f076e2df0083c8ca9889e75"
+        },
+        {
+          "relpath": "deepseek_flash__016__sympy__sympy-13974__T2A-T.json",
+          "bytes": 3732,
+          "sha256": "05b79d0bb84d1c6856bc09633ee455898cda70bf0a091f92da28c996a3d63dcc"
+        },
+        {
+          "relpath": "deepseek_flash__017__sympy__sympy-13974__T3D-Strict.json",
+          "bytes": 10611,
+          "sha256": "813a80e7e1faa0648ef0dc4000b3bccb4e9a2a0b42c8ff62e48e7c94554aac32"
+        },
+        {
+          "relpath": "deepseek_flash__019__sympy__sympy-13974__T3A-T.json",
+          "bytes": 19090,
+          "sha256": "e784a0f04e6e03564a860de77de2b1f907cf204a287b0e13735e029063bd53fb"
+        },
+        {
+          "relpath": "deepseek_flash__021__sympy__sympy-15349__T3D-Escalate.json",
+          "bytes": 16848,
+          "sha256": "a494ed02040062ef9cd39e7a4e95a2413278a98c2bdb7f2a132e2b996b74d9fe"
+        },
+        {
+          "relpath": "deepseek_flash__023__sympy__sympy-15349__T2D-T.json",
+          "bytes": 3045,
+          "sha256": "4c9b5d92b2d6fd0b46dc03f9376302aaceae48ece56112c9165860ea93c3b8e8"
+        },
+        {
+          "relpath": "deepseek_flash__025__sympy__sympy-15349__T2A-T.json",
+          "bytes": 2611,
+          "sha256": "a0ef8a596cc09e7f53fef0b5161f10aef2411f351bda4143b670d9d625a4ab93"
+        },
+        {
+          "relpath": "deepseek_flash__026__sympy__sympy-15349__T3D-Strict.json",
+          "bytes": 10081,
+          "sha256": "8f8d609d76b6de8dd61c8bdc95d5dd0c311a2fc95f620525bbc3bcf814e8480a"
+        },
+        {
+          "relpath": "deepseek_flash__028__sympy__sympy-15349__T3A-T.json",
+          "bytes": 11663,
+          "sha256": "18cfb8493bc3bc3f334f9a0891f777aeb3e05f2ec8a1795f4fcaa7e5ee5ceade"
+        },
+        {
+          "relpath": "deepseek_flash__030__sympy__sympy-17318__T3D-Escalate.json",
+          "bytes": 21484,
+          "sha256": "14f860c75fcc16235df696d1319f16094b4f35d4b720cf0ce1893ac8a254171d"
+        },
+        {
+          "relpath": "deepseek_flash__032__sympy__sympy-17318__T2D-T.json",
+          "bytes": 3425,
+          "sha256": "c797bc28e4ece0c4becf12b8c84ecdcf6374fa175b54f551bbac979291bb47f7"
+        },
+        {
+          "relpath": "deepseek_flash__034__sympy__sympy-17318__T2A-T.json",
+          "bytes": 2501,
+          "sha256": "ae26c9f176631b4c19b4b6a943d4e68571d3117e1dacc9917152cf2a03647f4e"
+        },
+        {
+          "relpath": "deepseek_flash__035__sympy__sympy-17318__T3D-Strict.json",
+          "bytes": 11136,
+          "sha256": "d5dd5b7d4e401e08a1c74e308bbab6bca6dcab2b7453164aee08e6400d622c7a"
+        },
+        {
+          "relpath": "deepseek_flash__037__sympy__sympy-17318__T3A-T.json",
+          "bytes": 16924,
+          "sha256": "dadd41b1294f2fdd949d7207122daa68fe1ba5f396a860a44f689e42d88b664b"
+        },
+        {
+          "relpath": "deepseek_flash__041__sympy__sympy-17630__T2D-T.json",
+          "bytes": 3197,
+          "sha256": "daa21e70486cf1598c68249a9fb6e503b31e306f13237425b735f6dadaf7331e"
+        },
+        {
+          "relpath": "deepseek_flash__043__sympy__sympy-17630__T2A-T.json",
+          "bytes": 2291,
+          "sha256": "d2f33baa68f8c07ff36896eb7c64d3af1b916b924a37bb6c8ae3c827f7e46910"
+        },
+        {
+          "relpath": "deepseek_flash__044__sympy__sympy-17630__T3D-Strict.json",
+          "bytes": 12014,
+          "sha256": "34b9009cea2c41d70845aa6df062120bc49bf6145c4f0d5c1ffdbab7c90aa0b1"
+        },
+        {
+          "relpath": "deepseek_flash__046__sympy__sympy-17630__T3A-T.json",
+          "bytes": 32334,
+          "sha256": "a49d85d4f5ffdb38613e21c99a5ff8110195e4e83221f9023a4ed6f314eb7622"
+        },
+        {
+          "relpath": "deepseek_flash__049__sympy__sympy-17630__T3D-Escalate.json",
+          "bytes": 43922,
+          "sha256": "b4a05d7b1db18d1c7f565901a33fe8d918d37812671a2269e4ddee2275150707"
+        },
+        {
+          "relpath": "deepseek_flash__050__sympy__sympy-19783__T2D-T.json",
+          "bytes": 3304,
+          "sha256": "0b78576b0780c81884c18c0f9ddc9dc8041746cf6a7eece63f003a5b6899244e"
+        },
+        {
+          "relpath": "deepseek_flash__052__sympy__sympy-19783__T2A-T.json",
+          "bytes": 2399,
+          "sha256": "5938debdebb2a13b31d2200ebd33cb7042a2b41eb725ff8ce1b5aaac4303ccf7"
+        },
+        {
+          "relpath": "deepseek_flash__053__sympy__sympy-19783__T3D-Strict.json",
+          "bytes": 12177,
+          "sha256": "84a2bfd423dff67c41ba07d288a515111d6d101f7c02feacbe85f0c11fa1f9b6"
+        },
+        {
+          "relpath": "deepseek_flash__055__sympy__sympy-19783__T3A-T.json",
+          "bytes": 18453,
+          "sha256": "bf9577dc0f0fb4988b46f92da6a5e8f744d8f7b0750cc15428e3285e1b189162"
+        },
+        {
+          "relpath": "deepseek_flash__058__sympy__sympy-19783__T3D-Escalate.json",
+          "bytes": 30948,
+          "sha256": "730bf3d6279050012326cfe2375ce158e3c9c594181da923c979cc3dc4134b43"
+        },
+        {
+          "relpath": "deepseek_flash__061__sympy__sympy-20590__T2A-T.json",
+          "bytes": 2881,
+          "sha256": "2251673f780b41c247df33bcedff96c8bde6ac58a805c883a2790ed5f2e64ce0"
+        },
+        {
+          "relpath": "deepseek_flash__062__sympy__sympy-20590__T3D-Strict.json",
+          "bytes": 12331,
+          "sha256": "4b7cd9a9bb593acd88388202c778c0c5b55843ba1bde62ff089f829a319a698e"
+        },
+        {
+          "relpath": "deepseek_flash__064__sympy__sympy-20590__T3A-T.json",
+          "bytes": 30592,
+          "sha256": "c424b0379ed347d9bdf5ab10b02e6b703614ae286c5eb80bc4bb3cb4546bfd91"
+        },
+        {
+          "relpath": "deepseek_flash__067__sympy__sympy-20590__T3D-Escalate.json",
+          "bytes": 29435,
+          "sha256": "3325d54d25f7910e2e858feca40e1599d61ce2a9688c3365988b5aecd49590fb"
+        },
+        {
+          "relpath": "deepseek_flash__069__sympy__sympy-20590__T2D-T.json",
+          "bytes": 3191,
+          "sha256": "1e3341a51ec9f269de681f924a070f4c6bb40cee6a4df76802c254d5e2b49c53"
+        },
+        {
+          "relpath": "deepseek_flash__070__sympy__sympy-21847__T2A-T.json",
+          "bytes": 2977,
+          "sha256": "e19283af173bef20c0b50b3cc9afa67c7f33f7a7dd310c262157c31941f65560"
+        },
+        {
+          "relpath": "deepseek_flash__071__sympy__sympy-21847__T3D-Strict.json",
+          "bytes": 12011,
+          "sha256": "1eec18f3f747a84743b56af9fbf50d3b76a37af38deff300b9a2948a6130f5e5"
+        },
+        {
+          "relpath": "deepseek_flash__073__sympy__sympy-21847__T3A-T.json",
+          "bytes": 16400,
+          "sha256": "0f9d386cbdc6fec0908ca743f94b51b0785cb74e534115227931d8b609fb9709"
+        },
+        {
+          "relpath": "deepseek_flash__076__sympy__sympy-21847__T3D-Escalate.json",
+          "bytes": 17342,
+          "sha256": "cb3600d722e720927dc9824a86837393fe85a7835fa71ed83f198555f8f66430"
+        },
+        {
+          "relpath": "deepseek_flash__078__sympy__sympy-21847__T2D-T.json",
+          "bytes": 3304,
+          "sha256": "c7464510d24f9516e7d1eadafe8c68a66ea1deea95df633c9e0bae7f24f8d0c6"
+        },
+        {
+          "relpath": "deepseek_flash__080__sympy__sympy-24213__T3D-Strict.json",
+          "bytes": 11896,
+          "sha256": "8de37a5e20afb36e6795dde3486946f6a30aa088f1a635160efcb178e2f75a09"
+        },
+        {
+          "relpath": "deepseek_flash__082__sympy__sympy-24213__T3A-T.json",
+          "bytes": 14127,
+          "sha256": "0c8391fdccc8f36ed7fa7f95d47032abc801fabe33ce957523b2a4f4ee4c1032"
+        },
+        {
+          "relpath": "deepseek_flash__085__sympy__sympy-24213__T3D-Escalate.json",
+          "bytes": 22923,
+          "sha256": "8b3b3bb607a2e8697e7893ebc725564aa509543ada04a6ba62f7c329ba8e8c76"
+        },
+        {
+          "relpath": "deepseek_flash__087__sympy__sympy-24213__T2D-T.json",
+          "bytes": 3373,
+          "sha256": "c644f80f6b1d11d1b119cbc74b54d3a69aa10ba0849bcd7c45a37ee590ec071a"
+        },
+        {
+          "relpath": "deepseek_flash__089__sympy__sympy-24213__T2A-T.json",
+          "bytes": 2675,
+          "sha256": "ce167ced80e90306ba619f67327637fd635b1d116d72dbe6dc86a0ffb5a20296"
+        },
+        {
+          "relpath": "deepseek_flash__091__sympy__sympy-24443__T3A-T.json",
+          "bytes": 20993,
+          "sha256": "351c19546aae1168f99582d208492976d835645486f61b9fbcced36e9af5f769"
+        },
+        {
+          "relpath": "deepseek_flash__094__sympy__sympy-24443__T3D-Escalate.json",
+          "bytes": 15331,
+          "sha256": "d235c1efb0cdd461eaecb90ec2a2d64ec3ca83c849ef442841c64acaffa9d62e"
+        },
+        {
+          "relpath": "deepseek_flash__096__sympy__sympy-24443__T2D-T.json",
+          "bytes": 2957,
+          "sha256": "f8ab0bd51cc780c6fa95dc781646873bf498e9103e8df61881b0885448399fcd"
+        },
+        {
+          "relpath": "deepseek_flash__098__sympy__sympy-24443__T2A-T.json",
+          "bytes": 2971,
+          "sha256": "f7621a664c63908b42aad0be1fb6f49b7864f202a342939f3edea41d80f28cbe"
+        },
+        {
+          "relpath": "deepseek_flash__099__sympy__sympy-24443__T3D-Strict.json",
+          "bytes": 11337,
+          "sha256": "63e97a48e0facd8febfc85ffebf91bcd6921527802a4d9453017842efdbcfb0f"
+        },
+        {
+          "relpath": "gpt_4.1_mini__001__sympy__sympy-13615__T2A-T.json",
+          "bytes": 2898,
+          "sha256": "009515f2ef20d0f3a9f2001b2d9d0e3f04b79d7eed1d903c69bde759f33aa812"
+        },
+        {
+          "relpath": "gpt_4.1_mini__002__sympy__sympy-13615__T3D-Escalate.json",
+          "bytes": 16469,
+          "sha256": "7d83d4f006ad05dab114064f1a1864679c707cf436700ab21ff7466132576626"
+        },
+        {
+          "relpath": "gpt_4.1_mini__004__sympy__sympy-13615__T2D-T.json",
+          "bytes": 3291,
+          "sha256": "f81fb888b35e99722253694825b6692e239629315740da52b0ecedbdb338b112"
+        },
+        {
+          "relpath": "gpt_4.1_mini__006__sympy__sympy-13615__T3D-Strict.json",
+          "bytes": 6032,
+          "sha256": "8a42a67a6d953358ece0f2b7c953ecdf7378c64fd0734fd81f4b45516c241350"
+        },
+        {
+          "relpath": "gpt_4.1_mini__009__sympy__sympy-13615__T3A-T.json",
+          "bytes": 12986,
+          "sha256": "f5e7500f3171343d590476104664f5a46cc8693a1a33d0f0fa6817b6928c4264"
+        },
+        {
+          "relpath": "gpt_4.1_mini__010__sympy__sympy-13974__T2A-T.json",
+          "bytes": 2965,
+          "sha256": "f4538c8e00cde4dffc95c40244b776feb33ca86d97384edc379c3bd3cb2c60e2"
+        },
+        {
+          "relpath": "gpt_4.1_mini__011__sympy__sympy-13974__T3D-Escalate.json",
+          "bytes": 10940,
+          "sha256": "a8cbbeab47c3bcf172aa9d04fde116f2983aa3073334bdae00482b9f8221de54"
+        },
+        {
+          "relpath": "gpt_4.1_mini__013__sympy__sympy-13974__T2D-T.json",
+          "bytes": 2963,
+          "sha256": "2ff5eb520106400a05550b8c2e0fa61639b452d7b104aa1e0018f2bf6f549776"
+        },
+        {
+          "relpath": "gpt_4.1_mini__015__sympy__sympy-13974__T3D-Strict.json",
+          "bytes": 6163,
+          "sha256": "7b4769d36b10e73c860e4f25222babe7bf8ef3071ce25ce3e689ddaedfabbed1"
+        },
+        {
+          "relpath": "gpt_4.1_mini__018__sympy__sympy-13974__T3A-T.json",
+          "bytes": 6078,
+          "sha256": "27decd776cbede3369de5d1be33c02e30d3ee7fe3e4dfae90bce3e4ec7a4fd5d"
+        },
+        {
+          "relpath": "gpt_4.1_mini__020__sympy__sympy-15349__T3D-Escalate.json",
+          "bytes": 11651,
+          "sha256": "0db90357925715934b31dfdef426ad7ee0279ecf5a868a5bc9f7a9e769ddb752"
+        },
+        {
+          "relpath": "gpt_4.1_mini__022__sympy__sympy-15349__T2D-T.json",
+          "bytes": 3290,
+          "sha256": "df2506e12e4f1ed522278eaf52d3e0922c216fd0a0b6cf62a81d52684f9c0935"
+        },
+        {
+          "relpath": "gpt_4.1_mini__024__sympy__sympy-15349__T3D-Strict.json",
+          "bytes": 6073,
+          "sha256": "dffa25698aab62af12559f29abaf2c21c80973063f36d06e612dfc7535c62184"
+        },
+        {
+          "relpath": "gpt_4.1_mini__027__sympy__sympy-15349__T3A-T.json",
+          "bytes": 5925,
+          "sha256": "bf0b797fecc3a1acc5d13075b7d8848cc0a7a21f3b68c93a5ecbfa8b67bb7ba7"
+        },
+        {
+          "relpath": "gpt_4.1_mini__029__sympy__sympy-15349__T2A-T.json",
+          "bytes": 2590,
+          "sha256": "c778b653973e49c24cbc5dcfd1a57eddb260efce8559339a88edb4d6d5287070"
+        },
+        {
+          "relpath": "gpt_4.1_mini__031__sympy__sympy-17318__T2D-T.json",
+          "bytes": 3003,
+          "sha256": "d789d9d3e3d78da7ec180f1eb3ce9fae526eb38df4d3baf2f14813102684b3ba"
+        },
+        {
+          "relpath": "gpt_4.1_mini__033__sympy__sympy-17318__T3D-Strict.json",
+          "bytes": 6193,
+          "sha256": "5b21b91407f7451203de797d5117a773a3da1f29184050674e6f0df7ed41c8fb"
+        },
+        {
+          "relpath": "gpt_4.1_mini__036__sympy__sympy-17318__T3A-T.json",
+          "bytes": 6105,
+          "sha256": "afa361892889c2de0a70645d8702399dfacf11278518bc41ed22ca733b5417f4"
+        },
+        {
+          "relpath": "gpt_4.1_mini__038__sympy__sympy-17318__T2A-T.json",
+          "bytes": 3270,
+          "sha256": "bc789e8668b011c6dc72046660e57cd738749ed4ef2c2bc5d31cd98cf16a8c09"
+        },
+        {
+          "relpath": "gpt_4.1_mini__039__sympy__sympy-17318__T3D-Escalate.json",
+          "bytes": 11543,
+          "sha256": "b03c8bae74a179f17097022b6b7db3fc705cf8436786841f5f36f18a3afd9257"
+        },
+        {
+          "relpath": "gpt_4.1_mini__040__sympy__sympy-17630__T2D-T.json",
+          "bytes": 3707,
+          "sha256": "fce04a655726ed40633ee4fe7d261aa78a6c13310f0587fd1fefd00f5a0f4b0a"
+        },
+        {
+          "relpath": "gpt_4.1_mini__042__sympy__sympy-17630__T3D-Strict.json",
+          "bytes": 5974,
+          "sha256": "bb4b690b12804346466a52f324980fce6c32b73e13531fb2cdb7074842a9643f"
+        },
+        {
+          "relpath": "gpt_4.1_mini__045__sympy__sympy-17630__T3A-T.json",
+          "bytes": 15776,
+          "sha256": "c9659ed325acfc12678036de524f4c4cfc57f71154664d705a5e0cd1d1d0e9e3"
+        },
+        {
+          "relpath": "gpt_4.1_mini__047__sympy__sympy-17630__T2A-T.json",
+          "bytes": 3242,
+          "sha256": "6f2c30bd843da0f753835e61be2542eed3b8e852065a2388587f51966d185e94"
+        },
+        {
+          "relpath": "gpt_4.1_mini__048__sympy__sympy-17630__T3D-Escalate.json",
+          "bytes": 5402,
+          "sha256": "b5ba2b1719bf0758d8d96f0ea33e2a99a5e1ccfbd546cf4eb713715769e93107"
+        },
+        {
+          "relpath": "gpt_4.1_mini__051__sympy__sympy-19783__T3D-Strict.json",
+          "bytes": 6463,
+          "sha256": "8e07bd301916b3060d66dfc23b8f7c7724d50a3e0f33a83545af72380ccc94ca"
+        },
+        {
+          "relpath": "gpt_4.1_mini__054__sympy__sympy-19783__T3A-T.json",
+          "bytes": 5922,
+          "sha256": "92305cbaca9473dad826459d364fcc744f6851119b9ea6c89eadc0e5e7514cbb"
+        },
+        {
+          "relpath": "gpt_4.1_mini__056__sympy__sympy-19783__T2A-T.json",
+          "bytes": 2243,
+          "sha256": "30b2cc65b3adcd98e716ee0a25a0523a27b8d837d897166376f4551c6ffc28b4"
+        },
+        {
+          "relpath": "gpt_4.1_mini__057__sympy__sympy-19783__T3D-Escalate.json",
+          "bytes": 14187,
+          "sha256": "342ce7b963e54502ba0fda80d3af57b0c1ac071d50b4daff32e8a70520ba2c3e"
+        },
+        {
+          "relpath": "gpt_4.1_mini__059__sympy__sympy-19783__T2D-T.json",
+          "bytes": 2852,
+          "sha256": "48780f4437bb9a36e4342240eec45d54a4c2856018b54a74d94a4ce8b5a90941"
+        },
+        {
+          "relpath": "gpt_4.1_mini__060__sympy__sympy-20590__T3D-Strict.json",
+          "bytes": 10277,
+          "sha256": "8a54a11defbd86391e03841a585389468f73ccfc31f91b3c2f6f03e9e85e614c"
+        },
+        {
+          "relpath": "gpt_4.1_mini__063__sympy__sympy-20590__T3A-T.json",
+          "bytes": 6095,
+          "sha256": "921ad423e98ef8d2d49253947330684533f04faac0a10f929c35097cd0397f21"
+        },
+        {
+          "relpath": "gpt_4.1_mini__065__sympy__sympy-20590__T2A-T.json",
+          "bytes": 2797,
+          "sha256": "f89f2f0ff9b10c55cf58ff29299cba12121e668f16536fadce66ba9aee150fc0"
+        },
+        {
+          "relpath": "gpt_4.1_mini__066__sympy__sympy-20590__T3D-Escalate.json",
+          "bytes": 6809,
+          "sha256": "a58ba5a8720229c086e785a918186f88799c32236bafdcc22d0989d9db3b4885"
+        },
+        {
+          "relpath": "gpt_4.1_mini__068__sympy__sympy-20590__T2D-T.json",
+          "bytes": 3247,
+          "sha256": "9c0a6694c6bb6694583aac9b5a47f80a457b333c0fb07f36697dde202f638db6"
+        },
+        {
+          "relpath": "gpt_4.1_mini__072__sympy__sympy-21847__T3A-T.json",
+          "bytes": 6239,
+          "sha256": "28dabd2aa9ddd6b5f37b79b3d3eb8e5108d7bfb76de44bf1aa9ef5da14120c1e"
+        },
+        {
+          "relpath": "gpt_4.1_mini__074__sympy__sympy-21847__T2A-T.json",
+          "bytes": 3317,
+          "sha256": "93068e4ac41de90a7311f42ae78d523644a96fa70b769d173f975a45f5bb2e1c"
+        },
+        {
+          "relpath": "gpt_4.1_mini__075__sympy__sympy-21847__T3D-Escalate.json",
+          "bytes": 6961,
+          "sha256": "9259ee6ce33c0efb9f97d36c0bca77716f72c8a01dcc58655c80f419ef32d30e"
+        },
+        {
+          "relpath": "gpt_4.1_mini__077__sympy__sympy-21847__T2D-T.json",
+          "bytes": 3625,
+          "sha256": "9c445f8704342b8f81c17961364703ac5b2fe000b9c3ab712e1c75e06cd28610"
+        },
+        {
+          "relpath": "gpt_4.1_mini__079__sympy__sympy-21847__T3D-Strict.json",
+          "bytes": 6074,
+          "sha256": "8c23cf49dc8478ccab809f87ec61e15a0868e393928b67b005f6429e977c723f"
+        },
+        {
+          "relpath": "gpt_4.1_mini__081__sympy__sympy-24213__T3A-T.json",
+          "bytes": 5925,
+          "sha256": "f6411b958a655ba46fdbb8bd1ee4c9351e950b8951e6f8a4f59f6e8e1d97e7dd"
+        },
+        {
+          "relpath": "gpt_4.1_mini__083__sympy__sympy-24213__T2A-T.json",
+          "bytes": 2711,
+          "sha256": "7e93270512cbfd4729f47798b321858bdea39c9445f4f8f850399000aefbfae8"
+        },
+        {
+          "relpath": "gpt_4.1_mini__084__sympy__sympy-24213__T3D-Escalate.json",
+          "bytes": 13862,
+          "sha256": "69b18e1ea36ce6262736d10d1fdea5711c8c07c208e91a2d56ca96f1cd58a08e"
+        },
+        {
+          "relpath": "gpt_4.1_mini__086__sympy__sympy-24213__T2D-T.json",
+          "bytes": 2783,
+          "sha256": "ee03424767196fb80825c368680df7904b7c85ecc3ebca8e120ab9af935c186f"
+        },
+        {
+          "relpath": "gpt_4.1_mini__088__sympy__sympy-24213__T3D-Strict.json",
+          "bytes": 6383,
+          "sha256": "7871501c453c349bdbd933ce91ab10d93e07b1f37cb2ff55f34b26d6a624ada1"
+        },
+        {
+          "relpath": "gpt_4.1_mini__090__sympy__sympy-24443__T3A-T.json",
+          "bytes": 5992,
+          "sha256": "9480dfb80490d3c2da6bddfd66a1ff64d0d1930c391536595c1274ce9e0447f7"
+        },
+        {
+          "relpath": "gpt_4.1_mini__092__sympy__sympy-24443__T2A-T.json",
+          "bytes": 2911,
+          "sha256": "ba1ccf3f5413fa2de776faf8f7ee199d093d60d1227043fd4cf971ff399d75c6"
+        },
+        {
+          "relpath": "gpt_4.1_mini__093__sympy__sympy-24443__T3D-Escalate.json",
+          "bytes": 9001,
+          "sha256": "50c0de3b1d913bca2f930366b1d75ec1498c89fe1a1574074f52bd38a73fb29b"
+        },
+        {
+          "relpath": "gpt_4.1_mini__095__sympy__sympy-24443__T2D-T.json",
+          "bytes": 3387,
+          "sha256": "9e594d7c965da74448880febea27ff50f6746069f276e5043dbf914146a4ca8e"
+        },
+        {
+          "relpath": "gpt_4.1_mini__097__sympy__sympy-24443__T3D-Strict.json",
+          "bytes": 6251,
+          "sha256": "9e04953036abf78aaf6cb72716aeebabf0f12dacc9aaf45e339259003e89a003"
+        }
+      ]
+    },
+    {
+      "name": "live_traces_dir",
+      "path": "evidence_store_g3b3/traces/live",
+      "n_files": 100,
+      "sha256_of_sorted_file_manifest": "868ba755366475e0dae46bb76c384514a00b349e81eb86b0011727cc0432c65e",
+      "files": [
+        {
+          "relpath": "000_g3b3_sympy__sympy-13615_T3A-T.json",
+          "bytes": 38715,
+          "sha256": "ec32b1ecf5bb2e8c08c7b2c1f0feeb603b311872cc78574394c56b69ded05019"
+        },
+        {
+          "relpath": "001_g3b3_sympy__sympy-13615_T2A-T.json",
+          "bytes": 950,
+          "sha256": "9802228bb75dfee73c15e90839158151466290cf89da0d3ebac51e69f25cf920"
+        },
+        {
+          "relpath": "002_g3b3_sympy__sympy-13615_T3D-Escalate.json",
+          "bytes": 11625,
+          "sha256": "adec2959959b56b7d514819def4577b7081f1c32715465669ca691c305d83804"
+        },
+        {
+          "relpath": "003_g3b3_sympy__sympy-13615_T3D-Escalate.json",
+          "bytes": 32807,
+          "sha256": "ce0cf30a680b9b75c9dc0ac8acf3da2323c2759f23beac2f4d0e5bc380a99f0d"
+        },
+        {
+          "relpath": "004_g3b3_sympy__sympy-13615_T2D-T.json",
+          "bytes": 1153,
+          "sha256": "8b96360167bc3b2bd84c73133e7d3ab64d0f8fe66c3ae07601e376938ae98ff0"
+        },
+        {
+          "relpath": "005_g3b3_sympy__sympy-13615_T2D-T.json",
+          "bytes": 1081,
+          "sha256": "d33407da6797ae4dbc2ff8db54f36256e767776f9067d2e2de92ec8cc5632a46"
+        },
+        {
+          "relpath": "006_g3b3_sympy__sympy-13615_T3D-Strict.json",
+          "bytes": 3036,
+          "sha256": "42829cab7e64db7ae7c313d5ca1b4776e2b114d423aef15be61de4f01b63ce50"
+        },
+        {
+          "relpath": "007_g3b3_sympy__sympy-13615_T2A-T.json",
+          "bytes": 934,
+          "sha256": "3e6ea50d9840fc600b9091050022d3b9173aa2c58a0a8d0e265d55d4b3a928af"
+        },
+        {
+          "relpath": "008_g3b3_sympy__sympy-13615_T3D-Strict.json",
+          "bytes": 11518,
+          "sha256": "defe2fd82875df1de9409981cd6f0594639132a1c3a65980b3de83b19f9f4059"
+        },
+        {
+          "relpath": "009_g3b3_sympy__sympy-13615_T3A-T.json",
+          "bytes": 9823,
+          "sha256": "c1d505dd2c9aa97c286ecaa548c0513e230a6084447fa50c0f6ee158855fd4bf"
+        },
+        {
+          "relpath": "010_g3b3_sympy__sympy-13974_T2A-T.json",
+          "bytes": 983,
+          "sha256": "bc43f1cb948986012e86ef6a87fdf8ffd92c5ba0ad97814065eb3b688b8809fd"
+        },
+        {
+          "relpath": "011_g3b3_sympy__sympy-13974_T3D-Escalate.json",
+          "bytes": 7136,
+          "sha256": "035f6557600fda80cffeda92113474d94fa142dd18db5bbed9edff4618988581"
+        },
+        {
+          "relpath": "012_g3b3_sympy__sympy-13974_T3D-Escalate.json",
+          "bytes": 22599,
+          "sha256": "d25d1a18b795a2ffc6c44444ad8a6433d3598290bcfa7a90dc5e3a1c4175acbf"
+        },
+        {
+          "relpath": "013_g3b3_sympy__sympy-13974_T2D-T.json",
+          "bytes": 989,
+          "sha256": "fcb0971ae8c26edac923bd1a545279e8154acc1b5ad397e9e67b754b9690cdbb"
+        },
+        {
+          "relpath": "014_g3b3_sympy__sympy-13974_T2D-T.json",
+          "bytes": 1229,
+          "sha256": "691898bb3e54cb9120caee1a6fdb33900281b562584d1c1f8b72dc3d158a64fb"
+        },
+        {
+          "relpath": "015_g3b3_sympy__sympy-13974_T3D-Strict.json",
+          "bytes": 3099,
+          "sha256": "810f7f7756a2ad78f6411106aecb251d8863cba0a214d0baeec1c8c6f04b3f8f"
+        },
+        {
+          "relpath": "016_g3b3_sympy__sympy-13974_T2A-T.json",
+          "bytes": 1362,
+          "sha256": "cac37bf799939d0bd62cdedd0b5bcf2efc35258bd8472da86dc098beee35859b"
+        },
+        {
+          "relpath": "017_g3b3_sympy__sympy-13974_T3D-Strict.json",
+          "bytes": 6527,
+          "sha256": "157348b6d3ec324fc9adffdf1176294ace9ab9bdf826c2cfa952c1d1e7502393"
+        },
+        {
+          "relpath": "018_g3b3_sympy__sympy-13974_T3A-T.json",
+          "bytes": 3024,
+          "sha256": "2aebbb0024df96c0f22f4b05f8f7b22467bdeb06edf1c252faeb3f0a525efdda"
+        },
+        {
+          "relpath": "019_g3b3_sympy__sympy-13974_T3A-T.json",
+          "bytes": 14142,
+          "sha256": "a4668f7533faa9fc6b54e5c3becc83be920fb4fcd703aba42942435f41c58fbe"
+        },
+        {
+          "relpath": "020_g3b3_sympy__sympy-15349_T3D-Escalate.json",
+          "bytes": 6947,
+          "sha256": "fa765d8e5467508a038638f9b910a50e860c7ec0fe4bb2b873fd2d0aeb2bee26"
+        },
+        {
+          "relpath": "021_g3b3_sympy__sympy-15349_T3D-Escalate.json",
+          "bytes": 11183,
+          "sha256": "9594308e4952f876a1e870c7b60dbde4fe232bc56eb7b1f201b8754cfd3b9f66"
+        },
+        {
+          "relpath": "022_g3b3_sympy__sympy-15349_T2D-T.json",
+          "bytes": 1144,
+          "sha256": "fec3dd6100fcd5bf61f703bc5cb1ff083fa655a8ff10d584422914daf34e2ae3"
+        },
+        {
+          "relpath": "023_g3b3_sympy__sympy-15349_T2D-T.json",
+          "bytes": 1009,
+          "sha256": "867327ff905ad4a023d5140c27ddb9048d37c5667f02c6cded51265a86ffa16e"
+        },
+        {
+          "relpath": "024_g3b3_sympy__sympy-15349_T3D-Strict.json",
+          "bytes": 3045,
+          "sha256": "eeb9d31e2fe54d83ee807f3b84825bb2c6b91615c7a5693e92b0d0dbdc17803d"
+        },
+        {
+          "relpath": "025_g3b3_sympy__sympy-15349_T2A-T.json",
+          "bytes": 785,
+          "sha256": "7fbcab1322dfde04381bbc6494a12915d7d849253f30c580798a9ed3e43c8bfe"
+        },
+        {
+          "relpath": "026_g3b3_sympy__sympy-15349_T3D-Strict.json",
+          "bytes": 5028,
+          "sha256": "6140abfc49d9935d963cb7ff8eb24d15a70877f3c86b6c1aeb859a974fb0568f"
+        },
+        {
+          "relpath": "027_g3b3_sympy__sympy-15349_T3A-T.json",
+          "bytes": 2940,
+          "sha256": "571d1e7300b556148200299b469faf475af23b02790c3bc0677978381f70c19b"
+        },
+        {
+          "relpath": "028_g3b3_sympy__sympy-15349_T3A-T.json",
+          "bytes": 6581,
+          "sha256": "47e7d48fa84cde71f3cb5586682db08636343370e5d7e4345d66ce195b61ecfb"
+        },
+        {
+          "relpath": "029_g3b3_sympy__sympy-15349_T2A-T.json",
+          "bytes": 787,
+          "sha256": "a38174850fb940f3b5a33b45f9bf84689849a0c3d3dc7f7b32ad328dc4fe4bf0"
+        },
+        {
+          "relpath": "030_g3b3_sympy__sympy-17318_T3D-Escalate.json",
+          "bytes": 14413,
+          "sha256": "0db1558e09efbf716539defeda21eb9a9c97aeb6436930375623398d293d6c38"
+        },
+        {
+          "relpath": "031_g3b3_sympy__sympy-17318_T2D-T.json",
+          "bytes": 1009,
+          "sha256": "f51b9df714d32afc0c2ed62497de4b5e4de5232d32360b9fa6643a0d585b2a0e"
+        },
+        {
+          "relpath": "032_g3b3_sympy__sympy-17318_T2D-T.json",
+          "bytes": 1208,
+          "sha256": "9ad1e058247848af2554a1347726517917c0409ad26f839bfd1ef79bbaf93dcb"
+        },
+        {
+          "relpath": "033_g3b3_sympy__sympy-17318_T3D-Strict.json",
+          "bytes": 3115,
+          "sha256": "93922a7486f792f403ee8c64c82b2c29b576b40f6471bba0431adcf683bfa01d"
+        },
+        {
+          "relpath": "034_g3b3_sympy__sympy-17318_T2A-T.json",
+          "bytes": 739,
+          "sha256": "4007dedef99e297b1fbf00db99dd38c638cf7af7da9635b3a39b32b95dfc1cc7"
+        },
+        {
+          "relpath": "035_g3b3_sympy__sympy-17318_T3D-Strict.json",
+          "bytes": 6786,
+          "sha256": "4a974de8c60068b2cbe3c71d590baf10f9aa0ddd725b156bfc1e850d4fd6e12c"
+        },
+        {
+          "relpath": "036_g3b3_sympy__sympy-17318_T3A-T.json",
+          "bytes": 3057,
+          "sha256": "b383db7163e2780ac3094387ef41c65e5aaf1014d163800ec2074e187d92990f"
+        },
+        {
+          "relpath": "037_g3b3_sympy__sympy-17318_T3A-T.json",
+          "bytes": 11869,
+          "sha256": "adcc7649be96f75d8658e4b2fce6aa0c3f0273c4d7039067d7d25308a2128b34"
+        },
+        {
+          "relpath": "038_g3b3_sympy__sympy-17318_T2A-T.json",
+          "bytes": 1136,
+          "sha256": "c9452712ae6836fee88089e959752b97400a5574bc709ca4947e7eb321c7028c"
+        },
+        {
+          "relpath": "039_g3b3_sympy__sympy-17318_T3D-Escalate.json",
+          "bytes": 7676,
+          "sha256": "e8d0694895676c61f43721be4e580764c99c4b656df1917ab8b53d6efc382e18"
+        },
+        {
+          "relpath": "040_g3b3_sympy__sympy-17630_T2D-T.json",
+          "bytes": 1361,
+          "sha256": "933b0df40f01249dfbf099518b90662ef9c7104c4bb29349439f945bbe09cf82"
+        },
+        {
+          "relpath": "041_g3b3_sympy__sympy-17630_T2D-T.json",
+          "bytes": 1094,
+          "sha256": "353a4cf311d379a79556fff10ee26b63d7db2f570100477d690aa6b74b562c58"
+        },
+        {
+          "relpath": "042_g3b3_sympy__sympy-17630_T3D-Strict.json",
+          "bytes": 3006,
+          "sha256": "ac250b16852ebb333e7f381ed7a72ce89972cb2693f4c89ebef163e4f6cc5afa"
+        },
+        {
+          "relpath": "043_g3b3_sympy__sympy-17630_T2A-T.json",
+          "bytes": 635,
+          "sha256": "ea129b74987a163a60d8fb499d4f0bbff193c5362336fdab877356bc9b23b995"
+        },
+        {
+          "relpath": "044_g3b3_sympy__sympy-17630_T3D-Strict.json",
+          "bytes": 7695,
+          "sha256": "f67ed985b78fdb25c677ef4efd73f71ae851c119f8dbb41114e7941da8a7a924"
+        },
+        {
+          "relpath": "045_g3b3_sympy__sympy-17630_T3A-T.json",
+          "bytes": 11644,
+          "sha256": "7335585f407e1e70f24f4343db44beec165b73dc78ddb3b07100484ff3b7521f"
+        },
+        {
+          "relpath": "046_g3b3_sympy__sympy-17630_T3A-T.json",
+          "bytes": 25101,
+          "sha256": "1e61a6b06907b40e5dbb683e76a34172f974b6dd6cb8172558aef91c75f19942"
+        },
+        {
+          "relpath": "047_g3b3_sympy__sympy-17630_T2A-T.json",
+          "bytes": 1129,
+          "sha256": "aad22410c38c1b4c4a21e8b0c2f730fcf5c626a1f8413f572d5541dbfda46324"
+        },
+        {
+          "relpath": "048_g3b3_sympy__sympy-17630_T3D-Escalate.json",
+          "bytes": 2606,
+          "sha256": "30fb5455bdf5282609dfe2b8b2a0a274e0ad4b382cfb635f73a884d47d19bd90"
+        },
+        {
+          "relpath": "049_g3b3_sympy__sympy-17630_T3D-Escalate.json",
+          "bytes": 33923,
+          "sha256": "72ccb331a580ca31911fc014b29bbfd9f07861073c2120c9601acb9e125079e2"
+        },
+        {
+          "relpath": "050_g3b3_sympy__sympy-19783_T2D-T.json",
+          "bytes": 1142,
+          "sha256": "571b0053a1db9f76eb2efb77d75f6dd76390c8f657db5fbe011b66c2cd88e03a"
+        },
+        {
+          "relpath": "051_g3b3_sympy__sympy-19783_T3D-Strict.json",
+          "bytes": 3251,
+          "sha256": "afd53c123fa1cd87fd6e1d60089444e4cb66d5ad9e71dfdad0e7bd92d1378f62"
+        },
+        {
+          "relpath": "052_g3b3_sympy__sympy-19783_T2A-T.json",
+          "bytes": 684,
+          "sha256": "16b95eb2f0f6bea1043a55f78e1bed582acfe113e4b99698be45929da68d006c"
+        },
+        {
+          "relpath": "053_g3b3_sympy__sympy-19783_T3D-Strict.json",
+          "bytes": 7786,
+          "sha256": "05f1e4815bf55fa9737c81c62cd41fb9656fbc06763c01cf34625db1f85490cd"
+        },
+        {
+          "relpath": "054_g3b3_sympy__sympy-19783_T3A-T.json",
+          "bytes": 2960,
+          "sha256": "925a7c0ca02a8d684835054c8adc2749ce0515d75582086016703612994cdda9"
+        },
+        {
+          "relpath": "055_g3b3_sympy__sympy-19783_T3A-T.json",
+          "bytes": 13715,
+          "sha256": "fe72875bc56da88ef915b619055bf9bb27ccc643d7f2be2bdf1a730abefbcc76"
+        },
+        {
+          "relpath": "056_g3b3_sympy__sympy-19783_T2A-T.json",
+          "bytes": 618,
+          "sha256": "a06451451ba7b02d3f64e150105c4600b03da7b4dfd2aecef53ad7f9e01b577d"
+        },
+        {
+          "relpath": "057_g3b3_sympy__sympy-19783_T3D-Escalate.json",
+          "bytes": 9548,
+          "sha256": "2c9a78da2ac1010c9655b7361227fcf5fd8da9a6e2bb5d3f37fc97cae8b973c9"
+        },
+        {
+          "relpath": "058_g3b3_sympy__sympy-19783_T3D-Escalate.json",
+          "bytes": 23413,
+          "sha256": "80141bc7dfaadb854d458f0eb77ad9051d94b385c57c09cce5511c5ccf319df8"
+        },
+        {
+          "relpath": "059_g3b3_sympy__sympy-19783_T2D-T.json",
+          "bytes": 928,
+          "sha256": "23eb21abf77693fc099414e1d2f9f9a7a68585fe9f4039532e13c486213d9381"
+        },
+        {
+          "relpath": "060_g3b3_sympy__sympy-20590_T3D-Strict.json",
+          "bytes": 6850,
+          "sha256": "0e017e40a8a714160827739e84a65e9c8487aed6dcd80f2ebb7c67a2ce145a60"
+        },
+        {
+          "relpath": "061_g3b3_sympy__sympy-20590_T2A-T.json",
+          "bytes": 929,
+          "sha256": "2cbc954200d5500e8356184910158115f991fa4cfffe2b5d28a62fddb59273dd"
+        },
+        {
+          "relpath": "062_g3b3_sympy__sympy-20590_T3D-Strict.json",
+          "bytes": 7957,
+          "sha256": "84c63c9090e5d727aba50ce4fa081351221bd3af4d84949b4b32792b2d8e052f"
+        },
+        {
+          "relpath": "063_g3b3_sympy__sympy-20590_T3A-T.json",
+          "bytes": 3034,
+          "sha256": "92d0f77c9480cefb1e33b51fa3996e8eda8a4a9e64dfd9aa1fbc8012f60bad4f"
+        },
+        {
+          "relpath": "064_g3b3_sympy__sympy-20590_T3A-T.json",
+          "bytes": 25261,
+          "sha256": "4b81f3a29d9b87925ed7753029bed159cafb74720522201dcbe87b9c16986368"
+        },
+        {
+          "relpath": "065_g3b3_sympy__sympy-20590_T2A-T.json",
+          "bytes": 899,
+          "sha256": "0382a63e803a8191b9b62e5bb99b34494458e0f5a6cae80d6b058e276f08ad8f"
+        },
+        {
+          "relpath": "066_g3b3_sympy__sympy-20590_T3D-Escalate.json",
+          "bytes": 3046,
+          "sha256": "148c2ff887dd387b7e0133298dff3d86a71c47dfee74335e6826e2a27cb2be5a"
+        },
+        {
+          "relpath": "067_g3b3_sympy__sympy-20590_T3D-Escalate.json",
+          "bytes": 21958,
+          "sha256": "15fb89da6070a6289633b95f307a0cdbed3874c849a6333d80c0af91345ccdf8"
+        },
+        {
+          "relpath": "068_g3b3_sympy__sympy-20590_T2D-T.json",
+          "bytes": 1131,
+          "sha256": "e2ced64906d32064ba7db5f15a0a19f61c9759df3899cce705f7581a5e385e88"
+        },
+        {
+          "relpath": "069_g3b3_sympy__sympy-20590_T2D-T.json",
+          "bytes": 1091,
+          "sha256": "9b320042903bb86197c2128e0e65e863731099d63710167f3871e1b53df04484"
+        },
+        {
+          "relpath": "070_g3b3_sympy__sympy-21847_T2A-T.json",
+          "bytes": 977,
+          "sha256": "030a9abfe2329fc4e946ffc752ea696ac1316ca42110521fa18d73e6f7827fa3"
+        },
+        {
+          "relpath": "071_g3b3_sympy__sympy-21847_T3D-Strict.json",
+          "bytes": 7719,
+          "sha256": "ccebedff8972241a4f8f29a645650e266f2d003dea0e2cc37cce26bcdf9dcbf5"
+        },
+        {
+          "relpath": "072_g3b3_sympy__sympy-21847_T3A-T.json",
+          "bytes": 3105,
+          "sha256": "0dc652d83ac20f54758cefc93e96099a57ba9dd9b78cfd275edf5b78a7507504"
+        },
+        {
+          "relpath": "073_g3b3_sympy__sympy-21847_T3A-T.json",
+          "bytes": 11354,
+          "sha256": "bdf7edb2a3e6a70d9feafb0da4a30bb83999c3b624494b5ad2473350215ce991"
+        },
+        {
+          "relpath": "074_g3b3_sympy__sympy-21847_T2A-T.json",
+          "bytes": 1160,
+          "sha256": "1fc070f53da9fe1366dbc3a5f011f5938580f88eda9db438d860b27c382afb65"
+        },
+        {
+          "relpath": "075_g3b3_sympy__sympy-21847_T3D-Escalate.json",
+          "bytes": 3121,
+          "sha256": "0a622b92132200e3513fe39ae9f7bc454094daf608bb9c048920f5dcb9cbaa91"
+        },
+        {
+          "relpath": "076_g3b3_sympy__sympy-21847_T3D-Escalate.json",
+          "bytes": 11488,
+          "sha256": "4aeba7c685b0ad92b433cae44e46cbfa5518027b19d2742ca14f5f2cb6828379"
+        },
+        {
+          "relpath": "077_g3b3_sympy__sympy-21847_T2D-T.json",
+          "bytes": 1320,
+          "sha256": "66e9c674b2ebb179e32215783e6aedc3915324b94cf12a349d7ffc0f92a475d3"
+        },
+        {
+          "relpath": "078_g3b3_sympy__sympy-21847_T2D-T.json",
+          "bytes": 1148,
+          "sha256": "b2a081ae5c775b99ab751632b6ac00f3f12973828b5b215b268b6415e0b62b92"
+        },
+        {
+          "relpath": "079_g3b3_sympy__sympy-21847_T3D-Strict.json",
+          "bytes": 3055,
+          "sha256": "69980c96535175326b315fefbd9ddddb9431200623d062b5473ea6b79064f117"
+        },
+        {
+          "relpath": "080_g3b3_sympy__sympy-24213_T3D-Strict.json",
+          "bytes": 7503,
+          "sha256": "0cfd4f3316231fbb9fbc251e01aabba6f339b9fabd460b4d51e1916575278075"
+        },
+        {
+          "relpath": "081_g3b3_sympy__sympy-24213_T3A-T.json",
+          "bytes": 2950,
+          "sha256": "d668e0406085010000ac84e25dce48a56d49b4ff131aa4401fbd0303a9166f04"
+        },
+        {
+          "relpath": "082_g3b3_sympy__sympy-24213_T3A-T.json",
+          "bytes": 8831,
+          "sha256": "aeada8b75a683d71132b8aac95a87a04e0c7d1b5abe52281da3b22a3f0c9409f"
+        },
+        {
+          "relpath": "083_g3b3_sympy__sympy-24213_T2A-T.json",
+          "bytes": 856,
+          "sha256": "86fd01bb559bc17c86503cba0414690b52b00d485bc42f8206b377b11463040a"
+        },
+        {
+          "relpath": "084_g3b3_sympy__sympy-24213_T3D-Escalate.json",
+          "bytes": 9207,
+          "sha256": "e7641b74ce587ba96ddf27cd49383b07279d8f0d9c9f230bed49928a0d990b82"
+        },
+        {
+          "relpath": "085_g3b3_sympy__sympy-24213_T3D-Escalate.json",
+          "bytes": 16645,
+          "sha256": "a592b06b8251d2bfb3ddedb03627866efefc494454ef547368db8aceba1c38ba"
+        },
+        {
+          "relpath": "086_g3b3_sympy__sympy-24213_T2D-T.json",
+          "bytes": 899,
+          "sha256": "3ab6186e14ef6d6e3d6f7a81e46a5d0baf1e9f851c9a14bf0bacc897f2ddc4d9"
+        },
+        {
+          "relpath": "087_g3b3_sympy__sympy-24213_T2D-T.json",
+          "bytes": 1182,
+          "sha256": "7ffda2b70f55580a7bc5d89cfc0be6315ae0f8addcccc7d5b8a38f4ebe9b3ac8"
+        },
+        {
+          "relpath": "088_g3b3_sympy__sympy-24213_T3D-Strict.json",
+          "bytes": 3217,
+          "sha256": "a554f605030af5742e78e9565b7d60aefc2119ff5ff0e1712dd490f9d330d72a"
+        },
+        {
+          "relpath": "089_g3b3_sympy__sympy-24213_T2A-T.json",
+          "bytes": 826,
+          "sha256": "2826617a2dc2ca961d75ab699c525fac0d2acbd4d0af9008197d858f2a4aa42b"
+        },
+        {
+          "relpath": "090_g3b3_sympy__sympy-24443_T3A-T.json",
+          "bytes": 2981,
+          "sha256": "b29e398db703f4c14d306ff91db380e92fefc150f49430b0e58807e671871372"
+        },
+        {
+          "relpath": "091_g3b3_sympy__sympy-24443_T3A-T.json",
+          "bytes": 14312,
+          "sha256": "9993e7d7df21458c52fb7cef5f25448f7a5e43cb961c603dd27c75dd0249d6a6"
+        },
+        {
+          "relpath": "092_g3b3_sympy__sympy-24443_T2A-T.json",
+          "bytes": 956,
+          "sha256": "923ea00452c86e9e0c4bc11fa41ddb6b6a92b05987602e6090a6bf27161ee338"
+        },
+        {
+          "relpath": "093_g3b3_sympy__sympy-24443_T3D-Escalate.json",
+          "bytes": 5215,
+          "sha256": "3e3cced36f05bb56a2087ea622784495e4e1ba2252064454be6c20fc6e7a8599"
+        },
+        {
+          "relpath": "094_g3b3_sympy__sympy-24443_T3D-Escalate.json",
+          "bytes": 9528,
+          "sha256": "df94c438c19db64efa08932d188d0e6b8d9952811b142c4ab911544634122e25"
+        },
+        {
+          "relpath": "095_g3b3_sympy__sympy-24443_T2D-T.json",
+          "bytes": 1201,
+          "sha256": "883b0cc96195db16d57ab688d9d7f0da0174853ad39351ab0622aa202f93729b"
+        },
+        {
+          "relpath": "096_g3b3_sympy__sympy-24443_T2D-T.json",
+          "bytes": 974,
+          "sha256": "921e3e6d242c3c649001d2bb3d4e5a939a5158b10d3f75f5559b47b1608c8d16"
+        },
+        {
+          "relpath": "097_g3b3_sympy__sympy-24443_T3D-Strict.json",
+          "bytes": 3144,
+          "sha256": "49d78d50b6123069cbe8f2d7b4788888b9f4ce38cea17866d0bf924f02d6c384"
+        },
+        {
+          "relpath": "098_g3b3_sympy__sympy-24443_T2A-T.json",
+          "bytes": 974,
+          "sha256": "f0b8c761a01f0673c9b3bff15962ab8d650107a65ad1e11ac81d7ba6fb75c90c"
+        },
+        {
+          "relpath": "099_g3b3_sympy__sympy-24443_T3D-Strict.json",
+          "bytes": 6990,
+          "sha256": "e4572c58717c59db15e2760dca23a8002c4b7dc011b574b8e9954e9ecfd597bc"
+        }
+      ]
+    },
+    {
+      "name": "gate_report",
+      "path": "evidence_store_g3b3/g3b3_report.json",
+      "bytes": 31877,
+      "sha256": "4b11ee441d151b1d44fc62af7fda8cfde129891b9aea5722a75ffdfa4d95ea82"
+    }
+  ],
+  "git_state": {
+    "head": "2097ecd87310bd1df1f3dcfddfbc7e3cedea1123",
+    "head_matches_frozen": true,
+    "frozen_head_expected": "2097ecd87310bd1df1f3dcfddfbc7e3cedea1123",
+    "staged_files": [],
+    "n_staged": 0,
+    "modified_or_added_tracked": [
+      "trae/specs/groundedreview-w2-offline/tasks.md"
+    ],
+    "untracked_count": 88,
+    "commits_made_in_g3b3": 0,
+    "note": "untracked (??) g3b3 artifacts are expected; tracked modifications and staged files must be zero."
+  }
+}

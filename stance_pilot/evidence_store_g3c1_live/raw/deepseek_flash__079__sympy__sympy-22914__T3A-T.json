@@ -1,0 +1,146 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"Artifact art_b970f89709fb3265 is authentically signed and linked to exactly this patch (patch_sha256 dc1ed99e... matches, base_commit c4e836cd... matches). Freshness is established: the authoritative re-derived restage tree (5df550bf...) equals the attested run tree, fresh=true. Coverage is complete: the single declared FAIL_TO_PASS check (test_PythonCodePrinter) was executed and passed, and all 17 scoped PASS_TO_PASS checks were executed with 17/17 passing, no regressions and no pre-existing bad ids. The patch adds _print_Min/_print_Max to PythonCodePrinter producing 'min(...)'/'max(...)', which directly resolves the reported issue, and the added tests cover Min/Max with two and three arguments. No applicable acceptance failure or scoped regression exists, so the evidence supports merge acceptance.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "cell": "g3c1live:sympy__sympy-22914:T3A-T",
+  "condition": "T3A-T",
+  "cost_usd": 0.002583,
+  "evidence_session": "e6dcbbdadc35913a897e9874",
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-22914",
+  "instance_id": "sympy__sympy-22914",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 2,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010486,
+    0.011092
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 125,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 2560,
+      "raw_content": "I'll verify the artifact's linkage, freshness, coverage, and claim consistency before deciding.",
+      "served_model": "deepseek-flash",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_00_ypKp9SNendAxxve3cW664595",
+          "name": "get_test_artifact"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_01_Hr8hGgq5KhbUWtueAGoS8895",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_02_3LbtfaTOpPH4iMEKvw261864",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_03_DH9aKZtKRoMkiyMYcK4Z0246",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{\"claim\": \"This fix is correct and all relevant tests pass.\"}",
+          "id": "call_04_bOX0Bcl39uO5IRg8qLLi6976",
+          "name": "check_claim_consistency"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 218,
+      "finish_reason": "stop",
+      "model_call": 2,
+      "prompt_tokens": 4679,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"Artifact art_b970f89709fb3265 is authentically signed and linked to exactly this patch (patch_sha256 dc1ed99e... matches, base_commit c4e836cd... matches). Freshness is established: the authoritative re-derived restage tree (5df550bf...) equals the attested run tree, fresh=true. Coverage is complete: the single declared FAIL_TO_PASS check (test_PythonCodePrinter) was executed and passed, and all 17 scoped PASS_TO_PASS checks were executed with 17/17 passing, no regressions and no pre-existing bad ids. The patch adds _print_Min/_print_Max to PythonCodePrinter producing 'min(...)'/'max(...)', which directly resolves the reported issue, and the added tests cover Min/Max with two and three arguments. No applicable acceptance failure or scoped regression exists, so the evidence supports merge acceptance.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 8,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_b970f89709fb3265",
+  "tokens_in": 7239,
+  "tokens_out": 343,
+  "tool_calls": 5,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_b970f89709fb3265\", \"base_commit\": \"c4e836cdf73fc6aa7bab6a86719a0f08861ffb1d\", \"fail_to_pass\": {\"test_PythonCodePrinter\": \"PASSED\"}, \"finished_at\": \"2026-10-28T10:04:49+00:00\", \"instance_id\": \"sympy__sympy-22914\", \"log_digests\": {\"f2p\": \"a8f338f9777d1023e06f92a985299f7199335e44777e8a170ec5914f03f449d0\", \"p2p\": \"a8f338f9777d1023e06f92a985299f7199335e44777e8a170ec5914f03f449d0\", \"p2p_baseline\": \"b621347d60c37537ec69d6ee4f833839b28f67a29154ab8e37c478e91d1e863a\", \"symptom\": \"8bcac008353683cb191bdc0f621b05e68d4860a629cb9da7630fc027044b9098\"}, \"pass_to_pass_baseline\": {\"test_Integral\": \"PASSED\", \"test_MpmathPrinter\": \"PASSED\", \"test_NumPyPrinter\": \"PASSED\", \"test_NumPyPrinter_print_seq\": \"PASSED\", \"test_PythonCodePrinter_standard\": \"PASSED\", \"test_SciPyPrinter\": \"PASSED\", \"test_airy\": \"PASSED\", \"test_airy_prime\": \"PASSED\", \"test_beta\": \"PASSED\", \"test_codegen_ast_nodes\": \"PASSED\", \"test_frac\": \"PASSED\", \"test_fresnel_integrals\": \"PASSED\", \"test_issue_14283\": \"PASSED\", \"test_issue_16535_16536\": \"PASSED\", \"test_printmethod\": \"PASSED\", \"test_pycode_reserved_words\": \"PASSED\", \"test_sqrt\": \"PASSED\"}, \"pass_to_pass_scoped\": {\"test_Integral\": \"PASSED\", \"test_MpmathPrinter\": \"PASSED\", \"test_NumPyPrinter\": \"PASSED\", \"test_NumPyPrinter_print_seq\": \"PASSED\", \"test_PythonCodePrinter_standard\": \"PASSED\", \"test_SciPyPrinter\": \"PASSED\", \"test_airy\": \"PASSED\", \"test_airy_prime\": \"PASSED\", \"test_beta\": \"PASSED\", \"test_codegen_ast_nodes\": \"PASSED\", \"test_frac\": \"PASSED\", \"test_fresnel_integrals\": \"PASSED\", \"test_issue_14283\": \"PASSED\", \"test_issue_16535_16536\": \"PASSED\", \"test_printmethod\": \"PASSED\", \"test_pycode_reserved_words\": \"PASSED\", \"test_sqrt\": \"PASSED\"}, \"patch_sha256\": \"dc1ed99edd680affe1b4b93bb2798d9ef6442636892f1d2fbad60487f203fd5e\", \"repo\": \"sympy/sympy\", \"runner\": \"pytest/vendored-git  py=3.9.25  host=windows-local  gate=G3-C.1\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/printing/tests/test_aesaracode.py\", \"sympy/printing/tests/test_c.py\", \"sympy/printing/tests/test_codeprinter.py\", \"sympy/printing/tests/test_conventions.py\", \"sympy/printing/tests/test_cupy.py\", \"sympy/printing/tests/test_cxx.py\", \"sympy/printing/tests/test_dot.py\", \"sympy/printing/tests/test_fortran.py\", \"sympy/printing/tests/test_glsl.py\", \"sympy/printing/tests/test_gtk.py\", \"sympy/printing/tests/test_jscode.py\", \"sympy/printing/tests/test_julia.py\", \"sympy/printing/tests/test_lambdarepr.py\", \"sympy/printing/tests/test_latex.py\", \"sympy/printing/tests/test_llvmjit.py\", \"sympy/printing/tests/test_maple.py\", \"sympy/printing/tests/test_mathematica.py\", \"sympy/printing/tests/test_mathml.py\", \"sympy/printing/tests/test_numpy.py\", \"sympy/printing/tests/test_octave.py\", \"sympy/printing/tests/test_precedence.py\", \"sympy/printing/tests/test_preview.py\", \"sympy/printing/tests/test_pycode.py\", \"sympy/printing/tests/test_python.py\", \"sympy/printing/tests/test_rcode.py\", \"sympy/printing/tests/test_repr.py\", \"sympy/printing/tests/test_rust.py\", \"sympy/printing/tests/test_str.py\", \"sympy/printing/tests/test_tableform.py\", \"sympy/printing/tests/test_tensorflow.py\", \"sympy/printing/tests/test_theanocode.py\", \"sympy/printing/tests/test_tree.py\"], \"p2p_total_in_dataset\": 17, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-28T10:03:01+00:00\", \"summary\": {\"f2p_failed_ids\": [], \"f2p_passed\": 1, \"f2p_total\": 1, \"p2p_passed\": 17, \"p2p_preexisting_bad_ids\": [], \"p2p_regressed_ids\": [], \"p2p_total\": 17}, \"test_patch_sha256\": \"95e580cdfb748ead82b4e87d89ac8a8195e4dc6abded0f046028be5191b867f5\"}, \"authentic_signature\": true, \"evidence_tier\": \"A\"}",
+      "tool": "get_test_artifact",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"c4e836cdf73fc6aa7bab6a86719a0f08861ffb1d\", \"record_patch_sha256\": \"dc1ed99edd680affe1b4b93bb2798d9ef6442636892f1d2fbad60487f203fd5e\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"5df550bf1fed52cfd49c8e914660bf91c79102fd\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"5df550bf1fed52cfd49c8e914660bf91c79102fd\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:03:01+00:00\", \"attestation_built_at\": \"2026-10-28T10:04:51+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 17, \"executed\": 17, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {
+        "claim": "This fix is correct and all relevant tests pass."
+      },
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"executed acceptance/regression checks show no failure\", \"failed_acceptance_checks\": 0, \"regression_checks\": 0, \"executed_checks\": 18}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    }
+  ],
+  "wall_s": 3.25
+}

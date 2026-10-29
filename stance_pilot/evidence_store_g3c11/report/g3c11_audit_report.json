@@ -1,0 +1,627 @@
+{
+  "approved_scope": {
+    "ai_self_labelling_as_annotator2": false,
+    "frozen_raw_tests_rewritten": false,
+    "gate_3c2_execution": false,
+    "gemini_or_r2": false,
+    "git_commit_or_add": false,
+    "historical_gold_modified": false,
+    "modify_historical_frozen_artifacts": false,
+    "new_data_collection": false,
+    "new_issues": 0,
+    "real_model_calls": 0,
+    "spend_usd": 0.0
+  },
+  "auditor_position": "Independent zero-API audit of frozen G3-C.1 artifacts. No API call, no new issue, no model, no historical gold change, no frozen-test rewrite, no R2, no Git commit.",
+  "design_version": "groundedreview-gate3c11-zero-api-audit-freeze-v1",
+  "document": "GroundedReview Gate G3-C.1.1 INDEPENDENT AUDIT REPORT (task 13)",
+  "funnel_summary": {
+    "dedup_eligible_base": 47,
+    "dedup_suppressed_natural_only": 4,
+    "eligible": 51,
+    "enriched_picks": [
+      "sympy__sympy-19040",
+      "sympy__sympy-14248",
+      "sympy__sympy-19637",
+      "sympy__sympy-16886"
+    ],
+    "excluded": 24,
+    "natural_picks": [
+      "sympy__sympy-19346",
+      "sympy__sympy-22914",
+      "sympy__sympy-19495",
+      "sympy__sympy-15875"
+    ],
+    "no_pooled_natural_rate": true,
+    "queues_disjoint": true,
+    "s0": 75,
+    "stratum_sizes": {
+      "R-F2P": 16,
+      "R-P2P": 29,
+      "R-TRAP": 2,
+      "UNENRICHED": 0
+    }
+  },
+  "gate3c2_blocking_preconditions": [
+    {
+      "blocks_release": true,
+      "current_state": "NOT MET - annotator2 NOT_OBTAINED, 18/18 PROVISIONAL/PENDING, FR1/FR2 PENDING, zero AI labels allowed.",
+      "id": "PC1_independent_gold_review",
+      "requirement": "A real, independent annotator-2 labels all 18 blind packets (10 G3-A + 8 G3-C.1) and a third senior human adjudicates disagreements; only then is a new Gold Adjudication Version produced and gold raised above PROVISIONAL. The same independent human must also answer the two approver-mandated focused reviews: FR1 sympy-19495 probe (instrument-only fix vs post-hoc oracle redefinition) and FR2 (14248 vs 15875 share one uniform disjunctive REJECT standard)."
+    },
+    {
+      "blocks_release": true,
+      "current_state": "PARTIALLY MET - rule predates first outcome by ~28 min (pre-data, not post-outcome adaptive) and replay is byte-identical, but the order was not fixed verbatim in G3-C.0; counterfactual F2P-first would move 29 strata and pick 4 different issues.",
+      "id": "PC2_sampling_rule_trustworthiness",
+      "requirement": "Either (a) amend the pre-registration in writing to lock the TRAP>P2P>F2P multi-member tie/connection order as the operative rule, disclosing it is a pilot-stage pre-data operational refinement rather than verbatim G3-C.0 text; or (b) re-run the design under the literal G3-C.0 enumeration."
+    },
+    {
+      "blocks_release": true,
+      "current_state": "NOT MET - de-duplicated 47-issue pool contains only 2 R-TRAP; shortfall 4. Requires additional eligible candidate material, which needs data collection this gate does not authorise.",
+      "id": "PC3_R_TRAP_sampleability",
+      "requirement": "Secure >=6 R-TRAP independent negatives per the pre-registered floor (the 17318/17630/19783 anchors are held-out and do not count toward NEW issues)."
+    }
+  ],
+  "gate3c2_recommendation": "NO-GO (do not release G3-C.2 real expansion yet)",
+  "headline_conclusions": [
+    "Integrity PASS: all 185 frozen files hash-match, all parent pins match, truth/artifact/oracle are mutually consistent, freshness 8/8, 40 certificates (24 sufficient/16 NEED), 456/456 HTTP assertions pass, 40 mock cells are plumbing-only (research excluded), projection v2 non-interference holds on all 144 restricted tier-D surfaces.",
+    "Funnel replay is byte-identical: 75 ->(24 mutually-exclusive exclusions)-> 51 ->(4 changed-file dedup, natural queue only)-> 47; natural and enriched queues do not overlap (union=8) and are kept as separate denominators; no double counting.",
+    "Enrichment priority TRAP>P2P>F2P is a PILOT-STAGE PRE-DATA operational refinement, fixed 28 minutes before the first outcome, NOT verbatim pre-registered in G3-C.0; the counterfactual F2P-first order moves 29 strata and would pick 4 different issues, so it is disclosed and must not be claimed as fully pre-registered.",
+    "Both REJECTs independently reproduce from raw pytest logs: 14248 = one declared F2P genuinely still failing (test_MatrixSymbol_printing PARTIAL_FAIL) plus two true regressions (test_haramard, test_matMul), with test_latex_Float correctly treated as pre-existing; 15875 = a single decisive declared F2P failure (test_Add_is_zero 'assert True is None'), independent of P2P/environment.",
+    "Instrument blind spot disclosed: 15875 has TWO undeclared candidate-era collateral failures in an executed scope file (test_nfloat, test_subs_in_derivative; PASSED at baseline) that the declared-id scorer does not count; 19346 has one baseline-unmapped undeclared collateral (test_set). These do not change frozen gold but bound coverage claims.",
+    "The six ACCEPTs support only SCOPED acceptability: all declared F2P transition, zero declared scoped-P2P regressions, symptom gone; full-dataset P2P, distant modules, performance/style and alt-patch equivalence are not validated.",
+    "sympy-19495 probe revision is construct-valid: the original instrument was too weak (passed at both base and post); the frozen strengthened probe is derived only from the public report, maintainer test_patch never consulted, no gold changed, no issue replaced, and post-revision all 8 probes flip. Frozen probe sha matches the manifest and was not modified.",
+    "Human adjudication NOT obtained: all 18 blind packets (10 G3-A + 8 G3-C.1) are PENDING; 18/18 gold remain PROVISIONAL with annotator2 NOT_OBTAINED and zero AI labels; no Gold Adjudication Version is produced. Two approver-mandated focused reviews are also left PENDING for the human: FR1 sympy-19495 probe instrument-only-fix vs post-hoc oracle redefinition, and FR2 whether 14248/15875 use one uniform disjunctive REJECT standard.",
+    "Recommendation for G3-C.2: NO-GO until (PC1) independent human gold adjudication, (PC2) written amendment/disclosure of the stratum connection order, and (PC3) the R-TRAP sampling shortfall (2 available vs floor 6) are resolved."
+  ],
+  "human_focused_review_items": [
+    {
+      "ai_determination": null,
+      "before_after_assertion_evidence": {
+        "strengthened_frozen_probe": "probes/sympy__sympy-19495.py",
+        "three_strengthened_assertions": [
+          "(1) if a ConditionSet survives, its bound dummy args[0] must remain a Symbol (rejects the observed ConditionSet(1/3, ...)).",
+          "(2) plain cs.subs(y,1/3) must equal the report's own correct reference via xreplace and simultaneous=True.",
+          "(3) no free substituted symbol y may remain in the result."
+        ],
+        "weak_assertion_behavior": "printed 'OK: ConditionSet.subs returns a well-formed set' at BOTH baseline (malformed ConditionSet(1/3,...)) and post-candidate (correct ImageSet), so it could not distinguish them and exited 0 twice.",
+        "weak_probe_observed_output": {
+          "baseline_probe_passed": true,
+          "file": "g3c1_failures.jsonl",
+          "post_candidate_probe_passed": true,
+          "recorded_at": "2026-10-28T09:48:33+00:00",
+          "stage": "probe_flip_gate"
+        }
+      },
+      "blind_packet": "G3-C.1 packet P02 (identity sealed from annotator2)",
+      "frozen_probe_not_modified_by_this_gate": true,
+      "human_decision": "PENDING",
+      "human_required": true,
+      "id": "FR1_probe_19495_instrument_vs_oracle_redefinition",
+      "instance_id": "sympy__sympy-19495",
+      "question": "Was the probe strengthening a correction of the TEST INSTRUMENT only, or did observing the candidate patch succeed lead to a selective post-hoc redefinition of the acceptability oracle?",
+      "revision_timeline_utc": {
+        "all_8_flip_selftest_mtime": "2026-10-28T09:54:50Z",
+        "build_session_end": "2026-10-28T10:16:07Z",
+        "first_real_pytest_build_for_19495": "2026-10-28T10:15:07Z",
+        "frozen_strengthened_probe_file_mtime": "2026-10-28T09:51:02Z",
+        "ordering_finding": "probe strengthened ~2m29s after the flip-gate stop and ~24 minutes BEFORE the real pytest build that accepted the issue; the revision therefore predates formal build/patch-success evidence.",
+        "weak_probe_both_pass_failure_record": "2026-10-28T09:48:33Z"
+      },
+      "triggered_by": "Approver Risk B (Gate G3-C.1 acceptance memo)",
+      "what_the_human_must_verify": [
+        "The three strengthened assertions are independently derivable from the PUBLIC issue report alone (bound ConditionSet dummy must remain a Symbol; plain .subs must equal the report's xreplace / simultaneous=True references; no free substituted symbol remains).",
+        "No assertion was chosen because it happens to pass on the candidate while excluding the baseline; the assertion must distinguish the two on the report-stated semantics.",
+        "The maintainer test_patch/test_subs_CondSet was not consulted (recorded maintainer_test_patch_consulted=False).",
+        "The original failure record was retained unaltered and the issue was kept rather than swapped to an easier one."
+      ]
+    },
+    {
+      "ai_determination": null,
+      "blind_packets": {
+        "14248": "G3-C.1 P01",
+        "15875": "G3-C.1 P08"
+      },
+      "evidence_summary": {
+        "14248": {
+          "declared_f2p_still_failing": [
+            "test_MatrixSymbol_printing"
+          ],
+          "failure_mode": "declared F2P still fails AND two fresh scoped P2P regressions (jointly decisive)",
+          "preexisting_bad_excluded": [
+            "test_latex_Float"
+          ],
+          "scoped_p2p_regressions": [
+            "test_haramard",
+            "test_matMul"
+          ]
+        },
+        "15875": {
+          "declared_f2p_still_failing": [
+            "test_Add_is_zero"
+          ],
+          "failure_mode": "single decisive declared F2P failure; 0 declared scoped regressions",
+          "preexisting_bad_excluded": [],
+          "scoped_p2p_regressions": [],
+          "undeclared_collateral_disclosed": [
+            "test_nfloat",
+            "test_subs_in_derivative"
+          ]
+        }
+      },
+      "human_decision": "PENDING",
+      "human_required": true,
+      "id": "FR2_two_rejects_same_acceptability_standard",
+      "instances": [
+        "sympy__sympy-14248",
+        "sympy__sympy-15875"
+      ],
+      "question": "Do 14248 and 15875 apply the SAME acceptability standard, or do the different failure modes imply different oracle rules that should be pre-registered separately before expansion?",
+      "rubric_hypothesis_to_confirm": "The frozen rubric REJECTS if there is AT LEAST ONE decisive applicable failure (persistent declared F2P OR scoped P2P regression); under that single disjunctive rule both cases are REJECT for the same reason. The human must confirm the disjunction is intended uniformly and not retrofit to the cases.",
+      "triggered_by": "Approver section II.1 (Gate G3-C.1 acceptance memo)"
+    }
+  ],
+  "human_review_status_table": [
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-A",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "24443",
+      "n_files": 9,
+      "packet": "P01",
+      "self_refs_issue_number": "-"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-A",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "13615",
+      "n_files": 9,
+      "packet": "P02",
+      "self_refs_issue_number": "-"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-A",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "19783",
+      "n_files": 9,
+      "packet": "P03",
+      "self_refs_issue_number": "-"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-A",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "20590",
+      "n_files": 9,
+      "packet": "P04",
+      "self_refs_issue_number": "patch"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-A",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "17630",
+      "n_files": 9,
+      "packet": "P05",
+      "self_refs_issue_number": "patch"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-A",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "21847",
+      "n_files": 9,
+      "packet": "P06",
+      "self_refs_issue_number": "patch"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-A",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "15349",
+      "n_files": 9,
+      "packet": "P07",
+      "self_refs_issue_number": "-"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-A",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "24213",
+      "n_files": 9,
+      "packet": "P08",
+      "self_refs_issue_number": "-"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-A",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "17318",
+      "n_files": 9,
+      "packet": "P09",
+      "self_refs_issue_number": "-"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-A",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "13974",
+      "n_files": 9,
+      "packet": "P10",
+      "self_refs_issue_number": "patch"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-C.1",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "14248",
+      "n_files": 9,
+      "packet": "P01",
+      "self_refs_issue_number": "probe"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-C.1",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "19495",
+      "n_files": 9,
+      "packet": "P02",
+      "self_refs_issue_number": "patch, probe"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-C.1",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "19346",
+      "n_files": 9,
+      "packet": "P03",
+      "self_refs_issue_number": "probe"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-C.1",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "19040",
+      "n_files": 9,
+      "packet": "P04",
+      "self_refs_issue_number": "probe"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-C.1",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "16886",
+      "n_files": 9,
+      "packet": "P05",
+      "self_refs_issue_number": "probe"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-C.1",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "19637",
+      "n_files": 9,
+      "packet": "P06",
+      "self_refs_issue_number": "probe"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-C.1",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "22914",
+      "n_files": 9,
+      "packet": "P07",
+      "self_refs_issue_number": "probe"
+    },
+    {
+      "adjudication": "PENDING",
+      "annotator2": "NOT_OBTAINED",
+      "cohort": "G3-C.1",
+      "gold_tier": "PROVISIONAL",
+      "issue_sealed_study_team_only": "15875",
+      "n_files": 9,
+      "packet": "P08",
+      "self_refs_issue_number": "probe"
+    }
+  ],
+  "integrity_summary": {
+    "certificates_need": 16,
+    "certificates_sufficient": 24,
+    "certificates_total": 40,
+    "determinism_all_byte_identical": true,
+    "file_hash_mismatches": 0,
+    "freshness_all_match": true,
+    "frozen_files_checked": 185,
+    "http_checks_pass": "456/456",
+    "mock_cells": 40,
+    "mock_interpretation": "100% plumbing match is EXPECTED and research-EXCLUDED; not a model-performance number.",
+    "restricted_tier_d_surfaces_clean": 0,
+    "verification_overall_pass": true
+  },
+  "next_action": "STOP. Await separate written approval of G3-C.2; this gate executes no expansion.",
+  "per_issue_gold_quality_table": [
+    {
+      "declared_f2p_n": 2,
+      "declared_scoped_p2p_n": 433,
+      "f2p_still_failing": [
+        "test_MatrixSymbol_printing"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "instance_id": "14248",
+      "oracle_gold": "REJECT",
+      "p2p_preexisting_bad": [
+        "test_latex_Float"
+      ],
+      "p2p_regressed": [
+        "test_haramard",
+        "test_matMul"
+      ],
+      "queue": "enriched",
+      "recomputation_matches_frozen": true,
+      "stratum": "R-P2P",
+      "supports": "REJECT on declared evidence",
+      "symptom": "gone (pre fail / post pass)",
+      "undeclared_candidate_era_collateral": [],
+      "undeclared_collateral_failing_nodes": [
+        "test_issue_13559",
+        "test_issue_8292",
+        "test_issue_8344",
+        "test_issue_8470",
+        "test_missing_in_2X_issue_9047"
+      ]
+    },
+    {
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 80,
+      "f2p_still_failing": [
+        "test_Add_is_zero"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "instance_id": "15875",
+      "oracle_gold": "REJECT",
+      "p2p_preexisting_bad": [],
+      "p2p_regressed": [],
+      "queue": "natural",
+      "recomputation_matches_frozen": true,
+      "stratum": "R-P2P",
+      "supports": "REJECT on declared evidence",
+      "symptom": "gone (pre fail / post pass)",
+      "undeclared_candidate_era_collateral": [
+        "test_nfloat",
+        "test_subs_in_derivative"
+      ],
+      "undeclared_collateral_failing_nodes": [
+        "test_nfloat",
+        "test_subs_in_derivative"
+      ]
+    },
+    {
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 42,
+      "f2p_still_failing": [],
+      "gold_tier": "PROVISIONAL",
+      "instance_id": "16886",
+      "oracle_gold": "ACCEPT",
+      "p2p_preexisting_bad": [],
+      "p2p_regressed": [],
+      "queue": "enriched",
+      "recomputation_matches_frozen": true,
+      "stratum": "R-P2P",
+      "supports": "SCOPED acceptability only",
+      "symptom": "gone (pre fail / post pass)",
+      "undeclared_candidate_era_collateral": [],
+      "undeclared_collateral_failing_nodes": []
+    },
+    {
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 148,
+      "f2p_still_failing": [],
+      "gold_tier": "PROVISIONAL",
+      "instance_id": "19040",
+      "oracle_gold": "ACCEPT",
+      "p2p_preexisting_bad": [],
+      "p2p_regressed": [],
+      "queue": "enriched",
+      "recomputation_matches_frozen": true,
+      "stratum": "R-TRAP",
+      "supports": "SCOPED acceptability only",
+      "symptom": "gone (pre fail / post pass)",
+      "undeclared_candidate_era_collateral": [],
+      "undeclared_collateral_failing_nodes": []
+    },
+    {
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 40,
+      "f2p_still_failing": [],
+      "gold_tier": "PROVISIONAL",
+      "instance_id": "19346",
+      "oracle_gold": "ACCEPT",
+      "p2p_preexisting_bad": [],
+      "p2p_regressed": [],
+      "queue": "natural",
+      "recomputation_matches_frozen": true,
+      "stratum": "R-P2P",
+      "supports": "SCOPED acceptability only",
+      "symptom": "gone (pre fail / post pass)",
+      "undeclared_candidate_era_collateral": [
+        "test_set"
+      ],
+      "undeclared_collateral_failing_nodes": [
+        "test_Add",
+        "test_Mul",
+        "test_issue_13559",
+        "test_issue_8470",
+        "test_set"
+      ]
+    },
+    {
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 8,
+      "f2p_still_failing": [],
+      "gold_tier": "PROVISIONAL",
+      "instance_id": "19495",
+      "oracle_gold": "ACCEPT",
+      "p2p_preexisting_bad": [],
+      "p2p_regressed": [],
+      "queue": "natural",
+      "recomputation_matches_frozen": true,
+      "stratum": "R-TRAP",
+      "supports": "SCOPED acceptability only",
+      "symptom": "gone (pre fail / post pass)",
+      "undeclared_candidate_era_collateral": [],
+      "undeclared_collateral_failing_nodes": []
+    },
+    {
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 40,
+      "f2p_still_failing": [],
+      "gold_tier": "PROVISIONAL",
+      "instance_id": "19637",
+      "oracle_gold": "ACCEPT",
+      "p2p_preexisting_bad": [],
+      "p2p_regressed": [],
+      "queue": "enriched",
+      "recomputation_matches_frozen": true,
+      "stratum": "R-P2P",
+      "supports": "SCOPED acceptability only",
+      "symptom": "gone (pre fail / post pass)",
+      "undeclared_candidate_era_collateral": [],
+      "undeclared_collateral_failing_nodes": [
+        "test_evaluate_false",
+        "test_issue_17811"
+      ]
+    },
+    {
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 17,
+      "f2p_still_failing": [],
+      "gold_tier": "PROVISIONAL",
+      "instance_id": "22914",
+      "oracle_gold": "ACCEPT",
+      "p2p_preexisting_bad": [],
+      "p2p_regressed": [],
+      "queue": "natural",
+      "recomputation_matches_frozen": true,
+      "stratum": "R-F2P",
+      "supports": "SCOPED acceptability only",
+      "symptom": "gone (pre fail / post pass)",
+      "undeclared_candidate_era_collateral": [],
+      "undeclared_collateral_failing_nodes": []
+    }
+  ],
+  "probe_19495_audit": {
+    "baseline_vs_post_evidence": "At the clean base plain subs produced the malformed ConditionSet(1/3,...); after the candidate it became the correct ImageSet and xreplace/simultaneous references matched. The issue genuinely reproduces and the candidate genuinely fixes it - a probe-authoring defect, not a non-evaluable issue.",
+    "evidence_source": "assertions derived ONLY from the public issue report; maintainer test_patch/test_subs_CondSet never consulted (maintainer_test_patch_consulted=False)",
+    "frozen_probe": {
+      "bytes": 2351,
+      "matches_freeze_manifest": true,
+      "path": "probes/sympy__sympy-19495.py",
+      "read_only_not_modified": true,
+      "sha256": "6c4965b0b1ffa43918c502182cf243f760c929820d59c26ccfa19bd5330fd973"
+    },
+    "initial_instrument_failure": {
+      "baseline_probe_passed": true,
+      "post_candidate_probe_passed": true,
+      "recorded_at": "2026-10-28T09:48:33+00:00",
+      "stage": "probe_flip_gate"
+    },
+    "instance_id": "sympy__sympy-19495",
+    "no_gold_changed": true,
+    "no_issue_replaced": true,
+    "original_problem": "Plain ConditionSet.subs over-substitutes the ConditionSet's own bound dummy x to 1/3, producing the malformed ConditionSet(1/3, Contains(1/3, ImageSet(...)), ImageSet(...)) reported publicly; the candidate fixes it to ImageSet(Lambda(n, 2*pi*n+asin(1/3)), Integers).",
+    "post_revision_gate": {
+      "all_probes_flip": true,
+      "n_issues": 8
+    },
+    "strengthened_probe_assertions": [
+      "(1) if a ConditionSet survives, its bound dummy args[0] must remain a Symbol (rejects the observed ConditionSet(1/3, ...)).",
+      "(2) plain cs.subs(y,1/3) must equal the report's own correct reference via xreplace and simultaneous=True.",
+      "(3) no free substituted symbol y may remain in the result."
+    ],
+    "weak_probe_assertions": [
+      "checked only that a free symbol y was present/absent and that the result did not collapse to the singleton {1/3}; neither distinguishes the malformed ConditionSet(1/3,...) from the correct ImageSet, so the weak probe exited 0 at BOTH baseline and post-candidate."
+    ]
+  },
+  "protocol_version": "g3c11-protocol-v1",
+  "sampling_rule_classification": {
+    "disclosure_required": true,
+    "is_post_outcome_adaptive_sampling": false,
+    "is_verbatim_strict_preregistration_of_connection_order": false,
+    "verdict": "PILOT-STAGE PRE-DATA operational refinement: within the G3-C.0 expressly permitted 'pre-specified stratified/negative-enrichment screen', the concrete multi-membership connection priority R-TRAP>R-P2P>R-F2P was fixed in g3c1_select.py at 09:20:33Z from static pool structure alone, 28 minutes before the first executed outcome (09:48:33Z) and before any build. It was not literally pre-registered in G3-C.0 and must be disclosed as such; it must NOT be retrospectively claimed as fully pre-registered, and it is not outcome-dependent adaptation."
+  },
+  "sampling_timeline_utc": [
+    {
+      "event": "G3-C.0 preregistration design JSON written",
+      "path": "evidence_store_g3c0/design/g3c0_preregistration_endpoints_sampling_stats.json",
+      "utc": "2026-10-27T08:04:23.590449+00:00"
+    },
+    {
+      "event": "G3-C.0 design freeze manifest written",
+      "path": "freeze/g3c0_design_freeze_manifest.json",
+      "utc": "2026-10-27T08:24:44.758246+00:00"
+    },
+    {
+      "event": "g3c1_common.py (eligibility constants/seeds) written",
+      "path": "evidence/g3c1_common.py",
+      "utc": "2026-10-28T09:08:46.683717+00:00"
+    },
+    {
+      "authoritative_rule_time": true,
+      "event": "g3c1_select.py STRATUM_PRIORITY source fixed",
+      "path": "evidence/g3c1_select.py",
+      "utc": "2026-10-28T09:20:33.924078+00:00"
+    },
+    {
+      "event": "first executed outcome: sympy-19495 probe-flip stop record",
+      "first_outcome_time": true,
+      "path": "evidence_store_g3c1/g3c1_failures.jsonl",
+      "utc": "2026-10-28T09:48:33.791305+00:00"
+    },
+    {
+      "event": "real pytest build session ends (last truth)",
+      "path": "runs/g3c1_build.log",
+      "utc": "2026-10-28T10:16:07.927376+00:00"
+    },
+    {
+      "event": "selection JSON mtime (determinism re-run regeneration; byte-identical sha f3284c75...)",
+      "mtime_trap": "NOT the rule-fixation time; content is byte-identical to the pre-build selection per audit/g3c1_determinism_check.json",
+      "path": "selection/g3c1_selection.json",
+      "utc": "2026-10-28T10:50:12.541521+00:00"
+    },
+    {
+      "event": "oracle gold + freeze manifests written",
+      "path": "gold/g3c1_oracle_gold.jsonl; freeze/g3c1_freeze_manifest.json",
+      "utc": "2026-10-28T10:50:12.573852+00:00"
+    }
+  ],
+  "sensitivity_note": "The zero-API pilot ran NO Reviewer model on these 8 issues, so P1/P2 model numerators DO NOT EXIST yet. This analysis bounds only GOLD-SIDE denominators/eligibility; no rate is estimable and none is claimed. Gold must never be changed to match a model prediction.",
+  "supporting_artifacts": {
+    "funnel": "audit/g3c11_funnel.json",
+    "gate3c2_decision": "audit/g3c11_gate3c2_decision.json",
+    "human_focused_review": "human_annotation/g3c11_human_focused_review_items.json",
+    "human_plan": "human_annotation/g3c11_second_annotator_plan.json",
+    "issue_audit": "audit/g3c11_issue_audit.json",
+    "priority_audit": "audit/g3c11_priority_audit.json",
+    "sensitivity": "audit/g3c11_sensitivity.json",
+    "verification": "audit/g3c11_verification.json"
+  }
+}

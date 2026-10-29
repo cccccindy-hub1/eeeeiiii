@@ -1,0 +1,58 @@
+{
+  "cell": "g3b:sympy__sympy-24443:T3A-T",
+  "condition": "T3A-T",
+  "policy": null,
+  "session_id": "0b8b580424f6502a5a60bbaf",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"809c53c077485ca48a206cee78340389cb83b7f1\", \"record_patch_sha256\": \"a6f310f819bab700c83f0f369b90b78dd0a4afc0193b9aea87a5abcff2ca588b\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": null, \"expected_run_tree\": \"b26349e12c8c7e362093e221cba262e4a5093c45\", \"artifact_started_at\": \"2026-10-25T18:19:12+00:00\", \"attestation_built_at\": \"2026-10-25T18:19:25+00:00\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 1, \"executed\": 1, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_claim_consistency",
+      "args": {
+        "claim": "Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass."
+      },
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"executed acceptance/regression checks show no failure\", \"failed_acceptance_checks\": 0, \"regression_checks\": 0, \"executed_checks\": 2}"
+    },
+    {
+      "turn": 1,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: identity homomorphism rejected: ValueError The given images do not define a homomorphism\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: identity homomorphism on D3 constructed: <sympy.combinatorics.homomorphisms.GroupHomomorphism object at 0x0000013748415250>\n\n--- stderr ---\n"
+    },
+    {
+      "turn": 1,
+      "tool": "get_test_artifact",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_1a45f9af545345d7\", \"base_commit\": \"809c53c077485ca48a206cee78340389cb83b7f1\", \"fail_to_pass\": {\"test_homomorphism\": \"PASSED\"}, \"finished_at\": \"2026-10-25T18:19:24+00:00\", \"instance_id\": \"sympy__sympy-24443\", \"log_digests\": {\"f2p\": \"a87ff511b93369448873f9dcf59ed87d339238dbf1b1f2a90a4c8aed314dd554\", \"p2p\": \"a87ff511b93369448873f9dcf59ed87d339238dbf1b1f2a90a4c8aed314dd554\", \"p2p_baseline\": \"4804f9aa83097d3548e1524e047d71f0cf9452370b54738ddcd9a630d0308cfb\", \"symptom\": \"aefaea9e97db5fe37247f651deaca868af1ecfcf497fb03717be41f29271b49f\"}, \"pass_to_pass_baseline\": {\"test_isomorphisms\": \"PASSED\"}, \"pass_to_pass_scoped\": {\"test_isomorphisms\": \"PASSED\"}, \"patch_sha256\": \"a6f310f819bab700c83f0f369b90b78dd0a4afc0193b9aea87a5abcff2ca588b\", \"repo\": \"sympy/sympy\", \"runner\": \"pytest/vendored-git  py=3.9.25  host=windows-local\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/combinatorics/tests/test_coset_table.py\", \"sympy/combinatorics/tests/test_fp_groups.py\", \"sympy/combinatorics/tests/test_free_groups.py\", \"sympy/combinatorics/tests/test_generators.py\", \"sympy/combinatorics/tests/test_graycode.py\", \"sympy/combinatorics/tests/test_group_constructs.py\", \"sympy/combinatorics/tests/test_group_numbers.py\", \"sympy/combinatorics/tests/test_homomorphisms.py\", \"sympy/combinatorics/tests/test_named_groups.py\", \"sympy/combinatorics/tests/test_partitions.py\", \"sympy/combinatorics/tests/test_pc_groups.py\", \"sympy/combinatorics/tests/test_perm_groups.py\", \"sympy/combinatorics/tests/test_permutations.py\", \"sympy/combinatorics/tests/test_polyhedron.py\", \"sympy/combinatorics/tests/test_prufer.py\", \"sympy/combinatorics/tests/test_rewriting.py\", \"sympy/combinatorics/tests/test_schur_number.py\", \"sympy/combinatorics/tests/test_subsets.py\", \"sympy/combinatorics/tests/test_tensor_can.py\", \"sympy/combinatorics/tests/test_testutil.py\", \"sympy/combinatorics/tests/test_util.py\"], \"p2p_total_in_dataset\": 1, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-25T18:19:12+00:00\", \"summary\": {\"f2p_failed_ids\": [], \"f2p_passed\": 1, \"f2p_total\": 1, \"p2p_passed\": 1, \"p2p_preexisting_bad_ids\": [], \"p2p_regressed_ids\": [], \"p2p_total\": 1}, \"test_patch_sha256\": \"85e02a8802c5b7b595023301187b3ef063036c59f5072eb5b478bcded400fd92\"}, \"authentic_signature\": true, \"evidence_tier\": \"A\"}"
+    }
+  ],
+  "final_answer": "The evidence is linked and coverage-complete, but freshness fails: the run tree is `null` and does not match the expected current tree `b26349e1...`. The artifact cannot be tied to the current commit tree, so I cannot treat its passing results as trustworthy evidence for THIS patch's current tree. No decisive applicable failure is established either (the symptom log shows the fix working, and no acceptance/regression check failed). Per the asymmetry rule, invalid/stale evidence is not grounds to REJECT, and incomplete freshness blocks ACCEPT.\n\n{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is linked (base_commit and patch_sha256 match) and coverage is complete (1/1 FAIL_TO_PASS, 1/1 scoped PASS_TO_PASS executed, no missing ids), and no executed acceptance or regression check failed. However, freshness verification fails: run_tree_match is false with record_run_tree null against expected tree b26349e12c8c7e362093e221cba262e4a5093c45. The run cannot be tied to the current commit tree, so its passing results are not trustworthy evidence for this patch's current tree. No decisive applicable failure is established (symptom log shows the fix working), so REJECT is not warranted; but ACCEPT requires fresh, tree-matched evidence, which is absent.\",\"evidence_mismatch\":true,\"missing_evidence\":\"A fresh test run whose recorded run tree matches the current commit tree b26349e12c8c7e362093e221cba262e4a5093c45 (record_run_tree is null / run_tree_match false), demonstrating the declared FAIL_TO_PASS and scoped PASS_TO_PASS checks pass on that exact tree.\",\"evidence_gap\":\"stale\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

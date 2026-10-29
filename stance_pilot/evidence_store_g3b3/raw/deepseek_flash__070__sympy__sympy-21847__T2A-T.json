@@ -1,0 +1,56 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The artifact is institutionally attested as linked to this exact patch/base commit, fresh for the current tree, and covering the full declared set. Reading the rendered outcomes: FAIL_TO_PASS 1/1 passed and scoped PASS_TO_PASS 9/9 passed, with no executed acceptance failure or scoped regression. The patch changes the min_degree filter from max(powers.values()) to sum(powers.values()), which correctly enforces total-degree bounds and resolves the reported issue (monomials like x1*x2**2 now included), and the added tests cover commutative and non-commutative cases. Complete, entirely green presentation supports ACCEPT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "cell": "g3b3:sympy__sympy-21847:T2A-T",
+  "condition": "T2A-T",
+  "cost_usd": 0.000928,
+  "evidence_session": null,
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-21847",
+  "instance_id": "sympy__sympy-21847",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010689
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 162,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 2445,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"The artifact is institutionally attested as linked to this exact patch/base commit, fresh for the current tree, and covering the full declared set. Reading the rendered outcomes: FAIL_TO_PASS 1/1 passed and scoped PASS_TO_PASS 9/9 passed, with no executed acceptance failure or scoped regression. The patch changes the min_degree filter from max(powers.values()) to sum(powers.values()), which correctly enforces total-degree bounds and resolves the reported issue (monomials like x1*x2**2 now included), and the added tests cover commutative and non-commutative cases. Complete, entirely green presentation supports ACCEPT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_ec15a96822c8d6ff",
+  "tokens_in": 2445,
+  "tokens_out": 162,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.76
+}

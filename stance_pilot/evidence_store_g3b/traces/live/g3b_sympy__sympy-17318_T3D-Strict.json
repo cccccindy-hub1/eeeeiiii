@@ -1,0 +1,51 @@
+{
+  "cell": "g3b:sympy__sympy-17318:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "c0bcc0330f697f3cda3d5854",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"d4e0231b08147337745dcf601e62de7eefe2fb2d\", \"record_patch_sha256\": \"5e0ca074ed721048a698e87e89754ef9b583e062d402e0c146ae858d4e44d37b\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": null, \"expected_run_tree\": \"43e56d0079e63cecb7626d19200244279be5c1c0\", \"artifact_started_at\": \"2026-10-25T18:40:22+00:00\", \"attestation_built_at\": \"2026-10-25T18:43:36+00:00\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 10, \"executed\": 10, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_claim_consistency",
+      "args": {
+        "claim": "Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass."
+      },
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: sqrtdenest raised IndexError tuple index out of range\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: sqrtdenest no crash -> 3 - sqrt(2)*sqrt(4 + I) + 3*I\n\n--- stderr ---\n"
+    }
+  ],
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is linked to this patch (base_commit and patch_sha256 match, authentic signature) and coverage is complete (1/1 acceptance and 10/10 scoped regression checks executed, none missing). The symptom probe also shows the IndexError is gone. However, freshness fails: run_tree_match is false (recorded run tree is null, expected 43e56d00...), so the run is not attested against the current commit tree. Under the strict policy, maintainer acceptance/regression verdicts are withheld, so I cannot confirm that no acceptance check fails or that no scoped regression is introduced. With stale/unattested tree evidence and no accessible pass/fail outcomes, neither ACCEPT (requires fresh, failure-free success) nor REJECT (requires a credible applicable failure) can be established.\",\"evidence_mismatch\":true,\"missing_evidence\":\"The artifact run is not fresh for the current commit tree (run_tree_match=false, recorded run tree null vs expected 43e56d0079e63cecb7626d19200244279be5c1c0); a fresh re-run on the current tree is needed. Additionally, acceptance and scoped-regression pass/fail verdicts are withheld under the strict policy, so success of the declared checks is unverified.\",\"evidence_gap\":\"stale\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

@@ -1,0 +1,47 @@
+\section{Benchmark and Task Definition}
+\label{sec:benchmark}
+
+\subsection{Unit of analysis and decision space}
+The unit of independence is a \textbf{real GitHub issue with a candidate patch}
+in a single project (SymPy). For each issue $i$, the agent receives the issue
+text, the candidate diff, and a condition-specific evidence package, and must
+emit exactly one of:
+\begin{itemize}[leftmargin=1.6em,itemsep=1pt,topsep=2pt]
+  \item \ACCEPT\ --- the patch is acceptable \emph{under the scope of the
+  granted evidence};
+  \item \REJECT\ --- a decisive failure is evidenced within scope;
+  \item \NEED\ --- the granted evidence is non-decisive; a verdict cannot be
+  justified without more evidence.
+\end{itemize}
+Cells $(\text{issue}\times\text{condition}\times\text{model})$ are
+\textbf{repeated measures} within an issue; they are never treated as
+independent samples.
+
+\subsection{Oracle Gold vs.\ Condition Gold}
+\textbf{Oracle Gold} $\gO(i)$ is determined from a fresh, real pytest
+execution at the base and patched commits using maintainer-declared
+fail-to-pass (F2P) and scoped pass-to-pass (P2P) tests together with the issue
+symptom: \ACCEPT\ if declared acceptance tests pass with no in-scope
+regression, and \REJECT\ on any decisive declared failure. It is
+\emph{scoped acceptability}: the P2P set is predefined and is not the entire
+SymPy suite, so an \ACCEPT\ must never be described as whole-project
+correctness.
+
+\textbf{Condition Gold} $\gC(i,c)$ is the decision warranted by the evidence
+actually granted in condition $c$:
+\begin{itemize}[leftmargin=1.6em,itemsep=1pt,topsep=2pt]
+  \item on \textbf{restricted} conditions (test outcomes withheld),
+  $\gC={}$\NEED\ for every issue, regardless of $\gO$;
+  \item on \textbf{sufficient} conditions (decisive outcomes granted),
+  $\gC=\gO$.
+\end{itemize}
+This two-tier gold lets us score \emph{respect for insufficiency} separately
+from \emph{accuracy when decisive evidence is available}.
+
+\subsection{Integrity vs.\ sufficiency}
+A package carries integrity metadata: linkage to the patch, freshness (commit
+and timestamps), provenance, and coverage of declared tests. Integrity is
+necessary but not sufficient: on a correctly projected restricted surface all
+four can hold while the decisive acceptance outcomes are absent. Conversely, a
+sufficient surface can be present but misread. The five conditions in
+Section~\ref{sec:conditions} cross-cut integrity with sufficiency.

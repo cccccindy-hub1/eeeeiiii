@@ -1,0 +1,179 @@
+{
+  "dedup_suppressed": [
+    {
+      "cluster_kept_first": "sympy__sympy-21379",
+      "instance_id": "sympy__sympy-13757",
+      "reason": "duplicate_changed_file_cluster"
+    },
+    {
+      "cluster_kept_first": "sympy__sympy-21379",
+      "instance_id": "sympy__sympy-18698",
+      "reason": "duplicate_changed_file_cluster"
+    },
+    {
+      "cluster_kept_first": "sympy__sympy-22914",
+      "instance_id": "sympy__sympy-16766",
+      "reason": "duplicate_changed_file_cluster"
+    },
+    {
+      "cluster_kept_first": "sympy__sympy-22714",
+      "instance_id": "sympy__sympy-17655",
+      "reason": "duplicate_changed_file_cluster"
+    }
+  ],
+  "design_version": "groundedreview-gate3c11-zero-api-audit-freeze-v1",
+  "document": "G3-C.1.1 funnel + dual-queue separation (tasks 2+4)",
+  "exclusion_accounting": {
+    "arithmetic_75_minus_24_eq_51": true,
+    "excluded_disjoint_from_eligible": true,
+    "exclusion_is_mutually_exclusive": true,
+    "expected_reason_counts": {
+      "no_clean_target_patch": 1,
+      "offline_blob_incomplete": 1,
+      "previously_used_g3a_cohort": 10,
+      "previously_used_wave2": 12,
+      "static_test_spec_gate_failed": 0
+    },
+    "matches_frozen_selection": true,
+    "n_excluded_records": 24,
+    "n_unique_excluded": 24,
+    "reason_counts": {
+      "no_clean_target_patch": 1,
+      "offline_blob_incomplete": 1,
+      "previously_used_g3a_cohort": 10,
+      "previously_used_wave2": 12
+    },
+    "s0_pool": 75
+  },
+  "funnel_steps": [
+    {
+      "n_in": 75,
+      "n_out": 75,
+      "rule": "locally cached wave2 candidate pool (frozen audit)",
+      "step": "S0_pool_instances"
+    },
+    {
+      "n_removed": 12,
+      "rule": "12 pre-G3A issues",
+      "step": "S1_exclude_wave2_consumed"
+    },
+    {
+      "n_removed": 10,
+      "rule": "10 G3-A materialised issues",
+      "step": "S2_exclude_g3a_cohort"
+    },
+    {
+      "n_removed": 1,
+      "rule": "sympy-11618 blobs",
+      "step": "S3_exclude_offline_incomplete"
+    },
+    {
+      "n_removed": 0,
+      "rule": "all six frozen wave2 gates must pass",
+      "step": "S4_static_test_spec_gates"
+    },
+    {
+      "n_removed": 1,
+      "rule": ">=1 clean-apply generator row required",
+      "step": "S5_no_clean_target_patch"
+    },
+    {
+      "n_out": 51,
+      "rule": "G3-C.1 eligible pool (expect 51)",
+      "step": "S6_eligible"
+    }
+  ],
+  "overall_pass": true,
+  "protocol_version": "g3c11-protocol-v1",
+  "queue_separation": {
+    "enriched_queue": {
+      "conditional_note": "enriched picks estimate CONDITIONAL behaviour among screen-positive issues only.",
+      "frozen_stratum_sizes": {
+        "R-F2P": 16,
+        "R-P2P": 29,
+        "R-TRAP": 2,
+        "UNENRICHED": 0
+      },
+      "gold_distribution_picked": {
+        "ACCEPT": 3,
+        "REJECT": 1
+      },
+      "multi_stratum_members": 31,
+      "picked_reject_fraction": 0.25,
+      "picks": [
+        "sympy__sympy-19040",
+        "sympy__sympy-14248",
+        "sympy__sympy-19637",
+        "sympy__sympy-16886"
+      ],
+      "primary_strata_picked": [
+        "R-TRAP",
+        "R-P2P",
+        "R-P2P",
+        "R-P2P"
+      ],
+      "slots": 4,
+      "stratification_base_after_natural_dedup": 47,
+      "stratum_sizes": {
+        "R-F2P": 16,
+        "R-P2P": 29,
+        "R-TRAP": 2,
+        "UNENRICHED": 0
+      }
+    },
+    "natural_queue": {
+      "after_changed_file_dedup": 47,
+      "denominator_note": "natural screen pass denominator is the 47 deduped eligible issues; only the first 4 were built, so the 3A/1R picked fraction is NOT a population prevalence estimate.",
+      "eligible_pool": 51,
+      "gold_distribution_picked": {
+        "ACCEPT": 3,
+        "REJECT": 1
+      },
+      "n_suppressed_duplicates": 4,
+      "picked_reject_fraction": 0.25,
+      "picks": [
+        "sympy__sympy-19346",
+        "sympy__sympy-22914",
+        "sympy__sympy-19495",
+        "sympy__sympy-15875"
+      ],
+      "slots": 4
+    },
+    "no_pooled_natural_rate": "The two queues have different sampling denominators and enrichment; their ACCEPT/REJECT fractions are reported separately and are never pooled into a single natural-population rate.",
+    "overlap": {
+      "dedup_key_overlap": [],
+      "issue_overlap": [],
+      "queues_disjoint": true
+    },
+    "union": {
+      "gold_distribution_overall": {
+        "ACCEPT": 6,
+        "REJECT": 2
+      },
+      "matches_frozen": true,
+      "n_pilot": 8,
+      "pilot_ids": [
+        "sympy__sympy-19346",
+        "sympy__sympy-22914",
+        "sympy__sympy-19495",
+        "sympy__sympy-15875",
+        "sympy__sympy-19040",
+        "sympy__sympy-14248",
+        "sympy__sympy-19637",
+        "sympy__sympy-16886"
+      ]
+    }
+  },
+  "replay_exact_match": {
+    "enriched_order_matches": true,
+    "n_eligible": 51,
+    "n_excluded": 24,
+    "nat_suppressed_matches": true,
+    "natural_order_matches": true,
+    "pilot_matches": true,
+    "seeds": {
+      "enriched_strata_shuffle_seed": 418241,
+      "natural_shuffle_seed": 418237
+    }
+  }
+}

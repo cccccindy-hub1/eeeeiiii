@@ -1,0 +1,54 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch adds a guard clause in _split_gcd to handle the case when the input tuple is empty, returning (1, [], []) instead of causing an IndexError. This directly addresses the reported issue #12420 where sqrtdenest raised an IndexError due to an empty tuple in _split_gcd. The new test test_issue_12420 in test_sqrtdenest.py verifies that sqrtdenest no longer raises and returns a correct result for the problematic input. The provided test artifact shows a fully fresh, linked, and complete test run with all relevant acceptance tests passing, including the new test for this issue. There are no failures or regressions in the scoped acceptance tests. Therefore, the evidence is intact, fresh, linked, and complete, demonstrating that the issue is resolved and no regressions are introduced.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+  "cell": "g3b3:sympy__sympy-17318:T2A-T",
+  "condition": "T2A-T",
+  "cost_usd": 0.00128,
+  "evidence_session": null,
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-17318",
+  "instance_id": "sympy__sympy-17318",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.014247
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 191,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 2436,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch adds a guard clause in _split_gcd to handle the case when the input tuple is empty, returning (1, [], []) instead of causing an IndexError. This directly addresses the reported issue #12420 where sqrtdenest raised an IndexError due to an empty tuple in _split_gcd. The new test test_issue_12420 in test_sqrtdenest.py verifies that sqrtdenest no longer raises and returns a correct result for the problematic input. The provided test artifact shows a fully fresh, linked, and complete test run with all relevant acceptance tests passing, including the new test for this issue. There are no failures or regressions in the scoped acceptance tests. Therefore, the evidence is intact, fresh, linked, and complete, demonstrating that the issue is resolved and no regressions are introduced.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_851f5a80d20947a9",
+  "tokens_in": 2436,
+  "tokens_out": 191,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 2.01
+}

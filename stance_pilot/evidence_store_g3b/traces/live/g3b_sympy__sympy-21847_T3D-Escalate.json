@@ -1,0 +1,33 @@
+{
+  "cell": "g3b:sympy__sympy-21847:T3D-Escalate",
+  "condition": "T3D-Escalate",
+  "policy": "escalate",
+  "session_id": "ec7bfe0cbbd87629e7d3e18a",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"d9b18c518d64d0ebe8e35a98c2fb519938b9b151\", \"record_patch_sha256\": \"7223f91c8720bf5a410abc2719f474ff9c780928840b4fb096c83b44d50f9b2b\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": null, \"expected_run_tree\": \"af3da919184597bd2009cb94b3dd24266a8fd891\", \"artifact_started_at\": \"2026-10-25T18:26:20+00:00\", \"attestation_built_at\": \"2026-10-25T18:26:37+00:00\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 9, \"executed\": 9, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    }
+  ],
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The test artifact is linked to this patch and covers the declared acceptance and regression checks completely. However, the artifact run is not fresh for the current commit tree, so the evidence cannot be fully trusted to reflect the current state of the patch. Fresh evidence is needed to confirm that the patch resolves the issue without introducing regressions.\",\"evidence_mismatch\":true,\"missing_evidence\":\"fresh_test_run\",\"evidence_gap\":\"stale\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

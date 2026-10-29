@@ -1,0 +1,101 @@
+{
+  "api_calls_emitted_by_this_package": 0,
+  "budget_hard_caps_usd": {
+    "enforcement": "pre-call CompositeGuard accumulator; abort before a call that would exceed cap; failures before HTTP = $0",
+    "per_model": 1.0,
+    "reference_mean_per_cell": 0.003035,
+    "reference_source": "G3-B.3 observed live mean (budget planning only)",
+    "total": 2.0
+  },
+  "frozen_parent_pins": {
+    "evidence_store_g3c1/freeze/g3c1_freeze_manifest.json": {
+      "exists": true,
+      "sha256": "7a40d231989b27f9c899d6f0ea0d3ce1c57153945e7067d06981af1bce478394"
+    },
+    "evidence_store_g3c11/freeze/g3c11_freeze_manifest.json": {
+      "exists": true,
+      "sha256": "82eb52bd5edd9268fe18b686dd225ee26b7470e71d892e0f606c730b3f23119c"
+    }
+  },
+  "no_expansion_rules": [
+    "no new issues (exactly these 8)",
+    "no new models (exactly these 2 served ids)",
+    "no duplicate/re-run cells to improve results",
+    "natural and enriched cohorts reported separately"
+  ],
+  "package": "G3-C.1 external validation - 80 real cells (PRE-AUTHORIZATION)",
+  "pre_call_gates_required": [
+    "G3-C.0 v2 evidence protocol and P1/P2 definitions fixed and frozen",
+    "80/80 offline mock cells pass (research-excluded; plumbing only)",
+    "tool permission + non-interference scan clean incl. REMOVAL of the pre-patch pass_to_pass_baseline field from tier-D projection",
+    "freshness 8/8; served model ids verified; wire no-fallback",
+    "budget guard armed at $2.00/$1.00; resume gate skips completed cells",
+    "prompt+protocol fingerprints match a pre-paid freeze",
+    "independent human gold DONE, OR a fresh written authorization to run as a PROVISIONAL-GOLD EXPLORATORY PILOT"
+  ],
+  "research_questions": {
+    "P1_primary": "restricted (T2D-T,T3D-Strict) unsupported commitment: report P1a ACCEPT / P1b REJECT / P1c NEED per issue",
+    "P2_secondary_exploratory": "sufficient-condition unsupported acceptance on the 2 oracle-REJECT issues; n=2, interval/case only, NOT a rate",
+    "unit": "issue; cells are within-issue repeated measures"
+  },
+  "scope": {
+    "cells": 80,
+    "conditions": [
+      "T2D-T",
+      "T3D-Strict",
+      "T3D-Escalate",
+      "T2A-T",
+      "T3A-T"
+    ],
+    "issue_list": [
+      {
+        "cohort": "natural",
+        "issue": "sympy__sympy-19346",
+        "oracle_gold": "ACCEPT"
+      },
+      {
+        "cohort": "natural",
+        "issue": "sympy__sympy-22914",
+        "oracle_gold": "ACCEPT"
+      },
+      {
+        "cohort": "natural",
+        "issue": "sympy__sympy-19495",
+        "oracle_gold": "ACCEPT"
+      },
+      {
+        "cohort": "natural",
+        "issue": "sympy__sympy-15875",
+        "oracle_gold": "REJECT"
+      },
+      {
+        "cohort": "enriched",
+        "issue": "sympy__sympy-19040",
+        "oracle_gold": "ACCEPT"
+      },
+      {
+        "cohort": "enriched",
+        "issue": "sympy__sympy-14248",
+        "oracle_gold": "REJECT"
+      },
+      {
+        "cohort": "enriched",
+        "issue": "sympy__sympy-19637",
+        "oracle_gold": "ACCEPT"
+      },
+      {
+        "cohort": "enriched",
+        "issue": "sympy__sympy-16886",
+        "oracle_gold": "ACCEPT"
+      }
+    ],
+    "issues": 8,
+    "models": [
+      "deepseek-flash",
+      "gpt-4.1-mini"
+    ],
+    "n_oracle_reject": 2
+  },
+  "status": "NOT_AUTHORIZED_NO_API",
+  "stopping": "hard stop at cap, at 80 cells, or on any guard/error; no automatic continuation"
+}

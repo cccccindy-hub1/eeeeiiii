@@ -1,0 +1,61 @@
+﻿uv : INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies
+At line:15 char:4775
++ ... _FETCH='1'; uv run --python 3.9 --with mpmath --with "pytest==8.4.2"  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (INFO add_decisi...ng dependencies:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+INFO add_decision: Id::<PubGrubPackage>(2) @ 8.4.2 without checking dependencies
+INFO add_decision: Id::<PubGrubPackage>(1) @ 1.4.1 without checking dependencies
+INFO add_decision: Id::<PubGrubPackage>(3) @ 0.4.6 without checking dependencies
+INFO add_decision: Id::<PubGrubPackage>(4) @ 0.4.6 without checking dependencies
+INFO add_decision: Id::<PubGrubPackage>(13) @ 0.4.6 without checking dependencies
+INFO add_decision: Id::<PubGrubPackage>(5) @ 1.3.1 without checking dependencies
+INFO add_decision: Id::<PubGrubPackage>(6) @ 1.3.1 without checking dependencies
+INFO add_decision: Id::<PubGrubPackage>(14) @ 1.3.1 without checking dependencies
+INFO Start conflict resolution because incompat satisfied:
+   Python >=3.10 is forbidden
+INFO prior cause: iniconfig ==2.3.1 is forbidden
+INFO backtrack to DecisionLevel(2)
+INFO Start conflict resolution because incompat satisfied:
+   Python >=3.10 is forbidden
+INFO prior cause: iniconfig ==2.3.0 | ==2.3.1 is forbidden
+INFO backtrack to DecisionLevel(2)
+INFO Start conflict resolution because incompat satisfied:
+   Python >=3.10 is forbidden
+INFO prior cause: iniconfig ==2.2.0 | ==2.3.0 | ==2.3.1 is forbidden
+INFO backtrack to DecisionLevel(2)
+INFO adding decision: Id::<PubGrubPackage>(9) @ 2.1.0
+INFO adding decision: Id::<PubGrubPackage>(10) @ 26.3
+INFO Start conflict resolution because incompat satisfied:
+   Python >=3.10 is forbidden
+INFO prior cause: pluggy ==1.7.0 is forbidden
+INFO backtrack to DecisionLevel(2)
+INFO adding decision: Id::<PubGrubPackage>(11) @ 1.6.0
+INFO adding decision: Id::<PubGrubPackage>(12) @ 2.21.0
+INFO adding decision: Id::<PubGrubPackage>(7) @ 2.5.0
+INFO adding decision: Id::<PubGrubPackage>(8) @ 2.5.0
+INFO adding decision: Id::<PubGrubPackage>(18) @ 2.5.0
+INFO adding decision: Id::<PubGrubPackage>(15) @ 4.16.0
+INFO adding decision: Id::<PubGrubPackage>(16) @ 4.16.0
+INFO adding decision: Id::<PubGrubPackage>(19) @ 4.16.0
+== glm5_500:sympy__sympy-13615  patch=0c5d6c0156
+  class=B issue_addressed=True F2P 1/1 P2P-regressed 0 (preexisting-bad 0) test_patch_clean=True
+== glm5_500:sympy__sympy-17318  patch=5e0ca074ed
+  class=A issue_addressed=True F2P 0/1 P2P-regressed 0 (preexisting-bad 0) test_patch_clean=True
+== glm5_500:sympy__sympy-17630  patch=7c197026b3
+  class=A issue_addressed=True F2P 1/2 P2P-regressed 0 (preexisting-bad 0) test_patch_clean=True
+== glm5_500:sympy__sympy-24213  patch=3d1868e07b
+  class=D issue_addressed=False F2P 1/1 P2P-regressed 0 (preexisting-bad 0) test_patch_clean=True
+
+G3-A truth records: 10 -> C:\Users\guoci\work\eeeeiiii\stance_pilot\evidence_store_g3a\g3a_truth.jsonl
+  sympy__sympy-13615: class=B addressed=True acceptable=True tree=c4c7ae0d08
+  sympy__sympy-13974: class=B addressed=True acceptable=True tree=bf56cbca1d
+  sympy__sympy-15349: class=B addressed=True acceptable=True tree=3fb6acb6e8
+  sympy__sympy-17318: class=A addressed=True acceptable=False tree=43e56d0079
+  sympy__sympy-17630: class=A addressed=True acceptable=False tree=ac8da47f6f
+  sympy__sympy-19783: class=A addressed=True acceptable=False tree=e540f05150
+  sympy__sympy-20590: class=B addressed=True acceptable=True tree=200cac25dc
+  sympy__sympy-21847: class=B addressed=True acceptable=True tree=af3da91918
+  sympy__sympy-24213: class=D addressed=False acceptable=True tree=9146f4c387
+  sympy__sympy-24443: class=B addressed=True acceptable=True tree=b26349e12c

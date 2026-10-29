@@ -1,0 +1,78 @@
+\section{Evidence Conditions and the Integrity/Sufficiency Axis}
+\label{sec:conditions}
+
+Each issue is evaluated under five conditions (Table~\ref{tab:conditions},
+Figure~\ref{fig:concept}). ``T2'' is a static, single-shot surface; ``T3''
+permits active tool calls. ``D'' denotes the tier-D (restricted) artifact and
+``A'' the tier-A (decisive) artifact.
+
+\begin{table}[t]
+\centering
+\small
+\caption{The five evidence conditions per issue. Tier-D outcomes are the
+post-patch F2P/P2P verdicts withheld on restricted surfaces; tier-A outcomes
+are decisive.}
+\label{tab:conditions}
+\begin{tabularx}{\linewidth}{@{}l l l l X@{}}
+\toprule
+\textbf{Condition} & \textbf{Access} & \textbf{Tier-D outcomes} & \textbf{Tier-A outcomes} & \textbf{Condition gold} \\
+\midrule
+T2D-T            & static               & restricted (withheld) & absent              & \NEED \\
+T3D-Strict       & active tools, strict & withheld even on fetch & absent             & \NEED \\
+T3D-Escalate     & active, may escalate & granted after escalation & ---              & $=\gO$ \\
+T2A-T            & static               & ---                    & tier-A sufficient  & $=\gO$ \\
+T3A-T            & active               & ---                    & tier-A sufficient  & $=\gO$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\input{figures/fig1_concept.tex}
+\caption{Three-way review decision, the two gold tiers, and the five-condition
+evidence ladder. Restricted conditions (red) warrant \NEED; sufficient
+conditions (green) warrant the Oracle Gold decision.}
+\label{fig:concept}
+\end{figure}
+
+T3D-\textbf{Strict} is the key insufficiency probe: an active agent can inspect
+linkage, freshness, and coverage and read the symptom, but post-patch F2P/P2P
+verdicts are structurally unreachable, so accepting or rejecting necessarily
+upgrades non-decisive evidence. T3D-\textbf{Escalate} grants the decisive
+outcomes only after the agent explicitly requests them. The evidence-serving
+protocol is summarised in Algorithm~\ref{alg:protocol}.
+
+\begin{algorithm}[t]
+\caption{GroundedReview cell protocol (one issue $i$, condition $c$, model $m$)}
+\label{alg:protocol}
+\begin{algorithmic}[1]
+\State \textbf{input}: issue text, candidate diff, condition $c$, served model id
+\State open a session bound to the candidate patch identity \Comment{no gold field is ever served}
+\State $d \gets{}$ decision policy for $c$ \Comment{strict, escalate, or static}
+\If{$c$ is an active (T3) condition}
+  \Loop
+    \State model chooses: \textsc{getArtifact}, \textsc{verifyLinkage}, \textsc{getRunLog}, or \textsc{finish}
+    \If{requested field is tier-D and policy is \textsc{strict}}
+       \State reply \textbf{403 forbidden} \Comment{outcomes structurally unreachable}
+    \ElsIf{policy is \textsc{escalate} without a stated reason}
+       \State reply \textbf{400}; require a justification
+    \ElsIf{escalation justified}
+       \State reply \textbf{200} with header \texttt{X-Evidence-Tier-Escalation} and the decisive outcomes
+    \EndIf
+  \EndLoop
+\EndIf
+\State persist the \textbf{raw} response before any analysis \Comment{raw-first}
+\State \textbf{output}: one of \ACCEPT, \REJECT, \NEED
+\State score against condition gold $\gC(i,c)$; the issue, not the cell, is the unit
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Non-interference.}
+Restricted projections are machine-scanned for post-patch verdicts, hidden
+gold, acceptance digests, and reconstructing keys. We disclose one residual
+instrument gap found in the corrective replication: a \emph{pre-patch}
+baseline P2P map survived the tier-D projection. It cannot reconstruct gold
+and was seen by none of the error cells, and it is mandated for removal before
+the next live run (Section~\ref{sec:threats}). The corrected v2 projection used
+for the prepared validation bed removes this field on every tool path
+(Section~\ref{sec:validation}).

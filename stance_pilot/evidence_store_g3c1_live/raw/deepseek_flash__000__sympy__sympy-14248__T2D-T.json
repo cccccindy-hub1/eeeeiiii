@@ -1,0 +1,56 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The only evidence provided is a diagnostic-tier artifact whose maintainer acceptance-test outcomes and scoped regression verdicts are explicitly withheld. The issue-reproduction probe shows the symptom is gone, but that is not proof of merge acceptability, and the declared acceptance set (2 tests) and scoped regression set (433 checks) were not demonstrated as executed with passing results. No decisive applicable failure is established, so REJECT is not warranted; but complete, fresh, linked, failure-free success is also not established, so ACCEPT is not warranted.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test outcomes (2 scheduled) and scoped regression verdicts (433 scheduled) are withheld; need executed, passing results linked to patch_sha256 b7ede2b6... on base_commit 9986b38...\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "cell": "g3c1live:sympy__sympy-14248:T2D-T",
+  "condition": "T2D-T",
+  "cost_usd": 0.001301,
+  "evidence_session": null,
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-14248",
+  "instance_id": "sympy__sympy-14248",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.011116
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 192,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 3569,
+      "raw_content": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The only evidence provided is a diagnostic-tier artifact whose maintainer acceptance-test outcomes and scoped regression verdicts are explicitly withheld. The issue-reproduction probe shows the symptom is gone, but that is not proof of merge acceptability, and the declared acceptance set (2 tests) and scoped regression set (433 checks) were not demonstrated as executed with passing results. No decisive applicable failure is established, so REJECT is not warranted; but complete, fresh, linked, failure-free success is also not established, so ACCEPT is not warranted.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test outcomes (2 scheduled) and scoped regression verdicts (433 scheduled) are withheld; need executed, passing results linked to patch_sha256 b7ede2b6... on base_commit 9986b38...\",\"evidence_gap\":\"coverage_incomplete\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_38249f6606d93ef1",
+  "tokens_in": 3569,
+  "tokens_out": 192,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.48
+}

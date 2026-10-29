@@ -1,0 +1,128 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is fully linked to this patch and commit, fresh for the current commit tree, and covers the full declared acceptance and regression test set with no failures. The author statement is consistent with the evidence. The patch correctly changes the dimension comparison to use equivalent_dims, resolving the issue as intended without introducing regressions.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+  "cell": "g3b3:sympy__sympy-24213:T3A-T",
+  "condition": "T3A-T",
+  "cost_usd": 0.001928,
+  "evidence_session": "5abb74ac04c3c064e81c35df",
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-24213",
+  "instance_id": "sympy__sympy-24213",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 2,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.013902,
+    0.01417
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 72,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 1804,
+      "raw_content": "",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_VuWWAUKLbegLtJp6Nf1BBcmc",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_G0UopfPiR9HwqNVhx1FXcVlF",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_qRslykUMSb7HFtpHdM1baZrd",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_D8MAYrUPGTJsYq5pSbX2oC3k",
+          "name": "check_claim_consistency"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 90,
+      "finish_reason": "stop",
+      "model_call": 2,
+      "prompt_tokens": 2367,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is fully linked to this patch and commit, fresh for the current commit tree, and covers the full declared acceptance and regression test set with no failures. The author statement is consistent with the evidence. The patch correctly changes the dimension comparison to use equivalent_dims, resolving the issue as intended without introducing regressions.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 7,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_5711762ccfb7ae48",
+  "tokens_in": 4171,
+  "tokens_out": 162,
+  "tool_calls": 4,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"e8c22f6eac7314be8d92590bfff92ced79ee03e2\", \"record_patch_sha256\": \"3d1868e07bf621c8f12c866ac4525482181eb10e40c89547389b211786bacdcd\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"9146f4c3875cbfb67fbeb9b8685d3333422128c1\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"9146f4c3875cbfb67fbeb9b8685d3333422128c1\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:48:05+00:00\", \"attestation_built_at\": \"2026-10-25T18:48:19+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 31, \"executed\": 31, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"executed acceptance/regression checks show no failure\", \"failed_acceptance_checks\": 0, \"regression_checks\": 0, \"executed_checks\": 32}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    }
+  ],
+  "wall_s": 2.58
+}

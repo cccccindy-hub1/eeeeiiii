@@ -1,0 +1,187 @@
+{
+  "api_calls_made_by_this_audit": 0,
+  "audit_version": "groundedreview-gate3b4-zero-api-strict-audit-v1",
+  "cross_family_note": "F1 is over-commitment (false ACCEPT despite a real failing declared test); F2 is over-abstention (NEED despite a real failing declared test that mandates REJECT). They are different error directions and must not be merged into one \"GPT failure\" statistic.",
+  "document": "Gate 3-B.4 task 8 GPT focal error families (kept separate, not pooled)",
+  "families_are_distinct": true,
+  "family_F1_17318_T2A": {
+    "T2A_erroneous_reason_full_verbatim": "The patch adds a guard clause in _split_gcd to handle the case when the input tuple is empty, returning (1, [], []) instead of causing an IndexError. This directly addresses the reported issue #12420 where sqrtdenest raised an IndexError due to an empty tuple in _split_gcd. The new test test_issue_12420 in test_sqrtdenest.py verifies that sqrtdenest no longer raises and returns a correct result for the problematic input. The provided test artifact shows a fully fresh, linked, and complete test run with all relevant acceptance tests passing, including the new test for this issue. There are no failures or regressions in the scoped acceptance tests. Therefore, the evidence is intact, fresh, linked, and complete, demonstrating that the issue is resolved and no regressions are introduced.",
+    "T2A_static_tools": [],
+    "T3A_active_control_reason_full": "The test artifact is fully linked and fresh for this patch and commit tree, and the declared acceptance and regression test sets were fully executed. However, the acceptance test 'test_issue_12420' specifically related to the patch's issue failed, contradicting the author statement that the fix is fully correct and all relevant tests pass. This decisive failure in an applicable acceptance check requires rejection of the patch.",
+    "artifact_summary": {
+      "f2p_failed_ids": [
+        "test_issue_12420"
+      ],
+      "f2p_passed": 0,
+      "f2p_total": 1,
+      "p2p_passed": 10,
+      "p2p_preexisting_bad_ids": [],
+      "p2p_regressed_ids": [],
+      "p2p_total": 10
+    },
+    "condition_gold_T2A": "REJECT",
+    "declared_gold_sets": {
+      "FAIL_TO_PASS": [
+        "test_issue_12420"
+      ],
+      "PASS_TO_PASS_n": 10,
+      "resolved": false
+    },
+    "error_mechanism": "On the static tier-A T2A surface GPT asserted \"all relevant acceptance tests passing\" and \"no failures or regressions\" although the declared F2P test test_issue_12420 FAILED (assert [4 + I, 0, 1] == []). The static surface exposes aggregate counts but not the rendered per-test failure, and the model did not verify; it converted a \"fresh/linked/complete\" presentation into an unverified green claim. The active T3A control on the SAME issue correctly REJECTed once the per-test failure was rendered.",
+    "family": "F1_ERRONEOUS_ACCEPT_EVIDENCE_VERIFICATION_FAILURE",
+    "focal_condition": "T2A-T",
+    "g3b3_verdict_T2A": "ACCEPT",
+    "g3b3_verdict_T3A_control": "REJECT",
+    "g3b_historical_verdict_T2A": "ACCEPT",
+    "issue": "17318",
+    "oracle_gold_PROVISIONAL": "REJECT",
+    "persists_g3b_to_g3b3": true,
+    "store_log_evidence": {
+      "f2p": {
+        "bytes": 4290,
+        "failure_lines_verbatim": [
+          "sympy/simplify/tests/test_sqrtdenest.py::test_issue_12420 FAILED         [ 92%]",
+          "FAILED sympy/simplify/tests/test_sqrtdenest.py::test_issue_12420 - assert [4 + I, 0, 1] == []"
+        ],
+        "file": "art_851f5a80d20947a9.f2p.log",
+        "sha256": "0545740f145248b734f098dda81d2fb23d02a72efc84ae2380fdaecc8e3240ec",
+        "status_counts": {
+          "FAILED": 2,
+          "PASSED": 12
+        }
+      },
+      "p2p": {
+        "bytes": 4290,
+        "failure_lines_verbatim": [
+          "sympy/simplify/tests/test_sqrtdenest.py::test_issue_12420 FAILED         [ 92%]",
+          "FAILED sympy/simplify/tests/test_sqrtdenest.py::test_issue_12420 - assert [4 + I, 0, 1] == []"
+        ],
+        "file": "art_851f5a80d20947a9.p2p.log",
+        "sha256": "0545740f145248b734f098dda81d2fb23d02a72efc84ae2380fdaecc8e3240ec",
+        "status_counts": {
+          "FAILED": 2,
+          "PASSED": 12
+        }
+      }
+    },
+    "why_distinct_from_family_F2": "this is a false ACCEPT against a real failing declared test (over-commitment / evidence-verification failure), not an abstention"
+  },
+  "family_F2_17630_T3A": {
+    "T2A_reason_full_verbatim": "The patch addresses the issue by converting scalar Zero to ZeroMatrix in block multiplication, and the test added covers the reported issue scenario. The test artifact shows all scoped PASS_TO_PASS tests passed, but one FAIL_TO_PASS test (test_zero_matrix_add) failed. It is unclear if this failure is related to the patch or the issue at hand. The declared acceptance set includes test_zero_matrix_add, which failed, so the acceptance set is not fully successful. Therefore, the evidence coverage is incomplete for acceptance. Without a fully passing acceptance test suite, the patch cannot be accepted yet. More evidence is needed to confirm that the patch resolves the issue without regressions.",
+    "T3A_reason_full_verbatim": "The test artifact is linked, fresh, and complete for this patch. However, it contains one failing acceptance test (test_zero_matrix_add) unrelated to the patch's issue and no failing tests related to the patch. The patch's own tests for the block matrix multiplication with ZeroMatrix blocks pass. Since the failing test is unrelated to the patch and no decisive failure related to the patch is present, and the artifact is fresh and linked, the evidence is insufficient to ACCEPT or REJECT based on the patch's resolution of the issue. More targeted evidence or fixing unrelated test failures is needed.",
+    "T3A_tools": [
+      {
+        "http_status": 200,
+        "log_name": null,
+        "tool": "verify_artifact_linkage",
+        "turn": 0
+      },
+      {
+        "http_status": 200,
+        "log_name": null,
+        "tool": "check_evidence_freshness",
+        "turn": 0
+      },
+      {
+        "http_status": 200,
+        "log_name": null,
+        "tool": "check_test_coverage",
+        "turn": 0
+      },
+      {
+        "http_status": 200,
+        "log_name": null,
+        "tool": "check_claim_consistency",
+        "turn": 0
+      },
+      {
+        "http_status": 200,
+        "log_name": "f2p",
+        "tool": "get_run_log",
+        "turn": 1
+      }
+    ],
+    "artifact_summary": {
+      "f2p_failed_ids": [
+        "test_zero_matrix_add"
+      ],
+      "f2p_passed": 1,
+      "f2p_total": 2,
+      "p2p_passed": 19,
+      "p2p_preexisting_bad_ids": [],
+      "p2p_regressed_ids": [],
+      "p2p_total": 19
+    },
+    "condition_gold_T3A": "REJECT",
+    "declared_gold_sets": {
+      "FAIL_TO_PASS": [
+        "test_issue_17624",
+        "test_zero_matrix_add"
+      ],
+      "PASS_TO_PASS_n": 19,
+      "resolved": false
+    },
+    "error_mechanism": "GPT saw the failing declared F2P test but classified it as \"unrelated to the patch issue\" and therefore abstained NEED_EVIDENCE instead of REJECT. Under the declared acceptance contract a failing declared FAIL_TO_PASS id is decisive for non-resolution regardless of the model’s subjective relevance judgement. This is a decision-policy / over-abstention error (relitigating declared-test relevance), not a missing-evidence situation.",
+    "family": "F2_REJECT_TO_NEED_OVER_ABSTENTION_ON_DECLARED_FAILURE",
+    "focal_condition": "T3A-T",
+    "g3b3_verdict_T2A": "NEED_EVIDENCE",
+    "g3b3_verdict_T3A": "NEED_EVIDENCE",
+    "g3b_historical_verdict_T3A": "REJECT",
+    "issue": "17630",
+    "objective_fact": "the declared FAIL_TO_PASS set contains test_zero_matrix_add and it FAILED in the frozen run (f2p_failed_ids=[test_zero_matrix_add], f2p_passed=1/2). The other FAILED tokens in the combined log are XFail markers (pre-existing expected failures), not declared regressions; p2p_preexisting_bad_ids=[] and p2p_regressed_ids=[].",
+    "oracle_gold_PROVISIONAL": "REJECT",
+    "store_log_evidence": {
+      "f2p": {
+        "bytes": 17857,
+        "failure_lines_verbatim": [
+          "sympy/matrices/expressions/tests/test_matadd.py::test_zero_matrix_add FAILED [ 31%]",
+          "sympy/matrices/expressions/tests/test_matadd.py::test_matrix_add_with_scalar FAILED [ 32%]",
+          "sympy/matrices/expressions/tests/test_matexpr.py::test_factor_expand FAILED [ 82%]",
+          "sympy/matrices/expressions/tests/test_matexpr.py::test_MatAdd_postprocessor_xfail FAILED [ 92%]",
+          "FAILED sympy/matrices/expressions/tests/test_matadd.py::test_zero_matrix_add - assert 0 == 0",
+          "FAILED sympy/matrices/expressions/tests/test_matadd.py::test_matrix_add_with_scalar - sympy.utilities.pytest.XFail: test_matrix_add_with_scalar",
+          "FAILED sympy/matrices/expressions/tests/test_matexpr.py::test_factor_expand - sympy.utilities.pytest.XFail: test_factor_expand",
+          "FAILED sympy/matrices/expressions/tests/test_matexpr.py::test_MatAdd_postprocessor_xfail - sympy.utilities.pytest.XFail: test_MatAdd_postprocessor_xfail",
+          "sympy/matrices/expressions/tests/test_matmul.py::test_matmul_args_cnc_symbols FAILED [ 86%]",
+          "FAILED sympy/matrices/expressions/tests/test_matmul.py::test_matmul_args_cnc_symbols - sympy.utilities.pytest.XFail: test_matmul_args_cnc_symbols"
+        ],
+        "file": "art_ce28321699c17b17.f2p.log",
+        "sha256": "c0412519a2524e4d63b9616720f0e767cb96168fb5a4d5c2410c1fd24b636f05",
+        "status_counts": {
+          "FAILED": 10,
+          "PASSED": 87
+        }
+      },
+      "p2p": {
+        "bytes": 17857,
+        "failure_lines_verbatim": [
+          "sympy/matrices/expressions/tests/test_matadd.py::test_zero_matrix_add FAILED [ 31%]",
+          "sympy/matrices/expressions/tests/test_matadd.py::test_matrix_add_with_scalar FAILED [ 32%]",
+          "sympy/matrices/expressions/tests/test_matexpr.py::test_factor_expand FAILED [ 82%]",
+          "sympy/matrices/expressions/tests/test_matexpr.py::test_MatAdd_postprocessor_xfail FAILED [ 92%]",
+          "FAILED sympy/matrices/expressions/tests/test_matadd.py::test_zero_matrix_add - assert 0 == 0",
+          "FAILED sympy/matrices/expressions/tests/test_matadd.py::test_matrix_add_with_scalar - sympy.utilities.pytest.XFail: test_matrix_add_with_scalar",
+          "FAILED sympy/matrices/expressions/tests/test_matexpr.py::test_factor_expand - sympy.utilities.pytest.XFail: test_factor_expand",
+          "FAILED sympy/matrices/expressions/tests/test_matexpr.py::test_MatAdd_postprocessor_xfail - sympy.utilities.pytest.XFail: test_MatAdd_postprocessor_xfail",
+          "sympy/matrices/expressions/tests/test_matmul.py::test_matmul_args_cnc_symbols FAILED [ 86%]",
+          "FAILED sympy/matrices/expressions/tests/test_matmul.py::test_matmul_args_cnc_symbols - sympy.utilities.pytest.XFail: test_matmul_args_cnc_symbols"
+        ],
+        "file": "art_ce28321699c17b17.p2p.log",
+        "sha256": "c0412519a2524e4d63b9616720f0e767cb96168fb5a4d5c2410c1fd24b636f05",
+        "status_counts": {
+          "FAILED": 10,
+          "PASSED": 87
+        }
+      }
+    },
+    "transition_T3A": "REJECT -> NEED_EVIDENCE",
+    "why_distinct_from_family_F1": "the model did NOT accept and did not miss the failure; it saw a real declared failure and softened a mandatory REJECT into NEED by second-guessing test relevance"
+  },
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold carried unchanged from Gate 3-A.1; no second adjudicator has been obtained as of Gate 3-B.4. No Cohen kappa is reported and gold is never called human-adjudicated. Gate 3-B.4 audits model behaviour against this PROVISIONAL gold only; the same AI operator performing the audit is NOT an independent human adjudicator."
+  },
+  "independent_negative_example_caveat": "The G3-B.3 independent-REJECT set is only n=3 issues; these two cases are illustrative, not a rate estimate. Gold is PROVISIONAL (single annotator)."
+}

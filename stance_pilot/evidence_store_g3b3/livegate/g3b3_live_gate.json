@@ -1,0 +1,3494 @@
+{
+  "document": "Gate 3-B.3 precondition 3: REAL local g3b2 HTTP end-to-end live integration gate (zero API, zero vendor traffic).",
+  "gate": "gate3b3_corrective_replication",
+  "runner_version": "g3b3-runner-v1",
+  "executed_protocol_version": "g3b2-protocol-v1",
+  "executed_prompt_version": "p3-ternary-g3b2-v1",
+  "server_factory": "evidence.g3b2_server.build_g3b2_server",
+  "n_issues": 10,
+  "n_conditions": 5,
+  "n_cells": 50,
+  "n_active_cells": 30,
+  "n_active_freshness_TRUE": 30,
+  "n_structural_fresh_false": 0,
+  "n_checks": 571,
+  "n_checks_pass": 571,
+  "n_errors": 0,
+  "errors": [],
+  "server_protocol_version": "g3b2-protocol-v1",
+  "frozen_store_unchanged": true,
+  "cells": [
+    {
+      "cell": "g3b3-livegate:sympy__sympy-13615:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-13615:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_f2p_reason_still_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200_symptom_only",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_consistency_reason_no_acceptance_leak",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-13615:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_blank_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-13615:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_institutional_warranty",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_leak",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-13615:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200_acceptance_based",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-13974:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-13974:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_f2p_reason_still_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200_symptom_only",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_consistency_reason_no_acceptance_leak",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-13974:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_blank_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-13974:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_institutional_warranty",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_leak",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-13974:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200_acceptance_based",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-15349:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-15349:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_f2p_reason_still_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200_symptom_only",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_consistency_reason_no_acceptance_leak",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-15349:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_blank_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-15349:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_institutional_warranty",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_leak",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-15349:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200_acceptance_based",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-17318:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-17318:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_f2p_reason_still_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200_symptom_only",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_consistency_reason_no_acceptance_leak",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-17318:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_blank_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-17318:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_institutional_warranty",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "17318_f2p_0_of_1_visible",
+          "pass": true,
+          "detail": "visible executed failure must survive repair"
+        },
+        {
+          "check": "17318_failing_id_visible",
+          "pass": true,
+          "detail": "failing acceptance id must be rendered"
+        },
+        {
+          "check": "17318_p2p_10_of_10",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-17318:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200_acceptance_based",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-17630:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-17630:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_f2p_reason_still_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200_symptom_only",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_consistency_reason_no_acceptance_leak",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-17630:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_blank_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-17630:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_institutional_warranty",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_leak",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-17630:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200_acceptance_based",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-19783:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-19783:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_f2p_reason_still_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200_symptom_only",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_consistency_reason_no_acceptance_leak",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-19783:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_blank_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-19783:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_institutional_warranty",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_leak",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-19783:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200_acceptance_based",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-20590:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-20590:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_f2p_reason_still_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200_symptom_only",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_consistency_reason_no_acceptance_leak",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-20590:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_blank_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-20590:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_institutional_warranty",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_leak",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-20590:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200_acceptance_based",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-21847:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-21847:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_f2p_reason_still_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200_symptom_only",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_consistency_reason_no_acceptance_leak",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-21847:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_blank_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-21847:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_institutional_warranty",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_leak",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-21847:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200_acceptance_based",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-24213:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-24213:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_f2p_reason_still_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200_symptom_only",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_consistency_reason_no_acceptance_leak",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-24213:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_blank_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-24213:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_institutional_warranty",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_leak",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-24213:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200_acceptance_based",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-24443:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-24443:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_f2p_reason_still_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200_symptom_only",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_consistency_reason_no_acceptance_leak",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-24443:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_blank_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_empty_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-24443:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_institutional_warranty",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_leak",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "g3b3-livegate:sympy__sympy-24443:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "record_run_tree_present": false,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "no_structural_fresh_false",
+          "pass": true,
+          "detail": "absent record.run_tree must never be served as false"
+        },
+        {
+          "check": "freshness_record_tree_absent_expected",
+          "pass": true,
+          "detail": "present=False"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200_acceptance_based",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    }
+  ],
+  "negative_restage_miss_injection": {
+    "target_instance_id": "sympy__sympy-13615",
+    "checks": [
+      {
+        "check": "session_open_201",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "check": "restage_miss_200",
+        "pass": true,
+        "detail": "st=200"
+      },
+      {
+        "check": "restage_miss_state_UNKNOWN",
+        "pass": true,
+        "detail": "state=UNKNOWN"
+      },
+      {
+        "check": "restage_miss_fresh_null",
+        "pass": true,
+        "detail": "fresh=None"
+      },
+      {
+        "check": "restage_miss_not_false",
+        "pass": true,
+        "detail": "absence must never be served as false"
+      },
+      {
+        "check": "restage_miss_reason",
+        "pass": true,
+        "detail": "schema_error_record_run_tree_missing"
+      },
+      {
+        "check": "restage_miss_record_tree_absent",
+        "pass": true,
+        "detail": "present=False"
+      }
+    ],
+    "errors": []
+  },
+  "negative_freshness_pure": {
+    "checks": [
+      {
+        "check": "baseline_TRUE_restage",
+        "pass": true,
+        "detail": "state=TRUE"
+      },
+      {
+        "check": "missing_field_UNKNOWN_not_false",
+        "pass": true,
+        "detail": "state=UNKNOWN fresh=None"
+      },
+      {
+        "check": "wrong_type_field_UNKNOWN",
+        "pass": true,
+        "detail": "state=UNKNOWN"
+      },
+      {
+        "check": "present_mismatched_tree_FALSE",
+        "pass": true,
+        "detail": "state=FALSE"
+      },
+      {
+        "check": "present_matching_tree_TRUE",
+        "pass": true,
+        "detail": "state=TRUE"
+      },
+      {
+        "check": "restage_mismatch_FALSE",
+        "pass": true,
+        "detail": "state=FALSE"
+      },
+      {
+        "check": "bad_artifact_signature_FALSE",
+        "pass": true,
+        "detail": "state=FALSE"
+      },
+      {
+        "check": "bad_attestation_signature_FALSE",
+        "pass": true,
+        "detail": "state=FALSE"
+      },
+      {
+        "check": "missing_attestation_UNKNOWN",
+        "pass": true,
+        "detail": "state=UNKNOWN"
+      },
+      {
+        "check": "base_commit_mismatch_FALSE",
+        "pass": true,
+        "detail": "state=FALSE"
+      },
+      {
+        "check": "patch_mismatch_FALSE",
+        "pass": true,
+        "detail": "state=FALSE"
+      }
+    ],
+    "errors": [],
+    "baseline_instance_id": "sympy__sympy-13615"
+  },
+  "gold_authority": {
+    "gold_tier": "PROVISIONAL",
+    "annotators": 1,
+    "annotator2": "NOT_OBTAINED",
+    "note": "Single-annotator gold; no second adjudicator obtained. Neither the G3-B.2 protocol repair nor the G3-B.3 corrective replication raises gold authority. No Cohen kappa against a second human is reported; gold is never called human-adjudicated. Every model comparison is against PROVISIONAL gold only."
+  },
+  "approved_scope": {
+    "new_issues_or_mirrors": false,
+    "gemini_or_r2": false,
+    "gate_3c": false,
+    "modify_historical_frozen_artifacts": false,
+    "overwrite_or_rescore_g3b_results": false,
+    "retry_cell_on_prediction_error": false,
+    "git_commit": false
+  }
+}

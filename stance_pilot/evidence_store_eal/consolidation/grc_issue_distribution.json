@@ -1,0 +1,1942 @@
+{
+  "document": "Per-issue X error distribution and mirror-fixture concentration. Frozen inputs only; no model calls.",
+  "mirror_definition": "fixtures in the same issue sharing a 16-hex served-artifact base (valid + stale/wrong counterpart built from the same artifact)",
+  "models": {
+    "deepseek-flash": {
+      "families": {
+        "over_abstention": {
+          "count": 12,
+          "rate_per_cell": 0.1364
+        },
+        "unsupported_acceptance": {
+          "count": 0,
+          "rate_per_cell": 0.0
+        },
+        "unsupported_rejection": {
+          "count": 5,
+          "rate_per_cell": 0.0568
+        }
+      },
+      "issues": {
+        "sympy__sympy-12419": {
+          "cells": [
+            {
+              "bundle8": "2c11095a",
+              "condition": "a0b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "2c11095a",
+              "condition": "a1b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "2c11095a",
+              "condition": "a0b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "2c11095a",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "c564f50f",
+              "condition": "a0b0",
+              "decision": "REJECT",
+              "family": "unsupported_rejection",
+              "gold": "ACCEPT",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "c564f50f",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "ACCEPT",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "c564f50f",
+              "condition": "a0b1",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "ACCEPT",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "c564f50f",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "f0851759",
+              "condition": "a0b1",
+              "decision": "REJECT",
+              "family": "unsupported_rejection",
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "f0851759",
+              "condition": "a1b1",
+              "decision": "REJECT",
+              "family": "unsupported_rejection",
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "f0851759",
+              "condition": "a0b0",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "f0851759",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            }
+          ],
+          "mirror_fixtures": [
+            "2c11095a",
+            "c564f50f"
+          ],
+          "n_cells": 12,
+          "n_fixtures": 3,
+          "over_abstention": 4,
+          "ua_by_fixture": {},
+          "ua_rate_cells": 0.0,
+          "unsupported_acceptance": 0,
+          "unsupported_rejection": 3
+        },
+        "sympy__sympy-12481": {
+          "cells": [
+            {
+              "bundle8": "62dfb1c6",
+              "condition": "a0b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "62dfb1c6",
+              "condition": "a1b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "62dfb1c6",
+              "condition": "a0b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "62dfb1c6",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "fac59e18",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "fac59e18",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "fac59e18",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "fac59e18",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "60dfbe92",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "60dfbe92",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "60dfbe92",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "60dfbe92",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "2161efe0",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "2161efe0",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "2161efe0",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "2161efe0",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            }
+          ],
+          "mirror_fixtures": [
+            "62dfb1c6",
+            "fac59e18"
+          ],
+          "n_cells": 16,
+          "n_fixtures": 4,
+          "over_abstention": 0,
+          "ua_by_fixture": {},
+          "ua_rate_cells": 0.0,
+          "unsupported_acceptance": 0,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-12489": {
+          "cells": [
+            {
+              "bundle8": "f51defe8",
+              "condition": "a1b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "f51defe8",
+              "condition": "a0b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "f51defe8",
+              "condition": "a1b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "f51defe8",
+              "condition": "a0b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "3d04e0f9",
+              "condition": "a1b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_stale_bad"
+            },
+            {
+              "bundle8": "3d04e0f9",
+              "condition": "a0b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_stale_bad"
+            },
+            {
+              "bundle8": "3d04e0f9",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_stale_bad"
+            },
+            {
+              "bundle8": "3d04e0f9",
+              "condition": "a0b1",
+              "decision": "REJECT",
+              "family": "unsupported_rejection",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_stale_bad"
+            },
+            {
+              "bundle8": "af83be49",
+              "condition": "a1b1",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_stale_persists"
+            },
+            {
+              "bundle8": "af83be49",
+              "condition": "a0b0",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_stale_persists"
+            },
+            {
+              "bundle8": "af83be49",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_stale_persists"
+            },
+            {
+              "bundle8": "af83be49",
+              "condition": "a0b1",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_stale_persists"
+            }
+          ],
+          "mirror_fixtures": [
+            "3d04e0f9",
+            "f51defe8"
+          ],
+          "n_cells": 12,
+          "n_fixtures": 3,
+          "over_abstention": 4,
+          "ua_by_fixture": {},
+          "ua_rate_cells": 0.0,
+          "unsupported_acceptance": 0,
+          "unsupported_rejection": 1
+        },
+        "sympy__sympy-13091": {
+          "cells": [
+            {
+              "bundle8": "59e46a77",
+              "condition": "a1b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "59e46a77",
+              "condition": "a0b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "59e46a77",
+              "condition": "a1b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "59e46a77",
+              "condition": "a0b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "a25d0cf5",
+              "condition": "a0b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_incomplete_good"
+            },
+            {
+              "bundle8": "a25d0cf5",
+              "condition": "a1b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_incomplete_good"
+            },
+            {
+              "bundle8": "a25d0cf5",
+              "condition": "a0b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_incomplete_good"
+            },
+            {
+              "bundle8": "a25d0cf5",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_incomplete_good"
+            },
+            {
+              "bundle8": "cd502546",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "cd502546",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "cd502546",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "cd502546",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_valid"
+            }
+          ],
+          "mirror_fixtures": [
+            "a25d0cf5",
+            "cd502546"
+          ],
+          "n_cells": 12,
+          "n_fixtures": 3,
+          "over_abstention": 0,
+          "ua_by_fixture": {},
+          "ua_rate_cells": 0.0,
+          "unsupported_acceptance": 0,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-13798": {
+          "cells": [
+            {
+              "bundle8": "faae0894",
+              "condition": "a1b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M5:13798",
+              "scenario": "incomplete_decisive_bad"
+            },
+            {
+              "bundle8": "faae0894",
+              "condition": "a0b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M5:13798",
+              "scenario": "incomplete_decisive_bad"
+            },
+            {
+              "bundle8": "faae0894",
+              "condition": "a1b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M5:13798",
+              "scenario": "incomplete_decisive_bad"
+            },
+            {
+              "bundle8": "faae0894",
+              "condition": "a0b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M5:13798",
+              "scenario": "incomplete_decisive_bad"
+            },
+            {
+              "bundle8": "c637f604",
+              "condition": "a0b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M5:13798",
+              "scenario": "stale_bad"
+            },
+            {
+              "bundle8": "c637f604",
+              "condition": "a1b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M5:13798",
+              "scenario": "stale_bad"
+            },
+            {
+              "bundle8": "c637f604",
+              "condition": "a0b0",
+              "decision": "REJECT",
+              "family": "unsupported_rejection",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M5:13798",
+              "scenario": "stale_bad"
+            },
+            {
+              "bundle8": "c637f604",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M5:13798",
+              "scenario": "stale_bad"
+            }
+          ],
+          "mirror_fixtures": [
+            "c637f604",
+            "faae0894"
+          ],
+          "n_cells": 8,
+          "n_fixtures": 2,
+          "over_abstention": 0,
+          "ua_by_fixture": {},
+          "ua_rate_cells": 0.0,
+          "unsupported_acceptance": 0,
+          "unsupported_rejection": 1
+        },
+        "sympy__sympy-14531": {
+          "cells": [
+            {
+              "bundle8": "403163cb",
+              "condition": "a0b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "incomplete_good"
+            },
+            {
+              "bundle8": "403163cb",
+              "condition": "a1b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "incomplete_good"
+            },
+            {
+              "bundle8": "403163cb",
+              "condition": "a0b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "incomplete_good"
+            },
+            {
+              "bundle8": "403163cb",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "incomplete_good"
+            },
+            {
+              "bundle8": "c59a8ceb",
+              "condition": "a0b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "wrong_patch_good"
+            },
+            {
+              "bundle8": "c59a8ceb",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "wrong_patch_good"
+            },
+            {
+              "bundle8": "c59a8ceb",
+              "condition": "a0b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "wrong_patch_good"
+            },
+            {
+              "bundle8": "c59a8ceb",
+              "condition": "a1b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "wrong_patch_good"
+            }
+          ],
+          "mirror_fixtures": [
+            "403163cb",
+            "c59a8ceb"
+          ],
+          "n_cells": 8,
+          "n_fixtures": 2,
+          "over_abstention": 0,
+          "ua_by_fixture": {},
+          "ua_rate_cells": 0.0,
+          "unsupported_acceptance": 0,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-16450": {
+          "cells": [
+            {
+              "bundle8": "0e5d9a37",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "valid"
+            },
+            {
+              "bundle8": "0e5d9a37",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "valid"
+            },
+            {
+              "bundle8": "0e5d9a37",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "valid"
+            },
+            {
+              "bundle8": "0e5d9a37",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "valid"
+            }
+          ],
+          "mirror_fixtures": [],
+          "n_cells": 4,
+          "n_fixtures": 1,
+          "over_abstention": 0,
+          "ua_by_fixture": {},
+          "ua_rate_cells": 0.0,
+          "unsupported_acceptance": 0,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-17139": {
+          "cells": [
+            {
+              "bundle8": "ec813709",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "incomplete"
+            },
+            {
+              "bundle8": "ec813709",
+              "condition": "a0b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "incomplete"
+            },
+            {
+              "bundle8": "ec813709",
+              "condition": "a1b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "incomplete"
+            },
+            {
+              "bundle8": "ec813709",
+              "condition": "a0b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "incomplete"
+            }
+          ],
+          "mirror_fixtures": [],
+          "n_cells": 4,
+          "n_fixtures": 1,
+          "over_abstention": 0,
+          "ua_by_fixture": {},
+          "ua_rate_cells": 0.0,
+          "unsupported_acceptance": 0,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-18199": {
+          "cells": [
+            {
+              "bundle8": "a242cd7a",
+              "condition": "a0b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "contradictory"
+            },
+            {
+              "bundle8": "a242cd7a",
+              "condition": "a1b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "contradictory"
+            },
+            {
+              "bundle8": "a242cd7a",
+              "condition": "a0b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "contradictory"
+            },
+            {
+              "bundle8": "a242cd7a",
+              "condition": "a1b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "contradictory"
+            }
+          ],
+          "mirror_fixtures": [],
+          "n_cells": 4,
+          "n_fixtures": 1,
+          "over_abstention": 0,
+          "ua_by_fixture": {},
+          "ua_rate_cells": 0.0,
+          "unsupported_acceptance": 0,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-18211": {
+          "cells": [
+            {
+              "bundle8": "e4e8b26c",
+              "condition": "a0b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "stale"
+            },
+            {
+              "bundle8": "e4e8b26c",
+              "condition": "a1b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "stale"
+            },
+            {
+              "bundle8": "e4e8b26c",
+              "condition": "a0b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "stale"
+            },
+            {
+              "bundle8": "e4e8b26c",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "stale"
+            },
+            {
+              "bundle8": "f0c49f82",
+              "condition": "a1b1",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "wrong_patch"
+            },
+            {
+              "bundle8": "f0c49f82",
+              "condition": "a0b0",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "wrong_patch"
+            },
+            {
+              "bundle8": "f0c49f82",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "wrong_patch"
+            },
+            {
+              "bundle8": "f0c49f82",
+              "condition": "a0b1",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "wrong_patch"
+            }
+          ],
+          "mirror_fixtures": [],
+          "n_cells": 8,
+          "n_fixtures": 2,
+          "over_abstention": 4,
+          "ua_by_fixture": {},
+          "ua_rate_cells": 0.0,
+          "unsupported_acceptance": 0,
+          "unsupported_rejection": 0
+        }
+      },
+      "n_parseable_cells": 88,
+      "ua_eligible_cells": 60,
+      "ua_in_mirrored_fixtures": 0,
+      "ua_in_nonmirrored_fixtures": 0,
+      "ua_issue_equal_weighted_all_cells": 0.0,
+      "ua_issue_equal_weighted_eligible": 0.0,
+      "ua_rate_over_eligible_cells": 0.0,
+      "ua_top_issue": null,
+      "ua_top_issue_count": 0,
+      "ua_top_issue_share": null
+    },
+    "gpt-4.1-mini": {
+      "families": {
+        "over_abstention": {
+          "count": 2,
+          "rate_per_cell": 0.0227
+        },
+        "unsupported_acceptance": {
+          "count": 34,
+          "rate_per_cell": 0.3864
+        },
+        "unsupported_rejection": {
+          "count": 3,
+          "rate_per_cell": 0.0341
+        }
+      },
+      "issues": {
+        "sympy__sympy-12419": {
+          "cells": [
+            {
+              "bundle8": "2c11095a",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "2c11095a",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "2c11095a",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "2c11095a",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "c564f50f",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "c564f50f",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "c564f50f",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "c564f50f",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M1:12419",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "f0851759",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "f0851759",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "f0851759",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "f0851759",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            }
+          ],
+          "mirror_fixtures": [
+            "2c11095a",
+            "c564f50f"
+          ],
+          "n_cells": 12,
+          "n_fixtures": 3,
+          "over_abstention": 0,
+          "ua_by_fixture": {
+            "2c11095a": 4
+          },
+          "ua_rate_cells": 0.3333,
+          "unsupported_acceptance": 4,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-12481": {
+          "cells": [
+            {
+              "bundle8": "62dfb1c6",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "62dfb1c6",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "62dfb1c6",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "62dfb1c6",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_stale"
+            },
+            {
+              "bundle8": "fac59e18",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "fac59e18",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "fac59e18",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "fac59e18",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M2:12481",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "60dfbe92",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "60dfbe92",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "60dfbe92",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "60dfbe92",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "2161efe0",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "2161efe0",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "2161efe0",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "2161efe0",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "w2_valid"
+            }
+          ],
+          "mirror_fixtures": [
+            "62dfb1c6",
+            "fac59e18"
+          ],
+          "n_cells": 16,
+          "n_fixtures": 4,
+          "over_abstention": 0,
+          "ua_by_fixture": {
+            "62dfb1c6": 4
+          },
+          "ua_rate_cells": 0.25,
+          "unsupported_acceptance": 4,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-12489": {
+          "cells": [
+            {
+              "bundle8": "f51defe8",
+              "condition": "a0b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "f51defe8",
+              "condition": "a1b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "f51defe8",
+              "condition": "a0b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "f51defe8",
+              "condition": "a1b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "3d04e0f9",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_stale_bad"
+            },
+            {
+              "bundle8": "3d04e0f9",
+              "condition": "a0b1",
+              "decision": "REJECT",
+              "family": "unsupported_rejection",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_stale_bad"
+            },
+            {
+              "bundle8": "3d04e0f9",
+              "condition": "a1b1",
+              "decision": "REJECT",
+              "family": "unsupported_rejection",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_stale_bad"
+            },
+            {
+              "bundle8": "3d04e0f9",
+              "condition": "a0b0",
+              "decision": "REJECT",
+              "family": "unsupported_rejection",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M3:12489",
+              "scenario": "w2_stale_bad"
+            },
+            {
+              "bundle8": "af83be49",
+              "condition": "a0b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_stale_persists"
+            },
+            {
+              "bundle8": "af83be49",
+              "condition": "a1b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_stale_persists"
+            },
+            {
+              "bundle8": "af83be49",
+              "condition": "a0b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_stale_persists"
+            },
+            {
+              "bundle8": "af83be49",
+              "condition": "a1b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_stale_persists"
+            }
+          ],
+          "mirror_fixtures": [
+            "3d04e0f9",
+            "f51defe8"
+          ],
+          "n_cells": 12,
+          "n_fixtures": 3,
+          "over_abstention": 0,
+          "ua_by_fixture": {
+            "3d04e0f9": 1
+          },
+          "ua_rate_cells": 0.0833,
+          "unsupported_acceptance": 1,
+          "unsupported_rejection": 3
+        },
+        "sympy__sympy-13091": {
+          "cells": [
+            {
+              "bundle8": "59e46a77",
+              "condition": "a1b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "59e46a77",
+              "condition": "a0b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "59e46a77",
+              "condition": "a1b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "59e46a77",
+              "condition": "a0b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "w2_decisive_bad"
+            },
+            {
+              "bundle8": "a25d0cf5",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_incomplete_good"
+            },
+            {
+              "bundle8": "a25d0cf5",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_incomplete_good"
+            },
+            {
+              "bundle8": "a25d0cf5",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_incomplete_good"
+            },
+            {
+              "bundle8": "a25d0cf5",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_incomplete_good"
+            },
+            {
+              "bundle8": "cd502546",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "cd502546",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "cd502546",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_valid"
+            },
+            {
+              "bundle8": "cd502546",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": "M4:13091",
+              "scenario": "w2_valid"
+            }
+          ],
+          "mirror_fixtures": [
+            "a25d0cf5",
+            "cd502546"
+          ],
+          "n_cells": 12,
+          "n_fixtures": 3,
+          "over_abstention": 0,
+          "ua_by_fixture": {
+            "a25d0cf5": 4
+          },
+          "ua_rate_cells": 0.3333,
+          "unsupported_acceptance": 4,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-13798": {
+          "cells": [
+            {
+              "bundle8": "faae0894",
+              "condition": "a1b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M5:13798",
+              "scenario": "incomplete_decisive_bad"
+            },
+            {
+              "bundle8": "faae0894",
+              "condition": "a0b0",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "REJECT",
+              "mirror_group": "M5:13798",
+              "scenario": "incomplete_decisive_bad"
+            },
+            {
+              "bundle8": "faae0894",
+              "condition": "a1b0",
+              "decision": "NEED_EVIDENCE",
+              "family": "over_abstention",
+              "gold": "REJECT",
+              "mirror_group": "M5:13798",
+              "scenario": "incomplete_decisive_bad"
+            },
+            {
+              "bundle8": "faae0894",
+              "condition": "a0b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": "M5:13798",
+              "scenario": "incomplete_decisive_bad"
+            },
+            {
+              "bundle8": "c637f604",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M5:13798",
+              "scenario": "stale_bad"
+            },
+            {
+              "bundle8": "c637f604",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M5:13798",
+              "scenario": "stale_bad"
+            },
+            {
+              "bundle8": "c637f604",
+              "condition": "a1b1",
+              "decision": "NEED_EVIDENCE",
+              "family": null,
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M5:13798",
+              "scenario": "stale_bad"
+            },
+            {
+              "bundle8": "c637f604",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M5:13798",
+              "scenario": "stale_bad"
+            }
+          ],
+          "mirror_fixtures": [
+            "c637f604",
+            "faae0894"
+          ],
+          "n_cells": 8,
+          "n_fixtures": 2,
+          "over_abstention": 2,
+          "ua_by_fixture": {
+            "c637f604": 3
+          },
+          "ua_rate_cells": 0.375,
+          "unsupported_acceptance": 3,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-14531": {
+          "cells": [
+            {
+              "bundle8": "403163cb",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "incomplete_good"
+            },
+            {
+              "bundle8": "403163cb",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "incomplete_good"
+            },
+            {
+              "bundle8": "403163cb",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "incomplete_good"
+            },
+            {
+              "bundle8": "403163cb",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "incomplete_good"
+            },
+            {
+              "bundle8": "c59a8ceb",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "wrong_patch_good"
+            },
+            {
+              "bundle8": "c59a8ceb",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "wrong_patch_good"
+            },
+            {
+              "bundle8": "c59a8ceb",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "wrong_patch_good"
+            },
+            {
+              "bundle8": "c59a8ceb",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": "M6:14531",
+              "scenario": "wrong_patch_good"
+            }
+          ],
+          "mirror_fixtures": [
+            "403163cb",
+            "c59a8ceb"
+          ],
+          "n_cells": 8,
+          "n_fixtures": 2,
+          "over_abstention": 0,
+          "ua_by_fixture": {
+            "403163cb": 4,
+            "c59a8ceb": 4
+          },
+          "ua_rate_cells": 1.0,
+          "unsupported_acceptance": 8,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-16450": {
+          "cells": [
+            {
+              "bundle8": "0e5d9a37",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "valid"
+            },
+            {
+              "bundle8": "0e5d9a37",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "valid"
+            },
+            {
+              "bundle8": "0e5d9a37",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "valid"
+            },
+            {
+              "bundle8": "0e5d9a37",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": null,
+              "gold": "ACCEPT",
+              "mirror_group": null,
+              "scenario": "valid"
+            }
+          ],
+          "mirror_fixtures": [],
+          "n_cells": 4,
+          "n_fixtures": 1,
+          "over_abstention": 0,
+          "ua_by_fixture": {},
+          "ua_rate_cells": 0.0,
+          "unsupported_acceptance": 0,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-17139": {
+          "cells": [
+            {
+              "bundle8": "ec813709",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "incomplete"
+            },
+            {
+              "bundle8": "ec813709",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "incomplete"
+            },
+            {
+              "bundle8": "ec813709",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "incomplete"
+            },
+            {
+              "bundle8": "ec813709",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "incomplete"
+            }
+          ],
+          "mirror_fixtures": [],
+          "n_cells": 4,
+          "n_fixtures": 1,
+          "over_abstention": 0,
+          "ua_by_fixture": {
+            "ec813709": 4
+          },
+          "ua_rate_cells": 1.0,
+          "unsupported_acceptance": 4,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-18199": {
+          "cells": [
+            {
+              "bundle8": "a242cd7a",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "contradictory"
+            },
+            {
+              "bundle8": "a242cd7a",
+              "condition": "a1b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "contradictory"
+            },
+            {
+              "bundle8": "a242cd7a",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "contradictory"
+            },
+            {
+              "bundle8": "a242cd7a",
+              "condition": "a1b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "contradictory"
+            }
+          ],
+          "mirror_fixtures": [],
+          "n_cells": 4,
+          "n_fixtures": 1,
+          "over_abstention": 0,
+          "ua_by_fixture": {
+            "a242cd7a": 2
+          },
+          "ua_rate_cells": 0.5,
+          "unsupported_acceptance": 2,
+          "unsupported_rejection": 0
+        },
+        "sympy__sympy-18211": {
+          "cells": [
+            {
+              "bundle8": "e4e8b26c",
+              "condition": "a0b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "stale"
+            },
+            {
+              "bundle8": "e4e8b26c",
+              "condition": "a1b0",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "stale"
+            },
+            {
+              "bundle8": "e4e8b26c",
+              "condition": "a0b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "stale"
+            },
+            {
+              "bundle8": "e4e8b26c",
+              "condition": "a1b1",
+              "decision": "ACCEPT",
+              "family": "unsupported_acceptance",
+              "gold": "NEED_EVIDENCE",
+              "mirror_group": null,
+              "scenario": "stale"
+            },
+            {
+              "bundle8": "f0c49f82",
+              "condition": "a0b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "wrong_patch"
+            },
+            {
+              "bundle8": "f0c49f82",
+              "condition": "a1b1",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "wrong_patch"
+            },
+            {
+              "bundle8": "f0c49f82",
+              "condition": "a0b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "wrong_patch"
+            },
+            {
+              "bundle8": "f0c49f82",
+              "condition": "a1b0",
+              "decision": "REJECT",
+              "family": null,
+              "gold": "REJECT",
+              "mirror_group": null,
+              "scenario": "wrong_patch"
+            }
+          ],
+          "mirror_fixtures": [],
+          "n_cells": 8,
+          "n_fixtures": 2,
+          "over_abstention": 0,
+          "ua_by_fixture": {
+            "e4e8b26c": 4
+          },
+          "ua_rate_cells": 0.5,
+          "unsupported_acceptance": 4,
+          "unsupported_rejection": 0
+        }
+      },
+      "n_parseable_cells": 88,
+      "ua_eligible_cells": 60,
+      "ua_in_mirrored_fixtures": 24,
+      "ua_in_nonmirrored_fixtures": 10,
+      "ua_issue_equal_weighted_all_cells": 0.4375,
+      "ua_issue_equal_weighted_eligible": 0.662,
+      "ua_rate_over_eligible_cells": 0.5667,
+      "ua_top_issue": "sympy__sympy-14531",
+      "ua_top_issue_count": 8,
+      "ua_top_issue_share": 0.2353
+    }
+  },
+  "n_independent_issues": 10
+}

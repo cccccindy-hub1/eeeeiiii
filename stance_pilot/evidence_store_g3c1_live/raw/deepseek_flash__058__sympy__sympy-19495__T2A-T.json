@@ -1,0 +1,56 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact reports FAIL_TO_PASS 1/1 and scoped PASS_TO_PASS 8/8, but no individual check names or rendered outcomes are shown, so I cannot verify that the declared acceptance check actually exercises the issue scenario (ConditionSet over an ImageSet with subs) or that the scoped regression set covers the modified _eval_subs behavior. The patch also changes an existing test expectation (ConditionSet(n, n < x, Interval(-oo, 0)).subs(x, p) from EmptySet to Interval(-oo, 0)), which is a semantic change in subs behavior that the summary counts alone do not let me adjudicate. No decisive applicable failure is visible, so REJECT is not warranted, but the presentation is not a fully readable green result either.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Rendered per-check outcomes (names and pass/fail) for the FAIL_TO_PASS and scoped PASS_TO_PASS checks, sufficient to confirm the acceptance check targets the ConditionSet/ImageSet subs issue and that the changed test_subs_CondSet expectation is consistent with the intended semantics.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "cell": "g3c1live:sympy__sympy-19495:T2A-T",
+  "condition": "T2A-T",
+  "cost_usd": 0.0011,
+  "evidence_session": null,
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-19495",
+  "instance_id": "sympy__sympy-19495",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010703
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 254,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 2651,
+      "raw_content": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact reports FAIL_TO_PASS 1/1 and scoped PASS_TO_PASS 8/8, but no individual check names or rendered outcomes are shown, so I cannot verify that the declared acceptance check actually exercises the issue scenario (ConditionSet over an ImageSet with subs) or that the scoped regression set covers the modified _eval_subs behavior. The patch also changes an existing test expectation (ConditionSet(n, n < x, Interval(-oo, 0)).subs(x, p) from EmptySet to Interval(-oo, 0)), which is a semantic change in subs behavior that the summary counts alone do not let me adjudicate. No decisive applicable failure is visible, so REJECT is not warranted, but the presentation is not a fully readable green result either.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Rendered per-check outcomes (names and pass/fail) for the FAIL_TO_PASS and scoped PASS_TO_PASS checks, sufficient to confirm the acceptance check targets the ConditionSet/ImageSet subs issue and that the changed test_subs_CondSet expectation is consistent with the intended semantics.\",\"evidence_gap\":\"coverage_incomplete\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_fec174c8f4012a8b",
+  "tokens_in": 2651,
+  "tokens_out": 254,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.87
+}

@@ -1,0 +1,87 @@
+{
+  "document": "Experiment X offline preflight (must pass before any paid call)",
+  "n_checks": 16,
+  "all_pass": true,
+  "checks": [
+    {
+      "check": "x: on-disk freeze == canonical v2.1 derivation",
+      "pass": true,
+      "detail": "f2f4c0f6a0de"
+    },
+    {
+      "check": "x: 176 frozen cells (22 x 4 x 2)",
+      "pass": true,
+      "detail": "176"
+    },
+    {
+      "check": "x: 176 ordered calls",
+      "pass": true,
+      "detail": "176"
+    },
+    {
+      "check": "x: every ordered call maps to a frozen cell",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "x: call order is the deterministic interleaved order",
+      "pass": true,
+      "detail": "seed=7"
+    },
+    {
+      "check": "x: order balanced (8 combos x 22)",
+      "pass": true,
+      "detail": "{('deepseek-flash', 'a0b0'): 22, ('gpt-4.1-mini', 'a0b1'): 22, ('deepseek-flash', 'a1b0'): 22, ('gpt-4.1-mini', 'a1b1'): 22, ('gpt-4.1-mini', 'a0b0'): 22, ('deepseek-flash', 'a0b1'): 22, ('gpt-4.1-mini', 'a1b0'): 22, ('deepseek-flash', 'a1b1'): 22}"
+    },
+    {
+      "check": "x: 88 payload files byte-match freeze",
+      "pass": true,
+      "detail": "(88, [])"
+    },
+    {
+      "check": "x: pre-send leak guard clean on 88 structured payloads",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "x: temp0 / max4096 / json_object / tools0 / retries0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "x: total cap $1.50, per-model $0.75 x2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "x: all four conditions recalled; no borrowed control",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "x: code files match frozen hashes",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "x: live without X acknowledgement REFUSED",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "x: bare invocation REFUSED (offline default)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "x: budget above $1.50 REFUSED",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "x: mock --dry-run ok",
+      "pass": true,
+      "detail": " recalled fresh\n  deepseek-flash: in=$0.3 out=$1.2 expected_served=deepseek-flash\n  gpt-4.1-mini: in=$0.4 out=$1.6 expected_served=gpt-4.1-mini-2025-04-14\ndry-run: no backend invoked, no rows written\n"
+    }
+  ]
+}

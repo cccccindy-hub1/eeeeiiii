@@ -1,0 +1,198 @@
+{
+  "document": "Gate 3-B.2 zero-API protocol-repair report.",
+  "gate": "gate3b2_zero_api_protocol_repair",
+  "protocol_version": "g3b2-protocol-v1",
+  "prompt_version": "p3-ternary-g3b2-v1",
+  "gold_cert_version": "g3b2-gold-cert-v1",
+  "acceptance": "Gate 3-B.1 construct-validity audit accepted. G3-B.2 executed under written approval with API budget $0.",
+  "research_objective": "repair inconsistencies among Gold, model-visible evidence, prompt trust semantics and the tool endpoint — NOT to raise any model score on the known ten issues.",
+  "construct_defects_repaired": [
+    {
+      "id": "defect_1_freshness_structural_false_negative",
+      "root_cause": "frozen live endpoint compared a non-existent record.run_tree field; None == expected_tree was always False, so every active cell was served fresh=false even though independent restage matched 10/10",
+      "repair": "authoritative three-state adjudicator over independent git restage; TRUE 10/10; missing field is UNKNOWN/schema_error, never false"
+    },
+    {
+      "id": "defect_2_t2a_institutional_trust_not_communicated",
+      "root_cause": "gold assumed institutionally granted linkage/freshness/coverage, but the prompt demanded self-verification and the block said \"linkage not yet verified\"",
+      "repair": "explicit INSTITUTIONAL TRUST MANDATE granting L/F/C provenance/completeness only; outcomes remain rendered; verdict never disclosed"
+    }
+  ],
+  "c2_downgrade": {
+    "deepseek_9_of_10_need": "observed rate NOT overturned, but its reading as a model defect no longer holds under the inconsistent protocol; re-testing deferred to G3-B.3",
+    "t2a_repeated_verification_requests": "model never actually received the trust authorisation",
+    "t3a_escalate_stale_abstention": "tool erroneously returned fresh=false",
+    "17630_t3a": "kept as a separately tagged candidate Decision-Policy study; still confounded by spurious fresh=false in the old run",
+    "gpt_17318_t2a": "remains a warranted Evidence Verification Failure: FAIL_TO_PASS passed 0/1 is clearly visible yet the answer was ACCEPT"
+  },
+  "engineering_acceptance_conditions": {
+    "condition_1_unified_auditable_freshness_source": {
+      "met": true,
+      "evidence": "three-state TRUE/FALSE/UNKNOWN adjudicator; authoritative independent git restage; missing run_tree -> UNKNOWN/schema_error, never false; unit tests cover match/mismatch/missing/bad-sig/patch"
+    },
+    "condition_2_t2a_unified_trust_semantics": {
+      "met": true,
+      "evidence": "T2A prompt, static block and condition gold share the L/F/C trust semantics; grant warrants provenance only, never the verdict; outcomes still rendered"
+    },
+    "condition_3_condition_access_matches_http": {
+      "met": true,
+      "evidence": "strict 403 intact; escalate 400-without-reason then reason-gated 200; T2A institutional premise explicit; T3A full access with unified freshness"
+    },
+    "condition_4_offline_mock_no_gold_gaming": {
+      "met": true,
+      "evidence": "all 10 issues re-certified offline with 0 gold value changes; 100-cell mock validates plumbing only and is research-excluded; gold not edited to improve any model score"
+    }
+  },
+  "self_check_summary": {
+    "preflight_all_gates_pass": true,
+    "preflight_gates": {
+      "freeze_canonical_and_balanced": true,
+      "no_label_leakage": true,
+      "sufficiency_zero_changes": true,
+      "three_state_schema_consistent": true,
+      "zero_api_gate": true,
+      "resume_deterministic": true,
+      "frozen_unchanged": true
+    },
+    "unit_tests_freshness": "S1-S5 + wrong-type ALL PASS",
+    "http_crosscheck": {
+      "checks": 470,
+      "pass": 470,
+      "errors": 0,
+      "cells": 50
+    },
+    "mock_100_cells": {
+      "n": 100,
+      "cost_usd": 0.0,
+      "api_calls": 0,
+      "match_rate": 1.0,
+      "research_excluded": true
+    },
+    "gold_value_changes": 0,
+    "sympy_17318_regression_all_pass": true,
+    "ds9_diff_rows": 45
+  },
+  "gold_authority": {
+    "gold_tier": "PROVISIONAL",
+    "annotators": 1,
+    "annotator2": "NOT_OBTAINED",
+    "note": "Single-annotator gold; no second adjudicator obtained. The G3-B.2 protocol repair does not raise gold authority. Until a second annotator adjudicates, all condition/oracle gold and all derived model comparisons remain PROVISIONAL."
+  },
+  "budget": {
+    "api_calls": 0,
+    "cost_usd": 0.0,
+    "real_models_called": []
+  },
+  "git": {
+    "head": "2097ecd87310bd1df1f3dcfddfbc7e3cedea1123",
+    "head_matches_frozen_g3b": true,
+    "staged_files": [],
+    "commits_made_in_g3b2": 0
+  },
+  "frozen_protection": {
+    "no_frozen_artifact_modified": true,
+    "frozen_parents_verified": {
+      "g3a_files": 141,
+      "g3a1_files": 122,
+      "g3b_freeze_manifest_sha256": "728a0731da9315ef78b01d20562bc196f10f2e74b4c05301ea39cd05a66fc151"
+    },
+    "new_code_modules_only": [
+      "g3b2_common.py",
+      "g3b2_freshness.py",
+      "g3b2_freshness_test.py",
+      "g3b2_server.py",
+      "g3b2_prompts.py",
+      "g3b2_freeze.py",
+      "g3b2_gold.py",
+      "g3b2_crosscheck.py",
+      "g3b2_run.py",
+      "g3b2_preflight.py",
+      "g3b2_regression_17318.py",
+      "g3b2_ds9_diff.py",
+      "g3b2_design.py",
+      "g3b2_report.py"
+    ]
+  },
+  "paper_positioning": {
+    "e1_cee_eal_x": "exploratory research phases",
+    "g3b": "external-validation pilot; later audit found evidence-protocol/Gold inconsistency",
+    "g3b3": "revised-protocol validation (not yet authorised)",
+    "interpretation_rule": "if DeepSeek abstention falls sharply after repair, C2 was largely protocol-induced; only if it remains high is a calibration defect better supported",
+    "scope_warning": "this benchmark quality audit must not be auto-generalised to all code-review-agent benchmarks; a Benchmark Reliability claim needs additional cross-benchmark evidence"
+  },
+  "g3b3_status": "DESIGN ONLY at evidence_store_g3b2\\design\\g3b3_experiment_design.json; requires separate written approval",
+  "next_action": "STOP and await separate written approval of G3-B.3.",
+  "artifacts": {
+    "task1_freeze": {
+      "path": "evidence_store_g3b2\\freeze\\g3b2_freeze_manifest.json",
+      "exists": true,
+      "sha256": "5f9f0eb564ae770f2bc5ce4b01ada6cfab62c1cab8ef54b6185d7070763ee8f5"
+    },
+    "task6_gold_certificates": {
+      "path": "evidence_store_g3b2\\gold\\g3b2_condition_gold_certificates.jsonl",
+      "exists": true,
+      "sha256": "ddc33ee62aac198b21b19910d4bd696de01dd2e696ebd2755f7b8d1eeac42b9c"
+    },
+    "task6_gold_changelog": {
+      "path": "evidence_store_g3b2\\gold\\g3b2_gold_changelog.json",
+      "exists": true,
+      "sha256": "356164ea8677b3b7cf970811d40ee0957e81ef5a415de7dba36e738501d1d96b"
+    },
+    "task5_three_way_matrix": {
+      "path": "evidence_store_g3b2\\audit\\g3b2_three_way_consistency_matrix.json",
+      "exists": true,
+      "sha256": "3eca7141ec1b9e74ee9c4580e30dee5c7b303014fb9a911688f17d91e3379ae6"
+    },
+    "task2_freshness_authoritative_audit": {
+      "path": "evidence_store_g3b2\\audit\\g3b2_freshness_authoritative_audit.json",
+      "exists": true,
+      "sha256": "fd522d635c6ada37efae2ff4d72a9c40dd1a5e27f952ccedc78ba77727faefc0"
+    },
+    "task7_http_crosscheck": {
+      "path": "evidence_store_g3b2\\audit\\g3b2_http_crosscheck.json",
+      "exists": true,
+      "sha256": "11743435ec8d4beee96a86f2c3e3fd72a5745cd2156d1a7da4d50f498156a14d"
+    },
+    "task4_prompt_text_diff": {
+      "path": "evidence_store_g3b2\\prompt_diff\\g3b2_prompt_text_diff.json",
+      "exists": true,
+      "sha256": "5159b1e9332a3098266ebaad5a9125a30eb4f1fc35a9bf7259e798a4d5e01fbc"
+    },
+    "task9_preflight": {
+      "path": "evidence_store_g3b2\\preflight\\g3b2_preflight.json",
+      "exists": true,
+      "sha256": "fcb93bf9fa8bf68d16ab00d9b0e3a2eb39d91cf2cc84a639288dcd7fe562bf6c"
+    },
+    "task8_mock_audit": {
+      "path": "evidence_store_g3b2\\runs\\g3b2_mock_run_audit.json",
+      "exists": true,
+      "sha256": "ac46e86bcbffa67931a4801f6b12c04325b72b2a16ac0de8c8fb927b6482cf67"
+    },
+    "task8_mock_rows_alpha": {
+      "path": "evidence_store_g3b2\\runs\\g3b2_mock_mock_model_alpha_results.jsonl",
+      "exists": true,
+      "sha256": "18ce76e0051145c75073240933a13ec2ebc3415b45794c90914d455aede6bcb2"
+    },
+    "task8_mock_rows_beta": {
+      "path": "evidence_store_g3b2\\runs\\g3b2_mock_mock_model_beta_results.jsonl",
+      "exists": true,
+      "sha256": "7506d8ac335011923e5e8db8b204fb0f8d131282b57f2fffd815870cd226fdcd"
+    },
+    "task10_sympy_17318_regression": {
+      "path": "evidence_store_g3b2\\audit\\g3b2_sympy_17318_regression.json",
+      "exists": true,
+      "sha256": "920f770dd276c5e40a680104587ce4df2bdb2d507544f5b7bd97ee6c54a75de5"
+    },
+    "task11_deepseek9_evidence_diff": {
+      "path": "evidence_store_g3b2\\audit\\g3b2_deepseek9_evidence_diff.json",
+      "exists": true,
+      "sha256": "7d8d8e2ee214c3026d985e5f03dbbe13bd1d3cf42205e3a48c5f16f64d43f757"
+    },
+    "task12_g3b3_experiment_design": {
+      "path": "evidence_store_g3b2\\design\\g3b3_experiment_design.json",
+      "exists": true,
+      "sha256": "9945fe63694ebcfbadfd12247cbe7986ed9e302d28c3caa5a6ca8f272713b20c"
+    }
+  },
+  "all_engineering_conditions_met": true
+}

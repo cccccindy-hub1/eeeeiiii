@@ -1,0 +1,11 @@
+{
+  "cell": "g3b3:sympy__sympy-17318:T2D-T",
+  "condition": "T2D-T",
+  "policy": null,
+  "session_id": null,
+  "trace": [],
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The only artifact is a diagnostic-tier record with maintainer acceptance-test outcomes and scoped regression verdicts explicitly withheld. It confirms the issue symptom is gone (probe passes) but does not demonstrate that the declared acceptance set was fully executed and failure-free, nor that no scoped regression was introduced. No decisive applicable failure is established, so REJECT is not warranted; but complete fresh linked success evidence is also absent, so ACCEPT is not warranted.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance test outcome (1 scheduled, withheld) and scoped regression verdicts (10 scheduled, withheld) for patch_sha256 5e0ca074... on base_commit d4e0231b...; also note the added test test_issue_12420 exercises sqrt(4+3*I) rather than the exact issue expression, so coverage of the reported case is only via the derived probe.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "fresh_state_served": null,
+  "error": null
+}

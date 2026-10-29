@@ -1,0 +1,346 @@
+{
+  "document": "G3-C.1 80-cell exploratory live run: ternary matrix + issue-level stats (PROVISIONAL gold; annotator2 NOT_OBTAINED)",
+  "status": "COMPLETE_80",
+  "n_rows": 80,
+  "models": [
+    "gpt-4.1-mini",
+    "deepseek-flash"
+  ],
+  "conditions": [
+    "T2D-T",
+    "T3D-Strict",
+    "T3D-Escalate",
+    "T2A-T",
+    "T3A-T"
+  ],
+  "ternary_matrix_condition_x_model": {
+    "T2D-T": {
+      "gpt-4.1-mini": {
+        "ACCEPT": 0,
+        "REJECT": 0,
+        "NEED_EVIDENCE": 8,
+        "n": 8
+      },
+      "deepseek-flash": {
+        "ACCEPT": 0,
+        "REJECT": 0,
+        "NEED_EVIDENCE": 8,
+        "n": 8
+      }
+    },
+    "T3D-Strict": {
+      "gpt-4.1-mini": {
+        "ACCEPT": 6,
+        "REJECT": 0,
+        "NEED_EVIDENCE": 2,
+        "n": 8
+      },
+      "deepseek-flash": {
+        "ACCEPT": 0,
+        "REJECT": 0,
+        "NEED_EVIDENCE": 8,
+        "n": 8
+      }
+    },
+    "T3D-Escalate": {
+      "gpt-4.1-mini": {
+        "ACCEPT": 6,
+        "REJECT": 1,
+        "NEED_EVIDENCE": 1,
+        "n": 8
+      },
+      "deepseek-flash": {
+        "ACCEPT": 6,
+        "REJECT": 2,
+        "NEED_EVIDENCE": 0,
+        "n": 8
+      }
+    },
+    "T2A-T": {
+      "gpt-4.1-mini": {
+        "ACCEPT": 6,
+        "REJECT": 2,
+        "NEED_EVIDENCE": 0,
+        "n": 8
+      },
+      "deepseek-flash": {
+        "ACCEPT": 5,
+        "REJECT": 2,
+        "NEED_EVIDENCE": 1,
+        "n": 8
+      }
+    },
+    "T3A-T": {
+      "gpt-4.1-mini": {
+        "ACCEPT": 6,
+        "REJECT": 2,
+        "NEED_EVIDENCE": 0,
+        "n": 8
+      },
+      "deepseek-flash": {
+        "ACCEPT": 6,
+        "REJECT": 2,
+        "NEED_EVIDENCE": 0,
+        "n": 8
+      }
+    }
+  },
+  "issue_level": {
+    "sympy__sympy-14248": {
+      "gpt-4.1-mini": {
+        "oracle_gold": "REJECT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "ACCEPT"
+        },
+        "sufficient": {
+          "T3D-Escalate": "REJECT",
+          "T2A-T": "REJECT",
+          "T3A-T": "REJECT"
+        },
+        "restricted_commits": 1,
+        "sufficient_any_ACCEPT": false,
+        "sufficient_any_REJECT": true
+      },
+      "deepseek-flash": {
+        "oracle_gold": "REJECT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE"
+        },
+        "sufficient": {
+          "T3D-Escalate": "REJECT",
+          "T2A-T": "REJECT",
+          "T3A-T": "REJECT"
+        },
+        "restricted_commits": 0,
+        "sufficient_any_ACCEPT": false,
+        "sufficient_any_REJECT": true
+      }
+    },
+    "sympy__sympy-15875": {
+      "gpt-4.1-mini": {
+        "oracle_gold": "REJECT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "ACCEPT"
+        },
+        "sufficient": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "REJECT",
+          "T3A-T": "REJECT"
+        },
+        "restricted_commits": 1,
+        "sufficient_any_ACCEPT": false,
+        "sufficient_any_REJECT": true
+      },
+      "deepseek-flash": {
+        "oracle_gold": "REJECT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE"
+        },
+        "sufficient": {
+          "T3D-Escalate": "REJECT",
+          "T2A-T": "REJECT",
+          "T3A-T": "REJECT"
+        },
+        "restricted_commits": 0,
+        "sufficient_any_ACCEPT": false,
+        "sufficient_any_REJECT": true
+      }
+    },
+    "sympy__sympy-16886": {
+      "gpt-4.1-mini": {
+        "oracle_gold": "ACCEPT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE"
+        },
+        "sufficient": {
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "restricted_commits": 0,
+        "sufficient_any_ACCEPT": true,
+        "sufficient_any_REJECT": false
+      },
+      "deepseek-flash": {
+        "oracle_gold": "ACCEPT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE"
+        },
+        "sufficient": {
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "restricted_commits": 0,
+        "sufficient_any_ACCEPT": true,
+        "sufficient_any_REJECT": false
+      }
+    },
+    "sympy__sympy-19040": {
+      "gpt-4.1-mini": {
+        "oracle_gold": "ACCEPT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "ACCEPT"
+        },
+        "sufficient": {
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "restricted_commits": 1,
+        "sufficient_any_ACCEPT": true,
+        "sufficient_any_REJECT": false
+      },
+      "deepseek-flash": {
+        "oracle_gold": "ACCEPT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE"
+        },
+        "sufficient": {
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "restricted_commits": 0,
+        "sufficient_any_ACCEPT": true,
+        "sufficient_any_REJECT": false
+      }
+    },
+    "sympy__sympy-19346": {
+      "gpt-4.1-mini": {
+        "oracle_gold": "ACCEPT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "ACCEPT"
+        },
+        "sufficient": {
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "restricted_commits": 1,
+        "sufficient_any_ACCEPT": true,
+        "sufficient_any_REJECT": false
+      },
+      "deepseek-flash": {
+        "oracle_gold": "ACCEPT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE"
+        },
+        "sufficient": {
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "restricted_commits": 0,
+        "sufficient_any_ACCEPT": true,
+        "sufficient_any_REJECT": false
+      }
+    },
+    "sympy__sympy-19495": {
+      "gpt-4.1-mini": {
+        "oracle_gold": "ACCEPT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "ACCEPT"
+        },
+        "sufficient": {
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "restricted_commits": 1,
+        "sufficient_any_ACCEPT": true,
+        "sufficient_any_REJECT": false
+      },
+      "deepseek-flash": {
+        "oracle_gold": "ACCEPT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE"
+        },
+        "sufficient": {
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "NEED_EVIDENCE",
+          "T3A-T": "ACCEPT"
+        },
+        "restricted_commits": 0,
+        "sufficient_any_ACCEPT": true,
+        "sufficient_any_REJECT": false
+      }
+    },
+    "sympy__sympy-19637": {
+      "gpt-4.1-mini": {
+        "oracle_gold": "ACCEPT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE"
+        },
+        "sufficient": {
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "restricted_commits": 0,
+        "sufficient_any_ACCEPT": true,
+        "sufficient_any_REJECT": false
+      },
+      "deepseek-flash": {
+        "oracle_gold": "ACCEPT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE"
+        },
+        "sufficient": {
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "restricted_commits": 0,
+        "sufficient_any_ACCEPT": true,
+        "sufficient_any_REJECT": false
+      }
+    },
+    "sympy__sympy-22914": {
+      "gpt-4.1-mini": {
+        "oracle_gold": "ACCEPT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "ACCEPT"
+        },
+        "sufficient": {
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "restricted_commits": 1,
+        "sufficient_any_ACCEPT": true,
+        "sufficient_any_REJECT": false
+      },
+      "deepseek-flash": {
+        "oracle_gold": "ACCEPT",
+        "restricted": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE"
+        },
+        "sufficient": {
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "restricted_commits": 0,
+        "sufficient_any_ACCEPT": true,
+        "sufficient_any_REJECT": false
+      }
+    }
+  }
+}

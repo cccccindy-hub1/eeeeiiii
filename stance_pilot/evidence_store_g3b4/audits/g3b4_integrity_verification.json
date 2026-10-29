@@ -1,0 +1,304 @@
+{
+  "api_calls_made_by_this_audit": 0,
+  "audit_version": "groundedreview-gate3b4-zero-api-strict-audit-v1",
+  "document": "Gate 3-B.4 independent result-integrity verification (tasks 1 & 10)",
+  "sections": [
+    {
+      "all_ok": true,
+      "checks": [
+        {
+          "detail": "11/11 artifacts (7 files + raw/ manifest + traces/live/ manifest + pre-paid data-freeze) rehash to the G3-B.3 result freeze pins",
+          "ok": true
+        }
+      ],
+      "n_checks": 1,
+      "n_pass": 1,
+      "section": "A_frozen_hashes"
+    },
+    {
+      "all_ok": true,
+      "checks": [
+        {
+          "detail": "G3-B freeze manifest and both G3-B live row files anchored by the G3-B.3 freeze are present / matching",
+          "ok": true
+        }
+      ],
+      "n_checks": 1,
+      "n_pass": 1,
+      "section": "A_parent_anchor"
+    },
+    {
+      "all_ok": true,
+      "checks": [
+        {
+          "detail": "deepseek-flash: 50 live rows (expected 50)",
+          "ok": true
+        },
+        {
+          "detail": "deepseek-flash: mock-flagged rows=0, research_excluded rows=0 (real-request audit only; mock pass rate is NOT used)",
+          "ok": true
+        },
+        {
+          "detail": "gpt-4.1-mini: 50 live rows (expected 50)",
+          "ok": true
+        },
+        {
+          "detail": "gpt-4.1-mini: mock-flagged rows=0, research_excluded rows=0 (real-request audit only; mock pass rate is NOT used)",
+          "ok": true
+        },
+        {
+          "detail": "100 real rows total",
+          "ok": true
+        },
+        {
+          "detail": "rows are exactly 2 models x 10 issues x 5 conditions, no duplicates (n=100)",
+          "ok": true
+        },
+        {
+          "detail": "serials 0..99 each exactly once (frozen interleaved order fully covered)",
+          "ok": true
+        },
+        {
+          "detail": "error rows in live files: 0",
+          "ok": true
+        },
+        {
+          "detail": "all 100 rows carry a parseable ternary verdict (unparsed: 0)",
+          "ok": true
+        }
+      ],
+      "n_checks": 9,
+      "n_pass": 9,
+      "section": "B_real_rows_100"
+    },
+    {
+      "all_ok": true,
+      "checks": [
+        {
+          "detail": "every one of the 100 rows maps 1:1 to a pinned raw file and a pinned live trace file (raw=100, trace=100)",
+          "ok": true
+        }
+      ],
+      "n_checks": 1,
+      "n_content_mismatches": 0,
+      "n_pass": 1,
+      "section": "C_row_raw_trace_correspondence"
+    },
+    {
+      "all_ok": true,
+      "checks": [
+        {
+          "detail": "g3b3_run.py: raw write (char 29928) precedes score_cell (char 30145); the untouched raw response is persisted BEFORE any parsing/scoring",
+          "ok": true
+        },
+        {
+          "detail": "all 100 raw files parse as JSON and carry answer_raw (including the complete raw_model_calls transcript)",
+          "ok": true
+        },
+        {
+          "detail": "raw record embeds the full per-call transcript (served model id, finish reason, prompt/completion tokens, wire shapes) before it is written",
+          "ok": true
+        }
+      ],
+      "n_checks": 3,
+      "n_pass": 3,
+      "section": "D_raw_first_persistence"
+    },
+    {
+      "all_ok": true,
+      "checks": [
+        {
+          "detail": "real model calls (raw transcripts): DS=114, GPT=94, total=208; real tool calls total=335",
+          "ok": true
+        },
+        {
+          "detail": "deepseek-flash: every real create has a pre-call guard bound",
+          "ok": true
+        },
+        {
+          "detail": "deepseek-flash: adapter wire calls == model calls and zero fallback_from (no silent downgrade)",
+          "ok": true
+        },
+        {
+          "detail": "deepseek-flash: served model id equals the freeze allow-list id on every cell",
+          "ok": true
+        },
+        {
+          "detail": "gpt-4.1-mini: every real create has a pre-call guard bound",
+          "ok": true
+        },
+        {
+          "detail": "gpt-4.1-mini: adapter wire calls == model calls and zero fallback_from (no silent downgrade)",
+          "ok": true
+        },
+        {
+          "detail": "gpt-4.1-mini: served model id equals the freeze allow-list id on every cell",
+          "ok": true
+        },
+        {
+          "detail": "total spend on the guard/audit basis (unrounded accumulation, rounded once): rows-basis=$0.303539 == run audit=$0.303539 == result freeze=$0.303539",
+          "ok": true
+        },
+        {
+          "detail": "per-model guard-basis spend matches the result freeze ({'deepseek-flash': 0.189045, 'gpt-4.1-mini': 0.114494})",
+          "ok": true
+        },
+        {
+          "detail": "every row cost equals round(tokens x price, 6); the sum of these per-cell rounded row values is $0.303537 (vs $0.303539 guard basis: a disclosed ~1e-6 rounding-convention gap, not a discrepancy)",
+          "ok": true
+        }
+      ],
+      "n_checks": 10,
+      "n_pass": 10,
+      "per_model": {
+        "deepseek-flash": {
+          "cost_usd_guard_basis_unrounded": 0.189045,
+          "cost_usd_recomputed_tokens": 0.189044,
+          "cost_usd_summed_rows_rounded_per_cell": 0.189044,
+          "model_calls_from_raw": 114,
+          "pre_call_bounds_one_per_real_call": true,
+          "served_id_matches_expected_all_cells": true,
+          "tokens_in_from_raw": 538498,
+          "tokens_out_from_raw": 22913,
+          "tool_calls_from_rows": 209,
+          "verdict_counts": {
+            "ACCEPT": 19,
+            "NEED_EVIDENCE": 22,
+            "REJECT": 9
+          },
+          "wire_calls_match_no_fallback": true
+        },
+        "gpt-4.1-mini": {
+          "cost_usd_guard_basis_unrounded": 0.114494,
+          "cost_usd_recomputed_tokens": 0.114493,
+          "cost_usd_summed_rows_rounded_per_cell": 0.114493,
+          "model_calls_from_raw": 94,
+          "pre_call_bounds_one_per_real_call": true,
+          "served_id_matches_expected_all_cells": true,
+          "tokens_in_from_raw": 251495,
+          "tokens_out_from_raw": 8685,
+          "tool_calls_from_rows": 126,
+          "verdict_counts": {
+            "ACCEPT": 29,
+            "NEED_EVIDENCE": 16,
+            "REJECT": 5
+          },
+          "wire_calls_match_no_fallback": true
+        }
+      },
+      "section": "E_real_calls_tokens_cost"
+    },
+    {
+      "all_ok": true,
+      "checks": [
+        {
+          "detail": "run audit: new=50/50, resume-skips=0/0, errors=0/0 (single clean pass; resume code path existed but did not fire)",
+          "ok": true
+        },
+        {
+          "detail": "each model file has its 50 distinct cell keys and no (cell, model) pair repeats (the g3b3 cell key omits the model, so the same 50 keys legitimately occur once per model file; resume cannot double-pay a real cell)",
+          "ok": true
+        },
+        {
+          "detail": "retries_per_cell=0 recorded in the run audit",
+          "ok": true
+        }
+      ],
+      "n_checks": 3,
+      "n_pass": 3,
+      "section": "F_resume_and_run_audit"
+    },
+    {
+      "all_ok": true,
+      "checks": [
+        {
+          "detail": "offline mock audit is mode=mock, $0 (its pass rate is a plumbing check only)",
+          "ok": true
+        },
+        {
+          "detail": "mock left 100 traces under traces/mock/, segregated from the 100 pinned traces/live/ files",
+          "ok": true
+        },
+        {
+          "detail": "the pinned live row files contain ZERO mock/excluded rows; every audited number in sections B-E derives from real requests only",
+          "ok": true
+        }
+      ],
+      "n_checks": 3,
+      "n_pass": 3,
+      "section": "G_mock_segregated_not_substituted"
+    },
+    {
+      "all_ok": true,
+      "checks": [
+        {
+          "detail": "g3b3_analyze.py (post-collection analyzer/report; not present in the pre-paid executed freeze: in_executed_freeze_manifest=None)",
+          "ok": true
+        },
+        {
+          "detail": "g3b3_report.py (post-collection analyzer/report; not present in the pre-paid executed freeze: in_executed_freeze_manifest=None)",
+          "ok": true
+        },
+        {
+          "detail": "preflight 41/41 checks passed before any paid call",
+          "ok": true
+        },
+        {
+          "detail": "live gate 571/571 per-cell checks passed on the 100 real cells",
+          "ok": true
+        },
+        {
+          "detail": "livegate active-cell freshness TRUE count=30 (30 active cells expected)",
+          "ok": true
+        },
+        {
+          "detail": "analyzer/report were written AFTER collection, offline, made 0 API calls and changed no row/raw/trace/cost byte",
+          "ok": true
+        }
+      ],
+      "n_checks": 6,
+      "n_pass": 6,
+      "section": "H_engineering_gates_posthoc_analyzer"
+    },
+    {
+      "all_ok": true,
+      "checks": [
+        {
+          "detail": "all 100 rows record protocol=g3b2-protocol-v1, prompt p3-ternary-g3b2-v1, gold cert g3b2-gold-cert-v1; per-row prompt fingerprints match the pre-paid freeze (version tuple counts={('g3b2-protocol-v1', 'p3-ternary-g3b2-v1', 'g3b2-gold-cert-v1'): 100})",
+          "ok": true
+        }
+      ],
+      "n_checks": 1,
+      "n_fp_mismatches": 0,
+      "n_pass": 1,
+      "section": "I_protocol_fingerprints"
+    }
+  ],
+  "summary": {
+    "overall_ok": true,
+    "totals": {
+      "cost_usd_recomputed": 0.303537,
+      "cost_usd_rows": 0.303537,
+      "per_model_calls": {
+        "deepseek-flash": 114,
+        "gpt-4.1-mini": 94
+      },
+      "real_model_calls": 208,
+      "real_tool_calls": 335,
+      "tokens_in": 789993,
+      "tokens_out": 31598
+    },
+    "verdict_counts": {
+      "deepseek-flash": {
+        "ACCEPT": 19,
+        "NEED_EVIDENCE": 22,
+        "REJECT": 9
+      },
+      "gpt-4.1-mini": {
+        "ACCEPT": 29,
+        "NEED_EVIDENCE": 16,
+        "REJECT": 5
+      }
+    }
+  }
+}

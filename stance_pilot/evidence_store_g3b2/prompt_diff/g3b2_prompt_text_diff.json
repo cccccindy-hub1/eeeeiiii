@@ -1,0 +1,132 @@
+{
+  "document": "Gate 3-B.2 task 4: old (p3-ternary-v2) vs new (p3-ternary-g3b2-v1) prompt text differences with design rationale.",
+  "protocol_version": "g3b2-protocol-v1",
+  "old_prompt_version": "p3-ternary-v2",
+  "new_prompt_version": "p3-ternary-g3b2-v1",
+  "gold_leakage_guarantee": "No added text states or implies ACCEPT/REJECT; only L/F/C provenance/completeness premises are granted for T2A, and rendered outcomes remain the decision basis.",
+  "conditions": {
+    "T2D-T": {
+      "tier": "D",
+      "active": false,
+      "old_fingerprint_v2": "896df8a1b916abd77db4de92aa1b0abd68dfbeb834db2df74f2b25416fb831ec",
+      "new_fingerprint_g3b2": "70fa99b2accd5cda53e051eb79d82d3c0d12c1f05c0034fa98411e916b1d2e89",
+      "changes": [],
+      "unchanged_components": [
+        "system_message",
+        "decision_rule_head",
+        "evidence_gap_response_schema",
+        "goal",
+        "issue/patch/author_statement_rendering",
+        "no_tools_static"
+      ]
+    },
+    "T3D-Strict": {
+      "tier": "D",
+      "active": true,
+      "old_fingerprint_v2": "1706a29c271b2c28d004abd16fe0afaa49f30a20815add72a3ac372dcde9bf1e",
+      "new_fingerprint_g3b2": "556b8a4008809c1f0b36fb2d0a1d3117d91d7fda3513f1c6d15085b73be81f49",
+      "changes": [
+        {
+          "component": "tool_wording",
+          "change": "append_three_state_freshness_note",
+          "added_text": "\n\nFreshness semantics (this protocol): the freshness verdict is three-valued. fresh=true means the signed run tree equals the independently re-derived canonical commit tree; fresh=false means a present, comparable tree genuinely differs (a real stale/mismatched run); fresh=null (state UNKNOWN) means freshness cannot be adjudicated from the served record (for example a missing run-tree field). Treat UNKNOWN exactly like \"freshness not established\": it is NOT evidence of staleness and cannot ground a REJECT, but it also does not satisfy the freshness requirement for an ACCEPT.",
+          "rationale": "The repaired freshness endpoint is three-valued (true/false/null=UNKNOWN). The model-visible rule must match: UNKNOWN is not stale (cannot REJECT) and is not established freshness (cannot ACCEPT). This matches the Gold projection which treats surface value is True only."
+        }
+      ],
+      "unchanged_components": [
+        "system_message",
+        "decision_rule_head",
+        "evidence_gap_response_schema",
+        "goal",
+        "issue/patch/author_statement_rendering",
+        "tool_json_schemas"
+      ]
+    },
+    "T3D-Escalate": {
+      "tier": "D",
+      "active": true,
+      "old_fingerprint_v2": "d29315a4a42a20fb434c088953709b5dc784c8704042d18c9a92ba0933fafb56",
+      "new_fingerprint_g3b2": "6effc9d7fd2e31bfd54c25332a95781a76033beeb133c56c0aeea23de7c3a00b",
+      "changes": [
+        {
+          "component": "tool_wording",
+          "change": "append_three_state_freshness_note",
+          "added_text": "\n\nFreshness semantics (this protocol): the freshness verdict is three-valued. fresh=true means the signed run tree equals the independently re-derived canonical commit tree; fresh=false means a present, comparable tree genuinely differs (a real stale/mismatched run); fresh=null (state UNKNOWN) means freshness cannot be adjudicated from the served record (for example a missing run-tree field). Treat UNKNOWN exactly like \"freshness not established\": it is NOT evidence of staleness and cannot ground a REJECT, but it also does not satisfy the freshness requirement for an ACCEPT.",
+          "rationale": "The repaired freshness endpoint is three-valued (true/false/null=UNKNOWN). The model-visible rule must match: UNKNOWN is not stale (cannot REJECT) and is not established freshness (cannot ACCEPT). This matches the Gold projection which treats surface value is True only."
+        }
+      ],
+      "unchanged_components": [
+        "system_message",
+        "decision_rule_head",
+        "evidence_gap_response_schema",
+        "goal",
+        "issue/patch/author_statement_rendering",
+        "tool_json_schemas"
+      ]
+    },
+    "T2A-T": {
+      "tier": "A",
+      "active": false,
+      "old_fingerprint_v2": "aeaff39f8178b223b86f568423454145ea1fe9e7a3f73f687620a78a8b692aaa",
+      "new_fingerprint_g3b2": "d7cfe95df8b38622a4674e98c19c549dec1741c7cc2058136c6767b3a7f40f55",
+      "changes": [
+        {
+          "component": "head",
+          "change": "append_institutional_trust_grant",
+          "added_text": "\n\nINSTITUTIONAL TRUST MANDATE (applies only in this T2A-T condition): the test artifact below is supplied under a protocol-level warranty, so you do NOT need to independently prove its provenance and no tool is provided to re-check it:\n  - LINKAGE: the record is the signed runner record for EXACTLY the patch_sha256 and base_commit shown — i.e. this patch on this commit.\n  - FRESHNESS: the recorded run tree is the canonical tree for the current commit triple (base commit + this candidate patch + the maintainer test patch), independently re-derived via git restage and matched to the signed attestation.\n  - COVERAGE: the FAIL_TO_PASS checks and scoped PASS_TO_PASS checks shown below constitute the full maintainer-declared set; every declared check was executed (none is omitted).\nThese warranties cover evidence PROVENANCE and COMPLETENESS only. They do NOT tell you the verdict and do NOT assert that the patch is correct or acceptable. You must still read the rendered OUTCOMES yourself and apply the decision rule: a rendered executed acceptance failure or a rendered scoped regression is decisive grounds to REJECT despite the warranty; a complete, entirely green presentation with the issue resolved supports ACCEPT; otherwise answer NEED_EVIDENCE. Do not cite a linkage, freshness, or coverage gap as the reason for NEED_EVIDENCE in this condition — those premises are institutionally granted; cite only a different gap that is actually visible in the rendered outcomes.",
+          "rationale": "Gold T2A branch already assumes an institutional L/F/C grant but the v2 prompt never conveyed it and the block said \"linkage not yet verified\". This states only the provenance/completeness premises the protocol warrants; it explicitly withholds the ACCEPT/REJECT result and keeps a rendered failure decisive, preserving Evidence-Verification vs Decision-Policy separability."
+        },
+        {
+          "component": "static_acceptance_block",
+          "change": "header_and_warranty_reworded_outcomes_identical",
+          "old_header": "TEST ARTIFACT (ACCEPTANCE tier; full static record; linkage not yet verified):",
+          "new_header": "TEST ARTIFACT (ACCEPTANCE tier; full static record; institutionally attested for THIS patch/commit):",
+          "unchanged_rendered_fields": [
+            "FAIL_TO_PASS passed: x/y",
+            "scoped PASS_TO_PASS passed: x/y",
+            "failing acceptance test ids",
+            "regression test ids (passed before patch, fail after)",
+            "pre-existing-bad test ids"
+          ],
+          "rationale": "Aligns the visible evidence label with the Gold institutional premise. No outcome value or test id is removed or altered, so a visible F2P failure (e.g. SymPy-17318 FAIL_TO_PASS passed 0/1) still drives REJECT."
+        }
+      ],
+      "unchanged_components": [
+        "system_message",
+        "decision_rule_head",
+        "evidence_gap_response_schema",
+        "goal",
+        "issue/patch/author_statement_rendering",
+        "no_tools_static"
+      ]
+    },
+    "T3A-T": {
+      "tier": "A",
+      "active": true,
+      "old_fingerprint_v2": "036abea572445c82c7f8c36c8c76e247f48bf9d4a3d24491814e9f5ef39ddb39",
+      "new_fingerprint_g3b2": "73376a609581db804c6516509ef5ba9ba22f93b1d33126cee0511dba5755ce87",
+      "changes": [
+        {
+          "component": "tool_wording",
+          "change": "append_three_state_freshness_note",
+          "added_text": "\n\nFreshness semantics (this protocol): the freshness verdict is three-valued. fresh=true means the signed run tree equals the independently re-derived canonical commit tree; fresh=false means a present, comparable tree genuinely differs (a real stale/mismatched run); fresh=null (state UNKNOWN) means freshness cannot be adjudicated from the served record (for example a missing run-tree field). Treat UNKNOWN exactly like \"freshness not established\": it is NOT evidence of staleness and cannot ground a REJECT, but it also does not satisfy the freshness requirement for an ACCEPT.",
+          "rationale": "The repaired freshness endpoint is three-valued (true/false/null=UNKNOWN). The model-visible rule must match: UNKNOWN is not stale (cannot REJECT) and is not established freshness (cannot ACCEPT). This matches the Gold projection which treats surface value is True only."
+        }
+      ],
+      "unchanged_components": [
+        "system_message",
+        "decision_rule_head",
+        "evidence_gap_response_schema",
+        "goal",
+        "issue/patch/author_statement_rendering",
+        "tool_json_schemas"
+      ]
+    }
+  },
+  "gold_authority": {
+    "gold_tier": "PROVISIONAL",
+    "annotators": 1,
+    "annotator2": "NOT_OBTAINED",
+    "note": "Single-annotator gold; no second adjudicator obtained. The G3-B.2 protocol repair does not raise gold authority. Until a second annotator adjudicates, all condition/oracle gold and all derived model comparisons remain PROVISIONAL."
+  }
+}

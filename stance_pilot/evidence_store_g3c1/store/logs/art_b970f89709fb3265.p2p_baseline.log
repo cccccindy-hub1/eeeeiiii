@@ -1,0 +1,789 @@
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp6YSjAU\Scripts\python.exe -m pytest sympy/printing/tests/test_c.py sympy/printing/tests/test_fortran.py sympy/printing/tests/test_glsl.py -v --tb=short -p no:cacheprovider  (exit 0, 13s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp6YSjAU\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 133 items
+
+sympy/printing/tests/test_c.py::test_printmethod PASSED                  [  0%]
+sympy/printing/tests/test_c.py::test_ccode_sqrt PASSED                   [  1%]
+sympy/printing/tests/test_c.py::test_ccode_Pow PASSED                    [  2%]
+sympy/printing/tests/test_c.py::test_ccode_Max PASSED                    [  3%]
+sympy/printing/tests/test_c.py::test_ccode_Min_performance PASSED        [  3%]
+sympy/printing/tests/test_c.py::test_ccode_constants_mathh PASSED        [  4%]
+sympy/printing/tests/test_c.py::test_ccode_constants_other PASSED        [  5%]
+sympy/printing/tests/test_c.py::test_ccode_Rational PASSED               [  6%]
+sympy/printing/tests/test_c.py::test_ccode_Integer PASSED                [  6%]
+sympy/printing/tests/test_c.py::test_ccode_functions PASSED              [  7%]
+sympy/printing/tests/test_c.py::test_ccode_inline_function PASSED        [  8%]
+sympy/printing/tests/test_c.py::test_ccode_exceptions PASSED             [  9%]
+sympy/printing/tests/test_c.py::test_ccode_functions2 PASSED             [  9%]
+sympy/printing/tests/test_c.py::test_ccode_user_functions PASSED         [ 10%]
+sympy/printing/tests/test_c.py::test_ccode_boolean PASSED                [ 11%]
+sympy/printing/tests/test_c.py::test_ccode_Relational PASSED             [ 12%]
+sympy/printing/tests/test_c.py::test_ccode_Piecewise PASSED              [ 12%]
+sympy/printing/tests/test_c.py::test_ccode_sinc PASSED                   [ 13%]
+sympy/printing/tests/test_c.py::test_ccode_Piecewise_deep PASSED         [ 14%]
+sympy/printing/tests/test_c.py::test_ccode_ITE PASSED                    [ 15%]
+sympy/printing/tests/test_c.py::test_ccode_settings PASSED               [ 15%]
+sympy/printing/tests/test_c.py::test_ccode_Indexed PASSED                [ 16%]
+sympy/printing/tests/test_c.py::test_Element PASSED                      [ 17%]
+sympy/printing/tests/test_c.py::test_ccode_Indexed_without_looking_for_contraction PASSED [ 18%]
+sympy/printing/tests/test_c.py::test_ccode_loops_matrix_vector PASSED    [ 18%]
+sympy/printing/tests/test_c.py::test_dummy_loops PASSED                  [ 19%]
+sympy/printing/tests/test_c.py::test_ccode_loops_add PASSED              [ 20%]
+sympy/printing/tests/test_c.py::test_ccode_loops_multiple_contractions PASSED [ 21%]
+sympy/printing/tests/test_c.py::test_ccode_loops_addfactor PASSED        [ 21%]
+sympy/printing/tests/test_c.py::test_ccode_loops_multiple_terms PASSED   [ 22%]
+sympy/printing/tests/test_c.py::test_dereference_printing PASSED         [ 23%]
+sympy/printing/tests/test_c.py::test_Matrix_printing PASSED              [ 24%]
+sympy/printing/tests/test_c.py::test_sparse_matrix PASSED                [ 24%]
+sympy/printing/tests/test_c.py::test_ccode_reserved_words PASSED         [ 25%]
+sympy/printing/tests/test_c.py::test_ccode_sign PASSED                   [ 26%]
+sympy/printing/tests/test_c.py::test_ccode_Assignment PASSED             [ 27%]
+sympy/printing/tests/test_c.py::test_ccode_For PASSED                    [ 27%]
+sympy/printing/tests/test_c.py::test_ccode_Max_Min PASSED                [ 28%]
+sympy/printing/tests/test_c.py::test_ccode_standard PASSED               [ 29%]
+sympy/printing/tests/test_c.py::test_C89CodePrinter PASSED               [ 30%]
+sympy/printing/tests/test_c.py::test_C99CodePrinter PASSED               [ 30%]
+sympy/printing/tests/test_c.py::test_C99CodePrinter__precision_f80 XFAIL [ 31%]
+sympy/printing/tests/test_c.py::test_C99CodePrinter__precision PASSED    [ 32%]
+sympy/printing/tests/test_c.py::test_get_math_macros PASSED              [ 33%]
+sympy/printing/tests/test_c.py::test_ccode_Declaration PASSED            [ 33%]
+sympy/printing/tests/test_c.py::test_C99CodePrinter_custom_type PASSED   [ 34%]
+sympy/printing/tests/test_c.py::test_MatrixElement_printing PASSED       [ 35%]
+sympy/printing/tests/test_c.py::test_ccode_math_macros PASSED            [ 36%]
+sympy/printing/tests/test_c.py::test_ccode_Type PASSED                   [ 36%]
+sympy/printing/tests/test_c.py::test_ccode_codegen_ast PASSED            [ 37%]
+sympy/printing/tests/test_c.py::test_ccode_submodule PASSED              [ 38%]
+sympy/printing/tests/test_c.py::test_ccode_UnevaluatedExpr PASSED        [ 39%]
+sympy/printing/tests/test_c.py::test_ccode_array_like_containers PASSED  [ 39%]
+sympy/printing/tests/test_fortran.py::test_UnevaluatedExpr PASSED        [ 40%]
+sympy/printing/tests/test_fortran.py::test_printmethod PASSED            [ 41%]
+sympy/printing/tests/test_fortran.py::test_fcode_sign PASSED             [ 42%]
+sympy/printing/tests/test_fortran.py::test_fcode_Pow PASSED              [ 42%]
+sympy/printing/tests/test_fortran.py::test_fcode_Rational PASSED         [ 43%]
+sympy/printing/tests/test_fortran.py::test_fcode_Integer PASSED          [ 44%]
+sympy/printing/tests/test_fortran.py::test_fcode_Float PASSED            [ 45%]
+sympy/printing/tests/test_fortran.py::test_fcode_functions PASSED        [ 45%]
+sympy/printing/tests/test_fortran.py::test_case PASSED                   [ 46%]
+sympy/printing/tests/test_fortran.py::test_fcode_functions_with_integers PASSED [ 47%]
+sympy/printing/tests/test_fortran.py::test_fcode_NumberSymbol PASSED     [ 48%]
+sympy/printing/tests/test_fortran.py::test_fcode_complex PASSED          [ 48%]
+sympy/printing/tests/test_fortran.py::test_implicit PASSED               [ 49%]
+sympy/printing/tests/test_fortran.py::test_not_fortran PASSED            [ 50%]
+sympy/printing/tests/test_fortran.py::test_user_functions PASSED         [ 51%]
+sympy/printing/tests/test_fortran.py::test_inline_function PASSED        [ 51%]
+sympy/printing/tests/test_fortran.py::test_assign_to PASSED              [ 52%]
+sympy/printing/tests/test_fortran.py::test_line_wrapping PASSED          [ 53%]
+sympy/printing/tests/test_fortran.py::test_fcode_precedence PASSED       [ 54%]
+sympy/printing/tests/test_fortran.py::test_fcode_Logical PASSED          [ 54%]
+sympy/printing/tests/test_fortran.py::test_fcode_Xlogical PASSED         [ 55%]
+sympy/printing/tests/test_fortran.py::test_fcode_Relational PASSED       [ 56%]
+sympy/printing/tests/test_fortran.py::test_fcode_Piecewise PASSED        [ 57%]
+sympy/printing/tests/test_fortran.py::test_wrap_fortran PASSED           [ 57%]
+sympy/printing/tests/test_fortran.py::test_wrap_fortran_keep_d0 PASSED   [ 58%]
+sympy/printing/tests/test_fortran.py::test_settings PASSED               [ 59%]
+sympy/printing/tests/test_fortran.py::test_free_form_code_line PASSED    [ 60%]
+sympy/printing/tests/test_fortran.py::test_free_form_continuation_line PASSED [ 60%]
+sympy/printing/tests/test_fortran.py::test_free_form_comment_line PASSED [ 61%]
+sympy/printing/tests/test_fortran.py::test_loops PASSED                  [ 62%]
+sympy/printing/tests/test_fortran.py::test_dummy_loops PASSED            [ 63%]
+sympy/printing/tests/test_fortran.py::test_fcode_Indexed_without_looking_for_contraction PASSED [ 63%]
+sympy/printing/tests/test_fortran.py::test_derived_classes PASSED        [ 64%]
+sympy/printing/tests/test_fortran.py::test_indent PASSED                 [ 65%]
+sympy/printing/tests/test_fortran.py::test_Matrix_printing PASSED        [ 66%]
+sympy/printing/tests/test_fortran.py::test_fcode_For PASSED              [ 66%]
+sympy/printing/tests/test_fortran.py::test_fcode_Declaration PASSED      [ 67%]
+sympy/printing/tests/test_fortran.py::test_MatrixElement_printing PASSED [ 68%]
+sympy/printing/tests/test_fortran.py::test_aug_assign PASSED             [ 69%]
+sympy/printing/tests/test_fortran.py::test_While PASSED                  [ 69%]
+sympy/printing/tests/test_fortran.py::test_FunctionPrototype_print PASSED [ 70%]
+sympy/printing/tests/test_fortran.py::test_FunctionDefinition_print PASSED [ 71%]
+sympy/printing/tests/test_fortran.py::test_fcode_submodule PASSED        [ 72%]
+sympy/printing/tests/test_glsl.py::test_printmethod PASSED               [ 72%]
+sympy/printing/tests/test_glsl.py::test_print_without_operators PASSED   [ 73%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_sqrt PASSED            [ 74%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_Pow PASSED             [ 75%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_Relational PASSED      [ 75%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_constants_mathh PASSED [ 76%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_constants_other PASSED [ 77%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_Rational PASSED        [ 78%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_Integer PASSED         [ 78%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_functions PASSED       [ 79%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_inline_function PASSED [ 80%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_exceptions PASSED      [ 81%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_boolean PASSED         [ 81%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_Piecewise PASSED       [ 82%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_Piecewise_deep PASSED  [ 83%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_settings PASSED        [ 84%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_Indexed PASSED         [ 84%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_list_tuple_Tuple PASSED [ 85%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_loops_matrix_vector PASSED [ 86%]
+sympy/printing/tests/test_glsl.py::test_dummy_loops PASSED               [ 87%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_loops_add PASSED       [ 87%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_loops_multiple_contractions PASSED [ 88%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_loops_addfactor PASSED [ 89%]
+sympy/printing/tests/test_glsl.py::test_glsl_code_loops_multiple_terms PASSED [ 90%]
+sympy/printing/tests/test_glsl.py::test_Matrix_printing PASSED           [ 90%]
+sympy/printing/tests/test_glsl.py::test_Matrices_1x7 PASSED              [ 91%]
+sympy/printing/tests/test_glsl.py::test_Matrices_1x7_array_type_int PASSED [ 92%]
+sympy/printing/tests/test_glsl.py::test_Tuple_array_type_custom PASSED   [ 93%]
+sympy/printing/tests/test_glsl.py::test_Matrices_1x7_spread_assign_to_symbols PASSED [ 93%]
+sympy/printing/tests/test_glsl.py::test_spread_assign_to_nested_symbols PASSED [ 94%]
+sympy/printing/tests/test_glsl.py::test_spread_assign_to_deeply_nested_symbols PASSED [ 95%]
+sympy/printing/tests/test_glsl.py::test_matrix_of_tuples_spread_assign_to_symbols PASSED [ 96%]
+sympy/printing/tests/test_glsl.py::test_cannot_assign_to_cause_mismatched_length PASSED [ 96%]
+sympy/printing/tests/test_glsl.py::test_matrix_4x4_assign PASSED         [ 97%]
+sympy/printing/tests/test_glsl.py::test_1xN_vecs PASSED                  [ 98%]
+sympy/printing/tests/test_glsl.py::test_MxN_mats PASSED                  [ 99%]
+sympy/printing/tests/test_glsl.py::test_misc_mats PASSED                 [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+sympy/printing/tests/test_c.py: 30 warnings
+sympy/printing/tests/test_fortran.py: 4 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================= 132 passed, 1 xfailed, 38 warnings in 7.32s =================
+
+--- stderr ---
+
+
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp6YSjAU\Scripts\python.exe -m pytest sympy/printing/tests/test_jscode.py sympy/printing/tests/test_lambdarepr.py sympy/printing/tests/test_latex.py -v --tb=short -p no:cacheprovider  (exit 0, 17s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp6YSjAU\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 200 items
+
+sympy/printing/tests/test_jscode.py::test_printmethod PASSED             [  0%]
+sympy/printing/tests/test_jscode.py::test_jscode_sqrt PASSED             [  1%]
+sympy/printing/tests/test_jscode.py::test_jscode_Pow PASSED              [  1%]
+sympy/printing/tests/test_jscode.py::test_jscode_constants_mathh PASSED  [  2%]
+sympy/printing/tests/test_jscode.py::test_jscode_constants_other PASSED  [  2%]
+sympy/printing/tests/test_jscode.py::test_jscode_Rational PASSED         [  3%]
+sympy/printing/tests/test_jscode.py::test_Relational PASSED              [  3%]
+sympy/printing/tests/test_jscode.py::test_Mod PASSED                     [  4%]
+sympy/printing/tests/test_jscode.py::test_jscode_Integer PASSED          [  4%]
+sympy/printing/tests/test_jscode.py::test_jscode_functions PASSED        [  5%]
+sympy/printing/tests/test_jscode.py::test_jscode_inline_function PASSED  [  5%]
+sympy/printing/tests/test_jscode.py::test_jscode_exceptions PASSED       [  6%]
+sympy/printing/tests/test_jscode.py::test_jscode_boolean PASSED          [  6%]
+sympy/printing/tests/test_jscode.py::test_jscode_Piecewise PASSED        [  7%]
+sympy/printing/tests/test_jscode.py::test_jscode_Piecewise_deep PASSED   [  7%]
+sympy/printing/tests/test_jscode.py::test_jscode_settings PASSED         [  8%]
+sympy/printing/tests/test_jscode.py::test_jscode_Indexed PASSED          [  8%]
+sympy/printing/tests/test_jscode.py::test_jscode_loops_matrix_vector PASSED [  9%]
+sympy/printing/tests/test_jscode.py::test_dummy_loops PASSED             [  9%]
+sympy/printing/tests/test_jscode.py::test_jscode_loops_add PASSED        [ 10%]
+sympy/printing/tests/test_jscode.py::test_jscode_loops_multiple_contractions PASSED [ 10%]
+sympy/printing/tests/test_jscode.py::test_jscode_loops_addfactor PASSED  [ 11%]
+sympy/printing/tests/test_jscode.py::test_jscode_loops_multiple_terms PASSED [ 11%]
+sympy/printing/tests/test_jscode.py::test_Matrix_printing PASSED         [ 12%]
+sympy/printing/tests/test_jscode.py::test_MatrixElement_printing PASSED  [ 12%]
+sympy/printing/tests/test_lambdarepr.py::test_basic PASSED               [ 13%]
+sympy/printing/tests/test_lambdarepr.py::test_matrix PASSED              [ 13%]
+sympy/printing/tests/test_lambdarepr.py::test_piecewise PASSED           [ 14%]
+sympy/printing/tests/test_lambdarepr.py::test_sum__1 PASSED              [ 14%]
+sympy/printing/tests/test_lambdarepr.py::test_sum__2 PASSED              [ 15%]
+sympy/printing/tests/test_lambdarepr.py::test_multiple_sums PASSED       [ 15%]
+sympy/printing/tests/test_lambdarepr.py::test_sqrt PASSED                [ 16%]
+sympy/printing/tests/test_lambdarepr.py::test_settings PASSED            [ 16%]
+sympy/printing/tests/test_lambdarepr.py::test_numexpr PASSED             [ 17%]
+sympy/printing/tests/test_lambdarepr.py::test_printmethod PASSED         [ 17%]
+sympy/printing/tests/test_latex.py::test_printmethod PASSED              [ 18%]
+sympy/printing/tests/test_latex.py::test_latex_basic PASSED              [ 18%]
+sympy/printing/tests/test_latex.py::test_latex_builtins PASSED           [ 19%]
+sympy/printing/tests/test_latex.py::test_latex_SingularityFunction PASSED [ 19%]
+sympy/printing/tests/test_latex.py::test_latex_cycle PASSED              [ 20%]
+sympy/printing/tests/test_latex.py::test_latex_permutation PASSED        [ 20%]
+sympy/printing/tests/test_latex.py::test_latex_Float PASSED              [ 21%]
+sympy/printing/tests/test_latex.py::test_latex_vector_expressions PASSED [ 21%]
+sympy/printing/tests/test_latex.py::test_latex_symbols PASSED            [ 22%]
+sympy/printing/tests/test_latex.py::test_latex_symbols_failing XFAIL     [ 22%]
+sympy/printing/tests/test_latex.py::test_latex_functions PASSED          [ 23%]
+sympy/printing/tests/test_latex.py::test_function_subclass_different_name PASSED [ 23%]
+sympy/printing/tests/test_latex.py::test_hyper_printing PASSED           [ 24%]
+sympy/printing/tests/test_latex.py::test_latex_bessel PASSED             [ 24%]
+sympy/printing/tests/test_latex.py::test_latex_fresnel PASSED            [ 25%]
+sympy/printing/tests/test_latex.py::test_latex_brackets PASSED           [ 25%]
+sympy/printing/tests/test_latex.py::test_latex_indexed PASSED            [ 26%]
+sympy/printing/tests/test_latex.py::test_latex_derivatives PASSED        [ 26%]
+sympy/printing/tests/test_latex.py::test_latex_subs PASSED               [ 27%]
+sympy/printing/tests/test_latex.py::test_latex_integrals PASSED          [ 27%]
+sympy/printing/tests/test_latex.py::test_latex_sets PASSED               [ 28%]
+sympy/printing/tests/test_latex.py::test_latex_SetExpr PASSED            [ 28%]
+sympy/printing/tests/test_latex.py::test_latex_Range PASSED              [ 29%]
+sympy/printing/tests/test_latex.py::test_latex_sequences PASSED          [ 29%]
+sympy/printing/tests/test_latex.py::test_latex_FourierSeries PASSED      [ 30%]
+sympy/printing/tests/test_latex.py::test_latex_FormalPowerSeries PASSED  [ 30%]
+sympy/printing/tests/test_latex.py::test_latex_intervals PASSED          [ 31%]
+sympy/printing/tests/test_latex.py::test_latex_AccumuBounds PASSED       [ 31%]
+sympy/printing/tests/test_latex.py::test_latex_emptyset PASSED           [ 32%]
+sympy/printing/tests/test_latex.py::test_latex_universalset PASSED       [ 32%]
+sympy/printing/tests/test_latex.py::test_latex_commutator PASSED         [ 33%]
+sympy/printing/tests/test_latex.py::test_latex_union PASSED              [ 33%]
+sympy/printing/tests/test_latex.py::test_latex_intersection PASSED       [ 34%]
+sympy/printing/tests/test_latex.py::test_latex_symmetric_difference PASSED [ 34%]
+sympy/printing/tests/test_latex.py::test_latex_Complement PASSED         [ 35%]
+sympy/printing/tests/test_latex.py::test_latex_productset PASSED         [ 35%]
+sympy/printing/tests/test_latex.py::test_latex_powerset PASSED           [ 36%]
+sympy/printing/tests/test_latex.py::test_latex_ordinals PASSED           [ 36%]
+sympy/printing/tests/test_latex.py::test_set_operators_parenthesis PASSED [ 37%]
+sympy/printing/tests/test_latex.py::test_latex_Complexes PASSED          [ 37%]
+sympy/printing/tests/test_latex.py::test_latex_Naturals PASSED           [ 38%]
+sympy/printing/tests/test_latex.py::test_latex_Naturals0 PASSED          [ 38%]
+sympy/printing/tests/test_latex.py::test_latex_Integers PASSED           [ 39%]
+sympy/printing/tests/test_latex.py::test_latex_ImageSet PASSED           [ 39%]
+sympy/printing/tests/test_latex.py::test_latex_ConditionSet PASSED       [ 40%]
+sympy/printing/tests/test_latex.py::test_latex_ComplexRegion PASSED      [ 40%]
+sympy/printing/tests/test_latex.py::test_latex_Contains PASSED           [ 41%]
+sympy/printing/tests/test_latex.py::test_latex_sum PASSED                [ 41%]
+sympy/printing/tests/test_latex.py::test_latex_product PASSED            [ 42%]
+sympy/printing/tests/test_latex.py::test_latex_limits PASSED             [ 42%]
+sympy/printing/tests/test_latex.py::test_latex_log PASSED                [ 43%]
+sympy/printing/tests/test_latex.py::test_issue_3568 PASSED               [ 43%]
+sympy/printing/tests/test_latex.py::test_latex PASSED                    [ 44%]
+sympy/printing/tests/test_latex.py::test_latex_dict PASSED               [ 44%]
+sympy/printing/tests/test_latex.py::test_latex_list PASSED               [ 45%]
+sympy/printing/tests/test_latex.py::test_latex_NumberSymbols PASSED      [ 45%]
+sympy/printing/tests/test_latex.py::test_latex_rational PASSED           [ 46%]
+sympy/printing/tests/test_latex.py::test_latex_inverse PASSED            [ 46%]
+sympy/printing/tests/test_latex.py::test_latex_DiracDelta PASSED         [ 47%]
+sympy/printing/tests/test_latex.py::test_latex_Heaviside PASSED          [ 47%]
+sympy/printing/tests/test_latex.py::test_latex_KroneckerDelta PASSED     [ 48%]
+sympy/printing/tests/test_latex.py::test_latex_LeviCivita PASSED         [ 48%]
+sympy/printing/tests/test_latex.py::test_mode PASSED                     [ 49%]
+sympy/printing/tests/test_latex.py::test_latex_mathieu PASSED            [ 49%]
+sympy/printing/tests/test_latex.py::test_latex_Piecewise PASSED          [ 50%]
+sympy/printing/tests/test_latex.py::test_latex_Matrix PASSED             [ 50%]
+sympy/printing/tests/test_latex.py::test_latex_matrix_with_functions PASSED [ 51%]
+sympy/printing/tests/test_latex.py::test_latex_NDimArray PASSED          [ 51%]
+sympy/printing/tests/test_latex.py::test_latex_mul_symbol PASSED         [ 52%]
+sympy/printing/tests/test_latex.py::test_latex_issue_4381 PASSED         [ 52%]
+sympy/printing/tests/test_latex.py::test_latex_issue_4576 PASSED         [ 53%]
+sympy/printing/tests/test_latex.py::test_latex_pow_fraction PASSED       [ 53%]
+sympy/printing/tests/test_latex.py::test_noncommutative PASSED           [ 54%]
+sympy/printing/tests/test_latex.py::test_latex_order PASSED              [ 54%]
+sympy/printing/tests/test_latex.py::test_latex_Lambda PASSED             [ 55%]
+sympy/printing/tests/test_latex.py::test_latex_PolyElement PASSED        [ 55%]
+sympy/printing/tests/test_latex.py::test_latex_FracElement PASSED        [ 56%]
+sympy/printing/tests/test_latex.py::test_latex_Poly PASSED               [ 56%]
+sympy/printing/tests/test_latex.py::test_latex_Poly_order PASSED         [ 57%]
+sympy/printing/tests/test_latex.py::test_latex_ComplexRootOf PASSED      [ 57%]
+sympy/printing/tests/test_latex.py::test_latex_RootSum PASSED            [ 58%]
+sympy/printing/tests/test_latex.py::test_settings PASSED                 [ 58%]
+sympy/printing/tests/test_latex.py::test_latex_numbers PASSED            [ 59%]
+sympy/printing/tests/test_latex.py::test_latex_euler PASSED              [ 59%]
+sympy/printing/tests/test_latex.py::test_lamda PASSED                    [ 60%]
+sympy/printing/tests/test_latex.py::test_custom_symbol_names PASSED      [ 60%]
+sympy/printing/tests/test_latex.py::test_matAdd PASSED                   [ 61%]
+sympy/printing/tests/test_latex.py::test_matMul PASSED                   [ 61%]
+sympy/printing/tests/test_latex.py::test_latex_MatrixSlice PASSED        [ 62%]
+sympy/printing/tests/test_latex.py::test_latex_RandomDomain PASSED       [ 62%]
+sympy/printing/tests/test_latex.py::test_PrettyPoly PASSED               [ 63%]
+sympy/printing/tests/test_latex.py::test_integral_transforms PASSED      [ 63%]
+sympy/printing/tests/test_latex.py::test_PolynomialRingBase PASSED       [ 64%]
+sympy/printing/tests/test_latex.py::test_categories PASSED               [ 64%]
+sympy/printing/tests/test_latex.py::test_Modules PASSED                  [ 65%]
+sympy/printing/tests/test_latex.py::test_QuotientRing PASSED             [ 65%]
+sympy/printing/tests/test_latex.py::test_Tr PASSED                       [ 66%]
+sympy/printing/tests/test_latex.py::test_Adjoint PASSED                  [ 66%]
+sympy/printing/tests/test_latex.py::test_Transpose PASSED                [ 67%]
+sympy/printing/tests/test_latex.py::test_Hadamard PASSED                 [ 67%]
+sympy/printing/tests/test_latex.py::test_MatPow PASSED                   [ 68%]
+sympy/printing/tests/test_latex.py::test_ElementwiseApplyFunction PASSED [ 68%]
+sympy/printing/tests/test_latex.py::test_ZeroMatrix PASSED               [ 69%]
+sympy/printing/tests/test_latex.py::test_OneMatrix PASSED                [ 69%]
+sympy/printing/tests/test_latex.py::test_Identity PASSED                 [ 70%]
+sympy/printing/tests/test_latex.py::test_latex_DFT_IDFT PASSED           [ 70%]
+sympy/printing/tests/test_latex.py::test_boolean_args_order PASSED       [ 71%]
+sympy/printing/tests/test_latex.py::test_imaginary PASSED                [ 71%]
+sympy/printing/tests/test_latex.py::test_builtins_without_args PASSED    [ 72%]
+sympy/printing/tests/test_latex.py::test_latex_greek_functions PASSED    [ 72%]
+sympy/printing/tests/test_latex.py::test_translate PASSED                [ 73%]
+sympy/printing/tests/test_latex.py::test_other_symbols PASSED            [ 73%]
+sympy/printing/tests/test_latex.py::test_modifiers PASSED                [ 74%]
+sympy/printing/tests/test_latex.py::test_greek_symbols PASSED            [ 74%]
+sympy/printing/tests/test_latex.py::test_fancyset_symbols PASSED         [ 75%]
+sympy/printing/tests/test_latex.py::test_builtin_without_args_mismatched_names XFAIL [ 75%]
+sympy/printing/tests/test_latex.py::test_builtin_no_args PASSED          [ 76%]
+sympy/printing/tests/test_latex.py::test_issue_6853 PASSED               [ 76%]
+sympy/printing/tests/test_latex.py::test_Mul PASSED                      [ 77%]
+sympy/printing/tests/test_latex.py::test_Pow PASSED                      [ 77%]
+sympy/printing/tests/test_latex.py::test_issue_7180 PASSED               [ 78%]
+sympy/printing/tests/test_latex.py::test_issue_8409 PASSED               [ 78%]
+sympy/printing/tests/test_latex.py::test_issue_8470 PASSED               [ 79%]
+sympy/printing/tests/test_latex.py::test_issue_15439 PASSED              [ 79%]
+sympy/printing/tests/test_latex.py::test_issue_2934 PASSED               [ 80%]
+sympy/printing/tests/test_latex.py::test_issue_10489 PASSED              [ 80%]
+sympy/printing/tests/test_latex.py::test_issue_12886 PASSED              [ 81%]
+sympy/printing/tests/test_latex.py::test_issue_13559 PASSED              [ 81%]
+sympy/printing/tests/test_latex.py::test_issue_13651 PASSED              [ 82%]
+sympy/printing/tests/test_latex.py::test_latex_UnevaluatedExpr PASSED    [ 82%]
+sympy/printing/tests/test_latex.py::test_MatrixElement_printing PASSED   [ 83%]
+sympy/printing/tests/test_latex.py::test_MatrixSymbol_printing PASSED    [ 83%]
+sympy/printing/tests/test_latex.py::test_KroneckerProduct_printing PASSED [ 84%]
+sympy/printing/tests/test_latex.py::test_Series_printing PASSED          [ 84%]
+sympy/printing/tests/test_latex.py::test_TransferFunction_printing PASSED [ 85%]
+sympy/printing/tests/test_latex.py::test_Parallel_printing PASSED        [ 85%]
+sympy/printing/tests/test_latex.py::test_TransferFunctionMatrix_printing PASSED [ 86%]
+sympy/printing/tests/test_latex.py::test_Feedback_printing PASSED        [ 86%]
+sympy/printing/tests/test_latex.py::test_MIMOFeedback_printing PASSED    [ 87%]
+sympy/printing/tests/test_latex.py::test_Quaternion_latex_printing PASSED [ 87%]
+sympy/printing/tests/test_latex.py::test_TensorProduct_printing PASSED   [ 88%]
+sympy/printing/tests/test_latex.py::test_WedgeProduct_printing PASSED    [ 88%]
+sympy/printing/tests/test_latex.py::test_issue_9216 PASSED               [ 89%]
+sympy/printing/tests/test_latex.py::test_latex_printer_tensor PASSED     [ 89%]
+sympy/printing/tests/test_latex.py::test_multiline_latex PASSED          [ 90%]
+sympy/printing/tests/test_latex.py::test_issue_15353 PASSED              [ 90%]
+sympy/printing/tests/test_latex.py::test_latex_symbolic_probability PASSED [ 91%]
+sympy/printing/tests/test_latex.py::test_trace PASSED                    [ 91%]
+sympy/printing/tests/test_latex.py::test_print_basic PASSED              [ 92%]
+sympy/printing/tests/test_latex.py::test_MatrixSymbol_bold PASSED        [ 92%]
+sympy/printing/tests/test_latex.py::test_AppliedPermutation PASSED       [ 93%]
+sympy/printing/tests/test_latex.py::test_PermutationMatrix PASSED        [ 93%]
+sympy/printing/tests/test_latex.py::test_issue_21758 PASSED              [ 94%]
+sympy/printing/tests/test_latex.py::test_imaginary_unit PASSED           [ 94%]
+sympy/printing/tests/test_latex.py::test_text_re_im PASSED               [ 95%]
+sympy/printing/tests/test_latex.py::test_latex_diffgeom PASSED           [ 95%]
+sympy/printing/tests/test_latex.py::test_unit_printing PASSED            [ 96%]
+sympy/printing/tests/test_latex.py::test_issue_17092 PASSED              [ 96%]
+sympy/printing/tests/test_latex.py::test_latex_decimal_separator PASSED  [ 97%]
+sympy/printing/tests/test_latex.py::test_Str PASSED                      [ 97%]
+sympy/printing/tests/test_latex.py::test_latex_escape PASSED             [ 98%]
+sympy/printing/tests/test_latex.py::test_emptyPrinter PASSED             [ 98%]
+sympy/printing/tests/test_latex.py::test_global_settings PASSED          [ 99%]
+sympy/printing/tests/test_latex.py::test_pickleable PASSED               [ 99%]
+sympy/printing/tests/test_latex.py::test_printing_latex_array_expressions PASSED [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: 2 warnings
+sympy/printing/tests/test_jscode.py: 1 warning
+sympy/printing/tests/test_latex.py: 33 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================ 198 passed, 2 xfailed, 40 warnings in 11.49s =================
+
+--- stderr ---
+
+
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp6YSjAU\Scripts\python.exe -m pytest sympy/printing/tests/test_mathematica.py sympy/printing/tests/test_numpy.py sympy/printing/tests/test_precedence.py -v --tb=short -p no:cacheprovider  (exit 0, 6s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp6YSjAU\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 55 items
+
+sympy/printing/tests/test_mathematica.py::test_Integer PASSED            [  1%]
+sympy/printing/tests/test_mathematica.py::test_Rational PASSED           [  3%]
+sympy/printing/tests/test_mathematica.py::test_Relational PASSED         [  5%]
+sympy/printing/tests/test_mathematica.py::test_Function PASSED           [  7%]
+sympy/printing/tests/test_mathematica.py::test_special_polynomials PASSED [  9%]
+sympy/printing/tests/test_mathematica.py::test_Pow PASSED                [ 10%]
+sympy/printing/tests/test_mathematica.py::test_Mul PASSED                [ 12%]
+sympy/printing/tests/test_mathematica.py::test_constants PASSED          [ 14%]
+sympy/printing/tests/test_mathematica.py::test_containers PASSED         [ 16%]
+sympy/printing/tests/test_mathematica.py::test_matrices PASSED           [ 18%]
+sympy/printing/tests/test_mathematica.py::test_NDArray PASSED            [ 20%]
+sympy/printing/tests/test_mathematica.py::test_Integral PASSED           [ 21%]
+sympy/printing/tests/test_mathematica.py::test_Derivative PASSED         [ 23%]
+sympy/printing/tests/test_mathematica.py::test_Sum PASSED                [ 25%]
+sympy/printing/tests/test_mathematica.py::test_comment PASSED            [ 27%]
+sympy/printing/tests/test_mathematica.py::test_userfuncs PASSED          [ 29%]
+sympy/printing/tests/test_numpy.py::test_numpy_piecewise_regression PASSED [ 30%]
+sympy/printing/tests/test_numpy.py::test_numpy_logaddexp PASSED          [ 32%]
+sympy/printing/tests/test_numpy.py::test_sum SKIPPED (NumPy not inst...) [ 34%]
+sympy/printing/tests/test_numpy.py::test_multiple_sums SKIPPED (NumP...) [ 36%]
+sympy/printing/tests/test_numpy.py::test_codegen_einsum SKIPPED (Num...) [ 38%]
+sympy/printing/tests/test_numpy.py::test_codegen_extra SKIPPED (NumP...) [ 40%]
+sympy/printing/tests/test_numpy.py::test_relational SKIPPED (NumPy n...) [ 41%]
+sympy/printing/tests/test_numpy.py::test_mod SKIPPED (NumPy not inst...) [ 43%]
+sympy/printing/tests/test_numpy.py::test_pow SKIPPED (NumPy not inst...) [ 45%]
+sympy/printing/tests/test_numpy.py::test_expm1 SKIPPED (NumPy not in...) [ 47%]
+sympy/printing/tests/test_numpy.py::test_log1p SKIPPED (NumPy not in...) [ 49%]
+sympy/printing/tests/test_numpy.py::test_hypot SKIPPED (NumPy not in...) [ 50%]
+sympy/printing/tests/test_numpy.py::test_log10 SKIPPED (NumPy not in...) [ 52%]
+sympy/printing/tests/test_numpy.py::test_exp2 SKIPPED (NumPy not ins...) [ 54%]
+sympy/printing/tests/test_numpy.py::test_log2 SKIPPED (NumPy not ins...) [ 56%]
+sympy/printing/tests/test_numpy.py::test_Sqrt SKIPPED (NumPy not ins...) [ 58%]
+sympy/printing/tests/test_numpy.py::test_sqrt SKIPPED (NumPy not ins...) [ 60%]
+sympy/printing/tests/test_numpy.py::test_matsolve SKIPPED (NumPy not...) [ 61%]
+sympy/printing/tests/test_numpy.py::test_issue_15601 SKIPPED (Numpy ...) [ 63%]
+sympy/printing/tests/test_numpy.py::test_16857 SKIPPED (NumPy not in...) [ 65%]
+sympy/printing/tests/test_numpy.py::test_issue_17006 SKIPPED (NumPy ...) [ 67%]
+sympy/printing/tests/test_numpy.py::test_numpy_array PASSED              [ 69%]
+sympy/printing/tests/test_numpy.py::test_numpy_known_funcs_consts PASSED [ 70%]
+sympy/printing/tests/test_numpy.py::test_scipy_known_funcs_consts PASSED [ 72%]
+sympy/printing/tests/test_numpy.py::test_numpy_print_methods PASSED      [ 74%]
+sympy/printing/tests/test_numpy.py::test_scipy_print_methods PASSED      [ 76%]
+sympy/printing/tests/test_precedence.py::test_Add PASSED                 [ 78%]
+sympy/printing/tests/test_precedence.py::test_Function PASSED            [ 80%]
+sympy/printing/tests/test_precedence.py::test_Derivative PASSED          [ 81%]
+sympy/printing/tests/test_precedence.py::test_Integral PASSED            [ 83%]
+sympy/printing/tests/test_precedence.py::test_Mul PASSED                 [ 85%]
+sympy/printing/tests/test_precedence.py::test_Number PASSED              [ 87%]
+sympy/printing/tests/test_precedence.py::test_Order PASSED               [ 89%]
+sympy/printing/tests/test_precedence.py::test_Pow PASSED                 [ 90%]
+sympy/printing/tests/test_precedence.py::test_Product PASSED             [ 92%]
+sympy/printing/tests/test_precedence.py::test_Relational PASSED          [ 94%]
+sympy/printing/tests/test_precedence.py::test_Sum PASSED                 [ 96%]
+sympy/printing/tests/test_precedence.py::test_Symbol PASSED              [ 98%]
+sympy/printing/tests/test_precedence.py::test_And_Or PASSED              [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+sympy/printing/tests/test_mathematica.py: 16 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================= 36 passed, 19 skipped, 20 warnings in 1.71s =================
+
+--- stderr ---
+
+
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp6YSjAU\Scripts\python.exe -m pytest sympy/printing/tests/test_pycode.py sympy/printing/tests/test_rcode.py sympy/printing/tests/test_repr.py -v --tb=short -p no:cacheprovider  (exit 0, 7s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp6YSjAU\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 100 items
+
+sympy/printing/tests/test_pycode.py::test_PythonCodePrinter PASSED       [  1%]
+sympy/printing/tests/test_pycode.py::test_PythonCodePrinter_standard PASSED [  2%]
+sympy/printing/tests/test_pycode.py::test_MpmathPrinter PASSED           [  3%]
+sympy/printing/tests/test_pycode.py::test_NumPyPrinter PASSED            [  4%]
+sympy/printing/tests/test_pycode.py::test_issue_18770 SKIPPED (numpy...) [  5%]
+sympy/printing/tests/test_pycode.py::test_SciPyPrinter PASSED            [  6%]
+sympy/printing/tests/test_pycode.py::test_pycode_reserved_words PASSED   [  7%]
+sympy/printing/tests/test_pycode.py::test_issue_20762 SKIPPED (antlr...) [  8%]
+sympy/printing/tests/test_pycode.py::test_sqrt PASSED                    [  9%]
+sympy/printing/tests/test_pycode.py::test_frac PASSED                    [ 10%]
+sympy/printing/tests/test_pycode.py::test_printmethod PASSED             [ 11%]
+sympy/printing/tests/test_pycode.py::test_codegen_ast_nodes PASSED       [ 12%]
+sympy/printing/tests/test_pycode.py::test_issue_14283 PASSED             [ 13%]
+sympy/printing/tests/test_pycode.py::test_NumPyPrinter_print_seq PASSED  [ 14%]
+sympy/printing/tests/test_pycode.py::test_issue_16535_16536 PASSED       [ 15%]
+sympy/printing/tests/test_pycode.py::test_Integral PASSED                [ 16%]
+sympy/printing/tests/test_pycode.py::test_fresnel_integrals PASSED       [ 17%]
+sympy/printing/tests/test_pycode.py::test_beta PASSED                    [ 18%]
+sympy/printing/tests/test_pycode.py::test_airy PASSED                    [ 19%]
+sympy/printing/tests/test_pycode.py::test_airy_prime PASSED              [ 20%]
+sympy/printing/tests/test_pycode.py::test_numerical_accuracy_functions PASSED [ 21%]
+sympy/printing/tests/test_rcode.py::test_printmethod PASSED              [ 22%]
+sympy/printing/tests/test_rcode.py::test_rcode_sqrt PASSED               [ 23%]
+sympy/printing/tests/test_rcode.py::test_rcode_Pow PASSED                [ 24%]
+sympy/printing/tests/test_rcode.py::test_rcode_Max PASSED                [ 25%]
+sympy/printing/tests/test_rcode.py::test_rcode_constants_mathh PASSED    [ 26%]
+sympy/printing/tests/test_rcode.py::test_rcode_constants_other PASSED    [ 27%]
+sympy/printing/tests/test_rcode.py::test_rcode_Rational PASSED           [ 28%]
+sympy/printing/tests/test_rcode.py::test_rcode_Integer PASSED            [ 29%]
+sympy/printing/tests/test_rcode.py::test_rcode_functions PASSED          [ 30%]
+sympy/printing/tests/test_rcode.py::test_rcode_inline_function PASSED    [ 31%]
+sympy/printing/tests/test_rcode.py::test_rcode_exceptions PASSED         [ 32%]
+sympy/printing/tests/test_rcode.py::test_rcode_user_functions PASSED     [ 33%]
+sympy/printing/tests/test_rcode.py::test_rcode_boolean PASSED            [ 34%]
+sympy/printing/tests/test_rcode.py::test_rcode_Relational PASSED         [ 35%]
+sympy/printing/tests/test_rcode.py::test_rcode_Piecewise PASSED          [ 36%]
+sympy/printing/tests/test_rcode.py::test_rcode_sinc PASSED               [ 37%]
+sympy/printing/tests/test_rcode.py::test_rcode_Piecewise_deep PASSED     [ 38%]
+sympy/printing/tests/test_rcode.py::test_rcode_ITE PASSED                [ 39%]
+sympy/printing/tests/test_rcode.py::test_rcode_settings PASSED           [ 40%]
+sympy/printing/tests/test_rcode.py::test_rcode_Indexed PASSED            [ 41%]
+sympy/printing/tests/test_rcode.py::test_rcode_Indexed_without_looking_for_contraction PASSED [ 42%]
+sympy/printing/tests/test_rcode.py::test_rcode_loops_matrix_vector PASSED [ 43%]
+sympy/printing/tests/test_rcode.py::test_dummy_loops PASSED              [ 44%]
+sympy/printing/tests/test_rcode.py::test_rcode_loops_add PASSED          [ 45%]
+sympy/printing/tests/test_rcode.py::test_rcode_loops_multiple_contractions PASSED [ 46%]
+sympy/printing/tests/test_rcode.py::test_rcode_loops_addfactor PASSED    [ 47%]
+sympy/printing/tests/test_rcode.py::test_rcode_loops_multiple_terms PASSED [ 48%]
+sympy/printing/tests/test_rcode.py::test_dereference_printing PASSED     [ 49%]
+sympy/printing/tests/test_rcode.py::test_Matrix_printing PASSED          [ 50%]
+sympy/printing/tests/test_rcode.py::test_rcode_sgn PASSED                [ 51%]
+sympy/printing/tests/test_rcode.py::test_rcode_Assignment PASSED         [ 52%]
+sympy/printing/tests/test_rcode.py::test_rcode_For PASSED                [ 53%]
+sympy/printing/tests/test_rcode.py::test_MatrixElement_printing PASSED   [ 54%]
+sympy/printing/tests/test_repr.py::test_printmethod PASSED               [ 55%]
+sympy/printing/tests/test_repr.py::test_Add PASSED                       [ 56%]
+sympy/printing/tests/test_repr.py::test_more_than_255_args_issue_10259 PASSED [ 57%]
+sympy/printing/tests/test_repr.py::test_Function PASSED                  [ 58%]
+sympy/printing/tests/test_repr.py::test_Heaviside PASSED                 [ 59%]
+sympy/printing/tests/test_repr.py::test_Geometry PASSED                  [ 60%]
+sympy/printing/tests/test_repr.py::test_Singletons PASSED                [ 61%]
+sympy/printing/tests/test_repr.py::test_Integer PASSED                   [ 62%]
+sympy/printing/tests/test_repr.py::test_list PASSED                      [ 63%]
+sympy/printing/tests/test_repr.py::test_Matrix PASSED                    [ 64%]
+sympy/printing/tests/test_repr.py::test_empty_Matrix PASSED              [ 65%]
+sympy/printing/tests/test_repr.py::test_Rational PASSED                  [ 66%]
+sympy/printing/tests/test_repr.py::test_Float PASSED                     [ 67%]
+sympy/printing/tests/test_repr.py::test_Symbol PASSED                    [ 68%]
+sympy/printing/tests/test_repr.py::test_Symbol_two_assumptions PASSED    [ 69%]
+sympy/printing/tests/test_repr.py::test_Symbol_no_special_commutative_treatment PASSED [ 70%]
+sympy/printing/tests/test_repr.py::test_Wild PASSED                      [ 71%]
+sympy/printing/tests/test_repr.py::test_Dummy PASSED                     [ 72%]
+sympy/printing/tests/test_repr.py::test_Dummy_assumption PASSED          [ 73%]
+sympy/printing/tests/test_repr.py::test_Dummy_from_Symbol PASSED         [ 74%]
+sympy/printing/tests/test_repr.py::test_tuple PASSED                     [ 75%]
+sympy/printing/tests/test_repr.py::test_WildFunction PASSED              [ 76%]
+sympy/printing/tests/test_repr.py::test_settins PASSED                   [ 77%]
+sympy/printing/tests/test_repr.py::test_Mul PASSED                       [ 78%]
+sympy/printing/tests/test_repr.py::test_AlgebraicNumber PASSED           [ 79%]
+sympy/printing/tests/test_repr.py::test_PolyRing PASSED                  [ 80%]
+sympy/printing/tests/test_repr.py::test_FracField PASSED                 [ 81%]
+sympy/printing/tests/test_repr.py::test_PolyElement PASSED               [ 82%]
+sympy/printing/tests/test_repr.py::test_FracElement PASSED               [ 83%]
+sympy/printing/tests/test_repr.py::test_FractionField PASSED             [ 84%]
+sympy/printing/tests/test_repr.py::test_PolynomialRingBase PASSED        [ 85%]
+sympy/printing/tests/test_repr.py::test_DMP PASSED                       [ 86%]
+sympy/printing/tests/test_repr.py::test_FiniteExtension PASSED           [ 87%]
+sympy/printing/tests/test_repr.py::test_ExtensionElement PASSED          [ 88%]
+sympy/printing/tests/test_repr.py::test_BooleanAtom PASSED               [ 89%]
+sympy/printing/tests/test_repr.py::test_Integers PASSED                  [ 90%]
+sympy/printing/tests/test_repr.py::test_Naturals PASSED                  [ 91%]
+sympy/printing/tests/test_repr.py::test_Naturals0 PASSED                 [ 92%]
+sympy/printing/tests/test_repr.py::test_Reals PASSED                     [ 93%]
+sympy/printing/tests/test_repr.py::test_matrix_expressions PASSED        [ 94%]
+sympy/printing/tests/test_repr.py::test_Cycle PASSED                     [ 95%]
+sympy/printing/tests/test_repr.py::test_Permutation PASSED               [ 96%]
+sympy/printing/tests/test_repr.py::test_dict PASSED                      [ 97%]
+sympy/printing/tests/test_repr.py::test_set PASSED                       [ 98%]
+sympy/printing/tests/test_repr.py::test_Predicate PASSED                 [ 99%]
+sympy/printing/tests/test_repr.py::test_AppliedPredicate PASSED          [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================== 98 passed, 2 skipped, 4 warnings in 2.18s ==================
+
+--- stderr ---
+
+
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp6YSjAU\Scripts\python.exe -m pytest sympy/printing/tests/test_rust.py sympy/printing/tests/test_str.py -v --tb=short -p no:cacheprovider  (exit 0, 10s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmp6YSjAU\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 133 items
+
+sympy/printing/tests/test_rust.py::test_Integer PASSED                   [  0%]
+sympy/printing/tests/test_rust.py::test_Relational PASSED                [  1%]
+sympy/printing/tests/test_rust.py::test_Rational PASSED                  [  2%]
+sympy/printing/tests/test_rust.py::test_basic_ops PASSED                 [  3%]
+sympy/printing/tests/test_rust.py::test_printmethod PASSED               [  3%]
+sympy/printing/tests/test_rust.py::test_Functions PASSED                 [  4%]
+sympy/printing/tests/test_rust.py::test_Pow PASSED                       [  5%]
+sympy/printing/tests/test_rust.py::test_constants PASSED                 [  6%]
+sympy/printing/tests/test_rust.py::test_constants_other PASSED           [  6%]
+sympy/printing/tests/test_rust.py::test_boolean PASSED                   [  7%]
+sympy/printing/tests/test_rust.py::test_Piecewise PASSED                 [  8%]
+sympy/printing/tests/test_rust.py::test_dereference_printing PASSED      [  9%]
+sympy/printing/tests/test_rust.py::test_sign PASSED                      [  9%]
+sympy/printing/tests/test_rust.py::test_reserved_words PASSED            [ 10%]
+sympy/printing/tests/test_rust.py::test_ITE PASSED                       [ 11%]
+sympy/printing/tests/test_rust.py::test_Indexed PASSED                   [ 12%]
+sympy/printing/tests/test_rust.py::test_dummy_loops PASSED               [ 12%]
+sympy/printing/tests/test_rust.py::test_loops PASSED                     [ 13%]
+sympy/printing/tests/test_rust.py::test_loops_multiple_contractions PASSED [ 14%]
+sympy/printing/tests/test_rust.py::test_loops_addfactor PASSED           [ 15%]
+sympy/printing/tests/test_rust.py::test_settings PASSED                  [ 15%]
+sympy/printing/tests/test_rust.py::test_inline_function PASSED           [ 16%]
+sympy/printing/tests/test_rust.py::test_user_functions PASSED            [ 17%]
+sympy/printing/tests/test_rust.py::test_matrix PASSED                    [ 18%]
+sympy/printing/tests/test_rust.py::test_sparse_matrix PASSED             [ 18%]
+sympy/printing/tests/test_str.py::test_printmethod PASSED                [ 19%]
+sympy/printing/tests/test_str.py::test_Abs PASSED                        [ 20%]
+sympy/printing/tests/test_str.py::test_Add PASSED                        [ 21%]
+sympy/printing/tests/test_str.py::test_Catalan PASSED                    [ 21%]
+sympy/printing/tests/test_str.py::test_ComplexInfinity PASSED            [ 22%]
+sympy/printing/tests/test_str.py::test_Derivative PASSED                 [ 23%]
+sympy/printing/tests/test_str.py::test_dict PASSED                       [ 24%]
+sympy/printing/tests/test_str.py::test_Dict PASSED                       [ 24%]
+sympy/printing/tests/test_str.py::test_Dummy PASSED                      [ 25%]
+sympy/printing/tests/test_str.py::test_EulerGamma PASSED                 [ 26%]
+sympy/printing/tests/test_str.py::test_Exp PASSED                        [ 27%]
+sympy/printing/tests/test_str.py::test_factorial PASSED                  [ 27%]
+sympy/printing/tests/test_str.py::test_Function PASSED                   [ 28%]
+sympy/printing/tests/test_str.py::test_Geometry PASSED                   [ 29%]
+sympy/printing/tests/test_str.py::test_GoldenRatio PASSED                [ 30%]
+sympy/printing/tests/test_str.py::test_Heaviside PASSED                  [ 30%]
+sympy/printing/tests/test_str.py::test_TribonacciConstant PASSED         [ 31%]
+sympy/printing/tests/test_str.py::test_ImaginaryUnit PASSED              [ 32%]
+sympy/printing/tests/test_str.py::test_Infinity PASSED                   [ 33%]
+sympy/printing/tests/test_str.py::test_Integer PASSED                    [ 33%]
+sympy/printing/tests/test_str.py::test_Integral PASSED                   [ 34%]
+sympy/printing/tests/test_str.py::test_Interval PASSED                   [ 35%]
+sympy/printing/tests/test_str.py::test_AccumBounds PASSED                [ 36%]
+sympy/printing/tests/test_str.py::test_Lambda PASSED                     [ 36%]
+sympy/printing/tests/test_str.py::test_Limit PASSED                      [ 37%]
+sympy/printing/tests/test_str.py::test_list PASSED                       [ 38%]
+sympy/printing/tests/test_str.py::test_Matrix_str PASSED                 [ 39%]
+sympy/printing/tests/test_str.py::test_Mul PASSED                        [ 39%]
+sympy/printing/tests/test_str.py::test_NaN PASSED                        [ 40%]
+sympy/printing/tests/test_str.py::test_NegativeInfinity PASSED           [ 41%]
+sympy/printing/tests/test_str.py::test_Order PASSED                      [ 42%]
+sympy/printing/tests/test_str.py::test_Permutation_Cycle PASSED          [ 42%]
+sympy/printing/tests/test_str.py::test_Pi PASSED                         [ 43%]
+sympy/printing/tests/test_str.py::test_Poly PASSED                       [ 44%]
+sympy/printing/tests/test_str.py::test_PolyRing PASSED                   [ 45%]
+sympy/printing/tests/test_str.py::test_FracField PASSED                  [ 45%]
+sympy/printing/tests/test_str.py::test_PolyElement PASSED                [ 46%]
+sympy/printing/tests/test_str.py::test_FracElement PASSED                [ 47%]
+sympy/printing/tests/test_str.py::test_GaussianInteger PASSED            [ 48%]
+sympy/printing/tests/test_str.py::test_GaussianRational PASSED           [ 48%]
+sympy/printing/tests/test_str.py::test_Pow PASSED                        [ 49%]
+sympy/printing/tests/test_str.py::test_sqrt PASSED                       [ 50%]
+sympy/printing/tests/test_str.py::test_Rational PASSED                   [ 51%]
+sympy/printing/tests/test_str.py::test_Float PASSED                      [ 51%]
+sympy/printing/tests/test_str.py::test_Relational PASSED                 [ 52%]
+sympy/printing/tests/test_str.py::test_AppliedBinaryRelation PASSED      [ 53%]
+sympy/printing/tests/test_str.py::test_CRootOf PASSED                    [ 54%]
+sympy/printing/tests/test_str.py::test_RootSum PASSED                    [ 54%]
+sympy/printing/tests/test_str.py::test_GroebnerBasis PASSED              [ 55%]
+sympy/printing/tests/test_str.py::test_set PASSED                        [ 56%]
+sympy/printing/tests/test_str.py::test_SparseMatrix PASSED               [ 57%]
+sympy/printing/tests/test_str.py::test_Sum PASSED                        [ 57%]
+sympy/printing/tests/test_str.py::test_Symbol PASSED                     [ 58%]
+sympy/printing/tests/test_str.py::test_tuple PASSED                      [ 59%]
+sympy/printing/tests/test_str.py::test_Series_str PASSED                 [ 60%]
+sympy/printing/tests/test_str.py::test_MIMOSeries_str PASSED             [ 60%]
+sympy/printing/tests/test_str.py::test_TransferFunction_str PASSED       [ 61%]
+sympy/printing/tests/test_str.py::test_Parallel_str PASSED               [ 62%]
+sympy/printing/tests/test_str.py::test_MIMOParallel_str PASSED           [ 63%]
+sympy/printing/tests/test_str.py::test_Feedback_str PASSED               [ 63%]
+sympy/printing/tests/test_str.py::test_MIMOFeedback_str PASSED           [ 64%]
+sympy/printing/tests/test_str.py::test_TransferFunctionMatrix_str PASSED [ 65%]
+sympy/printing/tests/test_str.py::test_Quaternion_str_printer PASSED     [ 66%]
+sympy/printing/tests/test_str.py::test_Quantity_str PASSED               [ 66%]
+sympy/printing/tests/test_str.py::test_wild_str PASSED                   [ 67%]
+sympy/printing/tests/test_str.py::test_wild_matchpy PASSED               [ 68%]
+sympy/printing/tests/test_str.py::test_zeta PASSED                       [ 69%]
+sympy/printing/tests/test_str.py::test_issue_3101 PASSED                 [ 69%]
+sympy/printing/tests/test_str.py::test_issue_3103 PASSED                 [ 70%]
+sympy/printing/tests/test_str.py::test_issue_4021 PASSED                 [ 71%]
+sympy/printing/tests/test_str.py::test_sstrrepr PASSED                   [ 72%]
+sympy/printing/tests/test_str.py::test_infinity PASSED                   [ 72%]
+sympy/printing/tests/test_str.py::test_full_prec PASSED                  [ 73%]
+sympy/printing/tests/test_str.py::test_noncommutative PASSED             [ 74%]
+sympy/printing/tests/test_str.py::test_empty_printer PASSED              [ 75%]
+sympy/printing/tests/test_str.py::test_settings PASSED                   [ 75%]
+sympy/printing/tests/test_str.py::test_RandomDomain PASSED               [ 76%]
+sympy/printing/tests/test_str.py::test_FiniteSet PASSED                  [ 77%]
+sympy/printing/tests/test_str.py::test_Partition PASSED                  [ 78%]
+sympy/printing/tests/test_str.py::test_UniversalSet PASSED               [ 78%]
+sympy/printing/tests/test_str.py::test_PrettyPoly PASSED                 [ 79%]
+sympy/printing/tests/test_str.py::test_categories PASSED                 [ 80%]
+sympy/printing/tests/test_str.py::test_Tr PASSED                         [ 81%]
+sympy/printing/tests/test_str.py::test_issue_6387 PASSED                 [ 81%]
+sympy/printing/tests/test_str.py::test_MatMul_MatAdd PASSED              [ 82%]
+sympy/printing/tests/test_str.py::test_MatrixSlice PASSED                [ 83%]
+sympy/printing/tests/test_str.py::test_true_false PASSED                 [ 84%]
+sympy/printing/tests/test_str.py::test_Equivalent PASSED                 [ 84%]
+sympy/printing/tests/test_str.py::test_Xor PASSED                        [ 85%]
+sympy/printing/tests/test_str.py::test_Complement PASSED                 [ 86%]
+sympy/printing/tests/test_str.py::test_SymmetricDifference PASSED        [ 87%]
+sympy/printing/tests/test_str.py::test_UnevaluatedExpr PASSED            [ 87%]
+sympy/printing/tests/test_str.py::test_MatrixElement_printing PASSED     [ 88%]
+sympy/printing/tests/test_str.py::test_MatrixSymbol_printing PASSED      [ 89%]
+sympy/printing/tests/test_str.py::test_MatrixExpressions PASSED          [ 90%]
+sympy/printing/tests/test_str.py::test_Subs_printing PASSED              [ 90%]
+sympy/printing/tests/test_str.py::test_issue_15716 PASSED                [ 91%]
+sympy/printing/tests/test_str.py::test_str_special_matrices PASSED       [ 92%]
+sympy/printing/tests/test_str.py::test_issue_14567 PASSED                [ 93%]
+sympy/printing/tests/test_str.py::test_issue_21823 PASSED                [ 93%]
+sympy/printing/tests/test_str.py::test_issue_22689 PASSED                [ 94%]
+sympy/printing/tests/test_str.py::test_issue_21119_21460 PASSED          [ 95%]
+sympy/printing/tests/test_str.py::test_Str PASSED                        [ 96%]
+sympy/printing/tests/test_str.py::test_diffgeom PASSED                   [ 96%]
+sympy/printing/tests/test_str.py::test_NDimArray PASSED                  [ 97%]
+sympy/printing/tests/test_str.py::test_Predicate PASSED                  [ 98%]
+sympy/printing/tests/test_str.py::test_AppliedPredicate PASSED           [ 99%]
+sympy/printing/tests/test_str.py::test_printing_str_array_expressions PASSED [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: 2 warnings
+sympy/printing/tests/test_str.py: 21 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+====================== 133 passed, 27 warnings in 5.35s =======================
+
+--- stderr ---

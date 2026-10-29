@@ -1,0 +1,11 @@
+{
+  "cell": "g3c1live:sympy__sympy-19495:T2A-T",
+  "condition": "T2A-T",
+  "policy": null,
+  "session_id": null,
+  "trace": [],
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact reports FAIL_TO_PASS 1/1 and scoped PASS_TO_PASS 8/8, but no individual check names or rendered outcomes are shown, so I cannot verify that the declared acceptance check actually exercises the issue scenario (ConditionSet over an ImageSet with subs) or that the scoped regression set covers the modified _eval_subs behavior. The patch also changes an existing test expectation (ConditionSet(n, n < x, Interval(-oo, 0)).subs(x, p) from EmptySet to Interval(-oo, 0)), which is a semantic change in subs behavior that the summary counts alone do not let me adjudicate. No decisive applicable failure is visible, so REJECT is not warranted, but the presentation is not a fully readable green result either.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Rendered per-check outcomes (names and pass/fail) for the FAIL_TO_PASS and scoped PASS_TO_PASS checks, sufficient to confirm the acceptance check targets the ConditionSet/ImageSet subs issue and that the changed test_subs_CondSet expectation is consistent with the intended semantics.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "fresh_state_served": null,
+  "error": null
+}

@@ -1,0 +1,54 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch adds __slots__ = () to the Printable class, restoring the slots chain and preventing Symbol instances from having a __dict__, which matches the intended behavior from version 1.6.2. The added tests explicitly check that Symbol and Dummy instances do not have __dict__, confirming the fix. The provided test artifact is institutionally attested, fully linked to this patch and base commit, fresh, and covers the full declared acceptance set with no failures or regressions. This demonstrates the issue is resolved and no regressions are introduced.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+  "cell": "g3b3:sympy__sympy-20590:T2A-T",
+  "condition": "T2A-T",
+  "cost_usd": 0.000887,
+  "evidence_session": null,
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-20590",
+  "instance_id": "sympy__sympy-20590",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.014036
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 134,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 1681,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch adds __slots__ = () to the Printable class, restoring the slots chain and preventing Symbol instances from having a __dict__, which matches the intended behavior from version 1.6.2. The added tests explicitly check that Symbol and Dummy instances do not have __dict__, confirming the fix. The provided test artifact is institutionally attested, fully linked to this patch and base commit, fresh, and covers the full declared acceptance set with no failures or regressions. This demonstrates the issue is resolved and no regressions are introduced.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_d91a79096ebadc9c",
+  "tokens_in": 1681,
+  "tokens_out": 134,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.47
+}

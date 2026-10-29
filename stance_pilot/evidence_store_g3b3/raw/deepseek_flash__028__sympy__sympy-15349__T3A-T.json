@@ -1,0 +1,187 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "The symptom log confirms the issue reproduces pre-patch and is resolved post-patch, matching the acceptance test outcome.\n\n```json\n{\"decision\":\"ACCEPT\",\"reason\":\"Artifact art_1dc2b9e38ff27115 is authentically signed and linked to exactly this patch (patch_sha256 0c5e4bd3... matches) and base commit 768da1c6...; freshness is TRUE (run tree equals the independently re-derived canonical tree 3fb6acb6...); coverage is complete (declared F2P 1/1 and scoped P2P 3/3 all executed, no missing or undeclared ids). Outcomes show the acceptance check test_quaternion_conversions PASSED and all three scoped regression checks PASSED with no regressed or preexisting-bad ids. The symptom log independently corroborates the fix: the x-axis rotation probe fails pre-patch (m12 sign wrong) and passes post-patch. The patch corrects m12 to 2*s*(q.c*q.d - q.b*q.a), which is the standard rotation-matrix entry, resolving the reported issue without introducing scoped regressions.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}\n```",
+  "cell": "g3b3:sympy__sympy-15349:T3A-T",
+  "condition": "T3A-T",
+  "cost_usd": 0.003546,
+  "evidence_session": "f2b5480f85c57ac39ba9beda",
+  "evidence_tier": "A",
+  "id": "qwen3_30b_instruct2507_500:sympy__sympy-15349",
+  "instance_id": "sympy__sympy-15349",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 3,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010375,
+    0.010784,
+    0.010894
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 138,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 2206,
+      "raw_content": "I'll verify the artifact's linkage, freshness, coverage, and claim consistency before deciding.",
+      "served_model": "deepseek-flash",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_00_oEUBX6hdNHy2mn8R8raI4347",
+          "name": "get_test_artifact"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_01_usihN2DjQnoraEgGrdz50083",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_02_l1zgYUkcXDvxKQOCp2Cy3827",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_03_6MvQ2WxNwSdOLvPfVqWo6303",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{\"claim\": \"Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass.\"}",
+          "id": "call_04_TSrzQfQOb9HArgqQrv4p9981",
+          "name": "check_claim_consistency"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 90,
+      "finish_reason": "tool_calls",
+      "model_call": 2,
+      "prompt_tokens": 3628,
+      "raw_content": "All checks are intact: linkage matches this patch/commit, freshness is TRUE (run tree equals canonical tree), coverage is complete (1/1 F2P, 3/3 P2P executed), and no failures or regressions were recorded.",
+      "served_model": "deepseek-flash",
+      "tool_calls": [
+        {
+          "arguments": "{\"name\": \"symptom\"}",
+          "id": "call_00_3EVRvu4ogv4nDyRB7l975502",
+          "name": "get_run_log"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 8,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 267,
+      "finish_reason": "stop",
+      "model_call": 3,
+      "prompt_tokens": 4005,
+      "raw_content": "The symptom log confirms the issue reproduces pre-patch and is resolved post-patch, matching the acceptance test outcome.\n\n```json\n{\"decision\":\"ACCEPT\",\"reason\":\"Artifact art_1dc2b9e38ff27115 is authentically signed and linked to exactly this patch (patch_sha256 0c5e4bd3... matches) and base commit 768da1c6...; freshness is TRUE (run tree equals the independently re-derived canonical tree 3fb6acb6...); coverage is complete (declared F2P 1/1 and scoped P2P 3/3 all executed, no missing or undeclared ids). Outcomes show the acceptance check test_quaternion_conversions PASSED and all three scoped regression checks PASSED with no regressed or preexisting-bad ids. The symptom log independently corroborates the fix: the x-axis rotation probe fails pre-patch (m12 sign wrong) and passes post-patch. The patch corrects m12 to 2*s*(q.c*q.d - q.b*q.a), which is the standard rotation-matrix entry, resolving the reported issue without introducing scoped regressions.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}\n```",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 10,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_1dc2b9e38ff27115",
+  "tokens_in": 9839,
+  "tokens_out": 495,
+  "tool_calls": 6,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_1dc2b9e38ff27115\", \"base_commit\": \"768da1c6f6ec907524b8ebbf6bf818c92b56101b\", \"fail_to_pass\": {\"test_quaternion_conversions\": \"PASSED\"}, \"finished_at\": \"2026-10-25T18:27:56+00:00\", \"instance_id\": \"sympy__sympy-15349\", \"log_digests\": {\"f2p\": \"c7926af08e3793c26942d5570a571e38a398d29f2535ed1d016682573d64f0b9\", \"p2p\": \"c7926af08e3793c26942d5570a571e38a398d29f2535ed1d016682573d64f0b9\", \"p2p_baseline\": \"b15d6ccb5bfe4cb769d0448da69b2bf414aa56c01c6d2e147fab93b0d4fa4061\", \"symptom\": \"7f1438920efffb5d3fccfb202a24cc45e3e87a77c4cffdb30a420e128a7804db\"}, \"pass_to_pass_baseline\": {\"test_quaternion_complex_real_addition\": \"PASSED\", \"test_quaternion_construction\": \"PASSED\", \"test_quaternion_functions\": \"PASSED\"}, \"pass_to_pass_scoped\": {\"test_quaternion_complex_real_addition\": \"PASSED\", \"test_quaternion_construction\": \"PASSED\", \"test_quaternion_functions\": \"PASSED\"}, \"patch_sha256\": \"0c5e4bd34ad14d3257c45280e90a17cce534e97661765e36a85d8f86715167c9\", \"repo\": \"sympy/sympy\", \"runner\": \"pytest/vendored-git  py=3.9.25  host=windows-local\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/algebras/tests/test_quaternion.py\"], \"p2p_total_in_dataset\": 3, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-25T18:27:43+00:00\", \"summary\": {\"f2p_failed_ids\": [], \"f2p_passed\": 1, \"f2p_total\": 1, \"p2p_passed\": 3, \"p2p_preexisting_bad_ids\": [], \"p2p_regressed_ids\": [], \"p2p_total\": 3}, \"test_patch_sha256\": \"55b665a1494aece4976006e2bfe7df6d857e14a4dba4cb071b71a9f0c309f0fe\"}, \"authentic_signature\": true, \"evidence_tier\": \"A\"}",
+      "tool": "get_test_artifact",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"768da1c6f6ec907524b8ebbf6bf818c92b56101b\", \"record_patch_sha256\": \"0c5e4bd34ad14d3257c45280e90a17cce534e97661765e36a85d8f86715167c9\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"3fb6acb6e8d82ad02672e1b15bf8d85476e7c40e\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"3fb6acb6e8d82ad02672e1b15bf8d85476e7c40e\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:27:43+00:00\", \"attestation_built_at\": \"2026-10-25T18:27:57+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 3, \"executed\": 3, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {
+        "claim": "Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass."
+      },
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"executed acceptance/regression checks show no failure\", \"failed_acceptance_checks\": 0, \"regression_checks\": 0, \"executed_checks\": 4}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    },
+    {
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: x-axis rotation matrix\n Matrix([[1, 0, 0], [0, cos(x), sin(x)], [0, sin(x), cos(x)]]) \n!=\n Matrix([[1, 0, 0], [0, cos(x), -sin(x)], [0, sin(x), cos(x)]])\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: rotation matrix sign correct\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\n",
+      "tool": "get_run_log",
+      "turn": 1
+    }
+  ],
+  "wall_s": 4.48
+}

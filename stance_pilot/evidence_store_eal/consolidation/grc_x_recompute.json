@@ -1,0 +1,508 @@
+{
+  "cross_validation": {
+    "against": "eal_v21x_live_analysis.json",
+    "exact_match_all": true,
+    "mismatches": []
+  },
+  "document": "GroundedReview consolidation: independent X recomputation",
+  "models": {
+    "deepseek-flash": {
+      "effects": {
+        "dAB_interaction": {
+          "cell": {
+            "ci_hi": 0.1818,
+            "ci_lo": -0.1176,
+            "estimand": "cell",
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.0455
+          },
+          "issue": {
+            "ci_hi": 0.1333,
+            "ci_lo": -0.1167,
+            "estimand": "issue",
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.0167
+          }
+        },
+        "dA_assistance": {
+          "cell": {
+            "ci_hi": 0.1304,
+            "ci_lo": 0.0,
+            "estimand": "cell",
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.0682
+          },
+          "issue": {
+            "ci_hi": 0.1167,
+            "ci_lo": 0.0,
+            "estimand": "issue",
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.0583
+          }
+        },
+        "dB_salience": {
+          "cell": {
+            "ci_hi": 0.1,
+            "ci_lo": -0.0526,
+            "estimand": "cell",
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.0227
+          },
+          "issue": {
+            "ci_hi": 0.0917,
+            "ci_lo": -0.0333,
+            "estimand": "issue",
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.025
+          }
+        }
+      },
+      "error_families": {
+        "over_abstention": {
+          "count": 12,
+          "rate": 0.1364
+        },
+        "unsupported_acceptance": {
+          "count": 0,
+          "rate": 0.0
+        },
+        "unsupported_rejection": {
+          "count": 5,
+          "rate": 0.0568
+        }
+      },
+      "per_condition": {
+        "a0b0": {
+          "DA": {
+            "cell": {
+              "ci_hi": 0.95,
+              "ci_lo": 0.5909,
+              "estimand": "cell",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.7727
+            },
+            "issue": {
+              "ci_hi": 0.95,
+              "ci_lo": 0.6333,
+              "estimand": "issue",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.8
+            }
+          },
+          "confusion": {
+            "AMBIGUOUS": 0,
+            "API_ERROR": 0,
+            "INVALID": 0,
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 5,
+                "NEED_EVIDENCE": 0,
+                "REJECT": 0
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 1,
+                "NEED_EVIDENCE": 8,
+                "REJECT": 2
+              },
+              "REJECT": {
+                "ACCEPT": 1,
+                "NEED_EVIDENCE": 1,
+                "REJECT": 4
+              }
+            }
+          },
+          "n": 22
+        },
+        "a0b1": {
+          "DA": {
+            "cell": {
+              "ci_hi": 1.0,
+              "ci_lo": 0.56,
+              "estimand": "cell",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.7727
+            },
+            "issue": {
+              "ci_hi": 1.0,
+              "ci_lo": 0.6333,
+              "estimand": "issue",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.8167
+            }
+          },
+          "confusion": {
+            "AMBIGUOUS": 0,
+            "API_ERROR": 0,
+            "INVALID": 0,
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 5,
+                "NEED_EVIDENCE": 0,
+                "REJECT": 0
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 1,
+                "NEED_EVIDENCE": 8,
+                "REJECT": 2
+              },
+              "REJECT": {
+                "ACCEPT": 1,
+                "NEED_EVIDENCE": 1,
+                "REJECT": 4
+              }
+            }
+          },
+          "n": 22
+        },
+        "a1b0": {
+          "DA": {
+            "cell": {
+              "ci_hi": 1.0,
+              "ci_lo": 0.6316,
+              "estimand": "cell",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.8182
+            },
+            "issue": {
+              "ci_hi": 1.0,
+              "ci_lo": 0.6833,
+              "estimand": "issue",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.85
+            }
+          },
+          "confusion": {
+            "AMBIGUOUS": 0,
+            "API_ERROR": 0,
+            "INVALID": 0,
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 5,
+                "NEED_EVIDENCE": 0,
+                "REJECT": 0
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 2,
+                "NEED_EVIDENCE": 9,
+                "REJECT": 2
+              },
+              "REJECT": {
+                "ACCEPT": 0,
+                "NEED_EVIDENCE": 0,
+                "REJECT": 4
+              }
+            }
+          },
+          "n": 22
+        },
+        "a1b1": {
+          "DA": {
+            "cell": {
+              "ci_hi": 1.0,
+              "ci_lo": 0.7368,
+              "estimand": "cell",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.8636
+            },
+            "issue": {
+              "ci_hi": 1.0,
+              "ci_lo": 0.7667,
+              "estimand": "issue",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.8833
+            }
+          },
+          "confusion": {
+            "AMBIGUOUS": 0,
+            "API_ERROR": 0,
+            "INVALID": 0,
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 6,
+                "NEED_EVIDENCE": 0,
+                "REJECT": 0
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 0,
+                "NEED_EVIDENCE": 9,
+                "REJECT": 2
+              },
+              "REJECT": {
+                "ACCEPT": 1,
+                "NEED_EVIDENCE": 0,
+                "REJECT": 4
+              }
+            }
+          },
+          "n": 22
+        }
+      }
+    },
+    "gpt-4.1-mini": {
+      "effects": {
+        "dAB_interaction": {
+          "cell": {
+            "ci_hi": 0.1538,
+            "ci_lo": 0.0,
+            "estimand": "cell",
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.0455
+          },
+          "issue": {
+            "ci_hi": 0.15,
+            "ci_lo": 0.0,
+            "estimand": "issue",
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.05
+          }
+        },
+        "dA_assistance": {
+          "cell": {
+            "ci_hi": 0.2059,
+            "ci_lo": 0.0,
+            "estimand": "cell",
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.0682
+          },
+          "issue": {
+            "ci_hi": 0.325,
+            "ci_lo": 0.0,
+            "estimand": "issue",
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.125
+          }
+        },
+        "dB_salience": {
+          "cell": {
+            "ci_hi": 0.2308,
+            "ci_lo": 0.0,
+            "estimand": "cell",
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.0682
+          },
+          "issue": {
+            "ci_hi": 0.225,
+            "ci_lo": 0.0,
+            "estimand": "issue",
+            "n_cells": 22,
+            "n_clusters": 10,
+            "point": 0.075
+          }
+        }
+      },
+      "error_families": {
+        "over_abstention": {
+          "count": 2,
+          "rate": 0.0227
+        },
+        "unsupported_acceptance": {
+          "count": 34,
+          "rate": 0.3864
+        },
+        "unsupported_rejection": {
+          "count": 3,
+          "rate": 0.0341
+        }
+      },
+      "per_condition": {
+        "a0b0": {
+          "DA": {
+            "cell": {
+              "ci_hi": 0.6538,
+              "ci_lo": 0.2778,
+              "estimand": "cell",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.5
+            },
+            "issue": {
+              "ci_hi": 0.65,
+              "ci_lo": 0.2,
+              "estimand": "issue",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.425
+            }
+          },
+          "confusion": {
+            "AMBIGUOUS": 0,
+            "API_ERROR": 0,
+            "INVALID": 0,
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 7,
+                "NEED_EVIDENCE": 8,
+                "REJECT": 1
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 0,
+                "NEED_EVIDENCE": 0,
+                "REJECT": 1
+              },
+              "REJECT": {
+                "ACCEPT": 0,
+                "NEED_EVIDENCE": 1,
+                "REJECT": 4
+              }
+            }
+          },
+          "n": 22
+        },
+        "a0b1": {
+          "DA": {
+            "cell": {
+              "ci_hi": 0.6774,
+              "ci_lo": 0.3529,
+              "estimand": "cell",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.5455
+            },
+            "issue": {
+              "ci_hi": 0.675,
+              "ci_lo": 0.2583,
+              "estimand": "issue",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.475
+            }
+          },
+          "confusion": {
+            "AMBIGUOUS": 0,
+            "API_ERROR": 0,
+            "INVALID": 0,
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 7,
+                "NEED_EVIDENCE": 8,
+                "REJECT": 1
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 0,
+                "NEED_EVIDENCE": 0,
+                "REJECT": 0
+              },
+              "REJECT": {
+                "ACCEPT": 0,
+                "NEED_EVIDENCE": 1,
+                "REJECT": 5
+              }
+            }
+          },
+          "n": 22
+        },
+        "a1b0": {
+          "DA": {
+            "cell": {
+              "ci_hi": 0.7037,
+              "ci_lo": 0.3333,
+              "estimand": "cell",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.5455
+            },
+            "issue": {
+              "ci_hi": 0.7417,
+              "ci_lo": 0.2917,
+              "estimand": "issue",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.525
+            }
+          },
+          "confusion": {
+            "AMBIGUOUS": 0,
+            "API_ERROR": 0,
+            "INVALID": 0,
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 7,
+                "NEED_EVIDENCE": 9,
+                "REJECT": 0
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 0,
+                "NEED_EVIDENCE": 0,
+                "REJECT": 1
+              },
+              "REJECT": {
+                "ACCEPT": 0,
+                "NEED_EVIDENCE": 0,
+                "REJECT": 5
+              }
+            }
+          },
+          "n": 22
+        },
+        "a1b1": {
+          "DA": {
+            "cell": {
+              "ci_hi": 0.7778,
+              "ci_lo": 0.45,
+              "estimand": "cell",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.6364
+            },
+            "issue": {
+              "ci_hi": 0.825,
+              "ci_lo": 0.4,
+              "estimand": "issue",
+              "n_cells": 22,
+              "n_clusters": 10,
+              "point": 0.625
+            }
+          },
+          "confusion": {
+            "AMBIGUOUS": 0,
+            "API_ERROR": 0,
+            "INVALID": 0,
+            "matrix": {
+              "ACCEPT": {
+                "ACCEPT": 7,
+                "NEED_EVIDENCE": 7,
+                "REJECT": 0
+              },
+              "NEED_EVIDENCE": {
+                "ACCEPT": 0,
+                "NEED_EVIDENCE": 1,
+                "REJECT": 0
+              },
+              "REJECT": {
+                "ACCEPT": 0,
+                "NEED_EVIDENCE": 1,
+                "REJECT": 6
+              }
+            }
+          },
+          "n": 22
+        }
+      }
+    }
+  },
+  "spec": {
+    "n_boot": 10000,
+    "primary": "issue",
+    "seed": 7,
+    "unit": "instance_id"
+  }
+}

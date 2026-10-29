@@ -1,0 +1,2927 @@
+{
+  "document": "Gate 3-B.2 task 7: real local g3b2 HTTP server cross-check on a throwaway store copy (zero API).",
+  "protocol_version": "g3b2-protocol-v1",
+  "n_cells": 50,
+  "n_checks": 470,
+  "n_checks_pass": 470,
+  "n_errors": 0,
+  "errors": [],
+  "cells": [
+    {
+      "cell": "sympy__sympy-13615:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-13615:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"bae6a0a051b2936d46f89207\", \"artifact_id\": \"art_ceb9c275161834be\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-13615:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"7e31239df54c417b7dbb94ac\", \"artifact_id\": \"art_ceb9c275161834be\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-13615:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_institutional_warranty_header",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_token",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-13615:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"0f0629eb9d2d164303d7f41f\", \"artifact_id\": \"art_ceb9c275161834be\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-13974:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-13974:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"1df4f799058bcf855a3fd87d\", \"artifact_id\": \"art_42af95edfb29747c\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-13974:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"4f0371d01873efd7b92ff801\", \"artifact_id\": \"art_42af95edfb29747c\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-13974:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_institutional_warranty_header",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_token",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-13974:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"54d684875ad02aaf0cfa18e4\", \"artifact_id\": \"art_42af95edfb29747c\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-15349:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-15349:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"57c842006f8de92924ff528c\", \"artifact_id\": \"art_1dc2b9e38ff27115\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-15349:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"a1b2d2f61b2849aa9f877ce9\", \"artifact_id\": \"art_1dc2b9e38ff27115\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-15349:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_institutional_warranty_header",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_token",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-15349:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"aed138e3cb09165e6b5671c8\", \"artifact_id\": \"art_1dc2b9e38ff27115\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-17318:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-17318:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"f5e665c8a5adbd72e8908faf\", \"artifact_id\": \"art_851f5a80d20947a9\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-17318:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"989c295834ed52fd3bc1cb26\", \"artifact_id\": \"art_851f5a80d20947a9\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-17318:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_institutional_warranty_header",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_token",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-17318:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"babd603d799979b4a13423e0\", \"artifact_id\": \"art_851f5a80d20947a9\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-17630:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-17630:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"04fc6e47edd161d55364ac17\", \"artifact_id\": \"art_ce28321699c17b17\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-17630:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"8f0965beb82d34adc2eb1aa3\", \"artifact_id\": \"art_ce28321699c17b17\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-17630:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_institutional_warranty_header",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_token",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-17630:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"667d0cc69f6ce2f28d7a8420\", \"artifact_id\": \"art_ce28321699c17b17\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-19783:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-19783:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"c3a5bc80443dbb3efcb471d5\", \"artifact_id\": \"art_e5fa3e3506649e6b\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-19783:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"565213a61858e9fbf49648c8\", \"artifact_id\": \"art_e5fa3e3506649e6b\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-19783:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_institutional_warranty_header",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_token",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-19783:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"d4cc0b3fc219990efcaa360f\", \"artifact_id\": \"art_e5fa3e3506649e6b\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-20590:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-20590:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"f8a70a17aa966e79fba4c26f\", \"artifact_id\": \"art_d91a79096ebadc9c\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-20590:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"1f21785e49e5c1d04d51b4fc\", \"artifact_id\": \"art_d91a79096ebadc9c\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-20590:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_institutional_warranty_header",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_token",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-20590:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"4525266dca836e97b0cb3491\", \"artifact_id\": \"art_d91a79096ebadc9c\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-21847:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-21847:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"454a632348ed0bf2bf220f26\", \"artifact_id\": \"art_ec15a96822c8d6ff\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-21847:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"7f210191011b0cae1dce9db3\", \"artifact_id\": \"art_ec15a96822c8d6ff\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-21847:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_institutional_warranty_header",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_token",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-21847:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"250ac1961e1feb708db0c45f\", \"artifact_id\": \"art_ec15a96822c8d6ff\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-24213:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-24213:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"e0919ba00d0851d0a9a81ae5\", \"artifact_id\": \"art_5711762ccfb7ae48\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-24213:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"7edb8b268ee92a2c42df20b7\", \"artifact_id\": \"art_5711762ccfb7ae48\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-24213:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_institutional_warranty_header",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_token",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-24213:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"61cd7f1e984aded509450998\", \"artifact_id\": \"art_5711762ccfb7ae48\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-24443:T2D-T",
+      "tier": "D",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2D_no_outcome_leak",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2D_symptom_rendered",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-24443:T3D-Strict",
+      "tier": "D",
+      "policy": "strict",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"15a2b6072f3d634e58322f6f\", \"artifact_id\": \"art_1a45f9af545345d7\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "strict_f2p_403",
+          "pass": true,
+          "detail": "st=403"
+        },
+        {
+          "check": "strict_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-24443:T3D-Escalate",
+      "tier": "D",
+      "policy": "escalate",
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"450720b774aa2611c953ae01\", \"artifact_id\": \"art_1a45f9af545345d7\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "escalate_f2p_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_f2p_with_reason_200_banner",
+          "pass": true,
+          "detail": "st=200 flag=1"
+        },
+        {
+          "check": "escalate_consistency_no_reason_400",
+          "pass": true,
+          "detail": "st=400"
+        },
+        {
+          "check": "escalate_consistency_with_reason_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-24443:T2A-T",
+      "tier": "A",
+      "active_tools": false,
+      "checks": [
+        {
+          "check": "T2A_outcomes_rendered",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_institutional_warranty_header",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_stale_linkage_phrase",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "T2A_no_verdict_token",
+          "pass": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "cell": "sympy__sympy-24443:T3A-T",
+      "tier": "A",
+      "policy": null,
+      "active_tools": true,
+      "freshness": {
+        "state": "TRUE",
+        "fresh": true,
+        "run_tree_match": true,
+        "authoritative_tree_source": "independent_git_restage_write_tree"
+      },
+      "checks": [
+        {
+          "check": "session_open_201",
+          "pass": true,
+          "detail": "st=201 {\"session_id\": \"ce3a6a7ee50daa944f3ea576\", \"artifact_id\": \"art_1a45f9af545345d7\", \"evidence_tier\": \""
+        },
+        {
+          "check": "linkage_200_linked",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "freshness_state_TRUE",
+          "pass": true,
+          "detail": "state=TRUE"
+        },
+        {
+          "check": "freshness_true_bool",
+          "pass": true,
+          "detail": "fresh=True"
+        },
+        {
+          "check": "freshness_run_tree_match_true",
+          "pass": true,
+          "detail": "match=True"
+        },
+        {
+          "check": "freshness_authoritative_restage",
+          "pass": true,
+          "detail": "independent_git_restage_write_tree"
+        },
+        {
+          "check": "freshness_not_false_negative",
+          "pass": true,
+          "detail": "absent record.run_tree must not force false"
+        },
+        {
+          "check": "coverage_200_complete",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "coverage_no_outcomes",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "symptom_log_200",
+          "pass": true,
+          "detail": "st=200"
+        },
+        {
+          "check": "t3a_f2p_200_no_escalation_flag",
+          "pass": true,
+          "detail": "st=200 flag=0"
+        },
+        {
+          "check": "t3a_consistency_200",
+          "pass": true,
+          "detail": "st=200"
+        }
+      ]
+    }
+  ],
+  "gold_authority": {
+    "gold_tier": "PROVISIONAL",
+    "annotators": 1,
+    "annotator2": "NOT_OBTAINED",
+    "note": "Single-annotator gold; no second adjudicator obtained. The G3-B.2 protocol repair does not raise gold authority. Until a second annotator adjudicates, all condition/oracle gold and all derived model comparisons remain PROVISIONAL."
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The test artifact is linked to this patch and fresh for the current commit tree, and the declared acceptance and regression tests were fully executed. The author statement is consistent with the evidence that the issue symptom no longer reproduces. However, maintainer acceptance test outcomes are withheld and not available under the strict policy, so there is no trustworthy evidence that the acceptance tests actually passed or that no regressions were introduced. Therefore, there is insufficient evidence to ACCEPT or REJECT the patch at this time.\",\"evidence_mismatch\":false,\"missing_evidence\":\"maintainer acceptance test outcomes\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "cell": "g3c1live:sympy__sympy-19637:T3D-Strict",
+  "condition": "T3D-Strict",
+  "cost_usd": 0.00188,
+  "evidence_session": "b5f9a30306642304ffb9ab72",
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-19637",
+  "instance_id": "sympy__sympy-19637",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 2,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": "strict",
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.013845,
+    0.014121
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 72,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 1657,
+      "raw_content": "",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_DNtHiYBt21veWDflIfAsNZC1",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_EP6vubZRrDNstn9Xc0XtuqvC",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_H8TGlhRDadIhkEG3IUDkdPZD",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_uQsDFpWErhwrS94Sah7EPbLz",
+          "name": "check_claim_consistency"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 135,
+      "finish_reason": "stop",
+      "model_call": 2,
+      "prompt_tokens": 2215,
+      "raw_content": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The test artifact is linked to this patch and fresh for the current commit tree, and the declared acceptance and regression tests were fully executed. The author statement is consistent with the evidence that the issue symptom no longer reproduces. However, maintainer acceptance test outcomes are withheld and not available under the strict policy, so there is no trustworthy evidence that the acceptance tests actually passed or that no regressions were introduced. Therefore, there is insufficient evidence to ACCEPT or REJECT the patch at this time.\",\"evidence_mismatch\":false,\"missing_evidence\":\"maintainer acceptance test outcomes\",\"evidence_gap\":\"coverage_incomplete\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 7,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_22542096dfadeb88",
+  "tokens_in": 3872,
+  "tokens_out": 207,
+  "tool_calls": 4,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef\", \"record_patch_sha256\": \"b390b959e90cbcbc769629d4055aac6662564970cb11b5d58e2a251725321e76\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"30c590486f7145f872816c58a3de930a62b81492\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"30c590486f7145f872816c58a3de930a62b81492\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:15:24+00:00\", \"attestation_built_at\": \"2026-10-28T10:16:05+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 40, \"executed\": 40, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    }
+  ],
+  "wall_s": 2.97
+}

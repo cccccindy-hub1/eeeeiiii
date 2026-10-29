@@ -1,0 +1,137 @@
+{
+  "api_calls_made": 0,
+  "arbitration": "third senior human; never an LLM or the pipeline author; all three labels + reason retained",
+  "blind_seed": 418307,
+  "blinding_limitation": "blinding of IDENTITY is PARTIAL: folder names and the mapping are blinded, but the VERBATIM candidate patch / problem statement occasionally quotes the upstream issue number in code comments or prose (e.g. \"issue #20590\"). The evidence is not rewritten because altering the patch/log under review would corrupt the adjudication target. Per-packet self-reference files are listed in packet_manifest; the limitation is reported and a fully de-identified presentation (hash-only ids in a copied-verbatim appendix) is a future hardening option, not applied here.",
+  "deliverables": [
+    "00_annotator_protocol.md",
+    "annotator2_labels.csv",
+    "packets/P01..P10 (blinded)",
+    "SEALED_packet_mapping.json (held by study team)"
+  ],
+  "design_version": "groundedreview-gate3c0-zero-api-design-freeze-v1",
+  "document": "Gate G3-C.0 task 8: ship-ready second-human-annotator blind gold-review package",
+  "gold_authority_after_completion": "only raised above PROVISIONAL after real human labels + adjudication are returned",
+  "gold_flip_sensitivity": "recompute P1/P2 and every headline rate under annotator1/annotator2/adjudicated labels; LOO + bounds; robustness requires sign stability",
+  "n_packets": 10,
+  "packet_manifest": [
+    {
+      "artifact_id_used_for_logs": "art_1a45f9af545345d7",
+      "files_referencing_any_cohort_issue_number": [],
+      "files_self_referencing_this_issue_number": [],
+      "identity_blinding": "PARTIAL — folder/mapping are blinded but verbatim evidence may quote the upstream issue number",
+      "n_files": 9,
+      "packet_id": "P01",
+      "packet_sha256_of_concatenated_filenames_and_bytes": "68c74abdb3555bbe90bbfd727c23a1725f0c6f494fdc7eca37448f27f120f7d3"
+    },
+    {
+      "artifact_id_used_for_logs": "art_ceb9c275161834be",
+      "files_referencing_any_cohort_issue_number": [],
+      "files_self_referencing_this_issue_number": [],
+      "identity_blinding": "PARTIAL — folder/mapping are blinded but verbatim evidence may quote the upstream issue number",
+      "n_files": 9,
+      "packet_id": "P02",
+      "packet_sha256_of_concatenated_filenames_and_bytes": "2c86ca61fd3cb6fd17d49c6dc65b9c3172fc3b2e05d2fb69b874465264102e5c"
+    },
+    {
+      "artifact_id_used_for_logs": "art_e5fa3e3506649e6b",
+      "files_referencing_any_cohort_issue_number": [],
+      "files_self_referencing_this_issue_number": [],
+      "identity_blinding": "PARTIAL — folder/mapping are blinded but verbatim evidence may quote the upstream issue number",
+      "n_files": 9,
+      "packet_id": "P03",
+      "packet_sha256_of_concatenated_filenames_and_bytes": "b0d5d646d67c827d19475bc15f67cded4283f08f5ae9c0db3da13bca074a7aea"
+    },
+    {
+      "artifact_id_used_for_logs": "art_d91a79096ebadc9c",
+      "files_referencing_any_cohort_issue_number": [
+        "02_candidate_patch.diff"
+      ],
+      "files_self_referencing_this_issue_number": [
+        "02_candidate_patch.diff"
+      ],
+      "identity_blinding": "PARTIAL — folder/mapping are blinded but verbatim evidence may quote the upstream issue number",
+      "n_files": 9,
+      "packet_id": "P04",
+      "packet_sha256_of_concatenated_filenames_and_bytes": "67bd1eb1ead09ce0ff955f402130f12381ad0041b13798bf34d3fd04f5cb8572"
+    },
+    {
+      "artifact_id_used_for_logs": "art_ce28321699c17b17",
+      "files_referencing_any_cohort_issue_number": [
+        "02_candidate_patch.diff"
+      ],
+      "files_self_referencing_this_issue_number": [
+        "02_candidate_patch.diff"
+      ],
+      "identity_blinding": "PARTIAL — folder/mapping are blinded but verbatim evidence may quote the upstream issue number",
+      "n_files": 9,
+      "packet_id": "P05",
+      "packet_sha256_of_concatenated_filenames_and_bytes": "02beffd2874ffbc870da2b603aecb334baf63a0c5b4c6780a5ec3b45a415f9cf"
+    },
+    {
+      "artifact_id_used_for_logs": "art_ec15a96822c8d6ff",
+      "files_referencing_any_cohort_issue_number": [
+        "02_candidate_patch.diff"
+      ],
+      "files_self_referencing_this_issue_number": [
+        "02_candidate_patch.diff"
+      ],
+      "identity_blinding": "PARTIAL — folder/mapping are blinded but verbatim evidence may quote the upstream issue number",
+      "n_files": 9,
+      "packet_id": "P06",
+      "packet_sha256_of_concatenated_filenames_and_bytes": "3a962573f11b317c42d46525f25a20cf734a6e77341ee548eacb6261c37c7099"
+    },
+    {
+      "artifact_id_used_for_logs": "art_1dc2b9e38ff27115",
+      "files_referencing_any_cohort_issue_number": [],
+      "files_self_referencing_this_issue_number": [],
+      "identity_blinding": "PARTIAL — folder/mapping are blinded but verbatim evidence may quote the upstream issue number",
+      "n_files": 9,
+      "packet_id": "P07",
+      "packet_sha256_of_concatenated_filenames_and_bytes": "e8502b2901706660a521ba2928b05dfb9c65eba88343569cfecb2453aec457ae"
+    },
+    {
+      "artifact_id_used_for_logs": "art_5711762ccfb7ae48",
+      "files_referencing_any_cohort_issue_number": [],
+      "files_self_referencing_this_issue_number": [],
+      "identity_blinding": "PARTIAL — folder/mapping are blinded but verbatim evidence may quote the upstream issue number",
+      "n_files": 9,
+      "packet_id": "P08",
+      "packet_sha256_of_concatenated_filenames_and_bytes": "d07fbf4115b4849a137f6986b23fe3b0cb0da1ab0117d9f7de3c4b3f7c20f6e5"
+    },
+    {
+      "artifact_id_used_for_logs": "art_851f5a80d20947a9",
+      "files_referencing_any_cohort_issue_number": [],
+      "files_self_referencing_this_issue_number": [],
+      "identity_blinding": "PARTIAL — folder/mapping are blinded but verbatim evidence may quote the upstream issue number",
+      "n_files": 9,
+      "packet_id": "P09",
+      "packet_sha256_of_concatenated_filenames_and_bytes": "0a1f3d764fb6844d82d30abcc329947813d4517ea377657ec267bb12e56ebcb6"
+    },
+    {
+      "artifact_id_used_for_logs": "art_42af95edfb29747c",
+      "files_referencing_any_cohort_issue_number": [
+        "02_candidate_patch.diff"
+      ],
+      "files_self_referencing_this_issue_number": [
+        "02_candidate_patch.diff"
+      ],
+      "identity_blinding": "PARTIAL — folder/mapping are blinded but verbatim evidence may quote the upstream issue number",
+      "n_files": 9,
+      "packet_id": "P10",
+      "packet_sha256_of_concatenated_filenames_and_bytes": "298035c3695f75d6471cd7f76d8fcd423d8dd4390e18bee074aa394738090138"
+    }
+  ],
+  "rubric": [
+    "ACCEPT: every declared FAIL_TO_PASS test transitions fail(at base) -> pass(after patch) AND no declared in-scope PASS_TO_PASS test regresses (passed/xfail/skipped at base, bad after patch). SCOPED acceptability: only the attested scoped P2P subset was executed.",
+    "REJECT: the frozen CI shows at least one decisive, APPLICABLE failure: a declared F2P still fails after the patch, OR a scoped P2P regression is present. Distinguish genuine failures from environment/pre-existing fails (bad at base too -> not a regression) and from xfail/flaky/self-added-test traps; justify applicability in the reason field.",
+    "NEEDS_REVIEW: the packet is genuinely undecidable from the supplied evidence (ambiguous applicability, uninterpretable log, suspected flake that cannot be resolved). Do not force ACCEPT/REJECT."
+  ],
+  "status": "PENDING — no independent human labels obtained",
+  "what_is_excluded_from_packets": [
+    "issue number / upstream id in the blinded FOLDER names and the sealed mapping (held separately)",
+    "all model verdicts and reasoning",
+    "the existing annotator-1 gold",
+    "coverage/freshness summaries and any analysis output"
+  ]
+}

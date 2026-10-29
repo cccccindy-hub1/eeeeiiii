@@ -1,0 +1,14 @@
+### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+FAIL: Dagger(A)*Identity = Dagger(A)*I != Dagger(A)
+
+--- stderr ---
+
+
+### POST candidate patch
+$ python probe.py  (exit 0)
+--- stdout ---
+OK: Dagger(A)*Identity = Dagger(A)
+
+--- stderr ---

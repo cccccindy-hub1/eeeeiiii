@@ -1,0 +1,144 @@
+{
+  "actual_new_issues_materialised": 0,
+  "analysis_locked": {
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 418231,
+    "multiplicity": "Holm across 2 co-primary"
+  },
+  "api_calls_made": 0,
+  "availability_contrast_locked": {
+    "associational_until_orthogonal_2x2": true
+  },
+  "budget_estimates_only": {
+    "executed": false,
+    "observed_real_mean_per_cell_usd": 0.003035,
+    "three_phases": [
+      {
+        "cells": 112,
+        "expected_usd": 0.34,
+        "hard_cap_usd": 2.02,
+        "phase": "P0 quality pilot (mock + zero-API live g",
+        "worst_case_usd": 1.76
+      },
+      {
+        "cells": 240,
+        "expected_usd": 0.73,
+        "hard_cap_usd": 4.32,
+        "phase": "B1 first external validation (>=20 new i",
+        "worst_case_usd": 3.76
+      },
+      {
+        "cells": 200,
+        "expected_usd": 0.61,
+        "hard_cap_usd": 3.61,
+        "phase": "B2 expansion to balanced 40-issue design",
+        "worst_case_usd": 3.14
+      }
+    ]
+  },
+  "decision_acknowledged": "G3-B.4 audit accepted; Gate 3-C paid expansion NOT approved; only G3-C.0 design freeze and data-quality preparation approved. New API budget $0.",
+  "deliverables": [
+    "design/g3c0_preregistration_endpoints_sampling_stats.json",
+    "projection/g3c0_projection_v2_spec_and_test.json",
+    "projection/g3c0_noninterference_audit_protocol.json",
+    "human_annotation/ (protocol, CSV template, 10 blind packets, sealed mapping)",
+    "budget/g3c0_execution_budget_and_engineering.json",
+    "freeze/g3c0_task1_g3b4_freeze_reverification.json",
+    "g3c0_design_report.{json,md}",
+    "freeze/g3c0_design_freeze_manifest.json"
+  ],
+  "design_version": "groundedreview-gate3c0-zero-api-design-freeze-v1",
+  "document": "GroundedReview Gate G3-C.0 — zero-API study-design freeze and protocol-quality preparation",
+  "endpoints_locked": {
+    "P1": "commitment_rate = n(verdict in {ACCEPT,REJECT}) / n(condition-gold=NEED issues)",
+    "P2": "unsupported_acceptance_rate = n(ACCEPT) / n(oracle-gold=REJECT, sufficient visible evidence)",
+    "labels_kept_separate": true
+  },
+  "git_commits_made": 0,
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold carried unchanged from Gate 3-A.1; no second independent human adjudicator has been obtained as of Gate G3-C.0. All Gate 3-C endpoint definitions are pre-registered against the FUTURE adjudicated gold; PROVISIONAL-gold re-analyses are secondary only. The AI preparing this design is NOT an independent human annotator or arbiter."
+  },
+  "human_annotation": {
+    "n_packets": 10,
+    "n_packets_with_partial_identity_self_reference": 4,
+    "status": "PENDING — no independent human labels obtained"
+  },
+  "projection_v2_summary": {
+    "frozen_code_modified": false,
+    "single_additional_removed_field": [
+      "pass_to_pass_baseline"
+    ],
+    "static_block_identical_all_issues": true,
+    "v1_tier1_tier2": {
+      "tier1": 0,
+      "tier2": 10
+    },
+    "v2_tier1_tier2": {
+      "tier1": 0,
+      "tier2": 0
+    }
+  },
+  "sampling_locked": {
+    "new_reject_floor": 20,
+    "sampling_seed": 418237
+  },
+  "spend_usd": 0,
+  "stopping_statement": "G3-C.0 complete. Gate 3-C paid expansion, real model calls, Gemini, R2 and new paid models remain UN-executed; awaiting separate written approval (G3-C.1). No git commit made.",
+  "task11_paper_claim_boundaries": {
+    "central_research_question": "Can code-review agents distinguish evidence INTEGRITY (trusted provenance, complete execution) from evidence SUFFICIENCY (enough to accept the patch)? This is the organising question; it remains a hypothesis under external validation, not a conclusion.",
+    "cross_cutting_constraints": [
+      "all gold-dependent statements are PROVISIONAL until the second human annotator + third-human arbitration + flip sensitivity are complete",
+      "every G3-B -> G3-B.3 and static -> active availability contrast is labelled ASSOCIATIONAL unless the orthogonal 2x2 is run",
+      "disclose the tier-2 minimisation gap and that projection v2 removes it without affecting any other channel",
+      "report the CompositeGuard first-run $0 failure and re-freeze, not only the final 100/100",
+      "state the central question as a hypothesis pending independent generalisation in Gate 3-C"
+    ],
+    "results_claims": [
+      {
+        "allowed_wording": "the originally observed 9/10 sufficient-evidence abstention was substantially driven by protocol/instrument construct problems (G3-B stale freshness and coverage/trust handling); after the G3-B.3 corrective replication the paired need-any rate moved 9/10 -> 1/10 (issue-cluster bootstrap 95% CI for the paired difference 0.5-1.0). Report ONLY as an associational before/after contrast.",
+        "boundary": "DeepSeek earlier 9/10 over-abstention",
+        "forbidden_wording": "do NOT call the old 9/10 robust evidence of a stable DeepSeek intrinsic over-abstention defect."
+      },
+      {
+        "allowed_wording": "an operationally defined OBSERVATION: under a condition gold of NEED_EVIDENCE, GPT returned ACCEPT on 7/10 cells with 0 unsupported REJECT and 3 correct abstentions; all 7 structurally upgraded non-decisive linked/fresh/coverage/symptom evidence into acceptance; a single AI, rule-based partial-blind coding labelled 7/7 C3. n=10, PROVISIONAL gold, Wilson95 ~[0.40,0.89].",
+        "boundary": "GPT T3D-Strict 7/10 unsupported ACCEPT",
+        "forbidden_wording": "do NOT claim the active-query -> over-commitment mechanism is demonstrated/causal (freshness and trust changed with activeness across versions); do NOT present AI coding as independent human adjudication."
+      },
+      {
+        "allowed_wording": "the failure to use a visible decisive failure persists as specific cases (SymPy-17318 T2A) but only n=3 independent REJECT issues exist, so report cases, not a population rate.",
+        "boundary": "GPT sufficient-evidence false ACCEPT (P2)",
+        "forbidden_wording": "do NOT report a GPT false-accept RATE from n=3 negatives, nor pool P1 and P2 into one hallucination rate."
+      },
+      {
+        "allowed_wording": "post-repair the only sufficient-evidence over-abstention is SymPy-13974 (n=1), a concrete evidence-mis-read/policy error, not generalisable.",
+        "boundary": "residual DeepSeek abstention",
+        "forbidden_wording": "do NOT generalise from the single 13974 case to a model-wide tendency."
+      }
+    ]
+  },
+  "task1_freeze_reverification": {
+    "all_ok": true,
+    "g3b4_canonical_digest_matches": true,
+    "g3b4_n_files_reverified": 16
+  },
+  "task_index": {
+    "10_engineering": "unified drift/length/capability/randomness/reason/truncation/budget checks",
+    "1_freeze_g3b4": true,
+    "2_projection_v2": [
+      "pass_to_pass_baseline"
+    ],
+    "3_endpoints_P1_P2": [
+      "P1",
+      "P2"
+    ],
+    "4_sampling": ">=20 NEW independent REJECT; natural rate + enrichment reported",
+    "5_stats": "issue-level Wilson/exact + McNemar + issue-cluster bootstrap; no pseudo-replication",
+    "6_availability": "paired; orthogonal 2x2 required for causal; otherwise ASSOCIATIONAL",
+    "7_noninterference": "deny/allow lists + no-auto-sufficiency + machine gate (v2 tier1=0/tier2=0)",
+    "8_human_packet": "PENDING — no independent human labels obtained",
+    "9_execution_budget": "P0/B1/B2 estimates; not executed"
+  }
+}

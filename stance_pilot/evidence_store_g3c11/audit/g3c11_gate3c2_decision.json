@@ -1,0 +1,156 @@
+{
+  "additional_real_restricted_evidence_needed": "Undecided (PC4); cannot be answered without the approved sampling amendment and the R-TRAP sourcing decision.",
+  "approved_scope": {
+    "ai_self_labelling_as_annotator2": false,
+    "frozen_raw_tests_rewritten": false,
+    "gate_3c2_execution": false,
+    "gemini_or_r2": false,
+    "git_commit_or_add": false,
+    "historical_gold_modified": false,
+    "modify_historical_frozen_artifacts": false,
+    "new_data_collection": false,
+    "new_issues": 0,
+    "real_model_calls": 0,
+    "spend_usd": 0.0
+  },
+  "blocking_precondition_ids": [
+    "PC1",
+    "PC2",
+    "PC3"
+  ],
+  "design_version": "groundedreview-gate3c11-zero-api-audit-freeze-v1",
+  "document": "G3-C.1.1 updated Gate G3-C.2 Go/No-Go decision package (task 12)",
+  "evidence_integrity_inputs": {
+    "funnel_matches_frozen_selection": true,
+    "issue_recomputation_all_match": true,
+    "priority_classification_verdict": null,
+    "priority_rule_predates_first_outcome": null,
+    "verification_overall": true
+  },
+  "expected_outcome_if_all_pcs_met": "A later, SEPARATELY written approval may release G3-C.2; nothing in this gate executes it.",
+  "independent_gold_status": {
+    "ai_labels_produced": 0,
+    "all_gold_tier": "PROVISIONAL (18/18)",
+    "annotator2_obtained": false,
+    "packets": 18
+  },
+  "preconditions": [
+    {
+      "blocks_release": true,
+      "current_state": "NOT MET - annotator2 NOT_OBTAINED, 18/18 PROVISIONAL/PENDING, FR1/FR2 PENDING, zero AI labels allowed.",
+      "id": "PC1_independent_gold_review",
+      "requirement": "A real, independent annotator-2 labels all 18 blind packets (10 G3-A + 8 G3-C.1) and a third senior human adjudicates disagreements; only then is a new Gold Adjudication Version produced and gold raised above PROVISIONAL. The same independent human must also answer the two approver-mandated focused reviews: FR1 sympy-19495 probe (instrument-only fix vs post-hoc oracle redefinition) and FR2 (14248 vs 15875 share one uniform disjunctive REJECT standard)."
+    },
+    {
+      "blocks_release": true,
+      "current_state": "PARTIALLY MET - rule predates first outcome by ~28 min (pre-data, not post-outcome adaptive) and replay is byte-identical, but the order was not fixed verbatim in G3-C.0; counterfactual F2P-first would move 29 strata and pick 4 different issues.",
+      "id": "PC2_sampling_rule_trustworthiness",
+      "requirement": "Either (a) amend the pre-registration in writing to lock the TRAP>P2P>F2P multi-member tie/connection order as the operative rule, disclosing it is a pilot-stage pre-data operational refinement rather than verbatim G3-C.0 text; or (b) re-run the design under the literal G3-C.0 enumeration."
+    },
+    {
+      "blocks_release": true,
+      "current_state": "NOT MET - de-duplicated 47-issue pool contains only 2 R-TRAP; shortfall 4. Requires additional eligible candidate material, which needs data collection this gate does not authorise.",
+      "id": "PC3_R_TRAP_sampleability",
+      "requirement": "Secure >=6 R-TRAP independent negatives per the pre-registered floor (the 17318/17630/19783 anchors are held-out and do not count toward NEW issues)."
+    },
+    {
+      "blocks_release": false,
+      "current_state": "OPEN - pilot provides 8 structural NEED cells per restricted condition with no model numerators; P1 is not estimable yet.",
+      "id": "PC4_restricted_evidence_samples",
+      "requirement": "Decide whether additional REAL restricted (tier-D) evidence samples are needed for P1 beyond what the current pool can supply, and pre-register the fraction/filter/stratum sizes before any call."
+    },
+    {
+      "blocks_release": false,
+      "current_state": "FROZEN FROM G3-C.0 - figures are planning estimates only and must be refreshed from real pilot spend.",
+      "id": "PC5_budget_and_stop_rules",
+      "requirement": "Recompute mean/max cell cost from the pilot before B1, re-approve hard pre-call caps, and keep the frozen stopping rules (budget guard, drift, non-interference, abort-investigate, no expansion without written approval)."
+    },
+    {
+      "blocks_release": false,
+      "current_state": "DISCLOSED IN AUDIT - does not alter frozen gold but must be carried into the G3-C.2 coverage disclosure.",
+      "id": "PC6_instrument_blind_spots",
+      "requirement": "Resolve/record the undeclared collateral failing nodes found in executed scope files (15875: 2 candidate-era undeclared; 19346: 1 baseline-unmapped) so scoped P2P coverage claims are explicit, and keep full-dataset P2P non-execution disclosed."
+    }
+  ],
+  "projected_scale_if_approved": {
+    "caveat": "planning figures, not commitments; recompute pre-B1",
+    "minimum_usable_n": 20,
+    "new_reject_floor": 20,
+    "phases_planning_only": {
+      "B1 first external validation (>=20 new independent REJECT issues)": {
+        "estimated_cells": 240,
+        "expected_cost_usd": 0.73,
+        "hard_pre_call_cap_usd": 4.32,
+        "issues": 20,
+        "worst_case_usd": 3.76
+      },
+      "B2 expansion to balanced 40-issue design": {
+        "estimated_cells": 200,
+        "expected_cost_usd": 0.61,
+        "hard_pre_call_cap_usd": 3.61,
+        "issues": 20,
+        "worst_case_usd": 3.14
+      },
+      "P0 quality pilot (mock + zero-API live gate + small real)": {
+        "estimated_cells": 112,
+        "expected_cost_usd": 0.34,
+        "hard_pre_call_cap_usd": 2.02,
+        "issues": 8,
+        "worst_case_usd": 1.76
+      }
+    },
+    "preferred_n": 30,
+    "totals": {
+      "estimated_cells": 552,
+      "expected_cost_usd": 1.68,
+      "worst_case_usd": 8.65
+    }
+  },
+  "protocol_version": "g3c11-protocol-v1",
+  "recommendation": "NO-GO (do not release G3-C.2 real expansion yet)",
+  "recommendation_basis": "Three blocking preconditions are unmet: no independent gold adjudication (18/18 PROVISIONAL), the stratum connection order is a disclosed pilot-stage refinement not verbatim pre-registered, and the pool supplies only 2 of the required >=6 R-TRAP issues. The zero-API integrity checks themselves pass (185-file verify, byte-identical funnel replay, log re-parse match), so the blocks are about human authority and sampling capability, not data corruption.",
+  "stopping_rules_carried_from_g3c0": [
+    "HARD pre-call budget guard (the repaired CompositeGuard pattern): float(bound) is evaluated before any network call; no call that could breach the phase cap is issued; per-model sub-caps too.",
+    "stop the phase if the cumulative run-rate projects > hard cap with the next batch; require a new written approval to continue.",
+    "stop and freeze on any protocol-capability drift: silent response_format downgrade, wire fallback, unexpected model id served, or tool-schema rejection.",
+    "stop if the zero-API live gate / preflight / non-interference scan (tier1>0 or tier2>0) fails.",
+    "abort-and-investigate trigger (harm-only interim look, at most once): e.g. a model commits unsupported ACCEPT on essentially every REJECT issue in B1; never stop to cherry-pick a favourable result.",
+    "no expansion beyond the frozen issue/projection list without a new separate written approval (G3-C.2); G3-C.0 executes none of this."
+  ],
+  "stratum_sampleability": {
+    "dedup_eligible_pool_n": 47,
+    "hard_gap": "R-TRAP 2 < floor 6",
+    "other_strata": "R-P2P 29 and R-F2P 16 exceed their floors (>=7)",
+    "rows": [
+      {
+        "meets_floor_from_current_pool": true,
+        "preregistered_floor": 7,
+        "sampleable_in_dedup_pool_n": 16,
+        "shortfall": 0,
+        "stratum": "R-F2P"
+      },
+      {
+        "meets_floor_from_current_pool": true,
+        "preregistered_floor": 7,
+        "sampleable_in_dedup_pool_n": 29,
+        "shortfall": 0,
+        "stratum": "R-P2P"
+      },
+      {
+        "meets_floor_from_current_pool": false,
+        "preregistered_floor": 6,
+        "sampleable_in_dedup_pool_n": 2,
+        "shortfall": 4,
+        "stratum": "R-TRAP"
+      },
+      {
+        "meets_floor_from_current_pool": true,
+        "note": "no unenriched member beyond natural first-4",
+        "preregistered_floor": 0,
+        "sampleable_in_dedup_pool_n": 0,
+        "shortfall": 0,
+        "stratum": "UNENRICHED"
+      }
+    ]
+  }
+}

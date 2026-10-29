@@ -1,0 +1,14 @@
+### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+FAIL: identity homomorphism rejected: ValueError The given images do not define a homomorphism
+
+--- stderr ---
+
+
+### POST candidate patch
+$ python probe.py  (exit 0)
+--- stdout ---
+OK: identity homomorphism on D3 constructed: <sympy.combinatorics.homomorphisms.GroupHomomorphism object at 0x0000013748415250>
+
+--- stderr ---

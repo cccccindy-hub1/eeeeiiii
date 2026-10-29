@@ -1,0 +1,21 @@
+### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+FAIL: x-axis rotation matrix
+ Matrix([[1, 0, 0], [0, cos(x), sin(x)], [0, sin(x), cos(x)]]) 
+!=
+ Matrix([[1, 0, 0], [0, cos(x), -sin(x)], [0, sin(x), cos(x)]])
+
+--- stderr ---
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+
+
+### POST candidate patch
+$ python probe.py  (exit 0)
+--- stdout ---
+OK: rotation matrix sign correct
+
+--- stderr ---
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2

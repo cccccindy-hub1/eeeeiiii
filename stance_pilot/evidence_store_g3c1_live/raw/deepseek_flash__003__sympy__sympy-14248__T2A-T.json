@@ -1,0 +1,56 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"The attested run for this exact patch/commit shows the declared acceptance set was fully executed but not green: FAIL_TO_PASS passed only 1/2 with test_MatrixSymbol_printing failing (the core issue's printing behavior is not resolved), and scoped PASS_TO_PASS passed 430/433 with two genuine regressions introduced by the patch (test_haramard and test_matMul, which passed before the patch and fail after). These are rendered, applicable failures on the current tree, so the patch is not merge-acceptable.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "cell": "g3c1live:sympy__sympy-14248:T2A-T",
+  "condition": "T2A-T",
+  "cost_usd": 0.001337,
+  "evidence_session": null,
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-14248",
+  "instance_id": "sympy__sympy-14248",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.011263
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 140,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 3897,
+      "raw_content": "{\"decision\":\"REJECT\",\"reason\":\"The attested run for this exact patch/commit shows the declared acceptance set was fully executed but not green: FAIL_TO_PASS passed only 1/2 with test_MatrixSymbol_printing failing (the core issue's printing behavior is not resolved), and scoped PASS_TO_PASS passed 430/433 with two genuine regressions introduced by the patch (test_haramard and test_matMul, which passed before the patch and fail after). These are rendered, applicable failures on the current tree, so the patch is not merge-acceptable.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_38249f6606d93ef1",
+  "tokens_in": 3897,
+  "tokens_out": 140,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.38
+}

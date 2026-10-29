@@ -1,0 +1,11 @@
+{
+  "cell": "g3b3:sympy__sympy-17318:T2A-T",
+  "condition": "T2A-T",
+  "policy": null,
+  "session_id": null,
+  "trace": [],
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch adds a guard clause in _split_gcd to handle the case when the input tuple is empty, returning (1, [], []) instead of causing an IndexError. This directly addresses the reported issue #12420 where sqrtdenest raised an IndexError due to an empty tuple in _split_gcd. The new test test_issue_12420 in test_sqrtdenest.py verifies that sqrtdenest no longer raises and returns a correct result for the problematic input. The provided test artifact shows a fully fresh, linked, and complete test run with all relevant acceptance tests passing, including the new test for this issue. There are no failures or regressions in the scoped acceptance tests. Therefore, the evidence is intact, fresh, linked, and complete, demonstrating that the issue is resolved and no regressions are introduced.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+  "parsed": "ACCEPT",
+  "fresh_state_served": null,
+  "error": null
+}

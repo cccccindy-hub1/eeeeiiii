@@ -1,0 +1,182 @@
+{
+  "sympy__sympy-13615": {
+    "id": "glm5_500:sympy__sympy-13615",
+    "generator_model": "GLM-5-FP8",
+    "resolved_in_dataset": true,
+    "base_commit": "50d8a102f0735da8e165a0369bbb994c7d0592a6",
+    "FAIL_TO_PASS": [
+      "test_Complement"
+    ],
+    "PASS_TO_PASS_n": 70,
+    "candidate_changed_files": [
+      "sympy/sets/sets.py"
+    ],
+    "test_patch_files": [
+      "sympy/sets/tests/test_sets.py"
+    ],
+    "problem_statement": "Complement doesn't work when input is a mixture of Symbols and numbers\n```\r\n>>> a=FiniteSet(x,y,2)\r\n>>> b=Interval(-10,10)\r\n>>> Complement(a,b)\r\n{x, y}\r\n```\r\n`{x, y} \\ [-10,10]` is expected as output.\n"
+  },
+  "sympy__sympy-13974": {
+    "id": "glm5_500:sympy__sympy-13974",
+    "generator_model": "GLM-5-FP8",
+    "resolved_in_dataset": true,
+    "base_commit": "84c125972ad535b2dfb245f8d311d347b45e5b8a",
+    "FAIL_TO_PASS": [
+      "test_tensor_product_simp"
+    ],
+    "PASS_TO_PASS_n": 4,
+    "candidate_changed_files": [
+      "sympy/physics/quantum/tensorproduct.py",
+      "sympy/physics/quantum/tests/test_tensorproduct.py"
+    ],
+    "test_patch_files": [
+      "sympy/physics/quantum/tests/test_tensorproduct.py"
+    ],
+    "problem_statement": "Evaluating powers of `TensorProduct`\nPowers of tensor product expressions are not possible to evaluate with either `expand(tensorproduct=True)` method nor the `tensor_product_simp`function.\r\n\r\nThis is an example session showing the issue\r\n```\r\nIn [1]: from sympy import *\r\n        from sympy.physics.quantum import TensorProduct as tp\r\n        from sympy.physics.quantum import tensor_product_simp as tps\r\n        from sympy.physics.paulialgebra import Pauli\r\n        a = Symbol('a', commutative=False)\r\n\r\nIn [2]: t1 = tp(1,1)*tp(1,1)\r\n        t1\r\nOut[2]: 1x1**2\r\n\r\nIn [3]: tps(t1)\r\nOut[3]: 1x1**2\r\n\r\nIn [4]: t1.expand(tensorproduct=True)\r\nOut[4]: 1x1**2\r\n\r\nIn [5]: tps(tp(1,1)*tp(1,a)).subs(a, 1)\r\nOut[5]: 1x1\r\n\r\nIn [6]: t2 = tp(1,Pauli(3))*tp(1,Pauli(3))\r\n        t2\r\nOut[6]: 1xsigma3**2\r\n\r\nIn [7]: tps(t2)\r\nOut[7]: 1xsigma3**2\r\n\r\nIn [8]: t2.expand(tensorproduct=True)\r\nOut[8]: 1xsigma3**2\r\n\r\nIn [9]: tps(tp(1,Pauli(3))*tp(1,a)).subs(a, Pauli(3))\r\nOut[9]: 1x1\r\n```\r\nwhere `[5]` and `[9]` shows expected result for `t1` and `t2` respectively.\n"
+  },
+  "sympy__sympy-17318": {
+    "id": "glm5_500:sympy__sympy-17318",
+    "generator_model": "GLM-5-FP8",
+    "resolved_in_dataset": false,
+    "base_commit": "d4e0231b08147337745dcf601e62de7eefe2fb2d",
+    "FAIL_TO_PASS": [
+      "test_issue_12420"
+    ],
+    "PASS_TO_PASS_n": 10,
+    "candidate_changed_files": [
+      "sympy/simplify/radsimp.py",
+      "sympy/simplify/tests/test_sqrtdenest.py"
+    ],
+    "test_patch_files": [
+      "sympy/simplify/tests/test_sqrtdenest.py"
+    ],
+    "problem_statement": "sqrtdenest raises IndexError\n```\r\n>>> sqrtdenest((3 - sqrt(2)*sqrt(4 + 3*I) + 3*I)/2)\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"sympy\\simplify\\sqrtdenest.py\", line 132, in sqrtdenest\r\n    z = _sqrtdenest0(expr)\r\n  File \"sympy\\simplify\\sqrtdenest.py\", line 242, in _sqrtdenest0\r\n    return expr.func(*[_sqrtdenest0(a) for a in args])\r\n  File \"sympy\\simplify\\sqrtdenest.py\", line 242, in _sqrtdenest0\r\n    return expr.func(*[_sqrtdenest0(a) for a in args])\r\n  File \"sympy\\simplify\\sqrtdenest.py\", line 235, in _sqrtdenest0\r\n    return _sqrtdenest1(expr)\r\n  File \"sympy\\simplify\\sqrtdenest.py\", line 319, in _sqrtdenest1\r\n    val = _sqrt_match(a)\r\n  File \"sympy\\simplify\\sqrtdenest.py\", line 159, in _sqrt_match\r\n    r, b, a = split_surds(p)\r\n  File \"sympy\\simplify\\radsimp.py\", line 1032, in split_surds\r\n    g, b1, b2 = _split_gcd(*surds)\r\n  File \"sympy\\simplify\\radsimp.py\", line 1068, in _split_gcd\r\n    g = a[0]\r\nIndexError: tuple index out of range\r\n```\r\n\r\nIf an expression cannot be denested it should be returned unchanged.\nIndexError fixed for sqrtdenest.\nFixes #12420 \r\nNow if the expression can't be **denested**, it will be returned unchanged.\r\nOld Result:\r\n```\r\n>>> sqrtdenest((3 - sqrt(2)*sqrt(4 + 3*I) + 3*I)/2)\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"sympy\\simplify\\sqrtdenest.py\", line 132, in sqrtdenest\r\n    z = _sqrtdenest0(expr)\r\n  File \"sympy\\simplify\\sqrtdenest.py\", line 242, in _sqrtdenest0\r\n    return expr.func(*[_sqrtdenest0(a) for a in args])\r\n  File \"sympy\\simplify\\sqrtdenest.py\", line 242, in _sqrtdenest0\r\n    return expr.func(*[_sqrtdenest0(a) for a in args])\r\n  File \"sympy\\simplify\\sqrtdenest.py\", line 235, in _sqrtdenest0\r\n    return _sqrtdenest1(expr)\r\n  File \"sympy\\simplify\\sqrtdenest.py\", line 319, in _sqrtdenest1\r\n    val = _sqrt_match(a)\r\n  File \"sympy\\simplify\\sqrtdenest.py\", line 159, in _sqrt_match\r\n    r, b, a = split_surds(p)\r\n  File \"sympy\\simplify\\radsimp.py\", line 1032, in split_surds\r\n    g, b1, b2 = _split_gcd(*surds)\r\n  File \"sympy\\simplify\\radsimp.py\", line 1068, in _split_gcd\r\n    g = a[0]\r\nIndexError: tuple index out of range\r\n\r\n```\r\nNew Result:\r\n\r\n```\r\nIn [9]: sqrtdenest((3 - sqrt(2)*sqrt(4 + 3*I) + 3*I)/2)\r\nOut[9]: 3/2 - sqrt(2)*sqrt(4 + 3*I)/2 + 3*I/2\r\n```\n"
+  },
+  "sympy__sympy-17630": {
+    "id": "glm5_500:sympy__sympy-17630",
+    "generator_model": "GLM-5-FP8",
+    "resolved_in_dataset": false,
+    "base_commit": "58e78209c8577b9890e957b624466e5beed7eb08",
+    "FAIL_TO_PASS": [
+      "test_issue_17624",
+      "test_zero_matrix_add"
+    ],
+    "PASS_TO_PASS_n": 19,
+    "candidate_changed_files": [
+      "sympy/matrices/expressions/blockmatrix.py",
+      "sympy/matrices/expressions/tests/test_blockmatrix.py"
+    ],
+    "test_patch_files": [
+      "sympy/matrices/expressions/tests/test_blockmatrix.py",
+      "sympy/matrices/expressions/tests/test_matadd.py"
+    ],
+    "problem_statement": "Exception when multiplying BlockMatrix containing ZeroMatrix blocks\nWhen a block matrix with zero blocks is defined\r\n\r\n```\r\n>>> from sympy import *\r\n>>> a = MatrixSymbol(\"a\", 2, 2)\r\n>>> z = ZeroMatrix(2, 2)\r\n>>> b = BlockMatrix([[a, z], [z, z]])\r\n```\r\n\r\nthen block-multiplying it once seems to work fine:\r\n\r\n```\r\n>>> block_collapse(b * b)\r\nMatrix([\r\n[a**2, 0],\r\n[0, 0]])\r\n>>> b._blockmul(b)\r\nMatrix([\r\n[a**2, 0],\r\n[0, 0]])\r\n```\r\n\r\nbut block-multiplying twice throws an exception:\r\n\r\n```\r\n>>> block_collapse(b * b * b)\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"/home/jan/.pyenv/versions/3.7.4/lib/python3.7/site-packages/sympy/matrices/expressions/blockmatrix.py\", line 297, in block_collapse\r\n    result = rule(expr)\r\n  File \"/home/jan/.pyenv/versions/3.7.4/lib/python3.7/site-packages/sympy/strategies/core.py\", line 11, in exhaustive_rl\r\n    new, old = rule(expr), expr\r\n  File \"/home/jan/.pyenv/versions/3.7.4/lib/python3.7/site-packages/sympy/strategies/core.py\", line 44, in chain_rl\r\n    expr = rule(expr)\r\n  File \"/home/jan/.pyenv/versions/3.7.4/lib/python3.7/site-packages/sympy/strategies/core.py\", line 11, in exhaustive_rl\r\n    new, old = rule(expr), expr\r\n  File \"/home/jan/.pyenv/versions/3.7.4/lib/python3.7/site-packages/sympy/strategies/core.py\", line 33, in conditioned_rl\r\n    return rule(expr)\r\n  File \"/home/jan/.pyenv/versions/3.7.4/lib/python3.7/site-packages/sympy/strategies/core.py\", line 95, in switch_rl\r\n    return rl(expr)\r\n  File \"/home/jan/.pyenv/versions/3.7.4/lib/python3.7/site-packages/sympy/matrices/expressions/blockmatrix.py\", line 361, in bc_matmul\r\n    matrices[i] = A._blockmul(B)\r\n  File \"/home/jan/.pyenv/versions/3.7.4/lib/python3.7/site-packages/sympy/matrices/expressions/blockmatrix.py\", line 91, in _blockmul\r\n    self.colblocksizes == other.rowblocksizes):\r\n  File \"/home/jan/.pyenv/versions/3.7.4/lib/python3.7/site-packages/sympy/matrices/expressions/blockmatrix.py\", line 80, in colblocksizes\r\n    return [self.blocks[0, i].cols for i in range(self.blockshape[1])]\r\n  File \"/home/jan/.pyenv/versions/3.7.4/lib/python3.7/site-packages/sympy/matrices/expressions/blockmatrix.py\", line 80, in <listcomp>\r\n    return [self.blocks[0, i].cols for i in range(self.blockshape[1])]\r\nAttributeError: 'Zero' object has no attribute 'cols'\r\n>>> b._blockmul(b)._blockmul(b)\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"/home/jan/.pyenv/versions/3.7.4/lib/python3.7/site-packages/sympy/matrices/expressions/blockmatrix.py\", line 91, in _blockmul\r\n    self.colblocksizes == other.rowblocksizes):\r\n  File \"/home/jan/.pyenv/versions/3.7.4/lib/python3.7/site-packages/sympy/matrices/expressions/blockmatrix.py\", line 80, in colblocksizes\r\n    return [self.blocks[0, i].cols for i in range(self.blockshape[1])]\r\n  File \"/home/jan/.pyenv/versions/3.7.4/lib/python3.7/site-packages/sympy/matrices/expressions/blockmatrix.py\", line 80, in <listcomp>\r\n    return [self.blocks[0, i].cols for i in range(self.blockshape[1])]\r\nAttributeError: 'Zero' object has no attribute 'cols'\r\n```\r\n\r\nThis seems to be caused by the fact that the zeros in `b._blockmul(b)` are not `ZeroMatrix` but `Zero`:\r\n\r\n```\r\n>>> type(b._blockmul(b).blocks[0, 1])\r\n<class 'sympy.core.numbers.Zero'>\r\n```\r\n\r\nHowever, I don't understand SymPy internals well enough to find out why this happens. I use Python 3.7.4 and sympy 1.4 (installed with pip).\n"
+  },
+  "sympy__sympy-20590": {
+    "id": "glm5_500:sympy__sympy-20590",
+    "generator_model": "GLM-5-FP8",
+    "resolved_in_dataset": true,
+    "base_commit": "cffd4e0f86fefd4802349a9f9b19ed70934ea354",
+    "FAIL_TO_PASS": [
+      "test_immutable"
+    ],
+    "PASS_TO_PASS_n": 21,
+    "candidate_changed_files": [
+      "sympy/core/_print_helpers.py",
+      "sympy/core/tests/test_symbol.py"
+    ],
+    "test_patch_files": [
+      "sympy/core/tests/test_basic.py"
+    ],
+    "problem_statement": "Symbol instances have __dict__ since 1.7?\nIn version 1.6.2 Symbol instances had no `__dict__` attribute\r\n```python\r\n>>> sympy.Symbol('s').__dict__\r\n---------------------------------------------------------------------------\r\nAttributeError                            Traceback (most recent call last)\r\n<ipython-input-3-e2060d5eec73> in <module>\r\n----> 1 sympy.Symbol('s').__dict__\r\n\r\nAttributeError: 'Symbol' object has no attribute '__dict__'\r\n>>> sympy.Symbol('s').__slots__\r\n('name',)\r\n```\r\n\r\nThis changes in 1.7 where `sympy.Symbol('s').__dict__` now exists (and returns an empty dict)\r\nI may misinterpret this, but given the purpose of `__slots__`, I assume this is a bug, introduced because some parent class accidentally stopped defining `__slots__`.\n"
+  },
+  "sympy__sympy-21847": {
+    "id": "glm5_500:sympy__sympy-21847",
+    "generator_model": "GLM-5-FP8",
+    "resolved_in_dataset": true,
+    "base_commit": "d9b18c518d64d0ebe8e35a98c2fb519938b9b151",
+    "FAIL_TO_PASS": [
+      "test_monomials"
+    ],
+    "PASS_TO_PASS_n": 9,
+    "candidate_changed_files": [
+      "sympy/polys/monomials.py",
+      "sympy/polys/tests/test_monomials.py"
+    ],
+    "test_patch_files": [
+      "sympy/polys/tests/test_monomials.py"
+    ],
+    "problem_statement": "itermonomials returns incorrect monomials when using min_degrees argument\n`itermonomials` returns incorrect monomials when using optional `min_degrees` argument\r\n\r\nFor example, the following code introduces three symbolic variables and generates monomials with max and min degree of 3:\r\n\r\n\r\n```\r\nimport sympy as sp\r\nfrom sympy.polys.orderings import monomial_key\r\n\r\nx1, x2, x3 = sp.symbols('x1, x2, x3')\r\nstates = [x1, x2, x3]\r\nmax_degrees = 3\r\nmin_degrees = 3\r\nmonomials = sorted(sp.itermonomials(states, max_degrees, min_degrees=min_degrees), \r\n                   key=monomial_key('grlex', states))\r\nprint(monomials)\r\n```\r\nThe code returns `[x3**3, x2**3, x1**3]`, when it _should_ also return monomials such as `x1*x2**2, x2*x3**2, etc...` that also have total degree of 3. This behaviour is inconsistent with the documentation that states that \r\n\r\n> A generator of all monomials `monom` is returned, such that either `min_degree <= total_degree(monom) <= max_degree`...\r\n\r\nThe monomials are also missing when `max_degrees` is increased above `min_degrees`.\n"
+  },
+  "sympy__sympy-24213": {
+    "id": "glm5_500:sympy__sympy-24213",
+    "generator_model": "GLM-5-FP8",
+    "resolved_in_dataset": true,
+    "base_commit": "e8c22f6eac7314be8d92590bfff92ced79ee03e2",
+    "FAIL_TO_PASS": [
+      "test_issue_24211"
+    ],
+    "PASS_TO_PASS_n": 31,
+    "candidate_changed_files": [
+      "sympy/physics/units/unitsystem.py"
+    ],
+    "test_patch_files": [
+      "sympy/physics/units/tests/test_quantities.py"
+    ],
+    "problem_statement": "collect_factor_and_dimension does not detect equivalent dimensions in addition\nCode to reproduce:\r\n```python\r\nfrom sympy.physics import units\r\nfrom sympy.physics.units.systems.si import SI\r\n\r\nv1 = units.Quantity('v1')\r\nSI.set_quantity_dimension(v1, units.velocity)\r\nSI.set_quantity_scale_factor(v1, 2 * units.meter / units.second)\r\n\r\na1 = units.Quantity('a1')\r\nSI.set_quantity_dimension(a1, units.acceleration)\r\nSI.set_quantity_scale_factor(a1, -9.8 * units.meter / units.second**2)\r\n\r\nt1 = units.Quantity('t1')\r\nSI.set_quantity_dimension(t1, units.time)\r\nSI.set_quantity_scale_factor(t1, 5 * units.second)\r\n\r\nexpr1 = a1*t1 + v1\r\nSI._collect_factor_and_dimension(expr1)\r\n```\r\nResults in:\r\n```\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"C:\\Python\\Python310\\lib\\site-packages\\sympy\\physics\\units\\unitsystem.py\", line 179, in _collect_factor_and_dimension\r\n    raise ValueError(\r\nValueError: Dimension of \"v1\" is Dimension(velocity), but it should be Dimension(acceleration*time)\r\n```\n"
+  },
+  "sympy__sympy-24443": {
+    "id": "glm5_500:sympy__sympy-24443",
+    "generator_model": "GLM-5-FP8",
+    "resolved_in_dataset": true,
+    "base_commit": "809c53c077485ca48a206cee78340389cb83b7f1",
+    "FAIL_TO_PASS": [
+      "test_homomorphism"
+    ],
+    "PASS_TO_PASS_n": 1,
+    "candidate_changed_files": [
+      "sympy/combinatorics/homomorphisms.py",
+      "sympy/combinatorics/tests/test_homomorphisms.py"
+    ],
+    "test_patch_files": [
+      "sympy/combinatorics/tests/test_homomorphisms.py"
+    ],
+    "problem_statement": "`_check_homomorphism` is broken on PermutationGroups\n```python\r\nIn [1]: from sympy.combinatorics import *\r\n   ...: from sympy.combinatorics.homomorphisms import homomorphism\r\n   ...: D3 = DihedralGroup(3)\r\n   ...: T = homomorphism(D3, D3, D3.generators, D3.generators)\r\n\r\nValueError: The given images do not define a homomorphism\r\n```\r\n\r\nThe issue is in the internal `_image()` function, where it handles the case of a `PermutationGroup`:\r\n\r\nhttps://github.com/sympy/sympy/blob/809c53c077485ca48a206cee78340389cb83b7f1/sympy/combinatorics/homomorphisms.py#L336-L337\r\n\r\nWhen `r[i]` is an inverted generator, the `in gens` test fails.\r\n\r\nI think the whole thing can be greatly simplified.\n"
+  },
+  "sympy__sympy-19783": {
+    "id": "qwen3_coder_30b_500:sympy__sympy-19783",
+    "generator_model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "resolved_in_dataset": false,
+    "base_commit": "586a43201d0357e92e8c93548d69a9f42bf548f4",
+    "FAIL_TO_PASS": [
+      "test_dagger_mul",
+      "test_identity"
+    ],
+    "PASS_TO_PASS_n": 9,
+    "candidate_changed_files": [
+      "sympy/physics/quantum/dagger.py"
+    ],
+    "test_patch_files": [
+      "sympy/physics/quantum/tests/test_dagger.py",
+      "sympy/physics/quantum/tests/test_operator.py"
+    ],
+    "problem_statement": "Dagger() * IdentityOperator() is not simplified\nAs discussed on the mailing list the following does not work.\r\n```\r\nfrom sympy.physics.quantum.dagger import Dagger\r\nfrom sympy.physics.quantum.operator import Operator\r\nfrom sympy.physics.quantum import IdentityOperator\r\nA = Operators('A')\r\nIdentity = IdentityOperator()\r\nA * Identity #This gives A, correctly\r\nB = Dagger(A)\r\nB * Identity #This returns A^\\dagger I \r\n```\r\n\n"
+  },
+  "sympy__sympy-15349": {
+    "id": "qwen3_30b_instruct2507_500:sympy__sympy-15349",
+    "generator_model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "resolved_in_dataset": true,
+    "base_commit": "768da1c6f6ec907524b8ebbf6bf818c92b56101b",
+    "FAIL_TO_PASS": [
+      "test_quaternion_conversions"
+    ],
+    "PASS_TO_PASS_n": 3,
+    "candidate_changed_files": [
+      "sympy/algebras/quaternion.py"
+    ],
+    "test_patch_files": [
+      "sympy/algebras/tests/test_quaternion.py"
+    ],
+    "problem_statement": "Incorrect result with Quaterniont.to_rotation_matrix()\nhttps://github.com/sympy/sympy/blob/ab14b02dba5a7e3e4fb1e807fc8a954f1047a1a1/sympy/algebras/quaternion.py#L489\r\n\r\nThere appears to be an error in the `Quaternion.to_rotation_matrix()` output.  The simplest example I created to illustrate the problem is as follows:\r\n\r\n```\r\n>>import sympy\r\n>>print('Sympy version: ', sympy.__version__)\r\nSympy version: 1.2\r\n\r\n>> from sympy import *\r\n>> x = symbols('x')\r\n>> q = Quaternion(cos(x/2), sin(x/2), 0, 0)\r\n>> trigsimp(q.to_rotation_matrix())\r\nMatrix([\r\n[1,      0,      0],\r\n[0, cos(x), sin(x)],\r\n[0, sin(x), cos(x)]])\r\n```\r\nOne of the `sin(x)` functions should be negative.  What was the reference of the original equations?  \n"
+  }
+}

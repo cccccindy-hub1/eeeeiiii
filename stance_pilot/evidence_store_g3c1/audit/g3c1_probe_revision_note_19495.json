@@ -1,0 +1,23 @@
+{
+  "audit": "g3c1_probe_instrument_revision",
+  "design_version": "groundedreview-gate3c1-local-pilot-freeze-v1",
+  "instance_id": "sympy__sympy-19495",
+  "initial_stop_record": {
+    "file": "g3c1_failures.jsonl",
+    "stage": "probe_flip_gate",
+    "recorded_at": "2026-10-28T09:48:33+00:00",
+    "baseline_probe_passed": true,
+    "post_candidate_probe_passed": true
+  },
+  "diagnosis": "The selected issue genuinely reproduces and the candidate genuinely fixes it. At the clean base_commit plain ConditionSet.subs produced ConditionSet(1/3, Contains(1/3, ImageSet(...)), ImageSet(...)) -- exactly the malformed over-substitution reported publicly (the ConditionSet bound dummy x was replaced by 1/3) -- and after the candidate it correctly became ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers). The first hand-written probe was a faulty INSTRUMENT: its assertions only checked for a free symbol y and for a collapse to the singleton {1/3}, neither of which distinguishes ConditionSet(1/3, ...) from the correct result, so it exited 0 at baseline. This was a probe-authoring defect, NOT a non-evaluable issue and NOT a reason to replace the issue.",
+  "evidence_basis_for_revision": "The strengthened assertions use ONLY the public issue report: (a) a surviving ConditionSet's first argument (the bound dummy) must remain a Symbol, rejecting the observed ConditionSet(1/3, ...); and (b) plain .subs must equal the report's own reference results via xreplace and simultaneous=True, which the report explicitly shows were already correct at baseline. The maintainer test_patch was never read when authoring or revising the probe.",
+  "maintainer_test_patch_consulted": false,
+  "action": "Replaced the weak probe with the strengthened symptom probe and re-ran the probe-flip gate over all 8 issues. All 8 then flipped (baseline exit!=0, post-candidate exit==0). The original failure record is retained unchanged; the issue was kept, not substituted.",
+  "post_revision_gate": {
+    "all_probes_flip": true,
+    "n_issues": 8,
+    "evidence": "audit/g3c1_probe_selftest.json"
+  },
+  "no_gold_changed": true,
+  "no_issue_replaced": true
+}

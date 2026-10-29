@@ -1,0 +1,38 @@
+diff --git a/sympy/printing/repr.py b/sympy/printing/repr.py
+index c936a692c0..a594fbfb0f 100644
+--- a/sympy/printing/repr.py
++++ b/sympy/printing/repr.py
+@@ -144,6 +144,14 @@ def _print_EmptySequence(self, expr):
+     def _print_list(self, expr):
+         return "[%s]" % self.reprify(expr, ", ")
+ 
++    def _print_set(self, expr):
++        return "{%s}" % self.reprify(expr, ", ")
++
++    def _print_dict(self, expr):
++        items = [self._print(key) + ": " + self._print(value) 
++                 for key, value in expr.items()]
++        return "{%s}" % ", ".join(items)
++
+     def _print_MatrixBase(self, expr):
+         # special case for some empty matrices
+         if (expr.rows == 0) ^ (expr.cols == 0):
+diff --git a/sympy/printing/tests/test_repr.py b/sympy/printing/tests/test_repr.py
+index f749683ff7..d38be241fc 100644
+--- a/sympy/printing/tests/test_repr.py
++++ b/sympy/printing/tests/test_repr.py
+@@ -192,6 +192,14 @@ def test_tuple():
+     sT((x,), "(Symbol('x'),)")
+     sT((x, y), "(Symbol('x'), Symbol('y'))")
+ 
++def test_set():
++    sT({x}, "{Symbol(\'x\')}")
++    sT({x, y}, "{Symbol(\'x\'), Symbol(\'y\')}")
++
++
++def test_dict():
++    sT({x: y}, "{Symbol(\'x\'): Symbol(\'y\')}")
++    sT({x: x**2}, "{Symbol(\'x\'): Pow(Symbol(\'x\'), Integer(2))}")
+ 
+ def test_WildFunction():
+     sT(WildFunction('w'), "WildFunction('w')")

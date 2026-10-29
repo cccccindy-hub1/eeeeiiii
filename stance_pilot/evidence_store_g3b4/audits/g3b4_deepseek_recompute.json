@@ -1,0 +1,492 @@
+{
+  "api_calls_made_by_this_audit": 0,
+  "audit_version": "groundedreview-gate3b4-zero-api-strict-audit-v1",
+  "descriptive_paired_discordance": {
+    "caution": "only 10 independent issue clusters; treat as descriptive, not a population-level test",
+    "discordant_pairs": 8,
+    "exact_two_sided_sign_p_on_discordants": 0.00781
+  },
+  "document": "Gate 3-B.4 independent third recomputation of the DeepSeek sufficient-evidence paired change (task 2)",
+  "exact_intervals": {
+    "cp_method": "exact integer-binomial Clopper-Pearson, independent bisection (third implementation; no scipy/beta)",
+    "g3b3_need_any_rate_cp95": [
+      0.0025,
+      0.445
+    ],
+    "g3b_need_any_rate_cp95": [
+      0.555,
+      0.9975
+    ],
+    "issue_cluster_bootstrap_crosscheck_seed_313": {
+      "B": 10000,
+      "g3b3_rate": {
+        "percentile_method": "2.5/97.5 of sorted bootstrap replicates",
+        "point_2_5": 0.0,
+        "point_97_5": 0.3
+      },
+      "g3b_rate": {
+        "percentile_method": "2.5/97.5 of sorted bootstrap replicates",
+        "point_2_5": 0.7,
+        "point_97_5": 1.0
+      },
+      "n_clusters": 10,
+      "paired_diff_g3b_minus_g3b3": {
+        "percentile_method": "2.5/97.5 of sorted bootstrap replicates",
+        "point_2_5": 0.5,
+        "point_97_5": 1.0
+      },
+      "seed": 313
+    },
+    "issue_cluster_bootstrap_seed_417313": {
+      "B": 10000,
+      "g3b3_rate": {
+        "percentile_method": "2.5/97.5 of sorted bootstrap replicates",
+        "point_2_5": 0.0,
+        "point_97_5": 0.3
+      },
+      "g3b_rate": {
+        "percentile_method": "2.5/97.5 of sorted bootstrap replicates",
+        "point_2_5": 0.7,
+        "point_97_5": 1.0
+      },
+      "n_clusters": 10,
+      "paired_diff_g3b_minus_g3b3": {
+        "percentile_method": "2.5/97.5 of sorted bootstrap replicates",
+        "point_2_5": 0.5,
+        "point_97_5": 1.0
+      },
+      "seed": 417313
+    }
+  },
+  "g3b3_residual_issue_condition_detail": {
+    "13974": {
+      "g3b": {
+        "T2A-T": "NEED_EVIDENCE",
+        "T3A-T": "NEED_EVIDENCE",
+        "T3D-Escalate": "NEED_EVIDENCE"
+      },
+      "g3b3": {
+        "T2A-T": "NEED_EVIDENCE",
+        "T3A-T": "ACCEPT",
+        "T3D-Escalate": "NEED_EVIDENCE"
+      }
+    }
+  },
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold carried unchanged from Gate 3-A.1; no second adjudicator has been obtained as of Gate 3-B.4. No Cohen kappa is reported and gold is never called human-adjudicated. Gate 3-B.4 audits model behaviour against this PROVISIONAL gold only; the same AI operator performing the audit is NOT an independent human adjudicator."
+  },
+  "model": "deepseek-flash",
+  "pairing": "same instance_id + condition; G3-B rows paired to G3-B.3 rows via the frozen g3b_pair_cell_key; cross-version, cross-run-time ASSOCIATIONAL only",
+  "per_issue_need_any_detail": [
+    {
+      "g3b3_need_any": false,
+      "g3b3_verdicts": {
+        "T2A-T": "ACCEPT",
+        "T3A-T": "ACCEPT",
+        "T3D-Escalate": "ACCEPT"
+      },
+      "g3b_need_any": true,
+      "g3b_verdicts": {
+        "T2A-T": "NEED_EVIDENCE",
+        "T3A-T": "NEED_EVIDENCE",
+        "T3D-Escalate": "ACCEPT"
+      },
+      "issue": "13615",
+      "transition": "1 -> 0"
+    },
+    {
+      "g3b3_need_any": true,
+      "g3b3_verdicts": {
+        "T2A-T": "NEED_EVIDENCE",
+        "T3A-T": "ACCEPT",
+        "T3D-Escalate": "NEED_EVIDENCE"
+      },
+      "g3b_need_any": true,
+      "g3b_verdicts": {
+        "T2A-T": "NEED_EVIDENCE",
+        "T3A-T": "NEED_EVIDENCE",
+        "T3D-Escalate": "NEED_EVIDENCE"
+      },
+      "issue": "13974",
+      "transition": "1 -> 1"
+    },
+    {
+      "g3b3_need_any": false,
+      "g3b3_verdicts": {
+        "T2A-T": "ACCEPT",
+        "T3A-T": "ACCEPT",
+        "T3D-Escalate": "ACCEPT"
+      },
+      "g3b_need_any": true,
+      "g3b_verdicts": {
+        "T2A-T": "NEED_EVIDENCE",
+        "T3A-T": "NEED_EVIDENCE",
+        "T3D-Escalate": "NEED_EVIDENCE"
+      },
+      "issue": "15349",
+      "transition": "1 -> 0"
+    },
+    {
+      "g3b3_need_any": false,
+      "g3b3_verdicts": {
+        "T2A-T": "REJECT",
+        "T3A-T": "REJECT",
+        "T3D-Escalate": "REJECT"
+      },
+      "g3b_need_any": false,
+      "g3b_verdicts": {
+        "T2A-T": "REJECT",
+        "T3A-T": "REJECT",
+        "T3D-Escalate": "REJECT"
+      },
+      "issue": "17318",
+      "transition": "0 -> 0"
+    },
+    {
+      "g3b3_need_any": false,
+      "g3b3_verdicts": {
+        "T2A-T": "REJECT",
+        "T3A-T": "REJECT",
+        "T3D-Escalate": "REJECT"
+      },
+      "g3b_need_any": true,
+      "g3b_verdicts": {
+        "T2A-T": "NEED_EVIDENCE",
+        "T3A-T": "NEED_EVIDENCE",
+        "T3D-Escalate": "REJECT"
+      },
+      "issue": "17630",
+      "transition": "1 -> 0"
+    },
+    {
+      "g3b3_need_any": false,
+      "g3b3_verdicts": {
+        "T2A-T": "REJECT",
+        "T3A-T": "REJECT",
+        "T3D-Escalate": "REJECT"
+      },
+      "g3b_need_any": true,
+      "g3b_verdicts": {
+        "T2A-T": "NEED_EVIDENCE",
+        "T3A-T": "REJECT",
+        "T3D-Escalate": "REJECT"
+      },
+      "issue": "19783",
+      "transition": "1 -> 0"
+    },
+    {
+      "g3b3_need_any": false,
+      "g3b3_verdicts": {
+        "T2A-T": "ACCEPT",
+        "T3A-T": "ACCEPT",
+        "T3D-Escalate": "ACCEPT"
+      },
+      "g3b_need_any": true,
+      "g3b_verdicts": {
+        "T2A-T": "NEED_EVIDENCE",
+        "T3A-T": "NEED_EVIDENCE",
+        "T3D-Escalate": "NEED_EVIDENCE"
+      },
+      "issue": "20590",
+      "transition": "1 -> 0"
+    },
+    {
+      "g3b3_need_any": false,
+      "g3b3_verdicts": {
+        "T2A-T": "ACCEPT",
+        "T3A-T": "ACCEPT",
+        "T3D-Escalate": "ACCEPT"
+      },
+      "g3b_need_any": true,
+      "g3b_verdicts": {
+        "T2A-T": "NEED_EVIDENCE",
+        "T3A-T": "NEED_EVIDENCE",
+        "T3D-Escalate": "NEED_EVIDENCE"
+      },
+      "issue": "21847",
+      "transition": "1 -> 0"
+    },
+    {
+      "g3b3_need_any": false,
+      "g3b3_verdicts": {
+        "T2A-T": "ACCEPT",
+        "T3A-T": "ACCEPT",
+        "T3D-Escalate": "ACCEPT"
+      },
+      "g3b_need_any": true,
+      "g3b_verdicts": {
+        "T2A-T": "NEED_EVIDENCE",
+        "T3A-T": "NEED_EVIDENCE",
+        "T3D-Escalate": "NEED_EVIDENCE"
+      },
+      "issue": "24213",
+      "transition": "1 -> 0"
+    },
+    {
+      "g3b3_need_any": false,
+      "g3b3_verdicts": {
+        "T2A-T": "ACCEPT",
+        "T3A-T": "ACCEPT",
+        "T3D-Escalate": "ACCEPT"
+      },
+      "g3b_need_any": true,
+      "g3b_verdicts": {
+        "T2A-T": "NEED_EVIDENCE",
+        "T3A-T": "NEED_EVIDENCE",
+        "T3D-Escalate": "NEED_EVIDENCE"
+      },
+      "issue": "24443",
+      "transition": "1 -> 0"
+    }
+  ],
+  "per_sufficient_condition_transition": {
+    "T2A-T": {
+      "g3b3_need_n": 1,
+      "g3b_need_n": 9,
+      "need_to_nonneed_reversals": 8,
+      "nonneed_to_need_reversals": 0,
+      "note": "condition gold for all 7 accept-issue cells is ACCEPT and for the 3 reject issues is REJECT; NEED_EVIDENCE is the model abstaining under a SUFFICIENT regime",
+      "per_issue": [
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "13615",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE",
+          "issue": "13974",
+          "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "15349",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "REJECT",
+          "g3b3": "REJECT",
+          "issue": "17318",
+          "transition": "REJECT -> REJECT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "REJECT",
+          "issue": "17630",
+          "transition": "NEED_EVIDENCE -> REJECT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "REJECT",
+          "issue": "19783",
+          "transition": "NEED_EVIDENCE -> REJECT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "20590",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "21847",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "24213",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "24443",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        }
+      ],
+      "transition_counts": {
+        "NEED_EVIDENCE -> ACCEPT": 6,
+        "NEED_EVIDENCE -> NEED_EVIDENCE": 1,
+        "NEED_EVIDENCE -> REJECT": 2,
+        "REJECT -> REJECT": 1
+      }
+    },
+    "T3A-T": {
+      "g3b3_need_n": 0,
+      "g3b_need_n": 8,
+      "need_to_nonneed_reversals": 8,
+      "nonneed_to_need_reversals": 0,
+      "note": "condition gold for all 7 accept-issue cells is ACCEPT and for the 3 reject issues is REJECT; NEED_EVIDENCE is the model abstaining under a SUFFICIENT regime",
+      "per_issue": [
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "13615",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "13974",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "15349",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "REJECT",
+          "g3b3": "REJECT",
+          "issue": "17318",
+          "transition": "REJECT -> REJECT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "REJECT",
+          "issue": "17630",
+          "transition": "NEED_EVIDENCE -> REJECT"
+        },
+        {
+          "g3b": "REJECT",
+          "g3b3": "REJECT",
+          "issue": "19783",
+          "transition": "REJECT -> REJECT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "20590",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "21847",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "24213",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "24443",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        }
+      ],
+      "transition_counts": {
+        "NEED_EVIDENCE -> ACCEPT": 7,
+        "NEED_EVIDENCE -> REJECT": 1,
+        "REJECT -> REJECT": 2
+      }
+    },
+    "T3D-Escalate": {
+      "g3b3_need_n": 1,
+      "g3b_need_n": 6,
+      "need_to_nonneed_reversals": 5,
+      "nonneed_to_need_reversals": 0,
+      "note": "condition gold for all 7 accept-issue cells is ACCEPT and for the 3 reject issues is REJECT; NEED_EVIDENCE is the model abstaining under a SUFFICIENT regime",
+      "per_issue": [
+        {
+          "g3b": "ACCEPT",
+          "g3b3": "ACCEPT",
+          "issue": "13615",
+          "transition": "ACCEPT -> ACCEPT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "NEED_EVIDENCE",
+          "issue": "13974",
+          "transition": "NEED_EVIDENCE -> NEED_EVIDENCE"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "15349",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "REJECT",
+          "g3b3": "REJECT",
+          "issue": "17318",
+          "transition": "REJECT -> REJECT"
+        },
+        {
+          "g3b": "REJECT",
+          "g3b3": "REJECT",
+          "issue": "17630",
+          "transition": "REJECT -> REJECT"
+        },
+        {
+          "g3b": "REJECT",
+          "g3b3": "REJECT",
+          "issue": "19783",
+          "transition": "REJECT -> REJECT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "20590",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "21847",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "24213",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        },
+        {
+          "g3b": "NEED_EVIDENCE",
+          "g3b3": "ACCEPT",
+          "issue": "24443",
+          "transition": "NEED_EVIDENCE -> ACCEPT"
+        }
+      ],
+      "transition_counts": {
+        "ACCEPT -> ACCEPT": 1,
+        "NEED_EVIDENCE -> ACCEPT": 5,
+        "NEED_EVIDENCE -> NEED_EVIDENCE": 1,
+        "REJECT -> REJECT": 3
+      }
+    }
+  },
+  "primary_endpoint_need_any": {
+    "endpoint": "per-issue indicator: model returns NEED_EVIDENCE in at least one of the three sufficient-evidence conditions (T2A-T, T3D-Escalate, T3A-T)",
+    "g3b3_need_any_issues": "1/10",
+    "g3b_need_any_issues": "9/10",
+    "issues_fixed_need_to_nonneed": [
+      "13615",
+      "15349",
+      "17630",
+      "19783",
+      "20590",
+      "21847",
+      "24213",
+      "24443"
+    ],
+    "rate_change": -0.8,
+    "reversals_need_to_nonneed": 8,
+    "reversals_nonneed_to_need": 0,
+    "the_single_residual_issue": [
+      "13974"
+    ]
+  }
+}

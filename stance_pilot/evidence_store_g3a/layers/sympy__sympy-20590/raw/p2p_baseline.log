@@ -1,0 +1,539 @@
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpDysd9i\Scripts\python.exe -m pytest sympy/core/tests/test_basic.py sympy/core/tests/test_evalf.py sympy/core/tests/test_expr.py -v --tb=short -p no:cacheprovider  (exit 0, 17s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpDysd9i\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 176 items
+
+sympy/core/tests/test_basic.py::test__aresame PASSED                     [  0%]
+sympy/core/tests/test_basic.py::test_structure PASSED                    [  1%]
+sympy/core/tests/test_basic.py::test_equality PASSED                     [  1%]
+sympy/core/tests/test_basic.py::test_matches_basic PASSED                [  2%]
+sympy/core/tests/test_basic.py::test_has PASSED                          [  2%]
+sympy/core/tests/test_basic.py::test_subs PASSED                         [  3%]
+sympy/core/tests/test_basic.py::test_subs_with_unicode_symbols PASSED    [  3%]
+sympy/core/tests/test_basic.py::test_atoms PASSED                        [  4%]
+sympy/core/tests/test_basic.py::test_free_symbols_empty PASSED           [  5%]
+sympy/core/tests/test_basic.py::test_doit PASSED                         [  5%]
+sympy/core/tests/test_basic.py::test_S PASSED                            [  6%]
+sympy/core/tests/test_basic.py::test_xreplace PASSED                     [  6%]
+sympy/core/tests/test_basic.py::test_preorder_traversal PASSED           [  7%]
+sympy/core/tests/test_basic.py::test_sorted_args PASSED                  [  7%]
+sympy/core/tests/test_basic.py::test_call PASSED                         [  8%]
+sympy/core/tests/test_basic.py::test_rewrite PASSED                      [  9%]
+sympy/core/tests/test_basic.py::test_literal_evalf_is_number_is_zero_is_comparable PASSED [  9%]
+sympy/core/tests/test_basic.py::test_as_Basic PASSED                     [ 10%]
+sympy/core/tests/test_basic.py::test_atomic PASSED                       [ 10%]
+sympy/core/tests/test_basic.py::test_as_dummy PASSED                     [ 11%]
+sympy/core/tests/test_basic.py::test_canonical_variables PASSED          [ 11%]
+sympy/core/tests/test_basic.py::test_replace_exceptions PASSED           [ 12%]
+sympy/core/tests/test_evalf.py::test_evalf_helpers PASSED                [ 13%]
+sympy/core/tests/test_evalf.py::test_evalf_basic PASSED                  [ 13%]
+sympy/core/tests/test_evalf.py::test_cancellation PASSED                 [ 14%]
+sympy/core/tests/test_evalf.py::test_evalf_powers PASSED                 [ 14%]
+sympy/core/tests/test_evalf.py::test_evalf_rump PASSED                   [ 15%]
+sympy/core/tests/test_evalf.py::test_evalf_complex PASSED                [ 15%]
+sympy/core/tests/test_evalf.py::test_evalf_complex_bug XFAIL             [ 16%]
+sympy/core/tests/test_evalf.py::test_evalf_complex_powers PASSED         [ 17%]
+sympy/core/tests/test_evalf.py::test_evalf_complex_powers_bug XFAIL      [ 17%]
+sympy/core/tests/test_evalf.py::test_evalf_exponentiation PASSED         [ 18%]
+sympy/core/tests/test_evalf.py::test_evalf_complex_cancellation PASSED   [ 18%]
+sympy/core/tests/test_evalf.py::test_evalf_logs PASSED                   [ 19%]
+sympy/core/tests/test_evalf.py::test_evalf_trig PASSED                   [ 19%]
+sympy/core/tests/test_evalf.py::test_evalf_near_integers PASSED          [ 20%]
+sympy/core/tests/test_evalf.py::test_evalf_ramanujan PASSED              [ 21%]
+sympy/core/tests/test_evalf.py::test_evalf_bugs PASSED                   [ 21%]
+sympy/core/tests/test_evalf.py::test_evalf_integer_parts PASSED          [ 22%]
+sympy/core/tests/test_evalf.py::test_evalf_trig_zero_detection PASSED    [ 22%]
+sympy/core/tests/test_evalf.py::test_evalf_sum PASSED                    [ 23%]
+sympy/core/tests/test_evalf.py::test_evalf_divergent_series PASSED       [ 23%]
+sympy/core/tests/test_evalf.py::test_evalf_product PASSED                [ 24%]
+sympy/core/tests/test_evalf.py::test_evalf_py_methods PASSED             [ 25%]
+sympy/core/tests/test_evalf.py::test_evalf_power_subs_bugs PASSED        [ 25%]
+sympy/core/tests/test_evalf.py::test_evalf_arguments PASSED              [ 26%]
+sympy/core/tests/test_evalf.py::test_implemented_function_evalf PASSED   [ 26%]
+sympy/core/tests/test_evalf.py::test_evaluate_false PASSED               [ 27%]
+sympy/core/tests/test_evalf.py::test_evalf_relational PASSED             [ 27%]
+sympy/core/tests/test_evalf.py::test_issue_5486 PASSED                   [ 28%]
+sympy/core/tests/test_evalf.py::test_issue_5486_bug PASSED               [ 28%]
+sympy/core/tests/test_evalf.py::test_bugs PASSED                         [ 29%]
+sympy/core/tests/test_evalf.py::test_subs PASSED                         [ 30%]
+sympy/core/tests/test_evalf.py::test_issue_4956_5204 PASSED              [ 30%]
+sympy/core/tests/test_evalf.py::test_old_docstring PASSED                [ 31%]
+sympy/core/tests/test_evalf.py::test_issue_4806 PASSED                   [ 31%]
+sympy/core/tests/test_evalf.py::test_evalf_mul PASSED                    [ 32%]
+sympy/core/tests/test_evalf.py::test_scaled_zero PASSED                  [ 32%]
+sympy/core/tests/test_evalf.py::test_chop_value PASSED                   [ 33%]
+sympy/core/tests/test_evalf.py::test_infinities PASSED                   [ 34%]
+sympy/core/tests/test_evalf.py::test_to_mpmath PASSED                    [ 34%]
+sympy/core/tests/test_evalf.py::test_issue_6632_evalf PASSED             [ 35%]
+sympy/core/tests/test_evalf.py::test_issue_4945 PASSED                   [ 35%]
+sympy/core/tests/test_evalf.py::test_evalf_integral PASSED               [ 36%]
+sympy/core/tests/test_evalf.py::test_issue_8821_highprec_from_str PASSED [ 36%]
+sympy/core/tests/test_evalf.py::test_issue_8853 PASSED                   [ 37%]
+sympy/core/tests/test_evalf.py::test_issue_17681 PASSED                  [ 38%]
+sympy/core/tests/test_evalf.py::test_issue_9326 PASSED                   [ 38%]
+sympy/core/tests/test_evalf.py::test_issue_10323 PASSED                  [ 39%]
+sympy/core/tests/test_evalf.py::test_AssocOp_Function PASSED             [ 39%]
+sympy/core/tests/test_evalf.py::test_issue_10395 PASSED                  [ 40%]
+sympy/core/tests/test_evalf.py::test_issue_13098 PASSED                  [ 40%]
+sympy/core/tests/test_evalf.py::test_issue_14601 PASSED                  [ 41%]
+sympy/core/tests/test_evalf.py::test_issue_11151 PASSED                  [ 42%]
+sympy/core/tests/test_evalf.py::test_issue_13425 PASSED                  [ 42%]
+sympy/core/tests/test_evalf.py::test_issue_17421 PASSED                  [ 43%]
+sympy/core/tests/test_expr.py::test_basic PASSED                         [ 43%]
+sympy/core/tests/test_expr.py::test_ibasic PASSED                        [ 44%]
+sympy/core/tests/test_expr.py::test_cooperative_operations PASSED        [ 44%]
+sympy/core/tests/test_expr.py::test_relational PASSED                    [ 45%]
+sympy/core/tests/test_expr.py::test_relational_assumptions PASSED        [ 46%]
+sympy/core/tests/test_expr.py::test_basic_nostr PASSED                   [ 46%]
+sympy/core/tests/test_expr.py::test_series_expansion_for_uniform_order PASSED [ 47%]
+sympy/core/tests/test_expr.py::test_leadterm PASSED                      [ 47%]
+sympy/core/tests/test_expr.py::test_as_leading_term PASSED               [ 48%]
+sympy/core/tests/test_expr.py::test_leadterm2 PASSED                     [ 48%]
+sympy/core/tests/test_expr.py::test_leadterm3 PASSED                     [ 49%]
+sympy/core/tests/test_expr.py::test_as_leading_term2 PASSED              [ 50%]
+sympy/core/tests/test_expr.py::test_as_leading_term3 PASSED              [ 50%]
+sympy/core/tests/test_expr.py::test_as_leading_term4 PASSED              [ 51%]
+sympy/core/tests/test_expr.py::test_as_leading_term_stub PASSED          [ 51%]
+sympy/core/tests/test_expr.py::test_as_leading_term_deriv_integral PASSED [ 52%]
+sympy/core/tests/test_expr.py::test_atoms PASSED                         [ 52%]
+sympy/core/tests/test_expr.py::test_is_polynomial PASSED                 [ 53%]
+sympy/core/tests/test_expr.py::test_is_rational_function PASSED          [ 53%]
+sympy/core/tests/test_expr.py::test_is_meromorphic PASSED                [ 54%]
+sympy/core/tests/test_expr.py::test_is_algebraic_expr PASSED             [ 55%]
+sympy/core/tests/test_expr.py::test_SAGE1 PASSED                         [ 55%]
+sympy/core/tests/test_expr.py::test_SAGE2 PASSED                         [ 56%]
+sympy/core/tests/test_expr.py::test_SAGE3 PASSED                         [ 56%]
+sympy/core/tests/test_expr.py::test_len PASSED                           [ 57%]
+sympy/core/tests/test_expr.py::test_doit PASSED                          [ 57%]
+sympy/core/tests/test_expr.py::test_attribute_error PASSED               [ 58%]
+sympy/core/tests/test_expr.py::test_args PASSED                          [ 59%]
+sympy/core/tests/test_expr.py::test_noncommutative_expand_issue_3757 PASSED [ 59%]
+sympy/core/tests/test_expr.py::test_as_numer_denom PASSED                [ 60%]
+sympy/core/tests/test_expr.py::test_trunc PASSED                         [ 60%]
+sympy/core/tests/test_expr.py::test_as_independent PASSED                [ 61%]
+sympy/core/tests/test_expr.py::test_call_2 XFAIL                         [ 61%]
+sympy/core/tests/test_expr.py::test_replace PASSED                       [ 62%]
+sympy/core/tests/test_expr.py::test_find PASSED                          [ 63%]
+sympy/core/tests/test_expr.py::test_count PASSED                         [ 63%]
+sympy/core/tests/test_expr.py::test_has_basics PASSED                    [ 64%]
+sympy/core/tests/test_expr.py::test_has_multiple PASSED                  [ 64%]
+sympy/core/tests/test_expr.py::test_has_piecewise PASSED                 [ 65%]
+sympy/core/tests/test_expr.py::test_has_iterative PASSED                 [ 65%]
+sympy/core/tests/test_expr.py::test_has_integrals PASSED                 [ 66%]
+sympy/core/tests/test_expr.py::test_has_tuple PASSED                     [ 67%]
+sympy/core/tests/test_expr.py::test_has_units PASSED                     [ 67%]
+sympy/core/tests/test_expr.py::test_has_polys PASSED                     [ 68%]
+sympy/core/tests/test_expr.py::test_has_physics PASSED                   [ 68%]
+sympy/core/tests/test_expr.py::test_as_poly_as_expr PASSED               [ 69%]
+sympy/core/tests/test_expr.py::test_nonzero PASSED                       [ 69%]
+sympy/core/tests/test_expr.py::test_is_number PASSED                     [ 70%]
+sympy/core/tests/test_expr.py::test_as_coeff_add PASSED                  [ 71%]
+sympy/core/tests/test_expr.py::test_as_coeff_mul PASSED                  [ 71%]
+sympy/core/tests/test_expr.py::test_as_coeff_exponent PASSED             [ 72%]
+sympy/core/tests/test_expr.py::test_extractions PASSED                   [ 72%]
+sympy/core/tests/test_expr.py::test_nan_extractions PASSED               [ 73%]
+sympy/core/tests/test_expr.py::test_coeff PASSED                         [ 73%]
+sympy/core/tests/test_expr.py::test_coeff2 PASSED                        [ 74%]
+sympy/core/tests/test_expr.py::test_coeff2_0 PASSED                      [ 75%]
+sympy/core/tests/test_expr.py::test_coeff_expand PASSED                  [ 75%]
+sympy/core/tests/test_expr.py::test_integrate PASSED                     [ 76%]
+sympy/core/tests/test_expr.py::test_as_base_exp PASSED                   [ 76%]
+sympy/core/tests/test_expr.py::test_issue_4963 PASSED                    [ 77%]
+sympy/core/tests/test_expr.py::test_action_verbs PASSED                  [ 77%]
+sympy/core/tests/test_expr.py::test_as_powers_dict PASSED                [ 78%]
+sympy/core/tests/test_expr.py::test_as_coefficients_dict PASSED          [ 78%]
+sympy/core/tests/test_expr.py::test_args_cnc PASSED                      [ 79%]
+sympy/core/tests/test_expr.py::test_new_rawargs PASSED                   [ 80%]
+sympy/core/tests/test_expr.py::test_issue_5226 PASSED                    [ 80%]
+sympy/core/tests/test_expr.py::test_free_symbols PASSED                  [ 81%]
+sympy/core/tests/test_expr.py::test_issue_5300 PASSED                    [ 81%]
+sympy/core/tests/test_expr.py::test_floordiv PASSED                      [ 82%]
+sympy/core/tests/test_expr.py::test_as_coeff_Mul PASSED                  [ 82%]
+sympy/core/tests/test_expr.py::test_as_coeff_Add PASSED                  [ 83%]
+sympy/core/tests/test_expr.py::test_expr_sorting PASSED                  [ 84%]
+sympy/core/tests/test_expr.py::test_as_ordered_factors PASSED            [ 84%]
+sympy/core/tests/test_expr.py::test_as_ordered_terms PASSED              [ 85%]
+sympy/core/tests/test_expr.py::test_sort_key_atomic_expr PASSED          [ 85%]
+sympy/core/tests/test_expr.py::test_eval_interval PASSED                 [ 86%]
+sympy/core/tests/test_expr.py::test_eval_interval_zoo PASSED             [ 86%]
+sympy/core/tests/test_expr.py::test_primitive PASSED                     [ 87%]
+sympy/core/tests/test_expr.py::test_issue_5843 PASSED                    [ 88%]
+sympy/core/tests/test_expr.py::test_is_constant PASSED                   [ 88%]
+sympy/core/tests/test_expr.py::test_equals PASSED                        [ 89%]
+sympy/core/tests/test_expr.py::test_random PASSED                        [ 89%]
+sympy/core/tests/test_expr.py::test_round PASSED                         [ 90%]
+sympy/core/tests/test_expr.py::test_held_expression_UnevaluatedExpr PASSED [ 90%]
+sympy/core/tests/test_expr.py::test_round_exception_nostr PASSED         [ 91%]
+sympy/core/tests/test_expr.py::test_extract_branch_factor PASSED         [ 92%]
+sympy/core/tests/test_expr.py::test_identity_removal PASSED              [ 92%]
+sympy/core/tests/test_expr.py::test_float_0 PASSED                       [ 93%]
+sympy/core/tests/test_expr.py::test_float_0_fail XFAIL                   [ 93%]
+sympy/core/tests/test_expr.py::test_issue_6325 PASSED                    [ 94%]
+sympy/core/tests/test_expr.py::test_issue_7426 PASSED                    [ 94%]
+sympy/core/tests/test_expr.py::test_issue_11122 PASSED                   [ 95%]
+sympy/core/tests/test_expr.py::test_issue_10651 PASSED                   [ 96%]
+sympy/core/tests/test_expr.py::test_issue_10161 PASSED                   [ 96%]
+sympy/core/tests/test_expr.py::test_issue_10755 PASSED                   [ 97%]
+sympy/core/tests/test_expr.py::test_issue_11877 PASSED                   [ 97%]
+sympy/core/tests/test_expr.py::test_normal PASSED                        [ 98%]
+sympy/core/tests/test_expr.py::test_expr PASSED                          [ 98%]
+sympy/core/tests/test_expr.py::test_ExprBuilder PASSED                   [ 99%]
+sympy/core/tests/test_expr.py::test_non_string_equality PASSED           [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474: PytestConfigWarning: Unknown config option: doctestplus
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+sympy/core/tests/test_basic.py: 27 warnings
+sympy/core/tests/test_evalf.py: 4862 warnings
+sympy/core/tests/test_expr.py: 1741 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============== 172 passed, 4 xfailed, 6635 warnings in 12.20s ================
+
+--- stderr ---
+
+
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpDysd9i\Scripts\python.exe -m pytest sympy/core/tests/test_exprtools.py sympy/core/tests/test_function.py sympy/core/tests/test_noncommutative.py -v --tb=short -p no:cacheprovider  (exit 0, 12s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpDysd9i\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 111 items
+
+sympy/core/tests/test_exprtools.py::test_decompose_power PASSED          [  0%]
+sympy/core/tests/test_exprtools.py::test_Factors PASSED                  [  1%]
+sympy/core/tests/test_exprtools.py::test_Term PASSED                     [  2%]
+sympy/core/tests/test_exprtools.py::test_gcd_terms PASSED                [  3%]
+sympy/core/tests/test_exprtools.py::test_factor_terms PASSED             [  4%]
+sympy/core/tests/test_exprtools.py::test_xreplace PASSED                 [  5%]
+sympy/core/tests/test_exprtools.py::test_factor_nc PASSED                [  6%]
+sympy/core/tests/test_exprtools.py::test_issue_6360 PASSED               [  7%]
+sympy/core/tests/test_exprtools.py::test_issue_7903 PASSED               [  8%]
+sympy/core/tests/test_exprtools.py::test_issue_8263 PASSED               [  9%]
+sympy/core/tests/test_exprtools.py::test_monotonic_sign PASSED           [  9%]
+sympy/core/tests/test_exprtools.py::test_issue_17256 PASSED              [ 10%]
+sympy/core/tests/test_function.py::test_f_expand_complex PASSED          [ 11%]
+sympy/core/tests/test_function.py::test_bug1 PASSED                      [ 12%]
+sympy/core/tests/test_function.py::test_general_function PASSED          [ 13%]
+sympy/core/tests/test_function.py::test_general_function_nullary PASSED  [ 14%]
+sympy/core/tests/test_function.py::test_derivative_subs_bug PASSED       [ 15%]
+sympy/core/tests/test_function.py::test_derivative_subs_self_bug PASSED  [ 16%]
+sympy/core/tests/test_function.py::test_derivative_linearity PASSED      [ 17%]
+sympy/core/tests/test_function.py::test_derivative_evaluate PASSED       [ 18%]
+sympy/core/tests/test_function.py::test_diff_symbols PASSED              [ 18%]
+sympy/core/tests/test_function.py::test_Function PASSED                  [ 19%]
+sympy/core/tests/test_function.py::test_nargs PASSED                     [ 20%]
+sympy/core/tests/test_function.py::test_nargs_inheritance PASSED         [ 21%]
+sympy/core/tests/test_function.py::test_arity PASSED                     [ 22%]
+sympy/core/tests/test_function.py::test_Lambda PASSED                    [ 23%]
+sympy/core/tests/test_function.py::test_IdentityFunction PASSED          [ 24%]
+sympy/core/tests/test_function.py::test_Lambda_symbols PASSED            [ 25%]
+sympy/core/tests/test_function.py::test_functionclas_symbols PASSED      [ 26%]
+sympy/core/tests/test_function.py::test_Lambda_arguments PASSED          [ 27%]
+sympy/core/tests/test_function.py::test_Lambda_equality PASSED           [ 27%]
+sympy/core/tests/test_function.py::test_Subs PASSED                      [ 28%]
+sympy/core/tests/test_function.py::test_doitdoit PASSED                  [ 29%]
+sympy/core/tests/test_function.py::test_Subs2 XFAIL                      [ 30%]
+sympy/core/tests/test_function.py::test_expand_function PASSED           [ 31%]
+sympy/core/tests/test_function.py::test_function_comparable PASSED       [ 32%]
+sympy/core/tests/test_function.py::test_function_comparable_infinities PASSED [ 33%]
+sympy/core/tests/test_function.py::test_deriv1 PASSED                    [ 34%]
+sympy/core/tests/test_function.py::test_deriv2 PASSED                    [ 35%]
+sympy/core/tests/test_function.py::test_func_deriv PASSED                [ 36%]
+sympy/core/tests/test_function.py::test_suppressed_evaluation PASSED     [ 36%]
+sympy/core/tests/test_function.py::test_function_evalf PASSED            [ 37%]
+sympy/core/tests/test_function.py::test_extensibility_eval PASSED        [ 38%]
+sympy/core/tests/test_function.py::test_function_non_commutative PASSED  [ 39%]
+sympy/core/tests/test_function.py::test_function_complex PASSED          [ 40%]
+sympy/core/tests/test_function.py::test_function__eval_nseries PASSED    [ 41%]
+sympy/core/tests/test_function.py::test_doit PASSED                      [ 42%]
+sympy/core/tests/test_function.py::test_evalf_default PASSED             [ 43%]
+sympy/core/tests/test_function.py::test_issue_5399 PASSED                [ 44%]
+sympy/core/tests/test_function.py::test_derivative_numerically PASSED    [ 45%]
+sympy/core/tests/test_function.py::test_fdiff_argument_index_error PASSED [ 45%]
+sympy/core/tests/test_function.py::test_deriv_wrt_function PASSED        [ 46%]
+sympy/core/tests/test_function.py::test_diff_wrt_value PASSED            [ 47%]
+sympy/core/tests/test_function.py::test_diff_wrt PASSED                  [ 48%]
+sympy/core/tests/test_function.py::test_diff_wrt_func_subs PASSED        [ 49%]
+sympy/core/tests/test_function.py::test_subs_in_derivative PASSED        [ 50%]
+sympy/core/tests/test_function.py::test_diff_wrt_not_allowed PASSED      [ 51%]
+sympy/core/tests/test_function.py::test_klein_gordon_lagrangian PASSED   [ 52%]
+sympy/core/tests/test_function.py::test_sho_lagrangian PASSED            [ 53%]
+sympy/core/tests/test_function.py::test_straight_line PASSED             [ 54%]
+sympy/core/tests/test_function.py::test_sort_variable PASSED             [ 54%]
+sympy/core/tests/test_function.py::test_multiple_derivative PASSED       [ 55%]
+sympy/core/tests/test_function.py::test_unhandled PASSED                 [ 56%]
+sympy/core/tests/test_function.py::test_nfloat PASSED                    [ 57%]
+sympy/core/tests/test_function.py::test_issue_7068 PASSED                [ 58%]
+sympy/core/tests/test_function.py::test_issue_7231 PASSED                [ 59%]
+sympy/core/tests/test_function.py::test_issue_7687 PASSED                [ 60%]
+sympy/core/tests/test_function.py::test_issue_7688 PASSED                [ 61%]
+sympy/core/tests/test_function.py::test_mexpand PASSED                   [ 62%]
+sympy/core/tests/test_function.py::test_issue_8469 PASSED                [ 63%]
+sympy/core/tests/test_function.py::test_issue_12996 PASSED               [ 63%]
+sympy/core/tests/test_function.py::test_should_evalf PASSED              [ 64%]
+sympy/core/tests/test_function.py::test_Derivative_as_finite_difference PASSED [ 65%]
+sympy/core/tests/test_function.py::test_issue_11159 PASSED               [ 66%]
+sympy/core/tests/test_function.py::test_issue_12005 PASSED               [ 67%]
+sympy/core/tests/test_function.py::test_issue_13843 PASSED               [ 68%]
+sympy/core/tests/test_function.py::test_order_could_be_zero PASSED       [ 69%]
+sympy/core/tests/test_function.py::test_undefined_function_eq PASSED     [ 70%]
+sympy/core/tests/test_function.py::test_function_assumptions PASSED      [ 71%]
+sympy/core/tests/test_function.py::test_undef_fcn_float_issue_6938 PASSED [ 72%]
+sympy/core/tests/test_function.py::test_undefined_function_eval PASSED   [ 72%]
+sympy/core/tests/test_function.py::test_issue_15241 PASSED               [ 73%]
+sympy/core/tests/test_function.py::test_issue_15226 PASSED               [ 74%]
+sympy/core/tests/test_function.py::test_issue_7027 PASSED                [ 75%]
+sympy/core/tests/test_function.py::test_derivative_quick_exit PASSED     [ 76%]
+sympy/core/tests/test_function.py::test_issue_15084_13166 PASSED         [ 77%]
+sympy/core/tests/test_function.py::test_negative_counts PASSED           [ 78%]
+sympy/core/tests/test_function.py::test_Derivative__new__ PASSED         [ 79%]
+sympy/core/tests/test_function.py::test_issue_14719_10150 PASSED         [ 80%]
+sympy/core/tests/test_function.py::test_noncommutative_issue_15131 PASSED [ 81%]
+sympy/core/tests/test_function.py::test_Subs_Derivative PASSED           [ 81%]
+sympy/core/tests/test_function.py::test_issue_15360 PASSED               [ 82%]
+sympy/core/tests/test_function.py::test_issue_15947 PASSED               [ 83%]
+sympy/core/tests/test_function.py::test_Derivative_free_symbols PASSED   [ 84%]
+sympy/core/tests/test_function.py::test_issue_10503 PASSED               [ 85%]
+sympy/core/tests/test_noncommutative.py::test_adjoint PASSED             [ 86%]
+sympy/core/tests/test_noncommutative.py::test_cancel PASSED              [ 87%]
+sympy/core/tests/test_noncommutative.py::test_collect XFAIL              [ 88%]
+sympy/core/tests/test_noncommutative.py::test_combsimp PASSED            [ 89%]
+sympy/core/tests/test_noncommutative.py::test_gammasimp PASSED           [ 90%]
+sympy/core/tests/test_noncommutative.py::test_conjugate PASSED           [ 90%]
+sympy/core/tests/test_noncommutative.py::test_expand PASSED              [ 91%]
+sympy/core/tests/test_noncommutative.py::test_factor PASSED              [ 92%]
+sympy/core/tests/test_noncommutative.py::test_posify PASSED              [ 93%]
+sympy/core/tests/test_noncommutative.py::test_radsimp PASSED             [ 94%]
+sympy/core/tests/test_noncommutative.py::test_ratsimp XFAIL              [ 95%]
+sympy/core/tests/test_noncommutative.py::test_rcollect XFAIL             [ 96%]
+sympy/core/tests/test_noncommutative.py::test_simplify PASSED            [ 97%]
+sympy/core/tests/test_noncommutative.py::test_subs PASSED                [ 98%]
+sympy/core/tests/test_noncommutative.py::test_transpose PASSED           [ 99%]
+sympy/core/tests/test_noncommutative.py::test_trigsimp PASSED            [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474: PytestConfigWarning: Unknown config option: doctestplus
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+sympy/core/tests/test_exprtools.py: 25 warnings
+sympy/core/tests/test_function.py: 19 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+sympy/core/tests/test_function.py::test_nfloat
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\calculus\polynomials.py:177: DeprecationWarning: Descending (wrt powers) order of polynomial coefficients is deprecated, please adapt you code to use ascending order, asc=True.
+    warnings.warn("Descending (wrt powers) order of polynomial "
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================= 107 passed, 4 xfailed, 50 warnings in 8.48s =================
+
+--- stderr ---
+
+
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpDysd9i\Scripts\python.exe -m pytest sympy/core/tests/test_relational.py sympy/core/tests/test_subs.py -v --tb=short -p no:cacheprovider  (exit 0, 10s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpDysd9i\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+configfile: pytest.ini
+collecting ... collected 129 items
+
+sympy/core/tests/test_relational.py::test_rel_ne PASSED                  [  0%]
+sympy/core/tests/test_relational.py::test_rel_subs PASSED                [  1%]
+sympy/core/tests/test_relational.py::test_wrappers PASSED                [  2%]
+sympy/core/tests/test_relational.py::test_Eq_Ne PASSED                   [  3%]
+sympy/core/tests/test_relational.py::test_as_poly PASSED                 [  3%]
+sympy/core/tests/test_relational.py::test_rel_Infinity PASSED            [  4%]
+sympy/core/tests/test_relational.py::test_infinite_symbol_inequalities PASSED [  5%]
+sympy/core/tests/test_relational.py::test_bool PASSED                    [  6%]
+sympy/core/tests/test_relational.py::test_rich_cmp PASSED                [  6%]
+sympy/core/tests/test_relational.py::test_doit PASSED                    [  7%]
+sympy/core/tests/test_relational.py::test_new_relational PASSED          [  8%]
+sympy/core/tests/test_relational.py::test_relational_arithmetic PASSED   [  9%]
+sympy/core/tests/test_relational.py::test_relational_bool_output PASSED  [ 10%]
+sympy/core/tests/test_relational.py::test_relational_logic_symbols PASSED [ 10%]
+sympy/core/tests/test_relational.py::test_univariate_relational_as_set PASSED [ 11%]
+sympy/core/tests/test_relational.py::test_multivariate_relational_as_set XFAIL [ 12%]
+sympy/core/tests/test_relational.py::test_Not PASSED                     [ 13%]
+sympy/core/tests/test_relational.py::test_evaluate PASSED                [ 13%]
+sympy/core/tests/test_relational.py::test_imaginary_compare_raises_TypeError PASSED [ 14%]
+sympy/core/tests/test_relational.py::test_complex_compare_not_real PASSED [ 15%]
+sympy/core/tests/test_relational.py::test_imaginary_and_inf_compare_raises_TypeError PASSED [ 16%]
+sympy/core/tests/test_relational.py::test_complex_pure_imag_not_ordered PASSED [ 17%]
+sympy/core/tests/test_relational.py::test_x_minus_y_not_same_as_x_lt_y PASSED [ 17%]
+sympy/core/tests/test_relational.py::test_nan_equality_exceptions PASSED [ 18%]
+sympy/core/tests/test_relational.py::test_nan_inequality_raise_errors PASSED [ 19%]
+sympy/core/tests/test_relational.py::test_nan_complex_inequalities PASSED [ 20%]
+sympy/core/tests/test_relational.py::test_complex_infinity_inequalities PASSED [ 20%]
+sympy/core/tests/test_relational.py::test_inequalities_symbol_name_same PASSED [ 21%]
+sympy/core/tests/test_relational.py::test_inequalities_symbol_name_same_complex PASSED [ 22%]
+sympy/core/tests/test_relational.py::test_inequalities_cant_sympify_other PASSED [ 23%]
+sympy/core/tests/test_relational.py::test_ineq_avoid_wild_symbol_flip PASSED [ 24%]
+sympy/core/tests/test_relational.py::test_issue_8245 PASSED              [ 24%]
+sympy/core/tests/test_relational.py::test_issue_8449 PASSED              [ 25%]
+sympy/core/tests/test_relational.py::test_simplify_relational PASSED     [ 26%]
+sympy/core/tests/test_relational.py::test_equals PASSED                  [ 27%]
+sympy/core/tests/test_relational.py::test_reversed PASSED                [ 27%]
+sympy/core/tests/test_relational.py::test_canonical PASSED               [ 28%]
+sympy/core/tests/test_relational.py::test_issue_8444_nonworkingtests XFAIL [ 29%]
+sympy/core/tests/test_relational.py::test_issue_8444_workingtests PASSED [ 30%]
+sympy/core/tests/test_relational.py::test_issue_10304 PASSED             [ 31%]
+sympy/core/tests/test_relational.py::test_issue_18412 PASSED             [ 31%]
+sympy/core/tests/test_relational.py::test_issue_10401 PASSED             [ 32%]
+sympy/core/tests/test_relational.py::test_issue_10633 PASSED             [ 33%]
+sympy/core/tests/test_relational.py::test_issue_10927 PASSED             [ 34%]
+sympy/core/tests/test_relational.py::test_issues_13081_12583_12534 PASSED [ 34%]
+sympy/core/tests/test_relational.py::test_issue_18188 PASSED             [ 35%]
+sympy/core/tests/test_relational.py::test_binary_symbols PASSED          [ 36%]
+sympy/core/tests/test_relational.py::test_rel_args PASSED                [ 37%]
+sympy/core/tests/test_relational.py::test_Equality_rewrite_as_Add PASSED [ 37%]
+sympy/core/tests/test_relational.py::test_issue_15847 PASSED             [ 38%]
+sympy/core/tests/test_relational.py::test_negated_property PASSED        [ 39%]
+sympy/core/tests/test_relational.py::test_reversedsign_property PASSED   [ 40%]
+sympy/core/tests/test_relational.py::test_reversed_reversedsign_property PASSED [ 41%]
+sympy/core/tests/test_relational.py::test_improved_canonical PASSED      [ 41%]
+sympy/core/tests/test_relational.py::test_set_equality_canonical PASSED  [ 42%]
+sympy/core/tests/test_relational.py::test_trigsimp PASSED                [ 43%]
+sympy/core/tests/test_relational.py::test_polynomial_relation_simplification PASSED [ 44%]
+sympy/core/tests/test_relational.py::test_multivariate_linear_function_simplification PASSED [ 44%]
+sympy/core/tests/test_relational.py::test_nonpolymonial_relations PASSED [ 45%]
+sympy/core/tests/test_relational.py::test_18778 PASSED                   [ 46%]
+sympy/core/tests/test_relational.py::test_EvalEq PASSED                  [ 47%]
+sympy/core/tests/test_relational.py::test_is_eq PASSED                   [ 48%]
+sympy/core/tests/test_relational.py::test_is_ge_le PASSED                [ 48%]
+sympy/core/tests/test_subs.py::test_subs PASSED                          [ 49%]
+sympy/core/tests/test_subs.py::test_subs_Matrix PASSED                   [ 50%]
+sympy/core/tests/test_subs.py::test_subs_AccumBounds PASSED              [ 51%]
+sympy/core/tests/test_subs.py::test_trigonometric PASSED                 [ 51%]
+sympy/core/tests/test_subs.py::test_powers PASSED                        [ 52%]
+sympy/core/tests/test_subs.py::test_logexppow PASSED                     [ 53%]
+sympy/core/tests/test_subs.py::test_bug PASSED                           [ 54%]
+sympy/core/tests/test_subs.py::test_subbug1 PASSED                       [ 55%]
+sympy/core/tests/test_subs.py::test_subbug2 PASSED                       [ 55%]
+sympy/core/tests/test_subs.py::test_dict_set PASSED                      [ 56%]
+sympy/core/tests/test_subs.py::test_dict_ambigous PASSED                 [ 57%]
+sympy/core/tests/test_subs.py::test_deriv_sub_bug3 PASSED                [ 58%]
+sympy/core/tests/test_subs.py::test_equality_subs1 PASSED                [ 58%]
+sympy/core/tests/test_subs.py::test_equality_subs2 PASSED                [ 59%]
+sympy/core/tests/test_subs.py::test_issue_3742 PASSED                    [ 60%]
+sympy/core/tests/test_subs.py::test_subs_dict1 PASSED                    [ 61%]
+sympy/core/tests/test_subs.py::test_mul PASSED                           [ 62%]
+sympy/core/tests/test_subs.py::test_subs_simple PASSED                   [ 62%]
+sympy/core/tests/test_subs.py::test_subs_constants PASSED                [ 63%]
+sympy/core/tests/test_subs.py::test_subs_commutative PASSED              [ 64%]
+sympy/core/tests/test_subs.py::test_subs_noncommutative PASSED           [ 65%]
+sympy/core/tests/test_subs.py::test_subs_basic_funcs PASSED              [ 65%]
+sympy/core/tests/test_subs.py::test_subs_wild PASSED                     [ 66%]
+sympy/core/tests/test_subs.py::test_subs_mixed PASSED                    [ 67%]
+sympy/core/tests/test_subs.py::test_division PASSED                      [ 68%]
+sympy/core/tests/test_subs.py::test_add PASSED                           [ 68%]
+sympy/core/tests/test_subs.py::test_subs_issue_4009 PASSED               [ 69%]
+sympy/core/tests/test_subs.py::test_functions_subs PASSED                [ 70%]
+sympy/core/tests/test_subs.py::test_derivative_subs PASSED               [ 71%]
+sympy/core/tests/test_subs.py::test_derivative_subs2 PASSED              [ 72%]
+sympy/core/tests/test_subs.py::test_derivative_subs3 PASSED              [ 72%]
+sympy/core/tests/test_subs.py::test_issue_5284 PASSED                    [ 73%]
+sympy/core/tests/test_subs.py::test_subs_iter PASSED                     [ 74%]
+sympy/core/tests/test_subs.py::test_subs_dict PASSED                     [ 75%]
+sympy/core/tests/test_subs.py::test_no_arith_subs_on_floats PASSED       [ 75%]
+sympy/core/tests/test_subs.py::test_issue_5651 PASSED                    [ 76%]
+sympy/core/tests/test_subs.py::test_issue_6075 PASSED                    [ 77%]
+sympy/core/tests/test_subs.py::test_issue_6079 PASSED                    [ 78%]
+sympy/core/tests/test_subs.py::test_issue_4680 PASSED                    [ 79%]
+sympy/core/tests/test_subs.py::test_issue_6158 PASSED                    [ 79%]
+sympy/core/tests/test_subs.py::test_Function_subs PASSED                 [ 80%]
+sympy/core/tests/test_subs.py::test_simultaneous_subs PASSED             [ 81%]
+sympy/core/tests/test_subs.py::test_issue_6419_6421 PASSED               [ 82%]
+sympy/core/tests/test_subs.py::test_issue_6559 PASSED                    [ 82%]
+sympy/core/tests/test_subs.py::test_issue_5261 PASSED                    [ 83%]
+sympy/core/tests/test_subs.py::test_issue_6923 PASSED                    [ 84%]
+sympy/core/tests/test_subs.py::test_2arg_hack PASSED                     [ 85%]
+sympy/core/tests/test_subs.py::test_mul2 XFAIL                           [ 86%]
+sympy/core/tests/test_subs.py::test_noncommutative_subs PASSED           [ 86%]
+sympy/core/tests/test_subs.py::test_issue_2877 PASSED                    [ 87%]
+sympy/core/tests/test_subs.py::test_issue_5910 PASSED                    [ 88%]
+sympy/core/tests/test_subs.py::test_issue_5217 PASSED                    [ 89%]
+sympy/core/tests/test_subs.py::test_issue_10829 PASSED                   [ 89%]
+sympy/core/tests/test_subs.py::test_pow_eval_subs_no_cache PASSED        [ 90%]
+sympy/core/tests/test_subs.py::test_RootOf_issue_10092 PASSED            [ 91%]
+sympy/core/tests/test_subs.py::test_issue_8886 PASSED                    [ 92%]
+sympy/core/tests/test_subs.py::test_issue_12657 PASSED                   [ 93%]
+sympy/core/tests/test_subs.py::test_recurse_Application_args PASSED      [ 93%]
+sympy/core/tests/test_subs.py::test_Subs_subs PASSED                     [ 94%]
+sympy/core/tests/test_subs.py::test_issue_13333 PASSED                   [ 95%]
+sympy/core/tests/test_subs.py::test_issue_15234 PASSED                   [ 96%]
+sympy/core/tests/test_subs.py::test_issue_6976 PASSED                    [ 96%]
+sympy/core/tests/test_subs.py::test_issue_11746 PASSED                   [ 97%]
+sympy/core/tests/test_subs.py::test_issue_17823 PASSED                   [ 98%]
+sympy/core/tests/test_subs.py::test_issue_19326 PASSED                   [ 99%]
+sympy/core/tests/test_subs.py::test_issue_19558 PASSED                   [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\_pytest\config\__init__.py:1474: PytestConfigWarning: Unknown config option: doctestplus
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+sympy/core/tests/test_relational.py: 2834 warnings
+sympy/core/tests/test_subs.py: 16 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================ 126 passed, 3 xfailed, 2855 warnings in 5.97s ================
+
+--- stderr ---

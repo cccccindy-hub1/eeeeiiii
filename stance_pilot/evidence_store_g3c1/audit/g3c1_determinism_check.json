@@ -1,0 +1,32 @@
+{
+  "api_calls_made": 0,
+  "design_version": "groundedreview-gate3c1-local-pilot-freeze-v1",
+  "deterministic": true,
+  "document": "G3-C.1 determinism: the pre-registered selection and the oracle/condition gold regenerate byte-identically from frozen inputs when re-executed.",
+  "method": "snapshot sha256 -> in-process re-execution of evidence.g3c1_select.main() then evidence.g3c1_gold.main() -> re-snapshot sha256; no git write-tree, pytest, server or network call was invoked (g3c1_gold reads the existing audit/g3c1_freshness_recompute.json cache).",
+  "note": "No build timestamp enters the selection or either gold file: selection is canonical (sorted keys); gold rows derive only from pre/post executed facts, totals and the frozen gold rule (truth's built_at label-provenance is not copied into gold).",
+  "rerun_modules": [
+    "evidence.g3c1_select",
+    "evidence.g3c1_gold"
+  ],
+  "targets": [
+    {
+      "byte_identical": true,
+      "path": "selection/g3c1_selection.json",
+      "sha256_after": "f3284c752f506a14f08e8fb7a3dc9c53371926904a25ee53b3db152fe113bca7",
+      "sha256_before": "f3284c752f506a14f08e8fb7a3dc9c53371926904a25ee53b3db152fe113bca7"
+    },
+    {
+      "byte_identical": true,
+      "path": "gold/g3c1_oracle_gold.jsonl",
+      "sha256_after": "340195a9f4070622be89a793e4d024e0268e3d7d1c75b71732e4f3d57db98ac6",
+      "sha256_before": "340195a9f4070622be89a793e4d024e0268e3d7d1c75b71732e4f3d57db98ac6"
+    },
+    {
+      "byte_identical": true,
+      "path": "gold/g3c1_condition_certificates.jsonl",
+      "sha256_after": "f33ea832bca676d375020d9f8b52a75f91ca1b178e744ff26bcdcc18cbfb05ac",
+      "sha256_before": "f33ea832bca676d375020d9f8b52a75f91ca1b178e744ff26bcdcc18cbfb05ac"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+\section{Limitations and Threats to Validity}
+\label{sec:threats}
+
+\begin{enumerate}[leftmargin=1.7em,itemsep=3pt,topsep=3pt]
+  \item \textbf{Gold is PROVISIONAL.} All labels come from one annotator;
+  \texttt{annotator2 = NOT\_OBTAINED}. AI self-review is not independent
+  arbitration. Every reported rate may shift under the planned
+  second-human-plus-senior-adjudication process; the independent-issue run is
+  reported strictly as a \emph{Provisional-Gold Exploratory Evaluation}, and
+  we do not upgrade gold in this manuscript.
+  \item \textbf{Small numbers and unit of analysis.} Ten issues (three
+  \REJECT) support the corrective results, and the independent-issue
+  validation has eight issues (two \REJECT). P2 intervals span essentially
+  $[0,1]$; the two-\REJECT\ independent slice is cases with an interval, not a
+  rate. Cells are repeated measures within an issue, not independent data,
+  and are never counted as such. The two issue sets are disjoint and run at
+  different times, so the recurring strict-over-commitment pattern
+  ($7/10$ and $6/8$) is an associational cross-set replication, not a pooled
+  estimate.
+  \item \textbf{Associational cross-version contrast.} The $9/10\to1/10$
+  change conflates activeness with freshness/trust repair and must not be given
+  single-cause attribution.
+  \item \textbf{Adaptive pilot sampling.} The new-issue enrichment priority was
+  fixed pre-outcome but is not verbatim pre-registered and changes the selected
+  set; natural and enriched queues are never pooled to estimate a
+  natural-population rate.
+  \item \textbf{Scoped oracle.} \ACCEPT\ means ``passes the declared, scoped
+  F2P/P2P and symptom checks,'' not the whole SymPy suite. Two new reject
+  issues also carry disclosed \emph{undeclared} collateral test changes (for
+  example, 15875 has two candidate-era collateral failures outside the dataset
+  P2P id set) that do not score but bound what ``accept'' means and remain open
+  for human review.
+  \item \textbf{Partial blinding.} Symptom prose and verbatim patch/probe text
+  can quote an issue number; 12 of 18 blind packets self-reference the issue
+  number, so identity blinding is partial.
+  \item \textbf{Single project and two models.} SymPy-only evidence and two
+  served model ids limit external validity; the contribution is the framework,
+  not cross-project generality.
+  \item \textbf{Instrument residual.} The baseline-P2P projection gap
+  (Section~\ref{sec:ablations}) is a known, disclosed non-interference
+  imperfection in the earlier instrument and remains pending removal. The
+  repaired v2 projection demonstrates zero tier-1/tier-2/baseline-map/hidden-
+  gold exposure on the real server (224 surfaces, 144 restricted-D) and has now
+  served the independent-issue paid run (80 cells) with the same non-
+  interference gate re-run green before any charge; no leak was observed,
+  though zero offline-audit exposure is not a proof against all future
+  channels.
+  \item \textbf{Probe-revision construct risk (FR1).} The strengthened probe
+  for issue 19495 was frozen about 24 minutes before the real build, but the
+  prior diagnostic had already observed the post-candidate behavior; whether the
+  revision was an instrument-only correction or post-hoc oracle redefinition is
+  reserved for the independent human (FR1), with no AI determination.
+\end{enumerate}

@@ -1,0 +1,24 @@
+{
+  "document": "Gate 3-B.2 task 10: sympy-17318/T2A regression. The repaired protocol preserves the visible F2P failure (so the GPT evidence-verification failure remains individually testable) without leaking REJECT.",
+  "protocol_version": "g3b2-protocol-v1",
+  "prompt_version": "p3-ternary-g3b2-v1",
+  "instance_id": "sympy__sympy-17318",
+  "condition": "T2A-T",
+  "checks": {
+    "t2a_f2p_aggregate_0_of_1_rendered": true,
+    "failing_id_test_issue_12420_rendered": true,
+    "record_summary_f2p_failed_id_matches": true,
+    "institutional_grant_present": true,
+    "old_unverified_linkage_phrase_removed": true,
+    "scoped_p2p_still_rendered": true,
+    "no_answer_assertion_or_gold_leak": true,
+    "oracle_gold_remains_REJECT_offline_fact": true,
+    "condition_gold_T2A_remains_REJECT": true,
+    "evidence_verification_vs_decision_policy_separable": true
+  },
+  "all_pass": true,
+  "evidence_excerpt": "tocol warranty (this T2A-T condition only):\n    - linkage: signed run for exactly the patch_sha256/base_commit above\n    - freshness: run tree equals the independently re-derived canonical git tree for this commit triple\n    - coverage: the checks below are the full maintainer-declared set, all executed\n  (warranty covers provenance/completeness only, NOT the result; read the outcomes yourself)\n  FAIL_TO_PASS passed: 0/1\n  scoped PASS_TO_PASS passed: 10/10\n  failing acceptance test ids:\n    - test_issue_12420",
+  "gold_tier": "PROVISIONAL",
+  "annotators": 1,
+  "annotator2": "NOT_OBTAINED"
+}

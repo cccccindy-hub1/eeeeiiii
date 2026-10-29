@@ -1,0 +1,128 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is linked to this patch and commit, is fresh for the current commit tree, and has complete coverage of the declared acceptance and regression checks. The diagnostic evidence confirms that the original issue symptom is resolved (the homomorphism construction no longer raises a ValueError for PermutationGroups). The author statement is consistent with the evidence. There are no failing acceptance checks or scoped regressions reported. Therefore, the patch is acceptable for merge.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"none\"}",
+  "cell": "g3b3:sympy__sympy-24443:T3D-Strict",
+  "condition": "T3D-Strict",
+  "cost_usd": 0.00244,
+  "evidence_session": "eb747279a2fd844c8077ba47",
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-24443",
+  "instance_id": "sympy__sympy-24443",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 2,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": "strict",
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.014195,
+    0.01447
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 72,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 2394,
+      "raw_content": "",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_ZDVbSzsKsm5yNOS8BJqs3Ip9",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_SMI98sPzY8FebhHE8x1wvw6O",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_w9mtwtsp5BjGRblahcUzI3lf",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_NdMBvs3u27Znb7nHz13Pkj1X",
+          "name": "check_claim_consistency"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 115,
+      "finish_reason": "stop",
+      "model_call": 2,
+      "prompt_tokens": 2958,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is linked to this patch and commit, is fresh for the current commit tree, and has complete coverage of the declared acceptance and regression checks. The diagnostic evidence confirms that the original issue symptom is resolved (the homomorphism construction no longer raises a ValueError for PermutationGroups). The author statement is consistent with the evidence. There are no failing acceptance checks or scoped regressions reported. Therefore, the patch is acceptable for merge.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"none\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 7,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_1a45f9af545345d7",
+  "tokens_in": 5352,
+  "tokens_out": 187,
+  "tool_calls": 4,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"809c53c077485ca48a206cee78340389cb83b7f1\", \"record_patch_sha256\": \"a6f310f819bab700c83f0f369b90b78dd0a4afc0193b9aea87a5abcff2ca588b\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"b26349e12c8c7e362093e221cba262e4a5093c45\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"b26349e12c8c7e362093e221cba262e4a5093c45\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:19:12+00:00\", \"attestation_built_at\": \"2026-10-25T18:19:25+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 1, \"executed\": 1, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    }
+  ],
+  "wall_s": 2.75
+}

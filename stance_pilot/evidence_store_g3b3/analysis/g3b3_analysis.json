@@ -1,0 +1,3312 @@
+{
+  "document": "Gate 3-B.3 Corrective Replication analysis",
+  "gate": "gate3b3_corrective_replication",
+  "gold_authority": {
+    "gold_tier": "PROVISIONAL",
+    "annotators": 1,
+    "annotator2": "NOT_OBTAINED",
+    "note": "Single-annotator gold; no second adjudicator obtained. Neither the G3-B.2 protocol repair nor the G3-B.3 corrective replication raises gold authority. No Cohen kappa against a second human is reported; gold is never called human-adjudicated. Every model comparison is against PROVISIONAL gold only."
+  },
+  "basis": "100 NEW real cells (10 independent issues x 5 regimes x 2 models) over the accepted G3-B.2 repaired protocol, paired strictly to the frozen G3-B cells; independent unit = the issue, cells are repeated measures.",
+  "associational_caution": "G3-B -> G3-B.3 differences are cross-version, cross-run-time and ASSOCIATIONAL. The release changed three-state freshness handling AND T2A policy trust together; their separate causal effects are NOT identified. Temperature=0 does not make two runs at different times identical. Do not generalise beyond these 10 SymPy issues.",
+  "interpretation_rule_q10": "A large drop in DeepSeek sufficient-regime NEED vs G3-B implies the original C2 over-abstention was largely PROTOCOL-INDUCED (the model-defect claim is weakened). Persistent NEED on visible sufficient outcomes is what would evidence a calibration/decision-policy defect.",
+  "budget_and_run_audit": {
+    "total_spend_usd": 0.303539,
+    "per_model_spend_usd": {
+      "deepseek-flash": 0.189045,
+      "gpt-4.1-mini": 0.114494
+    },
+    "total_hard_cap_usd": 3.0,
+    "per_model_cap_usd": 1.5,
+    "within_total_cap": true,
+    "new_rows": {
+      "deepseek-flash": 50,
+      "gpt-4.1-mini": 50
+    },
+    "error_rows": {
+      "deepseek-flash": 0,
+      "gpt-4.1-mini": 0
+    },
+    "retries_per_cell": 0,
+    "runner_version": "g3b3-runner-v1",
+    "executed_protocol_version": "g3b2-protocol-v1",
+    "executed_prompt_version": "p3-ternary-g3b2-v1"
+  },
+  "n_independent_issues": 10,
+  "n_new_cells": 100,
+  "n_strict_pairs": 100,
+  "Q10_deepseek_sufficient_need_and_paired_transition": {
+    "issue_condition_grid": [
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T2A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T2A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "NEED_EVIDENCE",
+        "need": 1,
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T2A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T2A-T",
+        "condition_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T2A-T",
+        "condition_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T2A-T",
+        "condition_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T2A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T2A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T2A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T2A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T3D-Escalate",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 8,
+          "model_calls": 4,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [
+            "log",
+            "log",
+            "log"
+          ],
+          "escalation_granted": [
+            "log",
+            "log",
+            "log"
+          ],
+          "escalation_denied": [
+            "consistency:missing_reason"
+          ],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T3D-Escalate",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "NEED_EVIDENCE",
+        "need": 1,
+        "tool_facts": {
+          "tool_calls": 9,
+          "model_calls": 5,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [
+            "log",
+            "log",
+            "consistency",
+            "log",
+            "consistency"
+          ],
+          "escalation_granted": [
+            "log",
+            "log",
+            "consistency",
+            "log",
+            "consistency"
+          ],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T3D-Escalate",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 7,
+          "model_calls": 3,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [
+            "log",
+            "log"
+          ],
+          "escalation_granted": [
+            "log",
+            "log"
+          ],
+          "escalation_denied": [
+            "consistency:missing_reason"
+          ],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3D-Escalate",
+        "condition_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 7,
+          "model_calls": 4,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": true,
+          "strict_denied_403": false,
+          "escalation_requested": [
+            "log",
+            "log",
+            "consistency"
+          ],
+          "escalation_granted": [
+            "log",
+            "log",
+            "consistency"
+          ],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "contradicted",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3D-Escalate",
+        "condition_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 9,
+          "model_calls": 5,
+          "called_artifact": true,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": true,
+          "strict_denied_403": false,
+          "escalation_requested": [
+            "consistency",
+            "log",
+            "log",
+            "log"
+          ],
+          "escalation_granted": [
+            "consistency",
+            "log",
+            "log",
+            "log"
+          ],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "contradicted",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3D-Escalate",
+        "condition_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 8,
+          "model_calls": 4,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": true,
+          "strict_denied_403": false,
+          "escalation_requested": [
+            "consistency",
+            "log",
+            "log",
+            "log"
+          ],
+          "escalation_granted": [
+            "consistency",
+            "log",
+            "log",
+            "log"
+          ],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "contradicted",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T3D-Escalate",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 8,
+          "model_calls": 4,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [
+            "log",
+            "log",
+            "consistency"
+          ],
+          "escalation_granted": [
+            "log",
+            "log",
+            "consistency"
+          ],
+          "escalation_denied": [
+            "consistency:missing_reason"
+          ],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3D-Escalate",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 7,
+          "model_calls": 3,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [
+            "log",
+            "log"
+          ],
+          "escalation_granted": [
+            "log",
+            "log"
+          ],
+          "escalation_denied": [
+            "consistency:missing_reason"
+          ],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T3D-Escalate",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 7,
+          "model_calls": 3,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [
+            "log",
+            "log"
+          ],
+          "escalation_granted": [
+            "log",
+            "log"
+          ],
+          "escalation_denied": [
+            "consistency:missing_reason"
+          ],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3D-Escalate",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 7,
+          "model_calls": 3,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [
+            "log",
+            "log"
+          ],
+          "escalation_granted": [
+            "log",
+            "log"
+          ],
+          "escalation_denied": [
+            "consistency:missing_reason"
+          ],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T3A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 10,
+          "model_calls": 5,
+          "called_artifact": true,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T3A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 7,
+          "model_calls": 3,
+          "called_artifact": true,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T3A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 6,
+          "model_calls": 3,
+          "called_artifact": true,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3A-T",
+        "condition_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 7,
+          "model_calls": 3,
+          "called_artifact": true,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": true,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "contradicted",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3A-T",
+        "condition_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 8,
+          "model_calls": 5,
+          "called_artifact": true,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": true,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "contradicted",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3A-T",
+        "condition_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 6,
+          "model_calls": 3,
+          "called_artifact": true,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": true,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "contradicted"
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T3A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 8,
+          "model_calls": 3,
+          "called_artifact": true,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 7,
+          "model_calls": 3,
+          "called_artifact": true,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T3A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 6,
+          "model_calls": 3,
+          "called_artifact": true,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3A-T",
+        "condition_gold": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "need": 0,
+        "tool_facts": {
+          "tool_calls": 9,
+          "model_calls": 4,
+          "called_artifact": true,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent",
+            "symptom_persists": false
+          }
+        }
+      }
+    ],
+    "per_condition_need": {
+      "T2A-T": {
+        "need_k": 1,
+        "n": 10,
+        "rate": {
+          "k": 1,
+          "n": 10,
+          "point": 0.1,
+          "ci95_low": 0.0025,
+          "ci95_high": 0.445,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "issue_cluster_bootstrap": {
+          "point": 0.1,
+          "ci95_low": 0.0,
+          "ci95_high": 0.3,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+          "n_issues": 10
+        }
+      },
+      "T3D-Escalate": {
+        "need_k": 1,
+        "n": 10,
+        "rate": {
+          "k": 1,
+          "n": 10,
+          "point": 0.1,
+          "ci95_low": 0.0025,
+          "ci95_high": 0.445,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "issue_cluster_bootstrap": {
+          "point": 0.1,
+          "ci95_low": 0.0,
+          "ci95_high": 0.3,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+          "n_issues": 10
+        }
+      },
+      "T3A-T": {
+        "need_k": 0,
+        "n": 10,
+        "rate": {
+          "k": 0,
+          "n": 10,
+          "point": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 0.3085,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "issue_cluster_bootstrap": {
+          "point": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 0.0,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+          "n_issues": 10
+        }
+      }
+    },
+    "or_aggregated_over_abstention": {
+      "k": 1,
+      "n": 10,
+      "exact": {
+        "k": 1,
+        "n": 10,
+        "point": 0.1,
+        "ci95_low": 0.0025,
+        "ci95_high": 0.445,
+        "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+      },
+      "issue_cluster_bootstrap": {
+        "point": 0.1,
+        "ci95_low": 0.0,
+        "ci95_high": 0.3,
+        "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+        "n_issues": 10
+      },
+      "stratified_by_oracle_gold": {
+        "ACCEPT": {
+          "k": 1,
+          "n": 7,
+          "rate": 0.1429
+        },
+        "REJECT": {
+          "k": 0,
+          "n": 3,
+          "rate": 0.0
+        }
+      },
+      "per_issue": {
+        "sympy__sympy-13615": 0,
+        "sympy__sympy-13974": 1,
+        "sympy__sympy-15349": 0,
+        "sympy__sympy-17318": 0,
+        "sympy__sympy-17630": 0,
+        "sympy__sympy-19783": 0,
+        "sympy__sympy-20590": 0,
+        "sympy__sympy-21847": 0,
+        "sympy__sympy-24213": 0,
+        "sympy__sympy-24443": 0
+      }
+    },
+    "strict_paired_g3b_transition": {
+      "pairing_rule": "SAME model=deepseek-flash, instance_id, condition; g3b3.g3b_pair_cell_key == g3b.cell; only protocol version/run-time differs",
+      "n_paired_cells": 30,
+      "pooled_cell_transition_counts": {
+        "ACCEPT->ACCEPT": 1,
+        "NEED_EVIDENCE->ACCEPT": 18,
+        "NEED_EVIDENCE->NEED_EVIDENCE": 2,
+        "NEED_EVIDENCE->REJECT": 3,
+        "REJECT->REJECT": 6
+      },
+      "per_condition": {
+        "T2A-T": {
+          "transitions": {
+            "NEED_EVIDENCE->ACCEPT": 6,
+            "NEED_EVIDENCE->NEED_EVIDENCE": 1,
+            "NEED_EVIDENCE->REJECT": 2,
+            "REJECT->REJECT": 1
+          },
+          "g3b_need_rate": 0.9,
+          "g3b3_need_rate": 0.1,
+          "matched_rate_delta": -0.8
+        },
+        "T3D-Escalate": {
+          "transitions": {
+            "ACCEPT->ACCEPT": 1,
+            "NEED_EVIDENCE->ACCEPT": 5,
+            "NEED_EVIDENCE->NEED_EVIDENCE": 1,
+            "REJECT->REJECT": 3
+          },
+          "g3b_need_rate": 0.6,
+          "g3b3_need_rate": 0.1,
+          "matched_rate_delta": -0.5
+        },
+        "T3A-T": {
+          "transitions": {
+            "NEED_EVIDENCE->ACCEPT": 7,
+            "NEED_EVIDENCE->REJECT": 1,
+            "REJECT->REJECT": 2
+          },
+          "g3b_need_rate": 0.8,
+          "g3b3_need_rate": 0.0,
+          "matched_rate_delta": -0.8
+        }
+      },
+      "or_aggregated_need_any": {
+        "g3b": {
+          "k": 9,
+          "n": 10,
+          "exact": {
+            "k": 9,
+            "n": 10,
+            "point": 0.9,
+            "ci95_low": 0.555,
+            "ci95_high": 0.9975,
+            "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+          },
+          "bootstrap": {
+            "point": 0.9,
+            "ci95_low": 0.7,
+            "ci95_high": 1.0,
+            "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+            "n_issues": 10
+          }
+        },
+        "g3b3": {
+          "k": 1,
+          "n": 10,
+          "exact": {
+            "k": 1,
+            "n": 10,
+            "point": 0.1,
+            "ci95_low": 0.0025,
+            "ci95_high": 0.445,
+            "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+          },
+          "bootstrap": {
+            "point": 0.1,
+            "ci95_low": 0.0,
+            "ci95_high": 0.3,
+            "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+            "n_issues": 10
+          }
+        }
+      },
+      "per_issue_needany_delta": {
+        "sympy__sympy-13615": -1,
+        "sympy__sympy-13974": 0,
+        "sympy__sympy-15349": -1,
+        "sympy__sympy-17318": 0,
+        "sympy__sympy-17630": -1,
+        "sympy__sympy-19783": -1,
+        "sympy__sympy-20590": -1,
+        "sympy__sympy-21847": -1,
+        "sympy__sympy-24213": -1,
+        "sympy__sympy-24443": -1
+      },
+      "matched_issue_delta_bootstrap": {
+        "point": -0.8,
+        "ci95_low": -1.0,
+        "ci95_high": -0.5,
+        "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+        "n_issues": 10
+      },
+      "discordant_needany_need_to_other": 8,
+      "discordant_needany_other_to_need": 0,
+      "comparison_kind": "cross-version cross-run-time ASSOCIATIONAL; freshness repair and T2A trust repair shipped together and are NOT causally separable"
+    },
+    "per_cell_pairs": [
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T2A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "The test artifact reports 1/1 FAIL_TO_PASS and 70/70 scoped PASS_TO_PASS, which would support acceptance, but its linkage to this patch is explicitly unverified. The artifact's patch_sha256 (0c5d6c01...) and base_commit (50d8a102...) cannot be confirmed to correspond to the candidate patch and current commit tree, so the evidence is not trustworthy for THIS patch. No decisive applicable failure is established, so REJECT is not warranted; but complete, linked, fresh success is also not established, so ACCEPT is not warranted.",
+        "g3b3_reason": "The attested artifact is linked to this exact patch/commit, fresh for the current tree, and covers the full declared set (1/1 FAIL_TO_PASS, 70/70 scoped PASS_TO_PASS), all executed and green. The patch addresses the issue by partitioning FiniteSet elements into definitely-in, definitely-not-in, and uncertain membership, returning an unevaluated Complement when membership is uncertain (as with symbolic x, y against an Interval), which yields the expected {x, y} \\ [-10,10] form rather than dropping the symbols. No executed acceptance failure or scoped regression is present.",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T2A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "NEED_EVIDENCE",
+        "g3b_reason": "The acceptance artifact reports FAIL_TO_PASS 1/1 and scoped PASS_TO_PASS 4/4, but linkage to this patch is not verified: the artifact's patch_sha256 (e6680a7b...) and base_commit (84c1259...) are not shown to correspond to the candidate patch/current tree, and the declared acceptance/regression set is not enumerated (only counts are given, and the new test file adds many assertions beyond a single FAIL_TO_PASS). No decisive applicable failure is established, so REJECT is not warranted; but success is not demonstrably linked and fresh for this tree, so ACCEPT is not warranted either.",
+        "g3b3_reason": "The artifact reports only aggregate counts (FAIL_TO_PASS 1/1, PASS_TO_PASS 4/4) with no rendered per-check outcomes, so I cannot read the actual executed results myself. Additionally, the patch's own test file contains assertions that appear inconsistent with the implemented behavior (e.g., TP(1,1)**2 == TP(1,1) and TP(1,Pauli(3))**2 == TP(1,1) rely on Pauli(3)**2 simplifying to 1 and on numeric extraction, while the new _eval_power distributes exp to each arg), and the doctest change to tensor_product_simp output is not clearly covered by the declared set. No decisive applicable failure is rendered, so I cannot REJECT; but the presentation is not a complete, readable green success, so I cannot ACCEPT.",
+        "transition": "NEED_EVIDENCE->NEED_EVIDENCE"
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T2A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "The test artifact reports 1/1 FAIL_TO_PASS and 3/3 scoped PASS_TO_PASS, but its linkage to this patch is unverified: the artifact's base_commit (768da1c6...) and patch_sha256 (0c5e4bd3...) are not confirmed to match the current commit tree and the candidate patch under review. Without verified linkage and freshness, the passing results cannot be trusted as evidence for THIS patch, and no decisive applicable failure is established either.",
+        "g3b3_reason": "The patch corrects the sign of the q.b*q.a term in m12, which is the source of the incorrect positive sin(x) in the reported example. The institutionally attested artifact for exactly this patch/commit shows the full declared set executed with FAIL_TO_PASS 1/1 and scoped PASS_TO_PASS 3/3, all green, with no rendered acceptance failure or scoped regression. This supports that the issue is resolved without introducing regressions.",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T2A-T",
+        "g3b_verdict": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "g3b_reason": "The acceptance-tier test artifact is linked to this patch (patch_sha256 matches) and reports the declared FAIL_TO_PASS test test_issue_12420 as failing (0/1 passed). This is a decisive, applicable acceptance failure for the current tree, so the patch cannot be accepted. Additionally, the added test does not actually exercise the reported failing expression (it tests sqrt(4 + 3*I) rather than the full expression from the issue), and the fix in _split_gcd returning (1, [], []) may not correctly resolve the empty-surds path in split_surds/_sqrt_match.",
+        "g3b3_reason": "The acceptance-tier artifact shows the declared FAIL_TO_PASS check test_issue_12420 failing (0/1 passed). This is a rendered, executed acceptance failure linked to this exact patch and commit, which is decisive grounds to reject regardless of the 10/10 scoped PASS_TO_PASS results. The patch's own added regression test does not pass, so the reported issue is not demonstrated resolved.",
+        "transition": "REJECT->REJECT"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T2A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "REJECT",
+        "g3b_reason": "The only acceptance artifact reports FAIL_TO_PASS passed 1/2 with a failing acceptance test id 'test_zero_matrix_add'. However, this failing test id does not correspond to any test declared or added by this patch (the patch adds 'test_BlockMatrix_ZeroMatrix_blocks'), and the artifact's linkage to this patch/commit is explicitly unverified. The failure is therefore not credibly applicable to this patch's declared acceptance set, and the artifact does not demonstrate complete, fresh, linked, failure-free success. I cannot ACCEPT (evidence incomplete/unlinked) and cannot REJECT (no credible appli",
+        "g3b3_reason": "The attested acceptance run for this exact patch/commit shows FAIL_TO_PASS passing only 1/2, with the declared acceptance test 'test_zero_matrix_add' failing. A rendered, executed acceptance failure is decisive grounds to reject, regardless of the 19/19 scoped PASS_TO_PASS results.",
+        "transition": "NEED_EVIDENCE->REJECT"
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T2A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "REJECT",
+        "g3b_reason": "The acceptance artifact reports FAIL_TO_PASS passed 1/2 with a failing acceptance test 'test_identity', which would be decisive grounds to reject. However, the artifact's linkage to this patch is not verified: the patch_sha256 (eecd93cd...) and base_commit (586a4320...) are not confirmed to correspond to the candidate patch and its current commit tree. Since the only potentially decisive failure is in an artifact whose linkage is unverified, I cannot treat it as an applicable failure for THIS patch, nor can I accept given the incomplete/failing declared set.",
+        "g3b3_reason": "The attested acceptance run for this exact patch/commit shows FAIL_TO_PASS passing only 1/2, with the declared acceptance test 'test_identity' failing. This is a rendered, executed acceptance failure that applies directly to this patch and current tree, so it is decisive grounds to reject despite the provenance/coverage warranty.",
+        "transition": "NEED_EVIDENCE->REJECT"
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T2A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "The acceptance artifact reports 1/1 FAIL_TO_PASS and 21/21 scoped PASS_TO_PASS, which would support success, but its linkage to this patch is not verified. The artifact's patch_sha256 (cdde5cb8...) and base_commit (cffd4e0f...) cannot be confirmed to correspond to the candidate patch and current commit tree, and the runner is a vendored-git harness on a local Windows host. Without verified linkage/freshness, I cannot confirm the declared acceptance set was executed against THIS patch, and no decisive applicable failure is established either.",
+        "g3b3_reason": "The artifact is institutionally attested as linked to this exact patch and base commit, fresh for the current tree, and covering the full declared set. All declared checks were executed and all passed: FAIL_TO_PASS 1/1 and scoped PASS_TO_PASS 21/21. The patch adds __slots__ = () to Printable, restoring the missing slots in the inheritance chain so Symbol/Dummy instances no longer gain a __dict__, and the added test asserts absence of __dict__ for Symbol and Dummy. The rendered outcomes show the issue resolved with no executed acceptance failure and no scoped regression.",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T2A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "The test artifact reports 1/1 FAIL_TO_PASS and 9/9 scoped PASS_TO_PASS, which would suggest success, but the artifact's linkage to this patch is not verified. The patch_sha256 (7223f91c...) and base_commit (d9b18c5...) cannot be confirmed to correspond to the candidate patch and its current commit tree, and the runner is a 'vendored-git' environment on a local Windows host. Without verified linkage and freshness for the current tree, I cannot confirm the declared acceptance/regression set was executed against THIS patch. No decisive applicable failure is established, so REJECT is not warranted",
+        "g3b3_reason": "The artifact is institutionally attested as linked to this exact patch/base commit, fresh for the current tree, and covering the full declared set. Reading the rendered outcomes: FAIL_TO_PASS 1/1 passed and scoped PASS_TO_PASS 9/9 passed, with no executed acceptance failure or scoped regression. The patch changes the min_degree filter from max(powers.values()) to sum(powers.values()), which correctly enforces total-degree bounds and resolves the reported issue (monomials like x1*x2**2 now included), and the added tests cover commutative and non-commutative cases. Complete, entirely green presentation supports ACCEPT.",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T2A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "The test artifact reports 1/1 FAIL_TO_PASS and 31/31 scoped PASS_TO_PASS passing, which would support acceptance, but the artifact's linkage to this patch is explicitly unverified. The patch_sha256 (3d1868e0...) and base_commit (e8c22f6e...) cannot be confirmed to correspond to the candidate patch and its current commit tree, so the evidence is not trustworthy as applying to THIS patch. No decisive applicable failure is present, so REJECT is not warranted; but the success evidence is not intact/linked, so ACCEPT is not warranted either.",
+        "g3b3_reason": "The patch replaces the strict dimension equality check with equivalent_dims, which correctly treats Dimension(velocity) and Dimension(acceleration*time) as equivalent, resolving the reported ValueError. The institutionally attested artifact for this exact patch/commit shows the full declared set executed: FAIL_TO_PASS 1/1 passed and scoped PASS_TO_PASS 31/31 passed, with no rendered failures or regressions. Complete, fresh, linked, failure-free success supports ACCEPT.",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T2A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "The test artifact reports only 1/1 FAIL_TO_PASS and 1/1 scoped PASS_TO_PASS, which is far too thin to cover the declared acceptance/regression set for this patch (the patch adds multiple new assertions in test_check_homomorphism, including D3 and D4 identity homomorphism checks, and the module has many other tests). The artifact also does not verify linkage to this patch's sha256 or confirm the full declared set was executed. No decisive applicable failure is present, so REJECT is not warranted, but success is not demonstrated completely.",
+        "g3b3_reason": "The institutionally attested artifact is linked to exactly this patch and base commit, fresh for the current tree, and covers the full declared set (FAIL_TO_PASS 1/1, scoped PASS_TO_PASS 1/1), all executed and all passing. The FAIL_TO_PASS check corresponds to the reported issue (homomorphism on PermutationGroups / _check_homomorphism), and the patch's added tests exercise the identity homomorphism on D3 and D4, which previously raised ValueError. No executed acceptance check fails and no scoped regression is shown. The author's unverified claim is not relied upon; the verdict rests on the rendered green outcomes.",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T3D-Escalate",
+        "g3b_verdict": "ACCEPT",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "I have enough to decide. Let me summarize the evidence.\n\n**Integrity checks:**\n- **Linkage:** intact — `base_commit_match: true`, `patch_sha256_match: true`, authentic signature. The artifact is tied to this exact patch.\n- **Coverage:** complete — 1/1 declared FAIL_TO_PASS executed, 70/70 scoped PASS_TO_PASS executed, no missing IDs.\n- **Freshness:** `run_tree_match: false`, `record_run_tree: null`. This is a real gap — the run cannot be attested to the current tree hash.\n\n**Outcome evidence (escalated):**\n- **Symptom probe:** pre-patch FAIL (`{x, y}` returned), post-patch OK (`{x, y} \\ Interv",
+        "g3b3_reason": "The baseline (pre-patch) run shows the exact same two failures — `test_image_Intersection` and `test_union_boundary_of_joining_sets` — both raising `XFail` (expected failures). These are pre-existing, not regressions introduced by the patch. The post-patch run has identical failure set, so no new failures were introduced.\n\nLet me summarize the evidence:\n- **Linkage**: verified (base_commit and patch_sha256 match).\n- **Freshness**: TRUE (run tree matches authoritative restage tree).\n- **Coverage**: complete (1/1 F2P, 70/70 P2P executed).\n- **Symptom**: resolved (probe passes post-patch).\n- **Ac",
+        "transition": "ACCEPT->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T3D-Escalate",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "NEED_EVIDENCE",
+        "g3b_reason": "Linkage is intact (base_commit and patch_sha256 match), and coverage metadata claims 1/1 F2P and 4/4 P2P executed. However, freshness fails decisively: check_evidence_freshness reports run_tree_match=false with record_run_tree=null against expected tree bf56cbca1daf1db1c75cc20d556358b803523dfe, so the run cannot be tied to the current commit tree. This is corroborated by the escalated f2p/p2p logs: the run collected only 7 items in test_tensorproduct.py, all pre-existing tests (test_tensor_product_dagger, _abstract, _expand, _commutator, _simp, test_issue_5923, test_eval_trace), and the patch'",
+        "g3b3_reason": "The claim-consistency service says \"consistent,\" but that is based on \"normalised verdicts\" of an artifact whose raw logs demonstrably do not contain the declared acceptance test. The raw logs are the ground truth here, and they contradict the coverage report.\n\nSummary of what I can trust:\n- **Linkage**: intact (base_commit and patch_sha256 match).\n- **Freshness**: fresh=true (authoritative restage tree matches).\n- **Symptom**: removed (probe passes post-patch).\n- **Coverage**: tool says complete (1/1 F2P, 4/4 P2P), **but** the raw f2p/p2p/p2p_baseline logs are byte-identical and contain only ",
+        "transition": "NEED_EVIDENCE->NEED_EVIDENCE"
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T3D-Escalate",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "Linkage is intact (base_commit and patch_sha256 match) and coverage is complete (1/1 F2P, 3/3 scoped P2P executed). The symptom probe shows the issue is resolved (pre-patch FAIL, post-patch OK), and the escalated acceptance/regression logs show all 5 tests passing including test_quaternion_rotation_iss1593 and the 3 scoped regressions — no decisive applicable failure exists, so REJECT is not warranted. However, freshness fails: record_run_tree is null and run_tree_match is false against expected tree 3fb6acb6e8d82ad02672e1b15bf8d85476e7c40e, so the run cannot be attested as fresh for the curre",
+        "g3b3_reason": "All evidence is intact and decisive: linked, fresh (TRUE), coverage complete, symptom removed, and all 5 tests (including the acceptance test `test_quaternion_rotation_iss1593` and the scoped regressions) pass.\n\n```json\n{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and decisive for this patch and tree. Linkage verified (base_commit and patch_sha256 match, authentic signature). Freshness is TRUE (authoritative restage tree 3fb6acb6... matches attestation). Coverage is complete: 1/1 declared FAIL_TO_PASS and 3/3 scoped PASS_TO_PASS executed, no missing ids. The issue-reproduction probe fails",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3D-Escalate",
+        "g3b_verdict": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "g3b_reason": "The decisive evidence is in. The declared acceptance test `test_issue_12420` FAILS: the maintainer's version of the test asserts `_sqrt_match(4 + I) == []`, but the patch yields `[4 + I, 0, 1]`. The patch's own added test is a weaker, different test (it only checks `sqrtdenest(sqrt(4+3*I))**2 == 4+3*I`), so it passes while the actual acceptance criterion fails. The patch only guards `_split_gcd` against an empty argument tuple; it does not make `_sqrt_match` return `[]` for a non-denestable complex argument, which is what the issue's \"return unchanged\" requirement demands.\n\nNote on freshness: ",
+        "g3b3_reason": "Evidence is intact and applicable: linkage verified (base_commit d4e0231b… and patch_sha256 5e0ca074… both match), freshness TRUE (authoritative restage tree 43e56d00… equals the run tree), and coverage complete (1/1 declared FAIL_TO_PASS and 10/10 scoped PASS_TO_PASS executed). The executed maintainer acceptance test test_issue_12420 FAILS on this exact patch and tree: `assert _sqrt_match(4 + I) == []` yields `[4 + I, 0, 1]`. The patch only adds an empty-argument guard in `_split_gcd`, which suppresses the IndexError symptom but does not make `_sqrt_match` return `[]` for the complex-radicand case the maintainers require; the author's own added test asserts a weaker, different property (squaring round-trip) and therefore does not satisfy the acceptance criterion. The author's claim that the fix is fully correct and all relevant tests pass is contradicted by the acceptance verdicts. A single credible, applicable failing acceptance check is sufficient grounds to reject.",
+        "transition": "REJECT->REJECT"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3D-Escalate",
+        "g3b_verdict": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "g3b_reason": "The artifact confirms the scoped P2P set includes `test_matadd.py` and `test_matexpr.py`. The baseline record shows the 19 scoped P2P tests all PASSED pre-patch. In the post-patch run, `test_zero_matrix_add` and `test_matrix_add_with_scalar` (both in `test_matadd.py`, a scoped file) FAILED — these are new failures not present at baseline.\n\nThis is a decisive, applicable scoped regression. The patch's zero-handling change causes `Add(ZeroMatrix, ZeroMatrix)` to collapse to scalar `Zero` and `Add(0, ZeroMatrix)` to stop raising `TypeError`. The claim-consistency check independently returned \"con",
+        "g3b3_reason": "The declared P2P set (19 tests) all PASSED in both baseline and post-patch. However, the escalated run reveals that the patch's own test-file changes introduce two new tests (`test_zero_matrix_add`, `test_matrix_add_with_scalar`) in `test_matadd.py` — a scoped file adjacent to the changed code — and both **FAIL** post-patch while being absent (not collected) in the baseline. These are newly-introduced failures caused by this patch's `S.Zero`/`ZeroMatrix` handling, which broke matrix-addition semantics.\n\nThis is a decisive, applicable regression on the current tree, with linked, fresh, fully-co",
+        "transition": "REJECT->REJECT"
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3D-Escalate",
+        "g3b_verdict": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "g3b_reason": "The acceptance log shows a decisive failure: `test_identity` fails on `I * Dagger(O) == Dagger(O)` — the exact reverse-order case the patch's `__rmul__` was meant to handle. The patch's `__rmul__` is never reached because `IdentityOperator.__mul__` (or the Mul flattening) handles `I * Dagger(O)` first, so the fix is incomplete.\n\nNote the freshness check reported `run_tree_match: false` with a null recorded tree. However, linkage is verified (base_commit and patch_sha256 both match), coverage is complete (2/2 F2P, 9/9 P2P executed), and the failure is directly attributable to this patch's own l",
+        "g3b3_reason": "The baseline confirms `test_identity` PASSED before the patch and FAILS after — a clear regression introduced by this patch.\n\n```json\n{\"decision\":\"REJECT\",\"reason\":\"Evidence is intact and applicable: artifact art_e5fa3e3506649e6b is authentically signed, linked to this patch (base_commit 586a4320..., patch_sha256 eecd93cd...), fresh for the current tree (run_tree e540f051... matches the independently re-derived tree), and coverage is complete (2/2 FAIL_TO_PASS and 9/9 scoped PASS_TO_PASS executed). Within that intact evidence, the scoped regression check sympy/physics/quantum/tests/test_operat",
+        "transition": "REJECT->REJECT"
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T3D-Escalate",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "The f2p and p2p logs are identical and truncated at 50% — they show only test_basic/test_evalf/test_expr, not the declared acceptance test (test_symbol.py::test_Symbol) nor the full scoped set. Critically, the freshness check failed: `run_tree_match: false`, `record_run_tree: null`. The run cannot be confirmed to correspond to the current commit tree.\n\nLet me assess the situation:\n\n- **Linkage**: intact (base commit + patch hash match).\n- **Coverage**: complete (1/1 F2P, 21/21 P2P executed).\n- **Freshness**: FAILED — the run tree is null and does not match the expected current tree `200cac25..",
+        "g3b3_reason": "All integrity checks pass and the evidence is decisive:\n\n- **Linkage**: authentic signature, base_commit and patch_sha256 both match — linked to THIS patch.\n- **Freshness**: fresh=TRUE (authoritative restage tree matches attestation).\n- **Coverage**: complete — 1/1 F2P and 21/21 scoped P2P executed, no missing IDs.\n- **Symptom**: present before patch, gone after — issue resolved.\n- **Acceptance/regression logs**: exit 0, all visible tests PASSED (XFAILs are expected), no failures.\n- **Claim consistency**: consistent.\n\nThe patch adds `__slots__ = ()` to `Printable`, restoring slot integrity so ",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3D-Escalate",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "I have gathered all available evidence. Let me summarize my assessment.\n\n**Integrity checks:**\n- **Linkage:** ✅ intact — base_commit and patch_sha256 both match.\n- **Freshness:** ❌ FAILED — `run_tree_match: false`, `record_run_tree: null`. The run cannot be tied to the current commit tree (`af3da919...`). This is a hard freshness failure.\n- **Coverage:** ✅ complete — 1/1 F2P and 9/9 P2P executed.\n- **Symptom probe:** ✅ symptom present pre-patch, gone post-patch.\n- **Acceptance/regression logs:** all 11 tests pass post-patch.\n- **Baseline log:** ⚠️ contradictory — shows `test_monomials` PASSING",
+        "g3b3_reason": "All checks are intact and passing. The acceptance test (test_monomials, which contains the new min_degrees assertions) passes, all 9 scoped regression checks pass, linkage and freshness are confirmed, coverage is complete, and the symptom probe flips from FAIL to OK.\n\n{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and demonstrates success. Linkage verified (base_commit and patch_sha256 match, authentic signature). Freshness is TRUE (authoritative restage tree af3da919... matches attestation). Coverage is complete: 1/1 declared FAIL_TO_PASS and 9/9 scoped PASS_TO_PASS executed, no missing id",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T3D-Escalate",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "```json\n{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage is intact (base_commit and patch_sha256 match, authentic signature) and coverage is complete (1/1 acceptance and 31/31 scoped regression checks executed). The symptom probe also shows the reported ValueError is gone after the patch. However, the freshness check fails: run_tree_match is false and record_run_tree is null, so the run cannot be tied to the current commit tree (expected tree 9146f4c3875cbfb67fbeb9b8685d3333422128c1). The escalated f2p/p2p logs show 41 passed / 1 xfailed with no failures, but they come from that same non-fresh ru",
+        "g3b3_reason": "All evidence is intact and decisive:\n\n- **Linkage**: authentic signature, base_commit and patch_sha256 both match.\n- **Freshness**: fresh=TRUE (authoritative restage tree matches attestation).\n- **Coverage**: complete — 1/1 acceptance, 31/31 scoped regression executed.\n- **Symptom**: present before patch, gone after (a*t + v now yields factor -47, dimension acceleration*time).\n- **Acceptance/regression verdicts**: 41 passed, 1 xfailed (pre-existing XFAIL), 0 failures.\n\nThe patch replaces strict dimension equality with `equivalent_dims`, which correctly resolves the issue while all scoped tests",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3D-Escalate",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "The artifact is linked (base_commit and patch_sha256 match) and coverage is complete, but freshness fails: `run_tree_match: false` with `record_run_tree: null` against expected tree `b26349e12c8c7e362093e221cba262e4a5093c45`. A linked-but-stale artifact is not trustworthy evidence for the current tree. The symptom probe shows the symptom is gone, but that is explicitly not proof of merge acceptability, and acceptance/regression verdicts are withheld. No decisive applicable failure has been established, so REJECT is not warranted; but ACCEPT requires fresh evidence, which is absent.\n\n```json\n{\"",
+        "g3b3_reason": "All evidence is intact and decisive:\n\n- **Linkage**: authentic signature, base_commit and patch_sha256 match.\n- **Freshness**: fresh=true, run tree matches independently re-derived canonical tree.\n- **Coverage**: complete — 1/1 F2P and 1/1 scoped P2P executed, no missing ids.\n- **Symptom**: present before patch, gone after.\n- **Acceptance (f2p)**: `test_check_homomorphism` PASSED (all 3 tests in file pass).\n- **Regression (p2p)**: scoped regression check PASSED, no failures.\n\nThe patch resolves the issue and introduces no applicable acceptance failure or scoped regression.\n\n{\"decision\":\"ACCEPT",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T3A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "The artifact is linked (base_commit and patch_sha256 match) and coverage is complete (1/1 FAIL_TO_PASS, 70/70 scoped PASS_TO_PASS executed, no missing ids), and the symptom log shows the issue resolved. However, the freshness check fails: run_tree_match=false, fresh=false, with record_run_tree=null and expected_run_tree=c4c7ae0d0841f5e1e7cbc963580cbaad35660934. The run cannot be confirmed to correspond to the current commit tree, so the passing outcomes are not trustworthy evidence for THIS tree. No decisive applicable failure was established, so REJECT is not warranted; but ACCEPT requires fr",
+        "g3b3_reason": "Evidence is intact and applies to this patch: linkage verified (base_commit 50d8a102... and patch_sha256 0c5d6c01... both match), freshness TRUE (authoritative restage tree c4c7ae0d... equals the attested run tree), and coverage complete (1/1 declared FAIL_TO_PASS executed, 70/70 scoped PASS_TO_PASS executed, no missing or undeclared ids). Outcomes are failure-free: test_Complement PASSED, all 70 scoped regression tests PASSED, and the artifact records no f2p_failed_ids, no p2p_regressed_ids, and no pre-existing-bad ids. The symptom log confirms the issue is resolved: pre-patch the probe failed with '{x, y} != {x, y} \\ Interval(-10, 10)', post-patch it exits 0 with 'Complement = {x, y} \\ Interval(-10, 10)', matching the expected output. The two FAILED lines visible in the raw f2p/p2p logs (test_image_Intersection, test_union_boundary_of_joining_sets) are not regressions: they fail identically in the pre-patch p2p_baseline log and are XFAIL-marked (sympy.utilities.pytest.XFail), so they are pre-existing expected failures outside the declared scoped set. Claim consistency check returns 'consistent'.",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T3A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "```json\n{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage is intact (base_commit and patch_sha256 both match, authentic signature) and coverage is complete (1/1 FAIL_TO_PASS executed, 4/4 scoped PASS_TO_PASS executed, no missing ids). The f2p/p2p logs show all 7 tests in test_tensorproduct.py passing, and the symptom log shows the reproduction flipping from FAIL to OK. However, the freshness check fails: run_tree_match=false, record_run_tree=null, expected_run_tree=bf56cbca1daf1db1c75cc20d556358b803523dfe. The artifact therefore does not attest to the exact current commit tree, so its passing resu",
+        "g3b3_reason": "Evidence is intact and applies to this patch: linkage verified (base_commit 84c1259 and patch_sha256 e6680a7 both match), freshness is TRUE (authoritative restage tree bf56cbc equals the attested run tree), and coverage is complete (1/1 declared FAIL_TO_PASS and 4/4 scoped PASS_TO_PASS executed, no missing ids). Outcomes show success: the acceptance check test_tensor_product_simp PASSED, all four scoped regression tests PASSED with no regressions or pre-existing bad ids, and the symptom log shows the pre-patch failure ('1x1**2') becoming the expected '1x1 1x1' post-patch, matching the issue's expected results in [5] and [9]. The added _eval_power distributes the exponent over each TensorProduct argument, which is the correct fix, and the docstring update in tensor_product_simp reflects the new behavior. Author claim is consistent with the evidence.",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T3A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "Linkage and coverage are intact: the artifact's base_commit and patch_sha256 match this patch, the declared acceptance check (test_quaternion_conversions) and all 3 scoped regression checks were executed, and the symptom log shows the pre-patch failure and post-patch success. However, the freshness check fails: run_tree_match=false, fresh=false, and the record has no run tree (record_run_tree=null) while the expected tree for the current commit is 3fb6acb6e8d82ad02672e1b15bf8d85476e7c40e. The run therefore cannot be confirmed to apply to the current commit tree, so the passing acceptance/regre",
+        "g3b3_reason": "The symptom log confirms the issue reproduces pre-patch and is resolved post-patch, matching the acceptance test outcome.\n\n```json\n{\"decision\":\"ACCEPT\",\"reason\":\"Artifact art_1dc2b9e38ff27115 is authentically signed and linked to exactly this patch (patch_sha256 0c5e4bd3... matches) and base commit 768da1c6...; freshness is TRUE (run tree equals the independently re-derived canonical tree 3fb6acb6...); coverage is complete (declared F2P 1/1 and scoped P2P 3/3 all executed, no missing or undeclared ids). Outcomes show the acceptance check test_quaternion_conversions PASSED and all three scoped ",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3A-T",
+        "g3b_verdict": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "g3b_reason": "The artifact is authentic and linked to this exact patch (base_commit and patch_sha256 both match), and coverage is complete (1/1 acceptance executed, 10/10 scoped regressions executed). The acceptance check test_issue_12420 FAILED in this run: `assert _sqrt_match(4 + I) == []` produced `[4 + I, 0, 1]`. The patch only guards `_split_gcd` against an empty argument tuple, but the maintainer's acceptance test requires `_sqrt_match` to return `[]` for a non-denestable complex radicand; the patch does not implement that behavior, so the issue's required semantics ('if an expression cannot be denest",
+        "g3b3_reason": "Evidence is intact and applies to this patch: linkage verified (base_commit and patch_sha256 match), freshness is TRUE (run tree equals the independently re-derived canonical tree 43e56d0...), and coverage is complete (1/1 declared FAIL_TO_PASS and 10/10 scoped PASS_TO_PASS executed). Within that trustworthy run, the declared acceptance check test_issue_12420 FAILED: the maintainer's test asserts _sqrt_match(4 + I) == [] but the patched code returns [4 + I, 0, 1]. The patch only guards _split_gcd against an empty argument tuple, so _sqrt_match still returns a bogus non-empty match for a non-denestable complex radicand instead of signaling 'cannot denest' — the underlying defect is not properly fixed. The symptom probe shows the crash is gone, but the acceptance criterion is not met, and the author's claim of full correctness is contradicted. No scoped regression was introduced (10/10 P2P pass), but a single credible, applicable failing acceptance check is decisive.",
+        "transition": "REJECT->REJECT"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "REJECT",
+        "g3b_reason": "The freshness check is consistent: the run tree does not match the expected tree for the current commit, and the recorded run tree is null. The acceptance-tier artifact is linked but stale, so its failing acceptance check (`test_zero_matrix_add`) cannot be trusted as applicable to this patch. The symptom log shows the issue is resolved, but that is a diagnostic probe, not the full acceptance/regression set, and it does not establish freshness of the acceptance run.\n\nSince the evidence links to the patch but is not fresh for the current tree, and no decisive applicable failure has been establis",
+        "g3b3_reason": "The evidence is intact and decisive. The declared acceptance check `test_zero_matrix_add` fails in a fresh, linked, fully-executed run.\n\n```json\n{\"decision\":\"REJECT\",\"reason\":\"The test artifact is authentic, linked to this exact patch (patch_sha256 7c197026... matches) and base commit (58e78209...), fresh for the current tree (run_tree ac8da47f... matches the independently re-derived canonical tree), and coverage is complete (2/2 declared FAIL_TO_PASS and 19/19 scoped PASS_TO_PASS executed). Within that trustworthy, applicable evidence, a declared acceptance check fails: test_zero_matrix_add F",
+        "transition": "NEED_EVIDENCE->REJECT"
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3A-T",
+        "g3b_verdict": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "g3b_reason": "The artifact is authentic and linked to this exact patch (base_commit and patch_sha256 both match), and coverage is complete (2/2 FAIL_TO_PASS and 9/9 scoped PASS_TO_PASS executed). The run shows a decisive, applicable acceptance failure: test_identity fails with `assert (I * Dagger(O)) == Dagger(O)`. This is exactly the left-multiplication case the patch is meant to fix: the patch's `__rmul__` only handles `isinstance(other, IdentityOperator)`, but `I * Dagger(O)` dispatches through IdentityOperator's own `__mul__`/Mul machinery, so the identity is not absorbed. The author's claim that 'all r",
+        "g3b3_reason": "Evidence is intact and applies to this patch: linkage verified (base_commit and patch_sha256 match), freshness is TRUE (run tree equals the independently re-derived canonical tree e540f05...), and coverage is complete (2/2 FAIL_TO_PASS and 9/9 scoped PASS_TO_PASS executed). The run contains a decisive applicable acceptance failure: test_identity FAILED with `assert I * Dagger(O) == Dagger(O)` — the exact scenario from the issue (IdentityOperator * Dagger) is still not simplified. The patch only handles Dagger.__mul__/__rmul__ with IdentityOperator, but the failing case is IdentityOperator.__mul__(Dagger), which dispatches to IdentityOperator's own multiplication logic and never reaches the new code. So the reported issue is only half-fixed. The author's claim of full correctness is contradicted by the artifact.",
+        "transition": "REJECT->REJECT"
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T3A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "The artifact is authentically signed and its base_commit and patch_sha256 match this patch, and coverage is complete (1/1 FAIL_TO_PASS, 21/21 scoped PASS_TO_PASS executed, no failures reported). However, the freshness check fails: run_tree_match=false and fresh=false, with record_run_tree=null versus expected tree 200cac25dc45b4d2de8e10717dce35dbbff3e7be. The run therefore cannot be confirmed to have executed against the current commit tree, so its passing outcomes are not trustworthy evidence of success for THIS tree. The symptom log shows the pre-patch failure and post-patch success, but it ",
+        "g3b3_reason": "Evidence is intact and applies to this exact patch: linkage verified (base_commit cffd4e0f86 and patch_sha256 cdde5cb8... both match), freshness is TRUE (authoritative re-derived tree 200cac25dc45 equals the run tree), and coverage is complete (1/1 declared FAIL_TO_PASS executed, 21/21 scoped PASS_TO_PASS executed, no missing or undeclared ids). Outcomes are failure-free: test_immutable PASSED, all 21 scoped regressions PASSED, no regressed or preexisting-bad ids, and the claim-consistency check reports 'consistent'. The symptom log corroborates the fix: pre-patch probe fails with 'Symbol instance carries an instance __dict__: {}' and post-patch probe reports 'Symbol has no instance __dict__ (slots only)'. The patch itself is the correct root-cause fix — adding __slots__ = () to Printable restores slot-only layout for Symbol/Dummy, and the added assertions in test_symbol.py guard the regression. No applicable acceptance failure or scoped regression exists, so the patch is merge-acceptable.",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "The baseline log is consistent with the artifact, but the freshness attestation is the decisive gate: the run tree does not match the expected tree for the current commit, so the run cannot be confirmed as applying to the exact current tree. No decisive applicable failure exists, so REJECT is not warranted; but ACCEPT requires fresh, tree-matched evidence, which is absent.\n\n{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage is intact (base_commit d9b18c5 and patch_sha256 7223f91c both match) and coverage is complete (1/1 FAIL_TO_PASS and 9/9 scoped PASS_TO_PASS executed, no missing ids). The sympto",
+        "g3b3_reason": "Evidence is intact and applies to this patch: linkage verified (base_commit d9b18c5 and patch_sha256 7223f91c both match), freshness is TRUE (authoritative restage tree af3da919 equals the attested run tree), and coverage is complete (1/1 declared FAIL_TO_PASS executed, 9/9 scoped PASS_TO_PASS executed, no missing or undeclared ids). Outcomes are failure-free: test_monomials PASSED, all 9 scoped regression tests PASSED, no regressed or preexisting-bad ids. The symptom log confirms the issue is resolved: pre-patch the probe failed with missing total-degree-3 monomials (x1**2*x2, x1*x2**2, x1*x2*x3, etc.), and post-patch it returns all 10 monomials. The fix itself is sound: replacing max(powers.values()) with sum(powers.values()) correctly enforces the documented total-degree lower bound for both commutative and non-commutative branches, and the added tests cover min==max, min<max, and non-commutative cases. Author claim is consistent with the executed checks.",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T3A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "The artifact is authentically signed and its base_commit and patch_sha256 match this patch, and coverage is complete (1/1 FAIL_TO_PASS executed and passing, 31/31 scoped PASS_TO_PASS executed and passing, no regressions). However, the freshness check fails: run_tree_match=false with record_run_tree=null versus expected_run_tree=9146f4c3875cbfb67fbeb9b8685d3333422128c1. The run therefore cannot be confirmed to correspond to the current commit tree, so the passing results are not trustworthy evidence for THIS tree. No decisive applicable failure exists, so REJECT is not warranted; but the bar fo",
+        "g3b3_reason": "The symptom log confirms the reported issue is resolved by this patch: pre-patch the reproduction raises the exact ValueError from the issue, post-patch it returns a factor and dimension without error. Combined with intact linkage, fresh tree, complete coverage, and zero failures, the evidence supports acceptance.\n\n{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and applies to this patch: linkage verified (base_commit e8c22f6eac and patch_sha256 3d1868e0 both match), freshness is TRUE (authoritative restage tree 9146f4c3 equals the attested run tree), and coverage is complete (1/1 declared F",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3A-T",
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b3_verdict": "ACCEPT",
+        "g3b_reason": "The evidence is linked and coverage-complete, but freshness fails: the run tree is `null` and does not match the expected current tree `b26349e1...`. The artifact cannot be tied to the current commit tree, so I cannot treat its passing results as trustworthy evidence for THIS patch's current tree. No decisive applicable failure is established either (the symptom log shows the fix working, and no acceptance/regression check failed). Per the asymmetry rule, invalid/stale evidence is not grounds to REJECT, and incomplete freshness blocks ACCEPT.\n\n{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact",
+        "g3b3_reason": "Evidence is intact and decisive. Linkage verified: artifact base_commit 809c53c0 and patch_sha256 a6f310f8 both match the patch under review (linked=true, authentic_signature=true). Freshness verified TRUE: the authoritative independently re-derived restage tree b26349e12c8c7e362093e221cba262e4a5093c45 matches the attestation, so the run applies to the current commit tree. Coverage is complete: the full maintainer-declared set was executed (FAIL_TO_PASS 1/1 executed, scoped PASS_TO_PASS 1/1 executed, no missing or undeclared ids). Outcomes are failure-free: test_homomorphism PASSED (acceptance) and test_isomorphisms PASSED (scoped regression), with no regressed or pre-existing-bad ids. The symptom log independently corroborates the fix: the pre-patch baseline reproduces the reported failure ('ValueError: The given images do not define a homomorphism') and the post-patch run succeeds, constructing the identity homomorphism on D3. The author's claim is consistent with the executed checks. The patch also addresses the root cause described in the issue by iterating over r.array_form (sym, power) pairs and mapping generator symbols to domain generators, so inverted generators no longer break the 'in gens' test. No applicable acceptance failure or scoped regression exists, so the patch is merge-acceptable.",
+        "transition": "NEED_EVIDENCE->ACCEPT"
+      }
+    ]
+  },
+  "Q11_gpt_unsupported_acceptance_reject_issues": {
+    "denominator": "3 oracle-REJECT issues; FULL sample = 15 cells (3 issues x 5 conditions); confirmatory OR-aggregate uses the 9 sufficient-regime cells exactly as frozen G3-B C1",
+    "full_sample": {
+      "n_cells": 15,
+      "unsupported_acceptance_cells": 4,
+      "cell_rate": 0.2667
+    },
+    "confirmatory_sufficient_or_aggregate": {
+      "k_issues": 2,
+      "n_issues": 3,
+      "exact": {
+        "k": 2,
+        "n": 3,
+        "point": 0.6667,
+        "ci95_low": 0.0943,
+        "ci95_high": 0.9916,
+        "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+      },
+      "issue_cluster_bootstrap": {
+        "point": 0.6667,
+        "ci95_low": 0.0,
+        "ci95_high": 1.0,
+        "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+        "n_issues": 3
+      },
+      "per_condition_exploratory": {
+        "T2A-T": {
+          "unsupported_accept_k": 1,
+          "n": 3
+        },
+        "T3D-Escalate": {
+          "unsupported_accept_k": 1,
+          "n": 3
+        },
+        "T3A-T": {
+          "unsupported_accept_k": 0,
+          "n": 3
+        }
+      },
+      "sufficient_cells_unsupported": 2,
+      "sufficient_cells_total": 9,
+      "per_issue": {
+        "sympy__sympy-17318": 1,
+        "sympy__sympy-17630": 1,
+        "sympy__sympy-19783": 0
+      }
+    },
+    "cells": [
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T2D-T",
+        "condition_gold": "NEED_EVIDENCE",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "NEED_EVIDENCE",
+        "unsupported_acceptance": false,
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The patch fixes the IndexError by adding a guard clause in _split_gcd to handle empty input, and a new test verifies that sqrtdenest no longer raises the error and returns a correct result for the problematic input. The issue reproduction probe confirms the symptom is gone after the patch. However, the provided evidence does not include the full acceptance test results or regression checks for the entire declared acceptance set. Without confirmation that all relevant acceptance tests pass and no regressions are introduced, the patch cannot be fully accepted yet.",
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3D-Strict",
+        "condition_gold": "NEED_EVIDENCE",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "ACCEPT",
+        "unsupported_acceptance": true,
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The test artifact is correctly linked to this patch and commit, and it is fresh for the current commit tree. The test coverage is complete for the declared acceptance and regression checks. The author statement is consistent with the evidence, and the issue symptom (IndexError in sqrtdenest) is confirmed resolved with no failures or regressions detected. Therefore, the patch successfully fixes the issue without introducing regressions and meets the acceptance criteria.",
+        "tool_facts": {
+          "tool_calls": 4,
+          "model_calls": 2,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent"
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3D-Escalate",
+        "condition_gold": "REJECT",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "unsupported_acceptance": false,
+        "g3b_verdict": "REJECT",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The patch is linked and fresh for the current commit tree and test coverage is complete. However, the acceptance test 'test_issue_12420' specifically designed to verify the fix for the reported IndexError fails. The test expects _sqrt_match(4 + I) to return an empty list, but it returns [4 + I, 0, 1], indicating the patch does not fully resolve the issue as intended. This is a decisive failure in the acceptance tests relevant to the patch.",
+        "tool_facts": {
+          "tool_calls": 4,
+          "model_calls": 3,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [
+            "log"
+          ],
+          "escalation_granted": [
+            "log"
+          ],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T2A-T",
+        "condition_gold": "REJECT",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "ACCEPT",
+        "unsupported_acceptance": true,
+        "g3b_verdict": "ACCEPT",
+        "g3b_unsupported_acceptance": true,
+        "g3b3_reason": "The patch adds a guard clause in _split_gcd to handle the case when the input tuple is empty, returning (1, [], []) instead of causing an IndexError. This directly addresses the reported issue #12420 where sqrtdenest raised an IndexError due to an empty tuple in _split_gcd. The new test test_issue_12420 in test_sqrtdenest.py verifies that sqrtdenest no longer raises and returns a correct result for the problematic input. The provided test artifact shows a fully fresh, linked, and complete test run with all relevant acceptance tests passing, including the new test for this issue. There are no failures or regressions in the scoped acceptance tests. Therefore, the evidence is intact, fresh, linked, and complete, demonstrating that the issue is resolved and no regressions are introduced.",
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3A-T",
+        "condition_gold": "REJECT",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "unsupported_acceptance": false,
+        "g3b_verdict": "REJECT",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The test artifact is fully linked and fresh for this patch and commit tree, and the declared acceptance and regression test sets were fully executed. However, the acceptance test 'test_issue_12420' specifically related to the patch's issue failed, contradicting the author statement that the fix is fully correct and all relevant tests pass. This decisive failure in an applicable acceptance check requires rejection of the patch.",
+        "tool_facts": {
+          "tool_calls": 4,
+          "model_calls": 2,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": true,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "contradicted"
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T2D-T",
+        "condition_gold": "NEED_EVIDENCE",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "NEED_EVIDENCE",
+        "unsupported_acceptance": false,
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The patch addresses the issue by converting scalar Zero entries in the block multiplication result to ZeroMatrix instances, which matches the problem description. The included test explicitly checks that multiple block multiplications involving ZeroMatrix blocks do not raise exceptions and produce expected results. The reproduction probe confirms the issue is fixed after applying the patch. However, the available evidence does not include the full acceptance test suite results or regression checks for the entire codebase, and the maintainer acceptance-test outcomes are withheld. Therefore, while the patch fixes the reported issue and passes the scoped test, there is insufficient evidence to confirm no regressions or failures in the broader acceptance tests. Hence, more comprehensive fresh test results covering all declared acceptance and regression checks are needed to fully accept the patch.",
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3D-Strict",
+        "condition_gold": "NEED_EVIDENCE",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "ACCEPT",
+        "unsupported_acceptance": true,
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The test artifact is linked to this patch and commit, is fresh for the current commit tree, and has complete coverage of the declared acceptance and regression checks. The author statement is consistent with the evidence, and the reproduced symptom from the issue is resolved with no new failures introduced. Therefore, the patch successfully resolves the issue without regressions and is acceptable for merging.",
+        "tool_facts": {
+          "tool_calls": 4,
+          "model_calls": 2,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent"
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3D-Escalate",
+        "condition_gold": "REJECT",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "ACCEPT",
+        "unsupported_acceptance": true,
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The test artifact is linked to this patch and base commit, and it is fresh for the current commit tree. The test coverage is complete for the declared acceptance and regression checks. The reproduced issue symptom is resolved by the patch, and no failures or regressions are reported in the executed tests. Therefore, the patch successfully fixes the issue without introducing regressions.",
+        "tool_facts": {
+          "tool_calls": 3,
+          "model_calls": 2,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T2A-T",
+        "condition_gold": "REJECT",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "NEED_EVIDENCE",
+        "unsupported_acceptance": false,
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The patch addresses the issue by converting scalar Zero to ZeroMatrix in block multiplication, and the test added covers the reported issue scenario. The test artifact shows all scoped PASS_TO_PASS tests passed, but one FAIL_TO_PASS test (test_zero_matrix_add) failed. It is unclear if this failure is related to the patch or the issue at hand. The declared acceptance set includes test_zero_matrix_add, which failed, so the acceptance set is not fully successful. Therefore, the evidence coverage is incomplete for acceptance. Without a fully passing acceptance test suite, the patch cannot be accepted yet. More evidence is needed to confirm that the patch resolves the issue without regressions.",
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3A-T",
+        "condition_gold": "REJECT",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "NEED_EVIDENCE",
+        "unsupported_acceptance": false,
+        "g3b_verdict": "REJECT",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The test artifact is linked, fresh, and complete for this patch. However, it contains one failing acceptance test (test_zero_matrix_add) unrelated to the patch's issue and no failing tests related to the patch. The patch's own tests for the block matrix multiplication with ZeroMatrix blocks pass. Since the failing test is unrelated to the patch and no decisive failure related to the patch is present, and the artifact is fresh and linked, the evidence is insufficient to ACCEPT or REJECT based on the patch's resolution of the issue. More targeted evidence or fixing unrelated test failures is needed.",
+        "tool_facts": {
+          "tool_calls": 5,
+          "model_calls": 3,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": true,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "contradicted"
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T2D-T",
+        "condition_gold": "NEED_EVIDENCE",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "NEED_EVIDENCE",
+        "unsupported_acceptance": false,
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The patch addresses the issue by adding __mul__ and __rmul__ methods to Dagger to simplify multiplication with IdentityOperator, and the issue symptom is confirmed resolved by the issue-reproduction probe. However, the available evidence does not include the maintainer acceptance test outcomes or the scoped regression check results for this patch. Without fresh, linked, and complete acceptance test results confirming no failures or regressions, the patch cannot be accepted yet.",
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3D-Strict",
+        "condition_gold": "NEED_EVIDENCE",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "NEED_EVIDENCE",
+        "unsupported_acceptance": false,
+        "g3b_verdict": "NEED_EVIDENCE",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The test artifact is linked to this patch and fresh for the current commit tree, and the declared acceptance and regression tests were fully executed. The author statement is consistent with the evidence that the issue symptom no longer reproduces. However, maintainer acceptance test outcomes are withheld and not available under the strict policy, so there is no trustworthy evidence that the patch fully resolves the issue without introducing regressions. Therefore, more evidence is needed to reach a final decision on merge acceptability.",
+        "tool_facts": {
+          "tool_calls": 4,
+          "model_calls": 2,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "consistent"
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3D-Escalate",
+        "condition_gold": "REJECT",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "unsupported_acceptance": false,
+        "g3b_verdict": "REJECT",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The acceptance test 'test_identity' in sympy/physics/quantum/tests/test_operator.py fails after applying the patch. The test asserts that I * Dagger(O) == Dagger(O), but this equality does not hold, indicating the patch does not fully resolve the issue. The evidence is fresh, linked to this patch, and covers the declared acceptance tests, so this failure is decisive for rejection.",
+        "tool_facts": {
+          "tool_calls": 5,
+          "model_calls": 4,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [
+            "log"
+          ],
+          "escalation_granted": [
+            "log"
+          ],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "symptom_persists": false
+          }
+        }
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T2A-T",
+        "condition_gold": "REJECT",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "unsupported_acceptance": false,
+        "g3b_verdict": "REJECT",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The acceptance test 'test_identity' failed in the fresh, linked test run for this patch, indicating that the patch does not fully resolve the issue as intended. Although other tests passed, a single applicable acceptance failure is sufficient to reject the patch.",
+        "tool_facts": {
+          "tool_calls": 0,
+          "model_calls": 1,
+          "called_artifact": false,
+          "called_linkage": false,
+          "saw_linked_false": false,
+          "called_freshness": false,
+          "fresh_state_served": null,
+          "saw_fresh_true": false,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": false,
+          "saw_coverage_incomplete": false,
+          "called_consistency": false,
+          "saw_contradicted": false,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {}
+        }
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3A-T",
+        "condition_gold": "REJECT",
+        "oracle_gold": "REJECT",
+        "g3b3_verdict": "REJECT",
+        "unsupported_acceptance": false,
+        "g3b_verdict": "REJECT",
+        "g3b_unsupported_acceptance": false,
+        "g3b3_reason": "The test artifact is fully linked, fresh, and complete for this patch and commit tree. However, it records a failing acceptance test 'test_identity' which directly relates to the issue addressed by the patch. This decisive failure in an applicable acceptance check mandates rejection despite the patch code change and author statement.",
+        "tool_facts": {
+          "tool_calls": 4,
+          "model_calls": 2,
+          "called_artifact": false,
+          "called_linkage": true,
+          "saw_linked_false": false,
+          "called_freshness": true,
+          "fresh_state_served": "TRUE",
+          "saw_fresh_true": true,
+          "saw_fresh_false": false,
+          "saw_fresh_unknown": false,
+          "called_coverage": true,
+          "saw_coverage_incomplete": false,
+          "called_consistency": true,
+          "saw_contradicted": true,
+          "strict_denied_403": false,
+          "escalation_requested": [],
+          "escalation_granted": [],
+          "escalation_denied": [],
+          "tool_verdicts": {
+            "linkage": true,
+            "freshness_state": "TRUE",
+            "freshness": true,
+            "coverage": true,
+            "consistency": "contradicted"
+          }
+        }
+      }
+    ],
+    "focal_sympy_17318_T2A": {
+      "tag": "sympy-17318/T2A focal",
+      "issue": "sympy__sympy-17318",
+      "condition": "T2A-T",
+      "condition_gold": "REJECT",
+      "g3b_verdict": "ACCEPT",
+      "g3b3_verdict": "ACCEPT",
+      "g3b3_unsupported_acceptance": true,
+      "g3b3_reason": "The patch adds a guard clause in _split_gcd to handle the case when the input tuple is empty, returning (1, [], []) instead of causing an IndexError. This directly addresses the reported issue #12420 where sqrtdenest raised an IndexError due to an empty tuple in _split_gcd. The new test test_issue_12420 in test_sqrtdenest.py verifies that sqrtdenest no longer raises and returns a correct result for the problematic input. The provided test artifact shows a fully fresh, linked, and complete test run with all relevant acceptance tests passing, including the new test for this issue. There are no failures or regressions in the scoped acceptance tests. Therefore, the evidence is intact, fresh, linked, and complete, demonstrating that the issue is resolved and no regressions are introduced.",
+      "tool_facts": {
+        "tool_calls": 0,
+        "model_calls": 1,
+        "called_artifact": false,
+        "called_linkage": false,
+        "saw_linked_false": false,
+        "called_freshness": false,
+        "fresh_state_served": null,
+        "saw_fresh_true": false,
+        "saw_fresh_false": false,
+        "saw_fresh_unknown": false,
+        "called_coverage": false,
+        "saw_coverage_incomplete": false,
+        "called_consistency": false,
+        "saw_contradicted": false,
+        "strict_denied_403": false,
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "tool_verdicts": {}
+      },
+      "note": "Primary evidence-verification defect cell from G3-B: gold REJECT, the patch visibly fails FAIL_TO_PASS 0/1. A G3-B.3 ACCEPT here is an unsupported acceptance despite sufficient, correctly-trusted evidence (not a freshness artefact; T2A is static)."
+    },
+    "decision_policy_probe_sympy_17630_T3A": {
+      "tag": "sympy-17630/T3A Decision-Policy probe",
+      "issue": "sympy__sympy-17630",
+      "condition": "T3A-T",
+      "condition_gold": "REJECT",
+      "g3b_verdict": "REJECT",
+      "g3b3_verdict": "NEED_EVIDENCE",
+      "g3b3_unsupported_acceptance": false,
+      "g3b3_reason": "The test artifact is linked, fresh, and complete for this patch. However, it contains one failing acceptance test (test_zero_matrix_add) unrelated to the patch's issue and no failing tests related to the patch. The patch's own tests for the block matrix multiplication with ZeroMatrix blocks pass. Since the failing test is unrelated to the patch and no decisive failure related to the patch is present, and the artifact is fresh and linked, the evidence is insufficient to ACCEPT or REJECT based on the patch's resolution of the issue. More targeted evidence or fixing unrelated test failures is needed.",
+      "tool_facts": {
+        "tool_calls": 5,
+        "model_calls": 3,
+        "called_artifact": false,
+        "called_linkage": true,
+        "saw_linked_false": false,
+        "called_freshness": true,
+        "fresh_state_served": "TRUE",
+        "saw_fresh_true": true,
+        "saw_fresh_false": false,
+        "saw_fresh_unknown": false,
+        "called_coverage": true,
+        "saw_coverage_incomplete": false,
+        "called_consistency": true,
+        "saw_contradicted": true,
+        "strict_denied_403": false,
+        "escalation_requested": [],
+        "escalation_granted": [],
+        "escalation_denied": [],
+        "tool_verdicts": {
+          "linkage": true,
+          "freshness_state": "TRUE",
+          "freshness": true,
+          "coverage": true,
+          "consistency": "contradicted"
+        }
+      },
+      "note": "User-flagged, SEPARATELY TAGGED Decision-Policy probe: failure evidence had been reached under the spurious structural fresh=FALSE in G3-B. Reported on its own and NEVER pooled with freshness-driven abstention; under the repaired TRUE freshness this cell isolates, descriptively, whether the decision policy still errs."
+    }
+  },
+  "Q12_restricted_regime_abstention": {
+    "deepseek-flash": {
+      "T2D-T": {
+        "correct_abstain_k": 10,
+        "n": 10,
+        "rate": {
+          "k": 10,
+          "n": 10,
+          "point": 1.0,
+          "ci95_low": 0.6915,
+          "ci95_high": 1.0,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "issue_cluster_bootstrap": {
+          "point": 1.0,
+          "ci95_low": 1.0,
+          "ci95_high": 1.0,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+          "n_issues": 10
+        },
+        "improper_commitment_rate": 0.0,
+        "improper_commitments": []
+      },
+      "T3D-Strict": {
+        "correct_abstain_k": 10,
+        "n": 10,
+        "rate": {
+          "k": 10,
+          "n": 10,
+          "point": 1.0,
+          "ci95_low": 0.6915,
+          "ci95_high": 1.0,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "issue_cluster_bootstrap": {
+          "point": 1.0,
+          "ci95_low": 1.0,
+          "ci95_high": 1.0,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+          "n_issues": 10
+        },
+        "improper_commitment_rate": 0.0,
+        "improper_commitments": []
+      }
+    },
+    "gpt-4.1-mini": {
+      "T2D-T": {
+        "correct_abstain_k": 10,
+        "n": 10,
+        "rate": {
+          "k": 10,
+          "n": 10,
+          "point": 1.0,
+          "ci95_low": 0.6915,
+          "ci95_high": 1.0,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "issue_cluster_bootstrap": {
+          "point": 1.0,
+          "ci95_low": 1.0,
+          "ci95_high": 1.0,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+          "n_issues": 10
+        },
+        "improper_commitment_rate": 0.0,
+        "improper_commitments": []
+      },
+      "T3D-Strict": {
+        "correct_abstain_k": 3,
+        "n": 10,
+        "rate": {
+          "k": 3,
+          "n": 10,
+          "point": 0.3,
+          "ci95_low": 0.0667,
+          "ci95_high": 0.6525,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "issue_cluster_bootstrap": {
+          "point": 0.3,
+          "ci95_low": 0.0,
+          "ci95_high": 0.6,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+          "n_issues": 10
+        },
+        "improper_commitment_rate": 0.7,
+        "improper_commitments": [
+          {
+            "issue": "sympy__sympy-13615",
+            "verdict": "ACCEPT",
+            "condition_gold": "NEED_EVIDENCE",
+            "reason": "The test artifact is linked to this patch and commit, is fresh for the current commit tree, and has complete coverage of the declared acceptance and regression checks. The author statement is consistent with the evidence, and the issue symptom no longer reproduces after the patch. There is no evidence of any acceptance test failure or regression. Therefore, the patch is acceptable for merge.",
+            "tool_facts": {
+              "tool_calls": 4,
+              "model_calls": 2,
+              "called_artifact": false,
+              "called_linkage": true,
+              "saw_linked_false": false,
+              "called_freshness": true,
+              "fresh_state_served": "TRUE",
+              "saw_fresh_true": true,
+              "saw_fresh_false": false,
+              "saw_fresh_unknown": false,
+              "called_coverage": true,
+              "saw_coverage_incomplete": false,
+              "called_consistency": true,
+              "saw_contradicted": false,
+              "strict_denied_403": false,
+              "escalation_requested": [],
+              "escalation_granted": [],
+              "escalation_denied": [],
+              "tool_verdicts": {
+                "linkage": true,
+                "freshness_state": "TRUE",
+                "freshness": true,
+                "coverage": true,
+                "consistency": "consistent"
+              }
+            }
+          },
+          {
+            "issue": "sympy__sympy-13974",
+            "verdict": "ACCEPT",
+            "condition_gold": "NEED_EVIDENCE",
+            "reason": "The test artifact is linked to this patch and base commit, and it is fresh for the current commit tree. The test coverage is complete for the declared acceptance and regression checks. The author statement is consistent with the evidence, and the issue symptom no longer reproduces after the patch. There is no evidence of any failing acceptance check or scoped regression. Therefore, the patch successfully resolves the issue and is acceptable for merge.",
+            "tool_facts": {
+              "tool_calls": 4,
+              "model_calls": 2,
+              "called_artifact": false,
+              "called_linkage": true,
+              "saw_linked_false": false,
+              "called_freshness": true,
+              "fresh_state_served": "TRUE",
+              "saw_fresh_true": true,
+              "saw_fresh_false": false,
+              "saw_fresh_unknown": false,
+              "called_coverage": true,
+              "saw_coverage_incomplete": false,
+              "called_consistency": true,
+              "saw_contradicted": false,
+              "strict_denied_403": false,
+              "escalation_requested": [],
+              "escalation_granted": [],
+              "escalation_denied": [],
+              "tool_verdicts": {
+                "linkage": true,
+                "freshness_state": "TRUE",
+                "freshness": true,
+                "coverage": true,
+                "consistency": "consistent"
+              }
+            }
+          },
+          {
+            "issue": "sympy__sympy-15349",
+            "verdict": "ACCEPT",
+            "condition_gold": "NEED_EVIDENCE",
+            "reason": "The test artifact is linked to this patch and commit, and it is fresh for the current commit tree. The declared acceptance and regression test sets were fully executed with no missing tests. The author statement is consistent with the evidence, and the issue symptom no longer reproduces after the patch. There is no evidence of any failing acceptance checks or regressions. Therefore, the patch correctly resolves the issue and is acceptable for merge.",
+            "tool_facts": {
+              "tool_calls": 4,
+              "model_calls": 2,
+              "called_artifact": false,
+              "called_linkage": true,
+              "saw_linked_false": false,
+              "called_freshness": true,
+              "fresh_state_served": "TRUE",
+              "saw_fresh_true": true,
+              "saw_fresh_false": false,
+              "saw_fresh_unknown": false,
+              "called_coverage": true,
+              "saw_coverage_incomplete": false,
+              "called_consistency": true,
+              "saw_contradicted": false,
+              "strict_denied_403": false,
+              "escalation_requested": [],
+              "escalation_granted": [],
+              "escalation_denied": [],
+              "tool_verdicts": {
+                "linkage": true,
+                "freshness_state": "TRUE",
+                "freshness": true,
+                "coverage": true,
+                "consistency": "consistent"
+              }
+            }
+          },
+          {
+            "issue": "sympy__sympy-17318",
+            "verdict": "ACCEPT",
+            "condition_gold": "NEED_EVIDENCE",
+            "reason": "The test artifact is correctly linked to this patch and commit, and it is fresh for the current commit tree. The test coverage is complete for the declared acceptance and regression checks. The author statement is consistent with the evidence, and the issue symptom (IndexError in sqrtdenest) is confirmed resolved with no failures or regressions detected. Therefore, the patch successfully fixes the issue without introducing regressions and meets the acceptance criteria.",
+            "tool_facts": {
+              "tool_calls": 4,
+              "model_calls": 2,
+              "called_artifact": false,
+              "called_linkage": true,
+              "saw_linked_false": false,
+              "called_freshness": true,
+              "fresh_state_served": "TRUE",
+              "saw_fresh_true": true,
+              "saw_fresh_false": false,
+              "saw_fresh_unknown": false,
+              "called_coverage": true,
+              "saw_coverage_incomplete": false,
+              "called_consistency": true,
+              "saw_contradicted": false,
+              "strict_denied_403": false,
+              "escalation_requested": [],
+              "escalation_granted": [],
+              "escalation_denied": [],
+              "tool_verdicts": {
+                "linkage": true,
+                "freshness_state": "TRUE",
+                "freshness": true,
+                "coverage": true,
+                "consistency": "consistent"
+              }
+            }
+          },
+          {
+            "issue": "sympy__sympy-17630",
+            "verdict": "ACCEPT",
+            "condition_gold": "NEED_EVIDENCE",
+            "reason": "The test artifact is linked to this patch and commit, is fresh for the current commit tree, and has complete coverage of the declared acceptance and regression checks. The author statement is consistent with the evidence, and the reproduced symptom from the issue is resolved with no new failures introduced. Therefore, the patch successfully resolves the issue without regressions and is acceptable for merging.",
+            "tool_facts": {
+              "tool_calls": 4,
+              "model_calls": 2,
+              "called_artifact": false,
+              "called_linkage": true,
+              "saw_linked_false": false,
+              "called_freshness": true,
+              "fresh_state_served": "TRUE",
+              "saw_fresh_true": true,
+              "saw_fresh_false": false,
+              "saw_fresh_unknown": false,
+              "called_coverage": true,
+              "saw_coverage_incomplete": false,
+              "called_consistency": true,
+              "saw_contradicted": false,
+              "strict_denied_403": false,
+              "escalation_requested": [],
+              "escalation_granted": [],
+              "escalation_denied": [],
+              "tool_verdicts": {
+                "linkage": true,
+                "freshness_state": "TRUE",
+                "freshness": true,
+                "coverage": true,
+                "consistency": "consistent"
+              }
+            }
+          },
+          {
+            "issue": "sympy__sympy-21847",
+            "verdict": "ACCEPT",
+            "condition_gold": "NEED_EVIDENCE",
+            "reason": "The test artifact is linked to this patch and commit, and it is fresh for the current commit tree. The test coverage is complete for the declared acceptance and regression checks. The author statement is consistent with the evidence, and the issue symptom no longer reproduces after the patch. There are no failing acceptance checks or scoped regressions in the executed tests. Therefore, the patch successfully resolves the issue without introducing regressions.",
+            "tool_facts": {
+              "tool_calls": 4,
+              "model_calls": 2,
+              "called_artifact": false,
+              "called_linkage": true,
+              "saw_linked_false": false,
+              "called_freshness": true,
+              "fresh_state_served": "TRUE",
+              "saw_fresh_true": true,
+              "saw_fresh_false": false,
+              "saw_fresh_unknown": false,
+              "called_coverage": true,
+              "saw_coverage_incomplete": false,
+              "called_consistency": true,
+              "saw_contradicted": false,
+              "strict_denied_403": false,
+              "escalation_requested": [],
+              "escalation_granted": [],
+              "escalation_denied": [],
+              "tool_verdicts": {
+                "linkage": true,
+                "freshness_state": "TRUE",
+                "freshness": true,
+                "coverage": true,
+                "consistency": "consistent"
+              }
+            }
+          },
+          {
+            "issue": "sympy__sympy-24443",
+            "verdict": "ACCEPT",
+            "condition_gold": "NEED_EVIDENCE",
+            "reason": "The test artifact is linked to this patch and commit, is fresh for the current commit tree, and has complete coverage of the declared acceptance and regression checks. The diagnostic evidence confirms that the original issue symptom is resolved (the homomorphism construction no longer raises a ValueError for PermutationGroups). The author statement is consistent with the evidence. There are no failing acceptance checks or scoped regressions reported. Therefore, the patch is acceptable for merge.",
+            "tool_facts": {
+              "tool_calls": 4,
+              "model_calls": 2,
+              "called_artifact": false,
+              "called_linkage": true,
+              "saw_linked_false": false,
+              "called_freshness": true,
+              "fresh_state_served": "TRUE",
+              "saw_fresh_true": true,
+              "saw_fresh_false": false,
+              "saw_fresh_unknown": false,
+              "called_coverage": true,
+              "saw_coverage_incomplete": false,
+              "called_consistency": true,
+              "saw_contradicted": false,
+              "strict_denied_403": false,
+              "escalation_requested": [],
+              "escalation_granted": [],
+              "escalation_denied": [],
+              "tool_verdicts": {
+                "linkage": true,
+                "freshness_state": "TRUE",
+                "freshness": true,
+                "coverage": true,
+                "consistency": "consistent"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "decision_appropriateness": {
+    "deepseek-flash": {
+      "T2D-T": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 10,
+        "condition_DA_rate": 1.0,
+        "oracle_DA_correct": 0,
+        "oracle_DA_rate": 0.0
+      },
+      "T3D-Strict": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 10,
+        "condition_DA_rate": 1.0,
+        "oracle_DA_correct": 0,
+        "oracle_DA_rate": 0.0
+      },
+      "T3D-Escalate": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 9,
+        "condition_DA_rate": 0.9,
+        "oracle_DA_correct": 9,
+        "oracle_DA_rate": 0.9
+      },
+      "T2A-T": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 9,
+        "condition_DA_rate": 0.9,
+        "oracle_DA_correct": 9,
+        "oracle_DA_rate": 0.9
+      },
+      "T3A-T": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 10,
+        "condition_DA_rate": 1.0,
+        "oracle_DA_correct": 10,
+        "oracle_DA_rate": 1.0
+      }
+    },
+    "gpt-4.1-mini": {
+      "T2D-T": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 10,
+        "condition_DA_rate": 1.0,
+        "oracle_DA_correct": 0,
+        "oracle_DA_rate": 0.0
+      },
+      "T3D-Strict": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 3,
+        "condition_DA_rate": 0.3,
+        "oracle_DA_correct": 5,
+        "oracle_DA_rate": 0.5
+      },
+      "T3D-Escalate": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 8,
+        "condition_DA_rate": 0.8,
+        "oracle_DA_correct": 8,
+        "oracle_DA_rate": 0.8
+      },
+      "T2A-T": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 8,
+        "condition_DA_rate": 0.8,
+        "oracle_DA_correct": 8,
+        "oracle_DA_rate": 0.8
+      },
+      "T3A-T": {
+        "n": 10,
+        "scored": 10,
+        "parse_or_error": 0,
+        "condition_DA_correct": 9,
+        "condition_DA_rate": 0.9,
+        "oracle_DA_correct": 9,
+        "oracle_DA_rate": 0.9
+      }
+    }
+  },
+  "parse_or_transport_failures": {
+    "deepseek-flash": {
+      "non_verdict_cells": 0,
+      "cells": 50,
+      "rate": 0.0,
+      "detail": []
+    },
+    "gpt-4.1-mini": {
+      "non_verdict_cells": 0,
+      "cells": 50,
+      "rate": 0.0,
+      "detail": []
+    }
+  },
+  "per_issue_raw_verdict_grids_g3b_vs_g3b3": {
+    "deepseek-flash": [
+      {
+        "issue": "sympy__sympy-13615",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "ACCEPT",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "NEED_EVIDENCE",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "NEED_EVIDENCE",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "oracle_gold": "REJECT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "REJECT",
+        "T3D-Escalate|g3b3": "REJECT",
+        "T3D-Escalate|gold": "REJECT",
+        "T2A-T|g3b": "REJECT",
+        "T2A-T|g3b3": "REJECT",
+        "T2A-T|gold": "REJECT",
+        "T3A-T|g3b": "REJECT",
+        "T3A-T|g3b3": "REJECT",
+        "T3A-T|gold": "REJECT"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "oracle_gold": "REJECT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "REJECT",
+        "T3D-Escalate|g3b3": "REJECT",
+        "T3D-Escalate|gold": "REJECT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "REJECT",
+        "T2A-T|gold": "REJECT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "REJECT",
+        "T3A-T|gold": "REJECT"
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "oracle_gold": "REJECT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "REJECT",
+        "T3D-Escalate|g3b3": "REJECT",
+        "T3D-Escalate|gold": "REJECT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "REJECT",
+        "T2A-T|gold": "REJECT",
+        "T3A-T|g3b": "REJECT",
+        "T3A-T|g3b3": "REJECT",
+        "T3A-T|gold": "REJECT"
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      }
+    ],
+    "gpt-4.1-mini": [
+      {
+        "issue": "sympy__sympy-13615",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "NEED_EVIDENCE",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "oracle_gold": "REJECT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "REJECT",
+        "T3D-Escalate|g3b3": "REJECT",
+        "T3D-Escalate|gold": "REJECT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "REJECT",
+        "T3A-T|g3b": "REJECT",
+        "T3A-T|g3b3": "REJECT",
+        "T3A-T|gold": "REJECT"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "oracle_gold": "REJECT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "REJECT",
+        "T2A-T|g3b": "NEED_EVIDENCE",
+        "T2A-T|g3b3": "NEED_EVIDENCE",
+        "T2A-T|gold": "REJECT",
+        "T3A-T|g3b": "REJECT",
+        "T3A-T|g3b3": "NEED_EVIDENCE",
+        "T3A-T|gold": "REJECT"
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "oracle_gold": "REJECT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "REJECT",
+        "T3D-Escalate|g3b3": "REJECT",
+        "T3D-Escalate|gold": "REJECT",
+        "T2A-T|g3b": "REJECT",
+        "T2A-T|g3b3": "REJECT",
+        "T2A-T|gold": "REJECT",
+        "T3A-T|g3b": "REJECT",
+        "T3A-T|g3b3": "REJECT",
+        "T3A-T|gold": "REJECT"
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "NEED_EVIDENCE",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "oracle_gold": "ACCEPT",
+        "T2D-T|g3b": "NEED_EVIDENCE",
+        "T2D-T|g3b3": "NEED_EVIDENCE",
+        "T2D-T|gold": "NEED_EVIDENCE",
+        "T3D-Strict|g3b": "NEED_EVIDENCE",
+        "T3D-Strict|g3b3": "ACCEPT",
+        "T3D-Strict|gold": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b": "NEED_EVIDENCE",
+        "T3D-Escalate|g3b3": "ACCEPT",
+        "T3D-Escalate|gold": "ACCEPT",
+        "T2A-T|g3b": "ACCEPT",
+        "T2A-T|g3b3": "ACCEPT",
+        "T2A-T|gold": "ACCEPT",
+        "T3A-T|g3b": "NEED_EVIDENCE",
+        "T3A-T|g3b3": "ACCEPT",
+        "T3A-T|gold": "ACCEPT"
+      }
+    ]
+  },
+  "Q14_gold_sensitivity": {
+    "provisional_all_10": {
+      "issues": [
+        "sympy__sympy-13615",
+        "sympy__sympy-13974",
+        "sympy__sympy-15349",
+        "sympy__sympy-17318",
+        "sympy__sympy-17630",
+        "sympy__sympy-19783",
+        "sympy__sympy-20590",
+        "sympy__sympy-21847",
+        "sympy__sympy-24213",
+        "sympy__sympy-24443"
+      ],
+      "DS_need_sufficient": {
+        "conditions": [
+          "T2A-T",
+          "T3D-Escalate",
+          "T3A-T"
+        ],
+        "n_issues": 10,
+        "n_cells": 30,
+        "need_cells": 2,
+        "cell_need_rate": {
+          "k": 2,
+          "n": 30,
+          "point": 0.0667,
+          "ci95_low": 0.0082,
+          "ci95_high": 0.2207,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "needany_k_issues": 1,
+        "needany_exact": {
+          "k": 1,
+          "n": 10,
+          "point": 0.1,
+          "ci95_low": 0.0025,
+          "ci95_high": 0.445,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "needany_bootstrap": {
+          "point": 0.1,
+          "ci95_low": 0.0,
+          "ci95_high": 0.3,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+          "n_issues": 10
+        }
+      },
+      "GPT_unsupported_accept_sufficient": {
+        "conditions": [
+          "T2A-T",
+          "T3D-Escalate",
+          "T3A-T"
+        ],
+        "n_issues": 10,
+        "n_cells": 30,
+        "unsupported_accept_cells": 2,
+        "cell_ua_rate": {
+          "k": 2,
+          "n": 30,
+          "point": 0.0667,
+          "ci95_low": 0.0082,
+          "ci95_high": 0.2207,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "ua_any_k_issues": 2
+      }
+    },
+    "drop_3_reject_issues__accept7_only": {
+      "issues": [
+        "sympy__sympy-13615",
+        "sympy__sympy-13974",
+        "sympy__sympy-15349",
+        "sympy__sympy-20590",
+        "sympy__sympy-21847",
+        "sympy__sympy-24213",
+        "sympy__sympy-24443"
+      ],
+      "note": "C1 (GPT unsupported ACCEPT) is NOT estimable without the 3 oracle-REJECT issues.",
+      "DS_need_sufficient": {
+        "conditions": [
+          "T2A-T",
+          "T3D-Escalate",
+          "T3A-T"
+        ],
+        "n_issues": 7,
+        "n_cells": 21,
+        "need_cells": 2,
+        "cell_need_rate": {
+          "k": 2,
+          "n": 21,
+          "point": 0.0952,
+          "ci95_low": 0.0117,
+          "ci95_high": 0.3038,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "needany_k_issues": 1,
+        "needany_exact": {
+          "k": 1,
+          "n": 7,
+          "point": 0.1429,
+          "ci95_low": 0.0036,
+          "ci95_high": 0.5787,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "needany_bootstrap": {
+          "point": 0.1429,
+          "ci95_low": 0.0,
+          "ci95_high": 0.4286,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+          "n_issues": 7
+        }
+      },
+      "GPT_C1_estimable": false
+    },
+    "reject3_only": {
+      "issues": [
+        "sympy__sympy-17318",
+        "sympy__sympy-17630",
+        "sympy__sympy-19783"
+      ],
+      "DS_need_sufficient": {
+        "conditions": [
+          "T2A-T",
+          "T3D-Escalate",
+          "T3A-T"
+        ],
+        "n_issues": 3,
+        "n_cells": 9,
+        "need_cells": 0,
+        "cell_need_rate": {
+          "k": 0,
+          "n": 9,
+          "point": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 0.3363,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "needany_k_issues": 0,
+        "needany_exact": {
+          "k": 0,
+          "n": 3,
+          "point": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 0.7076,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "needany_bootstrap": {
+          "point": 0.0,
+          "ci95_low": 0.0,
+          "ci95_high": 0.0,
+          "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+          "n_issues": 3
+        }
+      },
+      "GPT_unsupported_accept_sufficient": {
+        "conditions": [
+          "T2A-T",
+          "T3D-Escalate",
+          "T3A-T"
+        ],
+        "n_issues": 3,
+        "n_cells": 9,
+        "unsupported_accept_cells": 2,
+        "cell_ua_rate": {
+          "k": 2,
+          "n": 9,
+          "point": 0.2222,
+          "ci95_low": 0.0281,
+          "ci95_high": 0.6001,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        },
+        "ua_any_k_issues": 2
+      }
+    },
+    "trust_grant_counterfactual_boundary": {
+      "observed_sufficient_cell_need_rate": 0.0667,
+      "active_sufficient_only_T3DEsc_T3A": {
+        "k": 1,
+        "n": 20,
+        "rate": {
+          "k": 1,
+          "n": 20,
+          "point": 0.05,
+          "ci95_low": 0.0013,
+          "ci95_high": 0.2487,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        }
+      },
+      "T2A_only_static_trust_block": {
+        "k": 1,
+        "n": 10,
+        "rate": {
+          "k": 1,
+          "n": 10,
+          "point": 0.1,
+          "ci95_low": 0.0025,
+          "ci95_high": 0.445,
+          "method": "exact Clopper-Pearson (Beta quantile, bisection)"
+        }
+      },
+      "counterfactual_envelope_if_T2A_trust_revoked": {
+        "lower_bound_assume_all_T2A_accept": 0.0333,
+        "upper_bound_assume_all_T2A_need": 0.3667,
+        "interpretation": "Envelope over the 30 sufficient cells holding the 20 active-condition verdicts fixed and letting the 10 static T2A verdicts range; it is an ASSOCIATIONAL accounting boundary, NOT a causal effect of trust vs freshness."
+      },
+      "paired_g3b_to_g3b3_T2A_DS_need_transition": {
+        "transitions": {
+          "NEED_EVIDENCE->ACCEPT": 6,
+          "NEED_EVIDENCE->NEED_EVIDENCE": 1,
+          "NEED_EVIDENCE->REJECT": 2,
+          "REJECT->REJECT": 1
+        },
+        "g3b_need_rate": 0.9,
+        "g3b3_need_rate": 0.1,
+        "matched_rate_delta": -0.8
+      }
+    }
+  },
+  "Q15_evidence_package_index": {
+    "path": "evidence_store_g3b3\\analysis\\g3b3_per_issue_evidence.json",
+    "classification_tag_counts": {
+      "deepseek-flash|unchanged_correct": 27,
+      "deepseek-flash|policy_trust_change": 8,
+      "deepseek-flash|evidence_utilization_improvement": 13,
+      "gpt-4.1-mini|unchanged_correct": 25,
+      "gpt-4.1-mini|remaining_error": 12,
+      "gpt-4.1-mini|evidence_utilization_improvement": 13,
+      "deepseek-flash|remaining_error": 2
+    },
+    "tag_rule": "deterministic auditable heuristic; every cell bundles rendered prompt, tool responses and model reasoning so a human can override the tag"
+  },
+  "do_not": [
+    "do not pool with the E1 22 fixtures or the G3-B cells as independent observations (paired repeated measures)",
+    "do not call gold human-adjudicated (PROVISIONAL, n=1, annotator2 NOT_OBTAINED; no kappa)",
+    "do not report a Cohen kappa",
+    "do not interpret restricted-regime NEED as reasoning calibration",
+    "do not separate freshness vs trust causal effects (not identified); do not extrapolate beyond the 10 issues",
+    "do not pool the sympy-17630/T3A Decision-Policy probe with freshness-driven abstention"
+  ]
+}

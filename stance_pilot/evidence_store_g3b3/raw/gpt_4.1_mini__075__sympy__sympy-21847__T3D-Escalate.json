@@ -1,0 +1,155 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is linked to this patch and base commit, is fresh for the current commit tree, and has complete coverage of the declared acceptance and regression checks. The author statement is consistent with the evidence. The issue symptom is reproduced before the patch and resolved after the patch. No acceptance checks fail and no regressions are introduced. Therefore, the patch correctly resolves the issue and is acceptable for merge.\",\"evidence_mismatch\":false}",
+  "cell": "g3b3:sympy__sympy-21847:T3D-Escalate",
+  "condition": "T3D-Escalate",
+  "cost_usd": 0.004097,
+  "evidence_session": "a322c5e208b6ec4e6afdbe6f",
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-21847",
+  "instance_id": "sympy__sympy-21847",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 3,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": "escalate",
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.014259,
+    0.014487,
+    0.014542
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 59,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 2786,
+      "raw_content": "",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_Nsg1qOMnEatooUor0RH7OcTM",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_XqGJhhwmj4KuRTpeM1ka4fC4",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_2qeNBh7L5jcQbrT1qR2YKuZo",
+          "name": "check_test_coverage"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 43,
+      "finish_reason": "tool_calls",
+      "model_call": 2,
+      "prompt_tokens": 3290,
+      "raw_content": "",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [
+        {
+          "arguments": "{\"reason\":\"Verify author statement that the fix is fully correct and all relevant tests pass, given the evidence is linked, fresh, and coverage is complete.\"}",
+          "id": "call_2UFOi6YhAaXRJZ8puGgUgu7K",
+          "name": "check_claim_consistency"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 6,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 96,
+      "finish_reason": "stop",
+      "model_call": 3,
+      "prompt_tokens": 3375,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is linked to this patch and base commit, is fresh for the current commit tree, and has complete coverage of the declared acceptance and regression checks. The author statement is consistent with the evidence. The issue symptom is reproduced before the patch and resolved after the patch. No acceptance checks fail and no regressions are introduced. Therefore, the patch correctly resolves the issue and is acceptable for merge.\",\"evidence_mismatch\":false}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "gpt-4.1-mini",
+          "n_messages": 8,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_ec15a96822c8d6ff",
+  "tokens_in": 9451,
+  "tokens_out": 198,
+  "tool_calls": 4,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"d9b18c518d64d0ebe8e35a98c2fb519938b9b151\", \"record_patch_sha256\": \"7223f91c8720bf5a410abc2719f474ff9c780928840b4fb096c83b44d50f9b2b\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"af3da919184597bd2009cb94b3dd24266a8fd891\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"af3da919184597bd2009cb94b3dd24266a8fd891\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:26:20+00:00\", \"attestation_built_at\": \"2026-10-25T18:26:37+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 9, \"executed\": 9, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {
+        "reason": "Verify author statement that the fix is fully correct and all relevant tests pass, given the evidence is linked, fresh, and coverage is complete."
+      },
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the claim is consistent with the normalised verdicts of this artifact\", \"escalated\": true}",
+      "tool": "check_claim_consistency",
+      "turn": 1
+    }
+  ],
+  "wall_s": 3.52
+}

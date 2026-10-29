@@ -1,0 +1,244 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "All checks are complete and consistent. The evidence is intact and demonstrates success.\n\n- **Linkage**: authentic signature, base_commit and patch_sha256 both match → linked.\n- **Freshness**: fresh=TRUE, authoritative run tree matches expected tree.\n- **Coverage**: complete — 1/1 F2P executed, 8/8 scoped P2P executed, no missing IDs.\n- **Symptom**: reproduced pre-patch, gone post-patch (bound variable no longer over-substituted).\n- **Acceptance/regression logs**: exit 0, all visible tests PASSED (only expected XFAILs), no failures.\n- **Claim consistency**: consistent.\n\n{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and demonstrates success: artifact linkage is authentic with matching base_commit and patch_sha256; freshness is TRUE (run tree matches the independently re-derived canonical tree); coverage is complete (1/1 declared acceptance test and 8/8 scoped regression checks executed, no missing IDs); the issue symptom reproduces pre-patch and is gone post-patch; and the escalated acceptance/regression run exited 0 with all visible tests PASSED (only expected XFAILs), showing no failing acceptance check and no scoped regression. The author claim is consistent with the recorded verdicts.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "cell": "g3c1live:sympy__sympy-19495:T3D-Escalate",
+  "condition": "T3D-Escalate",
+  "cost_usd": 0.009424,
+  "evidence_session": "2f90a7fa3708c907357bd90b",
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-19495",
+  "instance_id": "sympy__sympy-19495",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 4,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": "escalate",
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010708,
+    0.011064,
+    0.012784,
+    0.012972
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 167,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 3445,
+      "raw_content": "I'll start with the integrity checks: linkage, freshness, coverage, symptom log, and claim consistency.",
+      "served_model": "deepseek-flash",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_00_bL8yYFM9hgL2iz4WzQkd3645",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_01_HizN0iQE8FRjHW3j4k1Z6039",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_02_ihKyEgBgKpLm97BlP3Hu2308",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{\"name\": \"symptom\"}",
+          "id": "call_03_zaJSzUiDJyU00jnl28qP9614",
+          "name": "get_run_log"
+        },
+        {
+          "arguments": "{\"reason\": \"To determine whether the author's claim that the fix is correct and all relevant tests pass is consistent with the recorded evidence, which requires adjudicating against acceptance outcomes.\"}",
+          "id": "call_04_YWZFIZkhmokzLvVTZbaP0139",
+          "name": "check_claim_consistency"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 281,
+      "finish_reason": "tool_calls",
+      "model_call": 2,
+      "prompt_tokens": 4513,
+      "raw_content": "All integrity checks pass: linkage is authentic and matches, freshness is TRUE (tree matches), coverage is complete (1/1 F2P, 8/8 P2P executed), the symptom is reproduced pre-patch and gone post-patch, and the author claim is consistent.\n\nHowever, the diagnostic tier withholds acceptance/regression verdicts. Since coverage is complete and the claim is consistent, I need the actual acceptance outcomes to confirm no failing check exists before ACCEPT.",
+      "served_model": "deepseek-flash",
+      "tool_calls": [
+        {
+          "arguments": "{\"name\": \"f2p\", \"reason\": \"Coverage confirms the single declared acceptance test was executed but its verdict is withheld; I need the F2P outcome to confirm the issue is actually resolved by the maintainer acceptance test before deciding ACCEPT vs REJECT.\"}",
+          "id": "call_00_q0XWfhNPksfA3FTujcpc5251",
+          "name": "get_run_log"
+        },
+        {
+          "arguments": "{\"name\": \"p2p\", \"reason\": \"Coverage confirms all 8 scoped regression checks were executed but verdicts are withheld; I need the P2P outcomes to confirm no scoped regression is introduced before deciding ACCEPT vs REJECT.\"}",
+          "id": "call_01_UeDZqLnWJPK5tW7TBbkY1416",
+          "name": "get_run_log"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 8,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 97,
+      "finish_reason": "tool_calls",
+      "model_call": 3,
+      "prompt_tokens": 9720,
+      "raw_content": "The logs are truncated but show exit 0 with all visible tests PASSED (only expected XFAILs). The run completed with exit code 0, meaning no failures. Combined with complete coverage (1/1 F2P, 8/8 P2P executed), authentic linkage, fresh tree, symptom resolved, and consistent claim, the evidence supports ACCEPT.",
+      "served_model": "deepseek-flash",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_00_ZkTSXXEnZlolCN3H0WKk2441",
+          "name": "get_test_artifact"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 11,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 292,
+      "finish_reason": "stop",
+      "model_call": 4,
+      "prompt_tokens": 10386,
+      "raw_content": "All checks are complete and consistent. The evidence is intact and demonstrates success.\n\n- **Linkage**: authentic signature, base_commit and patch_sha256 both match → linked.\n- **Freshness**: fresh=TRUE, authoritative run tree matches expected tree.\n- **Coverage**: complete — 1/1 F2P executed, 8/8 scoped P2P executed, no missing IDs.\n- **Symptom**: reproduced pre-patch, gone post-patch (bound variable no longer over-substituted).\n- **Acceptance/regression logs**: exit 0, all visible tests PASSED (only expected XFAILs), no failures.\n- **Claim consistency**: consistent.\n\n{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and demonstrates success: artifact linkage is authentic with matching base_commit and patch_sha256; freshness is TRUE (run tree matches the independently re-derived canonical tree); coverage is complete (1/1 declared acceptance test and 8/8 scoped regression checks executed, no missing IDs); the issue symptom reproduces pre-patch and is gone post-patch; and the escalated acceptance/regression run exited 0 with all visible tests PASSED (only expected XFAILs), showing no failing acceptance check and no scoped regression. The author claim is consistent with the recorded verdicts.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 13,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_fec174c8f4012a8b",
+  "tokens_in": 28064,
+  "tokens_out": 837,
+  "tool_calls": 8,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"25fbcce5b1a4c7e3956e6062930f4a44ce95a632\", \"record_patch_sha256\": \"cf8cf88dd11a5b8bfae974bbcc709c98ff8e5b0447b083350b4a779f5b92ca04\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"d67a7035423c8fabb58d08cd7441de66b51aefba\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"d67a7035423c8fabb58d08cd7441de66b51aefba\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:14:29+00:00\", \"attestation_built_at\": \"2026-10-28T10:15:09+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 8, \"executed\": 8, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python sympy__sympy-19495-baseline.py  (exit 1)\n--- stdout ---\nbefore          : ConditionSet(x, Contains(y, Interval(-1, 1)), ImageSet(Lambda(n, 2*pi*n + asin(y)), Integers))\nplain subs      : ConditionSet(1/3, Contains(1/3, ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)), ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers))\nxreplace ref    : ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nsimultaneous ref: ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nFAIL: ConditionSet bound variable was over-substituted to 1/3\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python sympy__sympy-19495-post-candidate.py  (exit 0)\n--- stdout ---\nbefore          : ConditionSet(x, Contains(y, Interval(-1, 1)), ImageSet(Lambda(n, 2*pi*n + asin(y)), Integers))\nplain subs      : ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nxreplace ref    : ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nsimultaneous ref: ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers)\nOK: ConditionSet.subs no longer over-substitutes the bound variable\n\n--- stderr ---\n",
+      "tool": "get_run_log",
+      "turn": 0
+    },
+    {
+      "args": {
+        "reason": "To determine whether the author's claim that the fix is correct and all relevant tests pass is consistent with the recorded evidence, which requires adjudicating against acceptance outcomes."
+      },
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the claim is consistent with the normalised verdicts of this artifact\", \"escalated\": true}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    },
+    {
+      "args": {
+        "name": "f2p",
+        "reason": "Coverage confirms the single declared acceptance test was executed but its verdict is withheld; I need the F2P outcome to confirm the issue is actually resolved by the maintainer acceptance test before deciding ACCEPT vs REJECT."
+      },
+      "http_status": 200,
+      "result_preview": "# TIER ESCALATION: this acceptance-test log reveals maintainer verdict columns; your stated reason and this access are recorded.\n$ C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpi8ZGiW\\Scripts\\python.exe -m pytest sympy/sets/tests/test_conditionset.py sympy/sets/tests/test_sets.py -v --tb=short -p no:cacheprovider  (exit 0, 16s)\n--- stdout ---\n============================= test session starts =============================\nplatform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpi8ZGiW\\Scripts\\python.exe\narchitecture: 64-bit\ncache:        yes\nground types: python \n\nrootdir: C:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\nconfigfile: pytest.ini\ncollecting ... collected 107 items\n\nsympy/sets/tests/test_conditionset.py::test_CondSet PASSED               [  0%]\nsympy/sets/tests/test_conditionset.py::test_CondSet_intersect PASSED     [  1%]\nsympy/sets/tests/test_conditionset.py::test_issue_9849 PASSED            [  2%]\nsympy/sets/tests/test_conditionset.py::test_simplified_FiniteSet_in_CondSet PASSED [  3%]\nsympy/sets/tests/test_conditionset.py::test_free_symbols PASSED          [  4%]\nsympy/sets/tests/test_conditionset.py::test_subs_CondSet PASSED          [  5%]\nsympy/sets/tests/test_conditionset.py::test_subs_CondSet_tebr PASSED     [  6%]\nsympy/sets/tests/test_conditionset.py::test_dummy_eq PASSED              [  7%]\nsympy/sets/tests/test_conditionset.py::test_contains PASSED              [  8%]\nsympy/sets/tests/test_conditionset.py::test_failing_contains XFAIL       [  9%]\nsympy/sets/tests/test_sets.py::test_imageset PASSED                      [ 10%]\nsympy/sets/tests/test_sets.py::test_is_empty PASSED                      [ 11%]\nsympy/sets/tests/test_sets.py::test_is_finiteset PASSED                  [ 12%]\nsympy/sets/tests/test_sets.py::test_deprecated_is_EmptySet PASSED        [ 13%]\nsympy/sets/tests/test_sets.py::test_interval_arguments PASSED            [ 14%]\nsympy/sets/tests/test_sets.py::test_interval_symbolic_end_points PASSED  [ 14%]\nsympy/sets/tests/test_sets.py::test_interval_is_empty PASSED             [ 15%]\nsympy/sets/tests/test_sets.py::test_union PASSED                         [ 16%]\nsympy/sets/tests/test_sets.py::test_union_iter PASSED                    [ 17%]\nsympy/sets/tests/test_sets.py::test_union_is_empty PASSED                [ 18%]\nsympy/sets/tests/test_sets.py::test_difference PASSED                    [ 19%]\nsympy/sets/tests/test_sets.py::test_Complement PASSED                    [ 20%]\nsympy/sets/tests/test_sets.py::test_set_operations_nonsets PASSED        [ 21%]\nsympy/sets/tests/test_sets.py::test_complement PASSED                    [ 22%]\nsympy/sets/tests/test_sets.py::test_intersect1 PASSED                    [ 23%]\nsympy/sets/tests/test_sets.py::test_intersection PASSED                  [ 24%]\nsympy/sets/tests/test_sets.py::test_issue_9623 PASSED                    [ 25%]\nsympy/sets/tests/test_sets.py::test_is_disjoint PASSED                   [ 26%]\nsympy/sets/tests/test_sets.py::test_ProductSet__len__ PASSED             [ 27%]\nsympy/sets/tests/test_sets.py::test_ProductSet PASSED                    [ 28%]\nsympy/sets/tests/test_sets.py::test_ProductSet_of_single_arg_is_not_arg PASSED [ 28%]\nsympy/sets/tests/test_sets.py::test_ProductSet_is_empty PASSED           [ 29%]\nsympy/sets/tests/test_sets.py::test_interval_subs PASSED                 [ 30%]\nsympy/sets/tests/test_sets.py::test_interval_to_mpi PASSED               [ 31%]\nsympy/sets/tests/test_sets.py::test_set_evalf PASSED                     [ 32%]\nsympy/sets/tests/test_sets.py::test_measure PASSED                       [ 33%]\nsympy/sets/tests/test_sets.py::test_is_subset PASSED                     [ 34%]\nsympy/sets/tests/test_sets.py::test_is_proper_subset PASSED              [ 35%]\nsympy/sets/tests/test_sets.py::test_is_superset PASSED                   [ 36%]\nsympy/sets/tests/test_sets.py::test_is_proper_superset PASSED            [ 37%]\nsympy/sets/tests/test_sets.py::test_contains PASSED                      [ 38%]\nsympy/sets/tests/test_sets.py::test_interval_symbolic PASSED             [ 39%]\nsympy/sets/tests/test_sets.py::test_union_contains PASSED                [ 40%]\nsympy/sets/tests/test_sets.py::test_is_number PASSED                     [ 41%]\nsympy/sets/tests/test_sets.py::test_Interval_is_left_unbounded PASSED    [ 42%]\nsympy/sets/tests/test_sets.py::test_Interval_is_right_unbounded PASSED   [ 42%]\nsympy/sets/tests/test_sets.py::test_Interval_as_relational PASSED        [ 43%]\nsympy/sets/tests/test_sets.py::test_Finite_as_relational PASSED          [ 44%]\nsympy/sets/tests/test_sets.py::test_Union_as_relational PASSED           [ 45%]\nsympy/sets/tests/test_sets.py::test_Intersection_as_relational PASSED    [ 46%]\nsympy/sets/tests/test_sets.py::test_Complement_as_relational PASSED      [ 47%]\nsympy/sets/tests/test_sets.py::test_Complement_as_relational_fail XFAIL  [ 48%]\nsympy/sets/tests/test_sets.py::test_SymmetricDifference_as_relational PASSED [ 49%]\nsympy/sets/tests/test_sets.py::test_EmptySet PASSED                      [ 50%]\nsympy/sets/tests/test_sets.py::test_finite_basic PASSED                  [ 51%]\nsympy/sets/tests/test_sets.py::test_product_basic PASSED                 [ 52%]\nsympy/sets/tests/test_sets.py::test_real PASSED                          [ 53%]\nsympy/sets/tests/test_sets.py::test_supinf PASSED                        [ 54%]\nsympy/sets/tests/test_sets.py::test_universalset PASSED                  [ 55%]\nsympy/sets/tests/test_sets.py::test_Union_of_ProductSets_shares PASSED   [ 56%]\nsympy/sets/tests/test_sets.py::test_Interval_free_symbols PASSED         [ 57%]\nsympy/sets/tests/test_sets.py::test_image_interval PASSED                [ 57%]\nsympy/sets/tests/test_sets.py::test_image_piecewise PASSED               [ 58%]\nsympy/sets/tests/test_sets.py::test_image_Intersection XFAIL             [ 59%]\nsympy/sets/tests/test_sets.py::test_image_FiniteSet PASSED               [ 60%]\nsympy/sets/tests/test_sets.py::test_image_Union PASSED                   [ 61%]\nsympy/sets/tests/test_sets.py::test_image_EmptySet PASSED                [ 62%]\nsympy/sets/tests/test_sets.py::test_issue_5724_7680 PASSED               [ 63%]\nsympy/sets/tests/test_sets.py::test_boundary PASSED                      [ 64%]\nsympy/sets/tests/test_sets.py::test_boundary_Union PASSED                [ 65%]\nsympy/sets/tests/test_sets.py::test_union_boundary_of_joining_sets XFAIL [ 66%]\nsympy/sets/tests/test_sets.py::test_boundary_ProductSet PASSED           [ 67%]\nsympy/sets/tests/test_sets.py::test_boundary_ProductSet_line PASSED      [ 68%]\nsympy/sets/tests/test_sets.py::test_is_open PASSED                       [ 69%]\nsympy/sets/tests/test_sets.py::test_is_closed PASSED                     [ 70%]\nsympy/sets/tests/test_sets.py::test_closure PASSED                       [ 71%]\nsympy/sets/tests/test_sets.py::test_interior PASSED                      [ 71%]\nsympy/sets/tests/test_sets.py::test_issue_7841 PASSED                    [ 72%]\nsympy/sets/tests/test_sets.py::test_Eq PASSED                            [ 73%]\nsympy/sets/tests/test_sets.py::test_SymmetricDifference PASSED           [ 74%]\nsympy/sets/tests/test_sets.py::test_issue_9536 PASSED                    [ 75%]\nsympy/sets/tests/test_sets.py::test_issue_9637 PASSED                    [ 76%]\nsympy/sets/tests/test_sets.py::test_issue_9808 PASSED                    [ 77%]\nsympy/sets/tests/test_sets.py::test_issue_9956 PASSED                    [ 78%]\nsympy/sets/tests/test_sets.py::test_issue_Symbol_inter PASSED            [ 79%]\nsympy/sets/tests/test_sets.py::test_issue_11827 PASSED                   [ 80%]\nsympy/sets/tests/test_sets.py::test_issue_10113 PASSED                   [ 81%]\nsympy/sets/tests/test_sets.py::test_issue_10248 PASSED                   [ 82%]\nsympy/sets/tests/test_sets.py::test_issue_9447 PASSED                    [ 83%]\nsympy/sets/tests/test_sets.py::test_issue_10337 PASSED                   [ 84%]\nsympy/sets/tests/tes",
+      "tool": "get_run_log",
+      "turn": 1
+    },
+    {
+      "args": {
+        "name": "p2p",
+        "reason": "Coverage confirms all 8 scoped regression checks were executed but verdicts are withheld; I need the P2P outcomes to confirm no scoped regression is introduced before deciding ACCEPT vs REJECT."
+      },
+      "http_status": 200,
+      "result_preview": "# TIER ESCALATION: this acceptance-test log reveals maintainer verdict columns; your stated reason and this access are recorded.\n$ C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpi8ZGiW\\Scripts\\python.exe -m pytest sympy/sets/tests/test_conditionset.py sympy/sets/tests/test_sets.py -v --tb=short -p no:cacheprovider  (exit 0, 16s)\n--- stdout ---\n============================= test session starts =============================\nplatform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\\Users\\guoci\\AppData\\Local\\uv\\cache\\builds-v0\\.tmpi8ZGiW\\Scripts\\python.exe\narchitecture: 64-bit\ncache:        yes\nground types: python \n\nrootdir: C:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\nconfigfile: pytest.ini\ncollecting ... collected 107 items\n\nsympy/sets/tests/test_conditionset.py::test_CondSet PASSED               [  0%]\nsympy/sets/tests/test_conditionset.py::test_CondSet_intersect PASSED     [  1%]\nsympy/sets/tests/test_conditionset.py::test_issue_9849 PASSED            [  2%]\nsympy/sets/tests/test_conditionset.py::test_simplified_FiniteSet_in_CondSet PASSED [  3%]\nsympy/sets/tests/test_conditionset.py::test_free_symbols PASSED          [  4%]\nsympy/sets/tests/test_conditionset.py::test_subs_CondSet PASSED          [  5%]\nsympy/sets/tests/test_conditionset.py::test_subs_CondSet_tebr PASSED     [  6%]\nsympy/sets/tests/test_conditionset.py::test_dummy_eq PASSED              [  7%]\nsympy/sets/tests/test_conditionset.py::test_contains PASSED              [  8%]\nsympy/sets/tests/test_conditionset.py::test_failing_contains XFAIL       [  9%]\nsympy/sets/tests/test_sets.py::test_imageset PASSED                      [ 10%]\nsympy/sets/tests/test_sets.py::test_is_empty PASSED                      [ 11%]\nsympy/sets/tests/test_sets.py::test_is_finiteset PASSED                  [ 12%]\nsympy/sets/tests/test_sets.py::test_deprecated_is_EmptySet PASSED        [ 13%]\nsympy/sets/tests/test_sets.py::test_interval_arguments PASSED            [ 14%]\nsympy/sets/tests/test_sets.py::test_interval_symbolic_end_points PASSED  [ 14%]\nsympy/sets/tests/test_sets.py::test_interval_is_empty PASSED             [ 15%]\nsympy/sets/tests/test_sets.py::test_union PASSED                         [ 16%]\nsympy/sets/tests/test_sets.py::test_union_iter PASSED                    [ 17%]\nsympy/sets/tests/test_sets.py::test_union_is_empty PASSED                [ 18%]\nsympy/sets/tests/test_sets.py::test_difference PASSED                    [ 19%]\nsympy/sets/tests/test_sets.py::test_Complement PASSED                    [ 20%]\nsympy/sets/tests/test_sets.py::test_set_operations_nonsets PASSED        [ 21%]\nsympy/sets/tests/test_sets.py::test_complement PASSED                    [ 22%]\nsympy/sets/tests/test_sets.py::test_intersect1 PASSED                    [ 23%]\nsympy/sets/tests/test_sets.py::test_intersection PASSED                  [ 24%]\nsympy/sets/tests/test_sets.py::test_issue_9623 PASSED                    [ 25%]\nsympy/sets/tests/test_sets.py::test_is_disjoint PASSED                   [ 26%]\nsympy/sets/tests/test_sets.py::test_ProductSet__len__ PASSED             [ 27%]\nsympy/sets/tests/test_sets.py::test_ProductSet PASSED                    [ 28%]\nsympy/sets/tests/test_sets.py::test_ProductSet_of_single_arg_is_not_arg PASSED [ 28%]\nsympy/sets/tests/test_sets.py::test_ProductSet_is_empty PASSED           [ 29%]\nsympy/sets/tests/test_sets.py::test_interval_subs PASSED                 [ 30%]\nsympy/sets/tests/test_sets.py::test_interval_to_mpi PASSED               [ 31%]\nsympy/sets/tests/test_sets.py::test_set_evalf PASSED                     [ 32%]\nsympy/sets/tests/test_sets.py::test_measure PASSED                       [ 33%]\nsympy/sets/tests/test_sets.py::test_is_subset PASSED                     [ 34%]\nsympy/sets/tests/test_sets.py::test_is_proper_subset PASSED              [ 35%]\nsympy/sets/tests/test_sets.py::test_is_superset PASSED                   [ 36%]\nsympy/sets/tests/test_sets.py::test_is_proper_superset PASSED            [ 37%]\nsympy/sets/tests/test_sets.py::test_contains PASSED                      [ 38%]\nsympy/sets/tests/test_sets.py::test_interval_symbolic PASSED             [ 39%]\nsympy/sets/tests/test_sets.py::test_union_contains PASSED                [ 40%]\nsympy/sets/tests/test_sets.py::test_is_number PASSED                     [ 41%]\nsympy/sets/tests/test_sets.py::test_Interval_is_left_unbounded PASSED    [ 42%]\nsympy/sets/tests/test_sets.py::test_Interval_is_right_unbounded PASSED   [ 42%]\nsympy/sets/tests/test_sets.py::test_Interval_as_relational PASSED        [ 43%]\nsympy/sets/tests/test_sets.py::test_Finite_as_relational PASSED          [ 44%]\nsympy/sets/tests/test_sets.py::test_Union_as_relational PASSED           [ 45%]\nsympy/sets/tests/test_sets.py::test_Intersection_as_relational PASSED    [ 46%]\nsympy/sets/tests/test_sets.py::test_Complement_as_relational PASSED      [ 47%]\nsympy/sets/tests/test_sets.py::test_Complement_as_relational_fail XFAIL  [ 48%]\nsympy/sets/tests/test_sets.py::test_SymmetricDifference_as_relational PASSED [ 49%]\nsympy/sets/tests/test_sets.py::test_EmptySet PASSED                      [ 50%]\nsympy/sets/tests/test_sets.py::test_finite_basic PASSED                  [ 51%]\nsympy/sets/tests/test_sets.py::test_product_basic PASSED                 [ 52%]\nsympy/sets/tests/test_sets.py::test_real PASSED                          [ 53%]\nsympy/sets/tests/test_sets.py::test_supinf PASSED                        [ 54%]\nsympy/sets/tests/test_sets.py::test_universalset PASSED                  [ 55%]\nsympy/sets/tests/test_sets.py::test_Union_of_ProductSets_shares PASSED   [ 56%]\nsympy/sets/tests/test_sets.py::test_Interval_free_symbols PASSED         [ 57%]\nsympy/sets/tests/test_sets.py::test_image_interval PASSED                [ 57%]\nsympy/sets/tests/test_sets.py::test_image_piecewise PASSED               [ 58%]\nsympy/sets/tests/test_sets.py::test_image_Intersection XFAIL             [ 59%]\nsympy/sets/tests/test_sets.py::test_image_FiniteSet PASSED               [ 60%]\nsympy/sets/tests/test_sets.py::test_image_Union PASSED                   [ 61%]\nsympy/sets/tests/test_sets.py::test_image_EmptySet PASSED                [ 62%]\nsympy/sets/tests/test_sets.py::test_issue_5724_7680 PASSED               [ 63%]\nsympy/sets/tests/test_sets.py::test_boundary PASSED                      [ 64%]\nsympy/sets/tests/test_sets.py::test_boundary_Union PASSED                [ 65%]\nsympy/sets/tests/test_sets.py::test_union_boundary_of_joining_sets XFAIL [ 66%]\nsympy/sets/tests/test_sets.py::test_boundary_ProductSet PASSED           [ 67%]\nsympy/sets/tests/test_sets.py::test_boundary_ProductSet_line PASSED      [ 68%]\nsympy/sets/tests/test_sets.py::test_is_open PASSED                       [ 69%]\nsympy/sets/tests/test_sets.py::test_is_closed PASSED                     [ 70%]\nsympy/sets/tests/test_sets.py::test_closure PASSED                       [ 71%]\nsympy/sets/tests/test_sets.py::test_interior PASSED                      [ 71%]\nsympy/sets/tests/test_sets.py::test_issue_7841 PASSED                    [ 72%]\nsympy/sets/tests/test_sets.py::test_Eq PASSED                            [ 73%]\nsympy/sets/tests/test_sets.py::test_SymmetricDifference PASSED           [ 74%]\nsympy/sets/tests/test_sets.py::test_issue_9536 PASSED                    [ 75%]\nsympy/sets/tests/test_sets.py::test_issue_9637 PASSED                    [ 76%]\nsympy/sets/tests/test_sets.py::test_issue_9808 PASSED                    [ 77%]\nsympy/sets/tests/test_sets.py::test_issue_9956 PASSED                    [ 78%]\nsympy/sets/tests/test_sets.py::test_issue_Symbol_inter PASSED            [ 79%]\nsympy/sets/tests/test_sets.py::test_issue_11827 PASSED                   [ 80%]\nsympy/sets/tests/test_sets.py::test_issue_10113 PASSED                   [ 81%]\nsympy/sets/tests/test_sets.py::test_issue_10248 PASSED                   [ 82%]\nsympy/sets/tests/test_sets.py::test_issue_9447 PASSED                    [ 83%]\nsympy/sets/tests/test_sets.py::test_issue_10337 PASSED                   [ 84%]\nsympy/sets/tests/tes",
+      "tool": "get_run_log",
+      "turn": 1
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"artifact\": {\"artifact_id\": \"art_fec174c8f4012a8b\", \"base_commit\": \"25fbcce5b1a4c7e3956e6062930f4a44ce95a632\", \"finished_at\": \"2026-10-28T10:15:07+00:00\", \"instance_id\": \"sympy__sympy-19495\", \"log_digests\": {\"symptom\": \"7b9ba40336293588c714bd1a5121c3d248f9bffef959690964ee794c4d69288e\"}, \"patch_sha256\": \"cf8cf88dd11a5b8bfae974bbcc709c98ff8e5b0447b083350b4a779f5b92ca04\", \"repo\": \"sympy/sympy\", \"runner\": \"pytest/vendored-git  py=3.9.25  host=windows-local  gate=G3-C.1\", \"schema_version\": \"1.0\", \"scope\": {\"p2p_scoped_files\": [\"sympy/sets/tests/test_conditionset.py\", \"sympy/sets/tests/test_contains.py\", \"sympy/sets/tests/test_fancysets.py\", \"sympy/sets/tests/test_ordinals.py\", \"sympy/sets/tests/test_powerset.py\", \"sympy/sets/tests/test_setexpr.py\", \"sympy/sets/tests/test_sets.py\"], \"p2p_total_in_dataset\": 8, \"rule\": \"F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file\", \"test_patch_applied_cleanly\": true}, \"started_at\": \"2026-10-28T10:14:29+00:00\", \"summary\": {\"f2p_total\": 1, \"p2p_total\": 8, \"outcomes_withheld\": true, \"note\": \"acceptance-test outcomes and regression verdicts are withheld at the diagnostic tier; use the verification service to seek them.\"}, \"test_patch_sha256\": \"31c8b2e71169361f3ad3396f467381c44cfd1ee56343b2949cf28c334f00b708\", \"evidence_tier\": \"diagnostic\", \"projection_version\": \"diagnostic-v2-no-baseline-map-v1\"}, \"authentic_signature\": true, \"evidence_tier\": \"D\"}",
+      "tool": "get_test_artifact",
+      "turn": 2
+    }
+  ],
+  "wall_s": 9.14
+}

@@ -1,0 +1,56 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch moves `hit = kern in s` inside the `if ' ' in s:` block, so `kern` is only referenced after it is assigned, resolving the UnboundLocalError for inputs like '(2*x)/(x-1)' that contain no spaces. The attested artifact for this exact patch/commit shows the full declared set executed: FAIL_TO_PASS 1/1 passed and scoped PASS_TO_PASS 40/40 passed, with no rendered failures or regressions. Complete, fresh, linked, failure-free success supports ACCEPT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "cell": "g3c1live:sympy__sympy-19637:T2A-T",
+  "condition": "T2A-T",
+  "cost_usd": 0.000589,
+  "evidence_session": null,
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-19637",
+  "instance_id": "sympy__sympy-19637",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010386
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 143,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 1390,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch moves `hit = kern in s` inside the `if ' ' in s:` block, so `kern` is only referenced after it is assigned, resolving the UnboundLocalError for inputs like '(2*x)/(x-1)' that contain no spaces. The attested artifact for this exact patch/commit shows the full declared set executed: FAIL_TO_PASS 1/1 passed and scoped PASS_TO_PASS 40/40 passed, with no rendered failures or regressions. Complete, fresh, linked, failure-free success supports ACCEPT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_22542096dfadeb88",
+  "tokens_in": 1390,
+  "tokens_out": 143,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.4
+}

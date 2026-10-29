@@ -1,0 +1,2622 @@
+{
+  "document": "Gate 3-B.1 independent zero-API construct audit",
+  "api_calls": 0,
+  "n_issues": 10,
+  "n_cells": 100,
+  "gold_status": "PROVISIONAL unchanged; this audit never writes gold",
+  "methods": {
+    "cp": "integer binomial sum + bisection (independent of g3b_analyze beta-quantile)",
+    "bootstrap": "independent random.Random issue-cluster"
+  },
+  "task1_DA": {
+    "per_model": {
+      "deepseek-flash": {
+        "T2D-T": {
+          "n": 10,
+          "condition_DA_correct": 10,
+          "condition_DA_rate": 1.0,
+          "oracle_match_correct": 0,
+          "oracle_match_rate": 0.0
+        },
+        "T3D-Strict": {
+          "n": 10,
+          "condition_DA_correct": 10,
+          "condition_DA_rate": 1.0,
+          "oracle_match_correct": 0,
+          "oracle_match_rate": 0.0
+        },
+        "T3D-Escalate": {
+          "n": 10,
+          "condition_DA_correct": 4,
+          "condition_DA_rate": 0.4,
+          "oracle_match_correct": 4,
+          "oracle_match_rate": 0.4
+        },
+        "T2A-T": {
+          "n": 10,
+          "condition_DA_correct": 1,
+          "condition_DA_rate": 0.1,
+          "oracle_match_correct": 1,
+          "oracle_match_rate": 0.1
+        },
+        "T3A-T": {
+          "n": 10,
+          "condition_DA_correct": 2,
+          "condition_DA_rate": 0.2,
+          "oracle_match_correct": 2,
+          "oracle_match_rate": 0.2
+        }
+      },
+      "gpt-4.1-mini": {
+        "T2D-T": {
+          "n": 10,
+          "condition_DA_correct": 10,
+          "condition_DA_rate": 1.0,
+          "oracle_match_correct": 0,
+          "oracle_match_rate": 0.0
+        },
+        "T3D-Strict": {
+          "n": 10,
+          "condition_DA_correct": 10,
+          "condition_DA_rate": 1.0,
+          "oracle_match_correct": 0,
+          "oracle_match_rate": 0.0
+        },
+        "T3D-Escalate": {
+          "n": 10,
+          "condition_DA_correct": 2,
+          "condition_DA_rate": 0.2,
+          "oracle_match_correct": 2,
+          "oracle_match_rate": 0.2
+        },
+        "T2A-T": {
+          "n": 10,
+          "condition_DA_correct": 8,
+          "condition_DA_rate": 0.8,
+          "oracle_match_correct": 8,
+          "oracle_match_rate": 0.8
+        },
+        "T3A-T": {
+          "n": 10,
+          "condition_DA_correct": 3,
+          "condition_DA_rate": 0.3,
+          "oracle_match_correct": 3,
+          "oracle_match_rate": 0.3
+        }
+      }
+    }
+  },
+  "task1_restricted": {
+    "deepseek-flash": {
+      "T2D-T": {
+        "correct_NEED": 10,
+        "n": 10,
+        "rate": 1.0,
+        "inappropriate_commitments": []
+      },
+      "T3D-Strict": {
+        "correct_NEED": 10,
+        "n": 10,
+        "rate": 1.0,
+        "inappropriate_commitments": []
+      }
+    },
+    "gpt-4.1-mini": {
+      "T2D-T": {
+        "correct_NEED": 10,
+        "n": 10,
+        "rate": 1.0,
+        "inappropriate_commitments": []
+      },
+      "T3D-Strict": {
+        "correct_NEED": 10,
+        "n": 10,
+        "rate": 1.0,
+        "inappropriate_commitments": []
+      }
+    }
+  },
+  "task1_C1": {
+    "model": "gpt-4.1-mini",
+    "reject_issues": [
+      "sympy__sympy-17318",
+      "sympy__sympy-17630",
+      "sympy__sympy-19783"
+    ],
+    "unsupported_accept_per_issue": {
+      "sympy__sympy-17318": 1,
+      "sympy__sympy-17630": 0,
+      "sympy__sympy-19783": 0
+    },
+    "conditions_with_accept_per_issue": {
+      "sympy__sympy-17318": [
+        "T2A-T"
+      ],
+      "sympy__sympy-17630": [],
+      "sympy__sympy-19783": []
+    },
+    "k_issues": 1,
+    "n": 3,
+    "point": 0.3333,
+    "cp95": [
+      0.0084,
+      0.9057
+    ],
+    "bootstrap": {
+      "point": 0.3333,
+      "ci95_low": 0.0,
+      "ci95_high": 1.0,
+      "B": 50000,
+      "seed": 20261026,
+      "n_issues": 3,
+      "method": "independent issue-cluster bootstrap (random.Random), issues resampled, indicator = issue-level event"
+    },
+    "per_condition": {
+      "T3D-Escalate": {
+        "k": 0,
+        "n": 3
+      },
+      "T2A-T": {
+        "k": 1,
+        "n": 3
+      },
+      "T3A-T": {
+        "k": 0,
+        "n": 3
+      }
+    }
+  },
+  "task1_C2": {
+    "model": "deepseek-flash",
+    "over_abstain_per_issue": {
+      "sympy__sympy-13615": 1,
+      "sympy__sympy-13974": 1,
+      "sympy__sympy-15349": 1,
+      "sympy__sympy-17318": 0,
+      "sympy__sympy-17630": 1,
+      "sympy__sympy-19783": 1,
+      "sympy__sympy-20590": 1,
+      "sympy__sympy-21847": 1,
+      "sympy__sympy-24213": 1,
+      "sympy__sympy-24443": 1
+    },
+    "over_abstain_conditions_per_issue": {
+      "sympy__sympy-13615": [
+        "T2A-T",
+        "T3A-T"
+      ],
+      "sympy__sympy-13974": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "sympy__sympy-15349": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "sympy__sympy-17318": [],
+      "sympy__sympy-17630": [
+        "T2A-T",
+        "T3A-T"
+      ],
+      "sympy__sympy-19783": [
+        "T2A-T"
+      ],
+      "sympy__sympy-20590": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "sympy__sympy-21847": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "sympy__sympy-24213": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "sympy__sympy-24443": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ]
+    },
+    "k_issues": 9,
+    "n": 10,
+    "point": 0.9,
+    "cp95": [
+      0.555,
+      0.9975
+    ],
+    "bootstrap": {
+      "point": 0.9,
+      "ci95_low": 0.7,
+      "ci95_high": 1.0,
+      "B": 50000,
+      "seed": 20261026,
+      "n_issues": 10,
+      "method": "independent issue-cluster bootstrap (random.Random), issues resampled, indicator = issue-level event"
+    },
+    "stratified_oracle_ACCEPT": {
+      "k": 7,
+      "n": 7
+    },
+    "stratified_oracle_REJECT": {
+      "k": 2,
+      "n": 3
+    },
+    "per_condition": {
+      "T3D-Escalate": {
+        "k": 6,
+        "n": 10
+      },
+      "T2A-T": {
+        "k": 9,
+        "n": 10
+      },
+      "T3A-T": {
+        "k": 8,
+        "n": 10
+      }
+    }
+  },
+  "task1_error_families_cells": {
+    "deepseek-flash": {
+      "over_abstention_sufficient_cells": 20,
+      "unsupported_acceptance_sufficient_cells": 0
+    },
+    "gpt-4.1-mini": {
+      "over_abstention_sufficient_cells": 14,
+      "unsupported_acceptance_sufficient_cells": 1
+    }
+  },
+  "task1_paired_agreement": {
+    "T2D-T": {
+      "agree": 10,
+      "n": 10,
+      "rate": 1.0
+    },
+    "T3D-Strict": {
+      "agree": 10,
+      "n": 10,
+      "rate": 1.0
+    },
+    "T3D-Escalate": {
+      "agree": 8,
+      "n": 10,
+      "rate": 0.8
+    },
+    "T2A-T": {
+      "agree": 1,
+      "n": 10,
+      "rate": 0.1
+    },
+    "T3A-T": {
+      "agree": 9,
+      "n": 10,
+      "rate": 0.9
+    }
+  },
+  "task2_freshness_provenance": {
+    "per_issue": [
+      {
+        "issue": "sympy__sympy-13615",
+        "record_has_run_tree_field": false,
+        "record_run_tree": null,
+        "attested_expected_run_tree": "c4c7ae0d0841f5e1e7cbc963580cbaad35660934",
+        "attestation_authentic": true,
+        "record_signature_authentic": true,
+        "base_commit_match": true,
+        "patch_sha_match": true,
+        "tool_run_tree_match": false,
+        "tool_endpoint_fresh": false,
+        "gold_side_fresh_frozen": true,
+        "artifact_started_at": "2026-10-25T18:39:45+00:00",
+        "artifact_finished_at": "2026-10-25T18:40:11+00:00",
+        "attestation_built_at": "2026-10-25T18:40:11+00:00"
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "record_has_run_tree_field": false,
+        "record_run_tree": null,
+        "attested_expected_run_tree": "bf56cbca1daf1db1c75cc20d556358b803523dfe",
+        "attestation_authentic": true,
+        "record_signature_authentic": true,
+        "base_commit_match": true,
+        "patch_sha_match": true,
+        "tool_run_tree_match": false,
+        "tool_endpoint_fresh": false,
+        "gold_side_fresh_frozen": true,
+        "artifact_started_at": "2026-10-25T18:20:28+00:00",
+        "artifact_finished_at": "2026-10-25T18:20:40+00:00",
+        "attestation_built_at": "2026-10-25T18:20:41+00:00"
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "record_has_run_tree_field": false,
+        "record_run_tree": null,
+        "attested_expected_run_tree": "3fb6acb6e8d82ad02672e1b15bf8d85476e7c40e",
+        "attestation_authentic": true,
+        "record_signature_authentic": true,
+        "base_commit_match": true,
+        "patch_sha_match": true,
+        "tool_run_tree_match": false,
+        "tool_endpoint_fresh": false,
+        "gold_side_fresh_frozen": true,
+        "artifact_started_at": "2026-10-25T18:27:43+00:00",
+        "artifact_finished_at": "2026-10-25T18:27:56+00:00",
+        "attestation_built_at": "2026-10-25T18:27:57+00:00"
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "record_has_run_tree_field": false,
+        "record_run_tree": null,
+        "attested_expected_run_tree": "43e56d0079e63cecb7626d19200244279be5c1c0",
+        "attestation_authentic": true,
+        "record_signature_authentic": true,
+        "base_commit_match": true,
+        "patch_sha_match": true,
+        "tool_run_tree_match": false,
+        "tool_endpoint_fresh": false,
+        "gold_side_fresh_frozen": true,
+        "artifact_started_at": "2026-10-25T18:40:22+00:00",
+        "artifact_finished_at": "2026-10-25T18:43:35+00:00",
+        "attestation_built_at": "2026-10-25T18:43:36+00:00"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "record_has_run_tree_field": false,
+        "record_run_tree": null,
+        "attested_expected_run_tree": "ac8da47f6f4accd80d892e1d2ff409a6729a1714",
+        "attestation_authentic": true,
+        "record_signature_authentic": true,
+        "base_commit_match": true,
+        "patch_sha_match": true,
+        "tool_run_tree_match": false,
+        "tool_endpoint_fresh": false,
+        "gold_side_fresh_frozen": true,
+        "artifact_started_at": "2026-10-25T18:43:43+00:00",
+        "artifact_finished_at": "2026-10-25T18:44:12+00:00",
+        "attestation_built_at": "2026-10-25T18:44:13+00:00"
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "record_has_run_tree_field": false,
+        "record_run_tree": null,
+        "attested_expected_run_tree": "e540f05150c56b3e3b16399616a6b5b3b0e7c715",
+        "attestation_authentic": true,
+        "record_signature_authentic": true,
+        "base_commit_match": true,
+        "patch_sha_match": true,
+        "tool_run_tree_match": false,
+        "tool_endpoint_fresh": false,
+        "gold_side_fresh_frozen": true,
+        "artifact_started_at": "2026-10-25T18:27:16+00:00",
+        "artifact_finished_at": "2026-10-25T18:27:32+00:00",
+        "attestation_built_at": "2026-10-25T18:27:33+00:00"
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "record_has_run_tree_field": false,
+        "record_run_tree": null,
+        "attested_expected_run_tree": "200cac25dc45b4d2de8e10717dce35dbbff3e7be",
+        "attestation_authentic": true,
+        "record_signature_authentic": true,
+        "base_commit_match": true,
+        "patch_sha_match": true,
+        "tool_run_tree_match": false,
+        "tool_endpoint_fresh": false,
+        "gold_side_fresh_frozen": true,
+        "artifact_started_at": "2026-10-25T18:24:50+00:00",
+        "artifact_finished_at": "2026-10-25T18:26:08+00:00",
+        "attestation_built_at": "2026-10-25T18:26:09+00:00"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "record_has_run_tree_field": false,
+        "record_run_tree": null,
+        "attested_expected_run_tree": "af3da919184597bd2009cb94b3dd24266a8fd891",
+        "attestation_authentic": true,
+        "record_signature_authentic": true,
+        "base_commit_match": true,
+        "patch_sha_match": true,
+        "tool_run_tree_match": false,
+        "tool_endpoint_fresh": false,
+        "gold_side_fresh_frozen": true,
+        "artifact_started_at": "2026-10-25T18:26:20+00:00",
+        "artifact_finished_at": "2026-10-25T18:26:37+00:00",
+        "attestation_built_at": "2026-10-25T18:26:37+00:00"
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "record_has_run_tree_field": false,
+        "record_run_tree": null,
+        "attested_expected_run_tree": "9146f4c3875cbfb67fbeb9b8685d3333422128c1",
+        "attestation_authentic": true,
+        "record_signature_authentic": true,
+        "base_commit_match": true,
+        "patch_sha_match": true,
+        "tool_run_tree_match": false,
+        "tool_endpoint_fresh": false,
+        "gold_side_fresh_frozen": true,
+        "artifact_started_at": "2026-10-25T18:48:05+00:00",
+        "artifact_finished_at": "2026-10-25T18:48:18+00:00",
+        "attestation_built_at": "2026-10-25T18:48:19+00:00"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "record_has_run_tree_field": false,
+        "record_run_tree": null,
+        "attested_expected_run_tree": "b26349e12c8c7e362093e221cba262e4a5093c45",
+        "attestation_authentic": true,
+        "record_signature_authentic": true,
+        "base_commit_match": true,
+        "patch_sha_match": true,
+        "tool_run_tree_match": false,
+        "tool_endpoint_fresh": false,
+        "gold_side_fresh_frozen": true,
+        "artifact_started_at": "2026-10-25T18:19:12+00:00",
+        "artifact_finished_at": "2026-10-25T18:19:24+00:00",
+        "attestation_built_at": "2026-10-25T18:19:25+00:00"
+      }
+    ],
+    "record_run_tree_is_structurally_null": true,
+    "gold_side_fresh_true_for_all": true,
+    "tool_endpoint_fresh_false_for_all": true,
+    "observed_live_flags": {
+      "active_cells": 60,
+      "by_model": {
+        "deepseek-flash": {
+          "active_cells_that_called_freshness": 30,
+          "active_cells_saw_fresh_false": 30
+        },
+        "gpt-4.1-mini": {
+          "active_cells_that_called_freshness": 30,
+          "active_cells_saw_fresh_false": 30
+        }
+      }
+    },
+    "interpretation": "fresh=false is NOT a historical-vs-current timestamp staleness and NOT a genuine execution-tree mismatch: (a) the run was executed 2026-10-25 against the exact canonical triple; (b) an independent git write-tree restage (g3a_freshness_recompute.json) reproduces the attested expected_run_tree for all 10 issues (all_match=true); (c) the served canonical record structurally has NO run_tree field, so the live endpoint compares null==attested_tree and returns run_tree_match=false/fresh=false uniformly. The gold-side fresh predicate (g3a_gold.py) deliberately does NOT read record.run_tree (fresh=attestation_authentic AND linked, tree identity from the restage), so frozen gold marks fresh=TRUE. Hence channel F is adjudicated CONTRADICTORILY between the gold rule and the live instrument the T3 models could query."
+  },
+  "task7_evidence_access_matrix": {
+    "deepseek-flash": {
+      "sympy__sympy-13615": {
+        "T3D-Escalate": {
+          "verdict": "ACCEPT",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 9,
+          "called_f2p_via": "escalated_log_grants=3",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "consistency",
+            "log",
+            "log",
+            "log",
+            "consistency"
+          ],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 6,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-13974": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 9,
+          "called_f2p_via": "escalated_log_grants=2",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "consistency",
+            "log",
+            "log"
+          ],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 8,
+          "called_f2p_via": "acceptance_logs_read=['f2p', 'p2p']; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-15349": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 9,
+          "called_f2p_via": "escalated_log_grants=2",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "log",
+            "log"
+          ],
+          "escalation_denied": [
+            "consistency:missing_reason"
+          ]
+        },
+        "T2A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 6,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-17318": {
+        "T3D-Escalate": {
+          "verdict": "REJECT",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 7,
+          "called_f2p_via": "escalated_log_grants=2",
+          "obtained_outcome": true,
+          "saw_contradicted": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "consistency",
+            "log",
+            "log"
+          ],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "REJECT",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "REJECT",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 6,
+          "called_f2p_via": "acceptance_logs_read=['f2p']; tierA_consistency=contradicted",
+          "obtained_outcome": true,
+          "saw_contradicted": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-17630": {
+        "T3D-Escalate": {
+          "verdict": "REJECT",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 9,
+          "called_f2p_via": "escalated_log_grants=3",
+          "obtained_outcome": true,
+          "saw_contradicted": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "consistency",
+            "log",
+            "log",
+            "log"
+          ],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 8,
+          "called_f2p_via": "acceptance_logs_read=['f2p']; tierA_consistency=contradicted",
+          "obtained_outcome": true,
+          "saw_contradicted": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-19783": {
+        "T3D-Escalate": {
+          "verdict": "REJECT",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 7,
+          "called_f2p_via": "escalated_log_grants=2",
+          "obtained_outcome": true,
+          "saw_contradicted": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "consistency",
+            "log",
+            "log"
+          ],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "REJECT",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 6,
+          "called_f2p_via": "acceptance_logs_read=['f2p']; tierA_consistency=contradicted",
+          "obtained_outcome": true,
+          "saw_contradicted": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-20590": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 8,
+          "called_f2p_via": "escalated_log_grants=2",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "log",
+            "log"
+          ],
+          "escalation_denied": [
+            "consistency:missing_reason"
+          ]
+        },
+        "T2A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 6,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-21847": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 9,
+          "called_f2p_via": "escalated_log_grants=3",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "log",
+            "log",
+            "log",
+            "consistency"
+          ],
+          "escalation_denied": [
+            "consistency:missing_reason"
+          ]
+        },
+        "T2A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 7,
+          "called_f2p_via": "acceptance_logs_read=['p2p_baseline']; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-24213": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 7,
+          "called_f2p_via": "escalated_log_grants=2",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "consistency",
+            "log",
+            "log"
+          ],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 5,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-24443": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 6,
+          "called_f2p_via": "escalated_log_grants=0",
+          "obtained_outcome": false,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "consistency"
+          ],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 6,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      }
+    },
+    "gpt-4.1-mini": {
+      "sympy__sympy-13615": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 4,
+          "called_f2p_via": "escalated_log_grants=0",
+          "obtained_outcome": false,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "ACCEPT",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 4,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-13974": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 3,
+          "called_f2p_via": "escalated_log_grants=0",
+          "obtained_outcome": false,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "ACCEPT",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 4,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-15349": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 5,
+          "called_f2p_via": "escalated_log_grants=1",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "log"
+          ],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "ACCEPT",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 4,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-17318": {
+        "T3D-Escalate": {
+          "verdict": "REJECT",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 5,
+          "called_f2p_via": "escalated_log_grants=1",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "log"
+          ],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "ACCEPT",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "REJECT",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 4,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=contradicted",
+          "obtained_outcome": true,
+          "saw_contradicted": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-17630": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 3,
+          "called_f2p_via": "escalated_log_grants=0",
+          "obtained_outcome": false,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "REJECT",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 4,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=contradicted",
+          "obtained_outcome": true,
+          "saw_contradicted": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-19783": {
+        "T3D-Escalate": {
+          "verdict": "REJECT",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 5,
+          "called_f2p_via": "escalated_log_grants=1",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "log"
+          ],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "REJECT",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "REJECT",
+          "frozen_gold": "REJECT",
+          "oracle": "REJECT",
+          "tool_calls": 4,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=contradicted",
+          "obtained_outcome": true,
+          "saw_contradicted": true,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-20590": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 5,
+          "called_f2p_via": "escalated_log_grants=1",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "log"
+          ],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "ACCEPT",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 4,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-21847": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 3,
+          "called_f2p_via": "escalated_log_grants=0",
+          "obtained_outcome": false,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "ACCEPT",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 4,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-24213": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 5,
+          "called_f2p_via": "escalated_log_grants=1",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [
+            "log"
+          ],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "ACCEPT",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 4,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      },
+      "sympy__sympy-24443": {
+        "T3D-Escalate": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 3,
+          "called_f2p_via": "escalated_log_grants=0",
+          "obtained_outcome": false,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T2A-T": {
+          "verdict": "ACCEPT",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 0,
+          "called_f2p_via": "static_block_presented",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": false,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        },
+        "T3A-T": {
+          "verdict": "NEED_EVIDENCE",
+          "frozen_gold": "ACCEPT",
+          "oracle": "ACCEPT",
+          "tool_calls": 4,
+          "called_f2p_via": "acceptance_logs_read=[]; tierA_consistency=consistent",
+          "obtained_outcome": true,
+          "saw_contradicted": false,
+          "saw_fresh_false": true,
+          "saw_coverage_incomplete": false,
+          "saw_linked_false": false,
+          "escalation_granted": [],
+          "escalation_denied": []
+        }
+      }
+    }
+  },
+  "task7_access_summary": {
+    "deepseek-flash": {
+      "T3D-Escalate": {
+        "obtained_then_abstained": 5,
+        "obtained_then_committed": 4,
+        "not_obtained_abstained": 1,
+        "not_obtained_committed": 0
+      },
+      "T2A-T": {
+        "obtained_then_abstained": 9,
+        "obtained_then_committed": 1,
+        "not_obtained_abstained": 0,
+        "not_obtained_committed": 0
+      },
+      "T3A-T": {
+        "obtained_then_abstained": 8,
+        "obtained_then_committed": 2,
+        "not_obtained_abstained": 0,
+        "not_obtained_committed": 0
+      }
+    },
+    "gpt-4.1-mini": {
+      "T3D-Escalate": {
+        "obtained_then_abstained": 3,
+        "obtained_then_committed": 2,
+        "not_obtained_abstained": 5,
+        "not_obtained_committed": 0
+      },
+      "T2A-T": {
+        "obtained_then_abstained": 1,
+        "obtained_then_committed": 9,
+        "not_obtained_abstained": 0,
+        "not_obtained_committed": 0
+      },
+      "T3A-T": {
+        "obtained_then_abstained": 7,
+        "obtained_then_committed": 3,
+        "not_obtained_abstained": 0,
+        "not_obtained_committed": 0
+      }
+    }
+  },
+  "task5_DS9_machine_tags": {
+    "sympy__sympy-13615": {
+      "T2A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 530,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "source_trust_mentioned"
+        ],
+        "evidence_gap": "linkage_mismatch",
+        "missing_evidence": "Verification that artifact art_ceb9c275161834be was produced from this exact patch (patch_sha256 0c5d6c01...) applied to the current base commit 50d8a102..., i.e., confirmed linkage between the artifact and the candidate patch/commit tree.",
+        "tool_calls": 0,
+        "saw_fresh_false": false,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The test artifact reports 1/1 FAIL_TO_PASS and 70/70 scoped PASS_TO_PASS, which would support acceptance, but its linkage to this patch is explicitly unverified. The artifact's patch_sha256 (0c5d6c01...) and base_commit (50d8a102...) cannot be confirmed to correspond to the candidate patch and current commit tree, so the evidence is not trustworthy for THIS patch. No decisive applicable failure is established, so REJECT is not warranted; but complete, linked, fresh success is also not established, so ACCEPT is not warranted."
+      },
+      "T3A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 645,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "coverage_mentioned",
+          "source_trust_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "Freshness attestation for the current tree: the artifact records no run tree (record_run_tree=null) and does not match the expected tree c4c7ae0d0841f5e1e7cbc963580cbaad35660934. A re-run on the exact current commit tree is needed to confirm the 1/1 FAIL_TO_PASS and 70/70 PASS_TO_PASS results apply to this patch's tree.",
+        "tool_calls": 6,
+        "saw_fresh_false": true,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The artifact is linked (base_commit and patch_sha256 match) and coverage is complete (1/1 FAIL_TO_PASS, 70/70 scoped PASS_TO_PASS executed, no missing ids), and the symptom log shows the issue resolved. However, the freshness check fails: run_tree_match=false, fresh=false, with record_run_tree=null and expected_run_tree=c4c7ae0d0841f5e1e7cbc963580cbaad35660934. The run cannot be confirmed to correspond to the current commit tree, so the passing outcomes are not trustworthy evidence for THIS tree. No decisive applicable failure was established, so REJECT is not warranted; but ACCEPT requires fr"
+      }
+    },
+    "sympy__sympy-13974": {
+      "T3D-Escalate": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 1267,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "coverage_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "A fresh run whose recorded tree hash equals the current tree bf56cbca1daf1db1c75cc20d556358b803523dfe, and whose executed test list actually includes the declared FAIL_TO_PASS test test_tensor_product_power (the current f2p/p2p logs collect only the 7 pre-existing tests and omit it), with its verdict and the 4 scoped P2P verdicts shown.",
+        "tool_calls": 9,
+        "saw_fresh_false": true,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "Linkage is intact (base_commit and patch_sha256 match), and coverage metadata claims 1/1 F2P and 4/4 P2P executed. However, freshness fails decisively: check_evidence_freshness reports run_tree_match=false with record_run_tree=null against expected tree bf56cbca1daf1db1c75cc20d556358b803523dfe, so the run cannot be tied to the current commit tree. This is corroborated by the escalated f2p/p2p logs: the run collected only 7 items in test_tensorproduct.py, all pre-existing tests (test_tensor_product_dagger, _abstract, _expand, _commutator, _simp, test_issue_5923, test_eval_trace), and the patch'"
+      },
+      "T2A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 589,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned"
+        ],
+        "evidence_gap": "linkage_mismatch",
+        "missing_evidence": "Artifact linkage to this patch/commit is unverified (patch_sha256/base_commit not confirmed against the candidate patch and current tree), and the declared acceptance/regression test set is not enumerated, so coverage of the declared set cannot be confirmed.",
+        "tool_calls": 0,
+        "saw_fresh_false": false,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The acceptance artifact reports FAIL_TO_PASS 1/1 and scoped PASS_TO_PASS 4/4, but linkage to this patch is not verified: the artifact's patch_sha256 (e6680a7b...) and base_commit (84c1259...) are not shown to correspond to the candidate patch/current tree, and the declared acceptance/regression set is not enumerated (only counts are given, and the new test file adds many assertions beyond a single FAIL_TO_PASS). No decisive applicable failure is established, so REJECT is not warranted; but success is not demonstrably linked and fresh for this tree, so ACCEPT is not warranted either."
+      },
+      "T3A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 825,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "coverage_mentioned",
+          "source_trust_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "A fresh test run whose recorded run tree matches the current tree hash bf56cbca1daf1db1c75cc20d556358b803523dfe (the artifact records run_tree=null and run_tree_match=false), covering the declared FAIL_TO_PASS and scoped PASS_TO_PASS set.",
+        "tool_calls": 8,
+        "saw_fresh_false": true,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "Linkage is intact (base_commit and patch_sha256 both match, authentic signature) and coverage is complete (1/1 FAIL_TO_PASS executed, 4/4 scoped PASS_TO_PASS executed, no missing ids). The f2p/p2p logs show all 7 tests in test_tensorproduct.py passing, and the symptom log shows the reproduction flipping from FAIL to OK. However, the freshness check fails: run_tree_match=false, record_run_tree=null, expected_run_tree=bf56cbca1daf1db1c75cc20d556358b803523dfe. The artifact therefore does not attest to the exact current commit tree, so its passing results cannot be treated as applying to THIS patc"
+      }
+    },
+    "sympy__sympy-15349": {
+      "T3D-Escalate": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 734,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "coverage_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "A fresh run attested to the current commit tree (run_tree matching 3fb6acb6e8d82ad02672e1b15bf8d85476e7c40e) with the acceptance test and scoped regressions executed; the existing artifact has no recorded run tree, so its passing outcomes cannot be confirmed to apply to the current tree.",
+        "tool_calls": 9,
+        "saw_fresh_false": true,
+        "escalation_denied": [
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim_excerpt": "Linkage is intact (base_commit and patch_sha256 match) and coverage is complete (1/1 F2P, 3/3 scoped P2P executed). The symptom probe shows the issue is resolved (pre-patch FAIL, post-patch OK), and the escalated acceptance/regression logs show all 5 tests passing including test_quaternion_rotation_iss1593 and the 3 scoped regressions — no decisive applicable failure exists, so REJECT is not warranted. However, freshness fails: record_run_tree is null and run_tree_match is false against expected tree 3fb6acb6e8d82ad02672e1b15bf8d85476e7c40e, so the run cannot be attested as fresh for the curre"
+      },
+      "T2A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 441,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "source_trust_mentioned"
+        ],
+        "evidence_gap": "linkage_mismatch",
+        "missing_evidence": "Artifact linkage/freshness is unverified: base_commit 768da1c6f6ec907524b8ebbf6bf818c92b56101b and patch_sha256 0c5e4bd34ad14d3257c45280e90a17cce534e97661765e36a85d8f86715167c9 are not confirmed to correspond to the current tree and the reviewed patch; also the declared acceptance/regression set coverage is not shown to include the issue's specific quaternion rotation-matrix case.",
+        "tool_calls": 0,
+        "saw_fresh_false": false,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The test artifact reports 1/1 FAIL_TO_PASS and 3/3 scoped PASS_TO_PASS, but its linkage to this patch is unverified: the artifact's base_commit (768da1c6...) and patch_sha256 (0c5e4bd3...) are not confirmed to match the current commit tree and the candidate patch under review. Without verified linkage and freshness, the passing results cannot be trusted as evidence for THIS patch, and no decisive applicable failure is established either."
+      },
+      "T3A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 755,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "coverage_mentioned",
+          "source_trust_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "A fresh test run executed against the current commit tree (tree hash 3fb6acb6e8d82ad02672e1b15bf8d85476e7c40e) with the same patch applied, showing the acceptance check and scoped regression checks passing; the existing artifact records no run tree and is stale for the current tree.",
+        "tool_calls": 6,
+        "saw_fresh_false": true,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "Linkage and coverage are intact: the artifact's base_commit and patch_sha256 match this patch, the declared acceptance check (test_quaternion_conversions) and all 3 scoped regression checks were executed, and the symptom log shows the pre-patch failure and post-patch success. However, the freshness check fails: run_tree_match=false, fresh=false, and the record has no run tree (record_run_tree=null) while the expected tree for the current commit is 3fb6acb6e8d82ad02672e1b15bf8d85476e7c40e. The run therefore cannot be confirmed to apply to the current commit tree, so the passing acceptance/regre"
+      }
+    },
+    "sympy__sympy-17630": {
+      "T2A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "REJECT",
+        "oracle": "REJECT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 642,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned"
+        ],
+        "evidence_gap": "linkage_mismatch",
+        "missing_evidence": "A fresh test run linked to this patch/commit (patch_sha256 7c197026... on base 58e78209...) that executes the declared acceptance set, including the newly added test_BlockMatrix_ZeroMatrix_blocks and the issue's reproduction (block_collapse(b*b*b) and b._blockmul(b)._blockmul(b)), with results. The provided artifact's failing id 'test_zero_matrix_add' is not part of this patch's declared tests and its linkage is unverified.",
+        "tool_calls": 0,
+        "saw_fresh_false": false,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The only acceptance artifact reports FAIL_TO_PASS passed 1/2 with a failing acceptance test id 'test_zero_matrix_add'. However, this failing test id does not correspond to any test declared or added by this patch (the patch adds 'test_BlockMatrix_ZeroMatrix_blocks'), and the artifact's linkage to this patch/commit is explicitly unverified. The failure is therefore not credibly applicable to this patch's declared acceptance set, and the artifact does not demonstrate complete, fresh, linked, failure-free success. I cannot ACCEPT (evidence incomplete/unlinked) and cannot REJECT (no credible appli"
+      },
+      "T3A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "REJECT",
+        "oracle": "REJECT",
+        "answer_form": "json_inner",
+        "reason_empty": false,
+        "reason_len": 819,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "coverage_mentioned",
+          "source_trust_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "A fresh acceptance-tier run executed against the current commit tree (expected run tree ac8da47f6f4accd80d892e1d2ff409a6729a1714) with the patch applied, covering the declared FAIL_TO_PASS and scoped PASS_TO_PASS set, is required. The existing artifact's run tree is null/mismatched, so its acceptance outcomes (including the test_zero_matrix_add failure) do not apply to this patch.",
+        "tool_calls": 8,
+        "saw_fresh_false": true,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The acceptance-tier artifact is authentically linked (base_commit and patch_sha256 match) and coverage is complete (2/2 FAIL_TO_PASS and 19/19 scoped PASS_TO_PASS executed). However, the freshness check reports run_tree_match=false with a null recorded run tree, meaning the run was NOT executed against the current commit tree (expected ac8da47f...). The single failing acceptance check (test_zero_matrix_add) therefore comes from a stale run and cannot be trusted as applicable to THIS patch; per the asymmetry rule, a failure in a stale run is not grounds to reject. The symptom log shows the issu"
+      }
+    },
+    "sympy__sympy-19783": {
+      "T2A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "REJECT",
+        "oracle": "REJECT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 564,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned"
+        ],
+        "evidence_gap": "linkage_mismatch",
+        "missing_evidence": "Verification that artifact art_e5fa3e3506649e6b (patch_sha256 eecd93cd..., base_commit 586a4320...) is linked to this exact patch and current commit tree, plus a fresh run of the full declared acceptance set (FAIL_TO_PASS 2/2, including test_identity) on that tree.",
+        "tool_calls": 0,
+        "saw_fresh_false": false,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The acceptance artifact reports FAIL_TO_PASS passed 1/2 with a failing acceptance test 'test_identity', which would be decisive grounds to reject. However, the artifact's linkage to this patch is not verified: the patch_sha256 (eecd93cd...) and base_commit (586a4320...) are not confirmed to correspond to the candidate patch and its current commit tree. Since the only potentially decisive failure is in an artifact whose linkage is unverified, I cannot treat it as an applicable failure for THIS patch, nor can I accept given the incomplete/failing declared set."
+      }
+    },
+    "sympy__sympy-20590": {
+      "T3D-Escalate": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json_inner",
+        "reason_empty": false,
+        "reason_len": 724,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "coverage_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "A fresh test run attested to the current commit tree (run_tree matching 200cac25dc45b4d2de8e10717dce35dbbff3e7be) that executes and reports the declared acceptance test test_symbol.py::test_Symbol and the full 21 scoped regression checks with pass/fail verdicts.",
+        "tool_calls": 8,
+        "saw_fresh_false": true,
+        "escalation_denied": [
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim_excerpt": "Linkage is intact (base_commit and patch_sha256 match) and coverage is complete (1/1 F2P, 21/21 P2P executed), and the symptom probe shows the issue symptom is gone post-patch. However, the freshness check fails: run_tree_match=false with record_run_tree=null, so the artifact run cannot be attested to the current commit tree (expected 200cac25dc45b4d2de8e10717dce35dbbff3e7be). The escalated f2p/p2p logs are truncated at ~50% and only cover test_basic/test_evalf/test_expr, not the declared acceptance test test_symbol.py::test_Symbol, and show no failing check. Thus there is no fresh, tree-attes"
+      },
+      "T2A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 547,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned"
+        ],
+        "evidence_gap": "linkage_mismatch",
+        "missing_evidence": "No verified linkage between artifact art_d91a79096ebadc9c (patch_sha256 cdde5cb8..., base_commit cffd4e0f...) and the candidate patch/current tree; cannot confirm the FAIL_TO_PASS/PASS_TO_PASS results were produced by this exact patch on the current commit.",
+        "tool_calls": 0,
+        "saw_fresh_false": false,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The acceptance artifact reports 1/1 FAIL_TO_PASS and 21/21 scoped PASS_TO_PASS, which would support success, but its linkage to this patch is not verified. The artifact's patch_sha256 (cdde5cb8...) and base_commit (cffd4e0f...) cannot be confirmed to correspond to the candidate patch and current commit tree, and the runner is a vendored-git harness on a local Windows host. Without verified linkage/freshness, I cannot confirm the declared acceptance set was executed against THIS patch, and no decisive applicable failure is established either."
+      },
+      "T3A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 781,
+        "machine_tags": [
+          "freshness/run_tree",
+          "coverage_mentioned",
+          "source_trust_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "A fresh test run whose recorded run tree matches the current tree hash 200cac25dc45b4d2de8e10717dce35dbbff3e7be (record_run_tree is null and run_tree_match=false), covering the declared FAIL_TO_PASS test_immutable and the 21 scoped PASS_TO_PASS checks.",
+        "tool_calls": 6,
+        "saw_fresh_false": true,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The artifact is authentically signed and its base_commit and patch_sha256 match this patch, and coverage is complete (1/1 FAIL_TO_PASS, 21/21 scoped PASS_TO_PASS executed, no failures reported). However, the freshness check fails: run_tree_match=false and fresh=false, with record_run_tree=null versus expected tree 200cac25dc45b4d2de8e10717dce35dbbff3e7be. The run therefore cannot be confirmed to have executed against the current commit tree, so its passing outcomes are not trustworthy evidence of success for THIS tree. The symptom log shows the pre-patch failure and post-patch success, but it "
+      }
+    },
+    "sympy__sympy-21847": {
+      "T3D-Escalate": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json_inner",
+        "reason_empty": false,
+        "reason_len": 968,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "coverage_mentioned",
+          "source_trust_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "A test artifact whose run_tree matches the current commit tree (af3da919184597bd2009cb94b3dd24266a8fd891) — the recorded run_tree is null and run_tree_match is false. Also a valid pre-patch baseline showing test_monomials failing (the current baseline log contradicts the symptom probe by showing it passing pre-patch).",
+        "tool_calls": 9,
+        "saw_fresh_false": true,
+        "escalation_denied": [
+          "consistency:missing_reason"
+        ],
+        "reason_verbatim_excerpt": "Linkage is intact (base_commit and patch_sha256 match) and coverage is complete (1/1 F2P, 9/9 P2P executed), and the post-patch acceptance/regression logs show all 11 tests passing with the symptom probe resolved. However, the artifact is NOT fresh for the current commit tree: check_evidence_freshness reports run_tree_match=false with record_run_tree=null against expected tree af3da919184597bd2009cb94b3dd24266a8fd891. Additionally, the p2p_baseline log is internally contradictory: it shows test_monomials (the declared FAIL_TO_PASS test) PASSING pre-patch, even though the symptom probe demonstr"
+      },
+      "T2A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 658,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned"
+        ],
+        "evidence_gap": "linkage_mismatch",
+        "missing_evidence": "Verification that artifact art_ec15a96822c8d6ff is linked to this exact patch (patch_sha256 7223f91c...) and the current commit tree, and that the run is fresh for that tree; also confirmation of which specific tests constitute the FAIL_TO_PASS and scoped PASS_TO_PASS set and that they cover the issue's min_degrees behavior.",
+        "tool_calls": 0,
+        "saw_fresh_false": false,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The test artifact reports 1/1 FAIL_TO_PASS and 9/9 scoped PASS_TO_PASS, which would suggest success, but the artifact's linkage to this patch is not verified. The patch_sha256 (7223f91c...) and base_commit (d9b18c5...) cannot be confirmed to correspond to the candidate patch and its current commit tree, and the runner is a 'vendored-git' environment on a local Windows host. Without verified linkage and freshness for the current tree, I cannot confirm the declared acceptance/regression set was executed against THIS patch. No decisive applicable failure is established, so REJECT is not warranted"
+      },
+      "T3A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json_inner",
+        "reason_empty": false,
+        "reason_len": 687,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "coverage_mentioned",
+          "source_trust_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "A fresh test run attested against the current commit tree (expected tree af3da919184597bd2009cb94b3dd24266a8fd891) is required; the existing artifact records no run tree and fails the freshness check, so its passing F2P/P2P results cannot be confirmed to apply to the current tree.",
+        "tool_calls": 7,
+        "saw_fresh_false": true,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "Linkage is intact (base_commit d9b18c5 and patch_sha256 7223f91c both match) and coverage is complete (1/1 FAIL_TO_PASS and 9/9 scoped PASS_TO_PASS executed, no missing ids). The symptom log shows the bug reproduced pre-patch and resolved post-patch, and the p2p baseline log is consistent. However, the freshness check reports run_tree_match=false and fresh=false: the recorded run tree is null and does not match the expected tree af3da919184597bd2009cb94b3dd24266a8fd891 for the current commit. A linked-but-stale/unattested run is not trustworthy evidence of success for THIS tree, so I cannot AC"
+      }
+    },
+    "sympy__sympy-24213": {
+      "T3D-Escalate": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 744,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "coverage_mentioned",
+          "source_trust_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "A fresh test run whose recorded run tree matches the current tree hash 9146f4c3875cbfb67fbeb9b8685d3333422128c1, covering the 1 declared acceptance check and the 31 scoped regression checks, with verdicts. The existing artifact has record_run_tree=null and run_tree_match=false, so its passing results cannot be attributed to the current commit tree.",
+        "tool_calls": 7,
+        "saw_fresh_false": true,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "Linkage is intact (base_commit and patch_sha256 match, authentic signature) and coverage is complete (1/1 acceptance and 31/31 scoped regression checks executed). The symptom probe also shows the reported ValueError is gone after the patch. However, the freshness check fails: run_tree_match is false and record_run_tree is null, so the run cannot be tied to the current commit tree (expected tree 9146f4c3875cbfb67fbeb9b8685d3333422128c1). The escalated f2p/p2p logs show 41 passed / 1 xfailed with no failures, but they come from that same non-fresh run, so they are not trustworthy evidence for TH"
+      },
+      "T2A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 542,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "source_trust_mentioned"
+        ],
+        "evidence_gap": "linkage_mismatch",
+        "missing_evidence": "Verification that artifact art_5711762ccfb7ae48 is linked to this exact patch (patch_sha256 3d1868e0...) and the current commit tree (base_commit e8c22f6e...), plus confirmation that the declared acceptance/regression set was fully executed against this tree.",
+        "tool_calls": 0,
+        "saw_fresh_false": false,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The test artifact reports 1/1 FAIL_TO_PASS and 31/31 scoped PASS_TO_PASS passing, which would support acceptance, but the artifact's linkage to this patch is explicitly unverified. The patch_sha256 (3d1868e0...) and base_commit (e8c22f6e...) cannot be confirmed to correspond to the candidate patch and its current commit tree, so the evidence is not trustworthy as applying to THIS patch. No decisive applicable failure is present, so REJECT is not warranted; but the success evidence is not intact/linked, so ACCEPT is not warranted either."
+      },
+      "T3A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 650,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "coverage_mentioned",
+          "source_trust_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "A fresh test run whose recorded tree hash matches the current tree 9146f4c3875cbfb67fbeb9b8685d3333422128c1 (the artifact records run_tree=null and does not match), covering the declared FAIL_TO_PASS test_issue_24211 and the 31 scoped PASS_TO_PASS tests.",
+        "tool_calls": 5,
+        "saw_fresh_false": true,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The artifact is authentically signed and its base_commit and patch_sha256 match this patch, and coverage is complete (1/1 FAIL_TO_PASS executed and passing, 31/31 scoped PASS_TO_PASS executed and passing, no regressions). However, the freshness check fails: run_tree_match=false with record_run_tree=null versus expected_run_tree=9146f4c3875cbfb67fbeb9b8685d3333422128c1. The run therefore cannot be confirmed to correspond to the current commit tree, so the passing results are not trustworthy evidence for THIS tree. No decisive applicable failure exists, so REJECT is not warranted; but the bar fo"
+      }
+    },
+    "sympy__sympy-24443": {
+      "T3D-Escalate": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json_inner",
+        "reason_empty": false,
+        "reason_len": 820,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "tool_access_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "A fresh test-run artifact whose recorded run tree matches the current commit tree b26349e12c8c7e362093e221cba262e4a5093c45 (the present artifact has a null run_tree and fails the tree-match check), together with the maintainer acceptance (F2P) and scoped regression (P2P) verdicts for that fresh run.",
+        "tool_calls": 6,
+        "saw_fresh_false": true,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "Linkage is intact (base_commit and patch_sha256 match) and the declared acceptance/regression set was fully executed (1/1 F2P, 1/1 P2P, no missing ids). However, the freshness check fails: run_tree_match is false with record_run_tree null against expected tree b26349e12c8c7e362093e221cba262e4a5093c45, so the run is not attested for the current commit tree. The symptom probe shows the reported ValueError is gone, but the artifact explicitly states a removed symptom is not proof of merge acceptability, and acceptance/regression outcomes are withheld at the diagnostic tier. The author's claim is "
+      },
+      "T2A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json",
+        "reason_empty": false,
+        "reason_len": 544,
+        "machine_tags": [
+          "linkage_mentioned",
+          "coverage_mentioned"
+        ],
+        "evidence_gap": "coverage_incomplete",
+        "missing_evidence": "Artifact does not confirm linkage to patch_sha256 a6f310f8... and only reports 1/1 FAIL_TO_PASS and 1/1 PASS_TO_PASS, not the full declared acceptance/regression set (e.g., all of test_homomorphisms.py including the newly added D3/D4 assertions and existing tests).",
+        "tool_calls": 0,
+        "saw_fresh_false": false,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The test artifact reports only 1/1 FAIL_TO_PASS and 1/1 scoped PASS_TO_PASS, which is far too thin to cover the declared acceptance/regression set for this patch (the patch adds multiple new assertions in test_check_homomorphism, including D3 and D4 identity homomorphism checks, and the module has many other tests). The artifact also does not verify linkage to this patch's sha256 or confirm the full declared set was executed. No decisive applicable failure is present, so REJECT is not warranted, but success is not demonstrated completely."
+      },
+      "T3A-T": {
+        "verdict": "NEED_EVIDENCE",
+        "frozen_gold": "ACCEPT",
+        "oracle": "ACCEPT",
+        "answer_form": "json_inner",
+        "reason_empty": false,
+        "reason_len": 674,
+        "machine_tags": [
+          "freshness/run_tree",
+          "linkage_mentioned",
+          "coverage_mentioned",
+          "source_trust_mentioned"
+        ],
+        "evidence_gap": "stale",
+        "missing_evidence": "A fresh test run whose recorded run tree matches the current commit tree b26349e12c8c7e362093e221cba262e4a5093c45 (record_run_tree is null / run_tree_match false), demonstrating the declared FAIL_TO_PASS and scoped PASS_TO_PASS checks pass on that exact tree.",
+        "tool_calls": 6,
+        "saw_fresh_false": true,
+        "escalation_denied": [],
+        "reason_verbatim_excerpt": "The artifact is linked (base_commit and patch_sha256 match) and coverage is complete (1/1 FAIL_TO_PASS, 1/1 scoped PASS_TO_PASS executed, no missing ids), and no executed acceptance or regression check failed. However, freshness verification fails: run_tree_match is false with record_run_tree null against expected tree b26349e12c8c7e362093e221cba262e4a5093c45. The run cannot be tied to the current commit tree, so its passing results are not trustworthy evidence for this patch's current tree. No decisive applicable failure is established (symptom log shows the fix working), so REJECT is not war"
+      }
+    }
+  },
+  "task8_DS_empty_reasons": {
+    "frozen_runner_parser_count": 10,
+    "of": 50,
+    "answer_forms_robust_view": {
+      "json": 40,
+      "json_truncated": 1,
+      "json_inner": 9
+    },
+    "robust_fence_aware_empty_count": 1,
+    "by_condition_runner_parser": {
+      "T3D-Escalate": 7,
+      "T3A-T": 3
+    },
+    "by_verdict_runner_parser": {
+      "ACCEPT": 1,
+      "REJECT": 3,
+      "NEED_EVIDENCE": 6
+    },
+    "definition_reconciliation": {
+      "A_runner_parser_empty_reason": 10,
+      "D_evidence_gap_unspecified": 13,
+      "E_gap_classification_unspecified": 7
+    },
+    "interpretation": "The frozen runner parser (phase3_run._parse_answer_json) only strips a leading ``` fence then json.loads the WHOLE string; answers with a prose prefix before the JSON object, and truncated JSON, yield {} and thus an empty reason. Those rows still carry a valid parsed VERDICT (parsed separately) and the prose/tool trace preserves the substantive rationale, so the empty structured-reason field is a serialization/parse artifact, not necessarily a missing rationale. Mechanism attribution should use the raw answer/trace, not the empty reason field.",
+    "cells_runner_parser": [
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T3D-Escalate",
+        "verdict": "ACCEPT",
+        "tool_calls": 9,
+        "robust_form": "json_truncated"
+      },
+      {
+        "issue": "sympy__sympy-17318",
+        "condition": "T3D-Escalate",
+        "verdict": "REJECT",
+        "tool_calls": 7,
+        "robust_form": "json_inner"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3D-Escalate",
+        "verdict": "REJECT",
+        "tool_calls": 9,
+        "robust_form": "json_inner"
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "tool_calls": 8,
+        "robust_form": "json_inner"
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T3D-Escalate",
+        "verdict": "REJECT",
+        "tool_calls": 7,
+        "robust_form": "json_inner"
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T3D-Escalate",
+        "verdict": "NEED_EVIDENCE",
+        "tool_calls": 8,
+        "robust_form": "json_inner"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3D-Escalate",
+        "verdict": "NEED_EVIDENCE",
+        "tool_calls": 9,
+        "robust_form": "json_inner"
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "tool_calls": 7,
+        "robust_form": "json_inner"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3D-Escalate",
+        "verdict": "NEED_EVIDENCE",
+        "tool_calls": 6,
+        "robust_form": "json_inner"
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3A-T",
+        "verdict": "NEED_EVIDENCE",
+        "tool_calls": 6,
+        "robust_form": "json_inner"
+      }
+    ]
+  },
+  "task4_gold_sensitivity": {
+    "note": "ANALYTICAL VERSIONS ONLY. Frozen V1 gold is unchanged on disk; nothing here relabels an issue post-hoc. V2/V3 differ ONLY by how channel F (fresh) is treated for the T3 conditions; T2A (static, F never adjudicated) and the two restricted conditions are held identical to V1.",
+    "symptom_persists": {
+      "sympy__sympy-13615": false,
+      "sympy__sympy-13974": false,
+      "sympy__sympy-15349": false,
+      "sympy__sympy-17318": false,
+      "sympy__sympy-17630": false,
+      "sympy__sympy-19783": false,
+      "sympy__sympy-20590": false,
+      "sympy__sympy-21847": false,
+      "sympy__sympy-24213": false,
+      "sympy__sympy-24443": false
+    },
+    "versions": {
+      "V1_frozen": {
+        "sympy__sympy-13615": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE",
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "sympy__sympy-13974": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE",
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "sympy__sympy-15349": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE",
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "sympy__sympy-17318": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE",
+          "T3D-Escalate": "REJECT",
+          "T2A-T": "REJECT",
+          "T3A-T": "REJECT"
+        },
+        "sympy__sympy-17630": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE",
+          "T3D-Escalate": "REJECT",
+          "T2A-T": "REJECT",
+          "T3A-T": "REJECT"
+        },
+        "sympy__sympy-19783": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE",
+          "T3D-Escalate": "REJECT",
+          "T2A-T": "REJECT",
+          "T3A-T": "REJECT"
+        },
+        "sympy__sympy-20590": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE",
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "sympy__sympy-21847": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE",
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "sympy__sympy-24213": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE",
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        },
+        "sympy__sympy-24443": {
+          "T2D-T": "NEED_EVIDENCE",
+          "T3D-Strict": "NEED_EVIDENCE",
+          "T3D-Escalate": "ACCEPT",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "ACCEPT"
+        }
+      },
+      "V2_toolliteral_freshfalse": {
+        "sympy__sympy-13615": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-13974": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-15349": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-17318": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "REJECT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-17630": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "REJECT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-19783": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "REJECT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-20590": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-21847": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-24213": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-24443": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        }
+      },
+      "V3_decisive_failure_survives_stale": {
+        "sympy__sympy-13615": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-13974": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-15349": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-17318": {
+          "T3D-Escalate": "REJECT",
+          "T2A-T": "REJECT",
+          "T3A-T": "REJECT"
+        },
+        "sympy__sympy-17630": {
+          "T3D-Escalate": "REJECT",
+          "T2A-T": "REJECT",
+          "T3A-T": "REJECT"
+        },
+        "sympy__sympy-19783": {
+          "T3D-Escalate": "REJECT",
+          "T2A-T": "REJECT",
+          "T3A-T": "REJECT"
+        },
+        "sympy__sympy-20590": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-21847": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-24213": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        },
+        "sympy__sympy-24443": {
+          "T3D-Escalate": "NEED_EVIDENCE",
+          "T2A-T": "ACCEPT",
+          "T3A-T": "NEED_EVIDENCE"
+        }
+      }
+    },
+    "rescore_EscT3A": {
+      "V1_frozen": {
+        "deepseek-flash": {
+          "over_abstain_cells_EscT3A": 13,
+          "unsupported_accept_cells_EscT3A": 0
+        },
+        "gpt-4.1-mini": {
+          "over_abstain_cells_EscT3A": 14,
+          "unsupported_accept_cells_EscT3A": 0
+        }
+      },
+      "V2_toolliteral_freshfalse": {
+        "deepseek-flash": {
+          "over_abstain_cells_EscT3A": 0,
+          "unsupported_accept_cells_EscT3A": 0
+        },
+        "gpt-4.1-mini": {
+          "over_abstain_cells_EscT3A": 0,
+          "unsupported_accept_cells_EscT3A": 0
+        }
+      },
+      "V3_decisive_failure_survives_stale": {
+        "deepseek-flash": {
+          "over_abstain_cells_EscT3A": 0,
+          "unsupported_accept_cells_EscT3A": 0
+        },
+        "gpt-4.1-mini": {
+          "over_abstain_cells_EscT3A": 0,
+          "unsupported_accept_cells_EscT3A": 0
+        }
+      }
+    }
+  },
+  "task5_DS9_human_adjudication": {
+    "n_abstaining_cells": 23,
+    "n_issues": 9,
+    "category_counts": {
+      "A_did_not_honour_institutional_trust_premise": 8,
+      "B_actual_source_or_provenance_concern": 14,
+      "C_coverage_sufficiency_concern": 1
+    },
+    "root_driver_counts": {
+      "T2A_static_protocol_contradiction": 8,
+      "F_channel_structural_false_fresh": 14,
+      "genuine_stricter_coverage_bar_on_static_block": 1
+    },
+    "culpability_counts": {
+      "exculpated_by_prompt_as_written": 8,
+      "exculpated_by_instrument": 14,
+      "partially_attributable_model_choice": 1
+    },
+    "headline": "Across the 23 DS over-abstention cells / 9 issues, NONE is cleanly attributable to model miscalibration given the evidence actually presented: 14 are driven by the T3 instrument returning a structurally bogus fresh=FALSE (category B, exculpated), 8 T2A cells are driven by a static protocol contradiction where the prompt as written requires linkage it never grants (nominally A, exculpated), and 1 is a defensible stricter coverage judgment (C, partly attributable). Category D (missing tool evidence) = 0.",
+    "cells": [
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T2A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "linkage_mismatch",
+        "reviewer_category": "A_did_not_honour_institutional_trust_premise",
+        "root_driver": "T2A_static_protocol_contradiction",
+        "culpability": "exculpated_by_prompt_as_written",
+        "saw_fresh_false": false,
+        "tool_calls": 0,
+        "note": "Per the INTENDED gold protocol T2A is an institutional grant, so abstaining nominally falls in A. But the literal user-facing prompt contains NO trust grant: TERNARY_HEAD requires linked+fresh to ACCEPT and the static block header states \"linkage not yet verified\", with no tool to check it. Abstention therefore COMPLIES with the prompt as written; the \"noncompliance\" is against a rule that was never sent to the model."
+      },
+      {
+        "issue": "sympy__sympy-13615",
+        "condition": "T3A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 6,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error."
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T3D-Escalate",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 9,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error."
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T2A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "linkage_mismatch",
+        "reviewer_category": "A_did_not_honour_institutional_trust_premise",
+        "root_driver": "T2A_static_protocol_contradiction",
+        "culpability": "exculpated_by_prompt_as_written",
+        "saw_fresh_false": false,
+        "tool_calls": 0,
+        "note": "Per the INTENDED gold protocol T2A is an institutional grant, so abstaining nominally falls in A. But the literal user-facing prompt contains NO trust grant: TERNARY_HEAD requires linked+fresh to ACCEPT and the static block header states \"linkage not yet verified\", with no tool to check it. Abstention therefore COMPLIES with the prompt as written; the \"noncompliance\" is against a rule that was never sent to the model."
+      },
+      {
+        "issue": "sympy__sympy-13974",
+        "condition": "T3A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 8,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error."
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T3D-Escalate",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 9,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error."
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T2A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "linkage_mismatch",
+        "reviewer_category": "A_did_not_honour_institutional_trust_premise",
+        "root_driver": "T2A_static_protocol_contradiction",
+        "culpability": "exculpated_by_prompt_as_written",
+        "saw_fresh_false": false,
+        "tool_calls": 0,
+        "note": "Per the INTENDED gold protocol T2A is an institutional grant, so abstaining nominally falls in A. But the literal user-facing prompt contains NO trust grant: TERNARY_HEAD requires linked+fresh to ACCEPT and the static block header states \"linkage not yet verified\", with no tool to check it. Abstention therefore COMPLIES with the prompt as written; the \"noncompliance\" is against a rule that was never sent to the model."
+      },
+      {
+        "issue": "sympy__sympy-15349",
+        "condition": "T3A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 6,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error."
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T2A-T",
+        "oracle": "REJECT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "linkage_mismatch",
+        "reviewer_category": "A_did_not_honour_institutional_trust_premise",
+        "root_driver": "T2A_static_protocol_contradiction",
+        "culpability": "exculpated_by_prompt_as_written",
+        "saw_fresh_false": false,
+        "tool_calls": 0,
+        "note": "Per the INTENDED gold protocol T2A is an institutional grant, so abstaining nominally falls in A. But the literal user-facing prompt contains NO trust grant: TERNARY_HEAD requires linked+fresh to ACCEPT and the static block header states \"linkage not yet verified\", with no tool to check it. Abstention therefore COMPLIES with the prompt as written; the \"noncompliance\" is against a rule that was never sent to the model."
+      },
+      {
+        "issue": "sympy__sympy-17630",
+        "condition": "T3A-T",
+        "oracle": "REJECT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 8,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error. REJECT-gold issue: model even obtained the decisive failure but correctly applied the prompt rule that a stale-run failure is not grounds to reject."
+      },
+      {
+        "issue": "sympy__sympy-19783",
+        "condition": "T2A-T",
+        "oracle": "REJECT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "linkage_mismatch",
+        "reviewer_category": "A_did_not_honour_institutional_trust_premise",
+        "root_driver": "T2A_static_protocol_contradiction",
+        "culpability": "exculpated_by_prompt_as_written",
+        "saw_fresh_false": false,
+        "tool_calls": 0,
+        "note": "Per the INTENDED gold protocol T2A is an institutional grant, so abstaining nominally falls in A. But the literal user-facing prompt contains NO trust grant: TERNARY_HEAD requires linked+fresh to ACCEPT and the static block header states \"linkage not yet verified\", with no tool to check it. Abstention therefore COMPLIES with the prompt as written; the \"noncompliance\" is against a rule that was never sent to the model."
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T3D-Escalate",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 8,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error."
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T2A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "linkage_mismatch",
+        "reviewer_category": "A_did_not_honour_institutional_trust_premise",
+        "root_driver": "T2A_static_protocol_contradiction",
+        "culpability": "exculpated_by_prompt_as_written",
+        "saw_fresh_false": false,
+        "tool_calls": 0,
+        "note": "Per the INTENDED gold protocol T2A is an institutional grant, so abstaining nominally falls in A. But the literal user-facing prompt contains NO trust grant: TERNARY_HEAD requires linked+fresh to ACCEPT and the static block header states \"linkage not yet verified\", with no tool to check it. Abstention therefore COMPLIES with the prompt as written; the \"noncompliance\" is against a rule that was never sent to the model."
+      },
+      {
+        "issue": "sympy__sympy-20590",
+        "condition": "T3A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 6,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error."
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3D-Escalate",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 9,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error."
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T2A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "linkage_mismatch",
+        "reviewer_category": "A_did_not_honour_institutional_trust_premise",
+        "root_driver": "T2A_static_protocol_contradiction",
+        "culpability": "exculpated_by_prompt_as_written",
+        "saw_fresh_false": false,
+        "tool_calls": 0,
+        "note": "Per the INTENDED gold protocol T2A is an institutional grant, so abstaining nominally falls in A. But the literal user-facing prompt contains NO trust grant: TERNARY_HEAD requires linked+fresh to ACCEPT and the static block header states \"linkage not yet verified\", with no tool to check it. Abstention therefore COMPLIES with the prompt as written; the \"noncompliance\" is against a rule that was never sent to the model."
+      },
+      {
+        "issue": "sympy__sympy-21847",
+        "condition": "T3A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 7,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error."
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T3D-Escalate",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 7,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error."
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T2A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "linkage_mismatch",
+        "reviewer_category": "A_did_not_honour_institutional_trust_premise",
+        "root_driver": "T2A_static_protocol_contradiction",
+        "culpability": "exculpated_by_prompt_as_written",
+        "saw_fresh_false": false,
+        "tool_calls": 0,
+        "note": "Per the INTENDED gold protocol T2A is an institutional grant, so abstaining nominally falls in A. But the literal user-facing prompt contains NO trust grant: TERNARY_HEAD requires linked+fresh to ACCEPT and the static block header states \"linkage not yet verified\", with no tool to check it. Abstention therefore COMPLIES with the prompt as written; the \"noncompliance\" is against a rule that was never sent to the model."
+      },
+      {
+        "issue": "sympy__sympy-24213",
+        "condition": "T3A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 5,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error."
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3D-Escalate",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 6,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error."
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T2A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "coverage_incomplete",
+        "reviewer_category": "C_coverage_sufficiency_concern",
+        "root_driver": "genuine_stricter_coverage_bar_on_static_block",
+        "culpability": "partially_attributable_model_choice",
+        "saw_fresh_false": false,
+        "tool_calls": 0,
+        "note": "Static tier-A block already rendered executed 1/1 F2P + 1/1 P2P (frozen complete=true). Model imposed a stricter-than-protocol coverage bar (\"too thin vs module\"). Defensible real-world skepticism, but divergent from frozen sufficiency."
+      },
+      {
+        "issue": "sympy__sympy-24443",
+        "condition": "T3A-T",
+        "oracle": "ACCEPT",
+        "verdict": "NEED_EVIDENCE",
+        "stated_gap": "stale",
+        "reviewer_category": "B_actual_source_or_provenance_concern",
+        "root_driver": "F_channel_structural_false_fresh",
+        "culpability": "exculpated_by_instrument",
+        "saw_fresh_false": true,
+        "tool_calls": 6,
+        "note": "Freshness tool returned run_tree_match=false / record_run_tree=null, but the canonical record structurally lacks a run_tree field; independent restage proved the attested tree matches. The model saw a genuine-looking freshness=FALSE and, per the HEAD asymmetry rule, refused to treat the run as applicable. This is instrument-induced caution, not a calibration error."
+      }
+    ]
+  },
+  "task9_CP_change_audit": {
+    "frozen_disclosure": {
+      "file": "evidence/g3b_analyze.py",
+      "frozen_hash_at_collection": "913e831943ece4642c6c08bcbedd3b3bf5e7f0e8d3789f7e15f44ba9d38bc2db",
+      "current_hash": "3cdcaf1c3ddd322a6f6bbd8f0fd498b912795b4bbaa840c2374f63e6b1be27c0",
+      "nature": "offline-analysis-only numerical fix: the initial Clopper-Pearson grid tail search returned degenerate 0.0/1.0 endpoints; replaced with exact Beta-quantile CP (validated against standard CP tables).",
+      "scope": "analysis artifacts only; no model call, verdict, DA tally, bootstrap point/CI, or directional conclusion depends on this function except the printed exact interval; freeze manifest, runner, prompt, gold, evidence and all 100 rows UNCHANGED; freeze manifest deliberately NOT rebuilt to preserve the recorded sha256.",
+      "recomputed": true
+    },
+    "independent_method": "Re-derived CP by direct integer-binomial tail summation with math.comb + bisection (NOT the scipy/Beta-quantile path used by the patched analyzer), plus an issue-cluster bootstrap using a private random.Random (B=50000).",
+    "independent_values_match_patched_printed": true,
+    "standard_table_checks": {
+      "0/10": [
+        0.0,
+        0.3085
+      ],
+      "5/10": [
+        0.1871,
+        0.8129
+      ],
+      "10/10": [
+        0.6915,
+        1.0
+      ],
+      "7/7": [
+        0.5904,
+        1.0
+      ]
+    },
+    "conclusion": "The 913e8319->3cdcaf1c change is offline-analysis only: it replaced a degenerate 0.0/1.0 grid-tail search with exact CP. Independent re-derivation reproduces every printed interval (C1 1/3 [0.0084,0.9057], C2 9/10 [0.555,0.9975]) and the standard CP table, so the corrected values are confirmed; no verdict, tally, bootstrap or conclusion depends on the changed function, and the freeze manifest/runner/prompt/gold/100 rows were not rebuilt."
+  },
+  "task10_gold_adjudication": {
+    "oracle_gold_rows": 10,
+    "human_adjudication_status": {
+      "pending": 10
+    },
+    "n_independent_annotators": {
+      "1": 10
+    },
+    "condition_gold_rows": 10,
+    "condition_gold_status": {
+      "pending": 10
+    },
+    "limitation": "All 10 oracle golds and all 10 condition-gold rows remain human_adjudication=pending with a single annotator (n=1). No second independent annotator exists; labels are PROVISIONAL and must not be described as human-adjudicated or as having inter-rater agreement. Mechanical oracle recomputation is not human agreement."
+  }
+}

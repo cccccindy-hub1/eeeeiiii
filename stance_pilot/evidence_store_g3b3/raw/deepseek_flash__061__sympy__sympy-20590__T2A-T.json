@@ -1,0 +1,56 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The artifact is institutionally attested as linked to this exact patch and base commit, fresh for the current tree, and covering the full declared set. All declared checks were executed and all passed: FAIL_TO_PASS 1/1 and scoped PASS_TO_PASS 21/21. The patch adds __slots__ = () to Printable, restoring the missing slots in the inheritance chain so Symbol/Dummy instances no longer gain a __dict__, and the added test asserts absence of __dict__ for Symbol and Dummy. The rendered outcomes show the issue resolved with no executed acceptance failure and no scoped regression.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "cell": "g3b3:sympy__sympy-20590:T2A-T",
+  "condition": "T2A-T",
+  "cost_usd": 0.000717,
+  "evidence_session": null,
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-20590",
+  "instance_id": "sympy__sympy-20590",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010527
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 152,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 1783,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"The artifact is institutionally attested as linked to this exact patch and base commit, fresh for the current tree, and covering the full declared set. All declared checks were executed and all passed: FAIL_TO_PASS 1/1 and scoped PASS_TO_PASS 21/21. The patch adds __slots__ = () to Printable, restoring the missing slots in the inheritance chain so Symbol/Dummy instances no longer gain a __dict__, and the added test asserts absence of __dict__ for Symbol and Dummy. The rendered outcomes show the issue resolved with no executed acceptance failure and no scoped regression.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_d91a79096ebadc9c",
+  "tokens_in": 1783,
+  "tokens_out": 152,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.28
+}

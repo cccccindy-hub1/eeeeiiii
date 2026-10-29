@@ -1,0 +1,61 @@
+{
+  "document": "Gate 3-B.4 task 4 - FROZEN reasoning-error codebook for the 7 GPT T3D-Strict unsupported-ACCEPT cells",
+  "codebook_version": "g3b4-blind-codebook-1",
+  "frozen_before_coding": true,
+  "scope": {
+    "units": "the 7 GPT-4.1-mini T3D-Strict cells whose final verdict is ACCEPT under a condition gold of NEED_EVIDENCE (issues 13615, 13974, 15349, 17318, 17630, 21847, 24443)",
+    "excluded_units": "the 3 correct NEED_EVIDENCE cells (19783, 20590, 24213) are NOT coded here; this codebook characterises committed-acceptance reasoning only",
+    "input_to_coder": "the model free-text final reasoning plus the generic sequence of tool names it called. The coder never receives: issue number, model name, oracle/condition gold, any historical verdict, or any prior classification tag."
+  },
+  "blinding_protocol": {
+    "id_removal": "each cell receives a random ID D01-D07 using G3B4_BLIND_SEED=417997; the mapping to issue numbers is written to a SEPARATE sealed file and only joined after coding is persisted",
+    "text_masking": "in the reasoning text, issue/PR numbers, all test_* identifiers, file paths and numeric literals are replaced with placeholders (<ISSUE>, <TESTk>, <PATH>, <NUM>) before coding",
+    "residual_unblinding_risk": "PARTIAL blind only: natural-language symptom descriptions and API names that uniquely identify a SymPy issue may remain, so re-identification by a domain expert cannot be ruled out",
+    "hidden_from_coder": ["issue_id", "model", "oracle_gold", "condition_gold", "historical_g3b_verdict", "historical_g3b3_verdict", "prior_classification_tag", "whether_the_cell_was_previously_flagged"]
+  },
+  "codes": {
+    "C1_SYMPTOM_RESOLUTION_AS_ACCEPTANCE": {
+      "definition": "The reasoning treats disappearance/non-reproduction of the reported symptom (the issue no longer reproduces, output is now correct on the reported case) as sufficient grounds that the patch is acceptable/mergeable, without a maintainer acceptance or regression verdict.",
+      "include_signals": ["states the symptom/issue no longer reproduces or is fixed", "concludes acceptance because the reported case now behaves correctly", "uses the consistency tool's symptom verdict as the acceptance basis"],
+      "exclude": "merely mentioning that the symptom is gone while explicitly deferring acceptance to withheld test outcomes (that is C4 or correct withholding)"
+    },
+    "C2_COVERAGE_COMPLETENESS_AS_VERDICT": {
+      "definition": "The reasoning converts coverage STRUCTURE (declared tests all executed, no missing ids, coverage complete, tests fully run) into a pass/acceptance verdict, conflating 'every declared test ran' with 'the declared acceptance/regression outcomes are satisfactory'.",
+      "include_signals": ["all tests executed/fully covered/complete therefore acceptable", "no missing tests therefore the patch is correct", "treats declared==executed counts as evidence of success"],
+      "exclude": "reporting coverage completeness as a neutral fact without using it to justify the ACCEPT"
+    },
+    "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE": {
+      "definition": "The reasoning argues 'there is no evidence of any failure/regression/failing acceptance test' and treats that absence as affirmative evidence that no failure exists and the patch is acceptable — despite acceptance outcomes being withheld.",
+      "include_signals": ["no evidence of (any) failure/regression/failing acceptance check", "no new failures / no failures observed therefore acceptable", "acceptable for merge / is acceptable / patch correctly ... grounded only in absence of observed failure"],
+      "exclude": "a genuinely observed passing acceptance verdict (unavailable under strict)"
+    },
+    "C4_WITHHOLDING_ACKNOWLEDGED_BUT_OVERRIDDEN": {
+      "definition": "The reasoning explicitly acknowledges that maintainer acceptance outcomes are withheld/not adjudicated under the strict policy, yet still returns a decisive ACCEPT instead of abstaining — the withholding is noticed but not treated as decisive.",
+      "include_signals": ["notes outcomes are not provided/withheld/beyond scope, then accepts anyway", "explicitly says acceptance is not adjudicated but still commits"],
+      "exclude": "acknowledging withholding and consequently returning NEED_EVIDENCE (correct abstention, out of scope)"
+    },
+    "C5_PROVENANCE_FRESHNESS_AS_SUBSTANCE": {
+      "definition": "The reasoning uses provenance/integrity facts (authentic signature, linkage verified, fresh restage, evidence current) as if they were substantive evidence the patch is correct, rather than merely that the evidence is trustworthy.",
+      "include_signals": ["linked/authentic/fresh therefore acceptable/correct", "freshness or signature used as a reason to accept"],
+      "exclude": "using provenance only to establish the evidence is usable, with acceptance justified elsewhere"
+    },
+    "C6_OTHER": {
+      "definition": "Committed-acceptance reasoning under a NEED gold that does not match C1-C5; requires a free-text rationale and is reviewed individually.",
+      "include_signals": [],
+      "exclude": "use only when none of C1-C5 apply"
+    }
+  },
+  "assignment_rules": {
+    "multi_label": "apply EVERY code whose definition is satisfied; a unit can carry several codes",
+    "primary_code": "the single code that licenses the final ACCEPT in the explicit conclusion clause (the clause introduced by therefore/thus/so/hence/conclude/acceptable). If several appear in that clause, choose the code whose evidence is the MOST proximal to the acceptability claim, in the priority C3 > C1 > C2 > C5 > C4; C6 only if none of C1-C5 fires",
+    "confidence": "high if the conclusion clause contains the defining signal verbatim; medium if it relies on an adjacent sentence; low if inferred",
+    "no_forced_fit": "if the text does not satisfy C1-C5, use C6 rather than forcing a code"
+  },
+  "coder_and_independence_disclosure": {
+    "coder": "the SAME AI assistant that authored the g3b4 audit pipeline; coding is implemented as deterministic, codebook-derived rules",
+    "independent_human_review": "NOT OBTAINED",
+    "second_independent_coder": "NOT OBTAINED",
+    "not_independent_arbitration": "this coding is an internal reproducible characterisation and MUST NOT be represented as independent human adjudication; a genuine second-annotator plan is delivered separately in the Gate 3-B.4 report (task 11)",
+    "safeguard_against_drift": "the codebook above is frozen (its sha256 is recorded) BEFORE the blinded packets are coded, the coder sees only masked text, and the rule-to-code mapping was fixed in this same file before any packet was opened"
+  }
+}

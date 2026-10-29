@@ -1,0 +1,170 @@
+{
+  "any_code_prevalence": {
+    "C1_SYMPTOM_RESOLUTION_AS_ACCEPTANCE": 7,
+    "C2_COVERAGE_COMPLETENESS_AS_VERDICT": 7,
+    "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE": 7,
+    "C5_PROVENANCE_FRESHNESS_AS_SUBSTANCE": 7
+  },
+  "api_calls_made_by_this_audit": 0,
+  "audit_version": "groundedreview-gate3b4-zero-api-strict-audit-v1",
+  "blinding": {
+    "coded_before_unblinding_file": "blind_coding/g3b4_blind_coded_packets.json",
+    "ids_hidden": [
+      "issue",
+      "model",
+      "gold",
+      "historical verdicts",
+      "prior tags"
+    ],
+    "packets_file": "blind_coding/g3b4_blind_packets.json",
+    "partial_blind": true,
+    "partial_blind_reason": "symptom prose must remain for coding and can uniquely identify an issue",
+    "sealed_mapping_file": "blind_coding/g3b4_blind_sealed_mapping.json",
+    "seed": 417997
+  },
+  "codebook_frozen_before_coding": true,
+  "codebook_sha256": "82dc5fe09287dc2fc17652b9a2697bc4a22cba1cf98b0dabb6bf156c63da6cb9",
+  "coder_independence": {
+    "independent_human_coder": "NOT OBTAINED",
+    "independent_review": "NOT OBTAINED",
+    "note": "results are an internal reproducible characterisation; a real second-annotator plan is in the G3-B.4 report (task 11) and must not be substituted by this coding.",
+    "rule_based": true,
+    "single_ai_coder": true,
+    "this_is_not_independent_arbitration": true
+  },
+  "document": "Gate 3-B.4 task 4 partially-blinded reason coding (7 GPT T3D-Strict unsupported-ACCEPT cells)",
+  "gold_authority": {
+    "annotator2": "NOT_OBTAINED",
+    "annotators": 1,
+    "gold_tier": "PROVISIONAL",
+    "note": "Single-annotator gold carried unchanged from Gate 3-A.1; no second adjudicator has been obtained as of Gate 3-B.4. No Cohen kappa is reported and gold is never called human-adjudicated. Gate 3-B.4 audits model behaviour against this PROVISIONAL gold only; the same AI operator performing the audit is NOT an independent human adjudicator."
+  },
+  "interpretation": "All 7 committed accepts fire the same template: provenance/freshness (C5) + coverage completeness (C2) + symptom resolution (C1) + absence-of-failure phrasing (C3), with C3 the most proximal licensor of the acceptance conclusion under the frozen priority rule. C4 never fires: the model does not acknowledge the withholding before accepting. This is a homogeneous over-commitment template rather than 7 distinct reasoning errors.",
+  "joined_results": [
+    {
+      "blind_codes_applied": [
+        "C1_SYMPTOM_RESOLUTION_AS_ACCEPTANCE",
+        "C2_COVERAGE_COMPLETENESS_AS_VERDICT",
+        "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+        "C5_PROVENANCE_FRESHNESS_AS_SUBSTANCE"
+      ],
+      "blind_primary_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+      "confidence": "high",
+      "issue": "13974",
+      "mechanical_wording_subtypes_from_g3b4_strict_audit": [
+        "symptom_resolution_framed_as_acceptance",
+        "absence_of_failure_evidence_as_evidence_of_absence",
+        "provenance_freshness_invoked"
+      ],
+      "packet_id": "D01"
+    },
+    {
+      "blind_codes_applied": [
+        "C1_SYMPTOM_RESOLUTION_AS_ACCEPTANCE",
+        "C2_COVERAGE_COMPLETENESS_AS_VERDICT",
+        "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+        "C5_PROVENANCE_FRESHNESS_AS_SUBSTANCE"
+      ],
+      "blind_primary_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+      "confidence": "high",
+      "issue": "17630",
+      "mechanical_wording_subtypes_from_g3b4_strict_audit": [
+        "symptom_resolution_framed_as_acceptance",
+        "coverage_completeness_framed_as_verdict",
+        "absence_of_failure_evidence_as_evidence_of_absence",
+        "provenance_freshness_invoked"
+      ],
+      "packet_id": "D02"
+    },
+    {
+      "blind_codes_applied": [
+        "C1_SYMPTOM_RESOLUTION_AS_ACCEPTANCE",
+        "C2_COVERAGE_COMPLETENESS_AS_VERDICT",
+        "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+        "C5_PROVENANCE_FRESHNESS_AS_SUBSTANCE"
+      ],
+      "blind_primary_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+      "confidence": "high",
+      "issue": "17318",
+      "mechanical_wording_subtypes_from_g3b4_strict_audit": [
+        "absence_of_failure_evidence_as_evidence_of_absence",
+        "provenance_freshness_invoked"
+      ],
+      "packet_id": "D03"
+    },
+    {
+      "blind_codes_applied": [
+        "C1_SYMPTOM_RESOLUTION_AS_ACCEPTANCE",
+        "C2_COVERAGE_COMPLETENESS_AS_VERDICT",
+        "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+        "C5_PROVENANCE_FRESHNESS_AS_SUBSTANCE"
+      ],
+      "blind_primary_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+      "confidence": "high",
+      "issue": "13615",
+      "mechanical_wording_subtypes_from_g3b4_strict_audit": [
+        "symptom_resolution_framed_as_acceptance",
+        "coverage_completeness_framed_as_verdict",
+        "absence_of_failure_evidence_as_evidence_of_absence",
+        "provenance_freshness_invoked"
+      ],
+      "packet_id": "D04"
+    },
+    {
+      "blind_codes_applied": [
+        "C1_SYMPTOM_RESOLUTION_AS_ACCEPTANCE",
+        "C2_COVERAGE_COMPLETENESS_AS_VERDICT",
+        "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+        "C5_PROVENANCE_FRESHNESS_AS_SUBSTANCE"
+      ],
+      "blind_primary_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+      "confidence": "high",
+      "issue": "24443",
+      "mechanical_wording_subtypes_from_g3b4_strict_audit": [
+        "symptom_resolution_framed_as_acceptance",
+        "coverage_completeness_framed_as_verdict",
+        "absence_of_failure_evidence_as_evidence_of_absence",
+        "provenance_freshness_invoked"
+      ],
+      "packet_id": "D05"
+    },
+    {
+      "blind_codes_applied": [
+        "C1_SYMPTOM_RESOLUTION_AS_ACCEPTANCE",
+        "C2_COVERAGE_COMPLETENESS_AS_VERDICT",
+        "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+        "C5_PROVENANCE_FRESHNESS_AS_SUBSTANCE"
+      ],
+      "blind_primary_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+      "confidence": "high",
+      "issue": "15349",
+      "mechanical_wording_subtypes_from_g3b4_strict_audit": [
+        "symptom_resolution_framed_as_acceptance",
+        "coverage_completeness_framed_as_verdict",
+        "absence_of_failure_evidence_as_evidence_of_absence",
+        "provenance_freshness_invoked"
+      ],
+      "packet_id": "D06"
+    },
+    {
+      "blind_codes_applied": [
+        "C1_SYMPTOM_RESOLUTION_AS_ACCEPTANCE",
+        "C2_COVERAGE_COMPLETENESS_AS_VERDICT",
+        "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+        "C5_PROVENANCE_FRESHNESS_AS_SUBSTANCE"
+      ],
+      "blind_primary_code": "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE",
+      "confidence": "high",
+      "issue": "21847",
+      "mechanical_wording_subtypes_from_g3b4_strict_audit": [
+        "symptom_resolution_framed_as_acceptance",
+        "provenance_freshness_invoked"
+      ],
+      "packet_id": "D07"
+    }
+  ],
+  "n_units": 7,
+  "primary_code_distribution": {
+    "C3_ABSENCE_OF_FAILURE_EVIDENCE_AS_EVIDENCE_OF_ABSENCE": 7
+  }
+}

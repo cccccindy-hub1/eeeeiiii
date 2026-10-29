@@ -1,0 +1,157 @@
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpnmQIXb\Scripts\python.exe -m pytest sympy/sets/tests/test_contains.py sympy/sets/tests/test_sets.py -v --tb=short -p no:cacheprovider  (exit 1, 13s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpnmQIXb\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+collecting ... collected 79 items
+
+sympy/sets/tests/test_contains.py::test_contains_basic PASSED            [  1%]
+sympy/sets/tests/test_contains.py::test_issue_6194 PASSED                [  2%]
+sympy/sets/tests/test_contains.py::test_issue_10326 PASSED               [  3%]
+sympy/sets/tests/test_contains.py::test_binary_symbols PASSED            [  5%]
+sympy/sets/tests/test_contains.py::test_as_set PASSED                    [  6%]
+sympy/sets/tests/test_sets.py::test_imageset PASSED                      [  7%]
+sympy/sets/tests/test_sets.py::test_interval_arguments PASSED            [  8%]
+sympy/sets/tests/test_sets.py::test_interval_symbolic_end_points PASSED  [ 10%]
+sympy/sets/tests/test_sets.py::test_union PASSED                         [ 11%]
+sympy/sets/tests/test_sets.py::test_union_iter PASSED                    [ 12%]
+sympy/sets/tests/test_sets.py::test_difference PASSED                    [ 13%]
+sympy/sets/tests/test_sets.py::test_Complement PASSED                    [ 15%]
+sympy/sets/tests/test_sets.py::test_complement PASSED                    [ 16%]
+sympy/sets/tests/test_sets.py::test_intersect PASSED                     [ 17%]
+sympy/sets/tests/test_sets.py::test_intersection PASSED                  [ 18%]
+sympy/sets/tests/test_sets.py::test_issue_9623 PASSED                    [ 20%]
+sympy/sets/tests/test_sets.py::test_is_disjoint PASSED                   [ 21%]
+sympy/sets/tests/test_sets.py::test_ProductSet_of_single_arg_is_arg PASSED [ 22%]
+sympy/sets/tests/test_sets.py::test_interval_subs PASSED                 [ 24%]
+sympy/sets/tests/test_sets.py::test_interval_to_mpi PASSED               [ 25%]
+sympy/sets/tests/test_sets.py::test_measure PASSED                       [ 26%]
+sympy/sets/tests/test_sets.py::test_is_subset PASSED                     [ 27%]
+sympy/sets/tests/test_sets.py::test_is_proper_subset PASSED              [ 29%]
+sympy/sets/tests/test_sets.py::test_is_superset PASSED                   [ 30%]
+sympy/sets/tests/test_sets.py::test_is_proper_superset PASSED            [ 31%]
+sympy/sets/tests/test_sets.py::test_contains PASSED                      [ 32%]
+sympy/sets/tests/test_sets.py::test_interval_symbolic PASSED             [ 34%]
+sympy/sets/tests/test_sets.py::test_union_contains PASSED                [ 35%]
+sympy/sets/tests/test_sets.py::test_is_number PASSED                     [ 36%]
+sympy/sets/tests/test_sets.py::test_Interval_is_left_unbounded PASSED    [ 37%]
+sympy/sets/tests/test_sets.py::test_Interval_is_right_unbounded PASSED   [ 39%]
+sympy/sets/tests/test_sets.py::test_Interval_as_relational PASSED        [ 40%]
+sympy/sets/tests/test_sets.py::test_Finite_as_relational PASSED          [ 41%]
+sympy/sets/tests/test_sets.py::test_Union_as_relational PASSED           [ 43%]
+sympy/sets/tests/test_sets.py::test_Intersection_as_relational PASSED    [ 44%]
+sympy/sets/tests/test_sets.py::test_EmptySet PASSED                      [ 45%]
+sympy/sets/tests/test_sets.py::test_finite_basic PASSED                  [ 46%]
+sympy/sets/tests/test_sets.py::test_powerset PASSED                      [ 48%]
+sympy/sets/tests/test_sets.py::test_product_basic PASSED                 [ 49%]
+sympy/sets/tests/test_sets.py::test_real PASSED                          [ 50%]
+sympy/sets/tests/test_sets.py::test_supinf PASSED                        [ 51%]
+sympy/sets/tests/test_sets.py::test_universalset PASSED                  [ 53%]
+sympy/sets/tests/test_sets.py::test_Union_of_ProductSets_shares PASSED   [ 54%]
+sympy/sets/tests/test_sets.py::test_Interval_free_symbols PASSED         [ 55%]
+sympy/sets/tests/test_sets.py::test_image_interval PASSED                [ 56%]
+sympy/sets/tests/test_sets.py::test_image_piecewise PASSED               [ 58%]
+sympy/sets/tests/test_sets.py::test_image_Intersection FAILED            [ 59%]
+sympy/sets/tests/test_sets.py::test_image_FiniteSet PASSED               [ 60%]
+sympy/sets/tests/test_sets.py::test_image_Union PASSED                   [ 62%]
+sympy/sets/tests/test_sets.py::test_image_EmptySet PASSED                [ 63%]
+sympy/sets/tests/test_sets.py::test_issue_5724_7680 PASSED               [ 64%]
+sympy/sets/tests/test_sets.py::test_boundary PASSED                      [ 65%]
+sympy/sets/tests/test_sets.py::test_boundary_Union PASSED                [ 67%]
+sympy/sets/tests/test_sets.py::test_union_boundary_of_joining_sets FAILED [ 68%]
+sympy/sets/tests/test_sets.py::test_boundary_ProductSet PASSED           [ 69%]
+sympy/sets/tests/test_sets.py::test_boundary_ProductSet_line PASSED      [ 70%]
+sympy/sets/tests/test_sets.py::test_is_open PASSED                       [ 72%]
+sympy/sets/tests/test_sets.py::test_is_closed PASSED                     [ 73%]
+sympy/sets/tests/test_sets.py::test_closure PASSED                       [ 74%]
+sympy/sets/tests/test_sets.py::test_interior PASSED                      [ 75%]
+sympy/sets/tests/test_sets.py::test_issue_7841 PASSED                    [ 77%]
+sympy/sets/tests/test_sets.py::test_Eq PASSED                            [ 78%]
+sympy/sets/tests/test_sets.py::test_SymmetricDifference PASSED           [ 79%]
+sympy/sets/tests/test_sets.py::test_issue_9536 PASSED                    [ 81%]
+sympy/sets/tests/test_sets.py::test_issue_9637 PASSED                    [ 82%]
+sympy/sets/tests/test_sets.py::test_issue_9808 PASSED                    [ 83%]
+sympy/sets/tests/test_sets.py::test_issue_9956 PASSED                    [ 84%]
+sympy/sets/tests/test_sets.py::test_issue_Symbol_inter PASSED            [ 86%]
+sympy/sets/tests/test_sets.py::test_issue_11827 PASSED                   [ 87%]
+sympy/sets/tests/test_sets.py::test_issue_10113 PASSED                   [ 88%]
+sympy/sets/tests/test_sets.py::test_issue_10248 PASSED                   [ 89%]
+sympy/sets/tests/test_sets.py::test_issue_9447 PASSED                    [ 91%]
+sympy/sets/tests/test_sets.py::test_issue_10337 PASSED                   [ 92%]
+sympy/sets/tests/test_sets.py::test_issue_10326 PASSED                   [ 93%]
+sympy/sets/tests/test_sets.py::test_issue_2799 PASSED                    [ 94%]
+sympy/sets/tests/test_sets.py::test_issue_9706 PASSED                    [ 96%]
+sympy/sets/tests/test_sets.py::test_issue_8257 PASSED                    [ 97%]
+sympy/sets/tests/test_sets.py::test_issue_10931 PASSED                   [ 98%]
+sympy/sets/tests/test_sets.py::test_issue_11174 PASSED                   [100%]
+
+================================== FAILURES ===================================
+___________________________ test_image_Intersection ___________________________
+sympy\sets\tests\test_sets.py:797: in test_image_Intersection
+    assert imageset(x, x**2, Interval(-2, 0).intersect(Interval(x, y))) == \
+E   assert Intersection(...terval(x, y))) == Intersection(...(x**2, y**2)))
+E     
+E     Full diff:
+E     - Intersection(Interval(0, 4), Interval(Min(x**2, y**2), Max(x**2, y**2)))
+E     + Intersection(Interval(0, 4), ImageSet(Lambda(x, x**2), Interval(x, y)))
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:121: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_image_Intersection
+_____________________ test_union_boundary_of_joining_sets _____________________
+sympy\sets\tests\test_sets.py:848: in test_union_boundary_of_joining_sets
+    assert Union(Interval(0, 10), Interval(10, 15), evaluate=False).boundary \
+E   assert {0, 10, 15} == {0, 15}
+E     
+E     Full diff:
+E     - {0, 15}
+E     + {0, 10, 15}
+E     ?     ++++
+
+During handling of the above exception, another exception occurred:
+sympy\utilities\pytest.py:121: in wrapper
+    raise XFail(get_function_name(func))
+E   sympy.utilities.pytest.XFail: test_union_boundary_of_joining_sets
+============================== warnings summary ===============================
+sympy\core\basic.py:3
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping, defaultdict
+
+sympy\core\containers.py:271
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    class OrderedSet(collections.MutableSet):
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+sympy\solvers\diophantine.py:3188
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if feasible is 1:  # it's prime and k == 2
+
+sympy\plotting\plot.py:28
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Callable
+
+sympy/sets/tests/test_sets.py: 16117 warnings
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\libmp\libintmath.py:75: DeprecationWarning: bitcount function is deprecated
+    warnings.warn("bitcount function is deprecated",
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+                               DO *NOT* COMMIT!                               
+=========================== short test summary info ===========================
+FAILED sympy/sets/tests/test_sets.py::test_image_Intersection - sympy.utilities.pytest.XFail: test_image_Intersection
+FAILED sympy/sets/tests/test_sets.py::test_union_boundary_of_joining_sets - sympy.utilities.pytest.XFail: test_union_boundary_of_joining_sets
+================ 2 failed, 77 passed, 16124 warnings in 7.99s =================
+
+--- stderr ---

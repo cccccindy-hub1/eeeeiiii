@@ -1,0 +1,40 @@
+{
+  "cell": "g3c1live:sympy__sympy-19040:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "9cba942e3a737e4e85a9e581",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"b9179e80d2daa1bb6cba1ffe35ca9e6612e115c9\", \"record_patch_sha256\": \"cadf95a1362954e0dab4165d467ba7e147359642f0dc213ded4eb404f3cdaa10\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"f4e726a7c967d5a1d0056469ec4ce81089347638\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"f4e726a7c967d5a1d0056469ec4ce81089347638\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:10:28+00:00\", \"attestation_built_at\": \"2026-10-28T10:12:00+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 148, \"executed\": 148, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    }
+  ],
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"The test artifact is correctly linked to this patch and commit, and it is fresh for the current commit tree. The test coverage is complete for the declared acceptance and regression checks. The author statement is consistent with the evidence, and the issue symptom no longer reproduces after the patch. There is no evidence of any failing acceptance check or regression introduced by this patch. Therefore, the patch resolves the issue as intended and is acceptable for merging.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"none\"}",
+  "parsed": "ACCEPT",
+  "fresh_state_served": "TRUE",
+  "error": null
+}

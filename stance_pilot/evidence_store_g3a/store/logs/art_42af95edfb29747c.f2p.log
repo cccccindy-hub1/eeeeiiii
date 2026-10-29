@@ -1,0 +1,53 @@
+$ C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpDysd9i\Scripts\python.exe -m pytest sympy/physics/quantum/tests/test_tensorproduct.py -v --tb=short -p no:cacheprovider  (exit 0, 4s)
+--- stdout ---
+============================= test session starts =============================
+platform win32 -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0 -- C:\Users\guoci\AppData\Local\uv\cache\builds-v0\.tmpDysd9i\Scripts\python.exe
+architecture: 64-bit
+cache:        yes
+ground types: python 
+
+rootdir: C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src
+collecting ... collected 7 items
+
+sympy/physics/quantum/tests/test_tensorproduct.py::test_tensor_product_dagger PASSED [ 14%]
+sympy/physics/quantum/tests/test_tensorproduct.py::test_tensor_product_abstract PASSED [ 28%]
+sympy/physics/quantum/tests/test_tensorproduct.py::test_tensor_product_expand PASSED [ 42%]
+sympy/physics/quantum/tests/test_tensorproduct.py::test_tensor_product_commutator PASSED [ 57%]
+sympy/physics/quantum/tests/test_tensorproduct.py::test_tensor_product_simp PASSED [ 71%]
+sympy/physics/quantum/tests/test_tensorproduct.py::test_issue_5923 PASSED [ 85%]
+sympy/physics/quantum/tests/test_tensorproduct.py::test_eval_trace PASSED [100%]
+
+============================== warnings summary ===============================
+sympy\core\basic.py:3
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Mapping, defaultdict
+
+sympy\core\containers.py:271
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    class OrderedSet(collections.MutableSet):
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\ctx_mp.py:35: DeprecationWarning: mpnumeric is deprecated
+    warnings.warn(f"{name} is deprecated", DeprecationWarning)
+
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+..\..\..\..\..\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4
+  C:\Users\guoci\AppData\Local\uv\cache\archive-v0\1qnwYZDbBarZoBTIQQ3Fg\Lib\site-packages\mpmath\rational.py:4: DeprecationWarning: the rational private module is deprecated
+    warnings.warn("the rational private module is deprecated",
+
+sympy\solvers\diophantine.py:3188
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if feasible is 1:  # it's prime and k == 2
+
+sympy\plotting\plot.py:28
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    from collections import Callable
+
+sympy/physics/quantum/tests/test_tensorproduct.py::test_tensor_product_dagger
+  C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\matrices\common.py:2026: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+    if not isinstance(other, collections.Iterable):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 7 passed, 8 warnings in 0.71s ========================
+
+--- stderr ---

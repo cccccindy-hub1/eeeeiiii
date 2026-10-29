@@ -1,0 +1,30 @@
+### BASELINE (pre-patch)
+$ python probe.py  (exit 1)
+--- stdout ---
+FAIL: t1 tensor_product_simp = 1x1**2
+
+--- stderr ---
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable
+
+
+### POST candidate patch
+$ python probe.py  (exit 0)
+--- stdout ---
+OK: tensor product powers simplify: 1x1 1x1
+
+--- stderr ---
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, defaultdict
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\core\containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  class OrderedSet(collections.MutableSet):
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\solvers\diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
+  if feasible is 1:  # it's prime and k == 2
+C:\Users\guoci\work\eeeeiiii\stance_pilot\repro\sympy_src\sympy\plotting\plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Callable

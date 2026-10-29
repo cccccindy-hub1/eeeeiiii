@@ -1,0 +1,156 @@
+{
+  "T4_deepseek_paired_need_any": {
+    "aggregation": "OR(NEED) over T3D-Escalate,T2A-T,T3A-T per issue",
+    "analysis_or_aggregated_block": {
+      "exact": {
+        "ci95_high": 0.445,
+        "ci95_low": 0.0025,
+        "k": 1,
+        "method": "exact Clopper-Pearson (Beta quantile, bisection)",
+        "n": 10,
+        "point": 0.1
+      },
+      "issue_cluster_bootstrap": {
+        "ci95_high": 0.3,
+        "ci95_low": 0.0,
+        "method": "issue-cluster non-parametric bootstrap B=10000 seed=313",
+        "n_issues": 10,
+        "point": 0.1
+      },
+      "k": 1,
+      "n": 10,
+      "per_issue": {
+        "sympy__sympy-13615": 0,
+        "sympy__sympy-13974": 1,
+        "sympy__sympy-15349": 0,
+        "sympy__sympy-17318": 0,
+        "sympy__sympy-17630": 0,
+        "sympy__sympy-19783": 0,
+        "sympy__sympy-20590": 0,
+        "sympy__sympy-21847": 0,
+        "sympy__sympy-24213": 0,
+        "sympy__sympy-24443": 0
+      },
+      "stratified_by_oracle_gold": {
+        "ACCEPT": {
+          "k": 1,
+          "n": 7,
+          "rate": 0.1429
+        },
+        "REJECT": {
+          "k": 0,
+          "n": 3,
+          "rate": 0.0
+        }
+      }
+    },
+    "associational": true,
+    "denominator_independent_issues": 10,
+    "g3b3_need_any": 1,
+    "g3b_need_any": 9,
+    "need_to_nonneed_reversals": 8,
+    "nonneed_to_need_reversals": 0,
+    "residual_issues_g3b3": [
+      "13974"
+    ]
+  },
+  "T5_gpt_strict": {
+    "condition": "T3D-Strict",
+    "condition_gold": "NEED_EVIDENCE",
+    "correct_NEED": [
+      3,
+      [
+        "19783",
+        "20590",
+        "24213"
+      ]
+    ],
+    "g3b_comparison": "GPT abstained NEED 10/10 under T3D-Strict in G3-B",
+    "n": 10,
+    "note": "acceptance outcomes structurally withheld; ACCEPT upgrades non-decisive evidence to sufficient",
+    "wrong_ACCEPT": [
+      7,
+      [
+        "13615",
+        "13974",
+        "15349",
+        "17318",
+        "17630",
+        "21847",
+        "24443"
+      ]
+    ],
+    "wrong_REJECT": [
+      0,
+      []
+    ]
+  },
+  "document": "Paper Sprint results tables - generated from frozen stores",
+  "focal_cases": {
+    "DS_residual_13974": {
+      "T2A": "NEED_EVIDENCE",
+      "T3A": "ACCEPT",
+      "T3D-Esc": "NEED_EVIDENCE"
+    },
+    "F1_17318_T2A": {
+      "declared_f2p": "test_issue_12420 FAILED (assert [4 + I, 0, 1] == [])",
+      "gpt_T2A_g3b": "ACCEPT",
+      "gpt_T2A_g3b3": "ACCEPT",
+      "gpt_T3A_g3b3": "REJECT",
+      "oracle_gold": "REJECT"
+    },
+    "F2_17630_T3A": {
+      "gpt_T3A_g3b3": "NEED_EVIDENCE",
+      "note": "saw failed declared F2P test_zero_matrix_add but judged it unrelated; abstained instead of REJECT",
+      "oracle_gold": "REJECT"
+    }
+  },
+  "gold_status": "PROVISIONAL, single annotator n=1, annotator2 NOT_OBTAINED",
+  "n_independent_issues_g3b3": 10,
+  "n_real_cells_g3b3": 100,
+  "result_class": {
+    "g3b3": "corrective replication (paired, cross-version, ASSOCIATIONAL contrast to G3-B)",
+    "g3c1_8issues": "independent issue pilot (NO reviewer predictions yet; gold PROVISIONAL)"
+  },
+  "run_audit": {
+    "error_rows": {
+      "deepseek-flash": 0,
+      "gpt-4.1-mini": 0
+    },
+    "executed_prompt_version": "p3-ternary-g3b2-v1",
+    "executed_protocol_version": "g3b2-protocol-v1",
+    "new_rows": {
+      "deepseek-flash": 50,
+      "gpt-4.1-mini": 50
+    },
+    "per_model_cap_usd": 1.5,
+    "per_model_spend_usd": {
+      "deepseek-flash": 0.189045,
+      "gpt-4.1-mini": 0.114494
+    },
+    "retries_per_cell": 0,
+    "runner_version": "g3b3-runner-v1",
+    "total_hard_cap_usd": 3.0,
+    "total_spend_usd": 0.303539,
+    "within_total_cap": true
+  },
+  "source_provenance": {
+    "evidence_store_g3b3/analysis/g3b3_analysis.json": {
+      "exists": true,
+      "sha256": "52351865276685eb42b866aebd10fa27a2c3046c00daca5074c6c6b83f9aee8d"
+    },
+    "evidence_store_g3b4/audits/g3b4_deepseek_recompute.json": {
+      "exists": true,
+      "sha256": "d3c8fa188b5163f45fd5ffb972bb6d94593e66ccccc90eb53184b5c95d838d31"
+    },
+    "evidence_store_g3b4/audits/g3b4_gpt_strict_audit.json": {
+      "exists": true,
+      "sha256": "fd5c398e311bdac3816434f833cdc688e8ed3e61e15b81ce232346a00fdacd3e"
+    },
+    "evidence_store_g3b4/g3b4_report.md": {
+      "exists": true,
+      "sha256": "ee14bbf2930b1c48813a20805cddcf870a1a43795784263322ab26b75ebfbef0"
+    }
+  },
+  "unit_of_independence": "one SymPy issue; cells within an issue are repeated measures, never independent samples"
+}

@@ -1,0 +1,342 @@
+{
+  "all_gold_tier": "PROVISIONAL (18/18)",
+  "annotator2_obtained": false,
+  "approved_scope": {
+    "ai_self_labelling_as_annotator2": false,
+    "frozen_raw_tests_rewritten": false,
+    "gate_3c2_execution": false,
+    "gemini_or_r2": false,
+    "git_commit_or_add": false,
+    "historical_gold_modified": false,
+    "modify_historical_frozen_artifacts": false,
+    "new_data_collection": false,
+    "new_issues": 0,
+    "real_model_calls": 0,
+    "spend_usd": 0.0
+  },
+  "arbitration_rule_frozen": "third senior human; never an LLM or the pipeline author; all three labels + reason retained",
+  "blank_labels_csv_handout": "evidence_store_g3c11/human_annotation/g3c11_annotator2_blank_labels.csv",
+  "deblinding_risks_partial_blinding": [
+    "Identity blinding is PARTIAL: folder names and the mapping are blinded, but verbatim patch/problem/probe text may quote the upstream issue number.",
+    "G3-C.1: all 8 packets self-reference the issue number in 08_issue_symptom_probe.log; P02(=19495) additionally in 02_candidate_patch.diff.",
+    "G3-A: only P04/P05/P06/P10 self-reference in 02_candidate_patch.diff; P01/P02/P03/P07/P08/P09 contain no self-reference.",
+    "Mitigations available WITHOUT rewriting evidence (which would corrupt the adjudication target): (a) instruct annotator2 not to look up issue numbers and treat any seen number as non-informative; (b) future hardening - a copied-verbatim hash-only-id appendix; (c) record the partial-blinding limitation as a known bias in the adjudication report.",
+    "Risk if an annotator recognises an issue or searches it upstream: label could be anchored to the upstream merged/closed status; such packets must be flagged and adjudicated rather than silently trusted."
+  ],
+  "decision_standard": [
+    "Use the frozen 3-label rubric exactly: ACCEPT (all declared F2P transition and no declared scoped P2P regression; record SCOPED acceptability), REJECT (at least one decisive APPLICABLE failure: a declared F2P still failing OR a scoped P2P regression, after separating environment/pre-existing/xfail/flaky/self-added-test cases), NEEDS_REVIEW (genuinely undecidable). Do not force ACCEPT/REJECT.",
+    "Record the decisive failing test node id(s), a 1-4 sentence applicability reason, any xfail/flaky/self-added-test concern, and confidence (high/medium/low) in the blinded CSV.",
+    "Judgement is based ONLY on the packet contents; the issue number, model verdict, annotator-1 gold and freshness/coverage analyses are withheld."
+  ],
+  "design_version": "groundedreview-gate3c11-zero-api-audit-freeze-v1",
+  "document": "G3-C.1.1 second-independent-human-annotator plan and status (tasks 9+10)",
+  "focused_review_items": {
+    "FR1": "sympy-19495 probe: instrument-only fix vs post-hoc oracle redefinition after observing patch success (approver Risk B)",
+    "FR2": "14248 vs 15875: confirm one uniform disjunctive REJECT standard across the two failure modes (approver section II.1)",
+    "all_pending_no_ai_verdict": true,
+    "items_json": "human_annotation/g3c11_human_focused_review_items.json",
+    "n": 2,
+    "worksheet": "human_annotation/g3c11_human_focused_review_worksheet.csv"
+  },
+  "gold_adjudication_version_produced": false,
+  "labels_produced_by_ai": 0,
+  "n_packets_with_issue_number_self_reference": 12,
+  "packets_by_cohort": {
+    "G3-A": 10,
+    "G3-C.1": 8
+  },
+  "packets_total": 18,
+  "protocol_version": "g3c11-protocol-v1",
+  "registry_csv_study_team_only": "evidence_store_g3c11/human_annotation/g3c11_annotator2_registry_study_team.csv",
+  "required_competency": [
+    "Reads modern pytest verbose node lines AND terminal summaries, and understands that old SymPy raised sympy.utilities.pytest.XFail/Skipped which modern pytest prints as FAILED (must recover via the terminal summary, not count as a regression).",
+    "Understands FAIL_TO_PASS vs in-scope PASS_TO_PASS, scoped vs full-suite acceptability, and pre-existing-bad (fails at clean baseline) vs candidate-induced regression.",
+    "Can read unified diffs of candidate and maintainer test patches and spot self-added-test / tautological-test traps.",
+    "Comfortable with SymPy idioms (ConditionSet/ImageSet, printing backends, core arithmetic) well enough to judge whether an exception is a genuine wrong-answer vs an environment/NumPy/recursion-limit artifact.",
+    "INDEPENDENT of the pipeline author and of the models that generated the patches; has never seen annotator-1 gold, model verdicts, or the analysis outputs."
+  ],
+  "rubric_byte_identical_across_cohorts": false,
+  "rubric_note": "Same three labels and same decision structure (F2P transition + scoped P2P no-regression; separate environment/preexisting/xfail/flaky/self-added-test; scoped acceptability). Wording differs slightly (G3-C.1 adds 'the full dataset P2P suite was not run for this pilot'); semantic criteria are aligned, so one annotator can use one rubric.",
+  "rubric_three_labels_same": [
+    "ACCEPT",
+    "REJECT",
+    "NEEDS_REVIEW"
+  ],
+  "stage_stop_rules": [
+    "No second human was obtained within Gate G3-C.1.1, therefore 18/18 remain PENDING and PROVISIONAL; no Gold Adjudication Version is created.",
+    "AI-generated labels are forbidden and none are written.",
+    "Two approver-mandated FOCUSED reviews are also left for the human and must be resolved before G3-C.2: FR1 sympy-19495 probe instrument-fix vs post-hoc oracle redefinition (Risk B); FR2 whether 14248 and 15875 apply one uniform disjunctive REJECT standard (section II.1)."
+  ],
+  "status_table": [
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_1a45f9af545345d7",
+      "cohort": "G3-A",
+      "files_self_referencing_issue_number": [],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P01",
+      "packet_sha256": "68c74abdb3555bbe90bbfd727c23a1725f0c6f494fdc7eca37448f27f120f7d3",
+      "sealed_instance_id": "sympy__sympy-24443"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_ceb9c275161834be",
+      "cohort": "G3-A",
+      "files_self_referencing_issue_number": [],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P02",
+      "packet_sha256": "2c86ca61fd3cb6fd17d49c6dc65b9c3172fc3b2e05d2fb69b874465264102e5c",
+      "sealed_instance_id": "sympy__sympy-13615"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_e5fa3e3506649e6b",
+      "cohort": "G3-A",
+      "files_self_referencing_issue_number": [],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P03",
+      "packet_sha256": "b0d5d646d67c827d19475bc15f67cded4283f08f5ae9c0db3da13bca074a7aea",
+      "sealed_instance_id": "sympy__sympy-19783"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_d91a79096ebadc9c",
+      "cohort": "G3-A",
+      "files_self_referencing_issue_number": [
+        "02_candidate_patch.diff"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P04",
+      "packet_sha256": "67bd1eb1ead09ce0ff955f402130f12381ad0041b13798bf34d3fd04f5cb8572",
+      "sealed_instance_id": "sympy__sympy-20590"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_ce28321699c17b17",
+      "cohort": "G3-A",
+      "files_self_referencing_issue_number": [
+        "02_candidate_patch.diff"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P05",
+      "packet_sha256": "02beffd2874ffbc870da2b603aecb334baf63a0c5b4c6780a5ec3b45a415f9cf",
+      "sealed_instance_id": "sympy__sympy-17630"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_ec15a96822c8d6ff",
+      "cohort": "G3-A",
+      "files_self_referencing_issue_number": [
+        "02_candidate_patch.diff"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P06",
+      "packet_sha256": "3a962573f11b317c42d46525f25a20cf734a6e77341ee548eacb6261c37c7099",
+      "sealed_instance_id": "sympy__sympy-21847"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_1dc2b9e38ff27115",
+      "cohort": "G3-A",
+      "files_self_referencing_issue_number": [],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P07",
+      "packet_sha256": "e8502b2901706660a521ba2928b05dfb9c65eba88343569cfecb2453aec457ae",
+      "sealed_instance_id": "sympy__sympy-15349"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_5711762ccfb7ae48",
+      "cohort": "G3-A",
+      "files_self_referencing_issue_number": [],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P08",
+      "packet_sha256": "d07fbf4115b4849a137f6986b23fe3b0cb0da1ab0117d9f7de3c4b3f7c20f6e5",
+      "sealed_instance_id": "sympy__sympy-24213"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_851f5a80d20947a9",
+      "cohort": "G3-A",
+      "files_self_referencing_issue_number": [],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P09",
+      "packet_sha256": "0a1f3d764fb6844d82d30abcc329947813d4517ea377657ec267bb12e56ebcb6",
+      "sealed_instance_id": "sympy__sympy-17318"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_42af95edfb29747c",
+      "cohort": "G3-A",
+      "files_self_referencing_issue_number": [
+        "02_candidate_patch.diff"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P10",
+      "packet_sha256": "298035c3695f75d6471cd7f76d8fcd423d8dd4390e18bee074aa394738090138",
+      "sealed_instance_id": "sympy__sympy-13974"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_38249f6606d93ef1",
+      "cohort": "G3-C.1",
+      "files_self_referencing_issue_number": [
+        "08_issue_symptom_probe.log"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P01",
+      "packet_sha256": "eea4a2934763f96ebca141a1186b5f3cd49ed7c0fa7d81a82be839625f0e1238",
+      "sealed_instance_id": "sympy__sympy-14248"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_fec174c8f4012a8b",
+      "cohort": "G3-C.1",
+      "files_self_referencing_issue_number": [
+        "02_candidate_patch.diff",
+        "08_issue_symptom_probe.log"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P02",
+      "packet_sha256": "d35149c24e39e006adf7a3fbdf7f65c477cc0ea5e2ee1bf7afeba18cb138d972",
+      "sealed_instance_id": "sympy__sympy-19495"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_9f04ba11366d02e0",
+      "cohort": "G3-C.1",
+      "files_self_referencing_issue_number": [
+        "08_issue_symptom_probe.log"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P03",
+      "packet_sha256": "78faf23c364f151f2d5bc072c3c5f2cca11a11641bd25df033540b4b1dd66518",
+      "sealed_instance_id": "sympy__sympy-19346"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_2b6532120649f861",
+      "cohort": "G3-C.1",
+      "files_self_referencing_issue_number": [
+        "08_issue_symptom_probe.log"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P04",
+      "packet_sha256": "f4627f56760ff32dfe253b6d8d481f0f4d277aa14008a287819a069ce135f289",
+      "sealed_instance_id": "sympy__sympy-19040"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_cf228260cdf9b995",
+      "cohort": "G3-C.1",
+      "files_self_referencing_issue_number": [
+        "08_issue_symptom_probe.log"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P05",
+      "packet_sha256": "fda63ecf8fc26a90c880586fd0aac89068701b9ac1546ae7a486f8b192545aef",
+      "sealed_instance_id": "sympy__sympy-16886"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_22542096dfadeb88",
+      "cohort": "G3-C.1",
+      "files_self_referencing_issue_number": [
+        "08_issue_symptom_probe.log"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P06",
+      "packet_sha256": "79cdc6f47fd40085abfbf23b9bd0c157826c0eb46cf2ffec8566469dda4bdeaa",
+      "sealed_instance_id": "sympy__sympy-19637"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_b970f89709fb3265",
+      "cohort": "G3-C.1",
+      "files_self_referencing_issue_number": [
+        "08_issue_symptom_probe.log"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P07",
+      "packet_sha256": "886926c95e6f890e8edabaa460325235c39863409e35e1250796cf1d6a812986",
+      "sealed_instance_id": "sympy__sympy-22914"
+    },
+    {
+      "adjudication_status": "PENDING",
+      "annotator2_status": "NOT_OBTAINED",
+      "artifact_id_used_for_logs": "art_69562ae39095d2d5",
+      "cohort": "G3-C.1",
+      "files_self_referencing_issue_number": [
+        "08_issue_symptom_probe.log"
+      ],
+      "gold_tier": "PROVISIONAL",
+      "identity_blinding": "PARTIAL",
+      "n_files_in_packet": 9,
+      "packet_id": "P08",
+      "packet_sha256": "bbd2ec7582176fe60b7959cc34aae81b95fb0974d906a5aed690566a7780eca6",
+      "sealed_instance_id": "sympy__sympy-15875"
+    }
+  ],
+  "third_person_arbitration_path": [
+    "On annotator1 vs annotator2 disagreement (label differs, or ACCEPT/REJECT vs NEEDS_REVIEW), a THIRD senior human arbitrates independently.",
+    "The third arbitrator must not be an LLM and must not be the pipeline author or either annotator; receives the same blinded packet plus both labels and reasons, with no identity reveal.",
+    "The arbitrator issues one of the three labels with a reason; all three labels and reasons are retained verbatim (no silent overwrite).",
+    "Only after real annotator2 labels + required adjudication are returned may a new Gold Adjudication Version be produced and gold be raised above PROVISIONAL. No AI self-assessment may substitute at any step."
+  ],
+  "workload_estimate": [
+    "18 packets x 9 files each; pytest logs up to ~100 KB per run (3 logs per issue: f2p, scoped p2p after, scoped p2p clean baseline), plus problem statement, candidate patch, maintainer test patch and symptom-probe log.",
+    "Estimated ~25-40 minutes per packet for a careful reader; budget roughly 9-12 person-hours total including a short calibration pass.",
+    "Calibration: label 2 non-cohort practice packets first (not counted), resolve rubric questions, then label all 18 independently without feedback and without unsealing."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch modifies the square-free part computation to correctly handle multivariate polynomials by computing the GCD with all partial derivatives, which addresses the issue of factor dropping when using extension=True. The added test explicitly covers the reported issue #18895 by factoring (x-1)*(y-1) over an algebraic field extension including I, verifying that both factors are present and the coefficient is correct. The provided test artifact is institutionally attested, fresh, linked exactly to this patch and base commit, and shows all declared acceptance tests passing with no failures or regressions. Therefore, the evidence fully supports that the issue is resolved and no regressions are introduced.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+  "cell": "g3c1live:sympy__sympy-19040:T2A-T",
+  "condition": "T2A-T",
+  "cost_usd": 0.001147,
+  "evidence_session": null,
+  "evidence_tier": "A",
+  "id": "glm5_500:sympy__sympy-19040",
+  "instance_id": "sympy__sympy-19040",
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.014267
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 158,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 2235,
+      "raw_content": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch modifies the square-free part computation to correctly handle multivariate polynomials by computing the GCD with all partial derivatives, which addresses the issue of factor dropping when using extension=True. The added test explicitly covers the reported issue #18895 by factoring (x-1)*(y-1) over an algebraic field extension including I, verifying that both factors are present and the coefficient is correct. The provided test artifact is institutionally attested, fresh, linked exactly to this patch and base commit, and shows all declared acceptance tests passing with no failures or regressions. Therefore, the evidence fully supports that the issue is resolved and no regressions are introduced.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+      "served_model": "gpt-4.1-mini-2025-04-14",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "gpt-4.1-mini",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_2b6532120649f861",
+  "tokens_in": 2235,
+  "tokens_out": 158,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.87
+}

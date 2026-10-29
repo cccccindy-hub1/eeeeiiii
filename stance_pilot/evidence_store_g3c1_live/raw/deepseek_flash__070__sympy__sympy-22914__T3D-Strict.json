@@ -1,0 +1,148 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage is intact (base_commit and patch_sha256 match), freshness is TRUE against the independently re-derived tree, and coverage is complete (1/1 acceptance, 17/17 scoped regression checks executed). The issue-symptom probe shows the symptom is gone (pycode(Min) now yields 'min(a, b)'), and the author statement is consistent at the issue level. However, under the STRICT policy no tool exposes acceptance or regression pass/fail verdicts, so I cannot confirm that the executed acceptance check passes and that no scoped regression is introduced. The symptom probe alone is explicitly not proof of merge acceptability, so the bar for ACCEPT (complete, fresh, linked, failure-free success) is not met, and there is no decisive applicable failure to ground a REJECT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Acceptance (FAIL_TO_PASS) and scoped regression (PASS_TO_PASS) pass/fail verdicts are withheld under the STRICT policy; only coverage counts are available. Need the executed acceptance check's outcome and the 17 scoped regression verdicts for this patch/tree.\",\"evidence_gap\":\"unspecified\"}",
+  "cell": "g3c1live:sympy__sympy-22914:T3D-Strict",
+  "condition": "T3D-Strict",
+  "cost_usd": 0.002332,
+  "evidence_session": "0705b7da25182dfe4b40ab1d",
+  "evidence_tier": "D",
+  "id": "glm5_500:sympy__sympy-22914",
+  "instance_id": "sympy__sympy-22914",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 2,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": "strict",
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.010556,
+    0.010842
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 140,
+      "finish_reason": "tool_calls",
+      "model_call": 1,
+      "prompt_tokens": 2666,
+      "raw_content": "I'll verify the artifact's linkage, freshness, coverage, and claim consistency.",
+      "served_model": "deepseek-flash",
+      "tool_calls": [
+        {
+          "arguments": "{}",
+          "id": "call_00_23qInRaxCZEY4Zel3BJB5008",
+          "name": "verify_artifact_linkage"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_01_UWz9UpikaPJGUsjS0Amt8798",
+          "name": "check_evidence_freshness"
+        },
+        {
+          "arguments": "{}",
+          "id": "call_02_m8eadjmhEB3SLgBvo5g52976",
+          "name": "check_test_coverage"
+        },
+        {
+          "arguments": "{\"claim\": \"This fix is correct and all relevant tests pass.\"}",
+          "id": "call_03_XWRJMKwMjlElV2vr3tmP4371",
+          "name": "check_claim_consistency"
+        },
+        {
+          "arguments": "{\"name\": \"symptom\"}",
+          "id": "call_04_ziL6gzuNzkdQsotdg8iI8780",
+          "name": "get_run_log"
+        }
+      ],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    },
+    {
+      "completion_tokens": 257,
+      "finish_reason": "stop",
+      "model_call": 2,
+      "prompt_tokens": 3521,
+      "raw_content": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage is intact (base_commit and patch_sha256 match), freshness is TRUE against the independently re-derived tree, and coverage is complete (1/1 acceptance, 17/17 scoped regression checks executed). The issue-symptom probe shows the symptom is gone (pycode(Min) now yields 'min(a, b)'), and the author statement is consistent at the issue level. However, under the STRICT policy no tool exposes acceptance or regression pass/fail verdicts, so I cannot confirm that the executed acceptance check passes and that no scoped regression is introduced. The symptom probe alone is explicitly not proof of merge acceptability, so the bar for ACCEPT (complete, fresh, linked, failure-free success) is not met, and there is no decisive applicable failure to ground a REJECT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Acceptance (FAIL_TO_PASS) and scoped regression (PASS_TO_PASS) pass/fail verdicts are withheld under the STRICT policy; only coverage counts are available. Need the executed acceptance check's outcome and the 17 scoped regression verdicts for this patch/tree.\",\"evidence_gap\":\"unspecified\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": true,
+          "model": "deepseek-flash",
+          "n_messages": 8,
+          "reasoning_effort": null,
+          "response_format": "plain_text",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_b970f89709fb3265",
+  "tokens_in": 6187,
+  "tokens_out": 397,
+  "tool_calls": 5,
+  "tool_trace": [
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"c4e836cdf73fc6aa7bab6a86719a0f08861ffb1d\", \"record_patch_sha256\": \"dc1ed99edd680affe1b4b93bb2798d9ef6442636892f1d2fbad60487f203fd5e\"}",
+      "tool": "verify_artifact_linkage",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3c1-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"5df550bf1fed52cfd49c8e914660bf91c79102fd\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"5df550bf1fed52cfd49c8e914660bf91c79102fd\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-28T10:03:01+00:00\", \"attestation_built_at\": \"2026-10-28T10:04:51+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}",
+      "tool": "check_evidence_freshness",
+      "turn": 0
+    },
+    {
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 17, \"executed\": 17, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}",
+      "tool": "check_test_coverage",
+      "turn": 0
+    },
+    {
+      "args": {
+        "claim": "This fix is correct and all relevant tests pass."
+      },
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}",
+      "tool": "check_claim_consistency",
+      "turn": 0
+    },
+    {
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python sympy__sympy-22914-baseline.py  (exit 1)\n--- stdout ---\npycode(Min) = '((a) if (a <= b) else (b))'\npycode(Max) = '((a) if (a >= b) else (b))'\nFAIL: expected min(a, b), got ((a) if (a <= b) else (b))\n\n--- stderr ---\n\n\n### POST candidate patch\n$ python sympy__sympy-22914-post-candidate.py  (exit 0)\n--- stdout ---\npycode(Min) = 'min(a, b)'\npycode(Max) = 'max(a, b)'\nOK: pycode supports Min/Max\n\n--- stderr ---\n",
+      "tool": "get_run_log",
+      "turn": 0
+    }
+  ],
+  "wall_s": 3.51
+}

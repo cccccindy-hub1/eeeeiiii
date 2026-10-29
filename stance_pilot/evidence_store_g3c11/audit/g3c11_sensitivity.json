@@ -1,0 +1,387 @@
+{
+  "approved_scope": {
+    "ai_self_labelling_as_annotator2": false,
+    "frozen_raw_tests_rewritten": false,
+    "gate_3c2_execution": false,
+    "gemini_or_r2": false,
+    "git_commit_or_add": false,
+    "historical_gold_modified": false,
+    "modify_historical_frozen_artifacts": false,
+    "new_data_collection": false,
+    "new_issues": 0,
+    "real_model_calls": 0,
+    "spend_usd": 0.0
+  },
+  "baseline_endpoint_gold_bounds": {
+    "P1_condition_gold_NEED_pool_n_per_restricted_condition": {
+      "T2D-T": 8,
+      "T3D-Strict": 8
+    },
+    "P2_oracle_REJECT_with_a_sufficient_condition_n": 2,
+    "P2_pool_issues": [
+      "sympy__sympy-14248",
+      "sympy__sympy-15875"
+    ],
+    "note": "P1 NEED denominator in tier-D is STRUCTURAL (all 8 issues are NEED in T2D-T/T3D-Strict regardless of oracle gold); an oracle ACCEPT<->REJECT flip does not move it. A sufficient<->NEED cert flip would."
+  },
+  "baseline_gold_counts_by_queue_never_pooled": {
+    "enriched": {
+      "ACCEPT": 3,
+      "REJECT": 1
+    },
+    "natural": {
+      "ACCEPT": 3,
+      "REJECT": 1
+    }
+  },
+  "baseline_gold_counts_by_stratum": {
+    "R-F2P": {
+      "ACCEPT": 1,
+      "REJECT": 0
+    },
+    "R-P2P": {
+      "ACCEPT": 3,
+      "REJECT": 2
+    },
+    "R-TRAP": {
+      "ACCEPT": 2,
+      "REJECT": 0
+    }
+  },
+  "baseline_pilot_gold_counts": {
+    "oracle_ACCEPT": 6,
+    "oracle_REJECT": 2,
+    "total": 8
+  },
+  "cert_sufficiency_matrix_issue_by_condition": {
+    "sympy__sympy-14248": {
+      "T2A-T": true,
+      "T2D-T": false,
+      "T3A-T": true,
+      "T3D-Escalate": true,
+      "T3D-Strict": false
+    },
+    "sympy__sympy-15875": {
+      "T2A-T": true,
+      "T2D-T": false,
+      "T3A-T": true,
+      "T3D-Escalate": true,
+      "T3D-Strict": false
+    },
+    "sympy__sympy-16886": {
+      "T2A-T": true,
+      "T2D-T": false,
+      "T3A-T": true,
+      "T3D-Escalate": true,
+      "T3D-Strict": false
+    },
+    "sympy__sympy-19040": {
+      "T2A-T": true,
+      "T2D-T": false,
+      "T3A-T": true,
+      "T3D-Escalate": true,
+      "T3D-Strict": false
+    },
+    "sympy__sympy-19346": {
+      "T2A-T": true,
+      "T2D-T": false,
+      "T3A-T": true,
+      "T3D-Escalate": true,
+      "T3D-Strict": false
+    },
+    "sympy__sympy-19495": {
+      "T2A-T": true,
+      "T2D-T": false,
+      "T3A-T": true,
+      "T3D-Escalate": true,
+      "T3D-Strict": false
+    },
+    "sympy__sympy-19637": {
+      "T2A-T": true,
+      "T2D-T": false,
+      "T3A-T": true,
+      "T3D-Escalate": true,
+      "T3D-Strict": false
+    },
+    "sympy__sympy-22914": {
+      "T2A-T": true,
+      "T2D-T": false,
+      "T3A-T": true,
+      "T3D-Escalate": true,
+      "T3D-Strict": false
+    }
+  },
+  "design_version": "groundedreview-gate3c11-zero-api-audit-freeze-v1",
+  "document": "G3-C.1.1 per-issue gold-flip sensitivity (task 11)",
+  "gold_modified": false,
+  "important_scope_note": "The zero-API pilot ran NO Reviewer model on these 8 issues, so P1/P2 model numerators DO NOT EXIST yet. This analysis bounds only GOLD-SIDE denominators/eligibility; no rate is estimable and none is claimed. Gold must never be changed to match a model prediction.",
+  "model_predictions_used": false,
+  "natural_queue_rate_rule": "natural n=4 (3 ACCEPT/1 REJECT) and enriched n=4 (3 ACCEPT/1 REJECT) are separate denominators; the natural first-4 are a sampling draw, NOT a natural-population prevalence estimate, and queues are never merged for a rate.",
+  "per_issue_flips": [
+    {
+      "current_cert_sufficient_by_condition": {
+        "T2A-T": true,
+        "T2D-T": false,
+        "T3A-T": true,
+        "T3D-Escalate": true,
+        "T3D-Strict": false
+      },
+      "current_gold_tier": "PROVISIONAL",
+      "current_oracle_gold": "REJECT",
+      "flip_A_P1_NEED_pool_unchanged": true,
+      "flip_A_effect_on_P2_REJECT_pool_n": 1,
+      "flip_A_effect_on_pilot_gold_counts": {
+        "oracle_ACCEPT": 7,
+        "oracle_REJECT": 1,
+        "total": 8
+      },
+      "flip_A_verdict_to": "ACCEPT",
+      "flip_B_NEED_to_sufficient_conditions": [
+        "T2D-T",
+        "T3D-Strict"
+      ],
+      "flip_B_effect": "toggling one sufficient condition to NEED would remove this issue from that condition's visible-outcome (P2-eligible) set; toggling a restricted NEED to sufficient would add it. Such a flip changes the per-condition ACCEPT/REJECT/NEED table but not the frozen oracle row.",
+      "flip_B_sufficient_to_NEED_conditions": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "instance_id": "sympy__sympy-14248",
+      "queue": "enriched",
+      "stratum": "R-P2P"
+    },
+    {
+      "current_cert_sufficient_by_condition": {
+        "T2A-T": true,
+        "T2D-T": false,
+        "T3A-T": true,
+        "T3D-Escalate": true,
+        "T3D-Strict": false
+      },
+      "current_gold_tier": "PROVISIONAL",
+      "current_oracle_gold": "REJECT",
+      "flip_A_P1_NEED_pool_unchanged": true,
+      "flip_A_effect_on_P2_REJECT_pool_n": 1,
+      "flip_A_effect_on_pilot_gold_counts": {
+        "oracle_ACCEPT": 7,
+        "oracle_REJECT": 1,
+        "total": 8
+      },
+      "flip_A_verdict_to": "ACCEPT",
+      "flip_B_NEED_to_sufficient_conditions": [
+        "T2D-T",
+        "T3D-Strict"
+      ],
+      "flip_B_effect": "toggling one sufficient condition to NEED would remove this issue from that condition's visible-outcome (P2-eligible) set; toggling a restricted NEED to sufficient would add it. Such a flip changes the per-condition ACCEPT/REJECT/NEED table but not the frozen oracle row.",
+      "flip_B_sufficient_to_NEED_conditions": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "instance_id": "sympy__sympy-15875",
+      "queue": "natural",
+      "stratum": "R-P2P"
+    },
+    {
+      "current_cert_sufficient_by_condition": {
+        "T2A-T": true,
+        "T2D-T": false,
+        "T3A-T": true,
+        "T3D-Escalate": true,
+        "T3D-Strict": false
+      },
+      "current_gold_tier": "PROVISIONAL",
+      "current_oracle_gold": "ACCEPT",
+      "flip_A_P1_NEED_pool_unchanged": true,
+      "flip_A_effect_on_P2_REJECT_pool_n": 3,
+      "flip_A_effect_on_pilot_gold_counts": {
+        "oracle_ACCEPT": 5,
+        "oracle_REJECT": 3,
+        "total": 8
+      },
+      "flip_A_verdict_to": "REJECT",
+      "flip_B_NEED_to_sufficient_conditions": [
+        "T2D-T",
+        "T3D-Strict"
+      ],
+      "flip_B_effect": "toggling one sufficient condition to NEED would remove this issue from that condition's visible-outcome (P2-eligible) set; toggling a restricted NEED to sufficient would add it. Such a flip changes the per-condition ACCEPT/REJECT/NEED table but not the frozen oracle row.",
+      "flip_B_sufficient_to_NEED_conditions": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "instance_id": "sympy__sympy-16886",
+      "queue": "enriched",
+      "stratum": "R-P2P"
+    },
+    {
+      "current_cert_sufficient_by_condition": {
+        "T2A-T": true,
+        "T2D-T": false,
+        "T3A-T": true,
+        "T3D-Escalate": true,
+        "T3D-Strict": false
+      },
+      "current_gold_tier": "PROVISIONAL",
+      "current_oracle_gold": "ACCEPT",
+      "flip_A_P1_NEED_pool_unchanged": true,
+      "flip_A_effect_on_P2_REJECT_pool_n": 3,
+      "flip_A_effect_on_pilot_gold_counts": {
+        "oracle_ACCEPT": 5,
+        "oracle_REJECT": 3,
+        "total": 8
+      },
+      "flip_A_verdict_to": "REJECT",
+      "flip_B_NEED_to_sufficient_conditions": [
+        "T2D-T",
+        "T3D-Strict"
+      ],
+      "flip_B_effect": "toggling one sufficient condition to NEED would remove this issue from that condition's visible-outcome (P2-eligible) set; toggling a restricted NEED to sufficient would add it. Such a flip changes the per-condition ACCEPT/REJECT/NEED table but not the frozen oracle row.",
+      "flip_B_sufficient_to_NEED_conditions": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "instance_id": "sympy__sympy-19040",
+      "queue": "enriched",
+      "stratum": "R-TRAP"
+    },
+    {
+      "current_cert_sufficient_by_condition": {
+        "T2A-T": true,
+        "T2D-T": false,
+        "T3A-T": true,
+        "T3D-Escalate": true,
+        "T3D-Strict": false
+      },
+      "current_gold_tier": "PROVISIONAL",
+      "current_oracle_gold": "ACCEPT",
+      "flip_A_P1_NEED_pool_unchanged": true,
+      "flip_A_effect_on_P2_REJECT_pool_n": 3,
+      "flip_A_effect_on_pilot_gold_counts": {
+        "oracle_ACCEPT": 5,
+        "oracle_REJECT": 3,
+        "total": 8
+      },
+      "flip_A_verdict_to": "REJECT",
+      "flip_B_NEED_to_sufficient_conditions": [
+        "T2D-T",
+        "T3D-Strict"
+      ],
+      "flip_B_effect": "toggling one sufficient condition to NEED would remove this issue from that condition's visible-outcome (P2-eligible) set; toggling a restricted NEED to sufficient would add it. Such a flip changes the per-condition ACCEPT/REJECT/NEED table but not the frozen oracle row.",
+      "flip_B_sufficient_to_NEED_conditions": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "instance_id": "sympy__sympy-19346",
+      "queue": "natural",
+      "stratum": "R-P2P"
+    },
+    {
+      "current_cert_sufficient_by_condition": {
+        "T2A-T": true,
+        "T2D-T": false,
+        "T3A-T": true,
+        "T3D-Escalate": true,
+        "T3D-Strict": false
+      },
+      "current_gold_tier": "PROVISIONAL",
+      "current_oracle_gold": "ACCEPT",
+      "flip_A_P1_NEED_pool_unchanged": true,
+      "flip_A_effect_on_P2_REJECT_pool_n": 3,
+      "flip_A_effect_on_pilot_gold_counts": {
+        "oracle_ACCEPT": 5,
+        "oracle_REJECT": 3,
+        "total": 8
+      },
+      "flip_A_verdict_to": "REJECT",
+      "flip_B_NEED_to_sufficient_conditions": [
+        "T2D-T",
+        "T3D-Strict"
+      ],
+      "flip_B_effect": "toggling one sufficient condition to NEED would remove this issue from that condition's visible-outcome (P2-eligible) set; toggling a restricted NEED to sufficient would add it. Such a flip changes the per-condition ACCEPT/REJECT/NEED table but not the frozen oracle row.",
+      "flip_B_sufficient_to_NEED_conditions": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "instance_id": "sympy__sympy-19495",
+      "queue": "natural",
+      "stratum": "R-TRAP"
+    },
+    {
+      "current_cert_sufficient_by_condition": {
+        "T2A-T": true,
+        "T2D-T": false,
+        "T3A-T": true,
+        "T3D-Escalate": true,
+        "T3D-Strict": false
+      },
+      "current_gold_tier": "PROVISIONAL",
+      "current_oracle_gold": "ACCEPT",
+      "flip_A_P1_NEED_pool_unchanged": true,
+      "flip_A_effect_on_P2_REJECT_pool_n": 3,
+      "flip_A_effect_on_pilot_gold_counts": {
+        "oracle_ACCEPT": 5,
+        "oracle_REJECT": 3,
+        "total": 8
+      },
+      "flip_A_verdict_to": "REJECT",
+      "flip_B_NEED_to_sufficient_conditions": [
+        "T2D-T",
+        "T3D-Strict"
+      ],
+      "flip_B_effect": "toggling one sufficient condition to NEED would remove this issue from that condition's visible-outcome (P2-eligible) set; toggling a restricted NEED to sufficient would add it. Such a flip changes the per-condition ACCEPT/REJECT/NEED table but not the frozen oracle row.",
+      "flip_B_sufficient_to_NEED_conditions": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "instance_id": "sympy__sympy-19637",
+      "queue": "enriched",
+      "stratum": "R-P2P"
+    },
+    {
+      "current_cert_sufficient_by_condition": {
+        "T2A-T": true,
+        "T2D-T": false,
+        "T3A-T": true,
+        "T3D-Escalate": true,
+        "T3D-Strict": false
+      },
+      "current_gold_tier": "PROVISIONAL",
+      "current_oracle_gold": "ACCEPT",
+      "flip_A_P1_NEED_pool_unchanged": true,
+      "flip_A_effect_on_P2_REJECT_pool_n": 3,
+      "flip_A_effect_on_pilot_gold_counts": {
+        "oracle_ACCEPT": 5,
+        "oracle_REJECT": 3,
+        "total": 8
+      },
+      "flip_A_verdict_to": "REJECT",
+      "flip_B_NEED_to_sufficient_conditions": [
+        "T2D-T",
+        "T3D-Strict"
+      ],
+      "flip_B_effect": "toggling one sufficient condition to NEED would remove this issue from that condition's visible-outcome (P2-eligible) set; toggling a restricted NEED to sufficient would add it. Such a flip changes the per-condition ACCEPT/REJECT/NEED table but not the frozen oracle row.",
+      "flip_B_sufficient_to_NEED_conditions": [
+        "T3D-Escalate",
+        "T2A-T",
+        "T3A-T"
+      ],
+      "instance_id": "sympy__sympy-22914",
+      "queue": "natural",
+      "stratum": "R-F2P"
+    }
+  ],
+  "protocol_version": "g3c11-protocol-v1",
+  "read_only": true,
+  "sufficient_totals_per_condition": {
+    "T2A-T": 8,
+    "T2D-T": 0,
+    "T3A-T": 8,
+    "T3D-Escalate": 8,
+    "T3D-Strict": 0
+  }
+}

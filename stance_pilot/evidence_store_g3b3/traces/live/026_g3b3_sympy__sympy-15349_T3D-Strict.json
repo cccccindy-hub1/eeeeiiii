@@ -1,0 +1,51 @@
+{
+  "cell": "g3b3:sympy__sympy-15349:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "e5ed197b1090d0607b15f622",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"768da1c6f6ec907524b8ebbf6bf818c92b56101b\", \"record_patch_sha256\": \"0c5e4bd34ad14d3257c45280e90a17cce534e97661765e36a85d8f86715167c9\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"protocol_version\": \"g3b2-protocol-v1\", \"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"record_run_tree\": null, \"record_run_tree_present\": false, \"expected_run_tree\": \"3fb6acb6e8d82ad02672e1b15bf8d85476e7c40e\", \"authoritative_tree_source\": \"independent_git_restage_write_tree\", \"authoritative_run_tree\": \"3fb6acb6e8d82ad02672e1b15bf8d85476e7c40e\", \"run_tree_match\": true, \"fresh\": true, \"fresh_state\": \"TRUE\", \"status_reason\": \"authoritative_restage_tree_matches_attestation\", \"artifact_started_at\": \"2026-10-25T18:27:43+00:00\", \"attestation_built_at\": \"2026-10-25T18:27:57+00:00\", \"note\": \"three-state freshness: null fresh means UNKNOWN, not stale\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 3, \"executed\": 3, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_claim_consistency",
+      "args": {
+        "claim": "Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass."
+      },
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    },
+    {
+      "turn": 1,
+      "tool": "get_run_log",
+      "args": {
+        "name": "symptom"
+      },
+      "http_status": 200,
+      "result_preview": "### BASELINE (pre-patch)\n$ python probe.py  (exit 1)\n--- stdout ---\nFAIL: x-axis rotation matrix\n Matrix([[1, 0, 0], [0, cos(x), sin(x)], [0, sin(x), cos(x)]]) \n!=\n Matrix([[1, 0, 0], [0, cos(x), -sin(x)], [0, sin(x), cos(x)]])\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\n\n\n### POST candidate patch\n$ python probe.py  (exit 0)\n--- stdout ---\nOK: rotation matrix sign correct\n\n--- stderr ---\nC:\\Users\\guoci\\work\\eeeeiiii\\stance_pilot\\repro\\sympy_src\\sympy\\solvers\\diophantine.py:3188: SyntaxWarning: \"is\" with a literal. Did you mean \"==\"?\n  if feasible is 1:  # it's prime and k == 2\n"
+    }
+  ],
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage are all intact: the artifact is authentically signed, base_commit and patch_sha256 match this patch, the authoritative restaged tree equals the expected tree (fresh=true), and the declared set was fully executed (1/1 FAIL_TO_PASS, 3/3 scoped PASS_TO_PASS, no missing ids). The issue-derived symptom probe also flips from failing pre-patch to passing post-patch, and the author statement is consistent with that diagnostic. However, under the STRICT policy no tool exposes acceptance or regression pass/fail verdicts (maintainer logs are 403), so I have no trustworthy evidence that the executed acceptance check passes or that the scoped regressions are clean. A removed symptom is explicitly not proof of merge acceptability, and the bar for ACCEPT requires demonstrated failure-free success across the declared set. No decisive applicable failure is established either, so REJECT is not warranted. Hence abstain.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Acceptance (FAIL_TO_PASS) and scoped regression (PASS_TO_PASS) pass/fail verdicts for the executed checks are withheld under the STRICT policy; only coverage counts and the issue-symptom probe are available, so success of the declared acceptance check and absence of scoped regressions cannot be confirmed.\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "NEED_EVIDENCE",
+  "fresh_state_served": "TRUE",
+  "error": null
+}

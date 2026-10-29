@@ -1,0 +1,33 @@
+diff --git a/sympy/simplify/radsimp.py b/sympy/simplify/radsimp.py
+index 216ae26204..de59422669 100644
+--- a/sympy/simplify/radsimp.py
++++ b/sympy/simplify/radsimp.py
+@@ -1113,6 +1113,8 @@ def _split_gcd(*a):
+     >>> _split_gcd(55, 35, 22, 14, 77, 10)
+     (5, [55, 35, 10], [22, 14, 77])
+     """
++    if not a:
++        return 1, [], []
+     g = a[0]
+     b1 = [g]
+     b2 = []
+diff --git a/sympy/simplify/tests/test_sqrtdenest.py b/sympy/simplify/tests/test_sqrtdenest.py
+index c30f7a3235..7582125d60 100644
+--- a/sympy/simplify/tests/test_sqrtdenest.py
++++ b/sympy/simplify/tests/test_sqrtdenest.py
+@@ -181,5 +181,15 @@ def test_issue_5653():
+         sqrt(2 + sqrt(2 + sqrt(2)))) == sqrt(2 + sqrt(2 + sqrt(2)))
+ 
+ 
++def test_issue_12420():
++    # Test that sqrtdenest doesn't raise IndexError on expressions with complex numbers
++    # where split_surds gets an empty list of surds
++    from sympy import I
++    # This used to raise IndexError: tuple index out of range
++    result = sqrtdenest(sqrt(4 + 3*I))
++    # Verify the result is correct by squaring it
++    assert (result**2).expand() == 4 + 3*I
++
++
+ def test_sqrt_ratcomb():
+     assert sqrtdenest(sqrt(1 + r3) + sqrt(3 + 3*r3) - sqrt(10 + 6*r3)) == 0

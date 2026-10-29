@@ -1,0 +1,291 @@
+{
+  "approved_scope": {
+    "ai_self_labelling_as_annotator2": false,
+    "frozen_raw_tests_rewritten": false,
+    "gate_3c2_execution": false,
+    "gemini_or_r2": false,
+    "git_commit_or_add": false,
+    "historical_gold_modified": false,
+    "modify_historical_frozen_artifacts": false,
+    "new_data_collection": false,
+    "new_issues": 0,
+    "real_model_calls": 0,
+    "spend_usd": 0.0
+  },
+  "classification": {
+    "disclosure_required": true,
+    "is_post_outcome_adaptive_sampling": false,
+    "is_verbatim_strict_preregistration_of_connection_order": false,
+    "verdict": "PILOT-STAGE PRE-DATA operational refinement: within the G3-C.0 expressly permitted 'pre-specified stratified/negative-enrichment screen', the concrete multi-membership connection priority R-TRAP>R-P2P>R-F2P was fixed in g3c1_select.py at 09:20:33Z from static pool structure alone, 28 minutes before the first executed outcome (09:48:33Z) and before any build. It was not literally pre-registered in G3-C.0 and must be disclosed as such; it must NOT be retrospectively claimed as fully pre-registered, and it is not outcome-dependent adaptation."
+  },
+  "design_version": "groundedreview-gate3c11-zero-api-audit-freeze-v1",
+  "document": "G3-C.1.1 enrichment-priority temporal/construct audit (task 3)",
+  "g3c0_old_rule": {
+    "enumeration_order_in_text": [
+      "R-F2P",
+      "R-P2P",
+      "R-TRAP"
+    ],
+    "locked": [
+      "three strata EXISTENCE and quotas: R-F2P>=7, R-P2P>=7, R-TRAP>=6",
+      "sampling seed 418237",
+      "a PRE-SPECIFIED stratified/negative-enrichment screen is permitted; sampling fraction/filter/stratum sizes must be logged",
+      "enriched rates are conditional; never a natural population rate"
+    ],
+    "not_locked": "the multi-membership PRIMARY-assignment / concatenation priority when an issue satisfies more than one stratum",
+    "source": "frozen G3-C.0 preregistration task4"
+  },
+  "g3c1_new_rule": {
+    "fixed_at_utc": "2026-10-28T09:20:33.924078+00:00",
+    "inputs_allowed": "frozen wave2 declared f2p/p2p counts + maintainer test_patch static text + changed files only; no model/resolved/executed outcome",
+    "priority": [
+      "R-TRAP",
+      "R-P2P",
+      "R-F2P"
+    ],
+    "source": "evidence/g3c1_select.py STRATUM_PRIORITY",
+    "stated_reason": "membership flags stay non-exclusive; the primary stratum is assigned R-TRAP > R-P2P > R-F2P because the f2p<=2 feature is near-universal in this pool, so trap and large-regression-surface issues are assigned to their more informative stratum first"
+  },
+  "issues_changing_primary_stratum_under_counterfactual": {
+    "sympy__sympy-13372": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-13480": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-13647": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-13877": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-14248": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-15599": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-15875": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-15976": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-16792": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-16886": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-18189": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-18763": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-19040": {
+      "actual": "R-TRAP",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-19346": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-19495": {
+      "actual": "R-TRAP",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-19637": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-19954": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-20154": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-20438": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-20801": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-21379": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-21596": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-21612": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-22456": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-23262": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-24066": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-24539": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-24562": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    },
+    "sympy__sympy-24661": {
+      "actual": "R-P2P",
+      "counterfactual_f2p_first": "R-F2P"
+    }
+  },
+  "n_moved": 29,
+  "overall_pass": true,
+  "picks_differ": true,
+  "protocol_version": "g3c11-protocol-v1",
+  "replay_actual": {
+    "enriched_order_first12": [
+      "sympy__sympy-19040",
+      "sympy__sympy-19495",
+      "sympy__sympy-14248",
+      "sympy__sympy-19637",
+      "sympy__sympy-16886",
+      "sympy__sympy-13647",
+      "sympy__sympy-13480",
+      "sympy__sympy-13372",
+      "sympy__sympy-22456",
+      "sympy__sympy-15599",
+      "sympy__sympy-15976",
+      "sympy__sympy-19954"
+    ],
+    "enriched_picks": [
+      "sympy__sympy-19040",
+      "sympy__sympy-14248",
+      "sympy__sympy-19637",
+      "sympy__sympy-16886"
+    ],
+    "matches_frozen": true,
+    "priority": [
+      "R-TRAP",
+      "R-P2P",
+      "R-F2P"
+    ],
+    "stratum_sizes": {
+      "R-F2P": 16,
+      "R-P2P": 29,
+      "R-TRAP": 2,
+      "UNENRICHED": 0
+    }
+  },
+  "replay_counterfactual_f2p_first": {
+    "enriched_order_first12": [
+      "sympy__sympy-13031",
+      "sympy__sympy-13551",
+      "sympy__sympy-20801",
+      "sympy__sympy-19346",
+      "sympy__sympy-20916",
+      "sympy__sympy-14248",
+      "sympy__sympy-22714",
+      "sympy__sympy-18189",
+      "sympy__sympy-19495",
+      "sympy__sympy-23824",
+      "sympy__sympy-22914",
+      "sympy__sympy-14976"
+    ],
+    "enriched_picks": [
+      "sympy__sympy-13031",
+      "sympy__sympy-13551",
+      "sympy__sympy-20801",
+      "sympy__sympy-20916"
+    ],
+    "priority": [
+      "R-F2P",
+      "R-P2P",
+      "R-TRAP"
+    ],
+    "stratum_sizes": {
+      "R-F2P": 45,
+      "R-P2P": 2,
+      "R-TRAP": 0,
+      "UNENRICHED": 0
+    }
+  },
+  "temporal_finding": {
+    "first_executed_outcome_utc": "2026-10-28T09:48:33.791305+00:00",
+    "lead_seconds": 1679,
+    "no_outcome_dependent_adaptation": true,
+    "rule_predates_first_outcome": true,
+    "rule_source_fixed_utc": "2026-10-28T09:20:33.924078+00:00",
+    "selection_json_mtime_is_regeneration_artifact": true
+  },
+  "timeline_utc": [
+    {
+      "event": "G3-C.0 preregistration design JSON written",
+      "path": "evidence_store_g3c0/design/g3c0_preregistration_endpoints_sampling_stats.json",
+      "utc": "2026-10-27T08:04:23.590449+00:00"
+    },
+    {
+      "event": "G3-C.0 design freeze manifest written",
+      "path": "freeze/g3c0_design_freeze_manifest.json",
+      "utc": "2026-10-27T08:24:44.758246+00:00"
+    },
+    {
+      "event": "g3c1_common.py (eligibility constants/seeds) written",
+      "path": "evidence/g3c1_common.py",
+      "utc": "2026-10-28T09:08:46.683717+00:00"
+    },
+    {
+      "authoritative_rule_time": true,
+      "event": "g3c1_select.py STRATUM_PRIORITY source fixed",
+      "path": "evidence/g3c1_select.py",
+      "utc": "2026-10-28T09:20:33.924078+00:00"
+    },
+    {
+      "event": "first executed outcome: sympy-19495 probe-flip stop record",
+      "first_outcome_time": true,
+      "path": "evidence_store_g3c1/g3c1_failures.jsonl",
+      "utc": "2026-10-28T09:48:33.791305+00:00"
+    },
+    {
+      "event": "real pytest build session ends (last truth)",
+      "path": "runs/g3c1_build.log",
+      "utc": "2026-10-28T10:16:07.927376+00:00"
+    },
+    {
+      "event": "selection JSON mtime (determinism re-run regeneration; byte-identical sha f3284c75...)",
+      "mtime_trap": "NOT the rule-fixation time; content is byte-identical to the pre-build selection per audit/g3c1_determinism_check.json",
+      "path": "selection/g3c1_selection.json",
+      "utc": "2026-10-28T10:50:12.541521+00:00"
+    },
+    {
+      "event": "oracle gold + freeze manifests written",
+      "path": "gold/g3c1_oracle_gold.jsonl; freeze/g3c1_freeze_manifest.json",
+      "utc": "2026-10-28T10:50:12.573852+00:00"
+    }
+  ]
+}

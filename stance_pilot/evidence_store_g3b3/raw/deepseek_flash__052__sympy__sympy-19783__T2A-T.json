@@ -1,0 +1,56 @@
+{
+  "_guard_stop_internal": false,
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"The attested acceptance run for this exact patch/commit shows FAIL_TO_PASS passing only 1/2, with the declared acceptance test 'test_identity' failing. This is a rendered, executed acceptance failure that applies directly to this patch and current tree, so it is decisive grounds to reject despite the provenance/coverage warranty.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "cell": "g3b3:sympy__sympy-19783:T2A-T",
+  "condition": "T2A-T",
+  "cost_usd": 0.000596,
+  "evidence_session": null,
+  "evidence_tier": "A",
+  "id": "qwen3_coder_30b_500:sympy__sympy-19783",
+  "instance_id": "sympy__sympy-19783",
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "policy": null,
+  "pre_call_budget_reason": null,
+  "pre_call_budget_stop": false,
+  "pre_call_worst_case_bounds_usd": [
+    0.01047
+  ],
+  "protocol": "ternary-g3b3",
+  "raw_model_calls": [
+    {
+      "completion_tokens": 95,
+      "finish_reason": "stop",
+      "model_call": 1,
+      "prompt_tokens": 1608,
+      "raw_content": "{\"decision\":\"REJECT\",\"reason\":\"The attested acceptance run for this exact patch/commit shows FAIL_TO_PASS passing only 1/2, with the declared acceptance test 'test_identity' failing. This is a rendered, executed acceptance failure that applies directly to this patch and current tree, so it is decisive grounds to reject despite the provenance/coverage warranty.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+      "served_model": "deepseek-flash",
+      "tool_calls": [],
+      "wire_shapes": [
+        {
+          "completion_cap": 8192,
+          "completion_param": "max_tokens",
+          "extra_body_keys": [
+            "thinking"
+          ],
+          "fallback_from": null,
+          "has_tools": false,
+          "model": "deepseek-flash",
+          "n_messages": 2,
+          "reasoning_effort": null,
+          "response_format": "json_object",
+          "temperature_present": true
+        }
+      ]
+    }
+  ],
+  "served_artifact_id": "art_e5fa3e3506649e6b",
+  "tokens_in": 1608,
+  "tokens_out": 95,
+  "tool_calls": 0,
+  "tool_trace": [],
+  "wall_s": 1.06
+}

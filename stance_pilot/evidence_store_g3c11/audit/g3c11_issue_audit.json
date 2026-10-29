@@ -1,0 +1,518 @@
+{
+  "accept_issues": {
+    "sympy__sympy-16886": {
+      "artifact_id": "art_cf228260cdf9b995",
+      "behaviours_not_validated": "full-dataset P2P, distant-module regressions, performance/style, alt-patch equivalence",
+      "blind_spots": [
+        "Only the ATTESTED SCOPED P2P subset was executed (test_patch files + tests/ adjacent to changed code files); the full dataset P2P suite was not run, so ACCEPT == scoped acceptability, not full-suite acceptance.",
+        "Regressions in NON-adjacent / distant modules are not exercised.",
+        "Old-SymPy XFail/Skipped tests are recovered via terminal-summary overrides; genuine flake/xfail interactions in a single re-run cannot be fully separated without repetition.",
+        "Batched whole scope files can contain UNDECLARED collateral failing nodes that are not scored (see per-issue collateral list).",
+        "Performance, style, non-functional behaviour and alternative-patch / other-generator equivalence are not validated.",
+        "Symptom-gone is demonstrated by a hand-written probe derived from the public report, not by an independent maintainer oracle."
+      ],
+      "collateral_undeclared_failing_nodes": [],
+      "collateral_undeclared_possible_regressions": [],
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 42,
+      "instance_id": "sympy__sympy-16886",
+      "merge_acceptable": true,
+      "p2p_full_dataset_n": 42,
+      "queue": "enriched",
+      "recalc": {
+        "f2p_failed_ids": [],
+        "f2p_failure_exception_lines": [],
+        "f2p_outcomes": {
+          "test_encode_morse": "PASSED"
+        },
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "recomputation_matches_stored_artifact": true,
+      "resolved_in_dataset": true,
+      "scoped_basis": "all declared F2P transition fail(base)->pass, 0 declared scoped P2P regressions, symptom gone, test_patch clean; this supports SCOPED acceptability only.",
+      "stored_summary": {
+        "f2p_failed_ids": [],
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "stratum": "R-P2P",
+      "supports_scoped_acceptability": true,
+      "symptom_post_passed": true,
+      "symptom_pre_passed": false,
+      "test_patch_clean": true
+    },
+    "sympy__sympy-19040": {
+      "artifact_id": "art_2b6532120649f861",
+      "behaviours_not_validated": "full-dataset P2P, distant-module regressions, performance/style, alt-patch equivalence",
+      "blind_spots": [
+        "Only the ATTESTED SCOPED P2P subset was executed (test_patch files + tests/ adjacent to changed code files); the full dataset P2P suite was not run, so ACCEPT == scoped acceptability, not full-suite acceptance.",
+        "Regressions in NON-adjacent / distant modules are not exercised.",
+        "Old-SymPy XFail/Skipped tests are recovered via terminal-summary overrides; genuine flake/xfail interactions in a single re-run cannot be fully separated without repetition.",
+        "Batched whole scope files can contain UNDECLARED collateral failing nodes that are not scored (see per-issue collateral list).",
+        "Performance, style, non-functional behaviour and alternative-patch / other-generator equivalence are not validated.",
+        "Symptom-gone is demonstrated by a hand-written probe derived from the public report, not by an independent maintainer oracle."
+      ],
+      "collateral_undeclared_failing_nodes": [],
+      "collateral_undeclared_possible_regressions": [],
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 148,
+      "instance_id": "sympy__sympy-19040",
+      "merge_acceptable": true,
+      "p2p_full_dataset_n": 148,
+      "queue": "enriched",
+      "recalc": {
+        "f2p_failed_ids": [],
+        "f2p_failure_exception_lines": [],
+        "f2p_outcomes": {
+          "test_issue_5786": "PASSED"
+        },
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "recomputation_matches_stored_artifact": true,
+      "resolved_in_dataset": true,
+      "scoped_basis": "all declared F2P transition fail(base)->pass, 0 declared scoped P2P regressions, symptom gone, test_patch clean; this supports SCOPED acceptability only.",
+      "stored_summary": {
+        "f2p_failed_ids": [],
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "stratum": "R-TRAP",
+      "supports_scoped_acceptability": true,
+      "symptom_post_passed": true,
+      "symptom_pre_passed": false,
+      "test_patch_clean": true
+    },
+    "sympy__sympy-19346": {
+      "artifact_id": "art_9f04ba11366d02e0",
+      "behaviours_not_validated": "full-dataset P2P, distant-module regressions, performance/style, alt-patch equivalence",
+      "blind_spots": [
+        "Only the ATTESTED SCOPED P2P subset was executed (test_patch files + tests/ adjacent to changed code files); the full dataset P2P suite was not run, so ACCEPT == scoped acceptability, not full-suite acceptance.",
+        "Regressions in NON-adjacent / distant modules are not exercised.",
+        "Old-SymPy XFail/Skipped tests are recovered via terminal-summary overrides; genuine flake/xfail interactions in a single re-run cannot be fully separated without repetition.",
+        "Batched whole scope files can contain UNDECLARED collateral failing nodes that are not scored (see per-issue collateral list).",
+        "Performance, style, non-functional behaviour and alternative-patch / other-generator equivalence are not validated.",
+        "Symptom-gone is demonstrated by a hand-written probe derived from the public report, not by an independent maintainer oracle."
+      ],
+      "collateral_undeclared_failing_nodes": [
+        {
+          "after": "FAILED",
+          "baseline_same_node": "FAILED",
+          "file": "sympy/printing/tests/test_repr.py",
+          "name": "test_Add"
+        },
+        {
+          "after": "FAILED",
+          "baseline_same_node": "FAILED",
+          "file": "sympy/printing/tests/test_repr.py",
+          "name": "test_Mul"
+        },
+        {
+          "after": "FAILED",
+          "baseline_same_node": "FAILED",
+          "file": "sympy/printing/tests/test_latex.py",
+          "name": "test_issue_13559"
+        },
+        {
+          "after": "FAILED",
+          "baseline_same_node": "FAILED",
+          "file": "sympy/printing/tests/test_latex.py",
+          "name": "test_issue_8470"
+        },
+        {
+          "after": "FAILED",
+          "baseline_same_node": null,
+          "file": "sympy/printing/tests/test_repr.py",
+          "name": "test_set"
+        }
+      ],
+      "collateral_undeclared_possible_regressions": [
+        {
+          "after": "FAILED",
+          "baseline_same_node": null,
+          "file": "sympy/printing/tests/test_repr.py",
+          "name": "test_set"
+        }
+      ],
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 40,
+      "instance_id": "sympy__sympy-19346",
+      "merge_acceptable": true,
+      "p2p_full_dataset_n": 40,
+      "queue": "natural",
+      "recalc": {
+        "f2p_failed_ids": [],
+        "f2p_failure_exception_lines": [],
+        "f2p_outcomes": {
+          "test_dict": "PASSED"
+        },
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "recomputation_matches_stored_artifact": true,
+      "resolved_in_dataset": true,
+      "scoped_basis": "all declared F2P transition fail(base)->pass, 0 declared scoped P2P regressions, symptom gone, test_patch clean; this supports SCOPED acceptability only.",
+      "stored_summary": {
+        "f2p_failed_ids": [],
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "stratum": "R-P2P",
+      "supports_scoped_acceptability": true,
+      "symptom_post_passed": true,
+      "symptom_pre_passed": false,
+      "test_patch_clean": true
+    },
+    "sympy__sympy-19495": {
+      "artifact_id": "art_fec174c8f4012a8b",
+      "behaviours_not_validated": "full-dataset P2P, distant-module regressions, performance/style, alt-patch equivalence",
+      "blind_spots": [
+        "Only the ATTESTED SCOPED P2P subset was executed (test_patch files + tests/ adjacent to changed code files); the full dataset P2P suite was not run, so ACCEPT == scoped acceptability, not full-suite acceptance.",
+        "Regressions in NON-adjacent / distant modules are not exercised.",
+        "Old-SymPy XFail/Skipped tests are recovered via terminal-summary overrides; genuine flake/xfail interactions in a single re-run cannot be fully separated without repetition.",
+        "Batched whole scope files can contain UNDECLARED collateral failing nodes that are not scored (see per-issue collateral list).",
+        "Performance, style, non-functional behaviour and alternative-patch / other-generator equivalence are not validated.",
+        "Symptom-gone is demonstrated by a hand-written probe derived from the public report, not by an independent maintainer oracle."
+      ],
+      "collateral_undeclared_failing_nodes": [],
+      "collateral_undeclared_possible_regressions": [],
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 8,
+      "instance_id": "sympy__sympy-19495",
+      "merge_acceptable": true,
+      "p2p_full_dataset_n": 8,
+      "queue": "natural",
+      "recalc": {
+        "f2p_failed_ids": [],
+        "f2p_failure_exception_lines": [],
+        "f2p_outcomes": {
+          "test_subs_CondSet": "PASSED"
+        },
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "recomputation_matches_stored_artifact": true,
+      "resolved_in_dataset": true,
+      "scoped_basis": "all declared F2P transition fail(base)->pass, 0 declared scoped P2P regressions, symptom gone, test_patch clean; this supports SCOPED acceptability only.",
+      "stored_summary": {
+        "f2p_failed_ids": [],
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "stratum": "R-TRAP",
+      "supports_scoped_acceptability": true,
+      "symptom_post_passed": true,
+      "symptom_pre_passed": false,
+      "test_patch_clean": true
+    },
+    "sympy__sympy-19637": {
+      "artifact_id": "art_22542096dfadeb88",
+      "behaviours_not_validated": "full-dataset P2P, distant-module regressions, performance/style, alt-patch equivalence",
+      "blind_spots": [
+        "Only the ATTESTED SCOPED P2P subset was executed (test_patch files + tests/ adjacent to changed code files); the full dataset P2P suite was not run, so ACCEPT == scoped acceptability, not full-suite acceptance.",
+        "Regressions in NON-adjacent / distant modules are not exercised.",
+        "Old-SymPy XFail/Skipped tests are recovered via terminal-summary overrides; genuine flake/xfail interactions in a single re-run cannot be fully separated without repetition.",
+        "Batched whole scope files can contain UNDECLARED collateral failing nodes that are not scored (see per-issue collateral list).",
+        "Performance, style, non-functional behaviour and alternative-patch / other-generator equivalence are not validated.",
+        "Symptom-gone is demonstrated by a hand-written probe derived from the public report, not by an independent maintainer oracle."
+      ],
+      "collateral_undeclared_failing_nodes": [
+        {
+          "after": "FAILED",
+          "baseline_same_node": "FAILED",
+          "file": "sympy/core/tests/test_sympify.py",
+          "name": "test_evaluate_false"
+        },
+        {
+          "after": "FAILED",
+          "baseline_same_node": "FAILED",
+          "file": "sympy/core/tests/test_sympify.py",
+          "name": "test_issue_17811"
+        }
+      ],
+      "collateral_undeclared_possible_regressions": [],
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 40,
+      "instance_id": "sympy__sympy-19637",
+      "merge_acceptable": true,
+      "p2p_full_dataset_n": 40,
+      "queue": "enriched",
+      "recalc": {
+        "f2p_failed_ids": [],
+        "f2p_failure_exception_lines": [],
+        "f2p_outcomes": {
+          "test_kernS": "PASSED"
+        },
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "recomputation_matches_stored_artifact": true,
+      "resolved_in_dataset": true,
+      "scoped_basis": "all declared F2P transition fail(base)->pass, 0 declared scoped P2P regressions, symptom gone, test_patch clean; this supports SCOPED acceptability only.",
+      "stored_summary": {
+        "f2p_failed_ids": [],
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "stratum": "R-P2P",
+      "supports_scoped_acceptability": true,
+      "symptom_post_passed": true,
+      "symptom_pre_passed": false,
+      "test_patch_clean": true
+    },
+    "sympy__sympy-22914": {
+      "artifact_id": "art_b970f89709fb3265",
+      "behaviours_not_validated": "full-dataset P2P, distant-module regressions, performance/style, alt-patch equivalence",
+      "blind_spots": [
+        "Only the ATTESTED SCOPED P2P subset was executed (test_patch files + tests/ adjacent to changed code files); the full dataset P2P suite was not run, so ACCEPT == scoped acceptability, not full-suite acceptance.",
+        "Regressions in NON-adjacent / distant modules are not exercised.",
+        "Old-SymPy XFail/Skipped tests are recovered via terminal-summary overrides; genuine flake/xfail interactions in a single re-run cannot be fully separated without repetition.",
+        "Batched whole scope files can contain UNDECLARED collateral failing nodes that are not scored (see per-issue collateral list).",
+        "Performance, style, non-functional behaviour and alternative-patch / other-generator equivalence are not validated.",
+        "Symptom-gone is demonstrated by a hand-written probe derived from the public report, not by an independent maintainer oracle."
+      ],
+      "collateral_undeclared_failing_nodes": [],
+      "collateral_undeclared_possible_regressions": [],
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 17,
+      "instance_id": "sympy__sympy-22914",
+      "merge_acceptable": true,
+      "p2p_full_dataset_n": 17,
+      "queue": "natural",
+      "recalc": {
+        "f2p_failed_ids": [],
+        "f2p_failure_exception_lines": [],
+        "f2p_outcomes": {
+          "test_PythonCodePrinter": "PASSED"
+        },
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "recomputation_matches_stored_artifact": true,
+      "resolved_in_dataset": true,
+      "scoped_basis": "all declared F2P transition fail(base)->pass, 0 declared scoped P2P regressions, symptom gone, test_patch clean; this supports SCOPED acceptability only.",
+      "stored_summary": {
+        "f2p_failed_ids": [],
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "stratum": "R-F2P",
+      "supports_scoped_acceptability": true,
+      "symptom_post_passed": true,
+      "symptom_pre_passed": false,
+      "test_patch_clean": true
+    }
+  },
+  "all_independent_recomputations_match": true,
+  "approved_scope": {
+    "ai_self_labelling_as_annotator2": false,
+    "frozen_raw_tests_rewritten": false,
+    "gate_3c2_execution": false,
+    "gemini_or_r2": false,
+    "git_commit_or_add": false,
+    "historical_gold_modified": false,
+    "modify_historical_frozen_artifacts": false,
+    "new_data_collection": false,
+    "new_issues": 0,
+    "real_model_calls": 0,
+    "spend_usd": 0.0
+  },
+  "design_version": "groundedreview-gate3c11-zero-api-audit-freeze-v1",
+  "document": "G3-C.1.1 independent issue-level evidence review (tasks 5+6+7)",
+  "overall_pass": true,
+  "parser_semantics": "frozen evidence.builder.parse_node_logs + name_outcomes; bare name fails only if EVERY located node is FAILED/ERROR; old-SymPy XFail/Skipped recovered from terminal summary; name->file maps independently re-derived from raw logs.",
+  "probe_19495_construct_audit": {
+    "baseline_vs_post_evidence": "At the clean base plain subs produced the malformed ConditionSet(1/3,...); after the candidate it became the correct ImageSet and xreplace/simultaneous references matched. The issue genuinely reproduces and the candidate genuinely fixes it - a probe-authoring defect, not a non-evaluable issue.",
+    "evidence_source": "assertions derived ONLY from the public issue report; maintainer test_patch/test_subs_CondSet never consulted (maintainer_test_patch_consulted=False)",
+    "frozen_probe": {
+      "bytes": 2351,
+      "matches_freeze_manifest": true,
+      "path": "probes/sympy__sympy-19495.py",
+      "read_only_not_modified": true,
+      "sha256": "6c4965b0b1ffa43918c502182cf243f760c929820d59c26ccfa19bd5330fd973"
+    },
+    "initial_instrument_failure": {
+      "baseline_probe_passed": true,
+      "post_candidate_probe_passed": true,
+      "recorded_at": "2026-10-28T09:48:33+00:00",
+      "stage": "probe_flip_gate"
+    },
+    "instance_id": "sympy__sympy-19495",
+    "no_gold_changed": true,
+    "no_issue_replaced": true,
+    "original_problem": "Plain ConditionSet.subs over-substitutes the ConditionSet's own bound dummy x to 1/3, producing the malformed ConditionSet(1/3, Contains(1/3, ImageSet(...)), ImageSet(...)) reported publicly; the candidate fixes it to ImageSet(Lambda(n, 2*pi*n+asin(1/3)), Integers).",
+    "post_revision_gate": {
+      "all_probes_flip": true,
+      "n_issues": 8
+    },
+    "strengthened_probe_assertions": [
+      "(1) if a ConditionSet survives, its bound dummy args[0] must remain a Symbol (rejects the observed ConditionSet(1/3, ...)).",
+      "(2) plain cs.subs(y,1/3) must equal the report's own correct reference via xreplace and simultaneous=True.",
+      "(3) no free substituted symbol y may remain in the result."
+    ],
+    "weak_probe_assertions": [
+      "checked only that a free symbol y was present/absent and that the result did not collapse to the singleton {1/3}; neither distinguishes the malformed ConditionSet(1/3,...) from the correct ImageSet, so the weak probe exited 0 at BOTH baseline and post-candidate."
+    ]
+  },
+  "protocol_version": "g3c11-protocol-v1",
+  "reject_issues": {
+    "sympy__sympy-14248": {
+      "artifact_id": "art_38249f6606d93ef1",
+      "collateral_undeclared_failing_nodes": [
+        {
+          "after": "FAILED",
+          "baseline_same_node": "FAILED",
+          "file": "sympy/printing/tests/test_latex.py",
+          "name": "test_issue_13559"
+        },
+        {
+          "after": "FAILED",
+          "baseline_same_node": "FAILED",
+          "file": "sympy/printing/pretty/tests/test_pretty.py",
+          "name": "test_issue_8292"
+        },
+        {
+          "after": "FAILED",
+          "baseline_same_node": "FAILED",
+          "file": "sympy/printing/pretty/tests/test_pretty.py",
+          "name": "test_issue_8344"
+        },
+        {
+          "after": "FAILED",
+          "baseline_same_node": "FAILED",
+          "file": "sympy/printing/tests/test_latex.py",
+          "name": "test_issue_8470"
+        },
+        {
+          "after": "FAILED",
+          "baseline_same_node": "FAILED",
+          "file": "sympy/printing/pretty/tests/test_pretty.py",
+          "name": "test_missing_in_2X_issue_9047"
+        }
+      ],
+      "collateral_undeclared_possible_regressions": [],
+      "declared_f2p_n": 2,
+      "declared_scoped_p2p_n": 433,
+      "instance_id": "sympy__sympy-14248",
+      "interpretation": {
+        "decisive_basis": "REJECT is jointly supported by (1) a declared FAIL_TO_PASS that genuinely still fails and (2) two fresh scoped regressions.",
+        "environment_separation": "test_latex_Float was already FAILED ('inf' != '\\\\infty') at baseline, so it is classified preexisting-bad and correctly NOT counted as a regression.",
+        "p2p_regressions": "test_haramard and test_matMul were PASSED at the clean baseline (test_julia/test_octave/test_latex) and FAILED/TypeError 'cannot determine truth value of Relational' after the candidate: genuine candidate-induced scoped regressions.",
+        "real_f2p_failure": "test_MatrixSymbol_printing is PARTIAL_FAIL: it raises a real AssertionError in test_pretty.py (\"'-A*B - B*C + A*B*C' == '-A*B -B*C + A*B*C'\") while PASSED in test_str.py/test_latex.py; test_MatrixElement_printing passes everywhere. It is NOT an old-SymPy XFail/Skipped override.",
+        "scoped_relationship": "Scope = 28 printing test files, 433 declared scoped P2P (= full-dataset P2P n for this issue). The verdict is a LOCAL execution fact and is label-independent of resolved_in_dataset=False."
+      },
+      "merge_acceptable": false,
+      "p2p_full_dataset_n": 433,
+      "queue": "enriched",
+      "recalc": {
+        "f2p_failed_ids": [
+          "test_MatrixSymbol_printing"
+        ],
+        "f2p_failure_exception_lines": [
+          "FAILED sympy/printing/pretty/tests/test_pretty.py::test_MatrixSymbol_printing - AssertionError: assert '-A*B - B*C + A*B*C' == '-A*B -B*C + A*B*C'"
+        ],
+        "f2p_outcomes": {
+          "test_MatrixElement_printing": "PASSED",
+          "test_MatrixSymbol_printing": "PARTIAL_FAIL"
+        },
+        "p2p_preexisting_bad_ids": [
+          "test_latex_Float"
+        ],
+        "p2p_regressed_ids": [
+          "test_haramard",
+          "test_matMul"
+        ]
+      },
+      "recomputation_matches_stored_artifact": true,
+      "resolved_in_dataset": false,
+      "stored_summary": {
+        "f2p_failed_ids": [
+          "test_MatrixSymbol_printing"
+        ],
+        "p2p_preexisting_bad_ids": [
+          "test_latex_Float"
+        ],
+        "p2p_regressed_ids": [
+          "test_haramard",
+          "test_matMul"
+        ]
+      },
+      "stratum": "R-P2P",
+      "symptom_post_passed": true,
+      "symptom_pre_passed": false,
+      "test_patch_clean": true
+    },
+    "sympy__sympy-15875": {
+      "artifact_id": "art_69562ae39095d2d5",
+      "collateral_undeclared_failing_nodes": [
+        {
+          "after": "FAILED",
+          "baseline_same_node": "PASSED",
+          "file": "sympy/core/tests/test_function.py",
+          "name": "test_nfloat"
+        },
+        {
+          "after": "FAILED",
+          "baseline_same_node": "PASSED",
+          "file": "sympy/core/tests/test_function.py",
+          "name": "test_subs_in_derivative"
+        }
+      ],
+      "collateral_undeclared_possible_regressions": [
+        {
+          "after": "FAILED",
+          "baseline_same_node": "PASSED",
+          "file": "sympy/core/tests/test_function.py",
+          "name": "test_nfloat"
+        },
+        {
+          "after": "FAILED",
+          "baseline_same_node": "PASSED",
+          "file": "sympy/core/tests/test_function.py",
+          "name": "test_subs_in_derivative"
+        }
+      ],
+      "declared_f2p_n": 1,
+      "declared_scoped_p2p_n": 80,
+      "instance_id": "sympy__sympy-15875",
+      "interpretation": {
+        "decisive_basis": "REJECT is supported by a SINGLE decisive fact: the only declared FAIL_TO_PASS test genuinely still fails. It is independent of P2P and of environment factors.",
+        "environment_separation": "No declared-P2P environment failure drives the verdict.",
+        "instrument_blind_spot_disclosed": "Two COLLATERAL, UNDECLARED nodes in the batched core file (test_subs_in_derivative: RecursionError; test_nfloat: ZeroDivisionError) PASSED at baseline but FAILED after. They are not in the dataset's declared PASS_TO_PASS id set, so the SWE-bench-style scoped scorer (which judges declared ids only) does not count them; they are nonetheless candidate-era failures in executed scope files and are an honest instrument coverage blind spot. They do not change the REJECT (already decided by the F2P failure) but must not be hidden.",
+        "p2p_regressions": "Among the 80 DECLARED scoped P2P names there are 0 regressions and 0 pre-existing-bad names; the five baseline XFail nodes (Recursion/ZeroDivision-type elsewhere) are recovered by terminal-summary overrides.",
+        "real_f2p_failure": "test_Add_is_zero raises a real 'assert True is None' (test_arit.py:1991) after the candidate; it is not an XFail/Skipped override. That one persistent F2P failure is decisive on its own.",
+        "scoped_relationship": "Scope = 4 core test files, 80 declared scoped P2P (= full-dataset n). REJECT does NOT depend on resolved_in_dataset=False."
+      },
+      "merge_acceptable": false,
+      "p2p_full_dataset_n": 80,
+      "queue": "natural",
+      "recalc": {
+        "f2p_failed_ids": [
+          "test_Add_is_zero"
+        ],
+        "f2p_failure_exception_lines": [
+          "FAILED sympy/core/tests/test_arit.py::test_Add_is_zero - assert True is None"
+        ],
+        "f2p_outcomes": {
+          "test_Add_is_zero": "FAILED"
+        },
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "recomputation_matches_stored_artifact": true,
+      "resolved_in_dataset": false,
+      "stored_summary": {
+        "f2p_failed_ids": [
+          "test_Add_is_zero"
+        ],
+        "p2p_preexisting_bad_ids": [],
+        "p2p_regressed_ids": []
+      },
+      "stratum": "R-P2P",
+      "symptom_post_passed": true,
+      "symptom_pre_passed": false,
+      "test_patch_clean": true
+    }
+  }
+}

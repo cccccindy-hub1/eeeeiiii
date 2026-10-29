@@ -1,0 +1,11 @@
+{
+  "cell": "g3c1live:sympy__sympy-19040:T2A-T",
+  "condition": "T2A-T",
+  "policy": null,
+  "session_id": null,
+  "trace": [],
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch modifies the square-free part computation to correctly handle multivariate polynomials by computing the GCD with all partial derivatives, which addresses the issue of factor dropping when using extension=True. The added test explicitly covers the reported issue #18895 by factoring (x-1)*(y-1) over an algebraic field extension including I, verifying that both factors are present and the coefficient is correct. The provided test artifact is institutionally attested, fresh, linked exactly to this patch and base commit, and shows all declared acceptance tests passing with no failures or regressions. Therefore, the evidence fully supports that the issue is resolved and no regressions are introduced.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"\"}",
+  "parsed": "ACCEPT",
+  "fresh_state_served": null,
+  "error": null
+}

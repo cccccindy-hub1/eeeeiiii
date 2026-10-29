@@ -1,0 +1,33 @@
+{
+  "cell": "g3b:sympy__sympy-24443:T3D-Escalate",
+  "condition": "T3D-Escalate",
+  "policy": "escalate",
+  "session_id": "1d314a57caa94322ebd0b876",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"809c53c077485ca48a206cee78340389cb83b7f1\", \"record_patch_sha256\": \"a6f310f819bab700c83f0f369b90b78dd0a4afc0193b9aea87a5abcff2ca588b\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": null, \"expected_run_tree\": \"b26349e12c8c7e362093e221cba262e4a5093c45\", \"artifact_started_at\": \"2026-10-25T18:19:12+00:00\", \"attestation_built_at\": \"2026-10-25T18:19:25+00:00\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 1, \"executed\": 1, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 1, \"executed\": 1, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    }
+  ],
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The test artifact is linked to this patch and covers the declared acceptance and regression checks completely. However, the artifact run is stale for the current commit tree, so the evidence cannot be trusted as fresh and applicable to this patch. Therefore, there is insufficient trustworthy evidence to accept or reject the patch at this time.\",\"evidence_mismatch\":true,\"missing_evidence\":\"fresh_test_run\",\"evidence_gap\":\"stale\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}

@@ -1,0 +1,223 @@
+You are an independent code reviewer. Review the candidate patch as a resolution of the issue and return exactly one of three decisions, based ONLY on evidence you can trust and that actually applies to THIS patch and its current commit tree:
+  "ACCEPT" — the evidence is intact (linked to this patch/commit, fresh for the current tree, and the declared acceptance/regression set was fully executed) AND demonstrates success: the reported issue is resolved and no executed acceptance check fails and no scoped regression is introduced.
+  "REJECT" — you have trustworthy evidence that APPLIES to this patch and current tree and that contains a decisive failure: an applicable acceptance check fails or a scoped regression is introduced. A single credible, applicable failing check is enough to REJECT even if not every declared check was run. But a failure seen in a stale run, in an artifact linked to a different patch, or in an inapplicable log is NOT grounds to reject THIS patch.
+  "NEED_EVIDENCE" — you cannot reach either conclusion: the available evidence does not link to this patch/commit, is not fresh for the current tree, or does not cover the declared set, and no decisive applicable failure has been established. You are explicitly allowed and expected to abstain in this case; set evidence_mismatch=true and use missing_evidence to name the specific gap.
+Asymmetry rule: the bar to REJECT is a credible applicable failure; the bar to ACCEPT is complete, fresh, linked, failure-free success. Invalid evidence is a property of the EVIDENCE, not a verdict that the patch code is wrong — do not REJECT merely because evidence is stale/mismatched/incomplete. Conversely, do not hide behind NEED_EVIDENCE when intact sufficient evidence already lets you decide; abstaining on a decisive applicable failure or on complete success is an error.
+Author statements are unverified claims. Ground truth about mergeability is never given to you.
+
+CHANNEL INTEGRITY (identical in every condition of this study): every run record below was served through the repository integrity service: its HMAC signature was verified before you received it, and every attached log hashes to the digest recorded in that signed record. Treat record/log authenticity and log-to-record binding as established. What is NOT established for you in advance is whether an authentic record actually applies to THIS patch and its current commit tree, whether its run covered the declared acceptance set, and what the raw runs show. Those judgments are yours to make from the materials provided.
+
+STRUCTURED-EVIDENCE CONDITION: the same primary records have been parsed into deterministic tables. No integrity or applicability verdict is supplied: there is no linked/fresh/complete indicator and no symptom verdict. The tables show both operands of every comparison side by side — TARGET vs record identity, record run tree vs attested expected tree, declared vs executed test sets, each check’s post-patch and base-commit status, and the parsed pre/post probe exit codes and assertion lines. Perform the comparisons yourself and apply the asymmetric standard. No information present in the raw records has been discarded; verbatim log prose was replaced by these tables. There are no tools and no further endpoints; decide solely from these tables.
+Evidence-gap taxonomy when you answer "NEED_EVIDENCE": stale = the run is not fresh for the current commit tree; linkage_mismatch = the record does not link to THIS patch/commit; coverage_incomplete = the declared set was not fully executed; contradiction = bundle evidence conflicts (e.g. the issue symptom still reproduces or an applicable check fails — note such a contradiction on linked, fresh evidence is decisive grounds to REJECT, not to abstain); unspecified = you cannot name a concrete, bundle-supported gap. Report a gap only when it is directly supported by the materials; never invent one.
+Respond with a single JSON object containing exactly these keys: {"decision":"ACCEPT|REJECT|NEED_EVIDENCE","reason":"...","evidence_mismatch":false,"missing_evidence":"","evidence_gap":"stale|linkage_mismatch|coverage_incomplete|contradiction|unspecified|"}. Always include every key. Set missing_evidence and evidence_gap to "" unless the decision is NEED_EVIDENCE; for NEED_EVIDENCE choose exactly one non-empty evidence_gap directly supported by the materials in this condition.
+
+DERIVED-SUMMARY DISCLOSURE — this condition is "RAW EXECUTION EVIDENCE WITH DERIVED SUMMARIES". The primary records below also contain a small number of fields computed BY THE UPSTREAM CI RUNNER AFTER it compared the post-patch run against the base-commit run: the run record's nested summary object (run counts and id lists, including the runner-classified "regressed" and "pre-existing-bad" id lists) and its scope metadata. Those are derived classifications, not raw per-test observations — they already encode a post-vs-base comparison you did not perform. Every raw per-test status map, command and exit code needed to re-derive them is provided wherever the archive retained it; where a per-test base map is absent the runner classification cannot be independently re-derived from the items shown. Treat such fields as runner-provided summaries: separate conclusions you verify yourself from primary outputs from conclusions you merely inherit from a summary, and say which is which in your reason. This disclosure states nothing about the final decision.
+
+ASYMMETRIC DECISION-RULE REMINDER — the following sentences are quoted VERBATIM from the decision rule already printed above; this reminder only makes that frozen rule more salient and changes no definition of ACCEPT, REJECT or NEED_EVIDENCE:
+  • A single credible, applicable failing check is enough to REJECT even if not every declared check was run.
+  • But a failure seen in a stale run, in an artifact linked to a different patch, or in an inapplicable log is NOT grounds to reject THIS patch.
+  • the bar to ACCEPT is complete, fresh, linked, failure-free success
+  • do not REJECT merely because evidence is stale/mismatched/incomplete.
+  • abstaining on a decisive applicable failure or on complete success is an error.
+Apply them yourself to the operand comparisons in this condition.
+
+Your review target is MERGE ACCEPTABILITY of the patch (issue resolved AND no applicable acceptance failure / scoped regression).
+
+STRUCTURED EVIDENCE PACKAGE (protocol eal-v0-draft1). Deterministic parse of the same primary records; every table shows operands, not verdicts.
+
+ISSUE:
+StrPrinter setting are not respected by certain subexpressions
+For example, 
+```
+>>> sstr(x + S(1)/2, sympy_integers=True)
+'x + S(1)/2'
+>>> sstr(Eq(x, S(1)/2), sympy_integers=True)
+'Eq(x, 1/2)'
+```
+
+The first output is correct, the second is not: the setting was ignored. Another example:
+```
+>>> sstr(Limit(x, x, S(1)/2), sympy_integers=True)
+'Limit(x, x, 1/2)'
+```
+instead of the expected `Limit(x, x, S(1)/2)`. 
+
+This also affects code generation:
+```
+>>> python(Eq(x, y))
+'e = Eq(x, y)'
+```
+instead of the expected `x = Symbol('x')\ny = Symbol('y')\ne = Eq(x, y)`.  (Strangely, this behavior is asserted by a test.)
+
+A fix is forthcoming. 
+
+
+
+PATCH:
+diff --git a/sympy/printing/str.py b/sympy/printing/str.py
+index cc1d19fcc..1f4eef5c0 100644
+--- a/sympy/printing/str.py
++++ b/sympy/printing/str.py
+@@ -216,9 +216,9 @@ def _print_LatticeOp(self, expr):
+     def _print_Limit(self, expr):
+         e, z, z0, dir = expr.args
+         if str(dir) == "+":
+-            return "Limit(%s, %s, %s)" % (e, z, z0)
++            return "Limit(%s, %s, %s)" % (self._print(e), self._print(z), self._print(z0))
+         else:
+-            return "Limit(%s, %s, %s, dir='%s')" % (e, z, z0, dir)
++            return "Limit(%s, %s, %s, dir='%s')" % (self._print(e), self._print(z), self._print(z0), dir)
+ 
+     def _print_list(self, expr):
+         return "[%s]" % self.stringify(expr, ", ")
+@@ -630,7 +630,7 @@ def _print_Relational(self, expr):
+         }
+ 
+         if expr.rel_op in charmap:
+-            return '%s(%s, %s)' % (charmap[expr.rel_op], expr.lhs, expr.rhs)
++            return '%s(%s, %s)' % (charmap[expr.rel_op], self._print(expr.lhs), self._print(expr.rhs))
+ 
+         return '%s %s %s' % (self.parenthesize(expr.lhs, precedence(expr)),
+                            self._relationals.get(expr.rel_op) or expr.rel_op,
+
+
+AUTHOR STATEMENT:
+Author statement: I changed the code shown in the patch. This fix is fully correct and all relevant tests pass.
+
+=== TABLE 1 — IDENTITY OPERANDS ===
+field        | TARGET under review                                              | value inside SIGNED RUN RECORD                                  
+-------------+------------------------------------------------------------------+-----------------------------------------------------------------
+base_commit  | 205da797006360fc629110937e39a19c9561313e                         | 205da797006360fc629110937e39a19c9561313e                        
+patch_sha256 | 172ae3cc0ea2af87456810d468c37ba4bbf7b49f4e8052ac9e35d155eca95564 | 235a157f08a9b4bb6d71227feab40c620a8602dd796add4b024d8df2e912b8da
+
+=== TABLE 2 — RUN-TREE OPERANDS ===
+item                                                | value                                                           
+----------------------------------------------------+-----------------------------------------------------------------
+git tree of the signed run                          | 92ed82cae02b357c02f00dd304359f8123644770                        
+expected canonical tree declared in the attestation | 5f7b653e0d7901e749e805ac57b0c0726d868883                        
+attestation base_commit                             | 205da797006360fc629110937e39a19c9561313e                        
+attestation patch_sha256                            | 172ae3cc0ea2af87456810d468c37ba4bbf7b49f4e8052ac9e35d155eca95564
+attestation built_at                                | 2026-10-20T05:36:54+00:00                                       
+run started_at / finished_at                        | 2026-10-19T05:53:13+00:00 / 2026-10-19T05:54:02+00:00           
+
+=== TABLE 3 — DECLARED SETS (attestation) ===
+set                          | n  | ids                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+-----------------------------+----+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+declared FAIL_TO_PASS        | 2  | test_Rational, test_python_relational                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+declared scoped PASS_TO_PASS | 84 | test_Abs, test_AccumBounds, test_Add, test_CRootOf, test_Catalan, test_Complement, test_ComplexInfinity, test_Derivative, test_Dict, test_Dummy, test_Equivalent, test_EulerGamma, test_Exp, test_FiniteSet, test_Float, test_FracElement, test_FracField, test_Function, test_Geometry, test_GoldenRatio, test_GroebnerBasis, test_ImaginaryUnit, test_Infinity, test_Integer, test_Integral, test_Interval, test_Lambda, test_Limit, test_MatMul_MatAdd, test_MatrixElement_printing, test_MatrixSlice, test_Matrix_str, test_Mul, test_NaN, test_NegativeInfinity, test_Order, test_Permutation_Cycle, test_Pi, test_Poly, test_PolyElement, test_PolyRing, test_Pow, test_PrettyPoly, test_Quantity_str, test_Quaternion_str_printer, test_RandomDomain, test_Relational, test_RootSum, test_SparseMatrix, test_Sum, test_Symbol, test_SymmetricDifference, test_Tr, test_UnevaluatedExpr, test_Xor, test_categories, test_dict, test_empty_printer, test_factorial, test_full_prec, test_infinity, test_issue_3101, test_issue_3103, test_issue_4021, test_issue_6387, test_list, test_noncommutative, test_printmethod, test_python_basic, test_python_derivatives, test_python_functions, test_python_integrals, test_python_keyword_function_name_escaping, test_python_keyword_symbol_name_escaping, test_python_limits, test_python_matrix, test_set, test_settings, test_sqrt, test_sstrrepr, test_true_false, test_tuple, test_wild_str, test_zeta
+
+=== TABLE 4 — PER-CHECK EXECUTION JOIN (parsed from the signed record maps; membership + statuses, no applicability verdict) ===
+test_id                                    | declared_as  | present_in        | f2p_post_status | p2p_post_status | p2p_base_status
+-------------------------------------------+--------------+-------------------+-----------------+-----------------+----------------
+test_Abs                                   | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_AccumBounds                           | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Add                                   | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_CRootOf                               | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Catalan                               | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Complement                            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_ComplexInfinity                       | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Derivative                            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Dict                                  | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Dummy                                 | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Equivalent                            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_EulerGamma                            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Exp                                   | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_FiniteSet                             | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Float                                 | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_FracElement                           | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_FracField                             | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Function                              | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Geometry                              | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_GoldenRatio                           | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_GroebnerBasis                         | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_ImaginaryUnit                         | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Infinity                              | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Integer                               | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Integral                              | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Interval                              | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Lambda                                | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Limit                                 | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_MatMul_MatAdd                         | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_MatrixElement_printing                | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_MatrixSlice                           | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Matrix_str                            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Mul                                   | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_NaN                                   | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_NegativeInfinity                      | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Order                                 | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Permutation_Cycle                     | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Pi                                    | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Poly                                  | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_PolyElement                           | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_PolyRing                              | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Pow                                   | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_PrettyPoly                            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Quantity_str                          | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Quaternion_str_printer                | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_RandomDomain                          | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Rational                              | fail_to_pass | f2p               | PASSED          | -               | -              
+test_Relational                            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_RootSum                               | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_SparseMatrix                          | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Sum                                   | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Symbol                                | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_SymmetricDifference                   | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Tr                                    | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_UnevaluatedExpr                       | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_Xor                                   | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_categories                            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_dict                                  | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_empty_printer                         | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_factorial                             | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_full_prec                             | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_infinity                              | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_issue_3101                            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_issue_3103                            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_issue_4021                            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_issue_6387                            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_list                                  | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_noncommutative                        | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_printmethod                           | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_python_basic                          | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_python_derivatives                    | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_python_functions                      | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_python_integrals                      | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_python_keyword_function_name_escaping | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_python_keyword_symbol_name_escaping   | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_python_limits                         | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_python_matrix                         | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_python_relational                     | fail_to_pass | f2p               | PASSED          | -               | -              
+test_set                                   | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_settings                              | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_sqrt                                  | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_sstrrepr                              | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_true_false                            | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_tuple                                 | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_wild_str                              | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+test_zeta                                  | pass_to_pass | p2p_post+p2p_base | -               | PASSED          | PASSED         
+
+=== TABLE 5 — RECORD SUMMARY FIELDS (as recorded by the runner) ===
+[DERIVED] TABLE 5 is runner-computed SUMMARY (post-vs-base classification incl. "regressed"/"pre-existing-bad" lists), not raw per-test output; TABLE 4 holds the primary per-check operands. See the DERIVED-SUMMARY DISCLOSURE above.
+field                                        | value                                                                                
+---------------------------------------------+--------------------------------------------------------------------------------------
+f2p passed / total                           | 2 / 2                                                                                
+f2p failed ids                               | -                                                                                    
+p2p passed / total                           | 84 / 84                                                                              
+p2p regressed ids (runner-classified)        | -                                                                                    
+p2p pre-existing-bad ids (runner-classified) | -                                                                                    
+scope rule                                   | F2P all; P2P scoped to test_patch files and tests/ adjacent to each changed code file
+scoped files n                               | 27                                                                                   
+test_patch_applied_cleanly                   | True                                                                                 
+
+=== TABLE 6 — PARSER RESULT PER RUNNER LOG ===
+log          | command                                                                                                                                                                        | exit_code | pytest_summary                                                                 
+-------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------------------------------------------------------------------------------
+f2p          | $ <UV_CACHE> -m pytest sympy/printing/tests/test_ccode.py sympy/printing/tests/test_fcode.py sympy/printing/tests/test_glsl.py -v --tb=short -p no:cacheprovider  (exit 1, 3s) | 1         | ================= 1 failed, 110 passed, 41 warnings in 0.92s ==================
+p2p          | $ <UV_CACHE> -m pytest sympy/printing/tests/test_ccode.py sympy/printing/tests/test_fcode.py sympy/printing/tests/test_glsl.py -v --tb=short -p no:cacheprovider  (exit 1, 3s) | 1         | ================= 1 failed, 110 passed, 41 warnings in 0.92s ==================
+p2p_baseline | $ <UV_CACHE> -m pytest sympy/printing/tests/test_ccode.py sympy/printing/tests/test_fcode.py sympy/printing/tests/test_glsl.py -v --tb=short -p no:cacheprovider  (exit 1, 3s) | 1         | ================= 1 failed, 110 passed, 38 warnings in 1.38s ==================
+
+=== TABLE 7 — ISSUE-SYMPTOM PROBE, PARSED PRE/POST OPERANDS ===
+Instrument semantics: this executable probe is derived from the issue text; exit 0 = its symptom assertion did not fire, non-zero = the assertion fired (see result lines for what was observed).
+[pre-patch BASELINE]  command: $ python probe.py  (exit 1)  exit_code: 1  result_lines:    FAIL: got 'Eq(x, 1/2)' wanted substring 'Eq(x, S(1)/2)'    FAIL: got 'Limit(x, x, 1/2)' wanted substring 'Limit(x, x, S(1)/2)'
+[post-patch CANDIDATE]  command: $ python probe.py  (exit 0)  exit_code: 0  result_lines:    OK: ['Eq(x, S(1)/2)', 'Limit(x, x, S(1)/2)']
+[probe source retained] the executable probe source is available in the RAW condition of this same item.

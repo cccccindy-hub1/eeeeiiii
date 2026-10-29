@@ -1,0 +1,125 @@
+{
+  "all_ok": true,
+  "api_calls_made": 0,
+  "design_version": "groundedreview-gate3c0-zero-api-design-freeze-v1",
+  "document": "Gate G3-C.0 task 1: re-verification that the accepted G3-B.4 products and the G3-B.3 parents are unchanged",
+  "g3b3_parent_pins": {
+    "all_ok": true,
+    "checks": [
+      {
+        "artifact": "g3b_freeze_manifest",
+        "ok": true
+      },
+      {
+        "artifact": "g3b_live_rows:deepseek-flash",
+        "ok": true,
+        "path": "evidence_store_g3b\\runs\\g3b_live_deepseek_flash_results.jsonl"
+      },
+      {
+        "artifact": "g3b_live_rows:gpt-4.1-mini",
+        "ok": true,
+        "path": "evidence_store_g3b\\runs\\g3b_live_gpt_41_mini_results.jsonl"
+      }
+    ]
+  },
+  "g3b3_result_freeze": {
+    "all_pins_match": true,
+    "n_checks": 11,
+    "n_pass": 11
+  },
+  "g3b4_freeze_reverification": {
+    "all_ok": true,
+    "canonical_digest_matches": true,
+    "checks": [
+      {
+        "bytes": 13723,
+        "ok": true,
+        "relpath": "audits/g3b4_deepseek_recompute.json"
+      },
+      {
+        "bytes": 6642,
+        "ok": true,
+        "relpath": "audits/g3b4_first_run_timeline.json"
+      },
+      {
+        "bytes": 12092,
+        "ok": true,
+        "relpath": "audits/g3b4_gpt_focal_families.json"
+      },
+      {
+        "bytes": 69802,
+        "ok": true,
+        "relpath": "audits/g3b4_gpt_strict_audit.json"
+      },
+      {
+        "bytes": 9865,
+        "ok": true,
+        "relpath": "audits/g3b4_integrity_verification.json"
+      },
+      {
+        "bytes": 17060,
+        "ok": true,
+        "relpath": "audits/g3b4_per_issue_audit_table.json"
+      },
+      {
+        "bytes": 13528,
+        "ok": true,
+        "relpath": "audits/g3b4_planning_and_revisions.json"
+      },
+      {
+        "bytes": 27632,
+        "ok": true,
+        "relpath": "audits/g3b4_sympy_13974_audit.json"
+      },
+      {
+        "bytes": 16451,
+        "ok": true,
+        "relpath": "audits/g3b4_t2d_vs_strict.json"
+      },
+      {
+        "bytes": 6703,
+        "ok": true,
+        "relpath": "blind_coding/g3b4_blind_codebook.json"
+      },
+      {
+        "bytes": 9399,
+        "ok": true,
+        "relpath": "blind_coding/g3b4_blind_coded_packets.json"
+      },
+      {
+        "bytes": 7150,
+        "ok": true,
+        "relpath": "blind_coding/g3b4_blind_coding_results.json"
+      },
+      {
+        "bytes": 6717,
+        "ok": true,
+        "relpath": "blind_coding/g3b4_blind_packets.json"
+      },
+      {
+        "bytes": 196,
+        "ok": true,
+        "relpath": "blind_coding/g3b4_blind_sealed_mapping.json"
+      },
+      {
+        "bytes": 7905,
+        "ok": true,
+        "relpath": "g3b4_report.json"
+      },
+      {
+        "bytes": 11626,
+        "ok": true,
+        "relpath": "g3b4_report.md"
+      }
+    ],
+    "every_file_sha_matches": true,
+    "g3b4_audit_version": "groundedreview-gate3b4-zero-api-strict-audit-v1",
+    "manifest": "evidence_store_g3b4\\freeze\\g3b4_result_freeze_manifest.json",
+    "n_checks": 17,
+    "n_files_declared": 16,
+    "n_files_reverified": 16,
+    "n_pass": 17
+  },
+  "historical_artifacts_modified": false,
+  "note": "G3-B.4 accepted; this only re-hashes its frozen files and confirms the G3-B.3 anchors. No file under evidence_store_g3b4 or any earlier gate was written."
+}

@@ -1,0 +1,40 @@
+{
+  "cell": "g3b:sympy__sympy-19783:T3D-Strict",
+  "condition": "T3D-Strict",
+  "policy": "strict",
+  "session_id": "280eca724eeb98cd7e25b5ea",
+  "trace": [
+    {
+      "turn": 0,
+      "tool": "verify_artifact_linkage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"base_commit_match\": true, \"patch_sha256_match\": true, \"linked\": true, \"record_base_commit\": \"586a43201d0357e92e8c93548d69a9f42bf548f4\", \"record_patch_sha256\": \"eecd93cdd2ae7abddca070c01a1b61605226026f5cf1640cbd04fa73fca5d585\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_evidence_freshness",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"base_commit_match\": true, \"run_tree_match\": false, \"fresh\": false, \"record_run_tree\": null, \"expected_run_tree\": \"e540f05150c56b3e3b16399616a6b5b3b0e7c715\", \"artifact_started_at\": \"2026-10-25T18:27:16+00:00\", \"attestation_built_at\": \"2026-10-25T18:27:33+00:00\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_test_coverage",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"authentic_signature\": true, \"attestation_authentic\": true, \"fail_to_pass\": {\"declared\": 2, \"executed\": 2, \"missing_ids\": [], \"undeclared_executed\": []}, \"pass_to_pass_scoped\": {\"declared\": 9, \"executed\": 9, \"missing_count\": 0, \"missing_ids_sample\": []}, \"complete\": true, \"note\": \"coverage compares executed test ids to the declared acceptance set; it reports no pass/fail outcomes\"}"
+    },
+    {
+      "turn": 0,
+      "tool": "check_claim_consistency",
+      "args": {},
+      "http_status": 200,
+      "result_preview": "{\"verdict\": \"consistent\", \"reason\": \"the authorised diagnostic evidence supports the claim at issue level: the reported symptom no longer reproduces; maintainer acceptance outcomes are not adjudicated under the strict policy\"}"
+    }
+  ],
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The test artifact is linked to this patch and covers the declared acceptance and regression checks completely. However, the artifact run is not fresh for the current commit tree, so the evidence cannot be fully trusted to reflect the current state of the patch. No decisive failure is present, but acceptance cannot be confirmed without fresh evidence.\",\"evidence_mismatch\":true,\"missing_evidence\":\"fresh_test_artifact\",\"evidence_gap\":\"stale\"}",
+  "parsed": "NEED_EVIDENCE",
+  "pre_call_budget_stop": false,
+  "pre_call_budget_reason": null
+}
