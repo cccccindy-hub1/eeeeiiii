@@ -1,0 +1,10 @@
+{
+  "served_model": "glm-4.6",
+  "usage": {
+    "prompt_tokens": 5763,
+    "completion_tokens": 286,
+    "total_tokens": 6049
+  },
+  "finish_reason": "stop",
+  "content": "{\"label\":\"ACCEPT\",\"decisive_failing_test_ids\":[],\"applicability_reason\":\"The declared FAIL_TO_PASS test 'test_monomials' transitions from failing at base (as shown by the issue symptom probe) to passing after the patch. All scoped PASS_TO_PASS tests also pass after the patch with no regressions compared to the base commit.\",\"xfail_flaky_self_added_concern\":\"no, the candidate and maintainer patches add identical test assertions for the bug fix, and all tests pass deterministically.\",\"confidence\":\"high\",\"evidence_summary\":{\"f2p_after_summary_line\":\"======================= 11 passed, 6 warnings in 0.64s ========================\",\"p2p_after_summary_line\":\"======================= 11 passed, 6 warnings in 0.64s ========================\",\"p2p_base_summary_line\":\"======================= 11 passed, 5 warnings in 0.93s ========================\",\"key_failures_or_diffs\":[]},\"labeling_notes\":\"The base log shows 'test_monomials' as PASSED because the base code lacks the assertions added by the test patches. The issue symptom probe confirms the underlying bug existed at base and is fixed post-patch.\"}"
+}

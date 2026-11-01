@@ -1,0 +1,74 @@
+{
+  "cohort": "G3-A",
+  "packet": "P09",
+  "utc": "2026-11-01T06:15:45Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 6620,
+  "completion_tokens": 433,
+  "estimated_cost_rmb": "0.016704",
+  "elapsed_s": 14.32,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 2368,
+      "sha256": "4f4990aa396704a937aec34f880e6c95f303755bae5897fd0d44aa8edee8d5a0"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 1251,
+      "sha256": "62efa883673ce91ed96d3272bbf4dfa845c2c59bfa6461b8a1dcd0754eaa44a4"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 1028,
+      "sha256": "0eff6c9a52daf3c8ab55170f8c7cbd2e1b73e807fabcfb69bad147cc401f01ce"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 441,
+      "sha256": "4242b41a51745644eab3ef646bfb2933de4652e7d3ca2bf0cb91b8ffb7fa6b84"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 4368,
+      "sha256": "4b461971e2c8640ebacdcbba83c7f0e381ba53ffa6246efb91992e42c107ef81"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 4368,
+      "sha256": "4b461971e2c8640ebacdcbba83c7f0e381ba53ffa6246efb91992e42c107ef81"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 3416,
+      "sha256": "35b34990459b7816adf1aa7fc7b968e6f593ca1b456010675fe2f6e01ed8a13c"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 301,
+      "sha256": "a92637cc7155ee9c98c4405b49117a404bf7067996f8d4c9f9af0436d2609a1c"
+    }
+  ],
+  "verdict": {
+    "label": "REJECT",
+    "decisive_failing_test_ids": [
+      "test_issue_12420"
+    ],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_issue_12420' still fails after applying the candidate and maintainer patches. The failure occurs because the candidate patch only fixes the IndexError in `_split_gcd` but does not implement the necessary changes in `_sqrt_match` to return an empty list for complex arguments, causing the assertion `assert _sqrt_match(4 + I) == []` in the maintainer test to fail with `assert [4 + I, 0, 1] == []`. This is a genuine test failure of the declared F2P test, not a pre-existing, xfail, or flaky issue.",
+    "xfail_flaky_self_added_concern": "no",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "=========== 1 failed, 12 passed, 21663 warnings in 92.17s (0:01:32) ===========",
+      "p2p_after_summary_line": "=========== 1 failed, 12 passed, 21663 warnings in 92.17s (0:01:32) ===========",
+      "p2p_base_summary_line": "================ 12 passed, 21641 warnings in 86.71s (0:01:26) ================",
+      "key_failures_or_diffs": [
+        "FAILED sympy/simplify/tests/test_sqrtdenest.py::test_issue_12420 - assert [4 + I, 0, 1] == []"
+      ]
+    },
+    "labeling_notes": "The candidate patch successfully fixes the IndexError crash reported in the issue (as proven by the symptom probe), but it is incomplete regarding the maintainer's test expectations which require `_sqrt_match` to return an empty list for complex numbers. Thus, the patch fails the maintainer-added F2P test."
+  }
+}

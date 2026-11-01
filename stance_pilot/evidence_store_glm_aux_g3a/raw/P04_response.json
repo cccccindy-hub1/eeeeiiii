@@ -1,0 +1,10 @@
+{
+  "served_model": "glm-4.6",
+  "usage": {
+    "prompt_tokens": 37019,
+    "completion_tokens": 293,
+    "total_tokens": 37312
+  },
+  "finish_reason": "stop",
+  "content": "{\"label\":\"ACCEPT\",\"decisive_failing_test_ids\":[],\"applicability_reason\":\"The declared FAIL_TO_PASS test 'test_immutable' transitions from fail (not present in base) to pass after the patch. All scoped PASS_TO_PASS tests pass after the patch with no regressions compared to the base commit. The issue symptom probe also confirms the fix.\",\"xfail_flaky_self_added_concern\":\"no - test_immutable is a maintainer-added test specifically for this patch, and all other tests are standard suite tests with no unexpected xfails or flakes.\",\"confidence\":\"high\",\"evidence_summary\":{\"f2p_after_summary_line\":\"sympy/core/tests/test_basic.py::test_immutable PASSED\",\"p2p_after_summary_line\":\"173 passed, 4 xfailed, 7483 warnings in 11.20s\",\"p2p_base_summary_line\":\"172 passed, 4 xfailed, 6635 warnings in 12.20s\",\"key_failures_or_diffs\":[]},\"labeling_notes\":\"The patch correctly adds __slots__ = () to the Printable class to prevent the creation of __dict__ on Symbol instances, resolving the reported issue. The scoped P2P suite executed locally shows no regressions.\"}"
+}

@@ -1,0 +1,74 @@
+{
+  "cohort": "G3-A",
+  "packet": "P03",
+  "utc": "2026-11-01T06:14:32Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 6838,
+  "completion_tokens": 452,
+  "estimated_cost_rmb": "0.017292",
+  "elapsed_s": 13.96,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 435,
+      "sha256": "3fdcb4e536cd762dd1b602f328bf1c4768f340e4c617ca8b92592b76b7c6c126"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 983,
+      "sha256": "f2c79b7381306fdba6d7c058dd44f3f45a5eaaeecb4e4200fcd2f6f36a3b5479"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 1498,
+      "sha256": "ad6401cd9ac1aab55716f0d912138ba5ff37295cea42411e7e506a1dbf29ce3a"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 423,
+      "sha256": "ec23db3b6246c3cbfc9e5711a9fb7f0f5f984cf4ccba392a2f060a21e59908b8"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 5872,
+      "sha256": "bc452a68f580d3ec320f4b59aed8b72f24e29b7f1a6b29a3effcfa5db8b17683"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 5872,
+      "sha256": "bc452a68f580d3ec320f4b59aed8b72f24e29b7f1a6b29a3effcfa5db8b17683"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 4955,
+      "sha256": "f838ca3a086f0e9cf732f624a98f8640fb72deb2b1739f3f01f23173e64d298c"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 271,
+      "sha256": "9ef8be1d55de1e942647744c5308e22bbce4e9b541b54644cbc4ac2b178dc10b"
+    }
+  ],
+  "verdict": {
+    "label": "REJECT",
+    "decisive_failing_test_ids": [
+      "sympy/physics/quantum/tests/test_operator.py::test_identity"
+    ],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_identity' still fails after applying the candidate patch. The failure occurs on the assertion `assert I * Dagger(O) == Dagger(O)`, which is added by the maintainer test patch. The candidate patch only implements `__mul__` and `__rmul__` on the `adjoint` class, which handles `Dagger(O) * I` but fails to address `I * Dagger(O)` because SymPy's `Mul` evaluation flattens `I * Dagger(O)` without triggering `adjoint.__rmul__`. Since this test was declared as FAIL_TO_PASS and it still fails, the patch is rejected.",
+    "xfail_flaky_self_added_concern": "no",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "======= 1 failed, 26 passed, 2 skipped, 1 xfailed, 9 warnings in 1.67s ========",
+      "p2p_after_summary_line": "======= 1 failed, 26 passed, 2 skipped, 1 xfailed, 9 warnings in 1.67s ========",
+      "p2p_base_summary_line": "============ 26 passed, 2 skipped, 1 xfailed, 7 warnings in 2.19s =============",
+      "key_failures_or_diffs": [
+        "FAILED sympy/physics/quantum/tests/test_operator.py::test_identity - assert (I * Dagger(O)) == Dagger(O)"
+      ]
+    },
+    "labeling_notes": "The candidate patch is incomplete. It successfully fixes `Dagger(O) * I` (via `__mul__`) but fails to fix `I * Dagger(O)` (because `__rmul__` is bypassed by SymPy's Mul flattening). The maintainer test patch correctly tests both directions, exposing the incomplete fix."
+  }
+}

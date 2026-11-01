@@ -1,0 +1,74 @@
+{
+  "cohort": "G3-C.1",
+  "packet": "P04",
+  "utc": "2026-11-01T05:10:16Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 22289,
+  "completion_tokens": 358,
+  "estimated_cost_rmb": "0.047442",
+  "elapsed_s": 11.87,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 1934,
+      "sha256": "b3fd799dc1ba012389ad96070b7e281479b5c253909b79c3bc988139c0192213"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 1943,
+      "sha256": "008ef753a5965c857a684ff8b5dccdf8415b05e300e940f74536e324ae587f51"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 819,
+      "sha256": "0a6f75df5fbdb48a5130b7c2953a64b890ee66f0b5f54fa55243652e1cb53488"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 3988,
+      "sha256": "556b135fab528b66d8b639d70459fe91125389b841455010460c9521180e2a0e"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 21165,
+      "sha256": "4644f9331a3276523053e133e2bf8b095137b71b3225a32e9bf5afc8746ba3f1"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 21165,
+      "sha256": "4644f9331a3276523053e133e2bf8b095137b71b3225a32e9bf5afc8746ba3f1"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 21165,
+      "sha256": "4dca58544fe8b61717d3103094dcc20280afeef416f9edf860b79e24a7deac3c"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 519,
+      "sha256": "f2d52db4ecfb087211bd3ddcf82e70580f7d5bbfca9227a717981c387fc8d6c9"
+    }
+  ],
+  "verdict": {
+    "label": "ACCEPT",
+    "decisive_failing_test_ids": [],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_issue_5786' transitions from XFAIL at the base commit to PASSED after the patch. All scoped PASS_TO_PASS tests remain PASSED with no regressions. The issue symptom probe also confirms the bug is fixed.",
+    "xfail_flaky_self_added_concern": "no - the test_issue_5786 was previously marked @XFAIL and is now correctly passing after the patch removed the decorator and the underlying bug was fixed.",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "161 passed, 1 xfailed, 287 warnings in 14.86s",
+      "p2p_after_summary_line": "161 passed, 1 xfailed, 287 warnings in 14.86s",
+      "p2p_base_summary_line": "160 passed, 2 xfailed, 215 warnings in 15.92s",
+      "key_failures_or_diffs": [
+        "Base: test_issue_5786 XFAIL",
+        "Patch: test_issue_5786 PASSED",
+        "Probe: Base FAIL (factor drops y-1), Patch OK (factor preserves polynomial)"
+      ]
+    },
+    "labeling_notes": "The base commit had 2 xfailed tests (test_noncommutative_pseudomultivariate and test_issue_5786). After the patch, test_issue_5786 passes, leaving 1 xfailed test. No regressions observed in the scoped P2P suite."
+  }
+}

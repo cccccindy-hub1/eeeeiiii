@@ -1,0 +1,77 @@
+{
+  "cohort": "G3-C.1",
+  "packet": "P08",
+  "utc": "2026-11-01T05:11:04Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 44529,
+  "completion_tokens": 473,
+  "estimated_cost_rmb": "0.092842",
+  "elapsed_s": 14.23,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 588,
+      "sha256": "fe8b1e1749c98ae41596c17a97bb44ba1d61f2f5495e6ea8cc37cb64081792e6"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 564,
+      "sha256": "8131073a50f734e7431334fd556b926373a145ac5c962bf05eb59af2e6f61296"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 550,
+      "sha256": "e3a81db943bf43727aa78299e7e90de99afd5c2d6b445ee01e9ac6a9652cf920"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 2594,
+      "sha256": "47b9a98ca1e1b09b08e2be7fb43e7ce2d7bdcd6c110d3ca760380894dbe290a4"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 56663,
+      "sha256": "ce1b0c35d302a6642036a54021d33bfe65722054718a4dde8fb41499c7408dd8"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 56663,
+      "sha256": "ce1b0c35d302a6642036a54021d33bfe65722054718a4dde8fb41499c7408dd8"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 26316,
+      "sha256": "885138d2ec6d49415d310fe6a811a173abe96419bf10e0bbf1417f20304fbf6b"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 2289,
+      "sha256": "874e46b62f2c4ff9963b8f1c06bbc7c7ecb61957dce547fed47d1513c4cd6889"
+    }
+  ],
+  "verdict": {
+    "label": "REJECT",
+    "decisive_failing_test_ids": [
+      "test_subs_in_derivative",
+      "test_nfloat"
+    ],
+    "applicability_reason": "The candidate patch introduces a call to `self.simplify()` inside `_eval_is_zero`. This causes severe regressions in previously passing tests: `test_subs_in_derivative` now fails with a RecursionError (infinite loop between `_eval_is_zero` and `simplify`), and `test_nfloat` now fails with a ZeroDivisionError. Both tests passed at the base commit. These are decisive, applicable failures directly caused by the patch.",
+    "xfail_flaky_self_added_concern": "yes, test_Add_is_zero fails because the maintainer test expects `is None` but the patch makes it `True`; however, the RecursionError and ZeroDivisionError in other tests are the primary reason for rejection.",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "FAILED sympy/core/tests/test_arit.py::test_Add_is_zero - assert True is None",
+      "p2p_after_summary_line": "=========== 8 failed, 162 passed, 6507 warnings in 60.93s (0:01:00) ===========",
+      "p2p_base_summary_line": "================ 5 failed, 165 passed, 7557 warnings in 15.82s ================",
+      "key_failures_or_diffs": [
+        "FAILED sympy/core/tests/test_function.py::test_subs_in_derivative - RecursionError: maximum recursion depth exceeded while calling a Python object",
+        "FAILED sympy/core/tests/test_function.py::test_nfloat - ZeroDivisionError: integer division or modulo by zero",
+        "FAILED sympy/core/tests/test_arit.py::test_Add_is_zero - assert True is None"
+      ]
+    },
+    "labeling_notes": "The candidate patch successfully resolves the original issue symptom (e.is_zero returns True instead of False), but the implementation is flawed. Calling `self.simplify()` inside `_eval_is_zero` triggers infinite recursion in some complex expression evaluations and causes other numerical errors, leading to hard failures in previously passing tests."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "served_model": "glm-4.6",
+  "usage": {
+    "prompt_tokens": 12920,
+    "completion_tokens": 354,
+    "total_tokens": 13274
+  },
+  "finish_reason": "stop",
+  "content": "{\"label\":\"ACCEPT\",\"decisive_failing_test_ids\":[],\"applicability_reason\":\"The declared FAIL_TO_PASS test 'test_kernS' transitions from fail to pass after the patch. The two failing tests in the scoped PASS_TO_PASS logs ('test_evaluate_false' and 'test_issue_17811') are pre-existing environment failures, as they fail with the exact same error in the base commit log and are unrelated to the patch.\",\"xfail_flaky_self_added_concern\":\"no, the failing tests in the logs are pre-existing base failures unrelated to the patch\",\"confidence\":\"high\",\"evidence_summary\":{\"f2p_after_summary_line\":\"sympy/core/tests/test_sympify.py::test_kernS PASSED [86%]\",\"p2p_after_summary_line\":\"===== 2 failed, 93 passed, 5 skipped, 4 xfailed, 4889 warnings in 11.53s ======\",\"p2p_base_summary_line\":\"===== 2 failed, 93 passed, 5 skipped, 4 xfailed, 4954 warnings in 11.55s ======\",\"key_failures_or_diffs\":[\"test_evaluate_false and test_issue_17811 fail in both base and patched logs with ValueError: Name node can't be used with 'False' constant\"]},\"labeling_notes\":\"The 2 failing tests are pre-existing failures in the environment (Python 3.9.25 AST incompatibility) and not regressions caused by the candidate patch.\"}"
+}

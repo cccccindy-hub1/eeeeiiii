@@ -1,0 +1,10 @@
+{
+  "served_model": "glm-4.6",
+  "usage": {
+    "prompt_tokens": 6725,
+    "completion_tokens": 305,
+    "total_tokens": 7030
+  },
+  "finish_reason": "stop",
+  "content": "{\"label\":\"ACCEPT\",\"decisive_failing_test_ids\":[],\"applicability_reason\":\"The declared FAIL_TO_PASS test 'test_issue_24211' now passes after the patch. All scoped PASS_TO_PASS tests continue to pass with no regressions (41 passed, 1 xfailed in both base and post-patch logs). The patch correctly addresses the issue by using equivalent_dims instead of direct equality for dimension checking.\",\"xfail_flaky_self_added_concern\":\"no, the only xfail (test_factor_and_dimension_with_Abs) was present and remained xfail in both base and post-patch logs\",\"confidence\":\"high\",\"evidence_summary\":{\"f2p_after_summary_line\":\"sympy/physics/units/tests/test_quantities.py::test_issue_24211 PASSED    [ 76%]\",\"p2p_after_summary_line\":\"================== 41 passed, 1 xfailed, 4 warnings in 1.34s ==================\",\"p2p_base_summary_line\":\"================== 40 passed, 1 xfailed, 4 warnings in 1.36s ==================\",\"key_failures_or_diffs\":[]},\"labeling_notes\":\"The patch successfully resolves the ValueError for equivalent dimensions in addition. The scoped P2P suite was executed and showed no regressions.\"}"
+}

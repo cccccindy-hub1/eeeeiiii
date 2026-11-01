@@ -1,0 +1,70 @@
+{
+  "cohort": "G3-C.1",
+  "packet": "P07",
+  "utc": "2026-11-01T05:10:50Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 55999,
+  "completion_tokens": 294,
+  "estimated_cost_rmb": "0.114350",
+  "elapsed_s": 10.59,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 657,
+      "sha256": "fd97ef3d53c518ed4cdc6fbc09ecc39b6e6cf7e59a5a4e4357ddcd97dd29abb1"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 1771,
+      "sha256": "93b2e646ffb0eed7a1f69b4dde8a4dfcd4558b67f43de6ac473ddf01e41ba05b"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 971,
+      "sha256": "9eba6af86c754aa8ba3842327f63a81b6838eae45a745f077cb7c9f34d4e24f9"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 697,
+      "sha256": "c4535543ef86929e4aca647ceb18a54b4fb4813c03ee70b6e1efbb98dc3acfc6"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 61136,
+      "sha256": "1e76a204f8066ab3a6789b5b08d2dfb71514db60f764b2e77da885ae35f96571"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 61136,
+      "sha256": "1e76a204f8066ab3a6789b5b08d2dfb71514db60f764b2e77da885ae35f96571"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 61267,
+      "sha256": "ca121f2c4f0ac9f6d7455c69f9fb407064ff09a74021e5ef03dbde8e3613b01a"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 461,
+      "sha256": "fad9d05e3c4292891ca63133efd1ffc71f769cd1c197bed6e48b781294de2ea3"
+    }
+  ],
+  "verdict": {
+    "label": "ACCEPT",
+    "decisive_failing_test_ids": [],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_PythonCodePrinter' now passes after the patch, as shown in the 05 log. All scoped PASS_TO_PASS tests also pass without any regressions. The issue symptom probe confirms the patch fixes the exact problem described in the issue statement.",
+    "xfail_flaky_self_added_concern": "no; the only xfails/skips are pre-existing environment skips (numpy, antlr) and expected xfails, none of which are related to the patch or Min/Max functionality.",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "sympy/printing/tests/test_pycode.py::test_PythonCodePrinter PASSED",
+      "p2p_after_summary_line": "98 passed, 2 skipped, 4 warnings in 2.05s",
+      "p2p_base_summary_line": "98 passed, 2 skipped, 4 warnings in 2.18s",
+      "key_failures_or_diffs": []
+    },
+    "labeling_notes": "The patch correctly adds `_print_Min` and `_print_Max` methods to `PythonCodePrinter` and corresponding tests. All CI evidence confirms the fix is effective and introduces no regressions."
+  }
+}

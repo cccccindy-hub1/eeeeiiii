@@ -1,0 +1,10 @@
+{
+  "served_model": "glm-4.6",
+  "usage": {
+    "prompt_tokens": 13268,
+    "completion_tokens": 370,
+    "total_tokens": 13638
+  },
+  "finish_reason": "stop",
+  "content": "{\"label\":\"ACCEPT\",\"decisive_failing_test_ids\":[],\"applicability_reason\":\"The declared FAIL_TO_PASS test 'test_subs_CondSet' now passes, and all scoped PASS_TO_PASS tests remain passing without any regressions. The patch correctly fixes the over-substitution of the bound variable in ConditionSet._eval_subs, as confirmed by both the maintainer test and the issue symptom probe.\",\"xfail_flaky_self_added_concern\":\"no, the candidate patch adds a new test `test_issue_19495` but this is appropriate for the fix and does not artificially inflate pass rates; the maintainer test patch integrates the test directly into `test_subs_CondSet`.\",\"confidence\":\"high\",\"evidence_summary\":{\"f2p_after_summary_line\":\"=============== 102 passed, 5 xfailed, 3892 warnings in 10.87s ===============\",\"p2p_after_summary_line\":\"=============== 102 passed, 5 xfailed, 3892 warnings in 10.87s ===============\",\"p2p_base_summary_line\":\"=============== 102 passed, 5 xfailed, 4658 warnings in 10.56s ===============\",\"key_failures_or_diffs\":[]},\"labeling_notes\":\"The patch modifies ConditionSet._eval_subs to return `base` instead of `ConditionSet(new, Contains(new, base), base)` when the condition evaluates to True, which correctly avoids substituting the bound variable `x` with the new value. The scoped P2P suite is limited to test_conditionset.py and test_sets.py, but all tests within this scope pass cleanly.\"}"
+}

@@ -1,0 +1,73 @@
+{
+  "cohort": "G3-A",
+  "packet": "P02",
+  "utc": "2026-11-01T06:14:18Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 12344,
+  "completion_tokens": 397,
+  "estimated_cost_rmb": "0.027864",
+  "elapsed_s": 15.09,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 209,
+      "sha256": "ab41556f43c3e765336f3574e93b686e1aa4917899f8df04dac49744e6c86c79"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 1769,
+      "sha256": "10b3a2349eb10c9b32cf0853acdcc3787b33731b82251f063fe81effc2e2106e"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 567,
+      "sha256": "b0800a66bcfdddee2e2d8d466ff9de43c98c3af552a1f364f80b4f9194ab227f"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 2091,
+      "sha256": "b008d4e3d75fbd1cf4e169947e6b807ffdf521c834a7bd975684a100cef790e2"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 11351,
+      "sha256": "26c6a680aaf2d8f21131e8671e525634ff75385bbbb463da2fef34ef0186805d"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 11351,
+      "sha256": "26c6a680aaf2d8f21131e8671e525634ff75385bbbb463da2fef34ef0186805d"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 11349,
+      "sha256": "454d1c9e2c56e601f9840d0354520def587c25b7101fb407b4897d8fa81c2aa7"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 2463,
+      "sha256": "9d0d870cc884740acac952e52ca58ff6ebd0d1e90ff66ccaeffaac9957608957"
+    }
+  ],
+  "verdict": {
+    "label": "ACCEPT",
+    "decisive_failing_test_ids": [],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_Complement' transitions from fail to pass. The two tests that report as FAILED in the post-patch log ('test_image_Intersection' and 'test_union_boundary_of_joining_sets') are xfail traps (they raise sympy.utilities.pytest.XFail) and were identically failing in the base commit log, so they are not regressions. No scoped PASS_TO_PASS tests regressed.",
+    "xfail_flaky_self_added_concern": "yes - test_image_Intersection and test_union_boundary_of_joining_sets are xfail traps that appear as FAILED in the pytest summary but are pre-existing and not actual regressions.",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "sympy/sets/tests/test_sets.py::test_Complement PASSED",
+      "p2p_after_summary_line": "2 failed, 77 passed, 16124 warnings in 7.99s",
+      "p2p_base_summary_line": "2 failed, 77 passed, 2792 warnings in 5.13s",
+      "key_failures_or_diffs": [
+        "FAILED sympy/sets/tests/test_sets.py::test_image_Intersection - sympy.utilities.pytest.XFail: test_image_Intersection",
+        "FAILED sympy/sets/tests/test_sets.py::test_union_boundary_of_joining_sets - sympy.utilities.pytest.XFail: test_union_boundary_of_joining_sets"
+      ]
+    },
+    "labeling_notes": "The 2 'FAILED' tests in the post-patch log are xfail traps (they explicitly raise XFail) and were failing identically in the base commit. They should be ignored when checking for regressions."
+  }
+}

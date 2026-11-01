@@ -1,0 +1,10 @@
+{
+  "served_model": "glm-4.6",
+  "usage": {
+    "prompt_tokens": 8457,
+    "completion_tokens": 291,
+    "total_tokens": 8748
+  },
+  "finish_reason": "stop",
+  "content": "{\"label\":\"ACCEPT\",\"decisive_failing_test_ids\":[],\"applicability_reason\":\"The declared FAIL_TO_PASS test 'test_encode_morse' now passes after the patch, and all scoped PASS_TO_PASS tests continue to pass without any regressions. The patch correctly fixes the Morse mapping for '1' from '----' to '.----' as specified in the problem statement.\",\"xfail_flaky_self_added_concern\":\"no, all tests passed deterministically\",\"confidence\":\"high\",\"evidence_summary\":{\"f2p_after_summary_line\":\"======================= 44 passed, 32 warnings in 2.04s =======================\",\"p2p_after_summary_line\":\"======================= 44 passed, 32 warnings in 2.04s =======================\",\"p2p_base_summary_line\":\"======================= 44 passed, 32 warnings in 2.00s =======================\",\"key_failures_or_diffs\":[]},\"labeling_notes\":\"The base commit log shows 44 passed tests, which implies the base test suite did not contain the maintainer test patch assertions for '12345' and '67890'. After applying both the candidate and test patches, all 44 tests pass, confirming the fix is valid and introduces no regressions.\"}"
+}

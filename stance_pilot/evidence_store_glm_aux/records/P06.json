@@ -1,0 +1,72 @@
+{
+  "cohort": "G3-C.1",
+  "packet": "P06",
+  "utc": "2026-11-01T05:10:39Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 12920,
+  "completion_tokens": 354,
+  "estimated_cost_rmb": "0.028672",
+  "elapsed_s": 11.58,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 228,
+      "sha256": "9393e14bdad54229ab7e8f92fa43156ba8167999a016a64cb1630699620b71d1"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 430,
+      "sha256": "78652ccf5946919aca237b2942bda455d345e89e957323be7caa369fa7751cfd"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 418,
+      "sha256": "944671d17db6deb4a257474564cac345b3f2ce885a8307b9edb4964b993682c5"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 1259,
+      "sha256": "4778cfc4608bbd57b7dd07c6cdf0803130cf4ae2bcaabba35f79fab5be2ae6ce"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 12671,
+      "sha256": "5e154b510e2226c0c9865ebd931c026599d9d64f1a0e24d9de1bc9b6cf0e884e"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 12671,
+      "sha256": "5e154b510e2226c0c9865ebd931c026599d9d64f1a0e24d9de1bc9b6cf0e884e"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 12671,
+      "sha256": "4087dbe8ff596ab7dfa0044d8937ce964a183933dc7a72907759510d61de5d86"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 356,
+      "sha256": "7e87612420145dcda0f52a58277a8ba51704a2b0994c7ed50f1a247c6afba199"
+    }
+  ],
+  "verdict": {
+    "label": "ACCEPT",
+    "decisive_failing_test_ids": [],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_kernS' transitions from fail to pass after the patch. The two failing tests in the scoped PASS_TO_PASS logs ('test_evaluate_false' and 'test_issue_17811') are pre-existing environment failures, as they fail with the exact same error in the base commit log and are unrelated to the patch.",
+    "xfail_flaky_self_added_concern": "no, the failing tests in the logs are pre-existing base failures unrelated to the patch",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "sympy/core/tests/test_sympify.py::test_kernS PASSED [86%]",
+      "p2p_after_summary_line": "===== 2 failed, 93 passed, 5 skipped, 4 xfailed, 4889 warnings in 11.53s ======",
+      "p2p_base_summary_line": "===== 2 failed, 93 passed, 5 skipped, 4 xfailed, 4954 warnings in 11.55s ======",
+      "key_failures_or_diffs": [
+        "test_evaluate_false and test_issue_17811 fail in both base and patched logs with ValueError: Name node can't be used with 'False' constant"
+      ]
+    },
+    "labeling_notes": "The 2 failing tests are pre-existing failures in the environment (Python 3.9.25 AST incompatibility) and not regressions caused by the candidate patch."
+  }
+}

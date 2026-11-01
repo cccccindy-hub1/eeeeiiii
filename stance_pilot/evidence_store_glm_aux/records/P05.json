@@ -1,0 +1,70 @@
+{
+  "cohort": "G3-C.1",
+  "packet": "P05",
+  "utc": "2026-11-01T05:10:27Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 8457,
+  "completion_tokens": 291,
+  "estimated_cost_rmb": "0.019242",
+  "elapsed_s": 11.3,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 192,
+      "sha256": "8eb16273e3ab7a26c2fbe38c1bdc14f7ce7cdcd8a8c060a61953b86e9cecc43a"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 475,
+      "sha256": "3907163415de232dd964153b7f6893fcdbe23a80802240fc8ce78bbe500a09d2"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 579,
+      "sha256": "b61932c6cb38ae750ad76b3b1b62a8af931ff4d32e891502d546bb4ad2948210"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 1446,
+      "sha256": "8c6ccf2678656e217d02dc3578736682fc1237cd47deb71c032272a998ad3e88"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 6840,
+      "sha256": "c8ec2bebcaabcd407c005d2a39c61b182ed257c0bb8c598a20917dc7dea494eb"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 6840,
+      "sha256": "c8ec2bebcaabcd407c005d2a39c61b182ed257c0bb8c598a20917dc7dea494eb"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 6840,
+      "sha256": "35238202a1d5ba3390e2e88539951a186d3624b80eb4ace5657c6154b66aa1ca"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 1777,
+      "sha256": "b583665b9b8014460c44fb288d95bf4863cff3045ec93c1853705341b8423cfa"
+    }
+  ],
+  "verdict": {
+    "label": "ACCEPT",
+    "decisive_failing_test_ids": [],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_encode_morse' now passes after the patch, and all scoped PASS_TO_PASS tests continue to pass without any regressions. The patch correctly fixes the Morse mapping for '1' from '----' to '.----' as specified in the problem statement.",
+    "xfail_flaky_self_added_concern": "no, all tests passed deterministically",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "======================= 44 passed, 32 warnings in 2.04s =======================",
+      "p2p_after_summary_line": "======================= 44 passed, 32 warnings in 2.04s =======================",
+      "p2p_base_summary_line": "======================= 44 passed, 32 warnings in 2.00s =======================",
+      "key_failures_or_diffs": []
+    },
+    "labeling_notes": "The base commit log shows 44 passed tests, which implies the base test suite did not contain the maintainer test patch assertions for '12345' and '67890'. After applying both the candidate and test patches, all 44 tests pass, confirming the fix is valid and introduces no regressions."
+  }
+}

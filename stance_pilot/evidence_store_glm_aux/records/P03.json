@@ -1,0 +1,74 @@
+{
+  "cohort": "G3-C.1",
+  "packet": "P03",
+  "utc": "2026-11-01T05:10:04Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 66669,
+  "completion_tokens": 393,
+  "estimated_cost_rmb": "0.136482",
+  "elapsed_s": 12.84,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 500,
+      "sha256": "f8406b69b3bfdc8999fc3bd73adf27e6b14491a3f331f13b14cae531d1d46268"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 1387,
+      "sha256": "ee62e31f4ad6d93ddd6747b057571c8dd3897991105dc4ae0f0aa0e91acd86d9"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 1193,
+      "sha256": "64d8e6bbed996128796031cf2ef62385c6e21ce50b79ac5f9e43859bbf0fedb9"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 1237,
+      "sha256": "ee9361e335a2d2fe5c20c09e3759805020f1ce8125a315e9c3d69a2516157fb4"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 73497,
+      "sha256": "28f26aa2f113cf0c49184cd6fe94a5b3c0e95aa5009941e01d6216e17dcce84c"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 73497,
+      "sha256": "28f26aa2f113cf0c49184cd6fe94a5b3c0e95aa5009941e01d6216e17dcce84c"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 72707,
+      "sha256": "8944a2cf124c36602e16483dd7ec2cf0a8ac682aba187e262d2ee122df708487"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 453,
+      "sha256": "b725f418eff007c44778819875d007b242487b0c670122cee9f7b7383a18ea65"
+    }
+  ],
+  "verdict": {
+    "label": "REJECT",
+    "decisive_failing_test_ids": [
+      "sympy/printing/tests/test_repr.py::test_set"
+    ],
+    "applicability_reason": "The test_set failure is a decisive regression introduced by the candidate patch. The maintainer test patch expects srepr(set()) to return 'set()', but the candidate's _print_set implementation returns '{}' for an empty set. This test passed at the base commit (where test_set did not exist) and fails after the patch, making it an applicable PASS_TO_PASS regression.",
+    "xfail_flaky_self_added_concern": "yes; test_set and test_dict are self-added tests by the candidate patch, and test_set fails due to a bug in the candidate's own implementation for the empty set edge case.",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "test_dict PASSED",
+      "p2p_after_summary_line": "3 failed, 97 passed, 5 warnings in 2.72s (test_Add, test_Mul pre-existing; test_set new regression)",
+      "p2p_base_summary_line": "2 failed, 96 passed, 5 warnings in 2.35s (test_Add, test_Mul pre-existing)",
+      "key_failures_or_diffs": [
+        "FAILED sympy/printing/tests/test_repr.py::test_set - AssertionError: assert '{}' == 'set()'"
+      ]
+    },
+    "labeling_notes": "The candidate patch introduces a bug where srepr(set()) returns '{}' instead of 'set()'. The maintainer test patch explicitly checks for 'set()' on empty sets. The other failures (test_Add, test_Mul, test_issue_8470, test_issue_13559) are pre-existing environment issues unrelated to this patch."
+  }
+}

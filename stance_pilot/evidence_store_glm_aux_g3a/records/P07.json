@@ -1,0 +1,70 @@
+{
+  "cohort": "G3-A",
+  "packet": "P07",
+  "utc": "2026-11-01T06:15:19Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 4680,
+  "completion_tokens": 321,
+  "estimated_cost_rmb": "0.011928",
+  "elapsed_s": 11.64,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 745,
+      "sha256": "6da5f641e94091476041df146ca8b539659922cbde429f0a9cca72f437e32da6"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 488,
+      "sha256": "eb931c2077a8b35f84e102264962898def6be4e06d262db7f87809363e375bde"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 2017,
+      "sha256": "2d389e5cd74a05f7673894f4ac9db049482616f3a4650a4093ccdd2b63c8d6d0"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 315,
+      "sha256": "0f474cf92c3647b9705ad46898144c13a1e4bbc385839da9eaf7e5c239ab6787"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 2706,
+      "sha256": "f421912f869f6ce93af0356f3f6f5ceaa12377b482044f5979b36edb931fe8c3"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 2706,
+      "sha256": "f421912f869f6ce93af0356f3f6f5ceaa12377b482044f5979b36edb931fe8c3"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 2617,
+      "sha256": "0b79521b6092ac84b22ef01c60e3269c0222834879d411f9b677a7c12496b3a2"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 770,
+      "sha256": "6ab5dab7098aa462a3998f8a305717c820058fcfe19688d90e00e1e63d9773dc"
+    }
+  ],
+  "verdict": {
+    "label": "ACCEPT",
+    "decisive_failing_test_ids": [],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_quaternion_conversions' now passes, and all scoped PASS_TO_PASS tests ('test_quaternion_construction', 'test_quaternion_complex_real_addition', 'test_quaternion_functions') remain passing without regression. The issue symptom probe also confirms the sign error is fixed.",
+    "xfail_flaky_self_added_concern": "no, the maintainer test patch adds a new test 'test_quaternion_rotation_iss1593' which correctly verifies the specific bug fix and passes, posing no trap concerns.",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "======================= 5 passed, 47 warnings in 0.64s ========================",
+      "p2p_after_summary_line": "======================= 5 passed, 47 warnings in 0.64s ========================",
+      "p2p_base_summary_line": "======================= 4 passed, 43 warnings in 0.70s ========================",
+      "key_failures_or_diffs": []
+    },
+    "labeling_notes": "The base commit log shows 4 tests passing (before the new test was added). The post-patch logs show 5 tests passing, including the previously failing 'test_quaternion_conversions' and the newly added 'test_quaternion_rotation_iss1593'. No regressions observed."
+  }
+}

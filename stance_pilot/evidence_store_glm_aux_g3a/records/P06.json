@@ -1,0 +1,70 @@
+{
+  "cohort": "G3-A",
+  "packet": "P06",
+  "utc": "2026-11-01T06:15:07Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 5763,
+  "completion_tokens": 286,
+  "estimated_cost_rmb": "0.013814",
+  "elapsed_s": 10.53,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 1084,
+      "sha256": "8ae0f78e2fa02b3810643418f8c22b5b6939c8ad326fd90fd8cb489fdb5b594a"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 2608,
+      "sha256": "2b4e7ff0c71a5c0f78a6fed369847cb7967cbe32bb477d1ab012fb7fa01cb0b6"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 1770,
+      "sha256": "6a6bfa176bfa0e64c2590ab1f1eedb9b1b4c5928b431fb11a0d0baca8f24af4f"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 425,
+      "sha256": "03ff2032ff8078abb04d37cf76b8b9d9b097e80d307d1ee03aab1807e5e09d6d"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 3000,
+      "sha256": "709c44f095bfc2dedd98779e6a340803d80c73f01b39a76866d1839b6563e3be"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 3000,
+      "sha256": "709c44f095bfc2dedd98779e6a340803d80c73f01b39a76866d1839b6563e3be"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 2947,
+      "sha256": "3e426ad6127490bd29872cc0bb8f69c5edd81cf91aa661c5300212caecb90fae"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 358,
+      "sha256": "d46abb1eabf52acfb573e696c144a7ac9245077931d7aee5de57a7d26cca186f"
+    }
+  ],
+  "verdict": {
+    "label": "ACCEPT",
+    "decisive_failing_test_ids": [],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_monomials' transitions from failing at base (as shown by the issue symptom probe) to passing after the patch. All scoped PASS_TO_PASS tests also pass after the patch with no regressions compared to the base commit.",
+    "xfail_flaky_self_added_concern": "no, the candidate and maintainer patches add identical test assertions for the bug fix, and all tests pass deterministically.",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "======================= 11 passed, 6 warnings in 0.64s ========================",
+      "p2p_after_summary_line": "======================= 11 passed, 6 warnings in 0.64s ========================",
+      "p2p_base_summary_line": "======================= 11 passed, 5 warnings in 0.93s ========================",
+      "key_failures_or_diffs": []
+    },
+    "labeling_notes": "The base log shows 'test_monomials' as PASSED because the base code lacks the assertions added by the test patches. The issue symptom probe confirms the underlying bug existed at base and is fixed post-patch."
+  }
+}

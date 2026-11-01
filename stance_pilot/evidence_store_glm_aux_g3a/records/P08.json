@@ -1,0 +1,70 @@
+{
+  "cohort": "G3-A",
+  "packet": "P08",
+  "utc": "2026-11-01T06:15:30Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 6725,
+  "completion_tokens": 305,
+  "estimated_cost_rmb": "0.015890",
+  "elapsed_s": 11.41,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 1052,
+      "sha256": "99990d4434fb704774f1342cb8fc542c341096463d3328a42e6800695ed3e0f6"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 704,
+      "sha256": "4871b6419e3ec4de279d3dab650d28f33e5fb451ccf092c56bd6ec19037fab32"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 1053,
+      "sha256": "6f5019118b043e4edbc0f5f4a5b9a6c5fc448df95ad587ff416be733e6371f28"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 1068,
+      "sha256": "6b44b3d115d1b7e9591682d6ba6ea72b4ccfc99aef73f285be6b8bd4f30b827c"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 5392,
+      "sha256": "00cb4840c9e5a1ae0850949bca6c96863d5a3e7bc3dc74d1fdef8e773d37341e"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 5392,
+      "sha256": "00cb4840c9e5a1ae0850949bca6c96863d5a3e7bc3dc74d1fdef8e773d37341e"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 5311,
+      "sha256": "047376c3e64eaf509aca142346c33f62db1804e9ab9b7b69f856a45013176bd5"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 428,
+      "sha256": "1d665166c6a7276bd8c0dffcbecbee0fa43d884d0e78d45e92b511994e95942d"
+    }
+  ],
+  "verdict": {
+    "label": "ACCEPT",
+    "decisive_failing_test_ids": [],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_issue_24211' now passes after the patch. All scoped PASS_TO_PASS tests continue to pass with no regressions (41 passed, 1 xfailed in both base and post-patch logs). The patch correctly addresses the issue by using equivalent_dims instead of direct equality for dimension checking.",
+    "xfail_flaky_self_added_concern": "no, the only xfail (test_factor_and_dimension_with_Abs) was present and remained xfail in both base and post-patch logs",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "sympy/physics/units/tests/test_quantities.py::test_issue_24211 PASSED    [ 76%]",
+      "p2p_after_summary_line": "================== 41 passed, 1 xfailed, 4 warnings in 1.34s ==================",
+      "p2p_base_summary_line": "================== 40 passed, 1 xfailed, 4 warnings in 1.36s ==================",
+      "key_failures_or_diffs": []
+    },
+    "labeling_notes": "The patch successfully resolves the ValueError for equivalent dimensions in addition. The scoped P2P suite was executed and showed no regressions."
+  }
+}

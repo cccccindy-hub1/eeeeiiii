@@ -1,0 +1,10 @@
+{
+  "served_model": "glm-4.6",
+  "usage": {
+    "prompt_tokens": 19182,
+    "completion_tokens": 415,
+    "total_tokens": 19597
+  },
+  "finish_reason": "stop",
+  "content": "{\"label\":\"REJECT\",\"decisive_failing_test_ids\":[\"test_zero_matrix_add\"],\"applicability_reason\":\"The declared FAIL_TO_PASS test 'test_zero_matrix_add' still fails after the patch (Add(ZeroMatrix(2, 2), ZeroMatrix(2, 2)) evaluates to 0 instead of ZeroMatrix(2, 2)). This is an applicable failure because the patch was explicitly expected to make this test pass, and it is not pre-existing, xfail, or flaky.\",\"xfail_flaky_self_added_concern\":\"yes, test_matrix_add_with_scalar is marked @XFAIL and correctly triggered an XFail; test_zero_matrix_add is a self-added test by the maintainer that genuinely fails\",\"confidence\":\"high\",\"evidence_summary\":{\"f2p_after_summary_line\":\"FAILED sympy/matrices/expressions/tests/test_matadd.py::test_zero_matrix_add - assert 0 == 0\",\"p2p_after_summary_line\":\"================== 4 failed, 66 passed, 5 warnings in 2.63s ===================\",\"p2p_base_summary_line\":\"================== 2 failed, 65 passed, 5 warnings in 4.28s ===================\",\"key_failures_or_diffs\":[\"test_zero_matrix_add: assert Add(ZeroMatrix(2, 2), ZeroMatrix(2, 2)) == ZeroMatrix(2, 2) fails (evaluates to 0 == 0)\"]},\"labeling_notes\":\"The candidate patch successfully resolves the original issue (block_collapse(b*b*b) works), but it fails to implement the logic required by the maintainer test 'test_zero_matrix_add', which was declared as a FAIL_TO_PASS target. Since a FAIL_TO_PASS test still fails, the patch must be rejected.\"}"
+}

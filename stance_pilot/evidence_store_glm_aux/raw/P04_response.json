@@ -1,0 +1,10 @@
+{
+  "served_model": "glm-4.6",
+  "usage": {
+    "prompt_tokens": 22289,
+    "completion_tokens": 358,
+    "total_tokens": 22647
+  },
+  "finish_reason": "stop",
+  "content": "{\"label\":\"ACCEPT\",\"decisive_failing_test_ids\":[],\"applicability_reason\":\"The declared FAIL_TO_PASS test 'test_issue_5786' transitions from XFAIL at the base commit to PASSED after the patch. All scoped PASS_TO_PASS tests remain PASSED with no regressions. The issue symptom probe also confirms the bug is fixed.\",\"xfail_flaky_self_added_concern\":\"no - the test_issue_5786 was previously marked @XFAIL and is now correctly passing after the patch removed the decorator and the underlying bug was fixed.\",\"confidence\":\"high\",\"evidence_summary\":{\"f2p_after_summary_line\":\"161 passed, 1 xfailed, 287 warnings in 14.86s\",\"p2p_after_summary_line\":\"161 passed, 1 xfailed, 287 warnings in 14.86s\",\"p2p_base_summary_line\":\"160 passed, 2 xfailed, 215 warnings in 15.92s\",\"key_failures_or_diffs\":[\"Base: test_issue_5786 XFAIL\",\"Patch: test_issue_5786 PASSED\",\"Probe: Base FAIL (factor drops y-1), Patch OK (factor preserves polynomial)\"]},\"labeling_notes\":\"The base commit had 2 xfailed tests (test_noncommutative_pseudomultivariate and test_issue_5786). After the patch, test_issue_5786 passes, leaving 1 xfailed test. No regressions observed in the scoped P2P suite.\"}"
+}

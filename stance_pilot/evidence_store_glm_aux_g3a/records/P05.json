@@ -1,0 +1,74 @@
+{
+  "cohort": "G3-A",
+  "packet": "P05",
+  "utc": "2026-11-01T06:14:56Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 19182,
+  "completion_tokens": 415,
+  "estimated_cost_rmb": "0.041684",
+  "elapsed_s": 14.68,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 3500,
+      "sha256": "3e27ce309067e6c1d480fc107154779b26eee12439cebbebb14c4c1d14759b51"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 3043,
+      "sha256": "0577dba2d1c1dcdcaf4dd2ce2713845e0fe9a24378a27915db2788c5b7e37895"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 2315,
+      "sha256": "be6c3846483145bacd705dfca4d94e95cb4fcdadbbab11aa47e3b49befec54ff"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 746,
+      "sha256": "e4c20df1ca2f0e928aefccc28e7c16632ccd019d805c02be04a06faab1a394c3"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 18117,
+      "sha256": "5eaa4c85dd72d872dc500bdfe408c7bd1be5a02469e7fbe6a0110bae4c076bdb"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 18117,
+      "sha256": "5eaa4c85dd72d872dc500bdfe408c7bd1be5a02469e7fbe6a0110bae4c076bdb"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 16533,
+      "sha256": "c4a6756531a8db2ace1b6319751fa3f5f970b5de8e48c9a154820ac3f3f66980"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 353,
+      "sha256": "f099d3b21aa745c7fc8bbe352f249775e333659eaa618843e4ea7d9a4a8a666b"
+    }
+  ],
+  "verdict": {
+    "label": "REJECT",
+    "decisive_failing_test_ids": [
+      "test_zero_matrix_add"
+    ],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_zero_matrix_add' still fails after the patch (Add(ZeroMatrix(2, 2), ZeroMatrix(2, 2)) evaluates to 0 instead of ZeroMatrix(2, 2)). This is an applicable failure because the patch was explicitly expected to make this test pass, and it is not pre-existing, xfail, or flaky.",
+    "xfail_flaky_self_added_concern": "yes, test_matrix_add_with_scalar is marked @XFAIL and correctly triggered an XFail; test_zero_matrix_add is a self-added test by the maintainer that genuinely fails",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "FAILED sympy/matrices/expressions/tests/test_matadd.py::test_zero_matrix_add - assert 0 == 0",
+      "p2p_after_summary_line": "================== 4 failed, 66 passed, 5 warnings in 2.63s ===================",
+      "p2p_base_summary_line": "================== 2 failed, 65 passed, 5 warnings in 4.28s ===================",
+      "key_failures_or_diffs": [
+        "test_zero_matrix_add: assert Add(ZeroMatrix(2, 2), ZeroMatrix(2, 2)) == ZeroMatrix(2, 2) fails (evaluates to 0 == 0)"
+      ]
+    },
+    "labeling_notes": "The candidate patch successfully resolves the original issue (block_collapse(b*b*b) works), but it fails to implement the logic required by the maintainer test 'test_zero_matrix_add', which was declared as a FAIL_TO_PASS target. Since a FAIL_TO_PASS test still fails, the patch must be rejected."
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "cohort": "G3-C.1",
+  "packet": "P02",
+  "utc": "2026-11-01T05:09:51Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 13268,
+  "completion_tokens": 370,
+  "estimated_cost_rmb": "0.029496",
+  "elapsed_s": 13.17,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 1576,
+      "sha256": "5582815caeedb01b51265357c77b8318de2f2534d3706b245d28acf71e2b338c"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 2431,
+      "sha256": "9feac9ea07af1c40c78617d931c20a515d2da37ce55bbbeef628c5039573f90e"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 1385,
+      "sha256": "be55009e7f385c38ccbbf350a294558ed42c5fb740b1ef09ac462441d27c7a0d"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 463,
+      "sha256": "4afc1521c1365e46990eca5e276a954632303d88a6a215dfa960b859e9548cde"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 11708,
+      "sha256": "e8f9e50f02a539161f6e4a9b44f22e90e1779560da0475aff328e9fcb4b04592"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 11708,
+      "sha256": "e8f9e50f02a539161f6e4a9b44f22e90e1779560da0475aff328e9fcb4b04592"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 11708,
+      "sha256": "87a5378064f62d9cfa24c095a80d1b966b733113d23f19455eb269773afb8553"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 1091,
+      "sha256": "9436fb788066ba08193f8e849a2ad4593f77f4ad0ed85ca98326bfdff1887994"
+    }
+  ],
+  "verdict": {
+    "label": "ACCEPT",
+    "decisive_failing_test_ids": [],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_subs_CondSet' now passes, and all scoped PASS_TO_PASS tests remain passing without any regressions. The patch correctly fixes the over-substitution of the bound variable in ConditionSet._eval_subs, as confirmed by both the maintainer test and the issue symptom probe.",
+    "xfail_flaky_self_added_concern": "no, the candidate patch adds a new test `test_issue_19495` but this is appropriate for the fix and does not artificially inflate pass rates; the maintainer test patch integrates the test directly into `test_subs_CondSet`.",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "=============== 102 passed, 5 xfailed, 3892 warnings in 10.87s ===============",
+      "p2p_after_summary_line": "=============== 102 passed, 5 xfailed, 3892 warnings in 10.87s ===============",
+      "p2p_base_summary_line": "=============== 102 passed, 5 xfailed, 4658 warnings in 10.56s ===============",
+      "key_failures_or_diffs": []
+    },
+    "labeling_notes": "The patch modifies ConditionSet._eval_subs to return `base` instead of `ConditionSet(new, Contains(new, base), base)` when the condition evaluates to True, which correctly avoids substituting the bound variable `x` with the new value. The scoped P2P suite is limited to test_conditionset.py and test_sets.py, but all tests within this scope pass cleanly."
+  }
+}

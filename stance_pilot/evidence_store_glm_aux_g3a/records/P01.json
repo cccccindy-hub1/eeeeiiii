@@ -1,0 +1,70 @@
+{
+  "cohort": "G3-A",
+  "packet": "P01",
+  "utc": "2026-11-01T06:14:02Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 3973,
+  "completion_tokens": 294,
+  "estimated_cost_rmb": "0.010298",
+  "elapsed_s": 11.01,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 704,
+      "sha256": "8baf32ee36c064fadc1dd9ba34d07fc1c63b48f8406719f4c1c8995660d8af41"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 2582,
+      "sha256": "6367c35618bc8742d2fc53c56458af54047f986cba3d4d8c4287d3e1e18c85d7"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 516,
+      "sha256": "9768c84379c35a0bfbc3a87395aa20a12aa80d576e9a216a8617bedd1dbf1f41"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 214,
+      "sha256": "9f3430a5ded2def40cfb4ad4fe58f683d9da627e18e04d7f486c97b7ab741810"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 2035,
+      "sha256": "620d8a754d66dc4e4300970370e0b7cdaec27fdb50e3e7006ebdc60b16c2da52"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 2035,
+      "sha256": "620d8a754d66dc4e4300970370e0b7cdaec27fdb50e3e7006ebdc60b16c2da52"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 2035,
+      "sha256": "f22166f9dfb278a998e6571e0d3457124c98d9c9a436b1132b1e92ff94634284"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 407,
+      "sha256": "d2ed16d5f1d794111a30339ffb9f5bb863cc6b8cad4bca6691e6fd14193fe193"
+    }
+  ],
+  "verdict": {
+    "label": "ACCEPT",
+    "decisive_failing_test_ids": [],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_homomorphism' now passes after the patch, and the scoped PASS_TO_PASS test 'test_isomorphisms' remains passing without regression. The issue symptom probe also confirms the fix resolves the ValueError.",
+    "xfail_flaky_self_added_concern": "no, the candidate patch adds new tests but they are valid assertions for the fixed bug and do not interfere with the declared test IDs.",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "======================== 3 passed, 4 warnings in 0.93s ========================",
+      "p2p_after_summary_line": "======================== 3 passed, 4 warnings in 0.93s ========================",
+      "p2p_base_summary_line": "======================== 3 passed, 4 warnings in 0.73s ========================",
+      "key_failures_or_diffs": []
+    },
+    "labeling_notes": "The candidate patch adds new test cases (test_check_homomorphism additions) which are appropriate for the fix. The declared FAIL_TO_PASS test (test_homomorphism) and PASS_TO_PASS test (test_isomorphisms) both pass successfully post-patch."
+  }
+}

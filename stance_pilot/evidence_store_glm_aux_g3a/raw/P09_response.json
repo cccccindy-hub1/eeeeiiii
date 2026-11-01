@@ -1,0 +1,10 @@
+{
+  "served_model": "glm-4.6",
+  "usage": {
+    "prompt_tokens": 6620,
+    "completion_tokens": 433,
+    "total_tokens": 7053
+  },
+  "finish_reason": "stop",
+  "content": "{\"label\":\"REJECT\",\"decisive_failing_test_ids\":[\"test_issue_12420\"],\"applicability_reason\":\"The declared FAIL_TO_PASS test 'test_issue_12420' still fails after applying the candidate and maintainer patches. The failure occurs because the candidate patch only fixes the IndexError in `_split_gcd` but does not implement the necessary changes in `_sqrt_match` to return an empty list for complex arguments, causing the assertion `assert _sqrt_match(4 + I) == []` in the maintainer test to fail with `assert [4 + I, 0, 1] == []`. This is a genuine test failure of the declared F2P test, not a pre-existing, xfail, or flaky issue.\",\"xfail_flaky_self_added_concern\":\"no\",\"confidence\":\"high\",\"evidence_summary\":{\"f2p_after_summary_line\":\"=========== 1 failed, 12 passed, 21663 warnings in 92.17s (0:01:32) ===========\",\"p2p_after_summary_line\":\"=========== 1 failed, 12 passed, 21663 warnings in 92.17s (0:01:32) ===========\",\"p2p_base_summary_line\":\"================ 12 passed, 21641 warnings in 86.71s (0:01:26) ================\",\"key_failures_or_diffs\":[\"FAILED sympy/simplify/tests/test_sqrtdenest.py::test_issue_12420 - assert [4 + I, 0, 1] == []\"]},\"labeling_notes\":\"The candidate patch successfully fixes the IndexError crash reported in the issue (as proven by the symptom probe), but it is incomplete regarding the maintainer's test expectations which require `_sqrt_match` to return an empty list for complex numbers. Thus, the patch fails the maintainer-added F2P test.\"}"
+}

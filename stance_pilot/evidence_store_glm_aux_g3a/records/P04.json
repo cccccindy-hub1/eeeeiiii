@@ -1,0 +1,70 @@
+{
+  "cohort": "G3-A",
+  "packet": "P04",
+  "utc": "2026-11-01T06:14:41Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 37019,
+  "completion_tokens": 293,
+  "estimated_cost_rmb": "0.076382",
+  "elapsed_s": 9.57,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 774,
+      "sha256": "400556a4b555b3c5f93018675ea838cd57213e1d671b863371fcfbfcdf5ac0eb"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 1269,
+      "sha256": "4e8655101a4b8dfe6459851bebc848ab08cd6951a287133b50130b71c4c190d2"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 476,
+      "sha256": "2819b438ba4bac3f56e17af99fa5160b6a9c192eb65a9ea52cf355c4c2fde050"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 711,
+      "sha256": "15c0f92362efa67debd0089b9f38822df20a3bc914a60cff5f2aadc79ac63dcf"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 42053,
+      "sha256": "205b3e8483f34e01e9417b3326ad0caf3b15ad29014506386e6ee1e9ae0882ba"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 42053,
+      "sha256": "205b3e8483f34e01e9417b3326ad0caf3b15ad29014506386e6ee1e9ae0882ba"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 41920,
+      "sha256": "268c7e45ee0eaea6b831c7b1a43027051cf5a0ed4edb731174ff4fd072529737"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 288,
+      "sha256": "e0d7b34e816dcf448172b8da9e5e42b950f3f89f977e03007bd4caf02b41faee"
+    }
+  ],
+  "verdict": {
+    "label": "ACCEPT",
+    "decisive_failing_test_ids": [],
+    "applicability_reason": "The declared FAIL_TO_PASS test 'test_immutable' transitions from fail (not present in base) to pass after the patch. All scoped PASS_TO_PASS tests pass after the patch with no regressions compared to the base commit. The issue symptom probe also confirms the fix.",
+    "xfail_flaky_self_added_concern": "no - test_immutable is a maintainer-added test specifically for this patch, and all other tests are standard suite tests with no unexpected xfails or flakes.",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "sympy/core/tests/test_basic.py::test_immutable PASSED",
+      "p2p_after_summary_line": "173 passed, 4 xfailed, 7483 warnings in 11.20s",
+      "p2p_base_summary_line": "172 passed, 4 xfailed, 6635 warnings in 12.20s",
+      "key_failures_or_diffs": []
+    },
+    "labeling_notes": "The patch correctly adds __slots__ = () to the Printable class to prevent the creation of __dict__ on Symbol instances, resolving the reported issue. The scoped P2P suite executed locally shows no regressions."
+  }
+}

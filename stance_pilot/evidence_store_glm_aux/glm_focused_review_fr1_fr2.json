@@ -1,0 +1,24 @@
+{
+  "utc": "2026-11-01T05:14:16Z",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "post_unblind": true,
+  "prompt_tokens": 153555,
+  "completion_tokens": 365,
+  "estimated_cost_rmb": "0.310030",
+  "focused_review": {
+    "FR1_19495": {
+      "choice": "instrument_fix",
+      "reason": "The FAIL_TO_PASS change in `test_subs_CondSet` is an instrument fix: the old test oracle `== S.EmptySet` was incorrect for the post-subs state (the interval `(-oo, 0)` is not empty just because `n < x` is unresolvable), and the patch corrects it to `== Interval(-oo, 0)`. The underlying target behavior—ConditionSet substitution not over-substituting the bound variable—remains stable and is what the issue symptom probe validates. The maintainer test patch adds a new probe for the exact issue (ImageSet substitution) without redefining what correctness means for ConditionSet substitution itself.",
+      "rubric_amendment_needed": "no",
+      "confidence": "high"
+    },
+    "FR2_14248_15875": {
+      "choice": "same_standard",
+      "reason": "Both REJECTs apply the same standard: the patch introduces decisive P2P regressions (previously passing tests now fail) due to type-incompatibility in conditional logic. In P01, `c < 0` raises TypeError for symbolic `c` (e.g., `2*x`), breaking `test_matMul` and `test_haramard`. In P08, `self.simplify()` inside `_eval_is_zero` causes RecursionError and ZeroDivisionError, breaking `test_subs_in_derivative` and `test_nfloat`. Both are rejected because the patch's new code path fails on valid inputs that the base handled correctly.",
+      "rubric_amendment_needed": "no",
+      "confidence": "high"
+    }
+  }
+}

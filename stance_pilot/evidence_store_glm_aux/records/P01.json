@@ -1,0 +1,78 @@
+{
+  "cohort": "G3-C.1",
+  "packet": "P01",
+  "utc": "2026-11-01T04:53:50Z",
+  "requested_model": "glm-4.6",
+  "served_model": "glm-4.6",
+  "research_excluded": true,
+  "annotator_kind": "AI_preannotation_NOT_annotator2",
+  "gold_tier": "PROVISIONAL_unchanged",
+  "prompt_tokens": 96040,
+  "completion_tokens": 615,
+  "estimated_cost_rmb": "0.197000",
+  "elapsed_s": 21.31,
+  "packet_files": [
+    {
+      "file": "01_problem_statement.txt",
+      "bytes": 603,
+      "sha256": "c1ab8d0f306a27c0f8b627cae1cd139a5a789d4de16be3b2783c64e3f65c74e9"
+    },
+    {
+      "file": "02_candidate_patch.diff",
+      "bytes": 8771,
+      "sha256": "f7e2fab7faaa4a8e83e40387c55387a90efbdea90f74e1fafe2a4788ac527c11"
+    },
+    {
+      "file": "03_maintainer_test_patch.diff",
+      "bytes": 4568,
+      "sha256": "e795d124c8fc7b74af23d012aea6744f26dcbe974704cd8897c404ac16490fdc"
+    },
+    {
+      "file": "04_declared_test_ids.json",
+      "bytes": 12565,
+      "sha256": "c176dcde0a7aa50df5aaaf525563c4a3980ae87b9023185336c8895e82486b6e"
+    },
+    {
+      "file": "05_ci_fail_to_pass.log",
+      "bytes": 100130,
+      "sha256": "ac64ab61dda84aa1c5d49ca849a9877b279fe550357d9e8eb3f8a1b5c750098e"
+    },
+    {
+      "file": "06_ci_pass_to_pass_scoped.log",
+      "bytes": 100130,
+      "sha256": "ac64ab61dda84aa1c5d49ca849a9877b279fe550357d9e8eb3f8a1b5c750098e"
+    },
+    {
+      "file": "07_ci_pass_to_pass_base_commit.log",
+      "bytes": 96708,
+      "sha256": "5ce95560ab56693f40571691762a7dab4c312cb6d2261878d0fb7644a3a71ea8"
+    },
+    {
+      "file": "08_issue_symptom_probe.log",
+      "bytes": 3258,
+      "sha256": "a89dd491df93a5908d36b9d7a1625d4d69b8e5a0ecd9d804823c8e5b8e804402"
+    }
+  ],
+  "verdict": {
+    "label": "REJECT",
+    "decisive_failing_test_ids": [
+      "sympy/printing/tests/test_latex.py::test_matMul",
+      "sympy/printing/tests/test_julia.py::test_haramard",
+      "sympy/printing/tests/test_octave.py::test_haramard"
+    ],
+    "applicability_reason": "The candidate patch introduces a TypeError ('cannot determine truth value of Relational') in _print_MatMul when the coefficient `c` is a symbolic expression (e.g., `2*x`), because it uses `c < 0` which is invalid for non-numeric SymPy expressions. This breaks previously passing tests like test_matMul, test_haramard (julia), and test_haramard (octave), which are clear P2P regressions caused directly by the patch's logic.",
+    "xfail_flaky_self_added_concern": "yes - Several other failures in the logs are XFail/XPass/Skip traps (e.g., test_C99CodePrinter__precision_f80, test_missing_in_2X_issue_9047, test_Matrices_entries_not_hadamard, NumPy skips) or pre-existing environment issues (lxml missing), and should be ignored. The decisive failures are genuine regressions.",
+    "confidence": "high",
+    "evidence_summary": {
+      "f2p_after_summary_line": "5 failed, 194 passed, 75 warnings in 8.16s (first chunk)",
+      "p2p_after_summary_line": "5 failed, 194 passed, 75 warnings in 8.16s (first chunk)",
+      "p2p_base_summary_line": "4 failed, 194 passed, 82 warnings in 9.36s (first chunk)",
+      "key_failures_or_diffs": [
+        "sympy/printing/tests/test_latex.py::test_matMul FAILED - TypeError: cannot determine truth value of Relational (at sign = '-' if c < 0 else '')",
+        "sympy/printing/tests/test_julia.py::test_haramard FAILED - TypeError: cannot determine truth value of Relational (at sign = '-' if c < 0 else '')",
+        "sympy/printing/tests/test_octave.py::test_haramard FAILED - TypeError: cannot determine truth value of Relational (at sign = '-' if c < 0 else '')"
+      ]
+    },
+    "labeling_notes": "The patch successfully fixes the targeted F2P issue (MatrixSymbol difference printing) but introduces a critical regression by using `c < 0` to check the sign of the coefficient in _print_MatMul. When `c` is a symbolic expression like `2*x`, this comparison raises a TypeError. A correct implementation would use `c.is_negative` instead of `c < 0`."
+  }
+}
