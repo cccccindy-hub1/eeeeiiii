@@ -1,0 +1,23 @@
+{
+  "serial": 81,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-15349",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentically linked to this patch and base commit (patch_sha256 and base_commit match), and the issue-derived symptom probe shows the reported symptom is gone after the patch (baseline FAIL -> post-patch OK). However, this is diagnostic-tier evidence only: the maintainer acceptance-test outcomes (FAIL_TO_PASS / PASS_TO_PASS verdicts) are withheld/blocked, and the freshness and declared-set coverage attestations are UNKNOWN on this surface. The declared acceptance/regression set was not shown to be fully executed and failure-free, so the bar for ACCEPT (complete, fresh, linked, failure-free success) is not met. No decisive applicable failure was established either, so REJECT is not warranted. Abstaining.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test verdicts (F2P/P2P) and scoped regression outcomes for this patch/commit are unavailable (HTTP 403 / disabled under strict policy); freshness and declared-set coverage attestations are withheld (UNKNOWN), so full execution of the declared set with no failures is not demonstrated.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 3372,
+  "tokens_out": 252,
+  "cost_usd": 0.001314,
+  "served_model": "deepseek-flash",
+  "error": null
+}

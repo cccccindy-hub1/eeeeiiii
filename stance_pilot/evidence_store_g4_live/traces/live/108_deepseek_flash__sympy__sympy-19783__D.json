@@ -1,0 +1,23 @@
+{
+  "serial": 108,
+  "model": "deepseek-flash",
+  "cell": "D",
+  "instance_id": "sympy__sympy-19783",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"REJECT\",\"reason\":\"Evidence is intact and applicable: linkage verified (base_commit and patch_sha256 match), freshness adjudicated TRUE (run tree equals canonical restage tree), and coverage complete (2/2 F2P, 9/9 scoped P2P executed). Within that fresh, linked run, the declared acceptance test test_identity FAILED: `assert I * Dagger(O) == Dagger(O)` yields `(I * Dagger(O)) == Dagger(O)` false. The baseline run shows test_identity PASSED pre-patch, so this is a regression introduced by the patch: the added __rmul__/__mul__ on Dagger only handles IdentityOperator on the Dagger side, but `IdentityOperator() * Dagger(O)` still fails to simplify (the IdentityOperator.__mul__ path does not recognize Dagger). The author's claim that all relevant tests pass is contradicted by the artifact. A single credible, applicable failing acceptance check is sufficient to REJECT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "REJECT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 9376,
+  "tokens_out": 232,
+  "cost_usd": 0.003091,
+  "served_model": "deepseek-flash",
+  "error": null
+}

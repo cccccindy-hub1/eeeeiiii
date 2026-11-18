@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"The patch is linked and fresh for the current commit tree. The acceptance test for the specific issue 'test_MatrixSymbol_printing' fails in the post-patch run, indicating the patch does not fully resolve the printing issue for MatrixSymbols. Additionally, scoped regression tests 'test_haramard' and 'test_matMul' fail after the patch, showing regressions introduced by this patch. These failures are decisive and applicable to this patch, thus the patch cannot be accepted.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "a64fd69d3efa8b1345c2f5066e6f60fd4f69c5d91c24a1bfc38177c0fe820638",
+  "cell": "C",
+  "cohort": "g3c1",
+  "cost_usd": 0.040066,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-14248",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.059008,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 5,
+  "tokens_in": 99677,
+  "tokens_in_est": 114752,
+  "tokens_out": 122,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 4.36,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

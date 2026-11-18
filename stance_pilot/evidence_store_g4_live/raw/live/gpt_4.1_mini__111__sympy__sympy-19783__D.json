@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"The patch introduces a failure in the acceptance test 'test_identity' which asserts that multiplying IdentityOperator on the left of a Dagger operator returns the Dagger operator unchanged. The test fails with the expression (I * Dagger(O)) != Dagger(O). This failure is fresh, linked to this patch and commit tree, and is part of the declared acceptance test set. No evidence shows this failure is resolved or mitigated. Therefore, the patch does not fully resolve the issue without introducing a regression.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"none\"}",
+  "bundle_sha256": "3d660380aa2212dc277fa1e3bdc0d6ea7855fb430f76f4867d24b0e78947bcd8",
+  "cell": "D",
+  "cohort": "g3a",
+  "cost_usd": 0.003629,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-19783",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.016975,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 111,
+  "tokens_in": 8569,
+  "tokens_in_est": 9669,
+  "tokens_out": 126,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.12,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"Evidence is intact and applicable: linkage verified (base_commit and patch_sha256 match), freshness adjudicated TRUE (run tree equals canonical restage tree), and coverage complete (2/2 F2P, 9/9 scoped P2P executed). Within that fresh, linked run, the declared acceptance test test_identity FAILED: `assert I * Dagger(O) == Dagger(O)` yields `(I * Dagger(O)) == Dagger(O)` false. The baseline run shows test_identity PASSED pre-patch, so this is a regression introduced by the patch: the added __rmul__/__mul__ on Dagger only handles IdentityOperator on the Dagger side, but `IdentityOperator() * Dagger(O)` still fails to simplify (the IdentityOperator.__mul__ path does not recognize Dagger). The author's claim that all relevant tests pass is contradicted by the artifact. A single credible, applicable failing acceptance check is sufficient to REJECT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "3d660380aa2212dc277fa1e3bdc0d6ea7855fb430f76f4867d24b0e78947bcd8",
+  "cell": "D",
+  "cohort": "g3a",
+  "cost_usd": 0.003091,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-19783",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.016975,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 108,
+  "tokens_in": 9376,
+  "tokens_in_est": 9669,
+  "tokens_out": 232,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.25,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

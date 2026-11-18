@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and linked: artifact art_1dc2b9e38ff27115 has authentic signature, base_commit_match=true, patch_sha256_match=true, and linked=true against this patch and commit tree. The symptom probe reproduces the bug pre-patch (wrong sign in rotation matrix) and passes post-patch ('OK: rotation matrix sign correct'), confirming the issue is resolved. The FAIL_TO_PASS test (test_quaternion_conversions, plus the new test_quaternion_rotation_iss1593) passes, and all 3 scoped PASS_TO_PASS tests pass with no regressions (p2p_regressed_ids empty, baseline also passing). No executed acceptance check fails. Freshness/coverage attestations are withheld (UNKNOWN) and are not treated as staleness or incompleteness; the available evidence is sufficient and failure-free.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "3f19789a90c8eaf857420d1a690417c4334963b15e5978e384b935cac5d1e1f1",
+  "cell": "C",
+  "cohort": "g3a",
+  "cost_usd": 0.002095,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-15349",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.015603,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 80,
+  "tokens_in": 6147,
+  "tokens_in_est": 6240,
+  "tokens_out": 209,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.41,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

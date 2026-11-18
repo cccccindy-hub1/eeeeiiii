@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"The patch introduces a new test 'test_issue_12420' intended to verify that sqrtdenest no longer raises an IndexError. However, this test fails in the acceptance test run with an assertion error: the internal function _sqrt_match(4 + I) returns [4 + I, 0, 1] instead of the expected empty list []. This failure is directly linked to the patch and the current commit tree, indicating that the patch does not fully resolve the issue as claimed. No other acceptance or regression failures are present, but this single failing acceptance test is sufficient to reject the patch.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "ab3645d5bea6f6f5426bc1cbd043c58d6684d037598402e725deb493a1b401ee",
+  "cell": "D",
+  "cohort": "g3a",
+  "cost_usd": 0.003459,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-17318",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.016538,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 89,
+  "tokens_in": 8060,
+  "tokens_in_est": 8577,
+  "tokens_out": 147,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 4.5,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

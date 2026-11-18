@@ -1,0 +1,46 @@
+LLM-based code-review agents are increasingly entrusted with gating code
+changes, yet current benchmarks largely measure whether an agent produces the
+correct accept/reject label without separating two distinct questions: whether
+the \emph{evidence} presented is intact and trustworthy, and whether it is
+\emph{sufficient} to justify a decision at all. We introduce
+\textbf{GroundedReview}, a benchmark that (i) casts code review as a three-way
+decision---\ACCEPT, \REJECT, or \NEED---and (ii) evaluates the same real
+issue--patch pair under several evidence conditions that independently control
+which test outcomes are visible, whether the agent may actively fetch
+artifacts, and whether provenance and freshness are verifiable. We distinguish
+\emph{Oracle Gold} (the decision warranted by a fresh, scoped pytest run) from
+\emph{Condition Gold} (the decision warranted by the evidence actually
+granted, which is legitimately \NEED\ on restricted surfaces). On ten SymPy
+issue--patch pairs served to two models (\texttt{deepseek-flash} and
+\texttt{gpt-4.1-mini}) across five conditions, a corrective replication shows
+that repairing protocol-construct defects in our own instrument moved one
+model's sufficient-evidence abstention from $9/10$ to $1/10$---an
+associational, not causal, contrast---whereas the other model, under a
+restricted ``strict'' surface whose correct answer is \NEED, returned
+unsupported \ACCEPT\ on $7/10$ issues, upgrading non-decisive evidence into
+acceptance. A traceable case shows an agent accepting a patch after an
+already-visible fail-to-pass test had failed. A disjoint eight-issue,
+80-cell capped exploratory run repeats the model asymmetry associationaly.
+We then run a \emph{pre-registered controlled intervention} (G4) on 18
+frozen issue--patch pairs: a yoked, fixed nine-step evidence transcript in a
+$2\times2$ design (144 cells, one call each, US\,\$0.807 of a US\,\$2.00 hard
+cap) that holds linkage constant and independently varies decisive-outcome
+visibility and freshness/coverage attestation. With decisive results blocked,
+adding integrity attestation moves GPT-4.1-mini from $0/18$ to $8/18$
+unsupported acceptance, with no reverse moves (paired two-sided exact McNemar
+$p=0.0078$; paired difference $-0.444$, issue-clustered 95\,\% CI
+$[-0.667,-0.222]$), including acceptance of two of five oracle-\REJECT\
+patches; DeepSeek-Flash does not move ($18/18$ \NEED\ in both cells,
+$p=1.0$). When decisive outcomes are visible, both models reject all five
+failing patches (oracle agreement 16--17/18). The effect is therefore real
+under the frozen protocol but model-specific: one model treats intact
+integrity attestations as a warrant to accept despite withheld decisive
+results, while the other does not. An independent third-party human second
+annotation of all 18 blind packets has since been obtained: blind verdicts
+agree with the provisional oracle on 17/18 issues, the two focused reviews
+close FR1 as an instrument-only fix and FR2 as a single REJECT standard,
+and a human arbiter overrides issue~19346 to \REJECT\ (one disagreement on
+issue~15875 remains unresolved). Labels are still reported as
+\textbf{PROVISIONAL} until the signed attestation is filed; we therefore
+present a measurement framework and clearly bounded evidence rather than
+population-level claims about model behaviour.

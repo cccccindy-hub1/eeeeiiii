@@ -1,0 +1,23 @@
+{
+  "serial": 137,
+  "model": "deepseek-flash",
+  "cell": "C",
+  "instance_id": "sympy__sympy-24443",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"The acceptance artifact is authentic and linked: base_commit and patch_sha256 both match the review target, and the test patch applied cleanly. The declared FAIL_TO_PASS check (test_homomorphism) passed 1/1, and the scoped PASS_TO_PASS check (test_isomorphisms) passed 1/1 with no regressions and no pre-existing failures. The symptom probe confirms the issue is resolved: pre-patch it failed with 'ValueError: The given images do not define a homomorphism', and post-patch it succeeds in constructing the identity homomorphism on D3. The run logs show all three tests in test_homomorphisms.py passing, including the new D3/D4 identity-homomorphism assertions. Freshness and coverage attestations are withheld (UNKNOWN) on this surface, but that is not a negative verdict and does not refute the intact, linked, failure-free acceptance evidence. No applicable failing check exists, so the patch is merge-acceptable.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 6054,
+  "tokens_out": 234,
+  "cost_usd": 0.002097,
+  "served_model": "deepseek-flash",
+  "error": null
+}

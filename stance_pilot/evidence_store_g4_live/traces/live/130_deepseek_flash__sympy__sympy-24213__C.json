@@ -1,0 +1,23 @@
+{
+  "serial": 130,
+  "model": "deepseek-flash",
+  "cell": "C",
+  "instance_id": "sympy__sympy-24213",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"Linkage verified: artifact art_5711762ccfb7ae48 has authentic_signature=true, base_commit_match=true, patch_sha256_match=true, and linked=true against the candidate patch (sha256 3d1868e0...) and base commit e8c22f6e. The acceptance-tier record shows FAIL_TO_PASS 1/1 passed (test_issue_24211) and scoped PASS_TO_PASS 31/31 passed with no regressed or preexisting-bad IDs. The symptom probe confirms the issue is resolved: pre-patch it raised the ValueError 'Dimension of \\\"v1\\\" is Dimension(velocity), but it should be Dimension(acceleration*time)'; post-patch it exits 0 and returns factor -47.0 with dimension Dimension(acceleration*time). The f2p/p2p logs show 41 passed, 1 xfailed, and the baseline shows 40 passed, 1 xfailed, so the only delta is the newly passing issue test and no scoped regression. The patch itself is a minimal, correct change: it replaces strict dimension equality with get_dimension_system().equivalent_dims(dim, addend_dim), which is exactly the fix needed to recognize equivalent dimensions in addition. Freshness and coverage attestations are withheld (UNKNOWN) on this surface, but that is not a negative verdict and does not undermine the intact, linked, failure-free acceptance evidence. No decisive applicable failure exists, so ACCEPT is warranted.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 9346,
+  "tokens_out": 340,
+  "cost_usd": 0.003212,
+  "served_model": "deepseek-flash",
+  "error": null
+}

@@ -1,0 +1,283 @@
+\section{Original Ten Issues and Per-Issue Grid}
+\label{app:issues}
+
+Oracle gold is PROVISIONAL (single annotator). Issues: 24443 (A), 13615 (A),
+19783 (R), 20590 (A), 17630 (R), 21847 (A), 15349 (A), 24213 (A), 17318 (R),
+13974 (A). Table~\ref{tab:t1} is the frozen G3-B.3 per-issue grid from
+\path{tables/T1_per_issue_condition_grid_g3b3.csv}; A$=$\ACCEPT,
+R$=$\REJECT, N$=$\NEED. Restricted columns (T2D-T, T3D-Strict) have condition
+gold \NEED; the other three have gold $=$ oracle.
+
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\caption{Per-issue G3-B.3 verdict grid (frozen). DS = deepseek-flash,
+GPT = gpt-4.1-mini. Cells are repeated measures within an issue.}
+\label{tab:t1}
+\begin{tabular}{c c ccccc ccccc}
+\toprule
+ & & \multicolumn{5}{c}{\textbf{DeepSeek}} & \multicolumn{5}{c}{\textbf{GPT}} \\
+\cmidrule(lr){3-7}\cmidrule(lr){8-12}
+\textbf{Issue} & \textbf{Oracle} & T2D & D-Str & D-Esc & T2A & T3A & T2D & D-Str & D-Esc & T2A & T3A \\
+\midrule
+13615 & A & N & N & A & A & A & N & A & N & A & A \\
+13974 & A & N & N & N & N & A & N & A & A & A & A \\
+15349 & A & N & N & A & A & A & N & A & A & A & A \\
+17318 & R & N & N & R & R & R & N & A & R & A & R \\
+17630 & R & N & N & R & R & R & N & A & A & N & N \\
+19783 & R & N & N & R & R & R & N & N & R & R & R \\
+20590 & A & N & N & A & A & A & N & N & A & A & A \\
+21847 & A & N & N & A & A & A & N & A & A & A & A \\
+24213 & A & N & N & A & A & A & N & N & A & A & A \\
+24443 & A & N & N & A & A & A & N & A & A & A & A \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Eight New Independent Issues (G3-C.1)}
+\label{app:pilot}
+
+A capped exploratory live run on these eight issues is now complete
+(Section~\ref{sec:e80}): 80 real cells, 162 model calls, spend \$0.258198
+(exact token-by-price \$0.2581976; summing six-decimal per-cell ledger
+entries gives \$0.258199, a \$0.000001 rounding accumulation).
+Natural queue (seed 418237): 19346, 22914, 19495, 15875 (R). REJECT-enriched
+queue (seed 418241): 19040, 14248 (R), 19637, 16886. Oracle distribution: six
+scoped \ACCEPT, two \REJECT. 40 condition-gold certificates (24 sufficient,
+16 \NEED); freshness $8/8$; 185 manifest files with zero hash mismatch. Queue
+blinding maps (seed 418307): G3-C.1 packets P01--P08 map to 14248, 19495,
+19346, 19040, 16886, 19637, 22914, 15875; G3-A packets P01--P10 map to 24443,
+13615, 19783, 20590, 17630, 21847, 15349, 24213, 17318, 13974. Both focused-review items have since been closed by the independent human:
+FR1 (19495; probe-instrument versus redefinition construct risk) is ruled
+\emph{instrument-only fix}, and FR2 (14248/15875) rules the two rejects
+one disjunctive \REJECT\ standard; neither requires a rubric
+amendment. 12 of 18 blind packets self-reference the issue number (partial
+blinding). Table~\ref{tab:t2} is the live per-issue grid; A$=$\ACCEPT,
+R$=$\REJECT, N$=$\NEED.
+
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\caption{Per-issue G3-C.1 live verdict grid (80 cells). DS =
+deepseek-flash, GPT = gpt-4.1-mini. Restricted columns (T2D-T, T3D-Strict)
+have condition gold \NEED; the other three have gold $=$ oracle. PROVISIONAL
+gold; cells are repeated measures within an issue.}
+\label{tab:t2}
+\begin{tabular}{c c ccccc ccccc}
+\toprule
+ & & \multicolumn{5}{c}{\textbf{DeepSeek}} & \multicolumn{5}{c}{\textbf{GPT}} \\
+\cmidrule(lr){3-7}\cmidrule(lr){8-12}
+\textbf{Issue} & \textbf{Oracle} & T2D & D-Str & D-Esc & T2A & T3A & T2D & D-Str & D-Esc & T2A & T3A \\
+\midrule
+14248 & R & N & N & R & R & R & N & A & R & R & R \\
+15875 & R & N & N & R & R & R & N & A & N & R & R \\
+16886 & A & N & N & A & A & A & N & N & A & A & A \\
+19040 & A & N & N & A & A & A & N & A & A & A & A \\
+19346 & A & N & N & A & A & A & N & A & A & A & A \\
+19495 & A & N & N & A & N & A & N & A & A & A & A \\
+19637 & A & N & N & A & A & A & N & N & A & A & A \\
+22914 & A & N & N & A & A & A & N & A & A & A & A \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{80-Cell Readiness Summary}
+\label{app:readiness}
+
+\begin{table}[h]
+\centering
+\small
+\caption{Pre-paid readiness and post-run status for the 80-cell validation
+(2 models $\times$ 5 conditions $\times$ 8 issues). All engineering gates
+passed at \$0; written authorization was obtained; the bound runner executed
+all 80 cells. Gold authority remains PROVISIONAL by design.}
+\label{tab:readiness}
+\begin{tabularx}{\linewidth}{@{}l X c@{}}
+\toprule
+\textbf{Check} & \textbf{Observed} & \textbf{Status} \\
+\midrule
+Non-interference (v2, real server) & 224 surfaces; 144 restricted-D; 0 tier-1 / 0 tier-2 / 0 baseline / 0 hidden-gold & PASS \\
+Mock gold alignment & 40/40 dedicated gate; 64/64 non-Escalate via the generic script & PASS \\
+Strict 403 & all 8 restricted fetches & PASS \\
+Escalation & 400 without reason, then 200 with reason, all 8 & PASS \\
+Served model id & exact match; hard stop on drift; no false trip & PASS \\
+Budget guard & \$2.00 total / \$1.00 per model; per-cell + model + total blocks & PASS \\
+Resume & accumulated spend restored; NaN/Inf/negative ledger refused & PASS \\
+Raw-first persistence & 80/80 raw artifacts on disk before scoring, sha-verified & PASS \\
+Freshness & 8/8; 185 files, 0 hash mismatch & PASS \\
+\midrule
+Live API authorization & separate written decision obtained (80 cells, \$2/\$1 caps) & RESOLVED \\
+Runner binding & \texttt{g3c1live-runner-v1} bound to \$2.00/\$1.00, fingerprinted pre-run & RESOLVED \\
+Live execution & 80/80 cells, 162 calls, spend \$0.258198; 0 retries / 0 errors / 0 downgrades & COMPLETE \\
+Gold authority & \texttt{annotator2 = NOT\_OBTAINED}; run reported as Provisional-Gold & PROVISIONAL \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Frozen Provenance and Reproduction}
+\label{app:provenance}
+
+All quantitative statements are produced by \path{paper_sprint/scripts/}
+from frozen result stores, with source sha256 digests in
+\path{tables/results_summary.json} and per-finding class tags in
+\path{tables/result_inventory.csv} and \path{result_inventory.md}.
+Parent pins (name and abbreviated sha256):
+\begin{itemize}[leftmargin=1.6em,itemsep=1pt,topsep=2pt]
+  \item \path{g3c1_freeze} \texttt{7a40d231989b}
+  \item \path{g3c0_design} \texttt{ef85962111d4}
+  \item \path{g3b4_result} \texttt{45fef964f053}
+  \item \path{g3b3_result} \texttt{752a4f2980b2}
+  \item \path{g3b3_data} \texttt{8ca2c984faed}
+  \item \path{g3c1live_runner} and its pre-run fingerprint
+  (\path{evidence_store_g3c1_live/freeze/g3c1live_fingerprint.json});
+  per-cell raw and results under \path{evidence_store_g3c1_live/}, exported as
+  \path{paper_sprint/experiment80/RESULTS_REAL.json} (status
+  \texttt{COMPLETE\_80})
+\end{itemize}
+The corrective replication spent
+\$0.303539 (208 calls; DeepSeek 114 / GPT 94) under \$3.00/\$1.50 caps with
+zero retries, errors, and resume-skips; a first-run attempt failed before any
+HTTP request at \$0 spent and its products were discarded. The independent
+80-cell validation was separately authorized in writing, capped at
+\$2.00 total (\$1.00 per model), and completed at a guard-ledger spend of
+\$0.258198 (162 calls; DeepSeek 88 / GPT 74; exact token-by-price
+\$0.2581976, per-cell-rounded sum \$0.258199) with zero retries, terminal
+errors, response-format downgrades, and resume-skips; all 80 raw responses
+were persisted and sha-verified before scoring. Its gold is PROVISIONAL and
+it is reported as an exploratory independent-issue validation, not a
+human-arbitrated benchmark.
+
+\paragraph{Reproduction.}
+All paper numbers regenerate fully offline at \$0 cost and without any Reviewer
+API call using
+\path{-m paper_sprint.scripts.ps_build_tables},
+\path{...ps_inventory}, and
+\path{...ps_build_figures}, which read only frozen stores; mock cells are
+excluded from research analysis. Figures in this manuscript are native
+TikZ/pgfplots and require no image conversion.
+
+\section{G4 Provenance, Freeze, and Reproduction}
+\label{app:g4provenance}
+G4 inputs are frozen under \path{evidence_store_g4_sufficiency/}:
+\path{g4_fixed_bundles.jsonl} (72 fixed bundles, schema
+\texttt{g4-fixed-bundle-v1.1}, version \texttt{g4-sufficiency-iv-v1.1}),
+\path{g4_cell_manifest.jsonl} (144 slots, Latin order seed
+\texttt{G4\_ORDER\_SEED=20261102}, each bundle \texttt{sha256} pinned),
+\path{g4_payload_hashes.jsonl}, the G1--G6 identifiability gate
+(\texttt{decision=GO}, locked statistics plan), and the frozen
+pre-registration plus v1.1 addendum (the addendum governs). Live products are
+under \path{evidence_store_g4_live/}: a dedicated runner
+(\path{evidence/g4_live_run.py}, \texttt{g4live-runner-v1}), raw-first records
+in \path{raw/live/} (144 files, persisted before scoring), per-model results
+and a run audit in \path{runs/}, pre-run fingerprint, mock gate, and budget
+self-test in \path{freeze/}, and the independent read-only analysis
+(\path{evidence/g4_analysis.py}) writing \path{analysis/} (JSON/MD report,
+tables, and TikZ figures). The pre-paid offline gate ran the full 144-cell
+yoked path at \$0 with balanced slots, fixed nine-step/20-message contexts,
+served-id checks, a single shared \$2.00 budget guard, resume, and raw-first
+checks; only after all gates passed were live calls made. Live execution used
+exactly one model call per cell in strict manifest serial order with
+independent contexts, zero retries and errors, exact served ids
+(\texttt{gpt-4.1-mini-2025-04-14}, \texttt{deepseek-flash}), and no
+response-format fallback; total spend \$0.807389 (GPT \$0.436378, DeepSeek
+\$0.371011), independently recomputed from raw token usage to the same value.
+Statistics are exact (binomial/McNemar via combinatorial summation) with an
+issue-clustered nonparametric bootstrap ($B=20{,}000$, seed 20261102); models
+are analysed separately and never pooled. Gold remains PROVISIONAL as the
+primary scoring authority (an independent human second annotation has been
+returned and is reported in Section~\ref{sec:g4-human}, but its signed
+attestation is not yet filed); no AI output is used as human gold, and
+no frozen input or earlier experiment was modified. G4 and G3-B.3 differ in
+protocol, inputs, and task and are compared only narratively.
+
+\paragraph{Independent v2 verification (read-only).}
+A second, independently written read-only audit
+(\path{evidence/g4_verify_v2.py} $\to$
+\path{evidence_store_g4_live/analysis_v2/}) re-derives every reported figure
+from frozen inputs and raw records without touching them: all 144 manifest
+slots are present with serials 0--143 and matching gold tiers; all 72 fixed
+bundles reconstruct to their pinned \texttt{sha256} from the raw payloads
+(144/144 cell references); each of the 144 raw records has a trace identical
+to the persisted raw answer; the per-cell costs recompute to
+\$0.807389 from token usage and frozen per-token prices; served ids are
+exactly the two expected strings in all 144 cells; the pre-call budget guard
+reconstructs without violation. It also recomputes H1 from scratch
+($p=0.0078125=2(1/2)^8$; paired $\Delta=-0.444$; bootstrap $[-0.667,-0.222]$;
+DeepSeek $p=1.0$) and supplies the pre-registered per-cell
+Clopper--Pearson intervals that the frozen v1 report omitted (v1 reported
+Wilson intervals; Wilson remains in the frozen v1 report unchanged), and
+corrects the mislabelled ``DiD $=0.056$'' as described in
+Section~\ref{sec:g4-sens}. Six items are not independently verifiable by
+construction: no external network capture, no provider billing-dashboard
+cross-check, served identity beyond the returned id string, server-side
+caching behavior, the signed identity attestation for the human labels
+(verbal confirmation only, signature not yet filed), and an
+independent clock for timestamps.
+
+\paragraph{Human adjudication return (2026-11-08).}
+The 18 blind packets and the FR1/FR2 worksheets, with a single delivery index
+and fill-in instructions, are collected under \path{paper_sprint/human/}
+(\path{HUMAN_ADJUDICATION_HANDOFF.md},
+\path{human_review_tracking.csv}). The independent third-party return
+(workbench JSON and filled tracking CSV, archived under
+\path{paper_sprint/human/returns/} with sha256
+\texttt{decd50a8\ldots f097} and \texttt{ae5f68aa\ldots c39c}) was verified
+read-only: all 144 workbench-embedded evidence files match the frozen
+on-disk packets byte-for-byte, all 18 blind labels are locked, blind
+agreement with the provisional oracle is 17/18 and with the GLM pre-label
+16/18, and sealed packet-to-instance mappings are intact. The human arbiter
+records \REJECT\ on the 19346 packet (the dedicated 19346 card was left
+blank; the packet-level arbitration field is used); 15875 has no arbiter
+verdict and stays frozen \REJECT\ as a disclosed open disagreement; the
+19495 blind lock retains its 2026-11-01 timestamp by coordinator decision.
+The hand-edited CSV return had its oracle column deleted and was not used;
+the workbench JSON is authoritative and a corrected canonical CSV was
+re-generated. Full records:
+\path{evidence_store_human_gold/adjudication_v1/} (integrity verification)
+and \path{.../adjudication_v2/} (final per-issue labels and S0/S1
+recomputation). The paper's gold wording stays PROVISIONAL until the signed
+attestation is filed; an author quick-look note remains marked
+\texttt{research\_excluded} and changes no label.
+
+\paragraph{G4 per-issue verdict grid.}
+Table~\ref{tab:g4grid} gives the complete $18\times4$ grid per model,
+generated directly from the persisted raw answers; A$=$\ACCEPT, R$=$\REJECT,
+N$=$\NEED. There are no invalid cells.
+
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\caption{G4 per-issue verdicts from the 144 live raw records. Oracle column
+is PROVISIONAL. Columns A--D are the four $2\times2$ cells. None of these
+verdicts is a human gold label.}
+\label{tab:g4grid}
+\begin{tabular}{c c cccc c cccc}
+\toprule
+ & & \multicolumn{4}{c}{\textbf{GPT-4.1-mini}} & & \multicolumn{4}{c}{\textbf{DeepSeek-Flash}} \\
+\cmidrule(lr){3-6}\cmidrule(lr){8-11}
+\textbf{Issue} & \textbf{Oracle} & A & B & C & D & & A & B & C & D \\
+\midrule
+13615 & A & N & A & A & A && N & N & A & A \\
+13974 & A & N & A & A & A && N & N & A & A \\
+14248 & R & N & A & R & R && N & N & R & R \\
+15349 & A & N & A & A & A && N & N & A & A \\
+15875 & R & N & A & R & R && N & N & R & R \\
+16886 & A & N & A & A & A && N & N & A & A \\
+17318 & R & N & N & R & R && N & N & R & R \\
+17630 & R & N & N & N & N && N & N & R & R \\
+19040 & A & N & N & A & A && N & N & A & A \\
+19346 & A & N & N & A & R && N & N & R & R \\
+19495 & A & N & A & A & A && N & N & A & A \\
+19637 & A & N & N & A & A && N & N & A & A \\
+19783 & R & N & N & R & R && N & N & R & R \\
+20590 & A & N & N & A & A && N & N & A & A \\
+21847 & A & N & N & A & A && N & N & A & A \\
+22914 & A & N & A & A & A && N & N & A & A \\
+24213 & A & N & N & A & A && N & N & A & A \\
+24443 & A & N & N & A & A && N & N & A & A \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch correctly fixes the Morse code mapping for '1' from '----' to '.----'. The acceptance test 'test_encode_morse' that directly verifies Morse encoding passes after the patch and failed before it, confirming the issue is resolved. Additionally, all other acceptance and scoped regression tests pass with no failures or regressions introduced. The test artifact is linked and fresh for this patch and commit tree. Therefore, the evidence demonstrates the issue is resolved with no regressions.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "9d3323baeca4b7b9ef5361e42f340fd4a896debc90518bf6e307090a2e818beb",
+  "cell": "C",
+  "cohort": "g3c1",
+  "cost_usd": 0.00433,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-16886",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.017649,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 19,
+  "tokens_in": 10340,
+  "tokens_in_est": 11355,
+  "tokens_out": 121,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 1.74,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

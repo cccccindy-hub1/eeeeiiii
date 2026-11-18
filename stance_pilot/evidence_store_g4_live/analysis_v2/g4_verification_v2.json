@@ -1,0 +1,545 @@
+{
+  "verification": {
+    "manifest_slots_144": true,
+    "bundles_72": true,
+    "serials_0_143": true,
+    "g4_version": true,
+    "gold_provisional": true,
+    "bundle_sha256_recompute": "144/144",
+    "gate_decision_GO": true,
+    "stats_plan_locked": true,
+    "cap_registered_2.0": true,
+    "live_raw_files_144": true,
+    "results_rows_144": true,
+    "trace_files_144": true,
+    "trace_matches_raw": "144/144",
+    "precall_guard_reconstruction": true,
+    "peak_ledger_usd": 0.807389,
+    "cost_total_recomputed_usd": 0.807389,
+    "cost_total_audit_usd": 0.807389,
+    "cost_matches_audit": true,
+    "served": {
+      "gpt-4.1-mini": {
+        "gpt-4.1-mini-2025-04-14": 72
+      },
+      "deepseek-flash": {
+        "deepseek-flash": 72
+      }
+    },
+    "errors": {
+      "deepseek-flash": 0,
+      "gpt-4.1-mini": 0
+    },
+    "retries": 0,
+    "downgrades": "see raw",
+    "problems": []
+  },
+  "stats": {
+    "gpt-4.1-mini": {
+      "label": "GPT-4.1-mini",
+      "ternary": {
+        "A": {
+          "ACCEPT": 0,
+          "REJECT": 0,
+          "NEED_EVIDENCE": 18,
+          "INVALID": 0
+        },
+        "B": {
+          "ACCEPT": 8,
+          "REJECT": 0,
+          "NEED_EVIDENCE": 10,
+          "INVALID": 0
+        },
+        "C": {
+          "ACCEPT": 13,
+          "REJECT": 4,
+          "NEED_EVIDENCE": 1,
+          "INVALID": 0
+        },
+        "D": {
+          "ACCEPT": 12,
+          "REJECT": 5,
+          "NEED_EVIDENCE": 1,
+          "INVALID": 0
+        }
+      },
+      "unsupported_accept": {
+        "A": {
+          "x": 0,
+          "n": 18,
+          "denominator": "all 18 issues",
+          "issues": []
+        },
+        "B": {
+          "x": 8,
+          "n": 18,
+          "denominator": "all 18 issues",
+          "issues": [
+            "13615",
+            "13974",
+            "14248",
+            "15349",
+            "15875",
+            "16886",
+            "19495",
+            "22914"
+          ]
+        },
+        "C": {
+          "x": 0,
+          "n": 5,
+          "denominator": "5 oracle-REJECT issues",
+          "issues": []
+        },
+        "D": {
+          "x": 0,
+          "n": 5,
+          "denominator": "5 oracle-REJECT issues",
+          "issues": []
+        }
+      },
+      "clopper_pearson95_U": {
+        "A": [
+          0.0,
+          0.1853019681366277
+        ],
+        "B": [
+          0.2153015073872666,
+          0.6924283410007774
+        ],
+        "C": [
+          0.0,
+          0.5218237501030671
+        ],
+        "D": [
+          0.0,
+          0.5218237501030671
+        ]
+      },
+      "clopper_pearson95_accept_rate": {
+        "A": [
+          0.0,
+          0.1853019681366277
+        ],
+        "B": [
+          0.2153015073872666,
+          0.6924283410007774
+        ],
+        "C": [
+          0.4651980344169715,
+          0.9030507874740579
+        ],
+        "D": [
+          0.4099252381711267,
+          0.8665725974933594
+        ]
+      },
+      "strata_B": {
+        "oracle_ACCEPT_unsupported": [
+          6,
+          13
+        ],
+        "oracle_REJECT_unsupported": [
+          2,
+          5
+        ],
+        "cp_ACCEPT_stratum": [
+          0.19223244180102483,
+          0.7486545177307562
+        ],
+        "cp_REJECT_stratum": [
+          0.05274495052617567,
+          0.8533672003650281
+        ]
+      },
+      "H1": {
+        "b_A_only": 0,
+        "c_B_only": 8,
+        "two_sided_exact_p_exact": 0.0078125,
+        "p_decimal_repr": "0.0078125",
+        "paired_diff_UA_minus_UB": -0.4444444444444444,
+        "bootstrap95": [
+          -0.6666666666666666,
+          -0.2222222222222222
+        ],
+        "bootstrap_B": 20000,
+        "bootstrap_seed": 20261102
+      },
+      "CD": {
+        "oracle_match_C": 17,
+        "oracle_match_D": 16,
+        "U_rejects_C": 0,
+        "U_rejects_D": 0
+      },
+      "tokens": {
+        "in": 1052816,
+        "out": 9531
+      },
+      "cost_usd_recomputed": 0.436376
+    },
+    "deepseek-flash": {
+      "label": "DeepSeek-Flash",
+      "ternary": {
+        "A": {
+          "ACCEPT": 0,
+          "REJECT": 0,
+          "NEED_EVIDENCE": 18,
+          "INVALID": 0
+        },
+        "B": {
+          "ACCEPT": 0,
+          "REJECT": 0,
+          "NEED_EVIDENCE": 18,
+          "INVALID": 0
+        },
+        "C": {
+          "ACCEPT": 12,
+          "REJECT": 6,
+          "NEED_EVIDENCE": 0,
+          "INVALID": 0
+        },
+        "D": {
+          "ACCEPT": 12,
+          "REJECT": 6,
+          "NEED_EVIDENCE": 0,
+          "INVALID": 0
+        }
+      },
+      "unsupported_accept": {
+        "A": {
+          "x": 0,
+          "n": 18,
+          "denominator": "all 18 issues",
+          "issues": []
+        },
+        "B": {
+          "x": 0,
+          "n": 18,
+          "denominator": "all 18 issues",
+          "issues": []
+        },
+        "C": {
+          "x": 0,
+          "n": 5,
+          "denominator": "5 oracle-REJECT issues",
+          "issues": []
+        },
+        "D": {
+          "x": 0,
+          "n": 5,
+          "denominator": "5 oracle-REJECT issues",
+          "issues": []
+        }
+      },
+      "clopper_pearson95_U": {
+        "A": [
+          0.0,
+          0.1853019681366277
+        ],
+        "B": [
+          0.0,
+          0.1853019681366277
+        ],
+        "C": [
+          0.0,
+          0.5218237501030671
+        ],
+        "D": [
+          0.0,
+          0.5218237501030671
+        ]
+      },
+      "clopper_pearson95_accept_rate": {
+        "A": [
+          0.0,
+          0.1853019681366277
+        ],
+        "B": [
+          0.0,
+          0.1853019681366277
+        ],
+        "C": [
+          0.4099252381711267,
+          0.8665725974933594
+        ],
+        "D": [
+          0.4099252381711267,
+          0.8665725974933594
+        ]
+      },
+      "strata_B": {
+        "oracle_ACCEPT_unsupported": [
+          0,
+          13
+        ],
+        "oracle_REJECT_unsupported": [
+          0,
+          5
+        ],
+        "cp_ACCEPT_stratum": [
+          0.0,
+          0.24705263799842214
+        ],
+        "cp_REJECT_stratum": [
+          0.0,
+          0.5218237501030671
+        ]
+      },
+      "H1": {
+        "b_A_only": 0,
+        "c_B_only": 0,
+        "two_sided_exact_p_exact": 1.0,
+        "p_decimal_repr": "1.0000000",
+        "paired_diff_UA_minus_UB": 0.0,
+        "bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "bootstrap_B": 20000,
+        "bootstrap_seed": 20261102
+      },
+      "CD": {
+        "oracle_match_C": 17,
+        "oracle_match_D": 17,
+        "U_rejects_C": 0,
+        "U_rejects_D": 0
+      },
+      "tokens": {
+        "in": 1159086,
+        "out": 19406
+      },
+      "cost_usd_recomputed": 0.371013
+    }
+  },
+  "interaction": {
+    "dependent_variable": "Y_{i,m,c} = 1 if verdict == ACCEPT else 0 (identically defined in all four cells)",
+    "why_not_U": "Unsupported acceptance U changes scoring rule across O (NEED gold when blocked; oracle gold when visible), so a U-based O x M contrast mixes the manipulation with the scoring definition. Y (raw acceptance) is the only DV defined identically in all four cells.",
+    "formula": "DiD_m = mean_i[(Y_B-Y_A)] - mean_i[(Y_D-Y_C)]; interaction = DiD_GPT - DiD_DS",
+    "cells": {
+      "gpt-4.1-mini": {
+        "Y_A_accepts": [
+          0,
+          18
+        ],
+        "Y_B_accepts": [
+          8,
+          18
+        ],
+        "Y_C_accepts": [
+          13,
+          18
+        ],
+        "Y_D_accepts": [
+          12,
+          18
+        ],
+        "M_effect_when_blocked_B_minus_A": {
+          "mean": 0.4444444444444444,
+          "issue_positive": 8,
+          "issue_negative": 0,
+          "issues_positive": [
+            "13615",
+            "13974",
+            "14248",
+            "15349",
+            "15875",
+            "16886",
+            "19495",
+            "22914"
+          ]
+        },
+        "M_effect_when_visible_D_minus_C": {
+          "mean": -0.05555555555555555,
+          "issue_positive": 0,
+          "issue_negative": 1,
+          "issues_negative": [
+            "19346"
+          ]
+        }
+      },
+      "deepseek-flash": {
+        "Y_A_accepts": [
+          0,
+          18
+        ],
+        "Y_B_accepts": [
+          0,
+          18
+        ],
+        "Y_C_accepts": [
+          12,
+          18
+        ],
+        "Y_D_accepts": [
+          12,
+          18
+        ],
+        "M_effect_when_blocked_B_minus_A": {
+          "mean": 0.0,
+          "issue_positive": 0,
+          "issue_negative": 0,
+          "issues_positive": []
+        },
+        "M_effect_when_visible_D_minus_C": {
+          "mean": 0.0,
+          "issue_positive": 0,
+          "issue_negative": 0,
+          "issues_negative": []
+        }
+      }
+    },
+    "per_model": {
+      "gpt-4.1-mini": {
+        "DiD": 0.5,
+        "bootstrap95": [
+          0.2777777777777778,
+          0.7222222222222222
+        ]
+      },
+      "deepseek-flash": {
+        "DiD": 0.0,
+        "bootstrap95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "v1_value_0.0556_was": "difference between models of the O-visibility contrast mean(Y_D-Y_C): GPT -1/18 vs DS 0; this was mislabeled as an O x M interaction. The correct M x model interaction (DiD) is 0.5000. Both exploratory.",
+    "interaction_DiD_GPT_minus_DS": {
+      "point": 0.5,
+      "bootstrap95": [
+        0.2777777777777778,
+        0.7222222222222222
+      ],
+      "bootstrap_B": 20000,
+      "seed": 20261105,
+      "caution": "Exploratory; 18 issues, Y=acceptance is not the primary endpoint, no multiplicity adjustment, low power."
+    }
+  },
+  "between_model": {
+    "contrast": "mean_i[(U_B-U_A)_GPT] - mean_i[(U_B-U_A)_DeepSeek]; same 18 issues paired across models",
+    "GPT_mean": 0.4444444444444444,
+    "DeepSeek_mean": 0.0,
+    "difference": 0.4444444444444444,
+    "issue_bootstrap95": [
+      0.2222222222222222,
+      0.6666666666666666
+    ],
+    "bootstrap_B": 20000,
+    "seed": 20261103,
+    "note": "The within-GPT H1 is confirmatory and significant; this between-model contrast is exploratory (no pre-registered confirmatory test for model interaction). Significance of one model and an interval on the between-model difference answer different questions."
+  },
+  "claim_audit": [
+    {
+      "id": "C1",
+      "claim": "GPT unsupported acceptance rises 0/18 (A) to 8/18 (B)",
+      "grade": "Supported (primary, confirmatory)",
+      "evidence": "exact McNemar p=0.0078125, paired -0.444, bootstrap [-0.667,-0.222]; CP95 for B 0.215-0.692",
+      "bounds": "18 issues, PROVISIONAL gold irrelevant to A/B (condition gold NEED fixed by design)"
+    },
+    {
+      "id": "C2",
+      "claim": "DeepSeek moves 0/18 to 0/18 (no observed A/B effect)",
+      "grade": "Null observed; evidence of absence is weak",
+      "evidence": "0 discordant pairs, p=1.0, zero variance; cannot distinguish calibration from blanket conservatism",
+      "bounds": "n=18; CI on a 0/18 rate only [0,0.185]; no power against small effects"
+    },
+    {
+      "id": "C3",
+      "claim": "both models reject all 5 oracle-REJECT patches when decisive results visible (C/D)",
+      "grade": "Supported in this sample",
+      "evidence": "U on rejects C/D = 0/5 each model; oracle match 17/18, 16/18 (GPT) and 17/18, 17/18 (DS)",
+      "bounds": "5 rejects; CP95 on 0/5 = [0,0.522]; labels PROVISIONAL"
+    },
+    {
+      "id": "C4",
+      "claim": "attestation M has little additional effect once O visible",
+      "grade": "Supported descriptively, diagnostic only",
+      "evidence": "DS C=D exactly; GPT differs on 1/18 (19346 D REJECT, C ACCEPT)",
+      "bounds": "construct-specificity gate, not a powered equivalence test"
+    },
+    {
+      "id": "C5",
+      "claim": "model interaction: intervention affects the two models differently",
+      "grade": "Exploratory evidence; between-model CI [0.2222222222222222, 0.6666666666666666]",
+      "evidence": "between-model paired delta 0.444; DiD(M x model) 0.500 exploratory",
+      "bounds": "not a pre-registered confirmatory test; 18 issues; no multiplicity adjustment"
+    },
+    {
+      "id": "C6",
+      "claim": "13 ACCEPT / 5 REJECT strata",
+      "grade": "Descriptive, retained",
+      "evidence": "GPT B unsupported 6/13 accepts (CP95 [0.192,0.749]), 2/5 rejects (CP95 [0.053,0.853]); DS 0 in both (REJECT-stratum CP95 [0,0.522])",
+      "bounds": "stratum n=13 and n=5; wide exact intervals; cases, not a population rate"
+    },
+    {
+      "id": "C7",
+      "claim": "robustness to gold flips",
+      "grade": "H1 robust; C/D label-dependent",
+      "evidence": "A/B condition gold is NEED independent of oracle, so oracle flips leave H1 unchanged; flipping all 13 accepts to reject would make C/D ACCEPTs all unsupported",
+      "bounds": "PROVISIONAL oracle can move C/D diagnostic agreement and the 19346/17630 residual interpretation"
+    },
+    {
+      "id": "C8",
+      "claim": "no parse/validity failures",
+      "grade": "Verified",
+      "evidence": "0 INVALID/AMBIGUOUS across 144; 0 downgrades; independent re-parse identical",
+      "bounds": "outputs beyond the parser are not audited semantically"
+    }
+  ],
+  "unverifiable": [
+    "No network capture: exclusivity of the 144 paid requests rests on the runner ledger/raw store, not an external traffic log.",
+    "Provider-side billing dashboard was not accessed; USD figures are recomputed from token usage x frozen profile max prices.",
+    "Served identity beyond the provider-returned model id string (weights/latency routing) cannot be verified by the client.",
+    "Provider-internal caching between independent contexts cannot be observed; fresh message lists/tool-call ids are guaranteed by construction (20 messages, fixed ids), server behavior cannot.",
+    "Independent human gold does not exist (annotator2/FR1/FR2 all PENDING); no human judgment is available to verify or upgrade labels.",
+    "Wall-clock and exact request timestamps are taken from the runner; no independent time source was cross-checked."
+  ],
+  "prereg_compliance": [
+    {
+      "item": "H1 two-sided issue-paired exact McNemar",
+      "registered": true,
+      "reported": true,
+      "match": true
+    },
+    {
+      "item": "issue-cluster bootstrap 95% CI of U(A)-U(B)",
+      "registered": true,
+      "reported": true,
+      "match": true,
+      "detail": "B=20000, seed=20261102"
+    },
+    {
+      "item": "Clopper-Pearson per cell",
+      "registered": true,
+      "reported": "v1 used Wilson only",
+      "match": false,
+      "resolution": "v2 reports pre-registered Clopper-Pearson; Wilson remains in the frozen v1 report."
+    },
+    {
+      "item": "H2 as diagnostic gate, not confirmatory search",
+      "registered": true,
+      "reported": true,
+      "match": true
+    },
+    {
+      "item": "parse failure = non-ACCEPT, rate reported separately",
+      "registered": true,
+      "reported": true,
+      "match": true,
+      "detail": "parse failures = 0 in 144"
+    },
+    {
+      "item": "only H1 confirmatory; interaction exploratory",
+      "registered": true,
+      "reported": true,
+      "match": true
+    },
+    {
+      "item": "pilot/underpowered labeling, no population claim",
+      "registered": true,
+      "reported": true,
+      "match": true
+    }
+  ]
+}

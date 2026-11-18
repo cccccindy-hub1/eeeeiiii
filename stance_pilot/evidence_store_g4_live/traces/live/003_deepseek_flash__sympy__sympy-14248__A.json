@@ -1,0 +1,23 @@
+{
+  "serial": 3,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-14248",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentic and linked to this patch (base_commit and patch_sha256 match), and the issue-derived symptom probe shows the reported symptom is gone after the patch (str/latex/pretty now print '-B - A*B + A'). However, this is only diagnostic-tier evidence: maintainer acceptance-test outcomes (FAIL_TO_PASS / PASS_TO_PASS) are withheld and blocked (HTTP 403), and the freshness and declared-set coverage attestations are UNKNOWN on this surface. No decisive applicable failure is established, so REJECT is not warranted; but the bar for ACCEPT (complete, fresh, linked, failure-free execution of the declared acceptance/regression set) is not met because the acceptance and scoped-regression verdicts were never adjudicated. The patch also touches shared printers (str/pretty/latex MatMul/MatAdd) with broad blast radius, so scoped regression coverage matters and is unavailable.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test outcomes (F2P and scoped P2P verdicts) for this patch/commit are withheld and unavailable; the declared acceptance/regression set was not shown to be executed, and freshness/coverage attestations are UNKNOWN.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 6320,
+  "tokens_out": 281,
+  "cost_usd": 0.002233,
+  "served_model": "deepseek-flash",
+  "error": null
+}

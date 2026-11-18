@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch addresses the issue where factor with extension=True dropped a factor, as demonstrated by the added test in test_factortools.py which verifies that both factors (x-1) and (y-1) are present when factoring with extension including I. The acceptance test for this issue (test_issue_5786) passed in the fresh and fully covered test run. No regression or failure was observed in the acceptance or scoped regression tests. The evidence is fresh, linked to this patch and commit, and covers the declared acceptance set completely with no failures. The symptom reproduction logs show that the baseline failed on the issue while the post-patch run passes, confirming the fix effectiveness.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"none\"}",
+  "bundle_sha256": "e95dde503e077cd6c0a3ded10ffb38b6b9afd6c6a50f0506f9ba88af8575e640",
+  "cell": "D",
+  "cohort": "g3c1",
+  "cost_usd": 0.010723,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-19040",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.024589,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 25,
+  "tokens_in": 26163,
+  "tokens_in_est": 28704,
+  "tokens_out": 161,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 3.0,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

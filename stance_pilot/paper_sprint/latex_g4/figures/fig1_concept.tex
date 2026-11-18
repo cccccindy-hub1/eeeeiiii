@@ -1,0 +1,53 @@
+\begin{tikzpicture}[x=1cm,y=1cm,
+  verdict/.style={draw,rounded corners=2pt,line width=0.9pt,align=left,
+                 inner sep=5pt,text width=4.55cm,minimum height=1.15cm},
+  tier/.style={draw,rounded corners=2pt,line width=0.8pt,align=left,
+                 inner sep=6pt,text width=6.55cm,minimum height=2.2cm},
+  cond/.style={draw,rounded corners=2pt,line width=0.8pt,align=center,
+                 inner sep=3pt,text width=2.55cm,minimum height=1.35cm},
+  lbl/.style={font=\scriptsize\itshape},
+  >={Stealth[length=2.4mm]}]
+
+% --- three-way verdict ---
+\node[verdict,draw=grAccept,text=grAccept,font=\small\bfseries]
+  (acc) at (2.35,0) {ACCEPT\\[1pt]\lbl{\textcolor{grMuted}{patch acceptable under the granted scope}}};
+\node[verdict,draw=grReject,text=grReject,font=\small\bfseries]
+  (rej) at (7.85,0) {REJECT\\[1pt]\lbl{\textcolor{grMuted}{a decisive failure is evidenced}}};
+\node[verdict,draw=grNeed,text=grNeed,font=\small\bfseries]
+  (need) at (13.35,0) {NEED\_EVIDENCE\\[1pt]\lbl{\textcolor{grMuted}{available evidence is non-decisive}}};
+
+% --- two gold tiers ---
+\node[tier,fill=grOracle,draw=grNeed,anchor=north west] (og) at (0,-1.5)
+  {\textcolor{grNeed}{\bfseries Oracle Gold}\\[2pt]\normalsize
+   \textcolor{grInk}{\scriptsize ground truth from real pytest: F2P\,/\,P2P\,/\,symptom;
+   ACCEPT if declared tests pass with no in-scope regression, REJECT on a decisive
+   declared failure.}\\[3pt]
+   \lbl{\textcolor{grMuted}{Scoped, not whole-project correctness.}}};
+\node[tier,fill=grCond,draw=grReject,anchor=north west] (cg) at (7.15,-1.5)
+  {\textcolor{grReject}{\bfseries Condition Gold}\\[2pt]\normalsize
+   \textcolor{grInk}{\scriptsize the decision the granted evidence can justify:
+   restricted surfaces $\rightarrow$ NEED\_EVIDENCE even when oracle is ACCEPT/REJECT;
+   sufficient $\rightarrow$ oracle.}\\[3pt]
+   \lbl{\textcolor{grMuted}{Distinguishes integrity from sufficiency.}}};
+
+% --- condition ladder label ---
+\node[anchor=north west,font=\small\bfseries,text=grInk] at (0,-5.15)
+  {Evidence conditions (per issue)};
+
+% --- five condition boxes ---
+\node[cond,draw=grReject,anchor=north west] (c1) at (0,-5.75)
+  {\textbf{T2D-T}\\[1pt]\scriptsize static restricted\\[2pt]\textcolor{grReject}{\itshape gold: NEED}};
+\node[cond,draw=grReject,anchor=north west] (c2) at (3.16,-5.75)
+  {\textbf{T3D-Strict}\\[1pt]\scriptsize active, outcomes withheld\\[2pt]\textcolor{grReject}{\itshape gold: NEED}};
+\node[cond,draw=grAccept,anchor=north west] (c3) at (6.32,-5.75)
+  {\textbf{T3D-Escalate}\\[1pt]\scriptsize active, then outcomes granted\\[2pt]\textcolor{grAccept}{\itshape gold: $=$ oracle}};
+\node[cond,draw=grAccept,anchor=north west] (c4) at (9.48,-5.75)
+  {\textbf{T2A-T}\\[1pt]\scriptsize static sufficient (tier-A)\\[2pt]\textcolor{grAccept}{\itshape gold: $=$ oracle}};
+\node[cond,draw=grAccept,anchor=north west] (c5) at (12.64,-5.75)
+  {\textbf{T3A-T}\\[1pt]\scriptsize active sufficient (tier-A)\\[2pt]\textcolor{grAccept}{\itshape gold: $=$ oracle}};
+
+\draw[grMuted,line width=1pt,->] (c1) -- (c2);
+\draw[grMuted,line width=1pt,->] (c2) -- (c3);
+\draw[grMuted,line width=1pt,->] (c3) -- (c4);
+\draw[grMuted,line width=1pt,->] (c4) -- (c5);
+\end{tikzpicture}

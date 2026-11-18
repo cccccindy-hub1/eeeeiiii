@@ -1,0 +1,15 @@
+% G4 paired A->B unsupported-acceptance transitions, DeepSeek-Flash (n=18)
+% n11=0  b=0  c=0  n00=18 ; exact two-sided McNemar p=1.0 (null)
+\begin{tikzpicture}[scale=0.92, every node/.style={font=\small},
+  box/.style={draw,rounded corners,minimum width=2.9cm,minimum height=1.15cm,align=center}]
+  \node[box,fill=grReject!12] (a1) at (0,2.5)
+    {Cell A unsupported\\$0/18$};
+  \node[box,fill=grAccept!12] (a0) at (0,0)
+    {Cell A correct \NEED\\$18/18$};
+  \node[box,fill=grReject!12] (b1) at (7.4,2.5)
+    {Cell B unsupported\\$0/18$};
+  \node[box,fill=grAccept!12] (b0) at (7.4,0)
+    {Cell B correct \NEED\\$18/18$};
+  \draw[-Stealth,grMuted] (a1) -- (b1) node[midway,above]{$0$};
+  \draw[-Stealth,grAccept!80!black] (a0) -- (b0) node[midway,below]{$18$ abstain in both};
+\end{tikzpicture}

@@ -1,0 +1,23 @@
+{
+  "serial": 74,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-13974",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentic and linked to this patch and base commit (patch_sha256 and base_commit both match), and the issue-derived symptom probe shows the symptom is gone after the patch (baseline exit 1 'FAIL: t1 tensor_product_simp = 1x1**2' → post-patch exit 0 'OK: tensor product powers simplify: 1x1 1x1'). However, this is only a diagnostic-tier symptom probe, which the artifact itself states is not proof of merge acceptability. The decisive maintainer acceptance-test outcomes (FAIL_TO_PASS / PASS_TO_PASS verdicts) are blocked on this surface (HTTP 403 / 'acceptance logs are disabled'), and the freshness and declared-set coverage attestations are withheld (UNKNOWN), so I cannot confirm the declared acceptance set was fully executed and failure-free. No decisive applicable failure is established either, so REJECT is not warranted. The bar for ACCEPT (complete, fresh, linked, failure-free acceptance evidence) is not met, and the bar for REJECT (a credible applicable failing check) is not met, so I abstain.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test verdicts (FAIL_TO_PASS and scoped PASS_TO_PASS outcomes) for this patch at base_commit 84c125972ad535b2dfb245f8d311d347b45e5b8a are unavailable (blocked/403); the declared acceptance and regression set was not shown to be executed, and freshness/coverage attestations are withheld (UNKNOWN).\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 4715,
+  "tokens_out": 353,
+  "cost_usd": 0.001838,
+  "served_model": "deepseek-flash",
+  "error": null
+}

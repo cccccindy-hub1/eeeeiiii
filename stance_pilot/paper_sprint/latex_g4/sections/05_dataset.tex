@@ -1,0 +1,49 @@
+\section{Dataset Construction}
+\label{sec:dataset}
+
+\subsection{Original ten issues (G3-A)}
+Ten independently selected SymPy issue--patch pairs were used for the original
+run (G3-B) and the corrective replication (G3-B.3). Oracle gold is
+PROVISIONAL (single annotator). Seven are scoped \ACCEPT\ and three are
+\REJECT\ (17318, 17630, 19783). The full issue list and per-issue grid are in
+Appendix~\ref{app:issues}.
+
+\subsection{Eight new independent issues (G3-C.1 pilot)}
+A separate pilot constructed eight new SymPy issues, de-duplicated against
+history and against each other by changed file. The selection funnel was
+$75\rightarrow51\rightarrow8$: of 75 candidates, 24 mutually exclusive
+exclusions (12 prior wave, 10 already in G3-A, one unavailable offline blob,
+one no-clean-checkout) leave 51; a separate changed-file independence step
+removes four more (distinct from the exclusion count---no double counting) to
+leave 47; sampling then selects eight. Two queues of four are used:
+\begin{itemize}[leftmargin=1.6em,itemsep=1pt,topsep=2pt]
+  \item \textbf{Natural} (seed 418237): 19346, 22914, 19495, 15875;
+  \item \textbf{REJECT-enriched} (seed 418241): 19040, 14248, 19637, 16886.
+\end{itemize}
+The two queues have \textbf{zero issue overlap}. Oracle distribution is six
+scoped \ACCEPT\ / two \REJECT\ (14248 and 15875). Each issue has five
+condition-gold certificates, giving \textbf{40 certificates: 24 sufficient, 16
+\NEED}. Freshness is $8/8$; the frozen manifest lists 185 files with zero hash
+mismatch.
+
+\paragraph{Sampling disclosure.}
+The enrichment category priority (TRAP $>$ P2P $>$ F2P) was an operational
+refinement finalised \emph{before} any real test outcome was observed (selection
+rule fixed at 09:20:33\,UTC; first pytest result at 09:48:33), but it is
+\textbf{not a verbatim pre-registration}: a counterfactual F2P-first ordering
+would have moved 29 strata and selected four different issues. We therefore
+label it \emph{pilot-stage adaptive sampling}, not fully pre-registered, and
+never pool natural and enriched queues to estimate a natural-population rate.
+The two rejects arose naturally rather than being manufactured fixtures;
+the independent human FR2 review rules that their distinct failure modes
+instantiate one uniform disjunctive \REJECT\ standard, with no rubric
+amendment required.
+
+\subsection{Evidence-system engineering}
+For the eight-issue pilot, 144 restricted surfaces return \textbf{zero}
+forbidden hits; an offline HTTP cross-check retallies \textbf{456/456}
+assertions; \textbf{40/40} mock cells behave as expected but are
+\textbf{excluded from research analysis} (mock correctness is plumbing, not
+model performance); three deterministic reruns are byte-identical. Mock and
+live runs are fully isolated, and prompts and protocol are frozen and
+fingerprinted before any paid call.

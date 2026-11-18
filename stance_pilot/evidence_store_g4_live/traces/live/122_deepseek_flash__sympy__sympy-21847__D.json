@@ -1,0 +1,23 @@
+{
+  "serial": 122,
+  "model": "deepseek-flash",
+  "cell": "D",
+  "instance_id": "sympy__sympy-21847",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and decisive. Linkage verified: artifact base_commit d9b18c5 and patch_sha256 7223f91c... match the record and the candidate patch. Freshness adjudicated TRUE (authoritative restage tree af3da91... equals expected run tree). Coverage adjudicated complete: FAIL_TO_PASS 1/1 executed and passed (test_monomials), scoped PASS_TO_PASS 9/9 executed and passed, with no regressions and no pre-existing bad ids. The symptom probe confirms the fix: pre-patch it failed with missing total-degree-3 monomials (x1**2*x2, x1*x2*x3, etc.), and post-patch it returns all 10 monomials for min=max=3. The code change (max(powers.values()) -> sum(powers.values())) correctly implements the documented total-degree semantics for both commutative and non-commutative branches, and the added tests cover min=max and min<max cases. No applicable acceptance failure or scoped regression exists.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 7794,
+  "tokens_out": 248,
+  "cost_usd": 0.002636,
+  "served_model": "deepseek-flash",
+  "error": null
+}

@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The acceptance artifact is authentic and linked: base_commit and patch_sha256 both match the review target, and the test patch applied cleanly. The declared FAIL_TO_PASS check (test_homomorphism) passed 1/1, and the scoped PASS_TO_PASS check (test_isomorphisms) passed 1/1 with no regressions and no pre-existing failures. The symptom probe confirms the issue is resolved: pre-patch it failed with 'ValueError: The given images do not define a homomorphism', and post-patch it succeeds in constructing the identity homomorphism on D3. The run logs show all three tests in test_homomorphisms.py passing, including the new D3/D4 identity-homomorphism assertions. Freshness and coverage attestations are withheld (UNKNOWN) on this surface, but that is not a negative verdict and does not refute the intact, linked, failure-free acceptance evidence. No applicable failing check exists, so the patch is merge-acceptable.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "594b2e12df43ffc17a96a08ba0c6e17c0d275694057a834d6af82587cfebe056",
+  "cell": "C",
+  "cohort": "g3a",
+  "cost_usd": 0.002097,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-24443",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.015671,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 137,
+  "tokens_in": 6054,
+  "tokens_in_est": 6410,
+  "tokens_out": 234,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.05,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

@@ -1,0 +1,23 @@
+{
+  "serial": 16,
+  "model": "deepseek-flash",
+  "cell": "C",
+  "instance_id": "sympy__sympy-16886",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch corrects the Morse mapping for '1' from '----' to '.----' in sympy/crypto/crypto.py, exactly matching the issue. Linkage is verified: the acceptance artifact's base_commit (c50643a4...) and patch_sha256 (a50328b9...) both match this patch and commit tree. The FAIL_TO_PASS check test_encode_morse PASSED (1/1), and the scoped PASS_TO_PASS set passed 42/42 with no regressions and no pre-existing bad IDs. The symptom probe confirms the fix: pre-patch encode_morse('1') returned '----' (FAIL), post-patch returns '.----' (OK). The full test_crypto.py run shows 44 passed, and the baseline run is also clean, so no scoped regression is introduced. The freshness and coverage attestations are withheld (UNKNOWN) on this surface, but that is not a negative verdict and does not refute the intact, linked, failure-free acceptance evidence. The evidence is sufficient to conclude the issue is resolved with no applicable acceptance failure or scoped regression.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 11472,
+  "tokens_out": 261,
+  "cost_usd": 0.003755,
+  "served_model": "deepseek-flash",
+  "error": null
+}

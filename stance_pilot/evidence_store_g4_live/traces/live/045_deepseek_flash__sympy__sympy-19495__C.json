@@ -1,0 +1,23 @@
+{
+  "serial": 45,
+  "model": "deepseek-flash",
+  "cell": "C",
+  "instance_id": "sympy__sympy-19495",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"The acceptance artifact is authentic and linked to this patch (patch_sha256 and base_commit both match), and the symptom probe confirms the fix: pre-patch, plain subs over-substituted the bound variable (ConditionSet(1/3, ...)), while post-patch it yields the expected ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers), matching the xreplace/simultaneous references. The f2p test (test_subs_CondSet) passes, and the scoped p2p set (8/8) passes with no regressions; the broader run of test_conditionset.py and test_sets.py shows 102 passed, 5 xfailed, 0 failures. The patch's change (returning base instead of a degenerate ConditionSet when the condition simplifies to true) is consistent with the corrected test expectation. Freshness/coverage attestations are withheld (UNKNOWN) on this surface, but that is neither staleness nor incompleteness and does not refute the intact, failure-free evidence presented. No applicable failing check exists, so ACCEPT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 15758,
+  "tokens_out": 260,
+  "cost_usd": 0.005039,
+  "served_model": "deepseek-flash",
+  "error": null
+}

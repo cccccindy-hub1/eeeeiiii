@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch correctly fixes the Morse code mapping for '1' from '----' to '.----', and the issue symptom probe confirms the symptom is resolved after the patch. However, maintainer acceptance test outcomes and regression verdicts are withheld on this review surface, and no fresh, linked, and complete acceptance test evidence is available to confirm no regressions or failures. Therefore, the evidence is insufficient to fully accept the patch at this time.\",\"evidence_mismatch\":false,\"missing_evidence\":\"maintainer acceptance test outcomes and regression verdicts\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "bundle_sha256": "f89bb5d04e67133bb715c8814f83f1fd6fbdecf2b2cbcf4ece953cc18c9ef075",
+  "cell": "A",
+  "cohort": "g3c1",
+  "cost_usd": 0.001487,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-16886",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.014694,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 21,
+  "tokens_in": 3205,
+  "tokens_in_est": 3966,
+  "tokens_out": 128,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 1.48,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

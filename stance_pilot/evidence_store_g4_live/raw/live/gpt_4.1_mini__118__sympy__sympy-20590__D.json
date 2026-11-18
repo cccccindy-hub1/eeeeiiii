@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch adds __slots__ = () to the Printable class to restore slots behavior and prevent Symbol instances from having a __dict__, addressing the issue. The patch includes tests that assert Symbol and Dummy instances do not have __dict__. The acceptance test artifact is fresh, linked, and complete for the declared acceptance and scoped regression sets. All executed acceptance and regression tests pass with no failures or regressions. The symptom probe confirms the fix by showing Symbol instances no longer have __dict__. No evidence of regression or failure is found in the test runs. Therefore, the patch successfully resolves the issue without introducing regressions.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "2b9c4de4c6918dbb4643888c69c00d6606031db72574a023a96e9532eb397c84",
+  "cell": "D",
+  "cohort": "g3a",
+  "cost_usd": 0.015487,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-20590",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.031497,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 118,
+  "tokens_in": 38125,
+  "tokens_in_est": 45975,
+  "tokens_out": 148,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.35,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

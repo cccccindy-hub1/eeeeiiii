@@ -1,0 +1,23 @@
+{
+  "serial": 51,
+  "model": "deepseek-flash",
+  "cell": "D",
+  "instance_id": "sympy__sympy-19637",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and applies to this patch/commit: linkage verified (base_commit 63f8f46... and patch_sha256 b390b95... both match the record), freshness adjudicated TRUE (authoritative restage tree 30c5904... equals expected run tree), and coverage adjudicated complete (declared F2P 1/1 executed, scoped P2P 40/40 executed, no missing ids). Outcomes: F2P test_kernS PASSED; all 40 scoped P2P PASSED; no regressed ids. The symptom probe confirms the issue: baseline raised UnboundLocalError 'kern' referenced before assignment, post-patch returns 2*x/(x - 1) with exit 0. The patch correctly moves `hit = kern in s` inside the `if ' ' in s:` block so `kern` is defined before use. The two failures visible in the raw pytest logs (test_evaluate_false, test_issue_17811, both ValueError in evaluateFalse) are pre-existing: they fail identically in the p2p_baseline run and are not in the declared scoped set nor listed as regressions, so they are not attributable to this patch and are not grounds to reject. No applicable acceptance failure or scoped regression exists.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 16464,
+  "tokens_out": 304,
+  "cost_usd": 0.005304,
+  "served_model": "deepseek-flash",
+  "error": null
+}

@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage attestations are intact: the artifact is authentically signed, its base commit and patch sha256 match this patch, the run tree matches the independently re-derived canonical tree (fresh=TRUE), and the declared set was fully executed (1/1 F2P, 148/148 scoped P2P). The issue-derived symptom probe also shows the symptom is gone after the patch. However, the outcome policy withholds all pass/fail verdicts for the acceptance test and the 148 scoped regression checks (f2p/p2p logs return 403). A passing symptom probe is not proof of merge acceptability, and no decisive applicable failure has been established. Therefore I cannot reach ACCEPT (complete failure-free success is not demonstrated) or REJECT (no credible applicable failing check).\",\"evidence_mismatch\":false,\"missing_evidence\":\"Pass/fail verdicts for the 1 declared FAIL_TO_PASS acceptance test and the 148 scoped PASS_TO_PASS regression checks are withheld; the f2p/p2p run logs are blocked (HTTP 403), so success of the acceptance set and absence of scoped regressions cannot be confirmed.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "bundle_sha256": "dae85d5ae589121b63da9c06997f5d5eee9f55a3d2ebabc0fc3e58b0d6aac90a",
+  "cell": "B",
+  "cohort": "g3c1",
+  "cost_usd": 0.001702,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-19040",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.015144,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 29,
+  "tokens_in": 4616,
+  "tokens_in_est": 5092,
+  "tokens_out": 264,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.02,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

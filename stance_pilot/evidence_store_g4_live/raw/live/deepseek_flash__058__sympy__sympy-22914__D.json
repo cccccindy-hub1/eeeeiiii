@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and decisive. Linkage verified: artifact art_b970f89709fb3265 is signed, its base_commit (c4e836cdf73fc6aa7bab6a86719a0f08861ffb1d) and patch_sha256 (dc1ed99e...) match this patch, and the test patch applied cleanly. Freshness adjudicated TRUE (authoritative restage tree 5df550bf... equals expected run tree). Coverage adjudicated complete: FAIL_TO_PASS 1/1 executed and passed (test_PythonCodePrinter, which now asserts min(x, y)/max(x, y)/min(x, y, z)/max(x, y, z)); scoped PASS_TO_PASS 17/17 executed and passed, with no regressions and no pre-existing bad ids. The p2p and p2p_baseline logs show identical pass sets (no new failures introduced), and the symptom probe confirms the issue is resolved: pre-patch pycode(Min) emitted a conditional expression, post-patch it emits 'min(a, b)'/'max(a, b)'. The patch adds _print_Min/_print_Max to PythonCodePrinter exactly as the issue requests, and the author's claim is consistent with the executed checks. No applicable failing check exists, so ACCEPT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "f1821b39b3bb39a1b1a7b66880ae265968ee9d0605d54fbfb2bf08708eff06c6",
+  "cell": "D",
+  "cohort": "g3c1",
+  "cost_usd": 0.018948,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-22914",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.039104,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 58,
+  "tokens_in": 61916,
+  "tokens_in_est": 64991,
+  "tokens_out": 311,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 3.97,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

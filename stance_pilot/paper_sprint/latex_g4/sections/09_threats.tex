@@ -1,0 +1,91 @@
+\section{Limitations and Threats to Validity}
+\label{sec:threats}
+
+\begin{enumerate}[leftmargin=1.7em,itemsep=3pt,topsep=3pt]
+  \item \textbf{Gold is PROVISIONAL, now with an independent human second
+  annotation.} The original labels come from one annotator. An independent
+  third-party human has since completed all 18 blind packets (blind agreement
+  with the provisional oracle: 17/18) and the two focused reviews, and a human
+  arbiter has recorded \REJECT\ on issue~19346; however the signed annotator
+  attestation is not yet filed, and the issue~15875 disagreement (human blind
+  \ACCEPT\ versus provisional/GLM \REJECT) has no arbiter verdict. We therefore
+  do not mass-promote gold in this manuscript: the frozen provisional labels
+  remain the primary scoring labels, human-reviewed figures are reported
+  separately (Section~\ref{sec:g4-human}), and AI self-review is never treated
+  as independent arbitration.
+  \item \textbf{Small numbers and unit of analysis.} Ten issues (three
+  \REJECT) support the corrective results, and the independent-issue
+  validation has eight issues (two \REJECT). P2 intervals span essentially
+  $[0,1]$; the two-\REJECT\ independent slice is cases with an interval, not a
+  rate. Cells are repeated measures within an issue, not independent data,
+  and are never counted as such. The two issue sets are disjoint and run at
+  different times, so the recurring strict-over-commitment pattern
+  ($7/10$ and $6/8$) is an associational cross-set replication, not a pooled
+  estimate.
+  \item \textbf{Associational cross-version contrast.} The $9/10\to1/10$
+  change conflates activeness with freshness/trust repair and must not be given
+  single-cause attribution.
+  \item \textbf{Adaptive pilot sampling.} The new-issue enrichment priority was
+  fixed pre-outcome but is not verbatim pre-registered and changes the selected
+  set; natural and enriched queues are never pooled to estimate a
+  natural-population rate.
+  \item \textbf{Scoped oracle.} \ACCEPT\ means ``passes the declared, scoped
+  F2P/P2P and symptom checks,'' not the whole SymPy suite. Two new reject
+  issues also carry disclosed \emph{undeclared} collateral test changes (for
+  example, 15875 has two candidate-era collateral failures outside the dataset
+  P2P id set) that do not score but bound what ``accept'' means and remain open
+  for human review.
+  \item \textbf{Partial blinding.} Symptom prose and verbatim patch/probe text
+  can quote an issue number; 12 of 18 blind packets self-reference the issue
+  number, so identity blinding is partial.
+  \item \textbf{Single project and two models.} SymPy-only evidence and two
+  served model ids limit external validity; the contribution is the framework,
+  not cross-project generality.
+  \item \textbf{Instrument residual.} The baseline-P2P projection gap
+  (Section~\ref{sec:ablations}) is a known, disclosed non-interference
+  imperfection in the earlier instrument and remains pending removal. The
+  repaired v2 projection demonstrates zero tier-1/tier-2/baseline-map/hidden-
+  gold exposure on the real server (224 surfaces, 144 restricted-D) and has now
+  served the independent-issue paid run (80 cells) with the same non-
+  interference gate re-run green before any charge; no leak was observed,
+  though zero offline-audit exposure is not a proof against all future
+  channels.
+  \item \textbf{Probe-revision construct risk (FR1), now human-resolved.} The
+  strengthened probe for issue 19495 was frozen about 24 minutes before the
+  real build, but the prior diagnostic had already observed the post-candidate
+  behavior. The independent human focused review determines that the
+  \texttt{test\_subs\_CondSet} assertion change was an \emph{instrument-only
+  fix} (the old oracle was wrong for the post-substitution state), not a
+  post-hoc redefinition of acceptability, and requires no rubric amendment; the
+  companion FR2 review determines that issues 14248 and 15875 apply one
+  disjunctive \REJECT\ standard rather than two separate rules. In G4 both
+  models return \ACCEPT\ on issue~19495 under C and D, consistent with its
+  oracle-\ACCEPT\ label (GPT also accepts it under B); no G4 verdict turns on
+  FR1. The only oracle-\ACCEPT\ issue rejected by a model under C/D is 19346
+  (DeepSeek under both C and D; GPT under D only): the independent human
+  arbiter on that separate packet records \REJECT, agreeing with the GLM
+  pre-label against the provisional mechanical oracle, but this override is
+  not mass-promoted in the manuscript pending the signed attestation.
+  \item \textbf{G4 internal validity is strong but the target is narrow.} The
+  A/B contrast is randomised within issue, yoked to an identical fixed
+  transcript, and executed in independent contexts, so under the frozen
+  protocol it identifies the effect of attestation visibility with blocked
+  decisive results. It does \emph{not} identify the effect of genuinely stale
+  or incomplete evidence: authentic neutralised certificates could not be
+  reconstructed, all underlying freshness/coverage facts are TRUE, and linkage
+  is never manipulated. A model that defers to certificates is the construct
+  measured, not general ``trust in corrupted evidence.''
+  \item \textbf{Yoked protocol and external validity.} G4 replays nine fixed
+  tool steps and exposes no tools on the decision call, so the model does not
+  choose a retrieval path. This removes agent-path confounding but differs from
+  the multi-turn, tool-using reviewer in Sections~\ref{sec:results}--\ref
+  {sec:e80}; the G4 effect is a property of evidence reading under this
+  protocol and should not be read as end-to-end agent behavior.
+  \item \textbf{Model heterogeneity and small G4 sample.} The H1 effect is
+  significant for one model and exactly null for the other; we do not pool the
+  two, and no universal mechanism is claimed. Eighteen issues (five
+  oracle-\REJECT) limit precision, the DeepSeek A/B estimate has zero variance,
+  and the exploratory $O\times M$ interaction is underpowered. The H1 endpoint
+  is robust to oracle-label flips because its condition gold is \NEED, but the
+  C/D diagnostic agreement does depend on the five provisional \REJECT\ labels.
+\end{enumerate}

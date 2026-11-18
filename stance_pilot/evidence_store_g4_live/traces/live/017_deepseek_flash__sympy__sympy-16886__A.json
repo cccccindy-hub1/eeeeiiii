@@ -1,0 +1,23 @@
+{
+  "serial": 17,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-16886",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch is a plausible and correct one-line fix: it changes the Morse mapping for '1' from '----' to '.----', matching the issue. The diagnostic artifact is authentically linked to this patch (patch_sha256 and base_commit both match), and the issue-derived symptom probe shows the symptom present before the patch and gone after it (encode_morse('1') now returns '.----'). However, the acceptance-test outcomes (FAIL_TO_PASS / PASS_TO_PASS verdicts) and the scoped regression verdicts are withheld on this surface, and the freshness and coverage attestations are UNKNOWN. A passing symptom probe is not proof of merge acceptability, and no decisive applicable failure has been established. Therefore I cannot reach ACCEPT (complete, fresh, linked, failure-free success is not demonstrated) or REJECT (no credible applicable failing check).\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test outcomes (FAIL_TO_PASS and scoped PASS_TO_PASS verdicts) and scoped regression verdicts for this patch at base_commit c50643a49811e9fe2f4851adff4313ad46f7325e are not available; the f2p/p2p/baseline logs return HTTP 403 and the coverage/freshness attestations are withheld (UNKNOWN).\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 3524,
+  "tokens_out": 299,
+  "cost_usd": 0.001416,
+  "served_model": "deepseek-flash",
+  "error": null
+}

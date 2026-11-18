@@ -1,0 +1,23 @@
+{
+  "serial": 129,
+  "model": "deepseek-flash",
+  "cell": "D",
+  "instance_id": "sympy__sympy-24213",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and decisive. Linkage verified: artifact base_commit and patch_sha256 match the review target (linked=true, authentic signature). Freshness adjudicated TRUE (authoritative restage tree matches). Coverage adjudicated complete: FAIL_TO_PASS 1/1 executed, scoped PASS_TO_PASS 31/31 executed, no missing ids. Outcomes: test_issue_24211 PASSED (the issue-derived acceptance test), all 31 scoped regression tests PASSED, no regressed or preexisting-bad ids. The symptom probe confirms the fix: pre-patch raised the exact ValueError from the issue; post-patch returns factor -47.0 with dimension acceleration*time, no error. The patch replaces strict dimension equality with equivalent_dims, which is the correct semantic for detecting equivalent dimensions in addition. No applicable failing check or scoped regression exists.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 9427,
+  "tokens_out": 208,
+  "cost_usd": 0.003078,
+  "served_model": "deepseek-flash",
+  "error": null
+}

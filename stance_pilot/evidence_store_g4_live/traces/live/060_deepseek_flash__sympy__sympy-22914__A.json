@@ -1,0 +1,23 @@
+{
+  "serial": 60,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-22914",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentic and linked to this patch (base_commit and patch_sha256 match), and the issue-derived symptom probe shows the symptom is gone (pre-patch pycode(Min) produced a conditional expression; post-patch it produces 'min(a, b)'/'max(a, b)'). However, the acceptance-test outcomes (FAIL_TO_PASS/PASS_TO_PASS) and scoped regression verdicts are withheld on this surface (HTTP 403 / disabled), and the freshness and declared-set coverage attestations are UNKNOWN. The patch code itself looks correct and the added tests are reasonable, but the bar for ACCEPT requires complete, fresh, linked, failure-free execution of the declared acceptance/regression set, which is not available. No decisive applicable failure was established, so REJECT is not warranted either.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test outcomes (F2P/P2P verdicts) and scoped regression results for this patch/commit are not available; freshness and declared-set coverage attestations are withheld (UNKNOWN).\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 3630,
+  "tokens_out": 245,
+  "cost_usd": 0.001383,
+  "served_model": "deepseek-flash",
+  "error": null
+}

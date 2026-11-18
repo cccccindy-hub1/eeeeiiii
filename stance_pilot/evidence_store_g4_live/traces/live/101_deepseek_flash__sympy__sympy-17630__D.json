@@ -1,0 +1,23 @@
+{
+  "serial": 101,
+  "model": "deepseek-flash",
+  "cell": "D",
+  "instance_id": "sympy__sympy-17630",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"REJECT\",\"reason\":\"Evidence is intact and applicable: linkage verified (base_commit and patch_sha256 match), freshness adjudicated TRUE (run tree equals canonical restage tree), and coverage complete (2/2 F2P, 19/19 scoped P2P executed). The declared acceptance set contains a decisive failure: FAIL_TO_PASS test_zero_matrix_add FAILED (assert Add(ZeroMatrix(2,2), ZeroMatrix(2,2)) == ZeroMatrix(2,2) yields 0 == 0). The baseline log shows this test was not failing pre-patch (it was not even collected/executed in baseline), so it is a genuine acceptance failure introduced by this patch, not a pre-existing bad test. The symptom probe does show the issue symptom resolved (b*b*b now collapses), but a failing declared acceptance check is sufficient grounds to REJECT. The author's claim that 'all relevant tests pass' is contradicted by the artifact.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "REJECT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 22789,
+  "tokens_out": 224,
+  "cost_usd": 0.007105,
+  "served_model": "deepseek-flash",
+  "error": null
+}

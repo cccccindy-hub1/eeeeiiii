@@ -1,0 +1,23 @@
+{
+  "serial": 0,
+  "model": "deepseek-flash",
+  "cell": "B",
+  "instance_id": "sympy__sympy-14248",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage attestations are intact and adjudicated for this patch/commit: the artifact is authentically signed, patch_sha256 and base_commit match, the run tree equals the independently re-derived canonical tree (fresh=TRUE), and the declared set was fully executed (2/2 F2P, 433/433 scoped P2P, no missing ids). The issue-derived symptom probe also shows the symptom present pre-patch and gone post-patch (str/latex/pretty now print '-B - A*B + A'). However, the acceptance-test and scoped-regression verdicts are withheld under the outcome policy (f2p/p2p logs return 403), so no pass/fail outcome is available for any of the 435 executed checks. A passing symptom probe is not proof of merge acceptability, and with no decisive applicable failure established I cannot REJECT; with no failure-free acceptance/regression verdicts I cannot ACCEPT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Pass/fail verdicts for the 2 declared FAIL_TO_PASS acceptance tests and the 433 scoped PASS_TO_PASS regression checks executed on run tree 7764dee84838a5e0e4d2e9901f27facf1f85600b; these outcomes are blocked (HTTP 403) and no tool exposes them.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 6747,
+  "tokens_out": 310,
+  "cost_usd": 0.002396,
+  "served_model": "deepseek-flash",
+  "error": null
+}

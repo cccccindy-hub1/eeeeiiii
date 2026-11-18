@@ -1,0 +1,23 @@
+{
+  "serial": 10,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-15875",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentically linked to this patch (patch_sha256 and base_commit both match), and the issue-derived symptom probe shows the reported symptom is gone: pre-patch e.is_zero was False, post-patch it is True. However, this is only a diagnostic-tier symptom probe. The maintainer acceptance-test outcomes (FAIL_TO_PASS / PASS_TO_PASS) and the scoped regression verdicts are withheld on this surface, and the freshness and coverage attestations are UNKNOWN, not FALSE. No decisive applicable failure is established, so REJECT is not warranted; but the bar for ACCEPT requires complete, fresh, linked, failure-free execution of the declared acceptance/regression set, which is not available here. The symptom probe alone is explicitly not proof of merge acceptability.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test outcomes (F2P/P2P verdicts) and scoped regression verdicts for this patch/commit are withheld; freshness and declared-set coverage attestations are UNKNOWN. Need executed acceptance and scoped regression results linked to patch_sha256 79a054ec... at base_commit b506169a...\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 3791,
+  "tokens_out": 265,
+  "cost_usd": 0.001455,
+  "served_model": "deepseek-flash",
+  "error": null
+}

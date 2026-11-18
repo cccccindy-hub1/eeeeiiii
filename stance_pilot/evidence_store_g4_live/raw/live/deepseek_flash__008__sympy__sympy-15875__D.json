@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"Evidence is intact and applies to this patch: linkage verified (base_commit and patch_sha256 match), freshness adjudicated TRUE (run tree equals re-derived canonical tree), and coverage complete (1/1 F2P, 80/80 scoped P2P executed). The decisive acceptance check test_Add_is_zero FAILED (0/1 F2P passed): the maintainer test asserts e.is_zero is None for -2*I + (1 + I)**2, but the patch returns True. The patch's approach (calling self.simplify() inside _eval_is_zero) also introduces scoped regressions relative to the baseline run: test_subs_in_derivative now fails with RecursionError (infinite recursion through simplify -> trigsimp -> is_zero -> simplify) and test_nfloat now fails with ZeroDivisionError; both PASSED in the p2p_baseline run. The author's claim that all relevant tests pass is contradicted by the artifact. A single credible applicable failing acceptance check is sufficient to reject.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "77c8a14afe1311a29de4a3c5974aef841affb40f5c91ec5c0ad481b4f4c69184",
+  "cell": "D",
+  "cohort": "g3c1",
+  "cost_usd": 0.015157,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-15875",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.033898,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 8,
+  "tokens_in": 49549,
+  "tokens_in_est": 51977,
+  "tokens_out": 244,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 3.37,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

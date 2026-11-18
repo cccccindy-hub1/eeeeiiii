@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage attestations are intact and authentic: the artifact is linked to this patch (patch_sha256 match) and base commit, the run tree matches the independently re-derived canonical tree (fresh=TRUE), and the declared set was fully executed (1/1 F2P, 40/40 scoped P2P). The issue-derived symptom probe shows the symptom is gone (baseline UnboundLocalError -> post-patch returns 2*x/(x - 1)), and the claim-consistency check is consistent. However, no pass/fail verdicts for the maintainer acceptance test or the 40 scoped regression checks are available: outcome policy blocks them (HTTP 403 / logs disabled). A removed symptom is not proof of merge acceptability, and with no executed acceptance/regression verdicts I cannot confirm success. No decisive applicable failure is established either, so REJECT is not warranted.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Pass/fail verdicts for the 1 declared FAIL_TO_PASS acceptance test and the 40 scoped PASS_TO_PASS regression checks (f2p/p2p/baseline run logs are blocked under the outcome policy); only the issue-derived symptom probe is available.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "bundle_sha256": "acb77e971137bebc1d1cd17f1260e6896dece4305154fcc8ef1a67158d5d8a40",
+  "cell": "B",
+  "cohort": "g3c1",
+  "cost_usd": 0.001364,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-19637",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.014681,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 50,
+  "tokens_in": 3432,
+  "tokens_in_est": 3935,
+  "tokens_out": 279,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.2,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

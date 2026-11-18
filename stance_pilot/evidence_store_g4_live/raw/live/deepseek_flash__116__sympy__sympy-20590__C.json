@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The acceptance artifact (art_d91a79096ebadc9c) is authentic and linked: base_commit cffd4e0f86fefd4802349a9f9b19ed70934ea354 and patch_sha256 cdde5cb8... both match the review target, and the test patch applied cleanly. The FAIL_TO_PASS check (test_immutable) passed 1/1, and the scoped PASS_TO_PASS set passed 21/21 with no regressions and no pre-existing failures. The symptom probe confirms the fix directly: pre-patch it failed with 'Symbol instance carries an instance __dict__: {}', and post-patch it exits 0 with 'Symbol has no instance __dict__ (slots only)'. The run logs show the same result: test_basic, test_evalf, test_expr, test_exprtools, test_function, test_noncommutative, test_relational and test_subs all pass, with only expected xfails. The patch itself is the right fix: it adds `__slots__ = ()` to Printable, which is the parent class that had lost its slots and was leaking a __dict__ into Symbol. The new assertions in test_symbol.py check the issue's symptom. The freshness and coverage attestations are withheld (UNKNOWN), but that is not a negative finding, and no applicable failure exists. The intact, linked, failure-free acceptance evidence supports ACCEPT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "995e57c70fcfec3f7851080eba6d207ede17e79dc65fa3611721bd6927e91406",
+  "cell": "C",
+  "cohort": "g3a",
+  "cost_usd": 0.013013,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-20590",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.031486,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 116,
+  "tokens_in": 42026,
+  "tokens_in_est": 45946,
+  "tokens_out": 338,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 3.17,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

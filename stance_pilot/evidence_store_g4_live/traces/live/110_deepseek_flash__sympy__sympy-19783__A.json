@@ -1,0 +1,23 @@
+{
+  "serial": 110,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-19783",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentic and linked to this patch and base commit (patch_sha256 and base_commit both match), and the issue-derived symptom probe shows the reported symptom is gone (Dagger(A)*Identity now returns Dagger(A)). However, the acceptance/regression evidence required for ACCEPT is not available: the diagnostic tier withholds all FAIL_TO_PASS/PASS_TO_PASS outcomes (f2p_total and p2p_total are null, outcomes_withheld=true), the scoped test file set is UNKNOWN, and the freshness and coverage attestations are UNKNOWN (withheld_on_this_surface). Acceptance logs return 403. A passing symptom probe is explicitly not proof of merge acceptability, and no decisive applicable failure has been established either, so neither ACCEPT nor REJECT is warranted.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test outcomes (FAIL_TO_PASS and scoped PASS_TO_PASS verdicts) for this patch/commit are withheld; the declared scoped test set and freshness/coverage attestations are UNKNOWN, so the declared acceptance/regression set is not shown to have been fully executed and failure-free.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 3120,
+  "tokens_out": 264,
+  "cost_usd": 0.001253,
+  "served_model": "deepseek-flash",
+  "error": null
+}

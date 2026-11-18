@@ -1,0 +1,359 @@
+\section{G4: A Controlled Intervention on Sufficiency vs.\ Attestation}
+\label{sec:g4}
+
+Sections~\ref{sec:results}--\ref{sec:e80} are associational: instrument,
+issue set, and run time co-vary. G4 is a \emph{controlled intervention} that
+holds linkage constant and randomises, within the same 18 frozen issue--patch
+pairs, exactly two factors in a $2\times2$ design, so that a paired contrast
+identifies a causal effect under the frozen protocol.
+
+\subsection{Design, factors, and identification}
+\label{sec:g4-design}
+Each issue is served under four cells defined by two binary factors.
+Factor $O$ is \emph{decisive-outcome visibility}: whether the fail-to-pass
+and scoped pass-to-pass test verdicts are blocked (\texttt{403 STRICT\_403})
+or visible (real post-patch logs with status 200). Factor $M$ is
+\emph{freshness/coverage attestation}: whether the independently recomputed
+freshness and coverage certificates are withheld (nulls plus an explicit
+\texttt{UNKNOWN} marker) or shown adjudicated. \textbf{Linkage is held
+constant} across all four cells: artifact signing, \texttt{patch\_sha256},
+and \texttt{base\_commit} linkage are identical everywhere (see
+Table~\ref{tab:g4-cells}). We deliberately do not fabricate stale or
+incomplete evidence: neutralised freshness/coverage cannot be reconstructed
+authentically, so $M$ manipulates attestation \emph{visibility} while the
+underlying facts are all TRUE, and the experiment identifies the effect of
+\emph{attestation under blocked decisive outcomes}, not of genuine evidence
+corruption.
+
+\begin{table}[t]
+\centering\small
+\caption{G4 $2\times2$ cells. $O$ = decisive F/C verdict visibility;
+$M$ = freshness/coverage attestation; linkage is constant across all cells.
+Condition gold is \NEED\ in A/B (decisive outcomes withheld); in C/D it
+equals oracle gold.}
+\label{tab:g4-cells}
+\begin{tabular}{c c c l}
+\toprule
+\textbf{Cell} & \textbf{$O$ decisive results} & \textbf{$M$ attestation} & \textbf{Condition gold} \\
+\midrule
+A & blocked & withheld       & \NEED\ (all 18) \\
+B & blocked & adjudicated    & \NEED\ (all 18) \\
+C & visible & withheld       & $=$ oracle \\
+D & visible & adjudicated    & $=$ oracle \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The same frozen nine-step evidence transcript (artifact, linkage, freshness,
+coverage, consistency, symptom probe, then F2P/P2P/baseline results) is
+replayed to the model in a fixed order: the agent never selects a tool path,
+and tool calls are yoked rather than generated. Every cell runs in an
+independent context (20 messages: system, user, nine scripted tool calls and
+nine tool results) followed by exactly one paid decision call
+(temperature~0, bounded length, strict JSON schema, no tools exposed on the
+final call). The 144 slots (18 issues $\times$ 4 cells $\times$ 2 models)
+were executed once each in a frozen paired Latin order
+(seed \texttt{20261102}), balanced to eight slots per issue block; a
+successful cell was never re-sampled. The primary, two-sided, pre-registered
+test is H1: unsupported acceptance under A versus B, an issue-paired exact
+McNemar test, with the paired difference and an issue-clustered bootstrap
+95\,\% interval. C/D are \emph{diagnostic controls}, not a pass/fail arm.
+The frozen issue set is 13 oracle-\ACCEPT\ and 5 oracle-\REJECT; all gold
+remain PROVISIONAL as primary scoring labels, although an independent human
+second annotation has since been obtained
+(Section~\ref{sec:g4-human}).
+
+\subsection{H1 primary result: attestation under blocked decisive outcomes}
+\label{sec:g4-h1}
+Table~\ref{tab:g4-verdicts} reports the full ternary matrix; there were zero
+invalid or unparseable outputs and zero response-format downgrades in 144
+cells. Under cell~A every verdict from both models is \NEED: with neither
+decisive results nor freshness/coverage attestation visible, neither model
+commits. Under cell~B the models diverge sharply.
+
+\begin{table}[t]
+\centering\small
+\caption{G4 ternary verdict matrix, counts out of 18 issues per model--cell.
+Condition gold: \NEED\ for A/B; oracle (13 \ACCEPT, 5 \REJECT) for C/D.}
+\label{tab:g4-verdicts}
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Model -- cell} & \textbf{\ACCEPT} & \textbf{\REJECT} & \textbf{\NEED} & \textbf{Invalid} \\
+\midrule
+GPT -- A   & 0  & 0 & 18 & 0 \\
+GPT -- B   & 8  & 0 & 10 & 0 \\
+GPT -- C   & 13 & 4 & 1  & 0 \\
+GPT -- D   & 12 & 5 & 1  & 0 \\
+\midrule
+DeepSeek -- A & 0  & 0 & 18 & 0 \\
+DeepSeek -- B & 0  & 0 & 18 & 0 \\
+DeepSeek -- C & 12 & 6 & 0  & 0 \\
+DeepSeek -- D & 12 & 6 & 0  & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering\small
+\caption{H1 pre-registered primary test, A vs.\ B unsupported acceptance
+($n=18$ paired issues per model). $b$: unsupported only in A; $c$:
+unsupported only in B; two-sided exact (binomial) McNemar; interval is an
+issue-clustered nonparametric bootstrap ($B=20{,}000$, seed 20261102).
+Models are reported separately and are never pooled.}
+\label{tab:g4-h1}
+\begin{tabular}{l c c c c c c}
+\toprule
+\textbf{Model} & \textbf{$U(A)$} & \textbf{$U(B)$} & \textbf{$b$} & \textbf{$c$} & \textbf{$p$ (two-sided)} & \textbf{$\hat\Delta_{A-B}$ [95\% CI]} \\
+\midrule
+GPT-4.1-mini     & 0/18 & 8/18 & 0 & 8 & 0.0078 & $-0.444$ [$-0.667,-0.222$] \\
+DeepSeek-Flash   & 0/18 & 0/18 & 0 & 0 & 1.0000 & $0.000$ [$0.000,0.000$] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For GPT-4.1-mini, adding adjudicated freshness/coverage attestation while
+\emph{keeping the decisive test verdicts blocked} moves 8 of 18 issues from
+\NEED\ to unsupported \ACCEPT, with zero moves in the opposite direction
+(Table~\ref{tab:g4-h1}, Figure~\ref{fig:g4gpt}). The paired, two-sided exact
+McNemar test gives $p=0.0078$; the paired difference is $-0.444$ with
+issue-clustered 95\,\% bootstrap interval $[-0.667,-0.222]$, which excludes
+zero. The pre-registered exact Clopper--Pearson interval for the B-cell
+unsupported-acceptance rate $8/18$ is $[0.215,0.692]$ (the corresponding
+interval for every $0/18$ cell is $[0,0.185]$). Under the frozen yoked
+protocol this identifies a causal effect of attestation visibility: integrity
+certificates that say nothing about sufficiency are sufficient for this model
+to upgrade a non-decisive surface into acceptance. The eight issues include
+both kinds of oracle: two of the five oracle-\REJECT\ patches (14248, 15875)
+and six of the thirteen oracle-\ACCEPT\ patches (16886, 19495, 22914, 13615,
+13974, 15349).
+
+DeepSeek-Flash shows no movement at all: 18/18 \NEED\ in both A and B, zero
+discordant pairs, $p=1.0$ (Figure~\ref{fig:g4deepseek}). The intervention
+does not move this model, and we report the null plainly rather than pooling
+the two models. The contrast is model heterogeneity, not a universal
+mechanism: GPT treats adjudicated integrity as a warrant to accept despite
+withheld decisive results, whereas DeepSeek keeps gating on the decisive
+verdicts themselves. We cannot distinguish, from this design, whether
+DeepSeek's abstention reflects well-calibrated sufficiency judgment or a
+blanket conservative policy, and the zero variance in A/B also makes its
+estimate degenerate.
+
+\begin{figure}[t]
+\centering
+\input{figures/fig5_g4_gpt.tex}
+\caption{G4 paired A$\to$B transitions for GPT-4.1-mini ($n=18$). Eight
+issues switch from correct \NEED\ in A to unsupported \ACCEPT\ in B; none
+switch back; ten abstain in both. Two-sided exact McNemar $p=0.0078$.}
+\label{fig:g4gpt}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\input{figures/fig6_g4_deepseek.tex}
+\caption{G4 paired A$\to$B transitions for DeepSeek-Flash ($n=18$). All 18
+issues abstain in both cells; there are no discordant pairs (exact
+$p=1.0$). Reported as a null for this model.}
+\label{fig:g4deepseek}
+\end{figure}
+
+\subsection{C/D diagnostic controls: what decisive visibility adds}
+\label{sec:g4-cd}
+When the decisive F/C results are visible, unsupported acceptance on the
+five oracle-\REJECT\ issues is $0/5$ for both models under both C and D, and
+oracle agreement over all 18 issues is high: GPT matches the oracle on
+17/18 (C) and 16/18 (D); DeepSeek on 17/18 in both (Table~\ref{tab:g4-cd}).
+Visibility of the decisive verdicts, not attestation, is what lets both
+models reject the failing patches. Within C versus D, DeepSeek is identical
+(12 \ACCEPT, 6 \REJECT) and GPT differs on a single issue (13 vs.\ 12
+\ACCEPT): the $M$ attestation factor has essentially no additional effect
+once $O$ is visible (diagnostic exact McNemar on the five rejects is
+degenerate, $p=1.0$). The residual non-oracle verdicts are concentrated on
+two issues. DeepSeek returns \REJECT\ on oracle-\ACCEPT\ issue~19346 under
+both C and D; GPT returns \REJECT\ on 19346 only under D and accepts it under
+C, and GPT additionally over-abstains (\NEED) on oracle-\REJECT\ issue~17630
+under both C and D. Issue~19346 is the packet with the pre-existing
+GLM-vs-provisional-oracle disagreement and has its own independent human
+arbitration worksheet; it is distinct from focused review FR1 (the 19495
+probe-revision question, Section~\ref{sec:threats}). These are treated as
+diagnostic observations, not as failures of the primary test. The human
+review of these packets has now returned (Section~\ref{sec:g4-human}):
+FR1 and FR2 are closed and the 19346 arbiter records \REJECT.
+
+\begin{table}[t]
+\centering\small
+\caption{C/D diagnostic control. Oracle agreement out of 18; unsupported
+\ACCEPT\ on the five oracle-\REJECT\ issues out of 5; ternary counts shown
+for context. C/D are diagnostic, not a pass/fail arm.}
+\label{tab:g4-cd}
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Model} & \textbf{Oracle match C / D} & \textbf{$U$ on 5 rejects C / D} & \textbf{C (A/R/N)} & \textbf{D (A/R/N)} \\
+\midrule
+GPT-4.1-mini   & 17/18 / 16/18 & 0/5 / 0/5 & 13/4/1 & 12/5/1 \\
+DeepSeek-Flash & 17/18 / 17/18 & 0/5 / 0/5 & 12/6/0 & 12/6/0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Strata, sensitivity, and interaction}
+\label{sec:g4-sens}
+Table~\ref{tab:g4-strata} splits H1 by oracle. The GPT B-cell over-acceptance
+occurs on $6/13$ oracle-\ACCEPT\ and $2/5$ oracle-\REJECT\ issues; exact
+Clopper--Pearson 95\,\% intervals are $[0.192,0.749]$ and $[0.053,0.853]$,
+respectively, so the REJECT-stratum estimate is reported as a small-sample
+observation, not a rate. Every A-cell count is zero in both strata for both
+models.
+%
+Sensitivity analyses: (i)~the pre-registered parser rule treats unparseable
+output as non-acceptance; there were zero parse failures, so the complete-case
+analysis is identical to the primary analysis; (ii)~flipping the five
+provisional \REJECT\ labels to \ACCEPT\ would remove all C/D unsupported
+accepts by construction, while flipping all 13 \ACCEPT\ labels to \REJECT\
+would make every C/D \ACCEPT\ unsupported (GPT 13/12, DeepSeek 12/12)---the
+primary A/B endpoint, whose condition gold is \NEED\ independent of oracle
+gold, is unchanged by either flip; (iii)~the model contrast is strictly
+\emph{exploratory}: on the same 18 issues paired across models, the A/B
+intervention effect differs between models by $0.444$ with an issue-paired
+bootstrap 95\,\% interval $[0.222,0.667]$, and a four-cell
+difference-in-differences on the only endpoint defined identically in all
+four cells---raw binary acceptance $Y=\mathbf{1}\{\ACCEPT\}$, not $U$, whose
+scoring rule changes across $O$---gives $\mathrm{DiD}_{\mathrm{GPT}}=0.500$
+(GPT: $(8-0)/18-(12-13)/18$), $\mathrm{DiD}_{\mathrm{DS}}=0$ (identical C and
+D: $12/18$), and interaction $\mathrm{DiD}_{\mathrm{GPT}}-\mathrm{DiD}_{
+\mathrm{DS}}=0.500$, bootstrap 95\,\% $[0.278,0.722]$. Neither model contrast
+was pre-registered as confirmatory, there is no multiplicity adjustment, and
+with 18 issues (5 rejects) we make no causal claim beyond the within-model
+paired H1 identifications. (An earlier internal draft labelled $-1/18$ vs.\
+$0$, the between-model difference of the visible-cell contrast
+$\overline{Y_D-Y_C}$, as a ``difference-in-differences of 0.056''; that number
+is a simple $O$-visibility contrast, not an interaction.)
+
+\begin{table}[t]
+\centering\small
+\caption{Unsupported acceptance by oracle stratum and cell. The
+oracle-\REJECT\ stratum has $n=5$ and is underpowered; intervals are wide and
+the counts are cases, not a population rate.}
+\label{tab:g4-strata}
+\begin{tabular}{l l c c c c}
+\toprule
+\textbf{Stratum} & \textbf{Model} & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} \\
+\midrule
+\multirow{2}{*}{oracle-\ACCEPT, $n=13$}
+  & GPT      & 0/13 & 6/13 & 0/13 & 0/13 \\
+  & DeepSeek & 0/13 & 0/13 & 0/13 & 0/13 \\
+\midrule
+\multirow{2}{*}{oracle-\REJECT, $n=5$}
+  & GPT      & 0/5 & 2/5 & 0/5 & 0/5 \\
+  & DeepSeek & 0/5 & 0/5 & 0/5 & 0/5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Execution summary}
+\label{sec:g4-exec}
+All 144 cells completed in one authorized run: exactly one model call per
+cell, zero retries, errors, or protocol downgrades, exact served-model
+identity throughout, and a pre-call guard against a single US\,\$2.00 hard
+cap; the run closed at US\,\$0.807389, independently recomputed from raw
+token usage. All raw requests, responses, traces, costs, and frozen inputs
+were persisted before scoring and independently re-verified read-only
+(Appendix~\ref{app:g4provenance}). G4 differs in protocol, input, and task
+from G3-B.3 (yoked fixed transcripts versus agent-driven multi-turn review),
+so historical G3-B.3 figures are compared only narratively and never pooled
+with these 144 cells.
+
+\subsection{Independent human review of the 18 packets}
+\label{sec:g4-human}
+After the G4 run, an independent third-party annotator completed all 18
+blind packets in the offline workbench without access to model outputs or
+the provisional labels, then reviewed the GLM pre-labels; every packet
+carries an explicit independence attestation flag. Blind verdicts agree
+with the provisional oracle on \textbf{17/18} issues and with the GLM
+pre-label on 16/18. The two exceptions are: (i)~issue~19346, where the
+human blind verdict initially matched the mechanical oracle (\ACCEPT) but
+the recorded human arbiter overrides it to \REJECT, agreeing with GLM that
+the authoritative, undeclared \texttt{test\_set} failure is decisive; and
+(ii)~issue~15875, where the human blind verdict is \ACCEPT\ against the
+provisional/GLM \REJECT\ and \emph{no arbiter verdict exists}, so the
+frozen \REJECT\ is retained and the disagreement is disclosed rather than
+resolved. The two focused reviews are now closed: FR1 (19495) is ruled an
+instrument-only test fix with no oracle redefinition, and FR2 rules that
+14248 and 15875 apply one disjunctive \REJECT\ standard; neither requires a
+rubric amendment. Table~\ref{tab:g4-human} recomputes the label-dependent
+G4 figures under the frozen provisional labels (S0, 5 rejects) and the
+human-reviewed scenario S1 that adopts only the recorded 19346 override
+(6 rejects). The only changes are C/D diagnostic quantities: under S1,
+GPT shows one unsupported \ACCEPT\ on the reject stratum in cell~C (issue
+19346 itself), DeepSeek reaches 18/18 oracle agreement in C and D, and the
+GPT C/D agreement order swaps to 16/18 and 17/18. The confirmatory A/B
+endpoint (condition gold \NEED\ by construction), its McNemar $p=0.0078$,
+the paired difference, every bootstrap interval, and the exploratory
+model contrasts are numerically identical under S0 and S1. We do not
+mass-promote gold in this manuscript: the signed annotator/arbiter
+attestation is still being collected, per-packet time/confidence fields
+were left empty, the 19495 blind lock is a retained 2026-11-01 verdict
+(identical to the oracle label, so it changes no number), and 15875 stays
+an open disagreement.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\caption{Label-dependent G4 figures under S0 (frozen provisional; reject
+stratum $n=5$) and S1 (human-reviewed; 19346 override only; $n=6$).
+$U$ = unsupported \ACCEPT\ on the reject stratum; match = agreement with
+the scenario label over all 18 issues. A/B H1 and all exploratory
+contrasts are invariant and omitted.}
+\label{tab:g4-human}
+\begin{tabular}{l c cc cc}
+\toprule
+ &  & \multicolumn{2}{c}{\textbf{S0 provisional}} & \multicolumn{2}{c}{\textbf{S1 human-reviewed}} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+\textbf{Model} & \textbf{Cell} & $U$ & match & $U$ & match \\
+\midrule
+GPT-4.1-mini  & B & 2/5 & 6/18  & 2/6 & 6/18  \\
+GPT-4.1-mini  & C & 0/5 & 17/18 & 1/6 & 16/18 \\
+GPT-4.1-mini  & D & 0/5 & 16/18 & 0/6 & 17/18 \\
+DeepSeek-Flash & B & 0/5 & 0/18  & 0/6 & 0/18  \\
+DeepSeek-Flash & C & 0/5 & 17/18 & 0/6 & 18/18 \\
+DeepSeek-Flash & D & 0/5 & 17/18 & 0/6 & 18/18 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Claims and evidence-grade summary}
+\label{sec:g4-grades}
+Table~\ref{tab:g4-grades} maps each G4 conclusion to its statistical status
+and the bound that limits it. The only confirmatory causal claim is the
+within-GPT A/B H1 effect; everything involving a model contrast is
+explicitly exploratory, and null observation is not evidence of absence.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\caption{G4 conclusions with evidence grade and governing limitations.}
+\label{tab:g4-grades}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.26\linewidth}
+>{\raggedright\arraybackslash}p{0.38\linewidth}
+>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Conclusion} & \textbf{Evidence (this sample)} & \textbf{Grade / bound} \\
+\midrule
+Attestation visibility raises unsupported acceptance in GPT-4.1-mini with decisive results blocked
+  & $0/18\!\to\!8/18$; exact McNemar $p=0.0078$; paired $\Delta=-0.444$ [$-0.667$,$-0.222$]; CP95 $[0.215,0.692]$
+  & Confirmatory within model; narrow construct (attestation, not corruption); yoked protocol \\
+DeepSeek-Flash shows no A/B movement
+  & $0/18\!\to\!0/18$; zero discordants; $p=1.0$; CP95 for $0/18$: $[0,0.185]$
+  & Null observed, not evidence of absence; zero variance; $n=18$ \\
+Decisive visibility governs rejection of failing patches (C/D diagnostic)
+  & S0: $0/5$ unsupported rejects in C/D both models; oracle match $16$--$17/18$; S1 human-reviewed: DS $18/18$ C/D, GPT $16/18$ C, $17/18$ D
+  & Diagnostic gate, not an equivalence test; REJECT stratum $n=5$ (S0) / $n=6$ (S1); label-dependent \\
+Effects differ between the two models
+  & paired effect difference $0.444$ [$0.222$,$0.667$]; interaction DiD $0.500$ [$0.278$,$0.722$]
+  & Exploratory only; not pre-registered confirmatory; no multiplicity adjustment \\
+Labels and scope
+  & 18 issues, one repository (SymPy), two served model ids; independent human second annotation obtained (17/18 oracle agreement; FR1/FR2 closed; 19346 arbiter \REJECT); gold stays PROVISIONAL pending signed attestation; 15875 disagreement open
+  & Framework contribution; no population or cross-project claim; H1 robust to oracle flips, C/D label-dependent \\
+\bottomrule
+\end{tabularx}
+\end{table}

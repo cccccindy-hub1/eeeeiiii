@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and linked to this patch and commit: verify_artifact_linkage reports linked=true with base_commit_match=true and patch_sha256_match=true (patch cadf95a1..., base b9179e80...). The acceptance artifact shows FAIL_TO_PASS 1/1 passed (test_issue_5786, which was XFAIL in the baseline and now PASSES) and scoped PASS_TO_PASS 148/148 passed with no regressed or preexisting-bad ids. The run logs confirm this: the baseline run has test_issue_5786 XFAIL, while the post-patch run has it PASSED, and all other tests in test_dispersion.py, test_partfrac.py, test_polytools.py, and test_ring_series.py pass in both runs (no new failures). The issue-derived symptom probe also shows the bug reproduced pre-patch (factor ext: x - 1, FAIL) and fixed post-patch (factor ext: (x - 1)*(y - 1), OK). The freshness and coverage attestations are withheld (UNKNOWN) on this surface, which is neither staleness nor incompleteness and cannot refute the intact, linked, failure-free acceptance evidence. The patch's change to dmp_sqf_part (taking the GCD over all partial derivatives) is a sound fix for the dropped-factor symptom, and no applicable acceptance check fails and no scoped regression is introduced.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "0463add5fef700ff1ef2b42cb7f6c1f885dc72c263438582d9a0cccf9c400870",
+  "cell": "C",
+  "cohort": "g3c1",
+  "cost_usd": 0.009212,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-19040",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.024577,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 31,
+  "tokens_in": 29391,
+  "tokens_in_est": 28675,
+  "tokens_out": 329,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 3.34,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

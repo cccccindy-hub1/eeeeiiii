@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentically linked to this patch (patch_sha256 and base_commit match) and the issue-derived symptom probe shows the reported symptom is gone after the patch (plain subs now returns the ImageSet with y substituted, matching xreplace/simultaneous references). However, this is a diagnostic-tier record: maintainer acceptance-test outcomes (FAIL_TO_PASS/PASS_TO_PASS) are withheld and blocked (HTTP 403), and the freshness and declared-set coverage attestations are UNKNOWN on this surface. The patch also changes an existing test expectation (ConditionSet(n, n < x, Interval(-oo, 0)).subs(x, p) from EmptySet to Interval(-oo, 0)) and alters _eval_subs semantics broadly, so scoped regression verdicts matter and are not available. Symptom removal alone is not proof of merge acceptability, and no decisive applicable failure is established either.\",\"evidence_mismatch\":false,\"missing_evidence\":\"No executed acceptance-test verdicts (f2p/p2p) and no scoped regression results for the changed conditionset.py and test_conditionset.py; freshness/coverage attestations withheld (UNKNOWN).\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "bundle_sha256": "a8bbedacf01c81ec9e90f2f688b60ee119e779b4ca727a839051a4956b72bf9d",
+  "cell": "A",
+  "cohort": "g3c1",
+  "cost_usd": 0.001662,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-19495",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.015025,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 46,
+  "tokens_in": 4480,
+  "tokens_in_est": 4794,
+  "tokens_out": 265,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.35,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

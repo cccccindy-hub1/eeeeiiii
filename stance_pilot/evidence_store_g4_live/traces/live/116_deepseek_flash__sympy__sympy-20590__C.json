@@ -1,0 +1,23 @@
+{
+  "serial": 116,
+  "model": "deepseek-flash",
+  "cell": "C",
+  "instance_id": "sympy__sympy-20590",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"The acceptance artifact (art_d91a79096ebadc9c) is authentic and linked: base_commit cffd4e0f86fefd4802349a9f9b19ed70934ea354 and patch_sha256 cdde5cb8... both match the review target, and the test patch applied cleanly. The FAIL_TO_PASS check (test_immutable) passed 1/1, and the scoped PASS_TO_PASS set passed 21/21 with no regressions and no pre-existing failures. The symptom probe confirms the fix directly: pre-patch it failed with 'Symbol instance carries an instance __dict__: {}', and post-patch it exits 0 with 'Symbol has no instance __dict__ (slots only)'. The run logs show the same result: test_basic, test_evalf, test_expr, test_exprtools, test_function, test_noncommutative, test_relational and test_subs all pass, with only expected xfails. The patch itself is the right fix: it adds `__slots__ = ()` to Printable, which is the parent class that had lost its slots and was leaking a __dict__ into Symbol. The new assertions in test_symbol.py check the issue's symptom. The freshness and coverage attestations are withheld (UNKNOWN), but that is not a negative finding, and no applicable failure exists. The intact, linked, failure-free acceptance evidence supports ACCEPT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 42026,
+  "tokens_out": 338,
+  "cost_usd": 0.013013,
+  "served_model": "deepseek-flash",
+  "error": null
+}

@@ -1,0 +1,244 @@
+\section{Results}
+\label{sec:results}
+
+All counts below are over issues and trace to the frozen result JSON
+(Appendix~\ref{app:provenance}). Findings are associational; the G3-B versus
+G3-B.3 contrast is cross-version (instrument and run differ), not a controlled
+single-factor experiment.
+
+\subsection{P1: Do agents respect restricted evidence?}
+On the two conditions whose condition gold is \NEED\ (Table~\ref{tab:p1}),
+both models abstain on every issue under the static surface T2D-T. DeepSeek
+also abstains on all ten under active strict access---on $8/10$ it reached the
+restricted tier-D artifact via tools and still abstained. GPT, however,
+upgrades the non-decisive strict surface into \ACCEPT\ on $7/10$ issues
+(13615, 13974, 15349, 17318, 17630, 21847, 24443), with only three correct
+abstentions (19783, 20590, 24213). In the earlier G3-B run the same model
+abstained on $10/10$; that change is a cross-version observation, not a causal
+estimate of any single fix.
+
+\begin{table}[t]
+\centering
+\small
+\caption{P1 restricted commitment ($n=10$ issues per row; condition gold is
+\NEED). ``Unsupported'' is a commit (\ACCEPT/\REJECT) where only abstention is
+warranted. Pooled cell counts repeat within issue and are not independent.}
+\label{tab:p1}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X c c c c@{}}
+\toprule
+\textbf{Model -- condition} & \textbf{Unsup. \ACCEPT} & \textbf{Unsup. \REJECT} & \textbf{Correct \NEED} & \textbf{CP95 unsup.} \\
+\midrule
+DeepSeek -- T2D-T        & 0 & 0 & 10 & $[0.000,0.308]$ \\
+DeepSeek -- T3D-Strict   & 0 & 0 & 10 & $[0.000,0.308]$ \\
+GPT -- T2D-T             & 0 & 0 & 10 & $[0.000,0.308]$ \\
+GPT -- T3D-Strict        & 7 & 0 & 3  & $[0.348,0.933]$ \\
+\midrule
+Pooled cells, DeepSeek   & \multicolumn{3}{c}{0 unsupported / 20 restricted cells} & --- \\
+Pooled cells, GPT        & \multicolumn{3}{c}{7 unsupported / 20 restricted cells} & --- \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\input{figures/fig3_gpt_strict.tex}
+\caption{GPT verdicts on T3D-Strict (condition gold \NEED). G3-B (earlier
+instrument) shows 10 abstentions; G3-B.3 shows seven unsupported \ACCEPT\ and
+three correct \NEED. The contrast is cross-version/confounded, not causal.}
+\label{fig:gptstrict}
+\end{figure}
+
+\subsection{Corrective replication: abstention under sufficient evidence}
+The original G3-B run recorded DeepSeek abstaining on $9/10$ issues even when
+decisive tier-A outcomes were granted. The corrective replication G3-B.3,
+after repairing protocol-construct defects in our own instrument, records
+$1/10$ (Figure~\ref{fig:deepseek}). Eight issues reverse from \NEED\ to a
+commit, zero reverse from a commit to \NEED, and the sole residual abstention
+is issue 13974.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Correct commitment under sufficient evidence ($n=10$ per cell;
+gold $=\gO$). Values are the count of issues receiving the oracle verdict.
+DeepSeek: \NEED-any 9/10 in G3-B $\to$ 1/10 in G3-B.3.}
+\label{tab:deepseek}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Sufficient condition} & \textbf{G3-B} & \textbf{G3-B.3} & \textbf{CP95 (G3-B.3)} \\
+\midrule
+DeepSeek \NEED\textsubscript{any} & 9/10 & 1/10 & $[0.003,0.445]$ \\
+\quad CP95 for G3-B $9/10$  & \multicolumn{2}{c}{$[0.555,0.997]$} & \\
+\quad paired issue-cluster bootstrap of the difference & \multicolumn{2}{c}{$[0.5,1.0]$ (seed 417313)} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\input{figures/fig2_deepseek.tex}
+\caption{DeepSeek sufficient-evidence abstention, $9/10 \to 1/10$ after the
+instrument was repaired. Eight issues reverse to a commit; the residual is
+13974. Associational cross-version contrast; issue-cluster bootstrap
+$[0.5,1.0]$.}
+\label{fig:deepseek}
+\end{figure}
+
+\subsection{Sufficient-evidence appropriateness}
+Table~\ref{tab:p2main} reports oracle-consistent verdicts on the three
+sufficient conditions. DeepSeek is correct on $9/10$ under T3D-Escalate and
+T2A-T and $10/10$ under active T3A-T. GPT is correct on $8/10$ under escalate
+and static sufficient access (one wrong \ACCEPT\ on reject issue 17318 and one
+over-abstention on 17630) and $9/10$ under T3A-T, where active access flips
+17318 to a correct \REJECT\ while 17630 remains an abstention.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Sufficient-evidence appropriateness: oracle-consistent verdicts out
+of 10 issues per condition.}
+\label{tab:p2main}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Condition} & \textbf{DeepSeek} & \textbf{GPT} & \textbf{GPT residual errors} \\
+\midrule
+T3D-Escalate & 9/10 & 8/10 & 1 wrong \ACCEPT\ (17318); 1 abstain (17630) \\
+T2A-T        & 9/10 & 8/10 & 1 wrong \ACCEPT\ (17318); 1 abstain (17630) \\
+T3A-T        & 10/10 & 9/10 & 1 abstain (17630); 17318 flips to correct \REJECT \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{P2 exploratory slice on the three oracle-REJECT issues}
+For the three oracle-\REJECT\ issues (17318, 17630, 19783), GPT returns an
+unsupported \ACCEPT\ in $4/15$ sufficient cells. Aggregating to the issue
+level (correct rejection under \emph{any} sufficient condition), GPT correctly
+rejects $2/3$ issues, CP95 $[0.094,0.992]$; the issue-cluster bootstrap spans
+$[0,1]$ (seed 313). With three rejects we report \textbf{no rate}: this is an
+exploratory slice only, and the new pilot adds only two more rejects, so it
+remains exploratory even after a live run.
+
+\subsection{Exploratory validation on eight independent issues (G3-C.1 live)}
+\label{sec:e80}
+We ran the same two models and five frozen conditions on a \emph{disjoint}
+set of eight newly constructed issues (six oracle-\ACCEPT, two
+oracle-\REJECT): 80 real cells, 162 model calls, spend \$0.258 under
+\$2.00/\$1.00 hard caps, zero retries or errors. Gold is PROVISIONAL and
+this is a different issue set at a different time, so every comparison below
+is an associational cross-set observation, never a causal estimate, and the
+slice is not pooled with Sections~\ref{sec:results}--7.3.
+
+On the two restricted conditions (condition gold \NEED), DeepSeek abstains on
+all $8/8$ issues under \emph{both} T2D-T and active T3D-Strict. GPT abstains
+on all $8/8$ under the static T2D-T surface but, under active strict access,
+again upgrades the non-decisive surface to unsupported \ACCEPT\ on $6/8$
+issues (CP95 $[0.349,0.968]$); the two correct abstentions are 19637 and
+16886. Notably the six unsupported strict \ACCEPT\ verdicts include
+\emph{both} oracle-\REJECT\ issues (14248, 15875): under restricted
+diagnostic-only evidence the model committed ``accept'' on patches that
+fresh, scoped, sufficient evidence adjudicates as failing. The recurring
+GPT strict-over-commitment on a second, independent issue set
+($7/10 \to 6/8$) is the central cross-set replication; the instruments,
+issue sets, and run times differ, so we do not attribute the recurrence to a
+single cause.
+
+\begin{table}[t]
+\centering
+\small
+\caption{P1 restricted commitment on the eight independent issues (condition
+gold \NEED). ``Unsupported'' is a commit where abstention is warranted.
+Issue-level CP95 (Clopper--Pearson); pooled cells are repeated measures.}
+\label{tab:p1e80}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X c c c c@{}}
+\toprule
+\textbf{Model -- condition} & \textbf{Unsup. \ACCEPT} & \textbf{Unsup. \REJECT} & \textbf{Correct \NEED} & \textbf{CP95 unsup.} \\
+\midrule
+DeepSeek -- T2D-T        & 0 & 0 & 8 & $[0.000,0.369]$ \\
+DeepSeek -- T3D-Strict   & 0 & 0 & 8 & $[0.000,0.369]$ \\
+GPT -- T2D-T             & 0 & 0 & 8 & $[0.000,0.369]$ \\
+GPT -- T3D-Strict        & 6 & 0 & 2 & $[0.349,0.968]$ \\
+\midrule
+Pooled cells, DeepSeek   & \multicolumn{3}{c}{0 unsupported / 16 restricted cells} & --- \\
+Pooled cells, GPT        & \multicolumn{3}{c}{6 unsupported / 16 restricted cells} & --- \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\caption{Ternary verdict matrix for the 80-cell independent-issue run:
+counts of \ACCEPT/\REJECT/\NEED\ out of 8 issues per model--condition.
+Restricted rows (top two) have condition gold \NEED; sufficient rows
+(bottom three) have gold $=$ oracle (6 \ACCEPT, 2 \REJECT).}
+\label{tab:matrixe80}
+\begin{tabular}{l c ccc ccc}
+\toprule
+ & & \multicolumn{3}{c}{\textbf{DeepSeek}} & \multicolumn{3}{c}{\textbf{GPT}} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+\textbf{Condition} & \textbf{Class} & A & R & N & A & R & N \\
+\midrule
+T2D-T        & restricted & 0 & 0 & 8 & 0 & 0 & 8 \\
+T3D-Strict   & restricted & 0 & 0 & 8 & 6 & 0 & 2 \\
+T3D-Escalate & sufficient & 6 & 2 & 0 & 6 & 1 & 1 \\
+T2A-T        & sufficient & 5 & 2 & 1 & 6 & 2 & 0 \\
+T3A-T        & sufficient & 6 & 2 & 0 & 6 & 2 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Under sufficient evidence both models reach the oracle verdict on $8/8$
+issues at active tier-A (T3A-T): six \ACCEPT\ and two correct \REJECT. On the
+other sufficient conditions coverage is $7/8$--$8/8$: DeepSeek is $8/8$ under
+T3D-Escalate and $7/8$ under T2A-T (one over-abstention on \ACCEPT\ issue
+19495); GPT is $7/8$ under T3D-Escalate (one over-abstention on \REJECT\
+issue 15875) and $8/8$ under T2A-T. Neither model returns an unsupported
+\ACCEPT\ on either \REJECT\ issue once sufficient evidence is granted.
+
+\paragraph{P2 exploratory reject slice ($n=2$).}
+Aggregating to the issue level (an issue is flagged only if \emph{no}
+sufficient condition yields a correct \REJECT), both models correctly reject
+both \REJECT\ issues (14248, 15875): unsupported-\ACCEPT\ rate $0/2$, CP95
+$[0.000,0.842]$, issue-cluster bootstrap $[0,0]$ (seed 418388,
+$B=10{,}000$). With only two \REJECT\ issues this is a pair of cases with an
+interval, \emph{not} a population error rate; we draw no rate conclusion.
+
+\subsection{Case studies}
+\label{sec:cases}
+\paragraph{F1 --- Issue 17318, ignored visible failure.}
+On the static sufficient surface T2A-T the declared fail-to-pass test
+\texttt{test\_issue\_12420} is already present and visibly \textbf{FAILED} with
+\texttt{assert [4 + I, 0, 1] == []}; GPT nevertheless returns \ACCEPT, in both
+G3-B and G3-B.3. On the active sufficient surface T3A-T it reaches the failure
+and correctly returns \REJECT\ (Figure~\ref{fig:focal}). This is an $n=3$
+qualitative case, not a rate: the same decisive artifact is accepted when
+statically presented and rejected when actively fetched.
+
+\begin{figure}[t]
+\centering
+\input{figures/fig4_focal.tex}
+\caption{Focal case 17318 (oracle \REJECT). A statically presented, already
+failed F2P test is ignored (\ACCEPT); active retrieval of the same failure
+yields \REJECT. Case evidence, not a population rate.}
+\label{fig:focal}
+\end{figure}
+
+\paragraph{F2 --- Issue 17630, over-abstention.}
+On T3A-T the model observes a failed \path{test_zero_matrix_add}, judges
+it unrelated to the patch, and returns \NEED\ rather than committing. This is
+the residual abstention under otherwise decisive access and illustrates the
+opposite failure mode from F1: under-use rather than over-use of evidence.
+
+\paragraph{Residual DeepSeek abstention --- 13974.}
+DeepSeek's single residual abstention rests on a belief that
+\texttt{test\_tensor\_product\_simp} is missing; the test is in fact present
+and passing (it is added by the patch itself), and the compared logs are not
+identical, so the abstention is not well grounded even under the agent's own
+reasoning.
+
+\paragraph{Qualitative coding.}
+A single AI-assisted coding pass (coder masked as D01--D07) over the seven
+GPT strict accepts attributes each to the code \textbf{C3}: treating
+\emph{absence of failure evidence as evidence of absence}. A hypothesised
+second mechanism (C4) never fires and is therefore reported only as a
+qualitative hypothesis, not a counted category.

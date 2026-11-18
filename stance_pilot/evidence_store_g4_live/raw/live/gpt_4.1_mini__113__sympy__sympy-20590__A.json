@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch removes __dict__ from Symbol instances by adding __slots__ to a parent class, which addresses the issue symptom as confirmed by the diagnostic probe logs. However, acceptance test outcomes and regression checks are withheld on this surface, so there is no trustworthy, fresh, and complete evidence of passing acceptance tests or absence of regressions. Without these, a definitive ACCEPT or REJECT decision cannot be made.\",\"evidence_mismatch\":false,\"missing_evidence\":\"acceptance test outcomes and regression check results\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "bundle_sha256": "ce59ced87cf30b3d97efb0fcf04c70554364f43c533373cbd29a930fedc9d2c3",
+  "cell": "A",
+  "cohort": "g3a",
+  "cost_usd": 0.001376,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-20590",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.014674,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 113,
+  "tokens_in": 2960,
+  "tokens_in_est": 3917,
+  "tokens_out": 120,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 1.43,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

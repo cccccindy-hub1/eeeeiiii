@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage is verified (base_commit and patch_sha256 match, authentic signature), and the issue-derived symptom probe shows the reported symptom is gone after the patch (Complement now yields {x, y} \\\\ Interval(-10, 10)). However, this is a diagnostic-tier artifact: maintainer acceptance-test (F2P) outcomes and scoped regression (P2P) verdicts are withheld, and the freshness/coverage attestations are UNKNOWN on this surface. No decisive applicable failure is established, so REJECT is not warranted; but the declared acceptance/regression set was not shown to be fully executed and failure-free, so ACCEPT's completeness bar is not met. Abstaining.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test (FAIL_TO_PASS) outcomes and scoped regression (PASS_TO_PASS) verdicts for this patch/commit are withheld; the declared-versus-executed test set and freshness attestation are UNKNOWN. Only the issue-derived symptom probe is available.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "bundle_sha256": "c01731e3b637bdf5c8930736c32e98a4f509a180dee6ded07cc56fe85c835d90",
+  "cell": "A",
+  "cohort": "g3a",
+  "cost_usd": 0.001439,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-13615",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.014953,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 67,
+  "tokens_in": 3856,
+  "tokens_in_est": 4615,
+  "tokens_out": 235,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 1.95,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

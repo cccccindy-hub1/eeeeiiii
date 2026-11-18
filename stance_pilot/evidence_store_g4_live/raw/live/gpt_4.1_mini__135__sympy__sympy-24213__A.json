@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The patch fixes the reported issue symptom as demonstrated by the diagnostic-level evidence, which is fresh and linked to this patch. However, acceptance test outcomes and regression verdicts are withheld on this surface, so there is no trustworthy evidence covering the full declared acceptance and regression test sets to confirm no scoped regression or acceptance failure. Therefore, the evidence is incomplete for a full accept decision.\",\"evidence_mismatch\":false,\"missing_evidence\":\"acceptance test outcomes and regression verdicts\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "bundle_sha256": "8a576ffdd63c10bf1baf922c70eb34d8caf20b470e4f01d1c52a745588bf77cd",
+  "cell": "A",
+  "cohort": "g3a",
+  "cost_usd": 0.001338,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-24213",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.014655,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 135,
+  "tokens_in": 2890,
+  "tokens_in_est": 3869,
+  "tokens_out": 114,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 1.63,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

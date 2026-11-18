@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch correctly modifies the dimension comparison to use the dimension system's equivalent_dims method, addressing the issue of detecting equivalent dimensions in addition. The provided reproduction code that previously raised a ValueError now passes without error. The acceptance test for the issue passes (FAIL_TO_PASS passed), and all scoped regression tests pass (31/31). The evidence is fresh, linked to this patch and commit, and coverage is complete for the declared acceptance and regression sets. No applicable test failures or regressions are observed.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"none\"}",
+  "bundle_sha256": "9409b4677f3281e3be574ee06c9d2d33d285838dc624def282427a9e9474667b",
+  "cell": "D",
+  "cohort": "g3a",
+  "cost_usd": 0.003551,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-24213",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.016983,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 132,
+  "tokens_in": 8378,
+  "tokens_in_est": 9689,
+  "tokens_out": 125,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 1.83,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

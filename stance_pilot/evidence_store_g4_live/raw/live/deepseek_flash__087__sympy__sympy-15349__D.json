@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and decisive. Linkage verified: artifact base_commit 768da1c6... and patch_sha256 0c5e4bd3... match this patch/commit (linked=true, authentic signature). Freshness adjudicated TRUE (authoritative restage tree 3fb6acb6... equals expected run tree). Coverage adjudicated complete: declared F2P 1/1 executed, scoped P2P 3/3 executed, no missing ids. Outcomes: F2P test_quaternion_conversions PASSED; scoped P2P (construction, complex_real_addition, functions) all PASSED with no regressions and no preexisting-bad ids. The issue-derived symptom probe confirms the fix: baseline produced the wrong matrix [[1,0,0],[0,cos(x),sin(x)],[0,sin(x),cos(x)]] (exit 1), while the post-patch probe reports the correct sign (exit 0). The patch changes m12 from 2*s*(c*d + b*a) to 2*s*(c*d - b*a), which is the correct rotation-matrix entry and resolves the reported sign error. No applicable acceptance failure or scoped regression exists.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "597dd3ffba9f9ef04b12d70747c0ca7646f8323d6a3864813994673121979114",
+  "cell": "D",
+  "cohort": "g3a",
+  "cost_usd": 0.002211,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-15349",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.015615,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 87,
+  "tokens_in": 6234,
+  "tokens_in_est": 6269,
+  "tokens_out": 284,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.25,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

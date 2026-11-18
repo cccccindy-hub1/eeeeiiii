@@ -1,0 +1,89 @@
+%% GroundedReview -- submission manuscript.
+%% Standard toolchain: pdflatex -> bibtex -> pdflatex -> pdflatex.
+%% Figures are drawn natively in TikZ/pgfplots; no SVG conversion or external
+%% raster images are required. Compiles with a normal TeX Live / MiKTeX install.
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,fit,backgrounds,calc,shapes.geometric}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+
+% ---- project palette (matches the frozen research figures) ----
+\definecolor{grAccept}{HTML}{3B8A52}
+\definecolor{grReject}{HTML}{B63B3B}
+\definecolor{grNeed}{HTML}{3B6FB6}
+\definecolor{grWarn}{HTML}{C98A2B}
+\definecolor{grInk}{HTML}{1B1B1B}
+\definecolor{grMuted}{HTML}{6B6B6B}
+\definecolor{grOracle}{HTML}{F7F9FC}
+\definecolor{grCond}{HTML}{FCF8F6}
+
+\newcommand{\NEED}{\textsc{Need\_Evidence}}
+\newcommand{\ACCEPT}{\textsc{Accept}}
+\newcommand{\REJECT}{\textsc{Reject}}
+\newcommand{\gO}{g_{\mathrm{O}}}
+\newcommand{\gC}{g_{\mathrm{C}}}
+\newcommand{\lbl}[1]{{\scriptsize\itshape #1}}
+
+\captionsetup{font=small,labelfont=bf}
+
+% Allow long file paths/identifiers to break at separators, and give TeX a
+% little extra stretch to avoid marginal overfull lines.
+\makeatletter
+\g@addto@macro\UrlBreaks{\do\/\do\_\do\.\do\-}
+\makeatother
+\emergencystretch=2em
+
+\title{\textbf{GroundedReview: Evaluating Evidence Sufficiency \\
+in LLM-Based Code Review}}
+
+\author{Anonymous submission}
+\date{Working manuscript --- Paper Sprint v4 (submission finalization: independent v2 verification, corrected interaction), \today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_benchmark}
+\input{sections/04_conditions}
+\input{sections/05_dataset}
+\input{sections/06_setup}
+\input{sections/07_results}
+\input{sections/08_ablations}
+\input{sections/11_g4_intervention}
+\input{sections/09_threats}
+\input{sections/10_conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\appendix
+\input{sections/appendix}
+
+\end{document}

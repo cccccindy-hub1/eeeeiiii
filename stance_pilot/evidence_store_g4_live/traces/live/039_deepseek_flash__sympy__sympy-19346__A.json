@@ -1,0 +1,23 @@
+{
+  "serial": 39,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-19346",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentically linked to this patch and base commit (patch_sha256 and base_commit both match), and the issue-derived symptom probe shows the reported symptom is gone after the patch (srepr now recurses into set and dict elements). However, this is only a diagnostic-tier symptom probe. The maintainer acceptance-test outcomes (FAIL_TO_PASS / PASS_TO_PASS verdicts) are withheld and blocked (HTTP 403), and the freshness and declared-set coverage attestations are UNKNOWN on this surface. A passing symptom probe is explicitly not proof of merge acceptability, and no decisive applicable failure is established either. Therefore I cannot reach ACCEPT (complete, fresh, linked, failure-free success not demonstrated) nor REJECT (no credible applicable failing check).\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test verdicts (F2P and scoped P2P) for this patch/commit are withheld and unavailable; freshness and declared-set coverage attestations are UNKNOWN, so the declared acceptance/regression set is not shown to have been fully executed failure-free.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 3447,
+  "tokens_out": 247,
+  "cost_usd": 0.001331,
+  "served_model": "deepseek-flash",
+  "error": null
+}

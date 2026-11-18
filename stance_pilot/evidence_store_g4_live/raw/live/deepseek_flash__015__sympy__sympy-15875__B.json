@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage attestations are intact: the artifact is authentically signed, patch_sha256 and base_commit match this patch, the run tree equals the independently re-derived canonical tree (fresh=TRUE), and the declared set was fully executed (1/1 F2P, 80/80 scoped P2P). The issue-derived symptom probe also shows the symptom gone (pre-patch is_zero=False, post-patch is_zero=True). However, the outcome policy blocks all decisive pass/fail verdicts: F2P and P2P logs return 403/disabled, and the record explicitly withholds acceptance-test outcomes and regression verdicts. A removed symptom is not proof of merge acceptability, and no executed acceptance check or scoped regression verdict is available to confirm success. No decisive applicable failure is established either, so REJECT is not warranted. The bar for ACCEPT (complete, fresh, linked, failure-free success) is not met because pass/fail outcomes are unavailable.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Decisive maintainer acceptance-test (F2P) and scoped regression (P2P) pass/fail verdicts for this patch/commit are withheld; the f2p and p2p run logs are blocked (HTTP 403 / disabled under strict evidence policy), so success of the executed checks cannot be confirmed.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "bundle_sha256": "5144e881e6575559a4356f2fbdfeb67dabd28abfd8f61ecfc73f7aeda67fe254",
+  "cell": "B",
+  "cohort": "g3c1",
+  "cost_usd": 0.001642,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-15875",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.014992,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 15,
+  "tokens_in": 4248,
+  "tokens_in_est": 4712,
+  "tokens_out": 306,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.61,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

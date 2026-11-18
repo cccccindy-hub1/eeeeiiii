@@ -1,0 +1,23 @@
+{
+  "serial": 117,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-20590",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentic and linked to this patch (base_commit and patch_sha256 match), and the issue-derived symptom probe shows the symptom is gone after the patch (Symbol no longer carries an instance __dict__). However, the acceptance/regression evidence required for ACCEPT is not available: the freshness and coverage attestations are withheld (UNKNOWN), the scoped test files and declared F2P/P2P sets are UNKNOWN, and the maintainer acceptance-test outcomes (F2P/P2P verdicts) are blocked (HTTP 403 / disabled). No decisive applicable failure is established, so REJECT is not warranted; but complete, fresh, linked, failure-free success is not demonstrated either. The symptom probe alone is explicitly not proof of merge acceptability.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test outcomes (FAIL_TO_PASS and scoped PASS_TO_PASS verdicts) for this patch/commit are unavailable, and the declared-versus-executed coverage set is withheld (UNKNOWN). Need the f2p/p2p run logs or an adjudicated coverage/freshness attestation confirming the declared acceptance set was fully executed with no failures.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 3306,
+  "tokens_out": 267,
+  "cost_usd": 0.001312,
+  "served_model": "deepseek-flash",
+  "error": null
+}

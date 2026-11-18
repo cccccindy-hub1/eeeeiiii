@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch changes the dimension comparison in _collect_factor_and_dimension to use equivalent_dims, which correctly handles equivalent dimensions in addition. The provided acceptance test reproduces the original failure and passes with the patch applied, confirming the issue is resolved. The full acceptance test suite and scoped regression tests run cleanly with no failures or regressions. The test artifact is linked and fresh for this patch and commit tree. No applicable acceptance check fails and no scoped regression is introduced.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "b173760abb54daa670cebab7ef52c3208428508bb0ac5c833a7144bcdfb5b665",
+  "cell": "C",
+  "cohort": "g3a",
+  "cost_usd": 0.003508,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-24213",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.016971,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 133,
+  "tokens_in": 8299,
+  "tokens_in_est": 9660,
+  "tokens_out": 118,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 1.67,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

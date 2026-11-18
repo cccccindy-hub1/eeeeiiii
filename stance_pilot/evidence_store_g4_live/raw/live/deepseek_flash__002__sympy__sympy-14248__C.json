@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"The acceptance artifact is authentic and linked to this patch (base_commit and patch_sha256 match), and the run logs confirm the failures are caused by this patch, not by environment noise. Decisive applicable failures: (1) FAIL_TO_PASS test_MatrixSymbol_printing fails in the pretty printer: expected '-A*B -B*C + A*B*C' but got '-A*B - B*C + A*B*C' (spacing mismatch in the new _print_MatAdd). (2) Scoped regressions introduced by the patch: test_matMul (latex) and test_haramard (julia/octave) now raise 'TypeError: cannot determine truth value of Relational' at str.py:317 / latex.py:1524, from the new 'sign = \\\"-' if c < 0 else ''' comparison on a non-relational coefficient. The baseline run shows these tests passing before the patch, so they are genuine regressions. The author's claim that all relevant tests pass is contradicted.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "a64fd69d3efa8b1345c2f5066e6f60fd4f69c5d91c24a1bfc38177c0fe820638",
+  "cell": "C",
+  "cohort": "g3c1",
+  "cost_usd": 0.033359,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-14248",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.059008,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 2,
+  "tokens_in": 110201,
+  "tokens_in_est": 114752,
+  "tokens_out": 249,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 3.88,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

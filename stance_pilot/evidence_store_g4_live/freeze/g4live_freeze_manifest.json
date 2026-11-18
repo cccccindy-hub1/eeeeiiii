@@ -1,0 +1,2114 @@
+{
+  "manifest": "g4-live-freeze-manifest-v1",
+  "generated_utc": "2026-11-02T11:17:42Z",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "runner_version": "g4live-runner-v1",
+  "analysis_version": "g4-independent-analysis-v1",
+  "issues": 18,
+  "cells_per_issue": 4,
+  "models": 2,
+  "planned_slots": 144,
+  "live_raw_files": 144,
+  "one_call_per_cell": true,
+  "retries": 0,
+  "new_rows": {
+    "deepseek-flash": 72,
+    "gpt-4.1-mini": 72
+  },
+  "error_rows": {
+    "deepseek-flash": 0,
+    "gpt-4.1-mini": 0
+  },
+  "served_models_verified": {
+    "gpt-4.1-mini": {
+      "gpt-4.1-mini-2025-04-14": 72
+    },
+    "deepseek-flash": {
+      "deepseek-flash": 72
+    }
+  },
+  "reparse_mismatches": [],
+  "stats": {
+    "gpt-4.1-mini": {
+      "served": {
+        "gpt-4.1-mini-2025-04-14": 72
+      },
+      "verdict_matrix": {
+        "A": {
+          "NEED_EVIDENCE": 18
+        },
+        "B": {
+          "ACCEPT": 8,
+          "NEED_EVIDENCE": 10
+        },
+        "C": {
+          "ACCEPT": 13,
+          "REJECT": 4,
+          "NEED_EVIDENCE": 1
+        },
+        "D": {
+          "ACCEPT": 12,
+          "REJECT": 5,
+          "NEED_EVIDENCE": 1
+        }
+      },
+      "U": {
+        "A": 0,
+        "B": 8,
+        "C": 0,
+        "D": 0
+      },
+      "H1": {
+        "endpoint": "unsupported acceptance (ACCEPT when decisive result withheld; condition gold NEED_EVIDENCE)",
+        "n_pairs": 18,
+        "both_unsupported_n11": 0,
+        "both_not_n00": 10,
+        "A_yes_B_no_b": 0,
+        "A_no_B_yes_c": 8,
+        "discordant_n": 8,
+        "two_sided_exact_mcnemar_p": 0.0078125,
+        "paired_difference": -0.4444444444444444,
+        "issue_clustered_bootstrap95": [
+          -0.6666666666666666,
+          -0.2222222222222222
+        ],
+        "bootstrap_B": 20000,
+        "bootstrap_seed": 20261102,
+        "significant_0.05_two_sided": true
+      },
+      "CD": {
+        "oracle_match_C": [
+          17,
+          18
+        ],
+        "oracle_match_D": [
+          16,
+          18
+        ],
+        "U_C_on_rejects": 0,
+        "U_D_on_rejects": 0,
+        "two_sided_exact_p": 1.0
+      },
+      "cost_usd": 0.436378
+    },
+    "deepseek-flash": {
+      "served": {
+        "deepseek-flash": 72
+      },
+      "verdict_matrix": {
+        "A": {
+          "NEED_EVIDENCE": 18
+        },
+        "B": {
+          "NEED_EVIDENCE": 18
+        },
+        "C": {
+          "ACCEPT": 12,
+          "REJECT": 6
+        },
+        "D": {
+          "ACCEPT": 12,
+          "REJECT": 6
+        }
+      },
+      "U": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "H1": {
+        "endpoint": "unsupported acceptance (ACCEPT when decisive result withheld; condition gold NEED_EVIDENCE)",
+        "n_pairs": 18,
+        "both_unsupported_n11": 0,
+        "both_not_n00": 18,
+        "A_yes_B_no_b": 0,
+        "A_no_B_yes_c": 0,
+        "discordant_n": 0,
+        "two_sided_exact_mcnemar_p": 1.0,
+        "paired_difference": 0.0,
+        "issue_clustered_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "bootstrap_B": 20000,
+        "bootstrap_seed": 20261102,
+        "significant_0.05_two_sided": false
+      },
+      "CD": {
+        "oracle_match_C": [
+          17,
+          18
+        ],
+        "oracle_match_D": [
+          17,
+          18
+        ],
+        "U_C_on_rejects": 0,
+        "U_D_on_rejects": 0,
+        "two_sided_exact_p": 1.0
+      },
+      "cost_usd": 0.371011
+    }
+  },
+  "budget": {
+    "runner_audit_total_usd": 0.807389,
+    "recomputed_from_raw_total_usd": 0.807389,
+    "per_model_recomputed_usd": {
+      "gpt-4.1-mini": 0.436378,
+      "deepseek-flash": 0.371011
+    },
+    "per_model_audit_usd": {
+      "deepseek-flash": 0.371011,
+      "gpt-4.1-mini": 0.436378
+    },
+    "hard_cap_usd": 2.0,
+    "within_cap": true,
+    "calls_per_cell": 1,
+    "retries_per_cell": 0,
+    "gold_status": "PROVISIONAL; annotator2 NOT_OBTAINED"
+  },
+  "gold_status": "PROVISIONAL; annotator2 NOT_OBTAINED",
+  "human_adjudication": "annotator2 NOT_OBTAINED; no AI output used as human gold; gold not upgraded",
+  "git_committed": false,
+  "frozen_inputs_modified": false,
+  "n_files_hashed": 484,
+  "files": {
+    "evidence_store_g4_live/raw/live/deepseek_flash__000__sympy__sympy-14248__B.json": {
+      "sha256": "25102cf33e7303d553579e675523630c05e99516fbfed9dd5e9834801835a37d",
+      "bytes": 2619
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__001__sympy__sympy-14248__D.json": {
+      "sha256": "2ba2f0beaf676a5b5948281601a29b5a30184d1018570284098d81fde43ef6ee",
+      "bytes": 2448
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__002__sympy__sympy-14248__C.json": {
+      "sha256": "29e84b7cc1e93e9f80c5d90673f2456454f444d6275369b057c0d8ca9724eaf4",
+      "bytes": 2336
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__003__sympy__sympy-14248__A.json": {
+      "sha256": "844ed56b999c22f4b22e44f0343e58d5eda1186bd6764844c2db8eb7c121ea1f",
+      "bytes": 2628
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__008__sympy__sympy-15875__D.json": {
+      "sha256": "bbf990a7cc9671968738740a68a4a99f33560554070af6d8fa847899a722529f",
+      "bytes": 2403
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__009__sympy__sympy-15875__C.json": {
+      "sha256": "0d11eb33468283e7e28582e03fbfb299d8ba44544a208a8af48fdf00486a496d",
+      "bytes": 2395
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__010__sympy__sympy-15875__A.json": {
+      "sha256": "0f591bb54e52a56ff431a629cea5054f41a2b731b6c751d8301e2e9d26f826ca",
+      "bytes": 2580
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__015__sympy__sympy-15875__B.json": {
+      "sha256": "2ae7b32fefaceb2126e98ee137d3e0bbe962a69fb94c64e030c845e1b7a95419",
+      "bytes": 2722
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__016__sympy__sympy-16886__C.json": {
+      "sha256": "972b587d0bb5b473bdcd8c03ad6838546da8e5767e18f51311ae394c8cd5319a",
+      "bytes": 2457
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__017__sympy__sympy-16886__A.json": {
+      "sha256": "49ebc695a774753c6a15cbe3536a0325b8f54e01787fe76bedcf2f2855b38892",
+      "bytes": 2655
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__022__sympy__sympy-16886__B.json": {
+      "sha256": "fc85163191b5e711687617d726558964989b977d01f29308fc40404b4740f805",
+      "bytes": 2663
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__023__sympy__sympy-16886__D.json": {
+      "sha256": "2d2e924470910ac00cbaff6751fa457078af13683f42ae40b7a31ae03f2767c4",
+      "bytes": 2356
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__024__sympy__sympy-19040__A.json": {
+      "sha256": "6557ed5e493ebb82537f968bdf3c523fd18d137a21ba4243f282fd244341b6ee",
+      "bytes": 2752
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__029__sympy__sympy-19040__B.json": {
+      "sha256": "8c62bd00e1903461c7c86f426cb81f6e497bc9b454db0b833b67deeb42de7485",
+      "bytes": 2547
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__030__sympy__sympy-19040__D.json": {
+      "sha256": "78b3ccb81a370b20e0e27e5ea54db301ee809b97ccef4de3d96861549327ca24",
+      "bytes": 2530
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__031__sympy__sympy-19040__C.json": {
+      "sha256": "7e52bc5b48cc2062644265f0c86e0de6e24e6ec45f8d3d39db49eb75babdad5e",
+      "bytes": 2701
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__036__sympy__sympy-19346__B.json": {
+      "sha256": "a522d9932f84075cc2da943885d77587e9f3723aeb6ff7b79e0bec7c7fee2724",
+      "bytes": 2555
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__037__sympy__sympy-19346__D.json": {
+      "sha256": "6df3dd16ff67bd77f35c9ee03974bab3a3b4030e1ca1e1437847e005e13fbe20",
+      "bytes": 2478
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__038__sympy__sympy-19346__C.json": {
+      "sha256": "32737e0e67f6cfaf64062712d9449d9a57c50398fe4a6822e41827d73d9fbb25",
+      "bytes": 2645
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__039__sympy__sympy-19346__A.json": {
+      "sha256": "a7babb92b84bc515992031770e0a47c5830c807340b107ca2fa5a5f6812c2492",
+      "bytes": 2551
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__043__sympy__sympy-19495__B.json": {
+      "sha256": "ce64ef0effb2ea36d0cf9a7bbc7ee8b852a65bf803b551cafebbca4f4c98c940",
+      "bytes": 2788
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__044__sympy__sympy-19495__D.json": {
+      "sha256": "08246b2b8f2da847948b64382e3a91d8c459f8ffd10c9031dc5dc48ee3492621",
+      "bytes": 2532
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__045__sympy__sympy-19495__C.json": {
+      "sha256": "91de11804e333c56a591ba1701c580f5a2e7627b9a694bed297abd9c326b15bc",
+      "bytes": 2450
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__046__sympy__sympy-19495__A.json": {
+      "sha256": "4fb112e5939762498159a60879f4087b0b72430b057282d8998666c27a8fbe76",
+      "bytes": 2556
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__050__sympy__sympy-19637__B.json": {
+      "sha256": "ee21f95b32d636dd951cb1806cbaed285bded149bf14e6cf1d75c1da02ab0bce",
+      "bytes": 2587
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__051__sympy__sympy-19637__D.json": {
+      "sha256": "d029c8bb8472df63ffd0ccb0cf2dd947f45602a9458dbd02247d94cac0aa0ab3",
+      "bytes": 2567
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__052__sympy__sympy-19637__C.json": {
+      "sha256": "a7e05a6cfae4f72dd5911bc055512532809a1fbac70a4e80b8d8e2f69bd961f3",
+      "bytes": 2437
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__053__sympy__sympy-19637__A.json": {
+      "sha256": "fd5891cac0b550f963934e86d28f503af1d7cb7502460bd9d5e1ab9de219982d",
+      "bytes": 2609
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__057__sympy__sympy-22914__B.json": {
+      "sha256": "45ba1495738192bc5151cf97167b9f14284f5ca485cc31eb163df13e3e528a2f",
+      "bytes": 2599
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__058__sympy__sympy-22914__D.json": {
+      "sha256": "72d60836548029f18ac348fe3c089f4ad7d496bd7f8e822a3c32d80af6eb96ff",
+      "bytes": 2519
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__059__sympy__sympy-22914__C.json": {
+      "sha256": "6e4815897300bf7a112e7f747130bd3b150261e5f8bd43e777d8aa37b1a08769",
+      "bytes": 2280
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__060__sympy__sympy-22914__A.json": {
+      "sha256": "40abe75a78aeb41338321d3521317dd378a76302d729296847cc6b9c123cabb7",
+      "bytes": 2479
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__064__sympy__sympy-13615__B.json": {
+      "sha256": "0c73168bfd8f34748404876f73ee8012f351f77a925e7ff0cf03de7c1480fbab",
+      "bytes": 2588
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__065__sympy__sympy-13615__D.json": {
+      "sha256": "c9afe689e91cb99df630e5d914abd2b552d178be093cd0427d454e82d9d605d4",
+      "bytes": 2620
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__066__sympy__sympy-13615__C.json": {
+      "sha256": "d78ee75146e6d39fcec4cef59202583dba40567b43a19f633900e83429af76c8",
+      "bytes": 2569
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__067__sympy__sympy-13615__A.json": {
+      "sha256": "1f790ba3c6489f318adf51e86380cfcccce375bda60051eeeed6b05e7d92f69c",
+      "bytes": 2414
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__072__sympy__sympy-13974__D.json": {
+      "sha256": "975d9622779f4aa36ddb391bd398580513a2d78c3b10e46bdd0fcd3b83745362",
+      "bytes": 2163
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__073__sympy__sympy-13974__C.json": {
+      "sha256": "3fb32ab9bedfed8709629a9aeef7338971eb8aac637b62edc0ba9f6022ea2c71",
+      "bytes": 2441
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__074__sympy__sympy-13974__A.json": {
+      "sha256": "1412e51819fa8d736d91c87293fe49d3db1ae3bc0b7f91b496fb109de65f578b",
+      "bytes": 2847
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__079__sympy__sympy-13974__B.json": {
+      "sha256": "a474a4c6dac6b8756648f4a1f42626bc82e85d024fdf857138c58e3aa31a7d34",
+      "bytes": 2698
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__080__sympy__sympy-15349__C.json": {
+      "sha256": "798bb05f44b0a5c365d233d8184f235738a54a1029c207dd21604e5844e9d788",
+      "bytes": 2265
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__081__sympy__sympy-15349__A.json": {
+      "sha256": "d53227c7634d9d3d441041b31cd6419974697f026b074c5d1b28ccbdae67fcf0",
+      "bytes": 2538
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__086__sympy__sympy-15349__B.json": {
+      "sha256": "22cec884f06163d571c3ca4e6145f1809c5596473ff38e6ab17aeede48c54c95",
+      "bytes": 2733
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__087__sympy__sympy-15349__D.json": {
+      "sha256": "05119dc87377c9393624612d09901e73654d289c901bce4acfad399694be4927",
+      "bytes": 2436
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__088__sympy__sympy-17318__A.json": {
+      "sha256": "3eac9ac6a64b7891f0bf2032a16f8f8fb6a69dd003bebc881d25e0efdb51693f",
+      "bytes": 2466
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__093__sympy__sympy-17318__B.json": {
+      "sha256": "01adb3b0139e30a3e0af42a9d65f81300898936536354bde0b7bf82fd4128db8",
+      "bytes": 2573
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__094__sympy__sympy-17318__D.json": {
+      "sha256": "06439fbddb17cc0c185962127e496fc13146221249797321dc6c814774228072",
+      "bytes": 2261
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__095__sympy__sympy-17318__C.json": {
+      "sha256": "44494c49914334578b4f57aef497357d32dd623df362bd8416799cb88f0087f1",
+      "bytes": 2160
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__100__sympy__sympy-17630__B.json": {
+      "sha256": "cb79c622aa4f5cbdf019ee561425450f79b48cdb8321acf0c0e45461cf31109f",
+      "bytes": 2532
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__101__sympy__sympy-17630__D.json": {
+      "sha256": "d8c067cdf57c452014717bd60a5623b5ef20c5bb8c3e3f5a43e19b6d7ac1f55b",
+      "bytes": 2328
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__102__sympy__sympy-17630__C.json": {
+      "sha256": "7ab25c749debd22c9029d32e16c08185df8b2c41c2edf41e83dede13c81027eb",
+      "bytes": 2408
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__103__sympy__sympy-17630__A.json": {
+      "sha256": "2ad4cccd942516b309aedf79ef8b7a516a7b152fb7b746cf9abe1b9c8eb929ba",
+      "bytes": 2506
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__107__sympy__sympy-19783__B.json": {
+      "sha256": "0cc472ea1f96db6d7291357f7f78adba46a32421f5114dd9b37397ec9412a108",
+      "bytes": 2475
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__108__sympy__sympy-19783__D.json": {
+      "sha256": "2fc4e779811bb4dc2fd91dc7bb25bdc077da1be98d5c97629386b4263598a065",
+      "bytes": 2349
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__109__sympy__sympy-19783__C.json": {
+      "sha256": "e1e5a1c92ea28cdb38681156f4250e1f5ef534b7780c723e75d1c87b39302451",
+      "bytes": 2478
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__110__sympy__sympy-19783__A.json": {
+      "sha256": "b734ca24d9a3e9bbd66874832fad86e6f0b203bc0e649c1b5e939406bdbf2c8a",
+      "bytes": 2564
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__114__sympy__sympy-20590__B.json": {
+      "sha256": "5a767e76070353c8ebf092e7771abc2bed6a67bd5978248df59b394921943938",
+      "bytes": 2574
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__115__sympy__sympy-20590__D.json": {
+      "sha256": "8f7cf14d8e991c2929bd689c749b06818017f677262da6ad92598f8854273eff",
+      "bytes": 2220
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__116__sympy__sympy-20590__C.json": {
+      "sha256": "dead6f8275e6bd399c09664c7516ed9075e0e8187d31a1c55ca7ff37f04e784d",
+      "bytes": 2681
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__117__sympy__sympy-20590__A.json": {
+      "sha256": "3d441b440e18110da58baf4ce83456372f73215b2d58da6ce2d98ab1f1ad39db",
+      "bytes": 2591
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__121__sympy__sympy-21847__B.json": {
+      "sha256": "93aa9766850cdc3b26742ed589ee84323d2aef1d084dd963771b3966766499bb",
+      "bytes": 2476
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__122__sympy__sympy-21847__D.json": {
+      "sha256": "30b35758a7bb529e7c5bdcf0337f41cb6d21045de19f8594ecd00fb6d526bfa3",
+      "bytes": 2384
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__123__sympy__sympy-21847__C.json": {
+      "sha256": "1784f30d8875676c3c39548739819270093af7074ab5c6807930905f32edd966",
+      "bytes": 2512
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__124__sympy__sympy-21847__A.json": {
+      "sha256": "2f9ac8a8a752d0b9e2f276eb85980e1d63723664b3485aa26d255157cf6f3fda",
+      "bytes": 2564
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__128__sympy__sympy-24213__B.json": {
+      "sha256": "1eccb9cdaf9a6593789d2bd1516d947181c83e9391f73969b8df7502ca75f698",
+      "bytes": 2453
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__129__sympy__sympy-24213__D.json": {
+      "sha256": "1b7d8e43971f0436f19773b45ef9eca49e1b3f98c23ac63d8e0fe7b6d344d040",
+      "bytes": 2333
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__130__sympy__sympy-24213__C.json": {
+      "sha256": "5f4a8dbb63c7c6d71fed2deb7e81c1bb0e3c66b48e2566b5f2c123d186a147fa",
+      "bytes": 2780
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__131__sympy__sympy-24213__A.json": {
+      "sha256": "7e82bde4a41a2ba69781ef3d034cd310a6dc4583f2946d1128afa30fc05078e2",
+      "bytes": 2786
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__136__sympy__sympy-24443__D.json": {
+      "sha256": "73387882551a47e1d4e3942f8454786638ffdf5df1497857de5ae97dd0c1cafb",
+      "bytes": 2396
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__137__sympy__sympy-24443__C.json": {
+      "sha256": "d945bac9f6a442c9ef275d4c0f08b90f43be929ed4c983c5fd38ed1c871b76b3",
+      "bytes": 2406
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__138__sympy__sympy-24443__A.json": {
+      "sha256": "c6d7792005aafb2547e93e30959c5157495517cb9d5f28d6f5878891dc6cf3b1",
+      "bytes": 2673
+    },
+    "evidence_store_g4_live/raw/live/deepseek_flash__143__sympy__sympy-24443__B.json": {
+      "sha256": "e0ba9f096f8fcbcfb34698581df936c2ed4142f3c312fb0ae35444497ab8f287",
+      "bytes": 2539
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__004__sympy__sympy-14248__D.json": {
+      "sha256": "ac024766e26d1136d0051ccd0d538e8770da783763ad33977d9f4f3369c52957",
+      "bytes": 2262
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__005__sympy__sympy-14248__C.json": {
+      "sha256": "019e1515c27a898746b09f0a8e865b2bcc3b33a30fe6e28525022404ab328a2f",
+      "bytes": 1951
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__006__sympy__sympy-14248__B.json": {
+      "sha256": "e8bae6db6caea34f9afc8a40d1927c0c5517ddf23bbd25f8907a54a7fb12e1ec",
+      "bytes": 2093
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__007__sympy__sympy-14248__A.json": {
+      "sha256": "5264beaed38a3f60374ae55a3295951ce25a8be8152a379a04203229e32c287b",
+      "bytes": 1969
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__011__sympy__sympy-15875__D.json": {
+      "sha256": "88d4b32a651900d222f34da25ba5093315d88dbc5e2f5c452042a1c177e6bf99",
+      "bytes": 1888
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__012__sympy__sympy-15875__C.json": {
+      "sha256": "443a7546001a4dbcb76e7451b35cf879b981b697b850c9d9525bb1d580c34f3d",
+      "bytes": 1986
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__013__sympy__sympy-15875__B.json": {
+      "sha256": "efa88d6114768fdef6f3294388de51e83e7a36434c05edee241366f56c70e648",
+      "bytes": 1996
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__014__sympy__sympy-15875__A.json": {
+      "sha256": "cd4434254359cec63f2303986e8a3f5bf84516c26d8002e1cc9c2b38a4dedcfa",
+      "bytes": 2059
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__018__sympy__sympy-16886__D.json": {
+      "sha256": "7741cb4009de37702c3f7ad52ac488eafd5498c5795876ea20377894ea62c8d4",
+      "bytes": 1962
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__019__sympy__sympy-16886__C.json": {
+      "sha256": "7fda9e2194a962cf9a723e4db4e6a5728e86336d7773b37633f508733ce0a2b3",
+      "bytes": 1975
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__020__sympy__sympy-16886__B.json": {
+      "sha256": "0bbea6985f02f4b3539a361d8e85c534079b01ba18a93147b26ebb92620e008a",
+      "bytes": 2050
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__021__sympy__sympy-16886__A.json": {
+      "sha256": "dff0a94ce975ff49ba0318ed365a79c6cf5da724f13c4c9ce8fc4b31aa37bf08",
+      "bytes": 2003
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__025__sympy__sympy-19040__D.json": {
+      "sha256": "bf8a4193ff6183443dd96a15593d840a4c80dc49ccf5e735bad6f341b8bd8d70",
+      "bytes": 2162
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__026__sympy__sympy-19040__C.json": {
+      "sha256": "2b628da7225187cbf6435b48772c5526b3987bfde13ad6723c0471e8059ae253",
+      "bytes": 2126
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__027__sympy__sympy-19040__B.json": {
+      "sha256": "a805920795f025a5c14f66ee958e1d073bc08d4b2f4a5d342eaf9a9d60b8dabc",
+      "bytes": 2073
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__028__sympy__sympy-19040__A.json": {
+      "sha256": "f828f117b24d709d4bbccdb5f51448e146c9a599e9998efd73feb40a20a00459",
+      "bytes": 1920
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__032__sympy__sympy-19346__D.json": {
+      "sha256": "ac995bba22dda8367b879a28a633df3881b9969260d255b8f91521c257a33d96",
+      "bytes": 2271
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__033__sympy__sympy-19346__C.json": {
+      "sha256": "9001f9e62e631e251f82d3c8584b002ff5250028b55b346409f635eeff60eaf0",
+      "bytes": 2269
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__034__sympy__sympy-19346__B.json": {
+      "sha256": "800997a0742b0069a27bacb309a1472347914de7b88241c3ebe0c6ee2b87a017",
+      "bytes": 2084
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__035__sympy__sympy-19346__A.json": {
+      "sha256": "0df5cae6a3e4205b47222fe959f3c67a1523b3ef0f5e3565f5af1b6ee510f1ad",
+      "bytes": 1972
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__040__sympy__sympy-19495__C.json": {
+      "sha256": "16c545c54e791a3856f9723fed3c16c18396276b1ffb0c27d5fa865a77656fbc",
+      "bytes": 2220
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__041__sympy__sympy-19495__B.json": {
+      "sha256": "71b57a75d616724693bc0bee2b166e6343f9d58cd59ccd204a727d75c199d0cd",
+      "bytes": 2070
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__042__sympy__sympy-19495__A.json": {
+      "sha256": "4e80c0c70f7454aa985192b174a8cb95aee030af9c0282c5e4d37c788418eb48",
+      "bytes": 2072
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__047__sympy__sympy-19495__D.json": {
+      "sha256": "7876fb6d7590477cd8de28d56c774463c3013e574406b8496bab4ec787c6b3d7",
+      "bytes": 1907
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__048__sympy__sympy-19637__B.json": {
+      "sha256": "15ba75da7ef9454d7e4d530ebcc35c5250469b716566bd31a67e1e59c9b2b843",
+      "bytes": 2001
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__049__sympy__sympy-19637__A.json": {
+      "sha256": "30c61a291ce382c19870a696ae38225323f9bced596d5e749a8d67bfdef1e924",
+      "bytes": 1998
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__054__sympy__sympy-19637__D.json": {
+      "sha256": "86c0c39cbfa7d16f3d1ac163c4d007d1d88ac256a644faae71b2508d85bbd149",
+      "bytes": 2255
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__055__sympy__sympy-19637__C.json": {
+      "sha256": "0071705d059755495ac2bc866cfbe26bee740268cd91d1a907eaa22beb3ebe74",
+      "bytes": 2180
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__056__sympy__sympy-22914__A.json": {
+      "sha256": "d236a18b9db29c943385c52ed9cb24544eb1ba8add7ab5c091837ed9340b866a",
+      "bytes": 1971
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__061__sympy__sympy-22914__D.json": {
+      "sha256": "66462a99dbf52b9926161c2d0fbc854875a16e283e25ee5e3b44d4c423b8f738",
+      "bytes": 2006
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__062__sympy__sympy-22914__C.json": {
+      "sha256": "e0f98f6390d73b83bbc3a9aa1a9bd2c00c166761ac2b7f1e6b674723c4500433",
+      "bytes": 2023
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__063__sympy__sympy-22914__B.json": {
+      "sha256": "f70f49b26f8e4421369c2ad70a2c4ecebdea661424d961641667af31b7396d4b",
+      "bytes": 2095
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__068__sympy__sympy-13615__D.json": {
+      "sha256": "648106cd438a526626ae36cc2081625b9c88b32fee2dc5fe739d943b1d706d98",
+      "bytes": 2265
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__069__sympy__sympy-13615__C.json": {
+      "sha256": "5c93074cb031c91334c078b5b017174c25d9927d20e3b354816efd2eb96c2080",
+      "bytes": 2104
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__070__sympy__sympy-13615__B.json": {
+      "sha256": "7021f3782c48c2802f0a81d49e4c6888e041fc6153f3327c22051c7095ade1cb",
+      "bytes": 2060
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__071__sympy__sympy-13615__A.json": {
+      "sha256": "5b6aa6a42012bbf2919e5bc7f436a02b2cd8c457b01c1fe1e9190036dc7fb18b",
+      "bytes": 2040
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__075__sympy__sympy-13974__D.json": {
+      "sha256": "4cdba8039e79f9a89cd31caa64126fcc8238ace716453300652265a3c70631d3",
+      "bytes": 1925
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__076__sympy__sympy-13974__C.json": {
+      "sha256": "b05da9cc0f4d8a7c4c232f5ade9695f7a45bf84c945015e3aeb69f99fefa6382",
+      "bytes": 2112
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__077__sympy__sympy-13974__B.json": {
+      "sha256": "6644770833a6a837b1721eafba58aa3dc53c863b33f1000f1092bff055764fbe",
+      "bytes": 2206
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__078__sympy__sympy-13974__A.json": {
+      "sha256": "a80e610fe6e050f087aa5664d57664abcd98ec56cd33c9a40db363700a0eb9aa",
+      "bytes": 1976
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__082__sympy__sympy-15349__D.json": {
+      "sha256": "7a78d7f9f9149e38095699eafe05003ae6e1d83091e5e130d36efe7bb1af13ae",
+      "bytes": 2078
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__083__sympy__sympy-15349__C.json": {
+      "sha256": "dfe7e83b3dc360a42400785d2bcbd1f4e46a6bc23d6c1d8853e622fe04301594",
+      "bytes": 1984
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__084__sympy__sympy-15349__B.json": {
+      "sha256": "288124a9caa10846a56aedd260e0d6c3a5956b7350ddcc4722d6392928cb9cbb",
+      "bytes": 2010
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__085__sympy__sympy-15349__A.json": {
+      "sha256": "5c516ea5c334c860f1fac0c802fc78c116e24b135b80abf07c0e1428b1cdee72",
+      "bytes": 2014
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__089__sympy__sympy-17318__D.json": {
+      "sha256": "372591b651fce1dc7575f6fe23f06468393a4d01c6892e9a30e983f8ee77ddcc",
+      "bytes": 2048
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__090__sympy__sympy-17318__C.json": {
+      "sha256": "7b6fbf12394b196a63863328080bb8641b23232daf17f41971c98c2c6560b838",
+      "bytes": 1904
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__091__sympy__sympy-17318__B.json": {
+      "sha256": "224e16296136ac29926b545c28159316b9eb6678eb60a214907bc410716563e5",
+      "bytes": 2089
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__092__sympy__sympy-17318__A.json": {
+      "sha256": "d306d1de0781883fd5ce1b6713258290c7529f49552ce5a73273be81d25ed142",
+      "bytes": 1981
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__096__sympy__sympy-17630__D.json": {
+      "sha256": "e788c356d78364ab80130e9d17d7167fd7cdb3b07f0c845d86f70ab143319f14",
+      "bytes": 2249
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__097__sympy__sympy-17630__C.json": {
+      "sha256": "6ef3b02ec67632051057a16ded0c246e1b1fe9c5a08790c9286be4a96c475c82",
+      "bytes": 2298
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__098__sympy__sympy-17630__B.json": {
+      "sha256": "32ba55e8a09fb0348db7aa0dade1dc0b1c98305d56120124790a09ac749352b2",
+      "bytes": 2004
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__099__sympy__sympy-17630__A.json": {
+      "sha256": "c1eaa7551dc83d7ee53e5bd71c2c7fa0c8077dbdbc6ad272ae54bc71be8e361f",
+      "bytes": 1994
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__104__sympy__sympy-19783__C.json": {
+      "sha256": "bb8341056afb7006b763ffff6aeff8445f64ad5545de5d3baa5a78691d557fe6",
+      "bytes": 1939
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__105__sympy__sympy-19783__B.json": {
+      "sha256": "9e07bffdcf840763eaefa2c64fe57b4a8aee693482117bb3e6729ba3d9e6a39f",
+      "bytes": 2159
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__106__sympy__sympy-19783__A.json": {
+      "sha256": "0d794f1e48475d15e24f47d284c52b09d1de4417c13e221c315a4194082ef53e",
+      "bytes": 2052
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__111__sympy__sympy-19783__D.json": {
+      "sha256": "ca5abcd828fe7df5388e8d310703b6f6cbf3eb4132d6a1c46a8f3db6c1f68331",
+      "bytes": 1980
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__112__sympy__sympy-20590__B.json": {
+      "sha256": "f2c94a56a7597d80c6579232bb21df0a8d255f0869446f6c17de3f50acd1c759",
+      "bytes": 1979
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__113__sympy__sympy-20590__A.json": {
+      "sha256": "b84f3d862f73204ebd8fef669f36f0e60aaaeb9fbec0eec3cb86e6334403b494",
+      "bytes": 1973
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__118__sympy__sympy-20590__D.json": {
+      "sha256": "23e1810f68b9961e70840c0d6d4d3b8b970b78c666ac18c3f39697faea893bd5",
+      "bytes": 2156
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__119__sympy__sympy-20590__C.json": {
+      "sha256": "35f377cee971221c04e400908a70a89f299a2ba76a96f7eff2c27ccf8c008a2f",
+      "bytes": 2071
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__120__sympy__sympy-21847__A.json": {
+      "sha256": "9f064b8aa4c7d457c1775cca25fbe3d3af060aa45433a7f563ac832c7fb77d5b",
+      "bytes": 2081
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__125__sympy__sympy-21847__D.json": {
+      "sha256": "06faafaa5bd530fee6da4fe00a9958431731fad5ba6e5d66a90ecf619a64817c",
+      "bytes": 2119
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__126__sympy__sympy-21847__C.json": {
+      "sha256": "db2c83954f32c992ea985743008284f3268d32cf63375d1e73ec831f22f8c1f2",
+      "bytes": 2014
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__127__sympy__sympy-21847__B.json": {
+      "sha256": "3bee49f8c627f3011817e2c63a6715512bc1c248dd13d8fdab92474347caa389",
+      "bytes": 2077
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__132__sympy__sympy-24213__D.json": {
+      "sha256": "d6847bad8aa0d142ab84d22c6d163a343f50123656e6aa7a2355f37f404c9687",
+      "bytes": 2037
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__133__sympy__sympy-24213__C.json": {
+      "sha256": "f1b2098ecba599427b0146c11e2d38d5b6755d932d2ca31e6fc3ccdf16e3698a",
+      "bytes": 2014
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__134__sympy__sympy-24213__B.json": {
+      "sha256": "d16f6e5df44ad6be15dd140778f9a9f4f5a576576505dfb014fb75a1b9a8455d",
+      "bytes": 2053
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__135__sympy__sympy-24213__A.json": {
+      "sha256": "b043e23a47bcecdf3818d218394b0fa51be1037534694e8dddb9d1c3012e9a7d",
+      "bytes": 1977
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__139__sympy__sympy-24443__D.json": {
+      "sha256": "41d400f3757fc5c6e1c73b2a21359079ab16149e0323369e0d7dd16dcb059b70",
+      "bytes": 1949
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__140__sympy__sympy-24443__C.json": {
+      "sha256": "c873d9b07f1f385f0681f362b09c93d3fb752602d00e9df477150bae68c9421d",
+      "bytes": 1951
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__141__sympy__sympy-24443__B.json": {
+      "sha256": "9b96fceac412c77fec510a6c48f67442c24703a65d7032d504207d7743119411",
+      "bytes": 1987
+    },
+    "evidence_store_g4_live/raw/live/gpt_4.1_mini__142__sympy__sympy-24443__A.json": {
+      "sha256": "84b06bcc63cf451896dbb9f24a29d402ba592ff09487776379e79d78a855c5e4",
+      "bytes": 2016
+    },
+    "evidence_store_g4_live/runs/g4live_live_console.log": {
+      "sha256": "9a1d8ccb0f291389c2e96054051c5dafda0df008d446998b615fb0f9ebc9af5a",
+      "bytes": 17298
+    },
+    "evidence_store_g4_live/runs/g4live_live_deepseek_flash_results.jsonl": {
+      "sha256": "3a423238865c57951472527b4597eb66a9fe72b4b6c7328689ee03e747ded1dc",
+      "bytes": 266185
+    },
+    "evidence_store_g4_live/runs/g4live_live_gpt_41_mini_results.jsonl": {
+      "sha256": "47237e6165d8d8dd3119af713861ab6fd86fea1483810d975118d17b9725183a",
+      "bytes": 202040
+    },
+    "evidence_store_g4_live/runs/g4live_live_run_audit.json": {
+      "sha256": "b7a0d9ae4c5f7a73c8719d6f8899b1c45daf1dd27b7d10a3beac3281b5ecb969",
+      "bytes": 783
+    },
+    "evidence_store_g4_live/runs/g4live_mock_deepseek_flash_results.jsonl": {
+      "sha256": "7f09c36dcb89f92067fe8fc462c20d7896c485d6885687d2e8cf2e684c2854b2",
+      "bytes": 102970
+    },
+    "evidence_store_g4_live/runs/g4live_mock_gpt_41_mini_results.jsonl": {
+      "sha256": "e6d28fcc72b806b1fdfea7ada68a575128e3860f3593d7ba24f95d0908b3f521",
+      "bytes": 103184
+    },
+    "evidence_store_g4_live/runs/g4live_mock_run_audit.json": {
+      "sha256": "7d7183687b20aef5f5fd1444022d2b8adb5115303c40e1e9b0ad187d304772bb",
+      "bytes": 768
+    },
+    "evidence_store_g4_live/traces/live/000_deepseek_flash__sympy__sympy-14248__B.json": {
+      "sha256": "b445c7096f71d17d7f5c056c3060bb93ae6374dc8d0ef639f6837205f2b00a33",
+      "bytes": 1789
+    },
+    "evidence_store_g4_live/traces/live/001_deepseek_flash__sympy__sympy-14248__D.json": {
+      "sha256": "501b37da73aa851900b70596325722accdf4ada108416a159ecd0e4e40ea1783",
+      "bytes": 1610
+    },
+    "evidence_store_g4_live/traces/live/002_deepseek_flash__sympy__sympy-14248__C.json": {
+      "sha256": "d7a074c4a15f6905ae76eb0a053efee07fa7d30d352e4b182473098336a7a5fa",
+      "bytes": 1497
+    },
+    "evidence_store_g4_live/traces/live/003_deepseek_flash__sympy__sympy-14248__A.json": {
+      "sha256": "c18e8924d6757006883ca1d5ac17916bbdf9f1111b996880cdbf33e5d09a0889",
+      "bytes": 1799
+    },
+    "evidence_store_g4_live/traces/live/004_gpt_4.1_mini__sympy__sympy-14248__D.json": {
+      "sha256": "a0c92f5b5d77a3df58d0150d05a50af45b2ec5ef74879bf8733ce55182e7bb9f",
+      "bytes": 1448
+    },
+    "evidence_store_g4_live/traces/live/005_gpt_4.1_mini__sympy__sympy-14248__C.json": {
+      "sha256": "7bbc295a811111ada510f27c07257f94ae8b232a9a21a68795e31e4bb1349e92",
+      "bytes": 1135
+    },
+    "evidence_store_g4_live/traces/live/006_gpt_4.1_mini__sympy__sympy-14248__B.json": {
+      "sha256": "52d96f87e0e19b434848001dff48ded135101495385016837b41f0953c00328a",
+      "bytes": 1278
+    },
+    "evidence_store_g4_live/traces/live/007_gpt_4.1_mini__sympy__sympy-14248__A.json": {
+      "sha256": "1055d14b127d31d9f97a5aca1498805cc706ff9d1656735143b645e0b6770295",
+      "bytes": 1163
+    },
+    "evidence_store_g4_live/traces/live/008_deepseek_flash__sympy__sympy-15875__D.json": {
+      "sha256": "e668d06a3926b55dca5f9c8a2c3717cbb60996a404fb4687a363c9d88878a939",
+      "bytes": 1565
+    },
+    "evidence_store_g4_live/traces/live/009_deepseek_flash__sympy__sympy-15875__C.json": {
+      "sha256": "a921059e4b06aea3b95d20d2db63fe228fd6879e2d7ef2a34aeb11d5ef1963f6",
+      "bytes": 1557
+    },
+    "evidence_store_g4_live/traces/live/010_deepseek_flash__sympy__sympy-15875__A.json": {
+      "sha256": "4a64f3f3042a821adcd7948833244a85aa1c535119e73d6722df8d5ef1904e45",
+      "bytes": 1750
+    },
+    "evidence_store_g4_live/traces/live/011_gpt_4.1_mini__sympy__sympy-15875__D.json": {
+      "sha256": "daf8a70366f2f375d502a5e28078d863f6958ad240cdd09ec7d84017b3ffc186",
+      "bytes": 1073
+    },
+    "evidence_store_g4_live/traces/live/012_gpt_4.1_mini__sympy__sympy-15875__C.json": {
+      "sha256": "2f805b8744e5f726a9bbdcc1334fbc04a5c69e099ddb54c8e6b494130897dbd9",
+      "bytes": 1171
+    },
+    "evidence_store_g4_live/traces/live/013_gpt_4.1_mini__sympy__sympy-15875__B.json": {
+      "sha256": "a3b7af04daeb788e30bd8e18a640b5d9bea9b7efbc6dd37237fc80d11fa3e2cd",
+      "bytes": 1181
+    },
+    "evidence_store_g4_live/traces/live/014_gpt_4.1_mini__sympy__sympy-15875__A.json": {
+      "sha256": "ea9574afec3fb424ad32d38566aa6581cf34886defd69c2aa73c330a6323fb2b",
+      "bytes": 1252
+    },
+    "evidence_store_g4_live/traces/live/015_deepseek_flash__sympy__sympy-15875__B.json": {
+      "sha256": "aec36bed71b8fdb28515e976da64981152ca58b22c647c3d7eb00a4ec24ec50b",
+      "bytes": 1892
+    },
+    "evidence_store_g4_live/traces/live/016_deepseek_flash__sympy__sympy-16886__C.json": {
+      "sha256": "dfba07d5d051be464ec05d1fe0e6c659b0b5463bfa4fcd61cb08898426862904",
+      "bytes": 1620
+    },
+    "evidence_store_g4_live/traces/live/017_deepseek_flash__sympy__sympy-16886__A.json": {
+      "sha256": "cf55cddd4cc4e3973456810b5fc7153931f676656322794e1a5975c10b030d18",
+      "bytes": 1825
+    },
+    "evidence_store_g4_live/traces/live/018_gpt_4.1_mini__sympy__sympy-16886__D.json": {
+      "sha256": "c34f5c4ab7ed95b0b6c0c8e4ba72de30cd729da1617288c710a7007236ed7501",
+      "bytes": 1147
+    },
+    "evidence_store_g4_live/traces/live/019_gpt_4.1_mini__sympy__sympy-16886__C.json": {
+      "sha256": "420a59c3f1d91cc11585e913a2efd0f0eac6d2068b6c72b3dc2c35b9599acf48",
+      "bytes": 1160
+    },
+    "evidence_store_g4_live/traces/live/020_gpt_4.1_mini__sympy__sympy-16886__B.json": {
+      "sha256": "46cb0aafcceb5b098951dc85dda2886d0d2db0f4030401f7ce15bee652a284af",
+      "bytes": 1235
+    },
+    "evidence_store_g4_live/traces/live/021_gpt_4.1_mini__sympy__sympy-16886__A.json": {
+      "sha256": "40980672f8204166a75389f29190da15d8a550edee041ee07aec789e76dda5d9",
+      "bytes": 1196
+    },
+    "evidence_store_g4_live/traces/live/022_deepseek_flash__sympy__sympy-16886__B.json": {
+      "sha256": "54a620173f1bccd19ba07f2ffb8dd0f6f2d3c662a6607d2e1daa84f02f79e763",
+      "bytes": 1834
+    },
+    "evidence_store_g4_live/traces/live/023_deepseek_flash__sympy__sympy-16886__D.json": {
+      "sha256": "5f240b8a4292b894ef52adba52839a1fb48c17119ddc6845da30bd58933fd5c5",
+      "bytes": 1518
+    },
+    "evidence_store_g4_live/traces/live/024_deepseek_flash__sympy__sympy-19040__A.json": {
+      "sha256": "73fd248c0ada7ccb0a9bb35571b725ac7c43387516b555254f81cb3e3eb6e7a5",
+      "bytes": 1922
+    },
+    "evidence_store_g4_live/traces/live/025_gpt_4.1_mini__sympy__sympy-19040__D.json": {
+      "sha256": "9ebb302c5aaf491497c8987a61f6b8aed3a15aa6f12a40bebd489a3a872b5ed4",
+      "bytes": 1348
+    },
+    "evidence_store_g4_live/traces/live/026_gpt_4.1_mini__sympy__sympy-19040__C.json": {
+      "sha256": "6e7f55f7e4aa5c0e0433899b15cc0a8380ad13f65de50185591f83751e3da85b",
+      "bytes": 1311
+    },
+    "evidence_store_g4_live/traces/live/027_gpt_4.1_mini__sympy__sympy-19040__B.json": {
+      "sha256": "a2fceed74a29dd73c24e1764e5e900d14227aa40420340d8fbb6a0f418856637",
+      "bytes": 1266
+    },
+    "evidence_store_g4_live/traces/live/028_gpt_4.1_mini__sympy__sympy-19040__A.json": {
+      "sha256": "31c98b5dd1df3aa5a54dc188f108e3e7bc70f0595c180e604e8c728f1171ec24",
+      "bytes": 1113
+    },
+    "evidence_store_g4_live/traces/live/029_deepseek_flash__sympy__sympy-19040__B.json": {
+      "sha256": "16e20926fd5c81c6488ad4cf65bb9b07dc99f7ec9a06c25c91e45f7c039475fc",
+      "bytes": 1717
+    },
+    "evidence_store_g4_live/traces/live/030_deepseek_flash__sympy__sympy-19040__D.json": {
+      "sha256": "22ccd4e76e1d4bde235807468bfeb5ef17ccf2775bfeb57fac95ff2e6b959d4d",
+      "bytes": 1692
+    },
+    "evidence_store_g4_live/traces/live/031_deepseek_flash__sympy__sympy-19040__C.json": {
+      "sha256": "6ad2126e0f6d0412ff6021dec71cc3950b017dca6706e8d6eb3ac80fdda95f9b",
+      "bytes": 1863
+    },
+    "evidence_store_g4_live/traces/live/032_gpt_4.1_mini__sympy__sympy-19346__D.json": {
+      "sha256": "f762fde7d1868622411d00c18d335833c62539ef93e215487b626552b97990a5",
+      "bytes": 1457
+    },
+    "evidence_store_g4_live/traces/live/033_gpt_4.1_mini__sympy__sympy-19346__C.json": {
+      "sha256": "0291f2546807aab8cc45d57d4bf9adbd01e977d44bd1070b9b26f3311f6cd43b",
+      "bytes": 1454
+    },
+    "evidence_store_g4_live/traces/live/034_gpt_4.1_mini__sympy__sympy-19346__B.json": {
+      "sha256": "2b33d5de025de7aeeba8cb1c7a1c2f5a31ffb30468213b71dd2773978504f935",
+      "bytes": 1278
+    },
+    "evidence_store_g4_live/traces/live/035_gpt_4.1_mini__sympy__sympy-19346__A.json": {
+      "sha256": "1d2e3b99af8f6389374f0ef83926351a54c331a6a7b55290f131c6a28ab2608d",
+      "bytes": 1165
+    },
+    "evidence_store_g4_live/traces/live/036_deepseek_flash__sympy__sympy-19346__B.json": {
+      "sha256": "78da0ddb653d5a73ec330381780012a7e11d7a058c1fed3297b06e5566901454",
+      "bytes": 1727
+    },
+    "evidence_store_g4_live/traces/live/037_deepseek_flash__sympy__sympy-19346__D.json": {
+      "sha256": "805bc00f8816f078f513d6de5c44839062bc615f439e020aadfd57aa1ceb6cf0",
+      "bytes": 1641
+    },
+    "evidence_store_g4_live/traces/live/038_deepseek_flash__sympy__sympy-19346__C.json": {
+      "sha256": "ad191004486bd30f8c3008638e935d4f597cf0f1639a1396277eab39170e8765",
+      "bytes": 1809
+    },
+    "evidence_store_g4_live/traces/live/039_deepseek_flash__sympy__sympy-19346__A.json": {
+      "sha256": "105ab0002ca93eb8615cf1d4e31d812ece3e74a84069d3ad739e2dc409698821",
+      "bytes": 1721
+    },
+    "evidence_store_g4_live/traces/live/040_gpt_4.1_mini__sympy__sympy-19495__C.json": {
+      "sha256": "f943cac6d5765865ff910efc55840b535eb81458e9380ef7956e70b688748729",
+      "bytes": 1405
+    },
+    "evidence_store_g4_live/traces/live/041_gpt_4.1_mini__sympy__sympy-19495__B.json": {
+      "sha256": "bb0be2288f274550f46b62772d4429bcf76f5ad9dd42bdd25c152300378645bb",
+      "bytes": 1255
+    },
+    "evidence_store_g4_live/traces/live/042_gpt_4.1_mini__sympy__sympy-19495__A.json": {
+      "sha256": "ec059df198894e396e07c906ab38af8b3ca82b088c5ad6bf5836a1703ae6fe8c",
+      "bytes": 1265
+    },
+    "evidence_store_g4_live/traces/live/043_deepseek_flash__sympy__sympy-19495__B.json": {
+      "sha256": "ed3edd773e87c18417fe69b01b43a0ccd32880d957dfc6d6c0acf616d24f5de9",
+      "bytes": 1958
+    },
+    "evidence_store_g4_live/traces/live/044_deepseek_flash__sympy__sympy-19495__D.json": {
+      "sha256": "dc9df739abfe39c5482e56e9a5c1a9bd94ca404a7f67b04bb725c4f00f78fc95",
+      "bytes": 1694
+    },
+    "evidence_store_g4_live/traces/live/045_deepseek_flash__sympy__sympy-19495__C.json": {
+      "sha256": "f500544d19d698da9ae249411783437406cb5e3f9f87db79a5bd2ee4f21b5f7a",
+      "bytes": 1612
+    },
+    "evidence_store_g4_live/traces/live/046_deepseek_flash__sympy__sympy-19495__A.json": {
+      "sha256": "95fa23be2bd54e4a05cf2cba9a69fbbb96406433feac8913209844599df4187f",
+      "bytes": 1726
+    },
+    "evidence_store_g4_live/traces/live/047_gpt_4.1_mini__sympy__sympy-19495__D.json": {
+      "sha256": "49419ea294fa3d6579ebb268dbad82be1ec3f05231b5162d70172d17b194bd81",
+      "bytes": 1092
+    },
+    "evidence_store_g4_live/traces/live/048_gpt_4.1_mini__sympy__sympy-19637__B.json": {
+      "sha256": "d9d8091e575eb85442f1c2067c33d7e65f0ba692e5d86d3c261ccbda758b3abf",
+      "bytes": 1194
+    },
+    "evidence_store_g4_live/traces/live/049_gpt_4.1_mini__sympy__sympy-19637__A.json": {
+      "sha256": "d4f8c9459e483f8c775ec841ef6c94ac5c9281ff4cb86bce0e2aed877f144faa",
+      "bytes": 1191
+    },
+    "evidence_store_g4_live/traces/live/050_deepseek_flash__sympy__sympy-19637__B.json": {
+      "sha256": "69e501289f49fa8e33f314b6a9696d220e666e6a4a51d61ce54c4a0b48c5f2fa",
+      "bytes": 1758
+    },
+    "evidence_store_g4_live/traces/live/051_deepseek_flash__sympy__sympy-19637__D.json": {
+      "sha256": "83bd44d94c2d9cd2bcf758ec21a6b405ec5e288b91bdc575f1882a39e376406a",
+      "bytes": 1729
+    },
+    "evidence_store_g4_live/traces/live/052_deepseek_flash__sympy__sympy-19637__C.json": {
+      "sha256": "c107119275de1aeeb907b6474aae079ef6871c84f94e6c80bc4167024c714577",
+      "bytes": 1600
+    },
+    "evidence_store_g4_live/traces/live/053_deepseek_flash__sympy__sympy-19637__A.json": {
+      "sha256": "ad65a8aa105be9936597df1479db40111a390ef64a9b921dce0679e33e6211e2",
+      "bytes": 1779
+    },
+    "evidence_store_g4_live/traces/live/054_gpt_4.1_mini__sympy__sympy-19637__D.json": {
+      "sha256": "28de6a27522fe043c33412165818525052177f4a09ce5ff7223237bc335609b6",
+      "bytes": 1440
+    },
+    "evidence_store_g4_live/traces/live/055_gpt_4.1_mini__sympy__sympy-19637__C.json": {
+      "sha256": "fcb5344ce3a3d3b75de9c44b96b4087ab6c1f8687d332e8d58634bab770ccb76",
+      "bytes": 1366
+    },
+    "evidence_store_g4_live/traces/live/056_gpt_4.1_mini__sympy__sympy-22914__A.json": {
+      "sha256": "0bd31b4ca60c9c507d968719279378d9bf39892fe7d409bee1a855bda45187d9",
+      "bytes": 1164
+    },
+    "evidence_store_g4_live/traces/live/057_deepseek_flash__sympy__sympy-22914__B.json": {
+      "sha256": "9c65d6322b3665b52c5f7c3aa286111223295c6890746f00e431660058dbeec2",
+      "bytes": 1769
+    },
+    "evidence_store_g4_live/traces/live/058_deepseek_flash__sympy__sympy-22914__D.json": {
+      "sha256": "fb8598c2fd2906514cc00cf7af7f629d72704e90219ee2387fafa21713a5ce3c",
+      "bytes": 1681
+    },
+    "evidence_store_g4_live/traces/live/059_deepseek_flash__sympy__sympy-22914__C.json": {
+      "sha256": "3e4bbab7bb53e1f07864f4da1c9a4a05039574a2f2920c8176f85cf7bb551dc8",
+      "bytes": 1442
+    },
+    "evidence_store_g4_live/traces/live/060_deepseek_flash__sympy__sympy-22914__A.json": {
+      "sha256": "4e6b0c81f3e819f7ae6216b433d8a701f7e532e8c29e5412556d40ceb28294b0",
+      "bytes": 1650
+    },
+    "evidence_store_g4_live/traces/live/061_gpt_4.1_mini__sympy__sympy-22914__D.json": {
+      "sha256": "52467ec2d14a10e9fec4c034ae26d7b02666eac27d00f3a3579428f21d4f2e3d",
+      "bytes": 1191
+    },
+    "evidence_store_g4_live/traces/live/062_gpt_4.1_mini__sympy__sympy-22914__C.json": {
+      "sha256": "566729e26c608c69c4b55f69818ad702eea4bf2af208c0e3423cc6809a382177",
+      "bytes": 1208
+    },
+    "evidence_store_g4_live/traces/live/063_gpt_4.1_mini__sympy__sympy-22914__B.json": {
+      "sha256": "5a81963a03fe60f02a71cef5d733e64da525323f0c42aece36c9f9ebd9fd3d9d",
+      "bytes": 1280
+    },
+    "evidence_store_g4_live/traces/live/064_deepseek_flash__sympy__sympy-13615__B.json": {
+      "sha256": "1a4a8cdfbb2667b62c1ec0ae1e1d395cb8f8f5d08923151f328a751f2217ee57",
+      "bytes": 1760
+    },
+    "evidence_store_g4_live/traces/live/065_deepseek_flash__sympy__sympy-13615__D.json": {
+      "sha256": "a8e845115be8fc77e12b86be7f8394897f9b6340300ceb61a8edd35fc5fd9ec3",
+      "bytes": 1783
+    },
+    "evidence_store_g4_live/traces/live/066_deepseek_flash__sympy__sympy-13615__C.json": {
+      "sha256": "49c872dd6617635a83445915616977a6478ddab0444c6cacf146163b009ec090",
+      "bytes": 1732
+    },
+    "evidence_store_g4_live/traces/live/067_deepseek_flash__sympy__sympy-13615__A.json": {
+      "sha256": "aa445f5257a7cfae876203cae92fb9bc8716da557427c90d1a7a4000629b2020",
+      "bytes": 1585
+    },
+    "evidence_store_g4_live/traces/live/068_gpt_4.1_mini__sympy__sympy-13615__D.json": {
+      "sha256": "ed9306f627ba52a87ff1dc00d8b17ced5556cb9eacdb287a5ae06fc5a220cef9",
+      "bytes": 1451
+    },
+    "evidence_store_g4_live/traces/live/069_gpt_4.1_mini__sympy__sympy-13615__C.json": {
+      "sha256": "978c0673135ecac07a3868c3b71c3bfedd0d36028fa210a7c3360293cc8982c9",
+      "bytes": 1290
+    },
+    "evidence_store_g4_live/traces/live/070_gpt_4.1_mini__sympy__sympy-13615__B.json": {
+      "sha256": "41233d7361f02b3a492203e8fc9f27c7d36d4ef3dcf2639c4fc42bf1262f98bf",
+      "bytes": 1246
+    },
+    "evidence_store_g4_live/traces/live/071_gpt_4.1_mini__sympy__sympy-13615__A.json": {
+      "sha256": "1766837c0e3e52a80f4a9db82647f51a069e91ad9196fd73f367f46dfe1b8b37",
+      "bytes": 1234
+    },
+    "evidence_store_g4_live/traces/live/072_deepseek_flash__sympy__sympy-13974__D.json": {
+      "sha256": "06f91df202a69c42c94861cfbc97cd88578de744d80b43c87ee306638bbd4209",
+      "bytes": 1327
+    },
+    "evidence_store_g4_live/traces/live/073_deepseek_flash__sympy__sympy-13974__C.json": {
+      "sha256": "51a6fbe23a0f33e05e48e2cfd0aa2e4e0baf1534733576783fc8dd0b9f0cf401",
+      "bytes": 1605
+    },
+    "evidence_store_g4_live/traces/live/074_deepseek_flash__sympy__sympy-13974__A.json": {
+      "sha256": "51a7d8c5a5e2b12a009b117bcd89cd69f702e3e01977e0b81e749fe77406bf38",
+      "bytes": 2018
+    },
+    "evidence_store_g4_live/traces/live/075_gpt_4.1_mini__sympy__sympy-13974__D.json": {
+      "sha256": "0847f1155b2cc4e79feac5c4f500b03a0221fe0bb22375e47fce81bc5cd08179",
+      "bytes": 1112
+    },
+    "evidence_store_g4_live/traces/live/076_gpt_4.1_mini__sympy__sympy-13974__C.json": {
+      "sha256": "1ff173050a43134a2d470e86586990dc08ef0e8298bbdd23c1e9ead6cbae63fa",
+      "bytes": 1299
+    },
+    "evidence_store_g4_live/traces/live/077_gpt_4.1_mini__sympy__sympy-13974__B.json": {
+      "sha256": "5dd7a58b6b79a7faee8cd95697b4f7a2b120da6962d2c572d9f147916dd278c9",
+      "bytes": 1392
+    },
+    "evidence_store_g4_live/traces/live/078_gpt_4.1_mini__sympy__sympy-13974__A.json": {
+      "sha256": "1219ead36024e0c59c2f546e96e5fd71bd34fb14955548897029fbdf37a41484",
+      "bytes": 1170
+    },
+    "evidence_store_g4_live/traces/live/079_deepseek_flash__sympy__sympy-13974__B.json": {
+      "sha256": "b61b163cdaba473683e3189d1026840848db333cc73ecc7956b2816a1efb2c4d",
+      "bytes": 1869
+    },
+    "evidence_store_g4_live/traces/live/080_deepseek_flash__sympy__sympy-15349__C.json": {
+      "sha256": "9fac43e222814ec0e7b932047dfaa5c9b1c1c46e6bc7d31da0c11a5d4b8825ee",
+      "bytes": 1429
+    },
+    "evidence_store_g4_live/traces/live/081_deepseek_flash__sympy__sympy-15349__A.json": {
+      "sha256": "239b1582d41659dde514cd56657b02387c3a370e9264e13f7da948d2efedee52",
+      "bytes": 1709
+    },
+    "evidence_store_g4_live/traces/live/082_gpt_4.1_mini__sympy__sympy-15349__D.json": {
+      "sha256": "71ca33fae09e3e3350e7d9a3036ad7bf0463997ba4fb94a60a578ad407cabd4c",
+      "bytes": 1265
+    },
+    "evidence_store_g4_live/traces/live/083_gpt_4.1_mini__sympy__sympy-15349__C.json": {
+      "sha256": "e581abdff394adf06342de10f82d3a02ad348b1e8e30c4631a5ed256cb200ba5",
+      "bytes": 1171
+    },
+    "evidence_store_g4_live/traces/live/084_gpt_4.1_mini__sympy__sympy-15349__B.json": {
+      "sha256": "8c3b88c0ec0cc2c705808691965fa4ea85f241e046945741be379ebc39d67235",
+      "bytes": 1196
+    },
+    "evidence_store_g4_live/traces/live/085_gpt_4.1_mini__sympy__sympy-15349__A.json": {
+      "sha256": "b25aed651b4b406bfb1577562e0bd1300585f671a1dbaee2b742e051e5c73ff0",
+      "bytes": 1208
+    },
+    "evidence_store_g4_live/traces/live/086_deepseek_flash__sympy__sympy-15349__B.json": {
+      "sha256": "0ae29a2a3f3c9ff60047a49fa4e23b5b7d8e9d1373143865e17c54a981fd0eb2",
+      "bytes": 1905
+    },
+    "evidence_store_g4_live/traces/live/087_deepseek_flash__sympy__sympy-15349__D.json": {
+      "sha256": "09acdf492b3aedc40d20509abc7f7d7dc689e700cabc22e2f9b4039d8a045823",
+      "bytes": 1600
+    },
+    "evidence_store_g4_live/traces/live/088_deepseek_flash__sympy__sympy-17318__A.json": {
+      "sha256": "287958e33132b2a93121b7983b1c967edb78080a3ddabefd0bb59e3190dc8251",
+      "bytes": 1638
+    },
+    "evidence_store_g4_live/traces/live/089_gpt_4.1_mini__sympy__sympy-17318__D.json": {
+      "sha256": "a75d1719d30192a4572c8d90ed41b7788ebb8c6e9c2afa48d812f39cf23e290d",
+      "bytes": 1236
+    },
+    "evidence_store_g4_live/traces/live/090_gpt_4.1_mini__sympy__sympy-17318__C.json": {
+      "sha256": "5f443f8dc32c6def20bd18bb9886c07fe7d4d78ec1e4ac1bf8e53feba343a4da",
+      "bytes": 1091
+    },
+    "evidence_store_g4_live/traces/live/091_gpt_4.1_mini__sympy__sympy-17318__B.json": {
+      "sha256": "0c8ff99aea4dcd0d418a84669bd4f499ba6662deee512ae4d770aa0b621cdd86",
+      "bytes": 1283
+    },
+    "evidence_store_g4_live/traces/live/092_gpt_4.1_mini__sympy__sympy-17318__A.json": {
+      "sha256": "83eefa95de2dd5783c7c2ab3232c5d3a436d6c792ea1143c5c453df4aeae6fe6",
+      "bytes": 1176
+    },
+    "evidence_store_g4_live/traces/live/093_deepseek_flash__sympy__sympy-17318__B.json": {
+      "sha256": "98d08284fb3d020ed9ffb2e78d9a5916c75171b73198d8f6c45707859936777f",
+      "bytes": 1744
+    },
+    "evidence_store_g4_live/traces/live/094_deepseek_flash__sympy__sympy-17318__D.json": {
+      "sha256": "17b7c2d99c8697f38a683c5bb72553cce9d7cff11ccbe4823bf034e7efee2e21",
+      "bytes": 1425
+    },
+    "evidence_store_g4_live/traces/live/095_deepseek_flash__sympy__sympy-17318__C.json": {
+      "sha256": "7487c23ad6b30709c5dcc99464b18073cf62f1173b7c7ad8d1f1094b83c712f5",
+      "bytes": 1324
+    },
+    "evidence_store_g4_live/traces/live/096_gpt_4.1_mini__sympy__sympy-17630__D.json": {
+      "sha256": "77731c6b307c8e6b93cf345eb8da5dd5323ff9d2f65fbb03d32aaf4d95f2b842",
+      "bytes": 1444
+    },
+    "evidence_store_g4_live/traces/live/097_gpt_4.1_mini__sympy__sympy-17630__C.json": {
+      "sha256": "fa20870c289cec9dcd6fec4a25d9100e6e9fdc5a29047a43e06474d2c3d92429",
+      "bytes": 1492
+    },
+    "evidence_store_g4_live/traces/live/098_gpt_4.1_mini__sympy__sympy-17630__B.json": {
+      "sha256": "37e9d367bc4b03e7181ed088c897fc953d053f2337615bb9628ff31bfd1d78f1",
+      "bytes": 1198
+    },
+    "evidence_store_g4_live/traces/live/099_gpt_4.1_mini__sympy__sympy-17630__A.json": {
+      "sha256": "42a991ca0913a383195c7d56b35839de388c85342794a17a1b78ac0b6fb89f36",
+      "bytes": 1188
+    },
+    "evidence_store_g4_live/traces/live/100_deepseek_flash__sympy__sympy-17630__B.json": {
+      "sha256": "cc9e60b4fcb7516b8f75fad0776f70e0406d7e4c0fc43b0979e24aff42343f87",
+      "bytes": 1703
+    },
+    "evidence_store_g4_live/traces/live/101_deepseek_flash__sympy__sympy-17630__D.json": {
+      "sha256": "97e8efff0069b6af13e06bdc7118f4b53a0cdce6214b2640e039b6a54c3e0a3e",
+      "bytes": 1492
+    },
+    "evidence_store_g4_live/traces/live/102_deepseek_flash__sympy__sympy-17630__C.json": {
+      "sha256": "ab44b2b5ba8e967e4c4574e3f00178ba043fd7b947a98d4de2e3e1a7b1e281b2",
+      "bytes": 1571
+    },
+    "evidence_store_g4_live/traces/live/103_deepseek_flash__sympy__sympy-17630__A.json": {
+      "sha256": "04de41613ffabbead0efe6310253993cea237f565b6f7bd98d3cf95ead908ab3",
+      "bytes": 1677
+    },
+    "evidence_store_g4_live/traces/live/104_gpt_4.1_mini__sympy__sympy-19783__C.json": {
+      "sha256": "72e9b7ca15fa9f3a172174b47c65fa347cb8c8bce814e257cda7d58b45d3cf77",
+      "bytes": 1126
+    },
+    "evidence_store_g4_live/traces/live/105_gpt_4.1_mini__sympy__sympy-19783__B.json": {
+      "sha256": "f39a7cd8c5e28d4ba7bb05bef0ae3b08551c6784076d64645345e06b652ebecd",
+      "bytes": 1353
+    },
+    "evidence_store_g4_live/traces/live/106_gpt_4.1_mini__sympy__sympy-19783__A.json": {
+      "sha256": "8e5b30002470ae1c995169ba7ce81bd14fa9d1ac9c15fefeede8d32c0a323475",
+      "bytes": 1246
+    },
+    "evidence_store_g4_live/traces/live/107_deepseek_flash__sympy__sympy-19783__B.json": {
+      "sha256": "2dcca5e5070bf850610eda1be4a06db4a657a1185c2a231935f8b58940df87bc",
+      "bytes": 1646
+    },
+    "evidence_store_g4_live/traces/live/108_deepseek_flash__sympy__sympy-19783__D.json": {
+      "sha256": "fd70c260b45951f3d7e195bc5b38c86e54c2035e2cfd5c10a88a3a051c2f34a9",
+      "bytes": 1513
+    },
+    "evidence_store_g4_live/traces/live/109_deepseek_flash__sympy__sympy-19783__C.json": {
+      "sha256": "deb6680975546194d64ca5021c61d5d3d488ac2be92f0a7a4b0f32c2c6eaabb9",
+      "bytes": 1642
+    },
+    "evidence_store_g4_live/traces/live/110_deepseek_flash__sympy__sympy-19783__A.json": {
+      "sha256": "69e884907d030c071e4b45a4a97fe1778b73e2fcbb8b69ada3b04477328a8e71",
+      "bytes": 1736
+    },
+    "evidence_store_g4_live/traces/live/111_gpt_4.1_mini__sympy__sympy-19783__D.json": {
+      "sha256": "5b2e0670f35764f394816975ef70caabbaddc19a4ffedfae829e78846a050ef0",
+      "bytes": 1167
+    },
+    "evidence_store_g4_live/traces/live/112_gpt_4.1_mini__sympy__sympy-20590__B.json": {
+      "sha256": "5b44a35c9fd7e3d4185394a910b4dc99bc7f4a940dd16e85ef8a1afba9c22b99",
+      "bytes": 1174
+    },
+    "evidence_store_g4_live/traces/live/113_gpt_4.1_mini__sympy__sympy-20590__A.json": {
+      "sha256": "4a82e4740d9ee774239c07b844bc20c2919e5b728de5074bac708a5f0bdff291",
+      "bytes": 1167
+    },
+    "evidence_store_g4_live/traces/live/114_deepseek_flash__sympy__sympy-20590__B.json": {
+      "sha256": "f071bf5dbc22422634397c5081199eff3e45051671667097a70e0f8b3c348a33",
+      "bytes": 1746
+    },
+    "evidence_store_g4_live/traces/live/115_deepseek_flash__sympy__sympy-20590__D.json": {
+      "sha256": "0c5e7936d75620dc80ef08b8a92539afd3718c50d840b9ae5a4db1c06292a64e",
+      "bytes": 1383
+    },
+    "evidence_store_g4_live/traces/live/116_deepseek_flash__sympy__sympy-20590__C.json": {
+      "sha256": "a6a7e9f578b17eee6da9c1318b0210350bc2808d1bb84faf1a25baed93b87716",
+      "bytes": 1844
+    },
+    "evidence_store_g4_live/traces/live/117_deepseek_flash__sympy__sympy-20590__A.json": {
+      "sha256": "ef3090b103cd3262ee1ce85648517b0f78e7866ae4c7569cc6693792228c9bed",
+      "bytes": 1762
+    },
+    "evidence_store_g4_live/traces/live/118_gpt_4.1_mini__sympy__sympy-20590__D.json": {
+      "sha256": "b1ea288f0ad24fc9202deb8d8a2cf98b3cdeae2faf8e20160d0162f35e852c72",
+      "bytes": 1342
+    },
+    "evidence_store_g4_live/traces/live/119_gpt_4.1_mini__sympy__sympy-20590__C.json": {
+      "sha256": "fb3a6539115aba0ea9adb35b6d2d2ef066d8b2c6cd9aede39b5702c45f107462",
+      "bytes": 1257
+    },
+    "evidence_store_g4_live/traces/live/120_gpt_4.1_mini__sympy__sympy-21847__A.json": {
+      "sha256": "c2ff675799ecd2f1090495b3441059151fb07a248460d4d4ed8783342e844105",
+      "bytes": 1275
+    },
+    "evidence_store_g4_live/traces/live/121_deepseek_flash__sympy__sympy-21847__B.json": {
+      "sha256": "2e7efdcbbb045ff74aa2ecda5ae1eab1ca6b55892d172824707139dd184cd4af",
+      "bytes": 1647
+    },
+    "evidence_store_g4_live/traces/live/122_deepseek_flash__sympy__sympy-21847__D.json": {
+      "sha256": "c373bcd1e78230915e0bc6172051dbe691006948b72b61c8d072efb0c463ee28",
+      "bytes": 1549
+    },
+    "evidence_store_g4_live/traces/live/123_deepseek_flash__sympy__sympy-21847__C.json": {
+      "sha256": "775679ec78324e7a22ff0497ad9dfca1e1fe857735039a3c61353f0d29296dfc",
+      "bytes": 1676
+    },
+    "evidence_store_g4_live/traces/live/124_deepseek_flash__sympy__sympy-21847__A.json": {
+      "sha256": "bda058c2c4918d5e0c5fc5e65edc949b44ba3c1a42d0cb2fc9b5804373006611",
+      "bytes": 1735
+    },
+    "evidence_store_g4_live/traces/live/125_gpt_4.1_mini__sympy__sympy-21847__D.json": {
+      "sha256": "2ba4517af4e590cfb296ca22a45226ead0ebc4b7d4b965f7d7f4cf9ee9359363",
+      "bytes": 1307
+    },
+    "evidence_store_g4_live/traces/live/126_gpt_4.1_mini__sympy__sympy-21847__C.json": {
+      "sha256": "06b74c3e3fa318e019a619f9e07e6a47db64cc0996b492da89ec0927da50b0db",
+      "bytes": 1202
+    },
+    "evidence_store_g4_live/traces/live/127_gpt_4.1_mini__sympy__sympy-21847__B.json": {
+      "sha256": "2edb44f305c20c92748c03c211bbbbf4d87fa1e893a54962632583b383671feb",
+      "bytes": 1271
+    },
+    "evidence_store_g4_live/traces/live/128_deepseek_flash__sympy__sympy-24213__B.json": {
+      "sha256": "f66cf7dea1b9ba4677bba749765d25834818a7371baf98ea70d1b3b9f789ddfe",
+      "bytes": 1624
+    },
+    "evidence_store_g4_live/traces/live/129_deepseek_flash__sympy__sympy-24213__D.json": {
+      "sha256": "15ca3b20ec233a3984e9021df99a629c73fa6dad9aae7eaebb240efe0abb877b",
+      "bytes": 1497
+    },
+    "evidence_store_g4_live/traces/live/130_deepseek_flash__sympy__sympy-24213__C.json": {
+      "sha256": "d1e700bebece4db4b74fde9099b78180e69038a62c998c1a4139ad4910534f8e",
+      "bytes": 1944
+    },
+    "evidence_store_g4_live/traces/live/131_deepseek_flash__sympy__sympy-24213__A.json": {
+      "sha256": "ac73a31c12b2429f599ec03c7afc96725cde8062af79f3a31cff76010bd1c0e5",
+      "bytes": 1957
+    },
+    "evidence_store_g4_live/traces/live/132_gpt_4.1_mini__sympy__sympy-24213__D.json": {
+      "sha256": "81f638967de115713ea12a4cbec96368b69694daf565dba30647222e286a9da9",
+      "bytes": 1224
+    },
+    "evidence_store_g4_live/traces/live/133_gpt_4.1_mini__sympy__sympy-24213__C.json": {
+      "sha256": "ed0a7483a0f682c272e666236dcdd80fcb2003808cbc2ee2574eff601467883f",
+      "bytes": 1201
+    },
+    "evidence_store_g4_live/traces/live/134_gpt_4.1_mini__sympy__sympy-24213__B.json": {
+      "sha256": "309db7ae05cbccc7f290dcc58cd238b0691d8801402a5bfd37570c27ea823c0f",
+      "bytes": 1247
+    },
+    "evidence_store_g4_live/traces/live/135_gpt_4.1_mini__sympy__sympy-24213__A.json": {
+      "sha256": "a41a28fb78def5cd1bc34165af13ad2f957957d945041b07dd3dce29ab6fa6e0",
+      "bytes": 1171
+    },
+    "evidence_store_g4_live/traces/live/136_deepseek_flash__sympy__sympy-24443__D.json": {
+      "sha256": "29547c5a0866179d63aec3d90e333cf561da47d1cb5acb3e2e34a9ac40186bd6",
+      "bytes": 1560
+    },
+    "evidence_store_g4_live/traces/live/137_deepseek_flash__sympy__sympy-24443__C.json": {
+      "sha256": "696c615871fc12e03eb0c10bbad4abc58fb080f75590fcedfcda2d3000bbd842",
+      "bytes": 1570
+    },
+    "evidence_store_g4_live/traces/live/138_deepseek_flash__sympy__sympy-24443__A.json": {
+      "sha256": "a15789b8c135ede4dc71a298362482b173d50e23c0553fbc277020d077320a9f",
+      "bytes": 1844
+    },
+    "evidence_store_g4_live/traces/live/139_gpt_4.1_mini__sympy__sympy-24443__D.json": {
+      "sha256": "ba692f1e0aa60d9a9bc3da8365aeecb3b1888b284d92169ad73e4356dfde6f0d",
+      "bytes": 1136
+    },
+    "evidence_store_g4_live/traces/live/140_gpt_4.1_mini__sympy__sympy-24443__C.json": {
+      "sha256": "064ed6f2d3dcfa54d8dcea9586d5fa13793a80284533fd33b0240bc1bc3b0bbe",
+      "bytes": 1139
+    },
+    "evidence_store_g4_live/traces/live/141_gpt_4.1_mini__sympy__sympy-24443__B.json": {
+      "sha256": "5d280b126f0cc6b7d136c1d82d1a7f68c1fb2d682635e7120a49d910783cea71",
+      "bytes": 1181
+    },
+    "evidence_store_g4_live/traces/live/142_gpt_4.1_mini__sympy__sympy-24443__A.json": {
+      "sha256": "c341095f9d1e47a8fb7ce64d3cb32fb1872a83bf791000e3a6ccdea245d8390d",
+      "bytes": 1210
+    },
+    "evidence_store_g4_live/traces/live/143_deepseek_flash__sympy__sympy-24443__B.json": {
+      "sha256": "26c2c56cb11f90d04fc89b2141b59eaa74bf8980ad851a233e7a87a677ac2ddd",
+      "bytes": 1710
+    },
+    "evidence_store_g4_live/traces/mock/000_deepseek_flash__sympy__sympy-14248__B.json": {
+      "sha256": "06942a05fee9120681d235371a3d19112baca988b06f65d3991e91944263e7bf",
+      "bytes": 647
+    },
+    "evidence_store_g4_live/traces/mock/001_deepseek_flash__sympy__sympy-14248__D.json": {
+      "sha256": "4ace72214381195fafd34e706f29953d57d181b15f085bc95fac97b357e4812a",
+      "bytes": 637
+    },
+    "evidence_store_g4_live/traces/mock/002_deepseek_flash__sympy__sympy-14248__C.json": {
+      "sha256": "de854872892b58b6f1a6467881183785751116db10a14af4c6b1f31c4cb9597c",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/003_deepseek_flash__sympy__sympy-14248__A.json": {
+      "sha256": "e136a05c0943e2655e91c69c5431c30349d42b6abd556c5d3cce2f9b34dafdcd",
+      "bytes": 644
+    },
+    "evidence_store_g4_live/traces/mock/004_gpt_4.1_mini__sympy__sympy-14248__D.json": {
+      "sha256": "c3b3da3aa97f3eb2a13ddef76193326c39e7869d9906fbee0b6c55d59a17a955",
+      "bytes": 633
+    },
+    "evidence_store_g4_live/traces/mock/005_gpt_4.1_mini__sympy__sympy-14248__C.json": {
+      "sha256": "2df5e86c81b47a2d121ed68f08bbc259d1d4b71ffd5d99c7395738f7aaa7edca",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/006_gpt_4.1_mini__sympy__sympy-14248__B.json": {
+      "sha256": "52fbf5d2e4463262d2ca23877e5dd97cecdb0753b3318f7c94013a1daed80edc",
+      "bytes": 643
+    },
+    "evidence_store_g4_live/traces/mock/007_gpt_4.1_mini__sympy__sympy-14248__A.json": {
+      "sha256": "5e790fb828104b566667715e9cdffc1bcc5c0e0c356c6819f3dbc9d3297a2fd2",
+      "bytes": 625
+    },
+    "evidence_store_g4_live/traces/mock/008_deepseek_flash__sympy__sympy-15875__D.json": {
+      "sha256": "85613b962e6e0a4a82ca577c833d26197e2887c664f5b1a3bf7ed5a3db3e82b2",
+      "bytes": 636
+    },
+    "evidence_store_g4_live/traces/mock/009_deepseek_flash__sympy__sympy-15875__C.json": {
+      "sha256": "994e77e41d3f173dc4180324271f8506c3497aa06b3f04ad7ba742a1f321e752",
+      "bytes": 648
+    },
+    "evidence_store_g4_live/traces/mock/010_deepseek_flash__sympy__sympy-15875__A.json": {
+      "sha256": "36152920ec79f249e287cbe1773a6f3f9f57361bde642e7b35d17f60a2e42253",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/011_gpt_4.1_mini__sympy__sympy-15875__D.json": {
+      "sha256": "181b280488d1aa4159302d680fe7264da9057e768680392fa734e8ba512c2faa",
+      "bytes": 633
+    },
+    "evidence_store_g4_live/traces/mock/012_gpt_4.1_mini__sympy__sympy-15875__C.json": {
+      "sha256": "7c8e4b6fcf7695ae9145946ce163fdd604038af1adcfe56455b7341d0859c78c",
+      "bytes": 645
+    },
+    "evidence_store_g4_live/traces/mock/013_gpt_4.1_mini__sympy__sympy-15875__B.json": {
+      "sha256": "c82111420eb3e3448571fffb4e3da3fd36d7d1b34c3e0942d5fb3d9ca858e5b5",
+      "bytes": 629
+    },
+    "evidence_store_g4_live/traces/mock/014_gpt_4.1_mini__sympy__sympy-15875__A.json": {
+      "sha256": "3b5ff8d15ff3161d8bffcd104775d1d0df8e2961197af6275de2b3974bb9ddb9",
+      "bytes": 627
+    },
+    "evidence_store_g4_live/traces/mock/015_deepseek_flash__sympy__sympy-15875__B.json": {
+      "sha256": "36bc1ee30f47079cc92e637d20fd8fcfa3f482b5c8405c599e296b813c09f255",
+      "bytes": 648
+    },
+    "evidence_store_g4_live/traces/mock/016_deepseek_flash__sympy__sympy-16886__C.json": {
+      "sha256": "f2112e3afef3d74f1a041136ef0de03acdbe6f2c69fd74c49e3246f9d5bbac09",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/017_deepseek_flash__sympy__sympy-16886__A.json": {
+      "sha256": "7fcbac899dce2356d21d797a36b5ccf861aded3547c1c2f2310d89a5535fa912",
+      "bytes": 631
+    },
+    "evidence_store_g4_live/traces/mock/018_gpt_4.1_mini__sympy__sympy-16886__D.json": {
+      "sha256": "c428d47d6a3020442316eaee7864151dc26372eb27802c2e9ecb4c48e260d417",
+      "bytes": 648
+    },
+    "evidence_store_g4_live/traces/mock/019_gpt_4.1_mini__sympy__sympy-16886__C.json": {
+      "sha256": "2e42c1c044a1b7d01e4e0f2b531f98b3b776d45c4230612748abb4970757a96c",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/020_gpt_4.1_mini__sympy__sympy-16886__B.json": {
+      "sha256": "69d8f5fa68f34f98380a358cd80f764415e808761e5b768799d087455fac3646",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/021_gpt_4.1_mini__sympy__sympy-16886__A.json": {
+      "sha256": "3bda67ff2075e568c2043b5d0deab85b79bf4b11e9cea247ee2b53468a46f472",
+      "bytes": 641
+    },
+    "evidence_store_g4_live/traces/mock/022_deepseek_flash__sympy__sympy-16886__B.json": {
+      "sha256": "d71de70d4d2e6a528f0584191f4e33368f81d4a8af238ead453fecbb30078ad2",
+      "bytes": 633
+    },
+    "evidence_store_g4_live/traces/mock/023_deepseek_flash__sympy__sympy-16886__D.json": {
+      "sha256": "d8800e1b1cba1e2aed4a940b8f5d2ae38184b779671764dedc76afff9f222d38",
+      "bytes": 638
+    },
+    "evidence_store_g4_live/traces/mock/024_deepseek_flash__sympy__sympy-19040__A.json": {
+      "sha256": "342a7dc98f17c63a107dafb73f3eae18c6f14bd88c34b8fb02f3bc3b56da2de2",
+      "bytes": 645
+    },
+    "evidence_store_g4_live/traces/mock/025_gpt_4.1_mini__sympy__sympy-19040__D.json": {
+      "sha256": "a2d05724569b5b14ca8465c27b9c15f781f7e6803cbf983befe0451d086ea9fe",
+      "bytes": 633
+    },
+    "evidence_store_g4_live/traces/mock/026_gpt_4.1_mini__sympy__sympy-19040__C.json": {
+      "sha256": "ee70b85579c20aaa6011adbfd35b5819678d95f8173a9bad4e2b7edc0bffc32e",
+      "bytes": 631
+    },
+    "evidence_store_g4_live/traces/mock/027_gpt_4.1_mini__sympy__sympy-19040__B.json": {
+      "sha256": "a39ffd47367895c5e404ab315db68e01a39e0a5a5468bb1a72f5f3713d524c94",
+      "bytes": 644
+    },
+    "evidence_store_g4_live/traces/mock/028_gpt_4.1_mini__sympy__sympy-19040__A.json": {
+      "sha256": "009a3666839977f261338e67f36f52294f5d337bfe351e615a44b31d3f560830",
+      "bytes": 626
+    },
+    "evidence_store_g4_live/traces/mock/029_deepseek_flash__sympy__sympy-19040__B.json": {
+      "sha256": "86c5d72d1bae05c6eb4c0ac8499da3bf4c5154fd54d5c0ba1be77b10c886442b",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/030_deepseek_flash__sympy__sympy-19040__D.json": {
+      "sha256": "c634d6258b0e1454b3e253e21adb69be69dd938f8f8318ae9de66c7382c446fc",
+      "bytes": 652
+    },
+    "evidence_store_g4_live/traces/mock/031_deepseek_flash__sympy__sympy-19040__C.json": {
+      "sha256": "17ac9a24d86d749497f39507f28a15b983d4edaee51979fadf6ef05fa308e252",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/032_gpt_4.1_mini__sympy__sympy-19346__D.json": {
+      "sha256": "5327011367c68354a354b2230799ad960ffd5fd274f428caf3b6356db2e1bb4a",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/033_gpt_4.1_mini__sympy__sympy-19346__C.json": {
+      "sha256": "5d1e71e6a1f89de0cbf810e3471e02db1eecb79c2f10601544ca55874679fe1d",
+      "bytes": 645
+    },
+    "evidence_store_g4_live/traces/mock/034_gpt_4.1_mini__sympy__sympy-19346__B.json": {
+      "sha256": "db948662a07a80b32404a103142b5e157c61010fd16ca7b85fbbaf648ca9c8db",
+      "bytes": 629
+    },
+    "evidence_store_g4_live/traces/mock/035_gpt_4.1_mini__sympy__sympy-19346__A.json": {
+      "sha256": "d39db2381204996f66770d4641a68b96d3711cae0adb8e03906131b090459cea",
+      "bytes": 627
+    },
+    "evidence_store_g4_live/traces/mock/036_deepseek_flash__sympy__sympy-19346__B.json": {
+      "sha256": "7bcbe255d32d30f8ff0e7fa8c1b20e943f6b95aa7546cad2d2f6432b0068f0fe",
+      "bytes": 648
+    },
+    "evidence_store_g4_live/traces/mock/037_deepseek_flash__sympy__sympy-19346__D.json": {
+      "sha256": "67daedeb1f42d1ea9b2eb38d3748061ba10c7cccd55ac5abc9f014048599b204",
+      "bytes": 637
+    },
+    "evidence_store_g4_live/traces/mock/038_deepseek_flash__sympy__sympy-19346__C.json": {
+      "sha256": "fe68c8c199366982e6aff5b0dac1b78d1c2ba7bb75ab25116b77ec789833a286",
+      "bytes": 635
+    },
+    "evidence_store_g4_live/traces/mock/039_deepseek_flash__sympy__sympy-19346__A.json": {
+      "sha256": "da9a8d6f6205e118ef555f015903d9758d2aec4f37525676b16cd8e71def93d7",
+      "bytes": 645
+    },
+    "evidence_store_g4_live/traces/mock/040_gpt_4.1_mini__sympy__sympy-19495__C.json": {
+      "sha256": "df96035bae4d69dec08d0b0302dc85a9fd5877ac03c207cc4408234c77bd938f",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/041_gpt_4.1_mini__sympy__sympy-19495__B.json": {
+      "sha256": "8542dccb28b37c6f4d73d787183eafa6f46a7d745c0d5dcfeae8c763017b251f",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/042_gpt_4.1_mini__sympy__sympy-19495__A.json": {
+      "sha256": "2655ca2260168e5403068893a2bd27e456d95196e239d1ef4bc7f6a095c0170a",
+      "bytes": 641
+    },
+    "evidence_store_g4_live/traces/mock/043_deepseek_flash__sympy__sympy-19495__B.json": {
+      "sha256": "d55f32ec9f641e12ff39f3f37576bdca23b6def682929eead5501b20158b84d2",
+      "bytes": 633
+    },
+    "evidence_store_g4_live/traces/mock/044_deepseek_flash__sympy__sympy-19495__D.json": {
+      "sha256": "1c10e6fd80de0b405ca8a151d98df7dc52fc94b86a3768cd646700784a1ad837",
+      "bytes": 638
+    },
+    "evidence_store_g4_live/traces/mock/045_deepseek_flash__sympy__sympy-19495__C.json": {
+      "sha256": "209d3e5349ed83dcdd93064e85b916b672a3497ee7d063f27d08169697b8972c",
+      "bytes": 649
+    },
+    "evidence_store_g4_live/traces/mock/046_deepseek_flash__sympy__sympy-19495__A.json": {
+      "sha256": "83a0f780446f946ad406206feeebdd1731e8ff413ff321ff058c9e7576b480b0",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/047_gpt_4.1_mini__sympy__sympy-19495__D.json": {
+      "sha256": "ab469a4b7ff56c3fe8542f74330b2ee91f1fead592492a3f42e57d0bf638cddc",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/048_gpt_4.1_mini__sympy__sympy-19637__B.json": {
+      "sha256": "1339bed02c0b0fc1562877e1a38111ab0526def71d05f0bd29f3ba582fed62bf",
+      "bytes": 644
+    },
+    "evidence_store_g4_live/traces/mock/049_gpt_4.1_mini__sympy__sympy-19637__A.json": {
+      "sha256": "a46acee5914a609e9d3d93e6361eeda317f5f2a83c3299f2a961af2f1c439909",
+      "bytes": 626
+    },
+    "evidence_store_g4_live/traces/mock/050_deepseek_flash__sympy__sympy-19637__B.json": {
+      "sha256": "3558a96367953266700f13baa10522df5c414dc4a78534b37e85406f06bbb05a",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/051_deepseek_flash__sympy__sympy-19637__D.json": {
+      "sha256": "d835a818d75390c722c34a2c2d27c388bc9e29a7f80caf2627b93fb7ffe56d05",
+      "bytes": 652
+    },
+    "evidence_store_g4_live/traces/mock/052_deepseek_flash__sympy__sympy-19637__C.json": {
+      "sha256": "f3dd6a2608e1e79525beee9eba8c4d3b066ff64fffd1be40ce0d5c7090c33e24",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/053_deepseek_flash__sympy__sympy-19637__A.json": {
+      "sha256": "63027a0a1864f7e91d47050397398f95d0642d1867ff9eb98598165fe12e5194",
+      "bytes": 631
+    },
+    "evidence_store_g4_live/traces/mock/054_gpt_4.1_mini__sympy__sympy-19637__D.json": {
+      "sha256": "2620efbace5b15a15112de64a674a93eba16e862a6c7b646e1eef9e4e83da1f4",
+      "bytes": 648
+    },
+    "evidence_store_g4_live/traces/mock/055_gpt_4.1_mini__sympy__sympy-19637__C.json": {
+      "sha256": "8a267b04742f62ecf2fc64a602f5f5d765ba86e34574c53552638ad6af59ed2b",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/056_gpt_4.1_mini__sympy__sympy-22914__A.json": {
+      "sha256": "dbc972009f0d9e4f06e34cd11ff83fca7442b2a5c27b6ce6f35dd7d3ffa5bcb7",
+      "bytes": 627
+    },
+    "evidence_store_g4_live/traces/mock/057_deepseek_flash__sympy__sympy-22914__B.json": {
+      "sha256": "7ed6b4f251af20457b091263ebbf962eb2f194cff2df577b2d4cfcc98f1d9aa1",
+      "bytes": 648
+    },
+    "evidence_store_g4_live/traces/mock/058_deepseek_flash__sympy__sympy-22914__D.json": {
+      "sha256": "9287915ad15ff8e917e55276f88074fb42599a71021dbf7f7bf42031a43416d9",
+      "bytes": 637
+    },
+    "evidence_store_g4_live/traces/mock/059_deepseek_flash__sympy__sympy-22914__C.json": {
+      "sha256": "d2ac3b3c3b144a7a982c888c3baf4afb944a5039d69a33da8533b5521560d986",
+      "bytes": 635
+    },
+    "evidence_store_g4_live/traces/mock/060_deepseek_flash__sympy__sympy-22914__A.json": {
+      "sha256": "6e94a8dde8c3afe2bb7c6f48c50f03ff8b37100f82f26e3e36cfe8fd06b00ee5",
+      "bytes": 645
+    },
+    "evidence_store_g4_live/traces/mock/061_gpt_4.1_mini__sympy__sympy-22914__D.json": {
+      "sha256": "d970b57b0e4ccccad359b9491aaf0febe8060eed684e1469e2f19ced20b75de5",
+      "bytes": 633
+    },
+    "evidence_store_g4_live/traces/mock/062_gpt_4.1_mini__sympy__sympy-22914__C.json": {
+      "sha256": "1d2eab3b025f604348e7192e1ab53d34b6ba3fe40def34e33561aa75113e7cd5",
+      "bytes": 631
+    },
+    "evidence_store_g4_live/traces/mock/063_gpt_4.1_mini__sympy__sympy-22914__B.json": {
+      "sha256": "23f44710ffbd97fd0385e8ce9d2ab7f7bb3671c0c5046a7cafb287b7696d2840",
+      "bytes": 644
+    },
+    "evidence_store_g4_live/traces/mock/064_deepseek_flash__sympy__sympy-13615__B.json": {
+      "sha256": "b44e9e853ce5810881555df04c374effc8a3b59b744d63335391c019fb6f626c",
+      "bytes": 633
+    },
+    "evidence_store_g4_live/traces/mock/065_deepseek_flash__sympy__sympy-13615__D.json": {
+      "sha256": "39e32e3cbefd87901c96eddf68e3056e7d72e2581f8a569e24b66c3d21eda198",
+      "bytes": 638
+    },
+    "evidence_store_g4_live/traces/mock/066_deepseek_flash__sympy__sympy-13615__C.json": {
+      "sha256": "55b0235f476dfd28a83054d6b037f6b638a7404c82ec9c4d464affbe7160873b",
+      "bytes": 649
+    },
+    "evidence_store_g4_live/traces/mock/067_deepseek_flash__sympy__sympy-13615__A.json": {
+      "sha256": "561574344e190a230262223de4e2edfabad93bbf782b2cf0b8329aa8678551fa",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/068_gpt_4.1_mini__sympy__sympy-13615__D.json": {
+      "sha256": "b8c18a3b6ed96182d8e1393c786e46d6df4bbeff8d1872ae67003f9ff9ad3174",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/069_gpt_4.1_mini__sympy__sympy-13615__C.json": {
+      "sha256": "d9c73321ca65ade6951aec6b1ffc3fe8f3d5648dd34b0a9dc29bfda4bba27609",
+      "bytes": 645
+    },
+    "evidence_store_g4_live/traces/mock/070_gpt_4.1_mini__sympy__sympy-13615__B.json": {
+      "sha256": "5a12852437d6c82042d192a169e5370415b48993d369e65741140e6968280fa7",
+      "bytes": 629
+    },
+    "evidence_store_g4_live/traces/mock/071_gpt_4.1_mini__sympy__sympy-13615__A.json": {
+      "sha256": "66fa9a1585d846ec867ef21021f2a561c47df0cbff148ba72e59d063c53c9e93",
+      "bytes": 627
+    },
+    "evidence_store_g4_live/traces/mock/072_deepseek_flash__sympy__sympy-13974__D.json": {
+      "sha256": "82b13f90cc42515975f873d4ab125a82cbf51f8a1ddbe48fba8f8d6b0d921cfa",
+      "bytes": 651
+    },
+    "evidence_store_g4_live/traces/mock/073_deepseek_flash__sympy__sympy-13974__C.json": {
+      "sha256": "7ff4a51246365d25b6857fce18bd9b968ad560ec75c5e92ed1f60585ceae3ec3",
+      "bytes": 633
+    },
+    "evidence_store_g4_live/traces/mock/074_deepseek_flash__sympy__sympy-13974__A.json": {
+      "sha256": "2fb10a25f05c7902bc5466a2171b8292b2faff0b31418ae4e2678a7218f5345e",
+      "bytes": 631
+    },
+    "evidence_store_g4_live/traces/mock/075_gpt_4.1_mini__sympy__sympy-13974__D.json": {
+      "sha256": "f0a915b6fca70bfcecd133a59d0bfb4fd43e21f2203c7da5c5bf3c169dcabffa",
+      "bytes": 647
+    },
+    "evidence_store_g4_live/traces/mock/076_gpt_4.1_mini__sympy__sympy-13974__C.json": {
+      "sha256": "f89cff9bfbb4c15dcd9cb9eafe073f624f8511e90002779d19c80551067bb870",
+      "bytes": 629
+    },
+    "evidence_store_g4_live/traces/mock/077_gpt_4.1_mini__sympy__sympy-13974__B.json": {
+      "sha256": "86ce26ef4299e6af0ab4b62f0cb38befc8075abd86f570ce5259f8bae3b59da9",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/078_gpt_4.1_mini__sympy__sympy-13974__A.json": {
+      "sha256": "98acf04daf8def1d80fe5c45b83cae61d890acbe6466a03af8601d2e9d5fecd2",
+      "bytes": 641
+    },
+    "evidence_store_g4_live/traces/mock/079_deepseek_flash__sympy__sympy-13974__B.json": {
+      "sha256": "25b09b09316e49209964b21fc0a5606db48b97462e3579cc84c78310396a5dfc",
+      "bytes": 633
+    },
+    "evidence_store_g4_live/traces/mock/080_deepseek_flash__sympy__sympy-15349__C.json": {
+      "sha256": "c062cb53e483ef7b9f5004691a051aae05e2ba4409eba703a8ee390f6cfc207d",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/081_deepseek_flash__sympy__sympy-15349__A.json": {
+      "sha256": "9d77e350ec2ce8d3a984b1eb521a2a123114aba89303e9c6079594e4341ab9a8",
+      "bytes": 645
+    },
+    "evidence_store_g4_live/traces/mock/082_gpt_4.1_mini__sympy__sympy-15349__D.json": {
+      "sha256": "0ebae910767f12707f278023ca5d82d587ae659d43496017f146a7943e74b4d8",
+      "bytes": 632
+    },
+    "evidence_store_g4_live/traces/mock/083_gpt_4.1_mini__sympy__sympy-15349__C.json": {
+      "sha256": "d7e97034e9a7914a2a7e63775e062854a7b9f574c80ff12def3d8606ded0282f",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/084_gpt_4.1_mini__sympy__sympy-15349__B.json": {
+      "sha256": "69d8d0c061933c32b4f5441243eee58dbde8003b957825f6bc106ffd3f9b7662",
+      "bytes": 644
+    },
+    "evidence_store_g4_live/traces/mock/085_gpt_4.1_mini__sympy__sympy-15349__A.json": {
+      "sha256": "d9795a24d9234699fa105f9432c332fae3c8eb97f94f9ffb108ed74800e0735c",
+      "bytes": 626
+    },
+    "evidence_store_g4_live/traces/mock/086_deepseek_flash__sympy__sympy-15349__B.json": {
+      "sha256": "f8b62bcd6aa1cf9c43d8e5bcc2ed35ebb2cf8256bda7fecd535f602edba1b6e8",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/087_deepseek_flash__sympy__sympy-15349__D.json": {
+      "sha256": "2ba9a0b228f74a071eb032ad38656920b965fdc7460f94a100c241383cf62c22",
+      "bytes": 651
+    },
+    "evidence_store_g4_live/traces/mock/088_deepseek_flash__sympy__sympy-17318__A.json": {
+      "sha256": "9fb65936acad8c4e3e51963e772e72bcc1f451e81cd15dc66cd8a7db82448ee9",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/089_gpt_4.1_mini__sympy__sympy-17318__D.json": {
+      "sha256": "0e171968937a1e5c7eca33a00a3c84fef3acf167a390513986f62a3dc9d1e7b9",
+      "bytes": 632
+    },
+    "evidence_store_g4_live/traces/mock/090_gpt_4.1_mini__sympy__sympy-17318__C.json": {
+      "sha256": "d90228a62d13be6b95c99e07b80881a48563959cf9a2ef4ffed0f630f5aa3472",
+      "bytes": 644
+    },
+    "evidence_store_g4_live/traces/mock/091_gpt_4.1_mini__sympy__sympy-17318__B.json": {
+      "sha256": "91234a6ee9d8bf1cbc12db28ab2280e4de802532a4bdbcd4f4f07cab8543f9b2",
+      "bytes": 629
+    },
+    "evidence_store_g4_live/traces/mock/092_gpt_4.1_mini__sympy__sympy-17318__A.json": {
+      "sha256": "2cd2cbc8fc9268bb07dd73bca12e6bb0ba52049036b387b859d1f843e9c8d00f",
+      "bytes": 627
+    },
+    "evidence_store_g4_live/traces/mock/093_deepseek_flash__sympy__sympy-17318__B.json": {
+      "sha256": "936af71d2ff8280ce2d8e385eea1a2f06198c4c0c6954deaeda2d5a7c242cd61",
+      "bytes": 648
+    },
+    "evidence_store_g4_live/traces/mock/094_deepseek_flash__sympy__sympy-17318__D.json": {
+      "sha256": "dfdcd0e5e2d9b8ca30cf52147a6f9448815a9abd5e63154bc46b9b082d1ad25b",
+      "bytes": 636
+    },
+    "evidence_store_g4_live/traces/mock/095_deepseek_flash__sympy__sympy-17318__C.json": {
+      "sha256": "f4568bbb2cde86f86ee871896bea552daa247b4f3d764efe2501cb3840825039",
+      "bytes": 633
+    },
+    "evidence_store_g4_live/traces/mock/096_gpt_4.1_mini__sympy__sympy-17630__D.json": {
+      "sha256": "e55046fab9ed469d1ad2fff7ee5b962af6b0d0bd47a489ba8d837e961a844cfe",
+      "bytes": 648
+    },
+    "evidence_store_g4_live/traces/mock/097_gpt_4.1_mini__sympy__sympy-17630__C.json": {
+      "sha256": "fc09e2869d11c8a9c74cdb13c3a938c597e40a17227db83b1f35fb707ce42599",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/098_gpt_4.1_mini__sympy__sympy-17630__B.json": {
+      "sha256": "ad3359c0b2513985ff239717e964cfb3b04ebc60f0e377cdb3308d787779e0fd",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/099_gpt_4.1_mini__sympy__sympy-17630__A.json": {
+      "sha256": "3d19bcfd70960980884585a34a9230592494f5ad6e73e8b1c1084bd5cd9e4b2e",
+      "bytes": 641
+    },
+    "evidence_store_g4_live/traces/mock/100_deepseek_flash__sympy__sympy-17630__B.json": {
+      "sha256": "b1ee0c0067ebd98877557331ac7161a9b5e763e261c4a205dbbda46f3447c3ae",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/101_deepseek_flash__sympy__sympy-17630__D.json": {
+      "sha256": "8e8f3c73842ff2274d78ba3afe6c40e700458ebaaf8648c0d78bb307f3a7a65b",
+      "bytes": 638
+    },
+    "evidence_store_g4_live/traces/mock/102_deepseek_flash__sympy__sympy-17630__C.json": {
+      "sha256": "6693b14a35475d365d449a4ff22b4f34c3a520f59b0839e305375bf59c25b28b",
+      "bytes": 650
+    },
+    "evidence_store_g4_live/traces/mock/103_deepseek_flash__sympy__sympy-17630__A.json": {
+      "sha256": "59cf158cb6b3f8bffce92cf60f3ee2044f4bc398e0bc774dda1c16a004e1b051",
+      "bytes": 631
+    },
+    "evidence_store_g4_live/traces/mock/104_gpt_4.1_mini__sympy__sympy-19783__C.json": {
+      "sha256": "db177d868cce367fe3e32cae4819f8a13b9a6a5f74409ae60866ce5904076d54",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/105_gpt_4.1_mini__sympy__sympy-19783__B.json": {
+      "sha256": "822c2907db354ec428bc9d9143f47f355c4104e5371032c9bf1a454138faafb3",
+      "bytes": 645
+    },
+    "evidence_store_g4_live/traces/mock/106_gpt_4.1_mini__sympy__sympy-19783__A.json": {
+      "sha256": "d076720583c938760b98626997e1d064e7a89ff6c8637d0b71b61e3417a4872b",
+      "bytes": 627
+    },
+    "evidence_store_g4_live/traces/mock/107_deepseek_flash__sympy__sympy-19783__B.json": {
+      "sha256": "dd085ff8955160efe132938e26117bbbf74ed7804ce788eb35ea3211c3ed90f7",
+      "bytes": 635
+    },
+    "evidence_store_g4_live/traces/mock/108_deepseek_flash__sympy__sympy-19783__D.json": {
+      "sha256": "f3644554e7f56cd3f6d908f5a03c07be58ef2ca14b05566f4a0126e3aaf72559",
+      "bytes": 652
+    },
+    "evidence_store_g4_live/traces/mock/109_deepseek_flash__sympy__sympy-19783__C.json": {
+      "sha256": "43b4b22114741a9a513ac3394c2920c067efe184857cb64dfaa061cdbb8385a0",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/110_deepseek_flash__sympy__sympy-19783__A.json": {
+      "sha256": "bd8d44f2d569a635cd87e1a4cbf000c72ec5cafa9face0efba14fbbdb63a404c",
+      "bytes": 632
+    },
+    "evidence_store_g4_live/traces/mock/111_gpt_4.1_mini__sympy__sympy-19783__D.json": {
+      "sha256": "32541544f416d2a4d024c493c87a53fe0c0fabd2865bfea7d89cf4bd2609084c",
+      "bytes": 648
+    },
+    "evidence_store_g4_live/traces/mock/112_gpt_4.1_mini__sympy__sympy-20590__B.json": {
+      "sha256": "c90ecb2b14e114c737b36d606c91fd3557423ea3be2ca9810b61ab5a9e2ccb89",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/113_gpt_4.1_mini__sympy__sympy-20590__A.json": {
+      "sha256": "25a2ae827fdb0862d09832dcbe08642b34fc6b4734b6b31975b64fe584459cd2",
+      "bytes": 628
+    },
+    "evidence_store_g4_live/traces/mock/114_deepseek_flash__sympy__sympy-20590__B.json": {
+      "sha256": "2cf167d3dd27d3e89b5fb5d78c7e86d7dcaea09bde908bfcf0ae63fcb28730a1",
+      "bytes": 649
+    },
+    "evidence_store_g4_live/traces/mock/115_deepseek_flash__sympy__sympy-20590__D.json": {
+      "sha256": "dd77887848e8788690d3e6bf3ae8d389571389f55315c51cd717ec90c195634f",
+      "bytes": 638
+    },
+    "evidence_store_g4_live/traces/mock/116_deepseek_flash__sympy__sympy-20590__C.json": {
+      "sha256": "14c5d7db9a086502768bc74c3881d1100d08f784f85f31d3eb059c1a9f7f2751",
+      "bytes": 636
+    },
+    "evidence_store_g4_live/traces/mock/117_deepseek_flash__sympy__sympy-20590__A.json": {
+      "sha256": "167a01714893665a949d173cf4c2f921dfdfb578c44222e72087b27d14a964b4",
+      "bytes": 646
+    },
+    "evidence_store_g4_live/traces/mock/118_gpt_4.1_mini__sympy__sympy-20590__D.json": {
+      "sha256": "9fc04d205578091e265a3f0ed9a33126a2ac61c49b6fa98a47f084c23c86ce5d",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/119_gpt_4.1_mini__sympy__sympy-20590__C.json": {
+      "sha256": "835ff05f67f7b07cffbe27c22bbe761fe2e096009438215e27bf5e51ba6b8ea7",
+      "bytes": 632
+    },
+    "evidence_store_g4_live/traces/mock/120_gpt_4.1_mini__sympy__sympy-21847__A.json": {
+      "sha256": "802fd5abe036cef76fdb6f0d0392954947563cd8d0de3a76b7f69ca325a7ca92",
+      "bytes": 642
+    },
+    "evidence_store_g4_live/traces/mock/121_deepseek_flash__sympy__sympy-21847__B.json": {
+      "sha256": "dc5fbb74da06ae7ec786599b72baf818ffe9b912734d6c0ec8b09a00cffd2852",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/122_deepseek_flash__sympy__sympy-21847__D.json": {
+      "sha256": "60d19df3d701bae5563dd9b7af0df9c22c8a78a1f916c024a8fec3ad131a5c9c",
+      "bytes": 638
+    },
+    "evidence_store_g4_live/traces/mock/123_deepseek_flash__sympy__sympy-21847__C.json": {
+      "sha256": "7951f08ea3140c404644d0ee0559d3de5254be36b2f0d059ba221fce2d4604a7",
+      "bytes": 649
+    },
+    "evidence_store_g4_live/traces/mock/124_deepseek_flash__sympy__sympy-21847__A.json": {
+      "sha256": "74f7f4aa35c744c4e29d5968161e451aec2a49f16f46dd49a13a895bd2757fa6",
+      "bytes": 631
+    },
+    "evidence_store_g4_live/traces/mock/125_gpt_4.1_mini__sympy__sympy-21847__D.json": {
+      "sha256": "b12e7da682830fd959d32af45c1888e28348da6c886d576ebbf1bc5e712fe81c",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/126_gpt_4.1_mini__sympy__sympy-21847__C.json": {
+      "sha256": "899d1f13aa200519df825ebf68f5619843c790a35e5d29573c4eac8d228dbfc5",
+      "bytes": 645
+    },
+    "evidence_store_g4_live/traces/mock/127_gpt_4.1_mini__sympy__sympy-21847__B.json": {
+      "sha256": "46449b8296aa47ac574cafc3b0adbb615782b2450fa692f3448a97ec4383f6a8",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/128_deepseek_flash__sympy__sympy-24213__B.json": {
+      "sha256": "2e5081178878d0516efd6f7c0a3b30f8983249c7127d85d9079a95143792f40c",
+      "bytes": 635
+    },
+    "evidence_store_g4_live/traces/mock/129_deepseek_flash__sympy__sympy-24213__D.json": {
+      "sha256": "966a62f1ec359b5eb36d723cb8f0341495ce9971bf43b6fce55684b60d5d2a64",
+      "bytes": 652
+    },
+    "evidence_store_g4_live/traces/mock/130_deepseek_flash__sympy__sympy-24213__C.json": {
+      "sha256": "a29e321b99fd85356eaf76507c93ecfa193d14c5725156c2877cb39aafe93e78",
+      "bytes": 634
+    },
+    "evidence_store_g4_live/traces/mock/131_deepseek_flash__sympy__sympy-24213__A.json": {
+      "sha256": "4431ca6d33e7f5d81b5b3e408fa38b758bd0a4edf5397676b386faad481aead5",
+      "bytes": 632
+    },
+    "evidence_store_g4_live/traces/mock/132_gpt_4.1_mini__sympy__sympy-24213__D.json": {
+      "sha256": "61e95a6de5539161a37c9903260b10f8e7057ec680ed5b936b29a8e1d0fea7a1",
+      "bytes": 648
+    },
+    "evidence_store_g4_live/traces/mock/133_gpt_4.1_mini__sympy__sympy-24213__C.json": {
+      "sha256": "d734ad72c1d63522cbc4189911bf3d49c72693980b519848cf12ad6140338aab",
+      "bytes": 630
+    },
+    "evidence_store_g4_live/traces/mock/134_gpt_4.1_mini__sympy__sympy-24213__B.json": {
+      "sha256": "70087f79e1c3840ab795d277eb6dcafb56233763cb67f86c19792947606bb543",
+      "bytes": 631
+    },
+    "evidence_store_g4_live/traces/mock/135_gpt_4.1_mini__sympy__sympy-24213__A.json": {
+      "sha256": "75aa0380550a713b3c82c3e75b249274464e602ca5c586cf22a0b339aaca53fa",
+      "bytes": 642
+    },
+    "evidence_store_g4_live/traces/mock/136_deepseek_flash__sympy__sympy-24443__D.json": {
+      "sha256": "7d2a55d9dc98a31a65afbc15adadea5388fa8c783ae00660b52d65723c8a93f3",
+      "bytes": 637
+    },
+    "evidence_store_g4_live/traces/mock/137_deepseek_flash__sympy__sympy-24443__C.json": {
+      "sha256": "551488ee34168afa46e5b2005126462e47cd968c784aee786683292c8e61515a",
+      "bytes": 635
+    },
+    "evidence_store_g4_live/traces/mock/138_deepseek_flash__sympy__sympy-24443__A.json": {
+      "sha256": "0c8446f141090ec6ce33bbc23b277a237879f4614e23da4225a919e26f65ff07",
+      "bytes": 646
+    },
+    "evidence_store_g4_live/traces/mock/139_gpt_4.1_mini__sympy__sympy-24443__D.json": {
+      "sha256": "ae04c530cba1165413da4467eeb23de9b8406dedd432930fbed8ceaee89b3462",
+      "bytes": 633
+    },
+    "evidence_store_g4_live/traces/mock/140_gpt_4.1_mini__sympy__sympy-24443__C.json": {
+      "sha256": "3b8a6ab416ff0a851c5becfe7185437ca32f1a75403211f5db30bdfd022c0efd",
+      "bytes": 631
+    },
+    "evidence_store_g4_live/traces/mock/141_gpt_4.1_mini__sympy__sympy-24443__B.json": {
+      "sha256": "f1effea41e44cd84a7f8255ae214c7a962e339b0fa5fba8f6e0e8b63cce78372",
+      "bytes": 645
+    },
+    "evidence_store_g4_live/traces/mock/142_gpt_4.1_mini__sympy__sympy-24443__A.json": {
+      "sha256": "825b52e95163848c52baeb697e733a335c9d92f361ab79f115fac5d17897911a",
+      "bytes": 627
+    },
+    "evidence_store_g4_live/traces/mock/143_deepseek_flash__sympy__sympy-24443__B.json": {
+      "sha256": "e8816bc591967d1eccd8f4721eb12f15ba373a5b4cd64f8824c834ee61107f17",
+      "bytes": 635
+    },
+    "evidence_store_g4_live/analysis/figures/fig_g4_transition_deepseek_flash.tikz": {
+      "sha256": "ae35de7bb4bdd58dd6304c31cfaee082370ee8e0630bacf882eb1ec10e27b2b7",
+      "bytes": 1046
+    },
+    "evidence_store_g4_live/analysis/figures/fig_g4_transition_gpt_4.1_mini.tikz": {
+      "sha256": "573393a3a1790c34c503e3909dcefd11b406db57f984d120bd11dd923a97d3ec",
+      "bytes": 1044
+    },
+    "evidence_store_g4_live/analysis/g4_analysis_report.json": {
+      "sha256": "2e4a3908ac4f539c7f05979544cff5467a7e7ad4dbd03355bdba45588b516b2c",
+      "bytes": 11055
+    },
+    "evidence_store_g4_live/analysis/g4_analysis_report.md": {
+      "sha256": "7098650a34f292c13ed5473eed524772f2950a0f4914d9e3311ad76af882191d",
+      "bytes": 4295
+    },
+    "evidence_store_g4_live/analysis/tables/tab_g4_cd_diagnostic.tex": {
+      "sha256": "90c6472b16bf795a57ece917aa81a187f2a2e28a48295a66b6c483823723f388",
+      "bytes": 320
+    },
+    "evidence_store_g4_live/analysis/tables/tab_g4_h1_mcnemar.tex": {
+      "sha256": "057551550a887ed0dcc92ca0fad41f9d60ffe285a48dc7fa9cac0eaf2cb04bc6",
+      "bytes": 334
+    },
+    "evidence_store_g4_live/analysis/tables/tab_g4_strata.tex": {
+      "sha256": "82f9abbe96cf88218573b52ca9925c2bd5909c0cfc24661ce8a42001239b1877",
+      "bytes": 398
+    },
+    "evidence_store_g4_live/analysis/tables/tab_g4_verdicts.tex": {
+      "sha256": "716c6202602b732cfd5a9cfcf76f1665f72ed6608de298115f121ca81634ea74",
+      "bytes": 412
+    },
+    "evidence_store_g4_live/freeze/g4live_fingerprint.json": {
+      "sha256": "33a884fbd2f01716b1b615c6cac16b936de6d89de97dc23d5f1a1c19f9cc2eb3",
+      "bytes": 4246
+    },
+    "evidence_store_g4_live/freeze/g4live_mock_gate.json": {
+      "sha256": "6df0e9c534035e4a235ceb901d54cecf5a391c0fc4b97a290cc9d647a1ef7cb0",
+      "bytes": 292
+    },
+    "evidence_store_g4_live/freeze/g4live_budget_selftest.json": {
+      "sha256": "5e786682ce4249842b821aa202f77ebe19ae017f89173ec404d0d5334ebf727b",
+      "bytes": 1428
+    },
+    "evidence_store_g4_live/freeze/REPRODUCE_G4.md": {
+      "sha256": "be4281bf4ea182d247fe42c0a2d6082c269477ea64a7412483f4858300f39506",
+      "bytes": 4108
+    },
+    "evidence/g4_sufficiency_build.py": {
+      "sha256": "2c90c40fa6e6fa4b695b242c4aef8a82dd8b0aac57d7d3cc4da760066da1374e",
+      "bytes": 53023
+    },
+    "evidence/g4_live_run.py": {
+      "sha256": "67c8ed1d54c64eebe465990c5bc5c42c7cd283f34599d9180ff7243f0a77ed92",
+      "bytes": 51391
+    },
+    "evidence/g4_analysis.py": {
+      "sha256": "85783d1c291fcf5772ef906d7471039dba1d6e63a5739381b9ed04dd758b1c73",
+      "bytes": 27326
+    },
+    "evidence/g4_freeze_manifest.py": {
+      "sha256": "4b827bff4064c75529c86ce8cec401ad55bd6510499bea8d448875b89b2ca2f9",
+      "bytes": 4458
+    },
+    "evidence_store_g4_sufficiency/g4_fixed_bundles.jsonl": {
+      "sha256": "a2b3f6c19dcfaa6a4033fb0b9772c988be9d2a5978a7a74bf2bbdcd653635b4e",
+      "bytes": 4150638
+    },
+    "evidence_store_g4_sufficiency/g4_cell_manifest.jsonl": {
+      "sha256": "5da1aace02966e41b02820f3b074d43002c4c41bf7720408fd6b5e24fc1d214f",
+      "bytes": 264338
+    },
+    "evidence_store_g4_sufficiency/g4_payload_hashes.jsonl": {
+      "sha256": "df58660459968cd5db1ccd07b9e446ce53a5637406b1a2496a321dcf125f5182",
+      "bytes": 98316
+    },
+    "evidence_store_g4_sufficiency/g4_identifiability_gate.json": {
+      "sha256": "ab6f95920dbaee1a025b1f1ea3c0ceedbf2b2371a978e3b189546d80cf08add5",
+      "bytes": 122544
+    },
+    "evidence_store_g4_sufficiency/g4_identifiability_gate.md": {
+      "sha256": "70011622425ed329738d5c68ca7ac7263ecfe0a558e73cb0a012143ad5a9f6e9",
+      "bytes": 3772
+    },
+    "evidence_store_g4_sufficiency/G4_PREREGISTRATION_v1.md": {
+      "sha256": "7e4e7417982eec990d2872c069c35d3e1d305737a6c5d7494b57e6c66a7154fb",
+      "bytes": 11311
+    },
+    "evidence_store_g4_sufficiency/G4_PREREGISTRATION_ADDENDUM_v1.1.md": {
+      "sha256": "16307a4f5c63520b53c9256b06ee25ed5dbab79a3287703215ac74ea380a3acb",
+      "bytes": 6014
+    },
+    "paper_sprint/latex_g4/main.tex": {
+      "sha256": "4b6bcba2a1d17640b69ddaee5fca3ab65176168599a398fbc2cacf165d40f128",
+      "bytes": 2614
+    },
+    "paper_sprint/latex_g4/references.bib": {
+      "sha256": "7810fd74914b18888634692f601f5c795eb57784595bff3368702ca791a92c87",
+      "bytes": 5531
+    },
+    "paper_sprint/latex_g4/sections/01_introduction.tex": {
+      "sha256": "6c13eff4733c8ded6624cadb896b9975fcac1fa0df13cdb5f73e01a8330f0ae4",
+      "bytes": 3212
+    },
+    "paper_sprint/latex_g4/sections/02_related_work.tex": {
+      "sha256": "4079969f92701ee1d90fa84499f4b9f0a2bf57c5d0d47383b522d07f666f7f52",
+      "bytes": 2517
+    },
+    "paper_sprint/latex_g4/sections/03_benchmark.tex": {
+      "sha256": "eb8c0711793aeafd9b04ba9fd81ea40ffc83dd2304f06972543fbee98d289e92",
+      "bytes": 2441
+    },
+    "paper_sprint/latex_g4/sections/04_conditions.tex": {
+      "sha256": "4d61ac73e37db0eac2cefb1eaa57bddd4e5ede9b34bce5c6a5262de8c311096d",
+      "bytes": 3886
+    },
+    "paper_sprint/latex_g4/sections/05_dataset.tex": {
+      "sha256": "befdccd5b428d8d830689ec92d7054ed8be407f001246dd805b8a77d2de00f32",
+      "bytes": 2800
+    },
+    "paper_sprint/latex_g4/sections/06_setup.tex": {
+      "sha256": "84ffa1ee8ba7bb54930dd4b73bbdf86bcc96193b2f53ee71cec228d70812b9f6",
+      "bytes": 3507
+    },
+    "paper_sprint/latex_g4/sections/07_results.tex": {
+      "sha256": "a27c3ca69b02f5398d2a574c70d977077dc6fa08355e5cdd4018ad2b880338b9",
+      "bytes": 11687
+    },
+    "paper_sprint/latex_g4/sections/08_ablations.tex": {
+      "sha256": "6a1a2e5f20241f9a6056df885bd5593be17bb01f6372f2493837833a0efd563d",
+      "bytes": 5247
+    },
+    "paper_sprint/latex_g4/sections/09_threats.tex": {
+      "sha256": "5d247d221b72685a8f392ef59870b4e24400f7d347e988df91a282abff88df81",
+      "bytes": 5160
+    },
+    "paper_sprint/latex_g4/sections/10_conclusion.tex": {
+      "sha256": "35da3cc371529a67579adf355719fbf4d7deecb131f58e0161c2a7d8e7614a97",
+      "bytes": 2260
+    },
+    "paper_sprint/latex_g4/sections/11_g4_intervention.tex": {
+      "sha256": "dc2efd0334a5290229140d40b071edb2147a3a09a5e3ee4047dd8c82623104ea",
+      "bytes": 12078
+    },
+    "paper_sprint/latex_g4/sections/abstract.tex": {
+      "sha256": "e80fa765b88fc9986a062caf15ce5ecc9aca807727fc523c01afc0044d9224e3",
+      "bytes": 3001
+    },
+    "paper_sprint/latex_g4/sections/appendix.tex": {
+      "sha256": "02ae8f90e907891291c965f0e6344246aea499f1c97a69798b14907ca0f8e44e",
+      "bytes": 10352
+    },
+    "paper_sprint/latex_g4/figures/fig1_concept.tex": {
+      "sha256": "88255143de6eb1d358795abdc8960a88316ea254c189e866514b869cdb3c4e77",
+      "bytes": 3211
+    },
+    "paper_sprint/latex_g4/figures/fig2_deepseek.tex": {
+      "sha256": "138f6b97b6600b5ac2cc9bba68f4f9ef395fb91cf416ba0da0c14e7d6c5833ad",
+      "bytes": 1212
+    },
+    "paper_sprint/latex_g4/figures/fig3_gpt_strict.tex": {
+      "sha256": "1fbc55725609e3da2d782058453365ec29eda3431c1f009f6a2ca4f91c4b1f7b",
+      "bytes": 1577
+    },
+    "paper_sprint/latex_g4/figures/fig4_focal.tex": {
+      "sha256": "6caacfb5c54e2b0123ef27971e13c7bd0dc7743ebbb40d13e3c7a4b22fe8d629",
+      "bytes": 1366
+    },
+    "paper_sprint/latex_g4/figures/fig5_g4_gpt.tex": {
+      "sha256": "3acef39ec3a1a5ac07ae15a87129cb90228394a0509582eaf058ee6a5e763240",
+      "bytes": 946
+    },
+    "paper_sprint/latex_g4/figures/fig6_g4_deepseek.tex": {
+      "sha256": "ae0a70409ef9089575025739399ec647436da505d5ee88542302eef09c4fe269",
+      "bytes": 796
+    },
+    "paper_sprint/latex_g4/main_v3_g4_controlled.pdf": {
+      "sha256": "f8ad44f8f4d84a038e926a210ab0dc7c3e9f61c71c6df0413bb7cbec4de94670",
+      "bytes": 170338
+    }
+  }
+}

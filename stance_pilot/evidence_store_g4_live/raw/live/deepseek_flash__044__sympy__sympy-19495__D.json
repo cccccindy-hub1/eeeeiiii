@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and decisive. Linkage verified: artifact art_fec174c8f4012a8b matches this patch (patch_sha256 cf8cf88d...) and base commit 25fbcce5..., authentic signature. Freshness adjudicated fresh=TRUE (authoritative restage tree d67a7035... matches). Coverage complete=TRUE: declared FAIL_TO_PASS 1/1 executed, scoped PASS_TO_PASS 8/8 executed, no missing ids. Outcomes: F2P test_subs_CondSet PASSED; all 8 scoped P2P PASSED with no regressions and no pre-existing bad ids. The symptom probe confirms the issue: baseline over-substituted the bound variable (ConditionSet(1/3, ...)), while the post-patch run yields ImageSet(Lambda(n, 2*pi*n + asin(1/3)), Integers), matching the xreplace/simultaneous reference. The patch's change (returning base instead of ConditionSet(new, Contains(new, base), base) when the condition simplifies to true) resolves the reported over-substitution, and the updated test_subs_CondSet expectation is consistent with the new semantics. No applicable acceptance failure or scoped regression found.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "82a9e4e57ef169afeaf0d234d145a95394d738958cec7ee1acecd4abbcb118a7",
+  "cell": "D",
+  "cohort": "g3c1",
+  "cost_usd": 0.005099,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-19495",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.019637,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 44,
+  "tokens_in": 15837,
+  "tokens_in_est": 16325,
+  "tokens_out": 290,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.35,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

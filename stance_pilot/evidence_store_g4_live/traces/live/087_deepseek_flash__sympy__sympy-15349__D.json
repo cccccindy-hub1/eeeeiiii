@@ -1,0 +1,23 @@
+{
+  "serial": 87,
+  "model": "deepseek-flash",
+  "cell": "D",
+  "instance_id": "sympy__sympy-15349",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and decisive. Linkage verified: artifact base_commit 768da1c6... and patch_sha256 0c5e4bd3... match this patch/commit (linked=true, authentic signature). Freshness adjudicated TRUE (authoritative restage tree 3fb6acb6... equals expected run tree). Coverage adjudicated complete: declared F2P 1/1 executed, scoped P2P 3/3 executed, no missing ids. Outcomes: F2P test_quaternion_conversions PASSED; scoped P2P (construction, complex_real_addition, functions) all PASSED with no regressions and no preexisting-bad ids. The issue-derived symptom probe confirms the fix: baseline produced the wrong matrix [[1,0,0],[0,cos(x),sin(x)],[0,sin(x),cos(x)]] (exit 1), while the post-patch probe reports the correct sign (exit 0). The patch changes m12 from 2*s*(c*d + b*a) to 2*s*(c*d - b*a), which is the correct rotation-matrix entry and resolves the reported sign error. No applicable acceptance failure or scoped regression exists.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 6234,
+  "tokens_out": 284,
+  "cost_usd": 0.002211,
+  "served_model": "deepseek-flash",
+  "error": null
+}

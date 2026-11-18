@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch fixes the issue with substitution on ConditionSet with ImageSet as base set, preventing incorrect substitution of the bound variable. The acceptance test specifically targeting this issue passes, and all other relevant acceptance and regression tests pass as well. The evidence is fresh, linked to this patch and commit tree, and covers the declared acceptance set fully with no failures. No scoped regression is introduced.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"none\"}",
+  "bundle_sha256": "82a9e4e57ef169afeaf0d234d145a95394d738958cec7ee1acecd4abbcb118a7",
+  "cell": "D",
+  "cohort": "g3c1",
+  "cost_usd": 0.005864,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-19495",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.019637,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 47,
+  "tokens_in": 14255,
+  "tokens_in_est": 16325,
+  "tokens_out": 101,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 1.73,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

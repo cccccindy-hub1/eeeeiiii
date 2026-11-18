@@ -1,0 +1,23 @@
+{
+  "serial": 29,
+  "model": "deepseek-flash",
+  "cell": "B",
+  "instance_id": "sympy__sympy-19040",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage attestations are intact: the artifact is authentically signed, its base commit and patch sha256 match this patch, the run tree matches the independently re-derived canonical tree (fresh=TRUE), and the declared set was fully executed (1/1 F2P, 148/148 scoped P2P). The issue-derived symptom probe also shows the symptom is gone after the patch. However, the outcome policy withholds all pass/fail verdicts for the acceptance test and the 148 scoped regression checks (f2p/p2p logs return 403). A passing symptom probe is not proof of merge acceptability, and no decisive applicable failure has been established. Therefore I cannot reach ACCEPT (complete failure-free success is not demonstrated) or REJECT (no credible applicable failing check).\",\"evidence_mismatch\":false,\"missing_evidence\":\"Pass/fail verdicts for the 1 declared FAIL_TO_PASS acceptance test and the 148 scoped PASS_TO_PASS regression checks are withheld; the f2p/p2p run logs are blocked (HTTP 403), so success of the acceptance set and absence of scoped regressions cannot be confirmed.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 4616,
+  "tokens_out": 264,
+  "cost_usd": 0.001702,
+  "served_model": "deepseek-flash",
+  "error": null
+}

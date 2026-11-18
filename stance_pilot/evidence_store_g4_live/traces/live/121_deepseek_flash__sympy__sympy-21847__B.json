@@ -1,0 +1,23 @@
+{
+  "serial": 121,
+  "model": "deepseek-flash",
+  "cell": "B",
+  "instance_id": "sympy__sympy-21847",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage attestations are intact: the artifact is signed, its base_commit and patch_sha256 match this patch, the run tree equals the independently re-derived canonical tree (fresh=TRUE), and the declared set was fully executed (1/1 F2P, 9/9 scoped P2P). The issue-derived symptom probe also shows the symptom gone after the patch. However, the decisive maintainer acceptance-test and scoped-regression verdicts are withheld under the outcome policy (f2p/p2p logs return 403), so no pass/fail outcome is available. A removed symptom is not proof of merge acceptability, and I cannot confirm that no acceptance check fails or that no scoped regression is introduced. No decisive applicable failure is established either, so I abstain rather than ACCEPT or REJECT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test (FAIL_TO_PASS) and scoped regression (PASS_TO_PASS) pass/fail verdicts for this patch/commit are withheld; only the issue-derived symptom probe is available.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 4619,
+  "tokens_out": 251,
+  "cost_usd": 0.001687,
+  "served_model": "deepseek-flash",
+  "error": null
+}

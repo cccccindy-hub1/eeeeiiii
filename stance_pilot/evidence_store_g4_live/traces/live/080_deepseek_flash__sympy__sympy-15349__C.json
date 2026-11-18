@@ -1,0 +1,23 @@
+{
+  "serial": 80,
+  "model": "deepseek-flash",
+  "cell": "C",
+  "instance_id": "sympy__sympy-15349",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and linked: artifact art_1dc2b9e38ff27115 has authentic signature, base_commit_match=true, patch_sha256_match=true, and linked=true against this patch and commit tree. The symptom probe reproduces the bug pre-patch (wrong sign in rotation matrix) and passes post-patch ('OK: rotation matrix sign correct'), confirming the issue is resolved. The FAIL_TO_PASS test (test_quaternion_conversions, plus the new test_quaternion_rotation_iss1593) passes, and all 3 scoped PASS_TO_PASS tests pass with no regressions (p2p_regressed_ids empty, baseline also passing). No executed acceptance check fails. Freshness/coverage attestations are withheld (UNKNOWN) and are not treated as staleness or incompleteness; the available evidence is sufficient and failure-free.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 6147,
+  "tokens_out": 209,
+  "cost_usd": 0.002095,
+  "served_model": "deepseek-flash",
+  "error": null
+}

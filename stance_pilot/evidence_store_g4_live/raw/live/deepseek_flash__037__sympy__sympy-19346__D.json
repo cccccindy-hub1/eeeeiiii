@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"The patch introduces a scoped regression in the very test file it modifies. In the post-patch run of sympy/printing/tests/test_repr.py, test_set FAILS: `assert srepr(s) == \\\"set()\\\"` yields '{}' instead of 'set()'. The new `_print_set` unconditionally emits '{%s}', so the empty set prints as '{}' (which is actually an empty dict literal) rather than the required 'set()'. This failure is absent from the pre-patch baseline (where test_set did not exist and the run showed only the two pre-existing parse_expr failures test_Add/test_Mul), so it is a regression introduced by this patch, not a pre-existing environment failure. The artifact is linked (patch_sha256 and base_commit match), fresh (run tree matches the authoritative restaged tree), and coverage-complete (1/1 F2P, 40/40 P2P executed), so the failure is applicable and decisive. Note also that the maintainer summary's claim of 40/40 P2P passing is contradicted by the actual run log, which shows test_set FAILED.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"contradiction\"}",
+  "bundle_sha256": "31451cd47a704c409b49108d311d07f24816bafcb39ec39c2ebe2eeda34a4d7b",
+  "cell": "D",
+  "cohort": "g3c1",
+  "cost_usd": 0.02241,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-19346",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.043954,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 37,
+  "tokens_in": 73611,
+  "tokens_in_est": 77117,
+  "tokens_out": 272,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 3.39,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

@@ -1,0 +1,23 @@
+{
+  "serial": 67,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-13615",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage is verified (base_commit and patch_sha256 match, authentic signature), and the issue-derived symptom probe shows the reported symptom is gone after the patch (Complement now yields {x, y} \\\\ Interval(-10, 10)). However, this is a diagnostic-tier artifact: maintainer acceptance-test (F2P) outcomes and scoped regression (P2P) verdicts are withheld, and the freshness/coverage attestations are UNKNOWN on this surface. No decisive applicable failure is established, so REJECT is not warranted; but the declared acceptance/regression set was not shown to be fully executed and failure-free, so ACCEPT's completeness bar is not met. Abstaining.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test (FAIL_TO_PASS) outcomes and scoped regression (PASS_TO_PASS) verdicts for this patch/commit are withheld; the declared-versus-executed test set and freshness attestation are UNKNOWN. Only the issue-derived symptom probe is available.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 3856,
+  "tokens_out": 235,
+  "cost_usd": 0.001439,
+  "served_model": "deepseek-flash",
+  "error": null
+}

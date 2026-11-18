@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The acceptance artifact is authentic and linked: base_commit d9b18c518d64d0ebe8e35a98c2fb519938b9b151 and patch_sha256 7223f91c8720bf5a410abc2719f474ff9c780928840b4fb096c83b44d50f9b2b both match the review target, and the test patch applied cleanly. The FAIL_TO_PASS check (test_monomials) passed 1/1, and all 9 scoped PASS_TO_PASS checks passed with no regressions and no pre-existing failures. The symptom probe confirms the fix: pre-patch it failed with missing total-degree-3 monomials (x1**2*x2, x1*x2**2, x1*x2*x3, etc.), and post-patch it returns all 10 monomials for min=max=3. The code change (max(powers.values()) -> sum(powers.values())) correctly implements the documented total-degree semantics for both commutative and non-commutative branches, and the added tests cover min=max, min<max, and non-commutative cases. The freshness and coverage attestations are withheld (UNKNOWN) on this surface, which is neither staleness nor incompleteness and does not refute the intact, failure-free acceptance evidence.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "c0f9351a183cf791cdcc803ed54c4a3b911b7cab41882deae992bf745d3565da",
+  "cell": "C",
+  "cohort": "g3a",
+  "cost_usd": 0.002694,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-21847",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.016228,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 123,
+  "tokens_in": 7721,
+  "tokens_in_est": 7802,
+  "tokens_out": 315,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.04,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

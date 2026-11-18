@@ -1,0 +1,23 @@
+{
+  "serial": 103,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-17630",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentic and linked (base_commit and patch_sha256 match), and the issue-derived symptom probe shows the symptom is gone after the patch (block_collapse(b*b*b) now returns a**3 block instead of raising). However, this is diagnostic-tier evidence only: maintainer acceptance-test (F2P) and scoped regression (P2P) outcomes are withheld/blocked, and freshness and declared-set coverage attestations are UNKNOWN on this surface. A removed symptom is not proof of merge acceptability, and no decisive applicable failure was established either. Therefore neither ACCEPT (complete, fresh, failure-free success not demonstrated) nor REJECT (no credible applicable failing check) can be reached.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test (FAIL_TO_PASS) and scoped regression (PASS_TO_PASS) verdicts for this patch/commit are not available; freshness and declared-set coverage attestations are withheld (UNKNOWN), so the declared acceptance/regression set cannot be confirmed as fully executed and failure-free.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 4813,
+  "tokens_out": 244,
+  "cost_usd": 0.001737,
+  "served_model": "deepseek-flash",
+  "error": null
+}

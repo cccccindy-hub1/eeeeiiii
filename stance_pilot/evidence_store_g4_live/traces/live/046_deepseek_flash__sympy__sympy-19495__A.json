@@ -1,0 +1,23 @@
+{
+  "serial": 46,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-19495",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentically linked to this patch (patch_sha256 and base_commit match) and the issue-derived symptom probe shows the reported symptom is gone after the patch (plain subs now returns the ImageSet with y substituted, matching xreplace/simultaneous references). However, this is a diagnostic-tier record: maintainer acceptance-test outcomes (FAIL_TO_PASS/PASS_TO_PASS) are withheld and blocked (HTTP 403), and the freshness and declared-set coverage attestations are UNKNOWN on this surface. The patch also changes an existing test expectation (ConditionSet(n, n < x, Interval(-oo, 0)).subs(x, p) from EmptySet to Interval(-oo, 0)) and alters _eval_subs semantics broadly, so scoped regression verdicts matter and are not available. Symptom removal alone is not proof of merge acceptability, and no decisive applicable failure is established either.\",\"evidence_mismatch\":false,\"missing_evidence\":\"No executed acceptance-test verdicts (f2p/p2p) and no scoped regression results for the changed conditionset.py and test_conditionset.py; freshness/coverage attestations withheld (UNKNOWN).\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 4480,
+  "tokens_out": 265,
+  "cost_usd": 0.001662,
+  "served_model": "deepseek-flash",
+  "error": null
+}

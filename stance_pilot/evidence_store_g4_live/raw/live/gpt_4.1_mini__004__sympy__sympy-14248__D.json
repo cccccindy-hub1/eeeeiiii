@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"The patch correctly fixes the printing of MatrixSymbol differences as subtraction instead of sums with (-1) coefficients, as demonstrated by the explicit test output showing correct printing for str, pretty, and latex printers. However, the acceptance test suite for this patch shows a failure in the test_MatrixSymbol_printing test, which is directly relevant to the patch's scope. Additionally, there are scoped regression failures in test_haramard and test_matMul, which are related to matrix multiplication and Hadamard product printing, indicating that the patch introduces regressions in related printing functionality. The evidence is fresh, linked, and covers the declared acceptance and regression sets. Therefore, the patch cannot be accepted as is due to these regressions.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "c3dbc74fdc2f60215ceb5c0fbea50f707ff4d3db489c7ffb26cc9a13a7193432",
+  "cell": "D",
+  "cohort": "g3c1",
+  "cost_usd": 0.040178,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-14248",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.05902,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 4,
+  "tokens_in": 99760,
+  "tokens_in_est": 114781,
+  "tokens_out": 171,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 6.2,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

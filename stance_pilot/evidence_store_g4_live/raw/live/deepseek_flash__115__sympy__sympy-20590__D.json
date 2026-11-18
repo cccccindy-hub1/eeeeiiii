@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and decisive. Linkage verified: artifact base_commit and patch_sha256 match this patch/commit (linked=true, authentic signature). Freshness adjudicated TRUE (authoritative restage tree matches). Coverage adjudicated complete: FAIL_TO_PASS 1/1 executed and passed (test_immutable), scoped PASS_TO_PASS 21/21 executed and passed, no regressions, no preexisting-bad. The symptom probe confirms the issue is resolved: baseline FAIL ('Symbol instance carries an instance __dict__: {}') vs post-patch OK ('Symbol has no instance __dict__ (slots only)'). The patch adds __slots__ = () to Printable (the parent that lost slots) and adds regression assertions in test_symbol.py. No applicable failing check exists.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "2b9c4de4c6918dbb4643888c69c00d6606031db72574a023a96e9532eb397c84",
+  "cell": "D",
+  "cohort": "g3a",
+  "cost_usd": 0.012864,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-20590",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.031497,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 115,
+  "tokens_in": 42109,
+  "tokens_in_est": 45975,
+  "tokens_out": 193,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.41,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

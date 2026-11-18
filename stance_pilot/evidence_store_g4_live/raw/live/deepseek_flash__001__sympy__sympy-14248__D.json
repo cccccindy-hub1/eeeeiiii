@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"Evidence is intact and applicable: linkage verified (base_commit and patch_sha256 match), freshness attestation fresh=TRUE, coverage complete=TRUE (2/2 F2P, 433/433 P2P executed). The run contains decisive applicable failures. (1) Acceptance check test_MatrixSymbol_printing FAILS: pretty(A*B*C - A*B - B*C) yields '-A*B - B*C + A*B*C' but the declared expectation is '-A*B -B*C + A*B*C' — the issue's pretty-printing behavior is not fully resolved. (2) Scoped regressions introduced by this patch: test_latex.py::test_matMul and test_haramard (julia/octave) now raise 'TypeError: cannot determine truth value of Relational' at str.py:317 / latex.py:1524, where the new code does `sign = '-' if c < 0 else ''` on a coefficient that is a Relational (e.g. 2*x*A). Both passed at the base commit (p2p_baseline) and fail after the patch. The author's claim that all relevant tests pass is contradicted. (test_latex_Float is pre-existing and not counted.)\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "c3dbc74fdc2f60215ceb5c0fbea50f707ff4d3db489c7ffb26cc9a13a7193432",
+  "cell": "D",
+  "cohort": "g3c1",
+  "cost_usd": 0.033447,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-14248",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.05902,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 1,
+  "tokens_in": 110286,
+  "tokens_in_est": 114781,
+  "tokens_out": 301,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 3.56,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

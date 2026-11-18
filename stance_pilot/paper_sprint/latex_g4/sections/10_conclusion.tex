@@ -1,0 +1,36 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+GroundedReview turns ``did the agent say the right label?'' into two answerable
+questions---is the evidence intact, and is it enough to decide---by pairing a
+three-way verdict with condition-specific gold and non-interference-checked
+evidence grants. A corrective replication shows how a benchmark instrument can
+itself manufacture apparent model behavior (sufficient-evidence abstention of
+$9/10$ falling to $1/10$ after the protocol was repaired), while on the
+repaired system one model still commits to unsupported \ACCEPT\ on $7/10$
+restricted-but-active cells and, in a traceable case, accepts despite an
+already-visible test failure. These are deliberately bounded findings: labels
+are provisional, samples are small, and the cross-version contrasts are
+associational. A disjoint eight-issue exploratory run repeats the model
+asymmetry, and both models match the oracle on $8/8$ once sufficient tier-A
+evidence is granted.
+
+The G4 controlled intervention then moves beyond association. Within the same
+18 frozen issue--patch pairs, with linkage held constant and a fixed yoked
+evidence transcript, presenting adjudicated integrity attestations while the
+decisive test verdicts remain blocked causes GPT-4.1-mini to accept on eight
+additional issues ($0/18\to8/18$, paired two-sided exact McNemar $p=0.0078$,
+95\,\% CI on the paired difference $[-0.667,-0.222]$), including two of five
+patches that fresh decisive evidence adjudicates as failing; DeepSeek-Flash
+does not move at all, and once the decisive results are visible both models
+reject every failing patch. Integrity is therefore not interchangeable with
+sufficiency: for one of the two models, intact provenance certificates act as
+a warrant to accept even when the information needed to decide is absent,
+while for the other model decisive visibility remains the binding constraint.
+The effect is causal under the frozen protocol, model-specific, and based on
+PROVISIONAL gold with a narrow target (attestation visibility, not genuine
+corruption); an independent human second annotation has since been obtained
+(17/18 oracle agreement; focused reviews closed; one arbiter override and one
+open disagreement), and the next step is to complete the signed attestation,
+replicate under confirmed gold, and extend to more models and projects rather
+than to generalise beyond the evidence.

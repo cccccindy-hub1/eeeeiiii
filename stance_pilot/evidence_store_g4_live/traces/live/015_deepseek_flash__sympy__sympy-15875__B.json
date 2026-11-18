@@ -1,0 +1,23 @@
+{
+  "serial": 15,
+  "model": "deepseek-flash",
+  "cell": "B",
+  "instance_id": "sympy__sympy-15875",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage attestations are intact: the artifact is authentically signed, patch_sha256 and base_commit match this patch, the run tree equals the independently re-derived canonical tree (fresh=TRUE), and the declared set was fully executed (1/1 F2P, 80/80 scoped P2P). The issue-derived symptom probe also shows the symptom gone (pre-patch is_zero=False, post-patch is_zero=True). However, the outcome policy blocks all decisive pass/fail verdicts: F2P and P2P logs return 403/disabled, and the record explicitly withholds acceptance-test outcomes and regression verdicts. A removed symptom is not proof of merge acceptability, and no executed acceptance check or scoped regression verdict is available to confirm success. No decisive applicable failure is established either, so REJECT is not warranted. The bar for ACCEPT (complete, fresh, linked, failure-free success) is not met because pass/fail outcomes are unavailable.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Decisive maintainer acceptance-test (F2P) and scoped regression (P2P) pass/fail verdicts for this patch/commit are withheld; the f2p and p2p run logs are blocked (HTTP 403 / disabled under strict evidence policy), so success of the executed checks cannot be confirmed.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 4248,
+  "tokens_out": 306,
+  "cost_usd": 0.001642,
+  "served_model": "deepseek-flash",
+  "error": null
+}

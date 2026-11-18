@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"The acceptance artifact is authentic, linked to this patch (patch_sha256 and base_commit match), fresh (run tree matches the authoritative restage tree), and coverage-complete (1/1 F2P, 10/10 scoped P2P executed). It records a decisive applicable failure: the declared acceptance test test_issue_12420 FAILED (assert _sqrt_match(4 + I) == [] -> got [4 + I, 0, 1]). The baseline run passed all 12 pre-existing tests, and the scoped P2P set shows no regressions, so the failure is attributable to this patch's acceptance check rather than a pre-existing issue. The author's claim that all relevant tests pass is contradicted by the artifact. The symptom probe shows the crash is gone, but the declared acceptance check still fails, which is sufficient grounds to reject.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "ab3645d5bea6f6f5426bc1cbd043c58d6684d037598402e725deb493a1b401ee",
+  "cell": "D",
+  "cohort": "g3a",
+  "cost_usd": 0.002872,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-17318",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.016538,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 94,
+  "tokens_in": 8738,
+  "tokens_in_est": 8577,
+  "tokens_out": 209,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 1.94,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

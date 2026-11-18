@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch modifies ConditionSet._eval_subs to correctly handle substitution when the condition is true, returning the base set directly instead of a ConditionSet with the new symbol. This fixes the issue where subs on ConditionSet with an ImageSet base was incorrectly substituting the bound variable. The patch includes a new test (test_issue_19495) that verifies the correct behavior of subs on ConditionSet with an ImageSet base. The acceptance test artifact shows all relevant tests pass with no failures or regressions. The patch is linked to the test artifact and the base commit, and the evidence is fresh and applicable to this patch and current commit tree. No applicable acceptance check fails and no scoped regression is introduced.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "8ee28304b1530949fb24ae4e465e746231355ae97175ee1efb6db86faa00b49c",
+  "cell": "C",
+  "cohort": "g3c1",
+  "cost_usd": 0.005938,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-19495",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.019626,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 40,
+  "tokens_in": 14176,
+  "tokens_in_est": 16296,
+  "tokens_out": 167,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.53,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

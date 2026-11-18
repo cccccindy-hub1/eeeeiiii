@@ -1,0 +1,23 @@
+{
+  "serial": 88,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-17318",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentic and linked (base_commit and patch_sha256 match), and the issue-derived symptom probe shows the IndexError is gone after the patch (pre-patch exit 1, post-patch exit 0). However, this is only diagnostic-tier evidence: the maintainer acceptance-test outcomes (FAIL_TO_PASS / PASS_TO_PASS verdicts) are withheld and the f2p/p2p/p2p_baseline logs are blocked (HTTP 403). The freshness and declared-set coverage attestations are UNKNOWN on this surface, so I cannot confirm the declared acceptance set was fully executed and failure-free. No decisive applicable failure is established either, so REJECT is not warranted. The symptom removal alone is not proof of merge acceptability, so I abstain.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test verdicts (FAIL_TO_PASS and scoped PASS_TO_PASS outcomes) for this patch at base_commit d4e0231b, plus a fresh coverage attestation confirming the declared acceptance/regression set was fully executed on the current tree.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 4100,
+  "tokens_out": 250,
+  "cost_usd": 0.00153,
+  "served_model": "deepseek-flash",
+  "error": null
+}

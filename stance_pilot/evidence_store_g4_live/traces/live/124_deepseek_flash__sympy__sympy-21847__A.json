@@ -1,0 +1,23 @@
+{
+  "serial": 124,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-21847",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentically linked to this patch and base commit (patch_sha256 and base_commit match), and the issue-derived symptom probe shows the reported symptom is gone after the patch (baseline FAIL on missing total-degree-3 monomials, post-patch OK with 10 monomials). However, this is diagnostic-tier evidence only: maintainer acceptance-test outcomes (FAIL_TO_PASS / PASS_TO_PASS) and scoped regression verdicts are withheld (HTTP 403 / disabled), and freshness and declared-set coverage attestations are UNKNOWN on this surface. A removed symptom is not proof of merge acceptability, and no decisive applicable failure is established either. Therefore I cannot reach ACCEPT (complete, fresh, linked, failure-free success not demonstrated) nor REJECT (no credible applicable failing check).\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test outcomes (FAIL_TO_PASS and scoped PASS_TO_PASS verdicts) for this patch/commit are not available; the declared acceptance/regression set was not shown to be fully executed, and freshness/coverage attestations are withheld (UNKNOWN).\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 4028,
+  "tokens_out": 257,
+  "cost_usd": 0.001517,
+  "served_model": "deepseek-flash",
+  "error": null
+}

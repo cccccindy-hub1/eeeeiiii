@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The acceptance artifact is authentic and linked: base_commit and patch_sha256 both match the review target (verify_artifact_linkage: linked=true, both matches true). The FAIL_TO_PASS check passed (1/1, test_tensor_product_simp), and the scoped PASS_TO_PASS set passed 4/4 with no regressions (p2p_regressed_ids empty, p2p_preexisting_bad_ids empty). The run logs confirm this: the f2p, p2p, and p2p_baseline runs of test_tensorproduct.py all show 7 passed, and the symptom probe flips from FAIL (baseline: '1x1**2') to OK (post-patch: '1x1 1x1'), directly demonstrating the issue is resolved. The claim-consistency check reports 0 failed acceptance checks and 0 regressions. Freshness and coverage attestations are withheld (UNKNOWN) on this surface; per protocol, UNKNOWN is neither staleness nor incompleteness and cannot refute the intact, linked, failure-free success evidence. No applicable failing check exists, so the patch is merge-acceptable.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "94f099fcd50a00072bb828d7c6c8af0f6ceb05fc1fad17bccec834edcbcedd66",
+  "cell": "C",
+  "cohort": "g3a",
+  "cost_usd": 0.003055,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-13974",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.016846,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 73,
+  "tokens_in": 9087,
+  "tokens_in_est": 9348,
+  "tokens_out": 274,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.24,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and decisive. Linkage verified: artifact art_cf228260cdf9b995 base_commit c50643a49811e9fe2f4851adff4313ad46f7325e and patch_sha256 a50328b99218b5ba1700715b18873104fd3521660e654c38c0d041a458b15849 both match the review target. Freshness attestation is TRUE (authoritative restage tree 5440049ab0b9a9582894155ae4bdac6457928455 equals expected run tree). Coverage attestation is complete: FAIL_TO_PASS 1/1 executed, scoped PASS_TO_PASS 42/42 executed, no missing ids. Outcomes: test_encode_morse PASSED (f2p), all 42 scoped p2p PASSED, no regressions, baseline consistent. The symptom probe confirms the fix: pre-patch encode_morse('1')='----' (FAIL), post-patch '.----' (OK). The patch changes the mapping from '----' to '.----' for '1', exactly as the issue requires, and the full crypto test file passes 44/44. No applicable failure exists.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "6ab4796113e6cf341eefd1407aa48b93f285031635d61d436bf1732f76abcd0b",
+  "cell": "D",
+  "cohort": "g3c1",
+  "cost_usd": 0.003813,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-16886",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.017661,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 23,
+  "tokens_in": 11545,
+  "tokens_in_est": 11384,
+  "tokens_out": 291,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.25,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

@@ -1,0 +1,46 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch corrects the sign error in the to_rotation_matrix method as demonstrated by the reproduced symptom probe which fails before the patch and passes after it. The evidence is fresh, linked to this patch and commit, and coverage is complete for the declared acceptance and regression tests. No failing acceptance or regression test is reported in the scoped evidence. The author claim that all relevant tests pass is consistent with the diagnostic evidence. Therefore, the patch resolves the issue without introducing regressions.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "1fc55deb1a6f059d5262901a657b09c041768b3a73fbe65c3d6f7ecf9511dcd4",
+  "cell": "B",
+  "cohort": "g3a",
+  "cost_usd": 0.001448,
+  "expected_served_model_id": "gpt-4.1-mini-2025-04-14",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-15349",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "gpt-4.1-mini",
+  "model_calls": 1,
+  "model_profile": "gpt-4.1-mini",
+  "model_served": "gpt-4.1-mini-2025-04-14",
+  "pre_call_worst_case_bound_usd": 0.014632,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 84,
+  "tokens_in": 3140,
+  "tokens_in_est": 3811,
+  "tokens_out": 120,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 1.39,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "gpt-4.1-mini",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

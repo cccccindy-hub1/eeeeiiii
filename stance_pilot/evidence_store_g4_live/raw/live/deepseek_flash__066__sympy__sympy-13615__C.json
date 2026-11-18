@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"Linkage verified: the acceptance artifact's base_commit (50d8a102...) and patch_sha256 (0c5d6c01...) both match the review target, and the signature is authentic. The FAIL_TO_PASS check test_Complement PASSED (1/1), and the scoped PASS_TO_PASS set passed 70/70 with no regressed IDs. The symptom probe confirms the issue is resolved: pre-patch it failed with '{x, y} != {x, y} \\\\ Interval(-10, 10)', and post-patch it exits 0 with 'Complement = {x, y} \\\\ Interval(-10, 10)', which is the expected output. The two FAILED entries in the run logs (test_image_Intersection, test_union_boundary_of_joining_sets) are XFail-marked and fail identically in the pre-patch baseline log, so they are pre-existing expected failures, not regressions introduced by this patch. Freshness and coverage attestations are withheld (UNKNOWN) on this surface; per protocol that is neither staleness nor incompleteness and does not refute the intact, linked, failure-free acceptance evidence. No applicable acceptance failure or scoped regression is established, so the patch is merge-acceptable.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "b5dc972a65b6853eb2386e4bbc56a61f2df359501b45113f0de48518f08108c5",
+  "cell": "C",
+  "cohort": "g3a",
+  "cost_usd": 0.005128,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-13615",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.019928,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 66,
+  "tokens_in": 15913,
+  "tokens_in_est": 17051,
+  "tokens_out": 295,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.33,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

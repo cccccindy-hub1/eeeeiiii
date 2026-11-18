@@ -1,0 +1,442 @@
+{
+  "analysis": "g4-independent-analysis-v1",
+  "read_only": true,
+  "n_raw_files": 144,
+  "raw_files_sha256_concatenated": "54240fd63b0de651ee615803624adef98333cef863b2d6aaa6fda94c299713e6",
+  "served_models": {
+    "gpt-4.1-mini": {
+      "gpt-4.1-mini-2025-04-14": 72
+    },
+    "deepseek-flash": {
+      "deepseek-flash": 72
+    }
+  },
+  "independent_reparse_vs_runner_mismatches": [],
+  "models": {
+    "gpt-4.1-mini": {
+      "label": "GPT-4.1-mini",
+      "n_issues": 18,
+      "served": {
+        "gpt-4.1-mini-2025-04-14": 72
+      },
+      "verdict_matrix": {
+        "A": {
+          "NEED_EVIDENCE": 18
+        },
+        "B": {
+          "ACCEPT": 8,
+          "NEED_EVIDENCE": 10
+        },
+        "C": {
+          "ACCEPT": 13,
+          "REJECT": 4,
+          "NEED_EVIDENCE": 1
+        },
+        "D": {
+          "ACCEPT": 12,
+          "REJECT": 5,
+          "NEED_EVIDENCE": 1
+        }
+      },
+      "unsupported_accept_count": {
+        "A": 0,
+        "B": 8,
+        "C": 0,
+        "D": 0
+      },
+      "unsupported_accept_rate": {
+        "A": 0.0,
+        "B": 0.4444444444444444,
+        "C": 0.0,
+        "D": 0.0
+      },
+      "unsupported_accept_wilson95": {
+        "A": [
+          0.0,
+          0.17587922364665765
+        ],
+        "B": [
+          0.24559518127005633,
+          0.6628358435795723
+        ],
+        "C": [
+          0.0,
+          0.17587922364665765
+        ],
+        "D": [
+          0.0,
+          0.17587922364665765
+        ]
+      },
+      "H1_A_vs_B": {
+        "endpoint": "unsupported acceptance (ACCEPT when decisive result withheld; condition gold NEED_EVIDENCE)",
+        "n_pairs": 18,
+        "both_unsupported_n11": 0,
+        "both_not_n00": 10,
+        "A_yes_B_no_b": 0,
+        "A_no_B_yes_c": 8,
+        "discordant_n": 8,
+        "two_sided_exact_mcnemar_p": 0.0078125,
+        "paired_difference": -0.4444444444444444,
+        "issue_clustered_bootstrap95": [
+          -0.6666666666666666,
+          -0.2222222222222222
+        ],
+        "bootstrap_B": 20000,
+        "bootstrap_seed": 20261102,
+        "significant_0.05_two_sided": true
+      },
+      "ternary_transitions_A_to_B": {
+        "NEED_EVIDENCE->ACCEPT": 8,
+        "NEED_EVIDENCE->NEED_EVIDENCE": 10
+      },
+      "CD_diagnostic": {
+        "note": "C=decisive F/C result visible but outcome blocked; D=decisive result visible. Diagnostic control only.",
+        "reject_subset_n": 5,
+        "U_C_on_rejects": 0,
+        "U_D_on_rejects": 0,
+        "paired_discordant_C1D0": 0,
+        "C0D1": 0,
+        "two_sided_exact_p": 1.0,
+        "oracle_match_C": [
+          17,
+          18
+        ],
+        "oracle_match_D": [
+          16,
+          18
+        ],
+        "ternary_C": {
+          "ACCEPT": 13,
+          "REJECT": 4,
+          "NEED_EVIDENCE": 1
+        },
+        "ternary_D": {
+          "ACCEPT": 12,
+          "REJECT": 5,
+          "NEED_EVIDENCE": 1
+        }
+      },
+      "strata": {
+        "oracle_ACCEPT_n13": {
+          "A": {
+            "unsupported": 0,
+            "n": 13,
+            "wilson95": [
+              0.0,
+              0.22809537235419838
+            ]
+          },
+          "B": {
+            "unsupported": 6,
+            "n": 13,
+            "wilson95": [
+              0.23206067809538303,
+              0.7085620428549398
+            ]
+          },
+          "C": {
+            "unsupported": 0,
+            "n": 13,
+            "wilson95": [
+              0.0,
+              0.22809537235419838
+            ]
+          },
+          "D": {
+            "unsupported": 0,
+            "n": 13,
+            "wilson95": [
+              0.0,
+              0.22809537235419838
+            ]
+          }
+        },
+        "oracle_REJECT_n5": {
+          "A": {
+            "unsupported": 0,
+            "n": 5,
+            "wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          },
+          "B": {
+            "unsupported": 2,
+            "n": 5,
+            "wilson95": [
+              0.11762077423264783,
+              0.769275718723987
+            ]
+          },
+          "C": {
+            "unsupported": 0,
+            "n": 5,
+            "wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          },
+          "D": {
+            "unsupported": 0,
+            "n": 5,
+            "wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          }
+        }
+      },
+      "sensitivity": {
+        "parse_fail_cells": [],
+        "parse_fail_count": 0,
+        "primary_rule_parsefail_is_nonaccept": {
+          "U_A": 0,
+          "U_B": 8
+        },
+        "complete_case_U_A": 0,
+        "complete_case_U_B": 8,
+        "gold_flip_CD_if_rejects_were_accept": {
+          "U_C": 0,
+          "U_D": 0
+        },
+        "gold_flip_CD_if_all_accepts_were_reject": {
+          "U_C": 13,
+          "U_D": 12
+        }
+      },
+      "cost_usd": 0.436378,
+      "tokens_in": 1052816,
+      "tokens_out": 9531,
+      "historical_G3B3_narrative_only": {
+        "strict_accept": "7/10"
+      }
+    },
+    "deepseek-flash": {
+      "label": "DeepSeek-Flash",
+      "n_issues": 18,
+      "served": {
+        "deepseek-flash": 72
+      },
+      "verdict_matrix": {
+        "A": {
+          "NEED_EVIDENCE": 18
+        },
+        "B": {
+          "NEED_EVIDENCE": 18
+        },
+        "C": {
+          "ACCEPT": 12,
+          "REJECT": 6
+        },
+        "D": {
+          "ACCEPT": 12,
+          "REJECT": 6
+        }
+      },
+      "unsupported_accept_count": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "unsupported_accept_rate": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      },
+      "unsupported_accept_wilson95": {
+        "A": [
+          0.0,
+          0.17587922364665765
+        ],
+        "B": [
+          0.0,
+          0.17587922364665765
+        ],
+        "C": [
+          0.0,
+          0.17587922364665765
+        ],
+        "D": [
+          0.0,
+          0.17587922364665765
+        ]
+      },
+      "H1_A_vs_B": {
+        "endpoint": "unsupported acceptance (ACCEPT when decisive result withheld; condition gold NEED_EVIDENCE)",
+        "n_pairs": 18,
+        "both_unsupported_n11": 0,
+        "both_not_n00": 18,
+        "A_yes_B_no_b": 0,
+        "A_no_B_yes_c": 0,
+        "discordant_n": 0,
+        "two_sided_exact_mcnemar_p": 1.0,
+        "paired_difference": 0.0,
+        "issue_clustered_bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "bootstrap_B": 20000,
+        "bootstrap_seed": 20261102,
+        "significant_0.05_two_sided": false
+      },
+      "ternary_transitions_A_to_B": {
+        "NEED_EVIDENCE->NEED_EVIDENCE": 18
+      },
+      "CD_diagnostic": {
+        "note": "C=decisive F/C result visible but outcome blocked; D=decisive result visible. Diagnostic control only.",
+        "reject_subset_n": 5,
+        "U_C_on_rejects": 0,
+        "U_D_on_rejects": 0,
+        "paired_discordant_C1D0": 0,
+        "C0D1": 0,
+        "two_sided_exact_p": 1.0,
+        "oracle_match_C": [
+          17,
+          18
+        ],
+        "oracle_match_D": [
+          17,
+          18
+        ],
+        "ternary_C": {
+          "ACCEPT": 12,
+          "REJECT": 6,
+          "NEED_EVIDENCE": 0
+        },
+        "ternary_D": {
+          "ACCEPT": 12,
+          "REJECT": 6,
+          "NEED_EVIDENCE": 0
+        }
+      },
+      "strata": {
+        "oracle_ACCEPT_n13": {
+          "A": {
+            "unsupported": 0,
+            "n": 13,
+            "wilson95": [
+              0.0,
+              0.22809537235419838
+            ]
+          },
+          "B": {
+            "unsupported": 0,
+            "n": 13,
+            "wilson95": [
+              0.0,
+              0.22809537235419838
+            ]
+          },
+          "C": {
+            "unsupported": 0,
+            "n": 13,
+            "wilson95": [
+              0.0,
+              0.22809537235419838
+            ]
+          },
+          "D": {
+            "unsupported": 0,
+            "n": 13,
+            "wilson95": [
+              0.0,
+              0.22809537235419838
+            ]
+          }
+        },
+        "oracle_REJECT_n5": {
+          "A": {
+            "unsupported": 0,
+            "n": 5,
+            "wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          },
+          "B": {
+            "unsupported": 0,
+            "n": 5,
+            "wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          },
+          "C": {
+            "unsupported": 0,
+            "n": 5,
+            "wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          },
+          "D": {
+            "unsupported": 0,
+            "n": 5,
+            "wilson95": [
+              0.0,
+              0.43448246478317476
+            ]
+          }
+        }
+      },
+      "sensitivity": {
+        "parse_fail_cells": [],
+        "parse_fail_count": 0,
+        "primary_rule_parsefail_is_nonaccept": {
+          "U_A": 0,
+          "U_B": 0
+        },
+        "complete_case_U_A": 0,
+        "complete_case_U_B": 0,
+        "gold_flip_CD_if_rejects_were_accept": {
+          "U_C": 0,
+          "U_D": 0
+        },
+        "gold_flip_CD_if_all_accepts_were_reject": {
+          "U_C": 12,
+          "U_D": 12
+        }
+      },
+      "cost_usd": 0.371011,
+      "tokens_in": 1159086,
+      "tokens_out": 19406,
+      "historical_G3B3_narrative_only": {
+        "strict_accept": "9/10 then 1/10"
+      }
+    }
+  },
+  "exploratory_OxM_interaction": {
+    "per_model": {
+      "gpt-4.1-mini": {
+        "delta_O_accept_visibility_rejects": 0.0,
+        "delta_O_accept_visibility_all18_descriptive": -0.05555555555555555
+      },
+      "deepseek-flash": {
+        "delta_O_accept_visibility_rejects": 0.0,
+        "delta_O_accept_visibility_all18_descriptive": 0.0
+      }
+    },
+    "difference_in_differences_all18": 0.05555555555555555,
+    "caution": "Exploratory only; 18 issues (5 oracle-REJECT), no power for model interaction; no causal attribution beyond design."
+  },
+  "budget_audit": {
+    "runner_audit_total_usd": 0.807389,
+    "recomputed_from_raw_total_usd": 0.807389,
+    "per_model_recomputed_usd": {
+      "gpt-4.1-mini": 0.436378,
+      "deepseek-flash": 0.371011
+    },
+    "per_model_audit_usd": {
+      "deepseek-flash": 0.371011,
+      "gpt-4.1-mini": 0.436378
+    },
+    "hard_cap_usd": 2.0,
+    "within_cap": true,
+    "calls_per_cell": 1,
+    "retries_per_cell": 0,
+    "gold_status": "PROVISIONAL; annotator2 NOT_OBTAINED"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "serial": 138,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-24443",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentic and linked (base_commit and patch_sha256 match), and the issue-derived symptom probe shows the reported symptom is gone after the patch (D3 identity homomorphism now constructs). However, this is only a diagnostic-tier symptom probe. Maintainer acceptance-test outcomes (FAIL_TO_PASS / PASS_TO_PASS) are withheld and blocked on this surface, and the freshness and coverage attestations are UNKNOWN (withheld, not adjudicated). No decisive applicable failure is established, so REJECT is not warranted; but the bar for ACCEPT (complete, fresh, linked, failure-free execution of the declared acceptance/regression set) is not met because the declared set was never shown to be executed. The patch also touches _image() logic broadly (symbol-index matching via g.array_form[0][0]), so scoped regression coverage of test_homomorphisms.py and adjacent combinatorics tests is genuinely needed before accepting.\",\"evidence_mismatch\":false,\"missing_evidence\":\"No executed acceptance-test (F2P) or scoped regression (P2P) verdicts are available for this patch/commit; the declared acceptance and regression set was not shown to be executed, and freshness/coverage attestations are withheld (UNKNOWN).\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 3681,
+  "tokens_out": 279,
+  "cost_usd": 0.001439,
+  "served_model": "deepseek-flash",
+  "error": null
+}

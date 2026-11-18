@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"Evidence is intact and applicable: linkage verified (base_commit and patch_sha256 match), freshness adjudicated TRUE (run tree equals canonical restage tree), and coverage complete (2/2 F2P, 19/19 scoped P2P executed). The declared acceptance set contains a decisive failure: FAIL_TO_PASS test_zero_matrix_add FAILED (assert Add(ZeroMatrix(2,2), ZeroMatrix(2,2)) == ZeroMatrix(2,2) yields 0 == 0). The baseline log shows this test was not failing pre-patch (it was not even collected/executed in baseline), so it is a genuine acceptance failure introduced by this patch, not a pre-existing bad test. The symptom probe does show the issue symptom resolved (b*b*b now collapses), but a failing declared acceptance check is sufficient grounds to REJECT. The author's claim that 'all relevant tests pass' is contradicted by the artifact.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "4eee715662fe8f16f29f49269bbef50df1970bad9fec5ea4d85f1f76bcc824dc",
+  "cell": "D",
+  "cohort": "g3a",
+  "cost_usd": 0.007105,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-17630",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.02243,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 101,
+  "tokens_in": 22789,
+  "tokens_in_est": 23306,
+  "tokens_out": 224,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.25,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

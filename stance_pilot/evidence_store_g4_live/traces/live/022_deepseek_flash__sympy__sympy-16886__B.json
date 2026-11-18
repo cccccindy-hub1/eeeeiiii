@@ -1,0 +1,23 @@
+{
+  "serial": 22,
+  "model": "deepseek-flash",
+  "cell": "B",
+  "instance_id": "sympy__sympy-16886",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage attestations are intact: the artifact is authentically signed, its patch_sha256 and base_commit match this patch and commit, the run tree equals the independently re-derived canonical tree (fresh=TRUE), and coverage is complete (1/1 declared acceptance test executed, 42/42 scoped regression checks executed). The issue-derived symptom probe also shows the symptom gone (encode_morse('1') now returns '.----'). However, the outcome policy blocks all decisive pass/fail verdicts: the f2p, p2p, and baseline logs return HTTP 403, and the artifact withholds outcomes. A removed symptom is not proof of merge acceptability, and no executed acceptance or regression verdict is available to confirm success. Because the bar for ACCEPT requires failure-free success across the declared set, and no decisive applicable failure exists to justify REJECT, I abstain.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Decisive maintainer acceptance-test (FAIL_TO_PASS) and scoped regression (PASS_TO_PASS) pass/fail verdicts for this patch at commit c50643a4 are withheld; the f2p/p2p/baseline run logs are blocked (HTTP 403), so success of the executed declared set cannot be confirmed.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 3593,
+  "tokens_out": 290,
+  "cost_usd": 0.001426,
+  "served_model": "deepseek-flash",
+  "error": null
+}

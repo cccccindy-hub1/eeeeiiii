@@ -1,0 +1,23 @@
+{
+  "serial": 114,
+  "model": "deepseek-flash",
+  "cell": "B",
+  "instance_id": "sympy__sympy-20590",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage and freshness are intact (patch_sha256 and base_commit match; adjudicated fresh=TRUE with run tree matching the authoritative restage tree), and coverage is complete (1/1 declared acceptance test and 21/21 scoped regression checks executed). The issue-derived symptom probe also shows the symptom gone after the patch. However, the decisive pass/fail outcomes for the declared acceptance test and the 21 scoped regression checks are withheld under the outcome policy (f2p/p2p logs return 403/disabled). A removed symptom is not proof of merge acceptability, and no executed acceptance or regression verdict is available to confirm success or to establish a decisive applicable failure. Therefore I cannot reach ACCEPT (success not demonstrated) nor REJECT (no credible applicable failure).\",\"evidence_mismatch\":false,\"missing_evidence\":\"Pass/fail verdicts for the 1 declared FAIL_TO_PASS acceptance test and the 21 scoped PASS_TO_PASS regression checks are withheld; the f2p/p2p run logs are inaccessible (403/disabled), so success of the acceptance set and absence of scoped regressions cannot be confirmed.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 3782,
+  "tokens_out": 256,
+  "cost_usd": 0.001442,
+  "served_model": "deepseek-flash",
+  "error": null
+}

@@ -1,0 +1,23 @@
+{
+  "serial": 8,
+  "model": "deepseek-flash",
+  "cell": "D",
+  "instance_id": "sympy__sympy-15875",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"REJECT\",\"reason\":\"Evidence is intact and applies to this patch: linkage verified (base_commit and patch_sha256 match), freshness adjudicated TRUE (run tree equals re-derived canonical tree), and coverage complete (1/1 F2P, 80/80 scoped P2P executed). The decisive acceptance check test_Add_is_zero FAILED (0/1 F2P passed): the maintainer test asserts e.is_zero is None for -2*I + (1 + I)**2, but the patch returns True. The patch's approach (calling self.simplify() inside _eval_is_zero) also introduces scoped regressions relative to the baseline run: test_subs_in_derivative now fails with RecursionError (infinite recursion through simplify -> trigsimp -> is_zero -> simplify) and test_nfloat now fails with ZeroDivisionError; both PASSED in the p2p_baseline run. The author's claim that all relevant tests pass is contradicted by the artifact. A single credible applicable failing acceptance check is sufficient to reject.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "REJECT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 49549,
+  "tokens_out": 244,
+  "cost_usd": 0.015157,
+  "served_model": "deepseek-flash",
+  "error": null
+}

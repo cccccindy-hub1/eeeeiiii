@@ -1,0 +1,23 @@
+{
+  "serial": 24,
+  "model": "deepseek-flash",
+  "cell": "A",
+  "instance_id": "sympy__sympy-19040",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"The artifact is authentic and linked to this patch and base commit (patch_sha256 and base_commit both match), and the issue-derived symptom probe shows the reported symptom is gone: pre-patch factor(extension=[I]) returned x - 1, post-patch it returns (x - 1)*(y - 1). However, this is only diagnostic-tier evidence. The maintainer acceptance-test outcomes (FAIL_TO_PASS / PASS_TO_PASS verdicts) are withheld, and the freshness and declared-set coverage attestations are UNKNOWN on this surface. No decisive applicable failure is established, so REJECT is not warranted; but the bar for ACCEPT (complete, fresh, linked, failure-free execution of the declared acceptance/regression set) is not met because the acceptance and scoped-regression verdicts were never adjudicated. The symptom probe alone is explicitly not proof of merge acceptability.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Maintainer acceptance-test outcomes (F2P/P2P verdicts) for this patch at base_commit b9179e80d2daa1bb6cba1ffe35ca9e6612e115c9 are withheld (HTTP 403 / disabled under strict policy), and the freshness and declared-set coverage attestations are UNKNOWN. Need the executed F2P and scoped P2P results (e.g., test_factortools.py and adjacent polys tests) to confirm no acceptance failure or scoped regression.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 4019,
+  "tokens_out": 329,
+  "cost_usd": 0.0016,
+  "served_model": "deepseek-flash",
+  "error": null
+}

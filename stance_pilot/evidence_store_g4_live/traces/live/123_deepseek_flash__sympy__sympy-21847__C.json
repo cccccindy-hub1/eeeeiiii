@@ -1,0 +1,23 @@
+{
+  "serial": 123,
+  "model": "deepseek-flash",
+  "cell": "C",
+  "instance_id": "sympy__sympy-21847",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"The acceptance artifact is authentic and linked: base_commit d9b18c518d64d0ebe8e35a98c2fb519938b9b151 and patch_sha256 7223f91c8720bf5a410abc2719f474ff9c780928840b4fb096c83b44d50f9b2b both match the review target, and the test patch applied cleanly. The FAIL_TO_PASS check (test_monomials) passed 1/1, and all 9 scoped PASS_TO_PASS checks passed with no regressions and no pre-existing failures. The symptom probe confirms the fix: pre-patch it failed with missing total-degree-3 monomials (x1**2*x2, x1*x2**2, x1*x2*x3, etc.), and post-patch it returns all 10 monomials for min=max=3. The code change (max(powers.values()) -> sum(powers.values())) correctly implements the documented total-degree semantics for both commutative and non-commutative branches, and the added tests cover min=max, min<max, and non-commutative cases. The freshness and coverage attestations are withheld (UNKNOWN) on this surface, which is neither staleness nor incompleteness and does not refute the intact, failure-free acceptance evidence.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 7721,
+  "tokens_out": 315,
+  "cost_usd": 0.002694,
+  "served_model": "deepseek-flash",
+  "error": null
+}

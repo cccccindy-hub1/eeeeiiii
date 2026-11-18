@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage attestations are intact and authentic: the artifact is linked to this patch (patch_sha256 match) and base commit, the run tree matches the independently re-derived canonical tree (fresh=TRUE), and the declared acceptance set (1 F2P) and scoped regression set (1 P2P) were fully executed. The issue-derived symptom probe also shows the symptom is gone (baseline ValueError, post-patch OK). However, the decisive pass/fail outcomes of the maintainer acceptance test and the scoped regression check are withheld at the diagnostic tier, and the f2p/p2p/baseline logs are blocked (HTTP 403). No applicable failing check is established, so REJECT is not warranted; but complete failure-free success is not demonstrated either, so ACCEPT is not warranted. Abstaining.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Decisive pass/fail verdicts for the 1 declared FAIL_TO_PASS acceptance test and the 1 scoped PASS_TO_PASS regression check (test_homomorphisms.py) are withheld; the f2p, p2p, and baseline run logs are inaccessible under the outcome policy.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "bundle_sha256": "c6ea9adb9e0004e04c5a0905ecc4b6ee2c74646f2ad47e7706329605f75bdc2a",
+  "cell": "B",
+  "cohort": "g3a",
+  "cost_usd": 0.001542,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-24443",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.014981,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 143,
+  "tokens_in": 4065,
+  "tokens_in_est": 4685,
+  "tokens_out": 269,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 1.94,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

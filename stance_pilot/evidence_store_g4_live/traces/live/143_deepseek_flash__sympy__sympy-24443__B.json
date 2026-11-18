@@ -1,0 +1,23 @@
+{
+  "serial": 143,
+  "model": "deepseek-flash",
+  "cell": "B",
+  "instance_id": "sympy__sympy-24443",
+  "factors": {
+    "O": "blocked",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"NEED_EVIDENCE\",\"reason\":\"Linkage, freshness, and coverage attestations are intact and authentic: the artifact is linked to this patch (patch_sha256 match) and base commit, the run tree matches the independently re-derived canonical tree (fresh=TRUE), and the declared acceptance set (1 F2P) and scoped regression set (1 P2P) were fully executed. The issue-derived symptom probe also shows the symptom is gone (baseline ValueError, post-patch OK). However, the decisive pass/fail outcomes of the maintainer acceptance test and the scoped regression check are withheld at the diagnostic tier, and the f2p/p2p/baseline logs are blocked (HTTP 403). No applicable failing check is established, so REJECT is not warranted; but complete failure-free success is not demonstrated either, so ACCEPT is not warranted. Abstaining.\",\"evidence_mismatch\":false,\"missing_evidence\":\"Decisive pass/fail verdicts for the 1 declared FAIL_TO_PASS acceptance test and the 1 scoped PASS_TO_PASS regression check (test_homomorphisms.py) are withheld; the f2p, p2p, and baseline run logs are inaccessible under the outcome policy.\",\"evidence_gap\":\"coverage_incomplete\"}",
+  "parsed": "NEED_EVIDENCE",
+  "unsupported_accept": false,
+  "oracle_match": null,
+  "tokens_in": 4065,
+  "tokens_out": 269,
+  "cost_usd": 0.001542,
+  "served_model": "deepseek-flash",
+  "error": null
+}

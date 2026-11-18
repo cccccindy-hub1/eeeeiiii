@@ -1,0 +1,23 @@
+{
+  "serial": 40,
+  "model": "gpt-4.1-mini",
+  "cell": "C",
+  "instance_id": "sympy__sympy-19495",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch modifies ConditionSet._eval_subs to correctly handle substitution when the condition is true, returning the base set directly instead of a ConditionSet with the new symbol. This fixes the issue where subs on ConditionSet with an ImageSet base was incorrectly substituting the bound variable. The patch includes a new test (test_issue_19495) that verifies the correct behavior of subs on ConditionSet with an ImageSet base. The acceptance test artifact shows all relevant tests pass with no failures or regressions. The patch is linked to the test artifact and the base commit, and the evidence is fresh and applicable to this patch and current commit tree. No applicable acceptance check fails and no scoped regression is introduced.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 14176,
+  "tokens_out": 167,
+  "cost_usd": 0.005938,
+  "served_model": "gpt-4.1-mini-2025-04-14",
+  "error": null
+}

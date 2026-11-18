@@ -1,0 +1,58 @@
+\section{Introduction}
+\label{sec:intro}
+
+Automated code review is moving from passive summarisation toward agents that
+fetch artifacts, run or read tests, and emit binding accept/reject decisions.
+Evaluating such agents is subtle because a correct-looking label can arise from
+insufficient or corrupted evidence, and a withheld decision---asking for more
+evidence---can be the \emph{correct} response when the granted evidence is
+non-decisive. A benchmark that scores only \ACCEPT/\REJECT\ against a single
+oracle cannot tell these apart and will systematically reward
+over-commitment.
+
+We organise the evaluation around one question:
+\begin{quote}
+\emph{Can code-review agents distinguish evidence integrity from evidence
+sufficiency?}
+\end{quote}
+
+\emph{Evidence integrity} asks whether the artifacts an agent sees are
+authentic, fresh, linked to the patch, and complete. \emph{Evidence
+sufficiency} asks whether those artifacts, even if perfectly intact, are
+decisive for the review verdict. These are orthogonal: a restricted evidence
+view can be 100\,\% authentic yet genuinely insufficient (the correct output is
+\NEED), while a sufficient view can be misread (a visible failure can be
+ignored).
+
+GroundedReview makes four contributions.
+\begin{enumerate}[leftmargin=1.6em,itemsep=2pt,topsep=3pt]
+  \item \textbf{Benchmark formulation.} A three-way review task
+  (\ACCEPT/\REJECT/\NEED) with an explicit distinction between
+  \emph{Oracle Gold} and \emph{Condition Gold}, and a \emph{scoped} notion of
+  acceptability tied to declared tests rather than whole-project correctness.
+  \item \textbf{Evidence-controlled evaluation.} Five evidence conditions per
+  issue that vary (i) static versus active tool access and (ii) restricted
+  versus decisive test outcomes, with machine-checked non-interference so that
+  restricted surfaces cannot leak the verdict.
+  \item \textbf{Empirical analysis.} A corrective replication that isolates a
+  protocol-construct artifact in our own earlier instrument, evidence of
+  unsupported commitment under restricted evidence, and a traceable case of a
+  sufficient-but-ignored failure---all reported with explicit denominators,
+  issue-level units, and confidence bounds, alongside an independently
+  constructed validation set, since reviewed by an independent human
+  annotator.
+  \item \textbf{Controlled causal evidence (G4).} A pre-registered,
+  within-issue $2\times2$ intervention over 18 frozen pairs using a yoked
+  fixed evidence transcript that holds linkage constant and independently
+  manipulates decisive-outcome visibility and integrity attestation, analysed
+  with paired exact tests and independent contexts, which isolates a
+  model-specific causal effect of attestation on unsupported acceptance.
+\end{enumerate}
+
+We emphasise what the present evidence does \emph{not} support:
+population-level false-acceptance rates (our oracle-\REJECT\ sample is three,
+later eight with only two rejects, and 18 with five rejects in G4), causal
+attribution of the cross-version change to a single fix (the G4 intervention
+separately supplies the one controlled, within-issue causal estimate in the
+paper), or any claim that the scoped \ACCEPT\ issues passed the entire SymPy
+test suite.

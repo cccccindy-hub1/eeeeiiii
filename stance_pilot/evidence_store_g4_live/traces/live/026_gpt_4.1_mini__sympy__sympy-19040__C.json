@@ -1,0 +1,23 @@
+{
+  "serial": 26,
+  "model": "gpt-4.1-mini",
+  "cell": "C",
+  "instance_id": "sympy__sympy-19040",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"The patch addresses the issue where factor with extension=True dropped a factor, as demonstrated by the added test in test_factortools.py which verifies that both factors (x-1) and (y-1) are present after factoring with extension including I. The acceptance test for the issue passes (test_issue_5786 PASSED), and no regression is introduced as all other acceptance and scoped regression tests pass. The test logs confirm that the factorization with extension preserves all factors correctly post-patch, whereas the baseline failed. The evidence is fresh, linked to this patch and commit tree, and covers the declared acceptance set with no failures.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 26084,
+  "tokens_out": 154,
+  "cost_usd": 0.01068,
+  "served_model": "gpt-4.1-mini-2025-04-14",
+  "error": null
+}

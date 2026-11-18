@@ -1,0 +1,23 @@
+{
+  "serial": 5,
+  "model": "gpt-4.1-mini",
+  "cell": "C",
+  "instance_id": "sympy__sympy-14248",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"REJECT\",\"reason\":\"The patch is linked and fresh for the current commit tree. The acceptance test for the specific issue 'test_MatrixSymbol_printing' fails in the post-patch run, indicating the patch does not fully resolve the printing issue for MatrixSymbols. Additionally, scoped regression tests 'test_haramard' and 'test_matMul' fail after the patch, showing regressions introduced by this patch. These failures are decisive and applicable to this patch, thus the patch cannot be accepted.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "REJECT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 99677,
+  "tokens_out": 122,
+  "cost_usd": 0.040066,
+  "served_model": "gpt-4.1-mini-2025-04-14",
+  "error": null
+}

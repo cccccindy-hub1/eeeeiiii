@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"REJECT\",\"reason\":\"The acceptance artifact is authentic and linked to this patch (patch_sha256 and base_commit both match), and the symptom probe confirms the reported crash is fixed (block_collapse(b*b*b) now succeeds). However, the declared FAIL_TO_PASS set is not fully passing: test_zero_matrix_add FAILED (1/2 f2p passed). The f2p run log shows this failure is a genuine, applicable regression introduced by the patch: `Add(ZeroMatrix(2,2), ZeroMatrix(2,2))` now evaluates to `0` instead of `ZeroMatrix(2,2)`, and `test_matrix_add_with_scalar` also newly fails (DID NOT RAISE) — both are absent from the baseline run (baseline shows only the pre-existing test_factor_expand and test_MatAdd_postprocessor_xfail failures). The patch's use of `block == S.Zero` triggers structural equality that collapses ZeroMatrix to scalar Zero, corrupting matrix addition semantics. This is a decisive applicable acceptance failure, so REJECT.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "c152e79455317b29bac554b4f8320f580e3bd3d347f575e077cd5b86791757d5",
+  "cell": "C",
+  "cohort": "g3a",
+  "cost_usd": 0.007108,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-17630",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.022418,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 102,
+  "tokens_in": 22706,
+  "tokens_in_est": 23277,
+  "tokens_out": 247,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.45,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

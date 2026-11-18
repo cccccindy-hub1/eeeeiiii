@@ -1,0 +1,23 @@
+{
+  "serial": 95,
+  "model": "deepseek-flash",
+  "cell": "C",
+  "instance_id": "sympy__sympy-17318",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"REJECT\",\"reason\":\"The acceptance artifact is authentic and linked to this patch (patch_sha256 and base_commit both match), and it records a decisive applicable failure: the declared FAIL_TO_PASS test test_issue_12420 FAILED (0/1 passed). The f2p log shows the failure concretely: `assert _sqrt_match(4 + I) == []` yields `[4 + I, 0, 1]`, so the patch's guard in _split_gcd does not make _sqrt_match return the expected empty result. The scoped PASS_TO_PASS set passed 10/10 with no regressions, and the symptom probe no longer crashes, but a single credible failing acceptance check is sufficient to reject. The author's claim that all relevant tests pass is contradicted by the artifact.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "REJECT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 8659,
+  "tokens_out": 193,
+  "cost_usd": 0.002829,
+  "served_model": "deepseek-flash",
+  "error": null
+}

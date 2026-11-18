@@ -1,0 +1,23 @@
+{
+  "serial": 30,
+  "model": "deepseek-flash",
+  "cell": "D",
+  "instance_id": "sympy__sympy-19040",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and decisive. Linkage verified: artifact base_commit b9179e80... and patch_sha256 cadf95a1... match the record and the patch under review. Freshness adjudicated TRUE (authoritative restage tree f4e726a7... equals expected run tree). Coverage adjudicated complete: FAIL_TO_PASS 1/1 executed, scoped PASS_TO_PASS 148/148 executed, no missing ids. Outcomes: F2P test_issue_5786 PASSED (it was XFAIL in the baseline log, confirming the fix flips it), all 148 scoped P2P PASSED with no regressions and no pre-existing bad ids. The symptom probe confirms the issue is resolved: baseline factor(extension=[I]) returned 'x - 1' (dropped factor), post-patch returns '(x - 1)*(y - 1)'. The patch's change to dmp_sqf_part (GCD over all partial derivatives) is the correct square-free-part computation for multivariate polynomials, and the added regression test in test_factortools.py exercises the algebraic-field extension case. No applicable failing check exists; the author's claim is consistent with the executed evidence.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 29470,
+  "tokens_out": 281,
+  "cost_usd": 0.009178,
+  "served_model": "deepseek-flash",
+  "error": null
+}

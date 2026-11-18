@@ -1,0 +1,23 @@
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,
+  barlabel/.style={anchor=east,align=right,text width=2.3cm},
+  >={Stealth[length=3mm]},
+  bar/.style={line width=14pt,line cap=butt}]
+
+% scale: 1 issue = 0.78 cm ; total bar = 7.8 cm for 10
+\def\s{0.78}
+
+\node[barlabel] at (0,0.6) {\textbf{G3-B}\\[1pt]\scriptsize earlier};
+\draw[bar,grReject] (2.5,0.6) -- ($(2.5,0.6)+({9*\s},0)$);
+\node[anchor=west,text=grReject,font=\bfseries] at ($(2.5,0.6)+({9*\s+0.15},0)$) {9\,/\,10 abstain};
+
+\node[barlabel] at (0,-0.6) {\textbf{G3-B.3}\\[1pt]\scriptsize corrected};
+\draw[bar,grAccept] (2.5,-0.6) -- ($(2.5,-0.6)+({1*\s},0)$);
+\draw[bar,grMuted!35] ($(2.5,-0.6)+({1*\s},0)$) -- ($(2.5,-0.6)+({10*\s},0)$);
+\node[anchor=west,text=grAccept,font=\bfseries] at ($(2.5,-0.6)+({1*\s+0.15},0)$) {1\,/\,10 abstain};
+
+% dashed transition arrow
+\draw[grWarn,dashed,line width=1.2pt,->] (8.0,1.15) .. controls (8.0,0.15) and (4.2,0.15) .. (3.7,-0.05);
+\node[font=\scriptsize,text=grMuted,align=left,anchor=north west,text width=11.2cm] at (2.5,-1.95)
+  {8 issues reverse NEED\,$\to$\,commit; 0 reverse; residual 13974.
+   Issue-cluster bootstrap of difference $[0.5,\,1.0]$ (seed 417313); \textit{associational}.};
+\end{tikzpicture}

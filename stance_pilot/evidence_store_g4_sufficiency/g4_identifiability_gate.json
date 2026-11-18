@@ -1,0 +1,4496 @@
+{
+  "document": "G4 evidence-sufficiency 2x2 identifiability gate",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "generated_at_utc": "2026-11-02T08:46:48Z",
+  "api_calls_made": 0,
+  "spend_usd": 0,
+  "frozen_artifacts_modified": false,
+  "factor_O": "decisive acceptance outcomes (blocked vs presented)",
+  "factor_M": "fc_attestation = Freshness/Coverage attestation availability (withheld vs adjudicated)",
+  "linkage": "held constant across all four cells",
+  "identified_estimand": "when freshness/coverage genuinely hold (all 18 fresh=complete=true), does attestation availability change unsupported acceptance; no claim about fresh=false/coverage=false",
+  "issue_set": {
+    "n": 18,
+    "accept": 13,
+    "reject": 5,
+    "reject_ids": [
+      "sympy__sympy-14248",
+      "sympy__sympy-15875",
+      "sympy__sympy-17318",
+      "sympy__sympy-17630",
+      "sympy__sympy-19783"
+    ]
+  },
+  "gates": {
+    "G1": {
+      "name": "G1 schema parity",
+      "pass": true,
+      "criterion": "identical recursive key set and byte length within +/-10% for withheld vs adjudicated F/C payloads",
+      "rows": [
+        {
+          "issue": "sympy__sympy-13615",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-13615",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 424,
+          "len_adjudicated": 433,
+          "ratio": 0.9792,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-13974",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-13974",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 422,
+          "len_adjudicated": 431,
+          "ratio": 0.9791,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-14248",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-14248",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 426,
+          "len_adjudicated": 435,
+          "ratio": 0.9793,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-15349",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-15349",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 422,
+          "len_adjudicated": 431,
+          "ratio": 0.9791,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-15875",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-15875",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 424,
+          "len_adjudicated": 433,
+          "ratio": 0.9792,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-16886",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-16886",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 424,
+          "len_adjudicated": 433,
+          "ratio": 0.9792,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-17318",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-17318",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 424,
+          "len_adjudicated": 433,
+          "ratio": 0.9792,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-17630",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-17630",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 424,
+          "len_adjudicated": 433,
+          "ratio": 0.9792,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19040",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19040",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 426,
+          "len_adjudicated": 435,
+          "ratio": 0.9793,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19346",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19346",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 424,
+          "len_adjudicated": 433,
+          "ratio": 0.9792,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19495",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19495",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 422,
+          "len_adjudicated": 431,
+          "ratio": 0.9791,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19637",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19637",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 424,
+          "len_adjudicated": 433,
+          "ratio": 0.9792,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19783",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19783",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 422,
+          "len_adjudicated": 431,
+          "ratio": 0.9791,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-20590",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-20590",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 424,
+          "len_adjudicated": 433,
+          "ratio": 0.9792,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-21847",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-21847",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 422,
+          "len_adjudicated": 431,
+          "ratio": 0.9791,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-22914",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-22914",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 424,
+          "len_adjudicated": 433,
+          "ratio": 0.9792,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-24213",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-24213",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 424,
+          "len_adjudicated": 433,
+          "ratio": 0.9792,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-24443",
+          "endpoint": "freshness",
+          "same_key_set": true,
+          "len_withheld": 723,
+          "len_adjudicated": 738,
+          "ratio": 0.9797,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-24443",
+          "endpoint": "coverage",
+          "same_key_set": true,
+          "len_withheld": 422,
+          "len_adjudicated": 431,
+          "ratio": 0.9791,
+          "pass": true
+        }
+      ],
+      "failures": []
+    },
+    "G2": {
+      "name": "G2 F/C non-reconstructability",
+      "pass": true,
+      "criterion": "withheld cells expose no run-tree hash, attestation time, declared/executed set, missing list, or negative wording that recomputes freshness/coverage",
+      "rows": [
+        {
+          "issue": "sympy__sympy-13615",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-13615",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-13974",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-13974",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-14248",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-14248",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-15349",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-15349",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-15875",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-15875",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-16886",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-16886",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-17318",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-17318",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-17630",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-17630",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19040",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19040",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19346",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19346",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19495",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19495",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19637",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19637",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19783",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19783",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-20590",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-20590",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-21847",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-21847",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-22914",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-22914",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-24213",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-24213",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-24443",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-24443",
+          "cell": "C",
+          "pass": true,
+          "n_problems": 0
+        }
+      ],
+      "failures": []
+    },
+    "G3": {
+      "name": "G3 outcome blocking / noninterference",
+      "pass": true,
+      "criterion": "A/B expose no acceptance verdict, failing/regressed id, failure count, or gold; acceptance logs return the frozen strict 403",
+      "rows": [
+        {
+          "issue": "sympy__sympy-13615",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-13615",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-13974",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-13974",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-14248",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-14248",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-15349",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-15349",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-15875",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-15875",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-16886",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-16886",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-17318",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-17318",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-17630",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-17630",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19040",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19040",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19346",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19346",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19495",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19495",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19637",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19637",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19783",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-19783",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-20590",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-20590",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-21847",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-21847",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-22914",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-22914",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-24213",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-24213",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-24443",
+          "cell": "A",
+          "pass": true,
+          "n_problems": 0
+        },
+        {
+          "issue": "sympy__sympy-24443",
+          "cell": "B",
+          "pass": true,
+          "n_problems": 0
+        }
+      ],
+      "failures": []
+    },
+    "G4": {
+      "name": "G4 linkage constancy",
+      "pass": true,
+      "criterion": "/verify payload and symptom surface byte-identical across A/B/C/D; linkage framing never toggled",
+      "rows": [
+        {
+          "issue": "sympy__sympy-13615",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-13974",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-14248",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-15349",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-15875",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-16886",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-17318",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-17630",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19040",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19346",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19495",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19637",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19783",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-20590",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-21847",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-22914",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-24213",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-24443",
+          "verify_identical_all4": true,
+          "symptom_identical_all4": true,
+          "pass": true
+        }
+      ],
+      "failures": []
+    },
+    "G5": {
+      "name": "G5 only-registered-factors change",
+      "pass": true,
+      "criterion": "F/C payloads constant within M level across rows; logs/consistency constant within row; C/D decisive outcomes identical apart from timestamp + marker; only O and fc_attestation vary",
+      "rows": [
+        {
+          "issue": "sympy__sympy-13615",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-13974",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-14248",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-15349",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-15875",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-16886",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-17318",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-17630",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19040",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19346",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19495",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19637",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19783",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-20590",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-21847",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-22914",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-24213",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-24443",
+          "decisive_O_CD_identical": true,
+          "pass": true
+        }
+      ],
+      "failures": []
+    },
+    "G6": {
+      "name": "G6 interaction parity",
+      "pass": true,
+      "criterion": "G6.1 identical tool inventory/order; G6.2 row-wise identical fixed response status/content-type sequence (A==B, C==D; steps 0-5 constant all four; steps 6-8 differ across rows ONLY by the registered O factor: frozen strict 403/json vs 200/text); G6.3 within-row system+user char delta within +/-8% (toggled tool payloads excluded)",
+      "rows": [
+        {
+          "issue": "sympy__sympy-13615",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 7138,
+          "len_B": 7098,
+          "len_C": 6305,
+          "len_D": 6376,
+          "ratio_B_over_A": 0.9944,
+          "ratio_D_over_C": 1.0113,
+          "whitespace_tokens": {
+            "A": 920,
+            "B": 920,
+            "C": 814,
+            "D": 823
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-13974",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 8856,
+          "len_B": 8816,
+          "len_C": 8021,
+          "len_D": 8092,
+          "ratio_B_over_A": 0.9955,
+          "ratio_D_over_C": 1.0089,
+          "whitespace_tokens": {
+            "A": 1104,
+            "B": 1104,
+            "C": 998,
+            "D": 1007
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-14248",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 14348,
+          "len_B": 14310,
+          "len_C": 13794,
+          "len_D": 13865,
+          "ratio_B_over_A": 0.9974,
+          "ratio_D_over_C": 1.0051,
+          "whitespace_tokens": {
+            "A": 1724,
+            "B": 1724,
+            "C": 1649,
+            "D": 1658
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-15349",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 6407,
+          "len_B": 6366,
+          "len_C": 5572,
+          "len_D": 5643,
+          "ratio_B_over_A": 0.9936,
+          "ratio_D_over_C": 1.0127,
+          "whitespace_tokens": {
+            "A": 834,
+            "B": 834,
+            "C": 728,
+            "D": 737
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-15875",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 6331,
+          "len_B": 6292,
+          "len_C": 5552,
+          "len_D": 5623,
+          "ratio_B_over_A": 0.9938,
+          "ratio_D_over_C": 1.0128,
+          "whitespace_tokens": {
+            "A": 860,
+            "B": 860,
+            "C": 760,
+            "D": 769
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-16886",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 5867,
+          "len_B": 5827,
+          "len_C": 5034,
+          "len_D": 5105,
+          "ratio_B_over_A": 0.9932,
+          "ratio_D_over_C": 1.0141,
+          "whitespace_tokens": {
+            "A": 779,
+            "B": 779,
+            "C": 673,
+            "D": 682
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-17318",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 8735,
+          "len_B": 8696,
+          "len_C": 7956,
+          "len_D": 8027,
+          "ratio_B_over_A": 0.9955,
+          "ratio_D_over_C": 1.0089,
+          "whitespace_tokens": {
+            "A": 1132,
+            "B": 1132,
+            "C": 1032,
+            "D": 1041
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-17630",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 11617,
+          "len_B": 11578,
+          "len_C": 10842,
+          "len_D": 10913,
+          "ratio_B_over_A": 0.9966,
+          "ratio_D_over_C": 1.0065,
+          "whitespace_tokens": {
+            "A": 1281,
+            "B": 1281,
+            "C": 1181,
+            "D": 1190
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19040",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 8999,
+          "len_B": 8961,
+          "len_C": 8168,
+          "len_D": 8239,
+          "ratio_B_over_A": 0.9958,
+          "ratio_D_over_C": 1.0087,
+          "whitespace_tokens": {
+            "A": 1156,
+            "B": 1156,
+            "C": 1050,
+            "D": 1059
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19346",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 7049,
+          "len_B": 7010,
+          "len_C": 6216,
+          "len_D": 6287,
+          "ratio_B_over_A": 0.9945,
+          "ratio_D_over_C": 1.0114,
+          "whitespace_tokens": {
+            "A": 908,
+            "B": 908,
+            "C": 802,
+            "D": 811
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19495",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 9029,
+          "len_B": 8988,
+          "len_C": 8194,
+          "len_D": 8265,
+          "ratio_B_over_A": 0.9955,
+          "ratio_D_over_C": 1.0087,
+          "whitespace_tokens": {
+            "A": 1233,
+            "B": 1233,
+            "C": 1127,
+            "D": 1136
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19637",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 5858,
+          "len_B": 5819,
+          "len_C": 5025,
+          "len_D": 5096,
+          "ratio_B_over_A": 0.9933,
+          "ratio_D_over_C": 1.0141,
+          "whitespace_tokens": {
+            "A": 778,
+            "B": 778,
+            "C": 672,
+            "D": 681
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-19783",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 6588,
+          "len_B": 6548,
+          "len_C": 5804,
+          "len_D": 5875,
+          "ratio_B_over_A": 0.9939,
+          "ratio_D_over_C": 1.0122,
+          "whitespace_tokens": {
+            "A": 852,
+            "B": 852,
+            "C": 752,
+            "D": 761
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-20590",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 7204,
+          "len_B": 7165,
+          "len_C": 6371,
+          "len_D": 6442,
+          "ratio_B_over_A": 0.9946,
+          "ratio_D_over_C": 1.0111,
+          "whitespace_tokens": {
+            "A": 921,
+            "B": 921,
+            "C": 815,
+            "D": 824
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-21847",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 8823,
+          "len_B": 8783,
+          "len_C": 7988,
+          "len_D": 8059,
+          "ratio_B_over_A": 0.9955,
+          "ratio_D_over_C": 1.0089,
+          "whitespace_tokens": {
+            "A": 1116,
+            "B": 1116,
+            "C": 1010,
+            "D": 1019
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-22914",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 7577,
+          "len_B": 7538,
+          "len_C": 6744,
+          "len_D": 6815,
+          "ratio_B_over_A": 0.9949,
+          "ratio_D_over_C": 1.0105,
+          "whitespace_tokens": {
+            "A": 959,
+            "B": 959,
+            "C": 853,
+            "D": 862
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-24213",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 6921,
+          "len_B": 6881,
+          "len_C": 6088,
+          "len_D": 6159,
+          "ratio_B_over_A": 0.9942,
+          "ratio_D_over_C": 1.0117,
+          "whitespace_tokens": {
+            "A": 842,
+            "B": 842,
+            "C": 736,
+            "D": 745
+          },
+          "pass": true
+        },
+        {
+          "issue": "sympy__sympy-24443",
+          "inventory_identical": true,
+          "sequence_identical": true,
+          "len_A": 8417,
+          "len_B": 8377,
+          "len_C": 7582,
+          "len_D": 7653,
+          "ratio_B_over_A": 0.9952,
+          "ratio_D_over_C": 1.0094,
+          "whitespace_tokens": {
+            "A": 1066,
+            "B": 1066,
+            "C": 960,
+            "D": 969
+          },
+          "pass": true
+        }
+      ],
+      "failures": [],
+      "residual_confounds": [
+        "A/B vs C/D differ in static-block size and log bodies; that IS the registered O factor, not an interaction confound.",
+        "Responses are pre-rendered/fixed, so tool call COUNT cannot diverge in this first round; an interactive round where the model chooses calls would need a fresh parity audit.",
+        "The unified tool enum lists acceptance log names even in A/B; they return the frozen strict 403, so information content is blocked but the schema is homogeneous by design.",
+        "Equal presentation does not guarantee equal attention; fixed presentation isolates content, not the model’s allocation of attention."
+      ],
+      "claim_scope": "fixed_presentation_only"
+    }
+  },
+  "decision": "GO",
+  "next_action": "eligible to request a SEPARATE written authorization for the 144-cell paid pilot (<=$2)",
+  "stats_plan": {
+    "H1": "two-sided U(A) != U(B) unsupported-ACCEPT rate; sign not pre-committed",
+    "H2": "diagnostic specificity control: |U(C)-U(D)| on the 5 reject issues + oracle-match on C and D; a comparable C/D effect weakens the construct (reported, not auto-fail)",
+    "primary_test": "issue-paired exact McNemar on A vs B unsupported ACCEPT indicators (discordant b/c)",
+    "ci": "issue-clustered bootstrap 95% CI of U(A)-U(B); Clopper-Pearson per cell",
+    "unit": "independent issue (n=18); cells and models are within-issue repeated measures",
+    "cells": 144,
+    "models": [
+      "deepseek-flash",
+      "gpt-4.1-mini"
+    ],
+    "order_seed": 20261102,
+    "order_design": "balanced Latin; 8 model x cell slots shuffled and cyclically shifted one slot per issue",
+    "total_budget_usd_hard_cap": 2.0,
+    "multiplicity": "H1 is the sole confirmatory test; H2 is a gate",
+    "parse_rule": "unparseable final message = non-ACCEPT; parse-fail rate reported separately",
+    "locked": true
+  },
+  "per_issue_condition_diff": [
+    {
+      "issue": "sympy__sympy-14248",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 13759,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1296
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 426
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 3212
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 13721,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2391
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 435
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 3212
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 13205,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 31612
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 426
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 207
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 3212
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 98749
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 98749
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 95387
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 13276,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 31604
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 435
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 207
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 3212
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 98749
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 98749
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 95387
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-15875",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 5742,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1295
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 2247
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 5703,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2583
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 2247
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 4963,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 8308
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 206
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 2247
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 55525
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 55525
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 25938
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 5034,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 8300
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 206
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 2247
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 55525
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 55525
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 25938
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-16886",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 5278,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1295
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 1745
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 5238,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1315
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 1745
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 4445,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 4345
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 1745
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 6743
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 6743
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 6743
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 4516,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 4337
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 1745
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 6743
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 6743
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 6743
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-19040",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 8410,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1296
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 426
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 499
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 8372,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2798
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 435
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 499
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 7579,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 11975
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 426
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 171
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 499
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 20889
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 20889
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 20889
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 7650,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 11967
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 435
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 171
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 499
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 20889
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 20889
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 20889
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-19346",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 6460,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1295
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 435
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 6421,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2461
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 435
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 5627,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 5061
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 435
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 72537
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 72537
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 71765
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 5698,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 5053
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 435
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 72537
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 72537
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 71765
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-19495",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 8440,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1294
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 422
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 1069
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 8399,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1535
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 431
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 1069
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 7605,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2258
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 422
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 169
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 1069
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 11552
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 11552
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 11552
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 7676,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2250
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 431
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 169
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 1069
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 11552
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 11552
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 11552
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-19637",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 5269,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1295
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 342
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 5230,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2630
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 342
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 4436,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 5273
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 342
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 12506
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 12506
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 12506
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 4507,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 5265
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 342
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 12506
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 12506
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 12506
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-22914",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 6988,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1295
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 443
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 6949,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2535
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 443
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 6155,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 3812
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 443
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 60348
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 60348
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 60478
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 6226,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 3804
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 443
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 60348
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 60348
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 60478
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-13615",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 6549,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1282
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 2433
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 6509,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1414
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 2433
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 5716,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 6122
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 2433
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 11194
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 11194
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 11192
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 5787,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 6114
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 2433
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 11194
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 11194
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 11192
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-13974",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 8267,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1281
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 422
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 2394
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 8227,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2884
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 431
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 2394
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 7432,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 3400
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 422
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 169
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 2394
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 3840
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 3840
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 3840
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 7503,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 3392
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 431
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 169
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 2394
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 3840
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 3840
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 3840
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-15349",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 5818,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1281
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 422
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 749
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 5777,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1306
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 431
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 749
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 4983,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1779
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 422
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 169
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 749
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 2666
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 2666
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 2578
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 5054,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1771
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 431
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 169
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 749
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 2666
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 2666
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 2578
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-17318",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 8146,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1282
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 287
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 8107,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1879
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 287
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 7367,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2704
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 206
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 287
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 4290
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 4290
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 3367
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 7438,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2696
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 206
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 287
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 4290
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 4290
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 3367
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-17630",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 11028,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1282
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 336
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 10989,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2384
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 336
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 10253,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 3889
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 206
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 336
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 17857
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 17857
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 16301
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 10324,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 3881
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 206
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 336
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 17857
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 17857
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 16301
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-19783",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 5999,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1281
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 422
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 257
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 5959,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2884
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 431
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 257
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 5215,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 3643
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 422
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 206
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 257
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 5790
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 5790
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 4888
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 5286,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 3635
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 431
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 206
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 257
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 5790
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 5790
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 4888
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-20590",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 6615,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1282
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 274
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 6576,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2617
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 274
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 5782,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 4076
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 274
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 41512
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 41512
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 41381
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 5853,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 4068
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 274
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 41512
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 41512
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 41381
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-21847",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 8234,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1281
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 422
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 344
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 8194,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2781
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 431
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 344
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 7399,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 3547
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 422
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 344
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 2956
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 2956
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 2904
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 7470,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 3539
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 431
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 344
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 2956
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 2956
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 2904
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-24213",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 6332,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1282
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 414
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 6292,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1609
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 414
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 5499,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 3880
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 424
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 414
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 5322
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 5322
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 5242
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 5570,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 3872
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 433
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 170
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 414
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 5322
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 5322
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 5242
+            }
+          }
+        }
+      }
+    },
+    {
+      "issue": "sympy__sympy-24443",
+      "cells": {
+        "A": {
+          "system_chars": 589,
+          "user_chars": 7828,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 1281
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 422
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 393
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "B": {
+          "system_chars": 589,
+          "user_chars": 7788,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2272
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 431
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 226
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 393
+            },
+            "get_run_log:f2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p": {
+              "status": 403,
+              "chars": 74
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 403,
+              "chars": 74
+            }
+          }
+        },
+        "C": {
+          "system_chars": 589,
+          "user_chars": 6993,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2533
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 723
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 422
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 169
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 393
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 2004
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 2004
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 2004
+            }
+          }
+        },
+        "D": {
+          "system_chars": 589,
+          "user_chars": 7064,
+          "step_bodies": {
+            "get_test_artifact": {
+              "status": 200,
+              "chars": 2525
+            },
+            "verify_artifact_linkage": {
+              "status": 200,
+              "chars": 257
+            },
+            "check_evidence_freshness": {
+              "status": 200,
+              "chars": 738
+            },
+            "check_test_coverage": {
+              "status": 200,
+              "chars": 431
+            },
+            "check_claim_consistency": {
+              "status": 200,
+              "chars": 169
+            },
+            "get_run_log:symptom": {
+              "status": 200,
+              "chars": 393
+            },
+            "get_run_log:f2p": {
+              "status": 200,
+              "chars": 2004
+            },
+            "get_run_log:p2p": {
+              "status": 200,
+              "chars": 2004
+            },
+            "get_run_log:p2p_baseline": {
+              "status": 200,
+              "chars": 2004
+            }
+          }
+        }
+      }
+    }
+  ],
+  "elapsed_sec": 0.64
+}

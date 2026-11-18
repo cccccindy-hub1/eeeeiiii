@@ -1,0 +1,48 @@
+{
+  "answer_raw": "{\"decision\":\"ACCEPT\",\"reason\":\"The acceptance artifact (art_22542096dfadeb88) is authentic and linkage-verified: base_commit 63f8f465... and patch_sha256 b390b959... both match this patch and commit tree. The FAIL_TO_PASS test (test_kernS) passed 1/1, and the scoped PASS_TO_PASS set passed 40/40 with no regressed or pre-existing-bad IDs. The symptom probe confirms the fix: pre-patch kernS raised UnboundLocalError, post-patch it returns 2*x/(x - 1). The two failures visible in the raw f2p/p2p logs (test_evaluate_false, test_issue_17811) are pre-existing: the p2p_baseline log shows the identical two failures on the unpatched tree, so they are not regressions introduced by this patch. The patch correctly moves `hit = kern in s` inside the `if ' ' in s:` block, resolving the UnboundLocalError. Freshness/coverage attestations are withheld (UNKNOWN) on this surface, but the surface-provided decisive evidence is intact, linked, and failure-free, so ACCEPT is warranted.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "bundle_sha256": "69f6d82600dc2548c39f21acf8bbc0494bce100886130956079a0b20d9551e22",
+  "cell": "C",
+  "cohort": "g3c1",
+  "cost_usd": 0.005256,
+  "expected_served_model_id": "deepseek-flash",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "withheld",
+    "linkage": "linked_constant"
+  },
+  "finish_reason": "stop",
+  "g4_version": "g4-sufficiency-iv-v1.1",
+  "instance_id": "sympy__sympy-19637",
+  "messages_in_context": 20,
+  "mock": false,
+  "model": "deepseek-flash",
+  "model_calls": 1,
+  "model_profile": "deepseek-flash",
+  "model_served": "deepseek-flash",
+  "pre_call_worst_case_bound_usd": 0.01989,
+  "protocol": "ternary-g4-fixed-presentation",
+  "serial": 52,
+  "tokens_in": 16389,
+  "tokens_in_est": 16957,
+  "tokens_out": 283,
+  "tool_path_fixed": true,
+  "tools_inventory_sha256": "3ba1dd019b8d9113fc2803f7c405e3f8fdd41d02ede9a97fe9655b48dd79276a",
+  "wall_s": 2.15,
+  "wire_shapes": [
+    {
+      "completion_cap": 8192,
+      "completion_param": "max_tokens",
+      "extra_body_keys": [
+        "thinking"
+      ],
+      "fallback_from": null,
+      "has_tools": false,
+      "model": "deepseek-flash",
+      "n_messages": 20,
+      "reasoning_effort": null,
+      "response_format": "json_object",
+      "temperature_present": true
+    }
+  ],
+  "yoked_steps": 9
+}

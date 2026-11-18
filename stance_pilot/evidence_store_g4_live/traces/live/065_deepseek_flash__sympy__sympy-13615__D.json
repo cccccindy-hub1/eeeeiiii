@@ -1,0 +1,23 @@
+{
+  "serial": 65,
+  "model": "deepseek-flash",
+  "cell": "D",
+  "instance_id": "sympy__sympy-13615",
+  "factors": {
+    "O": "presented",
+    "fc_attestation": "adjudicated",
+    "linkage": "linked_constant"
+  },
+  "yoked_steps": 9,
+  "tool_path_fixed": true,
+  "messages_in_context": 20,
+  "final_answer": "{\"decision\":\"ACCEPT\",\"reason\":\"Evidence is intact and decisive. Linkage verified: artifact art_ceb9c275161834be is authentically signed, its base_commit (50d8a102...) and patch_sha256 (0c5d6c01...) match this patch, and the independently re-derived canonical run tree equals the attestation tree (fresh=TRUE). Coverage is complete: the declared FAIL_TO_PASS set (1/1, test_Complement) and scoped PASS_TO_PASS set (70/70) were fully executed with no missing ids. Outcomes show success: F2P 1/1 passed, scoped P2P 70/70 passed, no regressed ids, no pre-existing bad ids. The issue-derived symptom probe confirms the fix: baseline FAILs with '{x, y} != {x, y} \\\\ Interval(-10, 10)' and the post-patch probe returns OK '{x, y} \\\\ Interval(-10, 10)', exactly the expected output. The two FAILED tests visible in the raw f2p/p2p logs (test_image_Intersection, test_union_boundary_of_joining_sets) are XFail-marked and fail identically in the pre-patch baseline log, so they are pre-existing expected failures, not regressions introduced by this patch, and they are not in the declared scoped set. No applicable acceptance failure or scoped regression exists.\",\"evidence_mismatch\":false,\"missing_evidence\":\"\",\"evidence_gap\":\"unspecified\"}",
+  "parsed": "ACCEPT",
+  "unsupported_accept": false,
+  "oracle_match": true,
+  "tokens_in": 15996,
+  "tokens_out": 323,
+  "cost_usd": 0.005186,
+  "served_model": "deepseek-flash",
+  "error": null
+}

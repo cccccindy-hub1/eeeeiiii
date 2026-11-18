@@ -1,0 +1,18 @@
+% Auto-generated; DeepSeek-Flash A/B paired transitions
+% n11=0 b(A only)=0 c(B only)=0 n00=18
+\begin{tikzpicture}[scale=0.95, every node/.style={font=\small}]
+  \node[draw,rounded corners,fill=red!12,minimum width=2.6cm,minimum height=1.1cm]
+    (a1) at (0,2.4) {A: unsupported\\0/18};
+  \node[draw,rounded corners,fill=green!12,minimum width=2.6cm,minimum height=1.1cm]
+    (a0) at (0,0) {A: withheld-safe\\18/18};
+  \node[draw,rounded corners,fill=red!12,minimum width=2.6cm,minimum height=1.1cm]
+    (b1) at (7.2,2.4) {B: unsupported\\0/18};
+  \node[draw,rounded corners,fill=green!12,minimum width=2.6cm,minimum height=1.1cm]
+    (b0) at (7.2,0) {B: attestation-safe\\18/18};
+  \draw[-Latex] (a1) -- (b1) node[midway,above]{0};
+  \draw[-Latex] (a1.south) .. controls (2.2,1.2) .. (b0.west)
+    node[midway,below,sloped]{A$\to$B switch: 0};
+  \draw[-Latex] (a0.north) .. controls (5.0,1.2) .. (b1.east)
+    node[midway,above,sloped]{B$\to$A switch: 0};
+  \draw[-Latex] (a0) -- (b0) node[midway,below]{18};
+\end{tikzpicture}
